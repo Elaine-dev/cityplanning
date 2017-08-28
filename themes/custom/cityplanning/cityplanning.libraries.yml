@@ -38,4 +38,19 @@ front-page:
     js/api/homeCtrl.js: {}
     # animate number
     js/jquery.inview.js: {}
- 
+    
+about-page:
+  version: VERSION
+  js:
+    # api
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js: {}
+    https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js: {}
+    # bootstrap ui
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js: {}
+    js/api/app.js: {}
+    js/api/agendaService.js: {}
+    js/api/agendaCtrl.js: {}
+    js/api/hearingsCtrl.js: {} 
