@@ -1,0 +1,49 @@
+    <div id="title-bar">
+        <!-- Fixed navbar -->
+        {% include directory ~ '/partials/header.html.twig' %}
+        
+        <style>
+        	#calendar { max-width: 80% !important; margin: 0 auto;	}
+        	.hearing { color: #3399ff !important; }
+        	.commission {color: #9966cc !important; }
+        	.public {color: #70a300 !important; }
+        </style>
+    	
+    	<!-- title-bar -->
+    	{{ page.title_bar }}
+    	<!-- //End title-bar -->
+    	
+    	<div class="clear"></div>
+    	
+    	<div class="container">
+        	<div class="row">
+        		<div class="col-md-12 padding-top13 padding-bottom20 pull-right">
+        			<div class="row">
+        				<div class="col-sm-2 pull-right">
+        					<div><span id="cal-public-meeting"></span> <span class="padding-left10">Public Meeting</span></div>
+        				</div>
+        				<div class="col-sm-2 pull-right">
+        					<div><span id="cal-commission"></span> <span class="padding-left10">Commission</span></div>
+        				</div>
+        				<div class="col-sm-2 pull-right">
+        					<div><span id="cal-hearing" style="padding-top: 10px;"></span> <span class="padding-left10">Hearing</span></div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+    	</div>
+    </div>
+	
+	<!-- contain -->
+	<div class="container-fluid section-padding-inner">
+		<div class="row">
+			<div class="col-md-12 col-xs-12">
+				<div id='calendar'></div>
+			</div>
+		</div>
+	</div>
+	<!-- //End container -->
+			
+    <!-- footer section -->
+    {{ attach_library ('cityplanning/calendar-page') }}
+    {% include directory ~ '/partials/footer.html.twig' %}
