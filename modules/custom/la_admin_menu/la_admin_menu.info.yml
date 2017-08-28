@@ -1,0 +1,6 @@
+name: Admin Custom Menu
+description: Manage menu in admin so that use can easily manage related content.
+package: Custom
+
+type: module
+core: 8.x
