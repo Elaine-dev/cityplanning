@@ -1,0 +1,27 @@
+# Date: Jum 15, 2017
+# Designer: Humbal
+name: LA City Planning 2.4.0
+type: theme
+description: 'Build using bootstrap framework. The design is clean and sleek.'
+core: 8.x
+libraries:
+  - cityplanning/global-styling
+
+libraries-override:
+  system/base: false
+
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  title_bar: 'Title Bar Block'
+  breadcrumb: Breadcrumb
+  slider: 'Slider'
+  content: Content
+  block_upcoming_meetings: 'Upcoming Meetings'
+  block_upcoming_hearings: 'Upcoming Hearings'
+  block_latest_news: 'Latest News'
+  footer_first: 'Footer First'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer Third'
+settings:
+  footer_message: '2017 Copyright, City of Los Angeles Department of City Planning.' 
