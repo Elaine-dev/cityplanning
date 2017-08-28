@@ -1,0 +1,136 @@
+<?php 
+/**
+ * Created : Aug 1, 2017
+ * Developer: Humbal Shahi
+ * 
+ * @filesource
+ * Install, update and unistall functions for the appointment module.
+ */
+/**
+ * Implements hook_schema().
+ */
+function la_appointment_schema () {
+    $schema['la_appointments'] = [
+        'description' => 'Store record of appointments',
+        'fields' => [
+                'id' => [
+    				'type' => 'serial',
+    				'unsigned' => TRUE,
+    				'not null' => TRUE,
+    				'description' => 'Appointment ID, e.g. node ID for nodes.',
+    			],
+    			'guest_name' => [
+    				'type' => 'varchar',
+    				'length' => 100,
+    				'not null' => TRUE,
+    				'default' => '',
+    				'description' => 'Name of the guest coming for appointment.',
+    			],
+    			'guest_email' => [
+    				'type' => 'varchar',
+    				'length' => 100,
+    				'not null' => TRUE,
+    				'description' => 'Guest email',
+    			],
+    			'guest_phone' => [
+    				'type' => 'varchar',
+    				'length' => 20,
+    				'not null' => TRUE,
+    				'description' => 'Telephone number of the guest.',
+    			],
+    			'appointment_location' => [
+    				'type' => 'varchar',
+    				'length' => 150,
+    				'not null' => TRUE,
+    				'default' => '',
+    				'description' => 'Name of office location.',
+    			],
+    			'case_add_house_number' => [
+    				'type' => 'varchar',
+    				'length' => 20,
+    				'not null' => TRUE,
+    				'description' => 'House number.',
+    			],
+    			'case_add_direction' => [
+    				'type' => 'varchar',
+    				'length' => 20,
+    				'not null' => TRUE,
+    				'description' => 'Direction. eg: North, South',
+    			],
+                'appointment_for' => [
+    				'type' => 'varchar',
+    				'length' => 100,
+    				'not null' => TRUE,
+    				'description' => 'Reason for appointment, i. Case Filing ii. Case Condition Clearing',
+    			],
+                'case_add_street_name' => [
+    				'type' => 'varchar',
+    				'length' => 100,
+    				'not null' => TRUE,
+    				'description' => 'Street name.',
+    			],
+                'subject' => [
+                    'type' => 'text',
+                    'not null' => TRUE,
+                    'description' => 'Subject',
+                ],
+                'cases' => [
+                    'type' => 'text',
+                    'not null' => TRUE,
+                    'description' => 'Cases.',
+                ],
+                'week_day_preference' => [
+                    'type' => 'varchar',
+    				'length' => 50,
+                    'not null' => TRUE,
+                    'description' => 'Week day preference.',
+                ],
+                'time_preference' => [
+                    'type' => 'varchar',
+    				'length' => 100,
+                    'not null' => TRUE,
+                    'description' => 'Time preference.',
+                ],
+                'created' => [
+                    'type' => 'int',
+                    'not null' => TRUE,
+                    'default' => 0,
+                    'description' => 'Record created time.',
+                ],
+                'status' => [
+                    'type' => 'int',
+                    'not null' => TRUE,
+                    'default' => 0,
+                    'description' => 'Status of appointment. 0=>pending, 1=>Approved',
+                ],
+        ],
+            
+        'indexes' => [
+            'id' => ['id'],
+            'guest_name' => ['guest_name'],
+            'guest_email' => ['guest_email'],
+        ],
+            
+        'primary key' => ['id'],
+    ];
+    
+    return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function la_appointment_install() {
+    // Create the styles  directory and ensure it's writable.
+    $directory = file_default_scheme() . '://styles';
+    file_prepare_directory($directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function la_appointment_uninstall() {
+    // Remove the styles directory and generated images.
+    file_unmanaged_delete_recursive(file_default_scheme() . '://styles');
+}
+?>

@@ -1,0 +1,51 @@
+<?php 
+
+use Drupal\Core\Url;
+
+function la_appointment_theme ( $existing, $type, $theme, $path ) {
+    return ['la_appointment' => [
+            'variables' => [
+                'title' => 'Appointment List',
+                'description' => 'Display list of appointment according to latest date order.',
+                'source_text' => NULL,
+                'contents'=>NULL
+            ],            
+            'template' => 'page--appointmentlist'
+        ],
+    ];
+}
+
+/**
+ * template_preprocess().
+ * 
+ * This preprocess function is the first in the sequence of preprocessing functions that are called when preparing variables for a template.
+ */
+function template_preprocess_la_appointment ( &$variables ) {
+    $result = db_select('{la_appointments}', 'e')
+        ->fields('e', array('id', 'guest_name', 'guest_email', 'guest_phone' , 'appointment_location', 'case_add_house_number', 'case_add_direction',
+            'case_add_street_name', 'appointment_for', 'week_day_preference', 'time_preference', 'created', 'status'))
+        ->orderBy('e.created', 'DESC')
+        ->range(0, 20)
+        ->execute();
+    
+    $data = [];
+    foreach ($result as $i => $record) {
+        $data[$i]['id'] = $record->id;
+        $data[$i]['created'] = $record->created;
+        $data[$i]['guest_name'] = $record->guest_name;
+        $data[$i]['guest_email'] = $record->guest_email;
+        $data[$i]['guest_phone'] = $record->guest_phone;
+        $data[$i]['appointment_location'] = $record->appointment_location;
+        $data[$i]['case_add_house_number'] = $record->case_add_house_number;
+        $data[$i]['case_add_direction'] = $record->case_add_direction;
+        $data[$i]['case_add_street_name'] = $record->case_add_street_name;
+        $data[$i]['appointment_for'] = $record->appointment_for;
+        $data[$i]['week_day_preference'] = $record->week_day_preference;
+        $data[$i]['time_preference'] = $record->time_preference;
+        $data[$i]['status'] = $record->status;
+    }
+    
+    $variables['data'] = $data;
+    //kint($variables);
+}
+
