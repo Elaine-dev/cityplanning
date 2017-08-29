@@ -65,3 +65,15 @@ calendar-page:
     js/calendar/moment.min.js: {}
     js/calendar/fullcalendar.js: {}
     js/calendar/dcp-calendar.js: {}
+    
+community-plan-areas:
+  version: VERSION
+  css:
+    theme:
+      css/communities.css: {}
+      https://js.arcgis.com/3.20/esri/css/esri.css: {}
+      https://js.arcgis.com/3.20/esri/css/esri.css: {}
+  js:
+    https://js.arcgis.com/3.20: {}
+    http://code.jquery.com/jquery-latest.min.js: {}
+    js/communities.js: {}
