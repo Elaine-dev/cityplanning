@@ -56,28 +56,28 @@ jQuery(document).ready(function(){
     		var comma_separator_number_step = jQuery.animateNumber.numberStepFactories.separator(',')
     		jQuery('#ic-1').animateNumber(
     			{
-    				number: 2250,
+    				number: 2759,
     				numberStep: comma_separator_number_step
 				},
     			2000
     		);
     	    jQuery('#ic-2').animateNumber(
     	    	{
-    	    		number: 2036,
+    	    		number: 2485,
     	    		numberStep: comma_separator_number_step
     	    	},
     			2000
     	    );
     	    jQuery('#ic-3').animateNumber(
     	    	{
-    	    		number: 9490,
+    	    		number: 12798,
     	    		numberStep: comma_separator_number_step
     	    	},
     			2000
     	    );
     	    jQuery('#ic-4').animateNumber(
     	    	{
-    	    		number: 37853,
+    	    		number: 48125,
     	    		numberStep: comma_separator_number_step
     	    	},
     			2000
