@@ -325,8 +325,7 @@ q:before, q:after { content: ''; content: none; }
 #infograph .last-updated p{font-size:10px !important;}
 
 /*** Feature section ******/
- .side-line{ width:100%; text-align:center; border-bottom: 2px solid #30c2a5; line-height:0.4em; margin:0px 0px 40px; color:#30c2a5; }
-/*.side-line{ width:100%; text-align:center; border-bottom: 2px solid #EDAC15; line-height:0.4em; margin:0px 0px 40px; color:#EDAC15; }*/
+.side-line{ width:100%; text-align:center; border-bottom: 2px solid #30c2a5; line-height:0.4em; margin:0px 0px 40px; color:#30c2a5; }
 .txt-box-over{background:#fff; padding:0 30px;}
 .feature { padding: 10px;}
 
