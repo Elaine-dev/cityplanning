@@ -86,7 +86,7 @@ class LaNegativedeclarationBlock extends BlockBase
         fclose($fp);
 
         return [
-            '#markup' => 'test',
+            '#markup' => ' ',
         ];
     }
 
