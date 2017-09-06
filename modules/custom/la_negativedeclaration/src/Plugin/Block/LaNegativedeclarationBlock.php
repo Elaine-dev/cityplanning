@@ -63,7 +63,7 @@ class LaNegativedeclarationBlock extends BlockBase
                 // Load file from fid and get file url
                 $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
                 $file = File::load($file_id);
-                $file_url = $file->url();
+                $file_url = ($file) ? $file->url() : '';
 
                 $notices[$key]['caseNumbers'][] = array(
                     'laTimesURL' => $data->get('field_publication')->getValue()[0]['value'],
