@@ -115,58 +115,33 @@ jQuery(document).ready(function(){
 		jQuery('#map-3').show();
 	});
 
-
-	//auto search
-    jQuery(function() {
-	  	jQuery( "#navBarSearch" ).autocomplete({
-	  	  source: function( request, response ) {
-	  		jQuery.ajax({
-	  		  url: "http://161.149.221.142/caseinfo/api/pcts/caseautocomplete/",
-	  		  dataType: "json",
-	  		  data: {
-	  			q: request.term
-	  		  },
-	  		  success: function( data ) {
-	  			response( data );
-	  		  }
-	  		});
-	  	  },
-	  	  minLength: 2,
-
-	  	  select: function( event, ui ) {
-
-	  	  },
-	  	});
-    });
+  //font size increase - decrease
+  var fontSize = parseInt(jQuery('body').css('font-size'), 16);
+  jQuery('#plus').on ('click', function(){
+    fontSize +=0.5;
+    jQuery('body').css('font-size', fontSize+'px');
+  })
+  jQuery('#minus').on('click', function(){
+    fontSize -=0.5;
+     jQuery('body').css('font-size', fontSize+'px');
+  })
 
 
-    //font size increase - decrease
-    var fontSize = parseInt(jQuery('body').css('font-size'), 16);
-    jQuery('#plus').on ('click', function(){
-    	fontSize +=0.5;
-    	jQuery('body').css('font-size', fontSize+'px');
-    })
-    jQuery('#minus').on('click', function(){
-    	fontSize -=0.5;
-    	 jQuery('body').css('font-size', fontSize+'px');
-    })
+  // tree - menu
+  jQuery('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+  jQuery('.tree li.parent_li > ul > li').hide();
+  jQuery('.tree li.parent_li > span').on('click', function (e) {
+      var children = jQuery(this).parent('li.parent_li').find(' > ul > li');
 
-
-    // tree - menu
-    jQuery('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
-    jQuery('.tree li.parent_li > ul > li').hide();
-    jQuery('.tree li.parent_li > span').on('click', function (e) {
-        var children = jQuery(this).parent('li.parent_li').find(' > ul > li');
-
-        if (children.is(":visible")) {
-        	children.hide('medium');
-            jQuery(this).attr('title', 'Expand this branch').find(' > i').addClass('fa-plus').removeClass('fa-minus');
-        } else {
-            children.show('medium');
-            jQuery(this).attr('title', 'Collapse this branch').find(' > i').addClass('fa-minus').removeClass('fa-plus');
-        }
-        e.stopPropagation();
-    });
+      if (children.is(":visible")) {
+        children.hide('medium');
+          jQuery(this).attr('title', 'Expand this branch').find(' > i').addClass('fa-plus').removeClass('fa-minus');
+      } else {
+          children.show('medium');
+          jQuery(this).attr('title', 'Collapse this branch').find(' > i').addClass('fa-minus').removeClass('fa-plus');
+      }
+      e.stopPropagation();
+  });
 
     //search
 	jQuery('#search').keyup(function(){
@@ -185,37 +160,37 @@ jQuery(document).ready(function(){
 	});
 
 	// Appointment form
-		// First available appointment
-	   $("#edit-first-available-appointment-first-available-appointment").change(function() {
-		   if (true == $(this).prop("checked")) {
-			   $("#any_day").prop('checked', false);
-			   $(".weekdays").prop('checked', false);
-			   $(".time_preference").prop('checked', false);
-		   }
-	   });
+  // First available appointment
+   $("#edit-first-available-appointment-first-available-appointment").change(function() {
+     if (true == $(this).prop("checked")) {
+       $("#any_day").prop('checked', false);
+       $(".weekdays").prop('checked', false);
+       $(".time_preference").prop('checked', false);
+     }
+   });
 
-	   // Any Day
-	   $("#any_day").change(function() {
-		   if (true == $(this).prop("checked")) {
-			   $("#edit-first-available-appointment-first-available-appointment").prop('checked', false);
-			   $(".weekdays").prop('checked', false);
-		   }
-	   });
+   // Any Day
+   $("#any_day").change(function() {
+     if (true == $(this).prop("checked")) {
+       $("#edit-first-available-appointment-first-available-appointment").prop('checked', false);
+       $(".weekdays").prop('checked', false);
+     }
+   });
 
-	   // Other Day
-	   $(".weekdays").change(function() {
-		   if (true == $(this).prop("checked")) {
-			   $("#edit-first-available-appointment-first-available-appointment").prop('checked', false);
-			   $("#any_day").prop('checked', false);
-		   }
-	   });
+   // Other Day
+   $(".weekdays").change(function() {
+     if (true == $(this).prop("checked")) {
+       $("#edit-first-available-appointment-first-available-appointment").prop('checked', false);
+       $("#any_day").prop('checked', false);
+     }
+   });
 
-	   // timeframe
-	   $(".time_preference").change(function() {
-		   if (true == $(this).prop("checked")) {
-			   $("#edit-first-available-appointment-first-available-appointment").prop('checked', false);
-		   }
-	   });
+   // timeframe
+   $(".time_preference").change(function() {
+     if (true == $(this).prop("checked")) {
+       $("#edit-first-available-appointment-first-available-appointment").prop('checked', false);
+     }
+   });
 
 
 	   /** Auto scroll top **/
@@ -245,9 +220,9 @@ jQuery(document).ready(function(){
 			);
 		});
 
-    /** feature section **/
-    var sourceSwap = function () {
-      var $this = $(this);
+    // feature section
+		var sourceSwap = function () {
+			var $this = $(this);
       var newSource = $this.data('alt-src');
       $this.data('alt-src', $this.attr('src'));
       $this.attr('src', newSource);
