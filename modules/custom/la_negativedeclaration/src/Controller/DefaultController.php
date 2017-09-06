@@ -1,11 +1,11 @@
-<?php 
+<?php
 namespace Drupal\la_negativedeclaration\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\field_collection\Entity\FieldCollectionItem;
 use Drupal\file\Entity\File;
 
-class DefaultController extends ControllerBase 
+class DefaultController extends ControllerBase
 {
     function createJSON () {
         // Load view with view ID notice
@@ -23,9 +23,9 @@ class DefaultController extends ControllerBase
             $title = $entity->get('title')->getValue()[0]['value'];
             $address    = $entity->get('field_address')->getValue();
             $date       = $entity->get('field_date')->getValue();
-            $council_district = $entity->get('field_council_district')->getValue();
+            $council_district = $entity->get('field_co')->getValue();
             $field_collection_id = $entity->get('field_sub_notice_form')->getValue();
-        
+
             $notices[$title] = array(
                 'primaryCaseNumber' => $title,
                 'address' => htmlentities($address[0]['value']),
@@ -36,7 +36,7 @@ class DefaultController extends ControllerBase
                 ),
             );
         }
-        
+
         foreach ($notices as $key=>$item) {
             foreach ($item['sub_notice']['ids'] as $id) {
                 $data = FieldCollectionItem::load($id['value']);
@@ -44,17 +44,17 @@ class DefaultController extends ControllerBase
                 $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
                 $file = File::load($file_id);
                 $file_url = $file->url();
-        
+
                 $notices[$key]['caseNumbers'][] = array(
                     'laTimesURL' => $data->get('field_publication')->getValue()[0]['value'],
                     'caseNumber' => $data->get('field_cass_number')->getValue()[0]['value'],
                     'doc' => $file_url,
                 );
             }
-        
+
             unset($notices[$key]['sub_notice']);
         }
-        
+
         foreach ($notices as $item) {
             $new_array[] = $item;
         }
@@ -63,7 +63,7 @@ class DefaultController extends ControllerBase
         $fp = fopen( $file_path, 'w');
         fwrite($fp, json_encode($new_array));
         fclose($fp);
-        
+
         $html = '<div class="msg"><p>notice.json file has been created successfully!</p></div>';
         return [
             '#markup' => $html,
