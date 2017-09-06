@@ -20,8 +20,9 @@ regions:
   block_upcoming_meetings: 'Upcoming Meetings'
   block_upcoming_hearings: 'Upcoming Hearings'
   block_latest_news: 'Latest News'
+  negative_declaration_notices: 'Negative Declaration Block'
   footer_first: 'Footer First'
   footer_second: 'Footer Second'
   footer_third: 'Footer Third'
 settings:
-  footer_message: '2017 Copyright, City of Los Angeles Department of City Planning.' 
+  footer_message: '2017 Copyright, City of Los Angeles Department of City Planning.'

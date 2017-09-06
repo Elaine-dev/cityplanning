@@ -5,6 +5,15 @@ function cityplanning_theme_rebuild () {
 }
 
 /**
+ * Implement hool_preprocess_html().
+ * @param $variables
+ */
+function cityplanning_preprocess_html ( &$variables ) {
+    global $base_url;
+    $variables['base_url'] = $base_url;
+}
+
+/**
  * Implement hook_preprocess().
  * @param array $variables
  */
@@ -17,7 +26,7 @@ function cityplanning_preprocess_page ( &$variables ) {
   	$variables['route_name'] = \Drupal::routeMatch()->getRouteName();
 }
 
-function cityplanning_theme_suggestions_page_alter( array &$suggestions, array $variables ) {
+function cityplanning_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
     // Add content type suggestions.
     if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
         array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
@@ -25,25 +34,6 @@ function cityplanning_theme_suggestions_page_alter( array &$suggestions, array $
 }
 
 // template suggestion for container part
-function cityplanning_theme_suggestions_container_alter( $suggestions, $vars, $hook ) {
+function cityplanning_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
     $suggestions[] = 'container' . '__' . 'custom';
 }
-
-/* function cityplanning_theme_suggestions_alter ( array &$suggestions, array $varibles, $hook) {
-    if ($hook == 'breadcrumb') {
-        $suggestions[] = 'page-title';
-    }
-}  */ 
-
-/**
- * Implements hook_preprocess_breadcrumb().
- */
-/* function cityplanning_preprocess_breadcrumb( &$variables ){
-	$request = \Drupal::request();
-	$route_match = \Drupal::routeMatch();
-	$page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
-	// this varibale will available in twig file.
-	$variables['breadcrumb'][] = [
-	        'text' => $page_title
-	]; 
-} */

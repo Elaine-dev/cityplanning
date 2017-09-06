@@ -1,0 +1,123 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    
+    <style>
+	    div>table>tbody>tr:nth-child(even)>td {
+	        border: none;
+	        padding: 0;
+	    }
+	</style>
+    
+	<!-- title-bar -->
+	<div id="title-bar">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-8 col-xs-12">
+    				<h1> Negative Declaration Public Notices </h1>
+    			</div>
+    			
+    			<!-- breadcrumb -->
+    			<div class="col-md-4 col-xs-12">
+                	<ol class="breadcrumb pull-right">
+                      	<li><a href="#">Home</a></li>
+                        <li class="active"><a href="#">About</a></li>
+                    </ol>
+        		</div>
+    			<!-- //END breadcrumb -->
+    		</div>
+    		<div class="bottom" style="padding-top:20px;"></div>
+    	</div>
+    </div>
+	<!-- //End title-bar -->
+	
+	<div class="clear"></div>
+	
+	{{ page.negative_declaration_notices }}
+	
+	<!-- contain -->
+	<div class="container section-padding-inner">
+		<div class="row">
+        	<div id="eirs">
+	
+            	<div ng-app="appNDPN" ng-controller="negativeDeclarationCtrl as ctrl">
+	
+                    <!-- main content -->
+                	<div class="col-md-12 col-sm-12 col-xs-12">
+                    	<div ng-disabled="enable=='false'">
+	                        <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+	                    </div>
+	
+	                    <div class="row padding-bottom10 padding-top10" >
+	                        <div class="col-md-2 pull-right" style="padding-left:5px;"><input ng-model="negativeDeclaration" placeholder="Search notice"></div>
+	                    </div>
+	
+	                    <div>
+	                        <table id="dataTable" class="table">
+	                            <thead>
+    	                            <tr>
+    	                                <th>
+    	                                    <button class="btn btn-default btn-sm"  type="button" ng-click="ctrl.expandAll(allExpanded = !allExpanded)">
+    	                                        <span ng-bind="allExpanded ? '-' : '+'"></span>
+    	                                    </button>
+    	                                </th>
+    	                                <th>Date</th>
+    	                                <th>Primary Case</th>
+    	                                <th>Address</th>
+    	                                <th>Council District</th>
+    	                            </tr>
+	                            </thead>
+	                            <tbody>
+    	                            <tr ng-repeat-start="x in ctrl.data | filter:negativeDeclaration | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
+    	                                <td>
+    	                                    <button class="btn btn-default btn-sm" ng-click="expanded = !expanded" expand>
+    	                                        <span ng-bind="expanded ? '-' : '+'"></span>
+    	                                    </button>
+    	                                </td>
+    	                                <td ng-bind="x.date"></td>
+    	                                <td ng-bind="x.primaryCaseNumber"></td>
+    	                                <td ng-bind="x.address"></td>
+    	                                <td ng-bind="x.councilDistrict"></td>
+    	                            </tr>
+    	                            <tr ng-repeat-end ng-show="expanded">
+    	                                <td></td>
+    	                                <td colspan="4">
+    	                                    <table class="table table-condensed table-bordered">
+    	                                        <thead>
+        	                                        <tr>
+        	                                            <th class="col-md-4">Case Number</th>
+        	                                            <th class="col-md-4">MND</th>
+        	                                            <th class="col-md-4">Publication</th>
+        	                                        </tr>
+    	                                        </thead>
+    	                                        <tbody>
+        	                                        <tr ng-repeat="v in x.caseNumbers">
+        	                                            <td class="col-md-4" ng-bind="v.caseNumber"></td>
+        	                                            <td class="col-md-4"><a href="{[{ v.doc }]}" ng-if="v.doc" target="_blank"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a></td>
+        	                                            <td class="col-md-4"><a href="http://newspaper.php?w={[{ v.laTimesURL }]}" ng-if="v.laTimesURL" target="_blank"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a></td>
+        	                                        </tr>
+    	                                        </tbody>
+    	                                    </table>
+    	                                </td>
+    	                            </tr>
+	                            </tbody>
+	                        </table>
+	                    </div>
+	
+	                    <div class="bottom "></div>
+	
+	                    <ul uib-pagination
+							ng-model="currentPage"
+							total-items="total"
+							items-per-page="pageSize"
+	                    	max-size="noOfPages">
+                        </ul uib-pagination>
+	
+	                </div>  <!-- // END main content-->
+	            </div>
+	        </div> <!-- //END #aplicants -->
+	    </div>
+	</div>	<!-- //End container -->
+
+	<!-- footer section -->
+	{{ attach_library ('cityplanning/negative-declaration-page') }}
+    {% include directory ~ '/partials/footer.html.twig' %}

@@ -1,6 +1,6 @@
 /*********************
 Theme Name: LADCP
-Theme URL: 
+Theme URL:
 Author: Humbal Shahi
 *********************/
 
@@ -67,7 +67,7 @@ q:before, q:after { content: ''; content: none; }
 /** vertical line **/
 .wrapper {
     position: relative;
-    width: 30px; 
+    width: 30px;
     height: 250px;
     /* border: 1px dashed #ccc; */
     margin: 5px;
@@ -114,8 +114,8 @@ q:before, q:after { content: ''; content: none; }
 .navbar {
 	border-radius: 0px !important;
     min-height: 50px;
-    margin-bottom: 0px !important;  
-    padding-top: 47px !important; 
+    margin-bottom: 0px !important;
+    padding-top: 47px !important;
 }
 .navbar-nav {margin: 7.5px; !important; padding-top: 4px;}
 
@@ -181,7 +181,7 @@ q:before, q:after { content: ''; content: none; }
   right: 30px;
   left: inherit;
 }
-.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-left,
 .carousel-control .glyphicon-chevron-right {
   font-size: 12px;
   background-color: #fff;
@@ -197,7 +197,7 @@ q:before, q:after { content: ''; content: none; }
 .mega-dropdown-menu .brownbg {
 	background: #ddd; padding: 0px 20px !important; min-height: 797px;
 	-moz-background: #ddd; padding: 0px 20px !important; min-height: 810px;
-} 
+}
 
 /****************************************
 ********* Banner ************************
@@ -325,7 +325,7 @@ q:before, q:after { content: ''; content: none; }
 #infograph .last-updated p{font-size:10px !important;}
 
 /*** Feature section ******/
- .side-line{ width:100%; text-align:center; border-bottom: 2px solid #30c2a5; line-height:0.4em; margin:0px 0px 40px; color:#30c2a5; } 
+ .side-line{ width:100%; text-align:center; border-bottom: 2px solid #30c2a5; line-height:0.4em; margin:0px 0px 40px; color:#30c2a5; }
 /*.side-line{ width:100%; text-align:center; border-bottom: 2px solid #EDAC15; line-height:0.4em; margin:0px 0px 40px; color:#EDAC15; }*/
 .txt-box-over{background:#fff; padding:0 30px;}
 .feature { padding: 10px;}
@@ -466,7 +466,7 @@ address a:hover {color: #ff9c00 !important; text-decoration: underline !importan
 .right-sidebar-list{ line-height: 40px; }
 #right-sidebar .fa {
 	font-size: 10px !important;
-} 
+}
 
 #right-sidebar	button, input, select, textarea {
     line-height: 15px !important;
@@ -557,7 +557,7 @@ address a:hover {color: #ff9c00 !important; text-decoration: underline !importan
 .heading-spacing2 {padding-left: 20px;}
 
 /*****/
-.page-heading {  
+.page-heading {
 	font-size:50px;
 	color:rgb(242,164,51);
 }
@@ -600,7 +600,7 @@ address a:hover {color: #ff9c00 !important; text-decoration: underline !importan
 }
 
 .img-textwrap {
-	height: auto; float: left; padding: 0 15px 15px 0; margin-right: 5px;" 
+	height: auto; float: left; padding: 0 15px 15px 0; margin-right: 5px;"
 }
 /***** CONTACT US ********/
 table.dataTable thead th, table.dataTable thead td {
@@ -630,7 +630,7 @@ table.dataTable thead .sorting_asc {
 #contact #right-sidebar a {
 	color: #30c2a5 !important;
 	background-color:transparent !important;
-	
+
 }
 #contact a {
 	color: #fff !important;
@@ -640,7 +640,7 @@ table.dataTable thead .sorting_asc {
 
 #contact .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
     color: white !important;
-  	border:#; 
+  	border:#;
     background-color: #30c2a5 !important;
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #585858), color-stop(100%, #111));
     background: -webkit-linear-gradient(top, #30c2a5 0%, #30c2a5 100%);
@@ -668,13 +668,13 @@ table.dataTable thead .sorting_asc {
 /******************************************/
 .panel-group .panel {
    margin-bottom: 0;
-   border-radius: 0px !important; 
+   border-radius: 0px !important;
 }
 .panel-default { border-color: transparent !important; }
 .panel {
     margin-bottom: 20px;
     background-color: #fff !important;
-    border: #; 
+    border: #;
     border-radius: 0px !important;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
     box-shadow: 0 1px 1px rgba(0,0,0,.05);
@@ -683,7 +683,7 @@ table.dataTable thead .sorting_asc {
 .panel-heading {
 	padding: 20px !important;
     border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important; 
+    border-top-right-radius: 0px !important;
 }
 
 .housing-box{ padding: 30px 45px; }
@@ -753,10 +753,10 @@ table.dataTable thead .sorting_asc {
 #community-plan-description ul li {list-style: disc !important; }
 #community-quick-links .quick-links { line-height: 40px; padding-left: 0px !important;}
 #community-overview code {
-	background-color: rgba(27, 158, 119, 0.07) !important;	
+	background-color: rgba(27, 158, 119, 0.07) !important;
 	padding-bottom: 0px !important;
 	font-weight: 300 !important;
-} 
+}
 
 /* Pagination Content */
 .community-nav{
@@ -849,7 +849,7 @@ table.dataTable thead .sorting_asc {
 	text-align: center;
 	padding: 5px 0;
 	border-radius: 2px;
-	
+
 	/* Position the tooltip text */
 	position: absolute !important;
 	z-index: 1 !important;
@@ -1205,9 +1205,9 @@ table.dataTable thead .sorting_asc {
 	top: 32px;
 	left: 20px !important;
 	background-color: #fff;
-	border: solid 1px #ccc; 
+	border: solid 1px #ccc;
 	margin-top: 10px;
-	width: 40%; 
+	width: 40%;
 	display: none;
 }
 
@@ -1265,6 +1265,10 @@ table.dataTable thead .sorting_asc {
 .form-item-week-day-preference-anyday{padding-left: 20px;}
 #edit-week-day-preference{padding-left: 20px;}
 .visually-hidden{color: #c9e1bd !important; text-align: center !important; text-transform: capitalize !important; visibility: hidden;}
+#eirs .pagination>.active>a {
+	background-color: #eee !important;
+	border-color: #eee !important;
+}
 
 /* ********************************************** */
 /* **************** Media Query **************** */
@@ -1279,13 +1283,13 @@ table.dataTable thead .sorting_asc {
 	.infograph-heading h1 { font-size: 28px;}
 	.infograph-wrapper {margin-left: 25%;}
 	#infograph .infograph-wrapper .count{padding-right: 150px;}
-	
+
 	.navbar-toggle {
 		margin-top: 15px !important;
 		margin-right: 15px !important;
 		margin-bottom: 10px !important;
 	}
-	
+
 	.mega-dropdown-menu .brownbg {
 		background: #ddd; padding: 0px 20px !important; min-height: 350px !important;
 	}
@@ -1298,7 +1302,7 @@ table.dataTable thead .sorting_asc {
 		margin-left: 15px !important;
 	}
 	.content-search input {width: 100% !important;}
-	
+
 	/** case filing appointment **/
 	#block-cityplanning-content .app-textbox { margin-left:0px !important; }
 	#block-cityplanning-content .app-textbox-phone { margin-left:auto !important; }
@@ -1311,7 +1315,7 @@ table.dataTable thead .sorting_asc {
 @media screen and (min-width: 521px) and (max-width: 980px) {
 	.infograph-heading h1 {font-size: 30px;}
 	.infograph-wrapper {margin-left: 35%;}
-	
+
 	/** display scroll if height > **/
 	.navbar-nav>li>.dropdown-menu {
 	    max-height: 550px;
@@ -1325,7 +1329,7 @@ table.dataTable thead .sorting_asc {
     bottom: 20px;
   }
   #case-search input[type='text'] {width:600px !important; height:37px !important;}
-  
+
 }
 
 @media (max-width: 1024px) {
