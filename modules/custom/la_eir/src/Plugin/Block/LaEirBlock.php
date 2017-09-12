@@ -29,7 +29,7 @@ class LaEirBlock extends BlockBase
         $view->execute();
         $view->serialize();
         $notice = [];
-         
+
         foreach($view->result as $value){
             $parent_eir_id = $value->_entity->get('field_select_eir')->getString();
             $eir_type = $eir_type = $value->_entity->get('field_eir_type')->getString();
@@ -42,7 +42,7 @@ class LaEirBlock extends BlockBase
             $node = Node::load($parent_eir_id);
             $case_no = $node->get('field_case_number')->getValue()[0]['value'];
             $project_title = $node->get('title')->getValue()[0]['value'];
-    
+
             $notice[$parent_eir_id][] = array(
                     'case_number' => $case_no,
                     'project_title' => $project_title,
@@ -50,11 +50,11 @@ class LaEirBlock extends BlockBase
                     'path' => $alias,
                     'parent' => $parent_eir_id
             );
-    
+
             $data = [];
             $data[] = $value->_entity->get('field_eir_type')->getString();
         }
-    
+
         $new_notice = [];
         foreach($notice as $key=>$item) {
             $draft = '';
@@ -73,7 +73,7 @@ class LaEirBlock extends BlockBase
                 } elseif($row['eir_type'] == 14) {
                     $notice_prepration = $row['path'];
                 }
-    
+
                 $new_notice[$key] = array(
                     'projectTitle' => $row['project_title'],
                     'eirNumber' => $row['case_number'],
@@ -83,40 +83,40 @@ class LaEirBlock extends BlockBase
                 );
             }
         }
-    
+
         $new_eir = [];
         foreach($new_notice as $item) {
             $new_eir[] = $item;
         }
-    
-    
+
+
         // Create json file
         $file_path = 'file/eir.json';
         $fp = fopen( $file_path, 'w');
         fwrite($fp, json_encode($new_eir));
         fclose($fp);
-    
+
         return [
                 '#markup' => ' ',
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
     protected function blockAccess(AccountInterface $account) {
         return AccessResult::allowedIfHasPermission($account, 'access content');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function blockForm($form, FormStateInterface $form_state) {
         $config = $this->getConfiguration();
-    
+
         return $form;
     }
-    
+
     /**
      * {@inheritdoc}
      */
