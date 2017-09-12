@@ -37,10 +37,7 @@
                             <strong>Case Number:</strong> {{ node_data.case_number }}<br>
                         {% endif %}
                         {% if node_data.house_number %}
-                            <strong>State Clearinghouse Number:</strong> {{ node_data.house_number }} <br>
-                        {% endif %}
-                        {% if node_data.project_location %}
-                            <strong>Project Location:</strong> {{ node_data.project_location }}
+                            <strong>State Clearinghouse Number:</strong> {{ node_data.house_number }}
                         {% endif %}
                     </em>
                 </div>
@@ -53,6 +50,13 @@
                             <strong>Community Plan Areas</strong>: {{ node_data.community_plan_areas }}
                         {% endif %}
                     </em>
+                </div>
+                <div class="col-md-12">
+                  <em>
+                  {% if node_data.project_location %}
+                     <strong>Project Location:</strong> {{ node_data.project_location }}
+                  {% endif %}
+                  </em>
                 </div>
             </div>
             <div class="bottom" style="padding-top:20px;"></div>
