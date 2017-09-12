@@ -29,9 +29,9 @@ class LaNegativedeclarationBlock extends BlockBase
         // TODO: Load view with View ID notice.
         $view = \Drupal\views\Views::getView('negative_declaration');
         $view->setDisplay('Default');
-        $view->setItemsPerPage(10);
-        $view->setOffset(0);
-        $view->usePager();
+       // $view->setItemsPerPage(10);
+       // $view->setOffset(0);
+        //$view->usePager();
         $view->execute();
         $view->serialize();
         $result = $view->result;
@@ -61,9 +61,19 @@ class LaNegativedeclarationBlock extends BlockBase
             foreach ($item['sub_notice']['ids'] as $id) {
                 $data = FieldCollectionItem::load($id['value']);
                 // Load file from fid and get file url
-                $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
-                $file = File::load($file_id);
-                $file_url = ($file) ? $file->url() : '';
+                /* 
+                 * $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
+                 * $file = File::load($file_id);
+                 * $file_url = ($file) ? $file->url() : '';
+                */
+                $file_id = $data->get('field_mnd')->getValue('target_id');
+                $file_url = '';
+                if (!empty($file_id)) {
+                    $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
+                    $file = File::load($file_id);
+                
+                    $file_url = $file->url();
+                }
 
                 $notices[$key]['caseNumbers'][] = array(
                     'laTimesURL' => $data->get('field_publication')->getValue()[0]['value'],

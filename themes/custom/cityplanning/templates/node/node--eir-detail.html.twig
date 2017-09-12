@@ -1,0 +1,63 @@
+<article{{ attributes }}>
+<!--     {{ title_prefix }} -->
+<!--     {% if not page %} -->
+<!--         <h2{{ title_attributes }}> -->
+<!--             <a href="{{ url }}" rel="bookmark">{{ label }}</a> -->
+<!--         </h2> -->
+<!--     {% endif %} -->
+<!--     {{ title_suffix }} -->
+
+    {% if display_submitted %}
+        <footer>
+            {{ author_picture }}
+            <div{{ author_attributes }}>
+                {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+                {{ metadata }}
+            </div>
+        </footer>
+    {% endif %}
+    {{ drupal_block('eir_block') }}
+    <div{{ content_attributes }}>
+        <div id="title-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                        <h3>{{ content.field_eir_type[0]['#title'] }} - {{ node.label }}</h3>
+                    </div>
+                </div>
+                <div class="bottom" style="padding-top:20px;"></div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-xs-12" id="draft">
+            <div class="row">
+                <div class="col-md-6">
+                    <em>
+                        {% if node_data.case_number %}
+                            <strong>Case Number:</strong> {{ node_data.case_number }}<br>
+                        {% endif %}
+                        {% if node_data.house_number %}
+                            <strong>State Clearinghouse Number:</strong> {{ node_data.house_number }}
+                        {% endif %}
+                    </em>
+                </div>
+                <div class="col-md-6">
+                    <em>
+                        {% if node_data.council_district %}
+                            <strong>Council District</strong>: {{ node_data.council_district }} <br>
+                        {% endif %}
+                        {% if node_data.community_plan_areas %}
+                            <strong>Community Plan Areas</strong>: {{ node_data.community_plan_areas }}
+                        {% endif %}
+                    </em>
+                </div>
+            </div>
+            <div class="bottom" style="padding-top:20px;"></div>
+            {{ content.body }}
+
+        </div>
+    </div>
+
+</article>
+
+

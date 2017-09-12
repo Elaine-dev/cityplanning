@@ -1,0 +1,73 @@
+	{{ drupal_block('eir_block') }}
+	
+	<!-- contain -->
+	<div class="container section-padding-inner">
+        <div class="row">
+            <div id="eirs">
+    
+                <div ng-app="appEIR" ng-controller="eirCtrl" class="ng-scope">
+    
+                    <!-- main content -->
+                    <div class="col-md-12 col-xs-12" id="draft">
+                        <div ng-disabled="enable=='false'">
+                            <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+                        </div>
+                        <div class="row padding-bottom10 padding-top10">
+                            <div class="col-md-2 pull-right" style="padding-left:5px;"><input ng-model="projectTitle" placeholder="Search EIR" class="ng-pristine ng-untouched ng-valid ng-empty"></div>
+                        </div>
+    
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <colgroup>
+                                    <col class="col-md-2">
+                                    <col class="col-md-6">
+                                    <col class="col-md-1">
+                                    <col class="col-md-1">
+                                </colgroup>
+    
+                                <thead>
+                                    <tr>
+                                        <th>Case No.</th>
+                                        <th>Project Title</th>
+                                        <th>Notice of Preparation</th>
+                                        <th>Draft EIR</th>
+                                        <th>Final EIR</th>
+                                    </tr>
+                                </thead>
+    
+                                <tbody>
+                                <tr ng-repeat="x in data | filter:projectTitle | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize" class="ng-scope">
+                                    <td ng-bind="x.eirNumber"></td>
+                                    <td ng-bind="x.projectTitle"></td>
+                                    <td ngIf: x.noticeOfPreparation>
+                                        <a href="{[{ x.noticeOfPreparation }]}" ng-if="x.noticeOfPreparation" class="ng-scope"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td ngIf: x.draftEIR>
+                                        <a href="{[{ x.draftEIR }]}" ng-if="x.draftEIR" class="ng-scope"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                    <td ngIf: x.finalEIR>
+                                        <a href="{[{ x.finalEIR }]}" ng-if="x.finalEIR" class="ng-scope"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+    
+                        <div class="bottom "></div>
+    
+                        <ul uib-pagination
+                            ng-model="currentPage"
+                            total-items="total"
+                            items-per-page="pageSize"
+                            max-size="noOfPages">
+                        </ul uib-pagination>
+                    </div>  <!-- // END main content-->
+    
+                </div>
+    
+            </div> <!-- //END #aplicants -->
+        </div>
+    </div> <!-- //End container -->
+    
+	{{ attach_library ('cityplanning/eir-js') }}
+	{{ attach_library ('cityplanning/angular-js') }}
