@@ -1,0 +1,8 @@
+name: Environmental Impact Reports (EIR)
+description:  'Custom module to manage EIR'
+type: module
+package: Custom
+core: 8.x
+dependencies: 
+  - block
+ 
