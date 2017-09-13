@@ -28,7 +28,7 @@ class LaNegativedeclarationBlock extends BlockBase
     public function build () {
         // TODO: Load view with View ID notice.
         $view = \Drupal\views\Views::getView('negative_declaration');
-        $view->setDisplay('Default');
+        //$view->setDisplay('Default');
        // $view->setItemsPerPage(10);
        // $view->setOffset(0);
         //$view->usePager();
@@ -61,7 +61,7 @@ class LaNegativedeclarationBlock extends BlockBase
             foreach ($item['sub_notice']['ids'] as $id) {
                 $data = FieldCollectionItem::load($id['value']);
                 // Load file from fid and get file url
-                /* 
+                /*
                  * $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
                  * $file = File::load($file_id);
                  * $file_url = ($file) ? $file->url() : '';
@@ -71,7 +71,7 @@ class LaNegativedeclarationBlock extends BlockBase
                 if (!empty($file_id)) {
                     $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
                     $file = File::load($file_id);
-                
+
                     $file_url = $file->url();
                 }
 
