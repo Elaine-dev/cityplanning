@@ -9,7 +9,7 @@ $(document).ready(function() {
 		navLinks: true, 	// can click day/week names to navigate views
 		editable: false,
 		eventLimit: true, 	// allow "more" link when too many events
-    contentHeight: 300,
+		contentHeight: 300,
 		events: [
     			     	{
     			    		"type": "Hearing",
@@ -20,6 +20,7 @@ $(document).ready(function() {
     			    		"url": "http://161.149.221.142/dcpapi/meetings/document/57504"
     			    	},
     			    	{
+    			    		
     			    		"type": "Hearing",
     			    		"title": "South Los Angeles",
     			    		"description": "Hearing: Zoning Administration",
