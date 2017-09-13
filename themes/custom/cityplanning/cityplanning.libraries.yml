@@ -64,6 +64,17 @@ calendar-page:
     js/calendar/moment.min.js: {}
     js/calendar/fullcalendar.js: {}
     js/calendar/dcp-calendar.js: {}
+    
+calendar-detail:
+  version: VERSION
+  css:
+    theme:
+      css/calendar/fullcalendar.css: {}
+      css/calendar/fullcalendar.print.min.css: {}
+  js:
+    js/calendar/moment.min.js: {}
+    js/calendar/fullcalendar.js: {}
+    js/calendar/dcp-calendar-detail.js: {}
 
 negative-declaration-page:
   version: VERSION
