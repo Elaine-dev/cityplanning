@@ -1,0 +1,52 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	<!-- title-bar -->
+	{{ page.title_bar }}
+	<!-- //End title-bar -->
+
+	<div class="clear"></div>
+
+	<!-- contain -->
+	<div class="container section-padding-inner">
+		<div ng-app="app" >
+
+    		<div class="row">
+    		    <!-- main content -->
+    			<div class="col-md-12 col-xs-12" id="xcase-search">
+    				<div ng-controller="MainCtrl" class="row" role="search">
+    					<div class="col-md-12 divCaseSearch">
+    						<form class="form-inline">
+                  <label for="txtCaseSearch" class="sr-only">Case Search</label>
+                  <input id="txtCaseSearch" ng-model="case_search" type="text" placeholder="Enter your case number"><br>
+    							<em class="date" style="font-size: 0.8em">e.g. : ZA-2015-4605-CU </em>
+                </form>
+    					</div>
+
+    					<div id='divTestCases' class='divPopulateCases'>
+                <ul id='ulMatch' runat='server' style='list-style-type: none; padding-left: 10px; padding-right: 10px; margin-bottom: 15px;'></ul>
+              </div>
+    				</div>
+
+    				<div class="row" style="padding: 20px 0 15px 0"><div class="col-md-12 bottom"></div></div>
+
+    				<div class="row">
+    					<div class="col-md-12">
+    						<h4>Case Reports</h4>
+    						<ul style="padding-left: 0;">
+    							<li><a href="<?php echo BASEURL ?>research/casereport-neighborhood-council.php"><i class="fa fa-angle-right" aria-hidden="true"></i> Bi-Weekly Case Filling by Certified Neighborhood Council</a></li>
+    							<li><a href="<?php echo BASEURL ?>research/casereport-city-council.php"><i class="fa fa-angle-right" aria-hidden="true"></i> Bi-Weekly Case Filling by City Council District</a></li>
+    							<li><a href="<?php echo BASEURL ?>research/casereport-community-plan-area.php"><i class="fa fa-angle-right" aria-hidden="true"></i> Bi-Weekly Case Filling by Community Plan Area</a></li>
+    						</ul>
+    					</div>
+    				</div>
+    			</div>  <!-- // END main content-->
+    		</div>
+		</div>
+	</div>	<!-- //End container -->
+
+
+  <!-- footer section -->
+  {{ attach_library ('cityplanning/case-search-js') }}
+  {{ attach_library ('cityplanning/angular-js') }}
+  {% include directory ~ '/partials/footer.html.twig' %}

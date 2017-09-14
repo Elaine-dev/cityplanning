@@ -64,7 +64,7 @@ calendar-page:
     js/calendar/moment.min.js: {}
     js/calendar/fullcalendar.js: {}
     js/calendar/dcp-calendar.js: {}
-    
+
 calendar-detail:
   version: VERSION
   css:
@@ -84,6 +84,10 @@ negative-declaration-page:
 eir-js:
   js:
     'js/api/eirCtrl.js': {}
+
+case-search-js:
+  js:
+    'js/api/app.js': {}
 
 community-plan-areas:
   version: VERSION
