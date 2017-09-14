@@ -24,7 +24,7 @@ interdiff*.txt
 tmp*
 
 # Excludes for installed Drupal site
-# sites/*/files/
+sites/*/files/
 sites/*/settings.php
 
 # Exclude IDE's project directory
