@@ -29,7 +29,6 @@ jQuery(document).ready(function(){
 	//Pause carousel
 	jQuerymyCarousel.carousel('pause');
 
-
 	//Other slides to be animated on carousel slide event
 	jQuerymyCarousel.on('slide.bs.carousel', function (e) {
 		var jQueryanimatingElems = jQuery(e.relatedTarget).find("[data-animation ^= 'animated']");
