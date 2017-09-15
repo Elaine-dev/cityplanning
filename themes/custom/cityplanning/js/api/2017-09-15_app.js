@@ -1,7 +1,6 @@
 var app = angular.module('app', ['ngSanitize']);
 
-app.config(function($interpolateProvider, $sceDelegateProvider) {
-	$sceDelegateProvider.resourceUrlWhitelist(['**']);
+app.config(function($interpolateProvider) {
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 });
 
@@ -26,18 +25,16 @@ app.controller('MainCtrl', function($scope, GeneralService) {
       return false;
     }
 	
-	// Case search : Auto suggest
+	// case search
 	$scope.$watch('case_search',function(newValue) {
 		if(newValue !== undefined){
-			GeneralService.getList(newValue).then(function(res) {
-				if (res) {
-					caseSearchTypeAheadButtonPrototype.jsonpCallback (res)
-				}
+			GeneralService.getList(newValue).then(function(res){
+				console.log(res);
 			});	
 		}
 	});
 
-	// Case search :  
+	// case number search
 	$scope.$watch('case_number_search',function(newValue) {
 		GeneralService.getAgenda('http://161.149.221.137/caseinfo/casesummary.aspx?case='+newValue+'&engine=json').then(function(response){
 			$scope.results = response.data;
@@ -69,27 +66,35 @@ app.controller('MainCtrl', function($scope, GeneralService) {
 	}
 });
 
-function caseSearchTypeAheadButtonPrototype () {
+function caseSearchTypeAheadButtonPrototype(){
 }
 
-caseSearchTypeAheadButtonPrototype.jsonpCallback = function ( res ) {
-	$response = res.data;
-	var html = '';
-	angular.forEach($response, function(v) {
-		html += "<li> <a style='text-decoration: none;' href='http://planning.lacity.org/PdisCaseInfo/caseNumber/"+v+"' target='_blank'>"+v+"</a></li><li class='bottom'></li>" ;
-	})
-	
-	document.getElementById('divTestCases').style["display"] = "block";
-	document.getElementById('ulMatch').innerHTML = html;
+caseSearchTypeAheadButtonPrototype.jsonpCallback = function(res) {
+	$response = res.response.replace(/\|\|/g, "\n");
+	//console.log(typeof $response);
+
+	if(typeof $response != undefined) {
+		$rows = $response.split("\n");
+		//console.log($rows);
+		var html = '';
+		$rows.forEach(function(elem){
+			//console.log(elem);
+			$new_row = elem.split("|");
+			if($new_row[1]!==undefined){
+				html += "<li style='font-size: 12px;'> <a style='text-decoration: none;' href='http://m-planning.azurewebsites.net/case-search?case_info="+$new_row[0]+"'>"+$new_row[1]+"</a></li>" ;
+			}					
+		});
+		
+		document.getElementById('divTestCases').style["display"] = "block";
+		document.getElementById('ulMatch').innerHTML = html;
+	}
 }
 
-// service
 app.service('GeneralService', function($http) {
 	this.getAgenda = function(url) {
 		return $http.get(url);
 	}
-	
 	this.getList = function(case_number) {
-		return $http.get('http://161.149.221.142/caseinfo/api/pcts/caseautocomplete/'+case_number);
+		return $http.jsonp('http://161.149.221.137/caseinfo/getcaselist.aspx?q='+case_number+'&jsonpCallback=caseSearchTypeAheadButtonPrototype.jsonpCallback',{jsonpCallback: 'caseSearchTypeAheadButtonPrototype.jsonpCallback'});
 	}
 });
