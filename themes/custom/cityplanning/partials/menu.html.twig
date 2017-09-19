@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ base_path }}"><img src="{{ theme_base_path }}/images/logo.png" alt="ladcp logo" /> </a>
+            <a class="navbar-brand" href="{{ base_path }}"><img src="{{ theme_base_path }}/images/logo.png" alt="ladcp logo" width="120" /> </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -21,9 +21,9 @@
                     			<li class="divider"></li>
             					<li><a href="{{ base_path }}about/message-director">Message from the Director</a></li>
             					<li><a href="{{ base_path }}about/planning-team">The Planning Team</a></li>
-            					<li><a href="{{ base_path }}media/updates-newsletter">Newsletter</a></li>
+            					<li><a href="{{ base_path }}about/newsletter.php">Newsletter</a></li>
             					<li><a href="{{ base_path }}archieves/about/OrganizationCharts.pdf" target="_blank">Organization Charts</a></li>
-            					<li><a href="{{ base_path }}about/contact-us">Contact Us</a></li>
+            					<li><a href="{{ base_path }}about/staff-directory">Staff Directory</a></li>
                         	</ul>
                         </li>
                         <li class="col-md-4">
@@ -82,45 +82,36 @@
                 <li class="dropdown mega-dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects </a>
                     <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                        <li class="col-md-4">
+                    	<li class="col-md-3"></li>
+                    	
+                        <li class="col-md-3">
                         	<h3 class="dropdown-header">Applicants</h3>
                         	<ul>
                         		<li class="divider"></li>
-            					<li><a href="{{ base_path }}projects/land-use-permit-process">Land Use Permit Process</a></li>
-            					<li><a href="{{ base_path }}projects/development-service-centers">Development Services Centers</a></li>
+            					<li><a href="{{ base_path }}projects/land-use-permit-process">Land Use Process</a></li>
+            					<li><a href="{{ base_path }}projects/development-service-centers">Public Centers</a></li>
             					<li><a href="{{ base_path }}appointment/form">Schedule an Appointment</a></li>
-            					<li><a href="{{ base_path }}projects/ceqa-environmental-review">CEQA / Environmental Review</a></li>
-            					<li><a href="{{ base_path }}about/hearings">Hearings</a></li>
-            					<li><a href="{{ base_path }}about/commission-agendas-minutes">Commissions Agenda & Minutes</a></li>
-            					<li><a href="#">Forms</a></li>
-                        	</ul>
-                        </li>
-                        <li class="col-md-4">
-                        	<h3 class="dropdown-header">Services</h3>
-                        	<ul>
-                        		<li class="divider"></li>
-                                <li><a href="{{ base_path }}projects/beverage-and-entertainment">Beverage &amp; Entertainment</a></li>
-            					<li><a href="{{ base_path }}projects/expedited-process">Expedited Processing</a></li>
-								<li><a href="{{ base_path }}projects/housing">Housing</a></li>
-                                <li><a href="#">Major Projects</a></li>
-            					<li><a href="#">Map Processing</a></li>
-                                <li><a href="#">Wireless Telecommunications</a></li>
+            					<li><a href="#">Case Processing Information</a></li>
                         	</ul>
                         </li>
 
-                        <li class="col-md-4">
+                        <li class="col-md-3">
             				<h3 class="dropdown-header">Additional Resources</h3>
             				<ul>
             					<li class="divider"></li>
                                 <li><a href="http://planning.lacity.org/zone_code/Appendices/Tenant_Relocation.pdf" target="_blank" download="tenant_relocation">Tenant Relocation</a></li>
                                 <li><a href="http://planning.lacity.org/fees/" target="_blank">Fee Estimator</a></li>
-                                <li><a href="http://planning.lacity.org/pdiscaseinfo" target="_blank"></a></li>
+                                <li><a href="{{ base_path }}projects/ceqa-environmental-review">CEQA / Environmental Review</a></li>
+            					<li><a href="{{ base_path }}about/hearings">Hearings</a></li>
+            					<li><a href="{{ base_path }}about/commission-agendas-minutes/commission-agendas-minutes">Commissions Agenda & Minutes</a></li>
+            					<li><a href="#">Forms</a></li>
             				</ul>
             			</li>
+            			<li class="col-md-3"></li>
                     </ul>
                 </li>
                 <li class="dropdown mega-dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Citywide </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Policies </a>
                 	<ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
                     	<li class="col-md-4">
                     		<h3 class="dropdown-header">General Plan</h3>
@@ -138,7 +129,7 @@
                         	<ul>
                         		<li class="divider"></li>
 								<li><a href="{{ base_path }}citywide/historic-preservation">Historic Preservation</a></li>
-								<li><a href="https://planning.lacity.org/urbandesign/" target="_blank">Urban Design Studio</a></li>
+								<li><a href="http://urbandesignla.com/" target="_blank">Urban Design Studio</a></li>
                         	</ul>
                         </li>
 
@@ -147,7 +138,7 @@
                         	<h3 class="dropdown-header">Ordinances</h3>
                         	<ul>
                         		<li class="divider"></li>
-            					<li><a href="{{ base_path }}citywide/adopted-ordinances">Adopted Ordinances</a></li>
+            					<li><a href="https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=c.search&tab=ORD" target="_blank">Adopted Ordinances</a></li>
 								<li><a href="{{ base_path }}citywide/proposed-ordinances">Proposed Ordinances</a></li>
                         	</ul>
                         </li>
