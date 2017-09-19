@@ -68,7 +68,7 @@ class ImportForm extends FormBase {
             $source = $file->get('uri')->getString();
             if(file_exists($source)) {
                 if(rename($source, 'public://import/csv/notice.csv')) {
-                    $files = glob('C:\xampp\htdocs\ladcp\sites\default\files\import\*'); // get all file names
+                    $files = glob('/home/dcprootadmin/apps/drupal/htdocs/sites/default/files/import/*'); // get all file names
                     foreach($files as $file){ // iterate files
                         if(is_file($file))
                             unlink($file); // delete file
