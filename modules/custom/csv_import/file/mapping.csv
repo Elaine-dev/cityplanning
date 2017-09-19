@@ -1,0 +1,9 @@
+csv_field,db_field
+date,field_date
+primary_case,field_primary_case
+address,field_address
+council_district,field_council_district
+case_number,field_case_number
+mnd,field_mnd
+publication,field_publication
+id,field_notice_id
