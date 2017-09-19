@@ -28,19 +28,23 @@ class LaNegativedeclarationBlock extends BlockBase
     public function build () {
         // TODO: Load view with View ID notice.
         $view = \Drupal\views\Views::getView('negative_declaration');
-        //$view->setDisplay('default');
+        //$view->setDisplay('Default');
+       // $view->setItemsPerPage(10);
+       // $view->setOffset(0);
+        //$view->usePager();
         $view->execute();
         $view->serialize();
         $result = $view->result;
-        $notice = array();
+        $notices = array();
         foreach ($result as $key => $value) {
             $entity = $value->_entity;
             $title = $entity->get('title')->getValue()[0]['value'];
-            $address	= $entity->get('field_address')->getValue();
-            $date       = $entity->get('field_date')->getValue();
-            $council_district = $entity->get('field_council_district')->getValue();
+            $address = $entity->get('field_address')->getValue();
+            $date = $entity->get('field_date')->getValue();
+            $council_district = $entity->get('field_co')->getValue();
             $field_collection_id = $entity->get('field_sub_cases')->getValue();
-            $notice[$title] = array(
+
+            $notices[$title] = array(
                 'primaryCaseNumber' => $title,
                 'address' => htmlentities($address[0]['value']),
                 'date' => $date[0]['value'],
@@ -49,41 +53,50 @@ class LaNegativedeclarationBlock extends BlockBase
                     'ids' => $field_collection_id,
                 ),
             );
+
         }
-        foreach($notice as $key=>$item) {
-            foreach($item['sub_notice']['ids'] as $id) {
+
+        // TODO: Add sub cases in array
+        foreach ($notices as $key => $item) {
+            foreach ($item['sub_notice']['ids'] as $id) {
                 $data = FieldCollectionItem::load($id['value']);
-                $file_url = $data->get('field_mnd')->getString();
-                $case_number = $data->get('field_case_number')->getValue();
-                $publication = $data->get('field_publication')->getValue();
+                // Load file from fid and get file url
+                /*
+                 * $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
+                 * $file = File::load($file_id);
+                 * $file_url = ($file) ? $file->url() : '';
+                */
+                $file_id = $data->get('field_mnd')->getValue('target_id');
+                $file_url = '';
+                if (!empty($file_id)) {
+                    $file_id = $data->get('field_mnd')->getValue('target_id')[0]['target_id'];
+                    $file = File::load($file_id);
 
-                if(!empty($publication)) {
-                    $publication = $data->get('field_publication')->getValue()[0]['value'];
+                    $file_url = $file->url();
                 }
 
-                if(!empty($case_number)) {
-                    $case_number = $data->get('field_case_number')->getValue()[0]['value'];
-                }
-
-                $notice[$key]['caseNumbers'][] = array(
-                    'laTimesURL' => $publication,
-                    'caseNumber' => $case_number,
+                $notices[$key]['caseNumbers'][] = array(
+                    'laTimesURL' => $data->get('field_publication')->getValue()[0]['value'],
+                    'caseNumber' => $data->get('field_case_number')->getValue()[0]['value'],
                     'doc' => $file_url,
                 );
             }
-            unset($notice[$key]['sub_notice']);
+            unset($notices[$key]['sub_notice']);
         }
-        foreach($notice as $item){
+
+        $new_array = [];
+        foreach($notices as $item){
             $new_array[] = $item;
         }
 
-        // Create json file
+        // TODO: Create JSON file
         $file_path = 'file/notice.json';
         $fp = fopen( $file_path, 'w');
-        fwrite($fp, json_encode($new_array));
+        fwrite( $fp, json_encode($new_array));
         fclose($fp);
+
         return [
-            '#markup' => '',
+            '#markup' => ' ',
         ];
     }
 
@@ -91,21 +104,22 @@ class LaNegativedeclarationBlock extends BlockBase
      * {@inheritdoc}
      */
     protected function blockAccess(AccountInterface $account) {
-      return AccessResult::allowedIfHasPermission($account, 'access content');
+        return AccessResult::allowedIfHasPermission($account, 'access content');
     }
 
     /**
      * {@inheritdoc}
      */
     public function blockForm($form, FormStateInterface $form_state) {
-      $config = $this->getConfiguration();
-      return $form;
+        $config = $this->getConfiguration();
+
+        return $form;
     }
 
     /**
      * {@inheritdoc}
      */
     public function blockSubmit($form, FormStateInterface $form_state) {
-      $this->configuration['my_block_settings'] = $form_state->getValue('my_block_settings');
+        $this->configuration['my_block_settings'] = $form_state->getValue('my_block_settings');
     }
 }

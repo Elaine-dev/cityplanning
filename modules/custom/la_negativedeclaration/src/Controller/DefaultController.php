@@ -2,7 +2,7 @@
 namespace Drupal\la_negativedeclaration\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\field_collection\Entity\FieldCollectionItem;
+use Drupal\field_council_districtllection\Entity\FieldCollectionItem;
 use Drupal\file\Entity\File;
 
 class DefaultController extends ControllerBase
@@ -23,8 +23,8 @@ class DefaultController extends ControllerBase
             $title = $entity->get('title')->getValue()[0]['value'];
             $address    = $entity->get('field_address')->getValue();
             $date       = $entity->get('field_date')->getValue();
-            $council_district = $entity->get('field_co')->getValue();
-            $field_collection_id = $entity->get('field_sub_notice_form')->getValue();
+            $council_district = $entity->get('field_council_district')->getValue();
+            $field_council_districtllection_id = $entity->get('field_sub_cases')->getValue();
 
             $notices[$title] = array(
                 'primaryCaseNumber' => $title,
@@ -32,7 +32,7 @@ class DefaultController extends ControllerBase
                 'date' => $date[0]['value'],
                 'councilDistrict' => $council_district[0]['value'],
                 'sub_notice' => array (
-                    'ids' => $field_collection_id,
+                    'ids' => $field_council_districtllection_id,
                 ),
             );
         }
