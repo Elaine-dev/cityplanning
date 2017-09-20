@@ -61,7 +61,7 @@ class ImportController extends ControllerBase {
                 // Load node for processing its file.
                 $node = \Drupal\node\Entity\Node::load($nid);
                 // Get sub notice form
-                $sub_notice_id = $node->get('field_sub_notice_form')->getValue();
+                $sub_notice_id = $node->get('field_sub_cases')->getValue();
                 foreach($sub_notice_id as $id) {
                     /**
                      * Load field collection
