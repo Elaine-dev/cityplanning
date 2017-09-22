@@ -35,7 +35,7 @@ class ImportController extends ControllerBase {
         /**
          * Delete old records which are present in database and are inserted druing csv import
          */
-        $this->deleteNodes();
+        // $this->deleteNodes();  // Onetime add records
         // Get data from csv file
         $this->getDataFromCSV();
     }
