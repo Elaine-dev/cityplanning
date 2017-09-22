@@ -80,7 +80,7 @@ class LaNegativedeclarationBlock extends BlockBase
         // Create json file
         $file_path = 'file/notice.json';
         $fp = fopen( $file_path, 'w');
-        fwrite($fp, json_encode($new_array));
+        fwrite($fp, json_encode(@$new_array));
         fclose($fp);
         return [
             '#markup' => '',
