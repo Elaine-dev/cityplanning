@@ -90,6 +90,13 @@ case-search-js:
   js:
     'js/api/app.js': {}
 
+bi-weekly-case-filing:
+  version: VERSION
+  js:
+    js/api/app.js: {}
+    js/api/biweeklyCaseReportService.js: {}
+    js/api/biweeklyCaseReportCtrl.js: {}
+
 community-plan-areas:
   version: VERSION
   css:
