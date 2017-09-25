@@ -1,26 +1,21 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
     
-    <div ng-app="app" ng-controller="biweeklyCaseFilingCtrl">
+    <div  ng-app="app" ng-controller="biweeklyCaseReportCtrl">
     	<!-- title-bar -->
     	<div id="title-bar">
         	<div class="container">
         		<div class="row">
         			<div class="col-md-8 col-xs-12">
-        				<h1>Bi-weekly Case Filing by - {[{ title }]}</h1>
+        				<h1>{[{pageTitle}]}</h1>
         			</div>
         			
         			<!-- breadcrumb -->
-        			<div class="col-md-4 col-xs-12">
-                    	<ol class="breadcrumb pull-right">
-                          <li><a href="#">Home</a></li>
-                          <li class="active"><a href="#">About</a></li>
-                        </ol>
-                    </div>
+        			
+        			<!-- // End breadcrumb -->
         		</div>
         		
         		<div class="bottom" style="padding-top:20px;"></div>
-        		
         	</div>
     	</div><!-- //End title-bar -->
     	
@@ -29,50 +24,44 @@
     	<!-- contain -->
     	<div class="container section-padding-inner">
     		<div class="row">
-    			<!-- left bar -->
     			<div class="col-md-12 col-xs-12">
-    				<div ng-disabled="enable=='false'">
-    					<center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
-    				</div>
-    				
-    				<!-- agenda -->
+    				<!-- hearings -->
     				<div class="padding-bottom20">
     					<div class="row">
         					<div class="col-md-10 col-xs-12">
         						<label>Filter by : </label>
-            					<select name="date" ng-model="date">
+        						<select name="year" ng-model="date">
             						<option>- Year -</option>
-            						<option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d" ></option>
+            						<option ng-repeat="d in years" ng-selected="d==date" ng-value="d" ng-bind="d" ></option>
             					</select>
         					</div>
     					
-    						<div class="col-md-2 col-xs-12 pull-right content-search"><input ng-model="Date" placeholder="Search your agenda"></div>
+    						<div class="col-md-2 col-xs-12 pull-right content-search"><input ng-model="date" placeholder="Search case report"></div>
     					</div>
-    					
     				</div>
     				
     				<div class="table-responsive">
     					<table class="table">
                             <colgroup>
-                                <col class="col-md-1">
-                                <col class="col-md-1">
+                            	<col class="col-md-10">
+                              	<col class="col-md-1">
                             </colgroup>
+                            
                             <thead>
                                 <tr>
-                                    <th>Date</th>
-                                    <th>File</th>
-                                </tr>
+                    				<th>Date</th>
+                    				<th>File</th>
+                    			</tr>
                             </thead>
-                            <tr ng-repeat="agenda in getList | filter:date">
-                                <td ng-bind="agenda.date"></td>
-                                <td><span ng-if="file"><a href="{[{file}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
-                            </tr>
+                            
+                            <tr ng-repeat= "record in biweeklyCaseFiling | filter:date" >
+                    			<td>{[{ record.date }]}</td>
+                    			<td><span ng-if="record.file"><a href="{[{record.file}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
+                    		</tr>
                         </table>
     				</div>
-    				
-    			</div> <!-- //END agenda -->
-    				
-    		</div><!-- //END left bar -->
+    			</div>
+    		</div>
     	</div>
 	</div>	<!-- //End container -->
 			
