@@ -20,7 +20,7 @@ $(document).ready(function() {
     			    		"url": "http://161.149.221.142/dcpapi/meetings/document/57504"
     			    	},
     			    	{
-    			    		
+
     			    		"type": "Hearing",
     			    		"title": "South Los Angeles",
     			    		"description": "Hearing: Zoning Administration",
@@ -526,4 +526,5 @@ $(document).ready(function() {
     			    	}
     			    ]
 	});
+  $(".fc-other-month .fc-day-number").hide();
 });
