@@ -1181,6 +1181,7 @@ table.dataTable thead .sorting_asc {
 #cal-hearing { float: left; width: 20px; min-height: 10px; background: #3399ff; padding-top: 19px !important; }
 #cal-commission { float: left; width: 20px; min-height: 10px; background: #9966cc; padding-top: 19px !important;}
 #cal-public-meeting { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
+.fc-other-month .fc-day-number { display:none;}
 
 /** search case **/
 .divCaseSearch {
