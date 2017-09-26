@@ -526,4 +526,15 @@ $(document).ready(function() {
     			    	}
     			    ]
 	});
+
+  //hide & show events
+	$("#ci-hearing").on('click',function() {
+		$(".hearing").toggle();
+	})
+	$("#ci-commission").click(function() {
+		$(".commission").toggle();
+	})
+	$("#ci-public").click(function() {
+		$(".public").toggle();
+	})
 });
