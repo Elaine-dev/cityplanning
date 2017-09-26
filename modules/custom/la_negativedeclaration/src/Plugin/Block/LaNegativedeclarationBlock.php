@@ -73,6 +73,9 @@ class LaNegativedeclarationBlock extends BlockBase
             }
             unset($notice[$key]['sub_notice']);
         }
+
+        $notice = array_reverse($notice, true); // reverse the data
+
         foreach($notice as $item){
             $new_array[] = $item;
         }
