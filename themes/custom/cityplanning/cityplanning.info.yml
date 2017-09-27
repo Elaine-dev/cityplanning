@@ -22,8 +22,7 @@ regions:
   block_latest_news: 'Latest News'
   negative_declaration_notices: 'Negative Declaration Block'
   block_eir: 'EIR Block'
-  footer_first: 'Footer First'
-  footer_second: 'Footer Second'
-  footer_third: 'Footer Third'
+  newsletter: 'Newsletter'
+  footer: 'Footer'
 settings:
   footer_message: '2017 Copyright, City of Los Angeles Department of City Planning.'
