@@ -1,10 +1,10 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
-	
+
 	<!-- title-bar -->
 	{{ page.title_bar }}
 	<!-- //End title-bar -->
-	
+
 	<div class="clear"></div>
 
 	<!-- contain -->
@@ -14,14 +14,13 @@
 			<div class="col-md-12 col-xs-12">
 				<div class="row" id="media-update">
 					<div class="col-md-10 col-xs-12">
-						<h3>2017</h3>
-						<p>News for the week of: </p>
 						{{ page.content }}
 					</div>
-					
+
 					<!-- right bar -->
         			<div class="col-md-2">
         				<h4>Archive</h4>
+                {{ page.newsletter_year }}
         				<ul class="padding-left0">
         					<li><a href="#"><strong>2017</strong></a></li>
         					<li  class="bottom"></li>
@@ -29,12 +28,12 @@
         					<li  class="bottom"></li>
         				</ul>
         			</div>
-        			
+
 				</div>
 			</div><!-- //END left bar -->
 		</div>
 	</div>
 	<!-- //End container -->
-			
+
     <!-- footer section -->
     {% include directory ~ '/partials/footer.html.twig' %}
