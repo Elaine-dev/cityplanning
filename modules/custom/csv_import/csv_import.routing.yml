@@ -1,9 +1,0 @@
-csv_import.import_form:
-    path: '/admin/import'
-    defaults:
-      _form: '\Drupal\csv_import\Form\ImportForm'
-      _title: 'Import Form'
-    requirements:
-      _user_is_logged_in: 'TRUE'
-      _permission: 'access content'
-
