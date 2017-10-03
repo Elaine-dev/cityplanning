@@ -36,7 +36,7 @@
             					</select>
         					</div>
     					
-    						<div class="col-md-2 col-xs-12 pull-right content-search"><input ng-model="date" placeholder="Search case report"></div>
+    						<div class="col-md-2 col-xs-12 pull-right content-search"><input placeholder="Search bi-weekly case" ng-model="search"></div>
     					</div>
     				</div>
     				
@@ -54,12 +54,23 @@
                     			</tr>
                             </thead>
                             
-                            <tr ng-repeat= "record in biweeklyCaseFiling | filter:date" >
+                            <tr ng-repeat= "record in data  | filter:search | date | startFrom:currentPage*pageSize | limitTo:pageSize" >
                     			<td>{[{ record.date }]}</td>
                     			<td><span ng-if="record.file"><a href="{[{record.file}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
                     		</tr>
                         </table>
     				</div>
+    				
+    				<div class="bottom "></div>
+    				<br />
+    				<button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                        Previous
+                    </button>
+                    {[{currentPage+1}]}/{[{numberOfPages()}]}
+                    <button ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                        Next
+                    </button>
+    				
     			</div>
     		</div>
     	</div>
