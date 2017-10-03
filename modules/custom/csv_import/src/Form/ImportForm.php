@@ -29,9 +29,8 @@ class ImportForm extends FormBase {
             '#type' => 'select',
             '#title' => t('Select Import For:'),
             '#options' => [
-                'negativeDeclaration' => 'Negative Declaration Public Notices',
-                'biweeklyCaseFiling' => 'Bi-Weekly Case Filing',
-                'eir' => 'EIR',
+              'biweeklyCaseFiling' => 'Bi-Weekly Case Filing',
+              'negativeDeclaration' => 'Negative Declaration Public Notices',
             ],
             '#required' => TRUE,
         );
@@ -108,7 +107,7 @@ class ImportForm extends FormBase {
         if($import_type == 'negativeDeclaration') {
             $import = new ImportController();
             $import->importProperty();
-            
+
             $operations = [];
             foreach($import->final_data as $row) {
                 $operations[] = ['import_csv_file', [$row]];
@@ -123,22 +122,22 @@ class ImportForm extends FormBase {
         } else if ($import_type == 'biweeklyCaseFiling') {
             $import = new ImportBiweeklyCaseController();
             $import->importProperty();
-            
+
             $operations = [];
             foreach($import->final_data as $row) {
                 $operations[] = ['import_csv_file', [$row]];
             }
-            
+
             $batch = array(
                 'title' => t('Importing'),
                 'operations' => $operations,
                 'finished' => 'csv_import_fininshed_callback',
                 'file' => drupal_get_path('module', 'csv_import'). '/csv_import_biweekly.inc.php',
             );
-            
+
             batch_set($batch);
-        } 
-        
+        }
+
         else {
             drupal_set_message('Development is not done yet!');
         }
