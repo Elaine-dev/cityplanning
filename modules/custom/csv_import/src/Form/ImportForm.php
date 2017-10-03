@@ -71,7 +71,7 @@ class ImportForm extends FormBase {
             $source = $file->get('uri')->getString();
             if(file_exists($source)) {
                switch ($import_type) {
-                   case 'notice':
+                   case 'negativeDeclaration':
                        if(rename($source, 'public://import/csv/notice.csv')) {
                            $files = glob('C:\xampp\htdocs\ladcp\sites\default\files\import\*'); // get all file names
                            foreach($files as $file){ // iterate files
