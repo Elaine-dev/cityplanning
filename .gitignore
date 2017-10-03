@@ -25,6 +25,7 @@ tmp*
 # Excludes for installed Drupal site
 sites/*/files/
 sites/*/settings.php
+sites/*/files/config*
 
 # Exclude IDE's project directory
 nbproject
