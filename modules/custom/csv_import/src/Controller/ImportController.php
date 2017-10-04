@@ -142,7 +142,7 @@ class ImportController extends ControllerBase {
             $ids[$item['field_primary_case']][] = $item['field_notice_id'];
             // Generating final grouped set of array.
             $notice[$item['field_primary_case']] = array(
-                'field_date' => $this->formatDate($item['field_date']),
+                'field_date' => $item['field_date'],
                 'field_primary_case' => $item['field_primary_case'],
                 'field_address' => $item['field_address'],
                 'field_council_district' => $item['field_council_district'],
