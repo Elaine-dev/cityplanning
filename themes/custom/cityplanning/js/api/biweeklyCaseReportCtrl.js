@@ -8,7 +8,7 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
 	
 	// display Bi-Weekly Case Filing by Certified Neighborhood Council
 	biweeklyCaseReportService.getBiweeklyCaseFiling(id).then (function (response) {
-		$scope.biweeklyCaseFiling = response.data;
+		$scope.data = response.data;
 		if (id == 163) {
 			$scope.pageTitle = 'Bi-Weekly Case Filing by Certified Neighborhood Council';	//163
 		} else if (id == 173) {
@@ -16,5 +16,6 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
 		} else {
 			$scope.pageTitle = 'Bi-Weekly Case Filing by Community Plan Area';				//183
 		}
+		console.log($scope);
 	});
 });
