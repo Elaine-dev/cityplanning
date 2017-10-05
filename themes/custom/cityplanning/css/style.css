@@ -38,6 +38,7 @@ q:before, q:after { content: ''; content: none; }
 .pad0 { padding: 0 0 10px 0 !important; }
 .padding-0 { padding: 0 0 10px 0 !important; }
 .padding-top13{padding-top: 13px;}
+.paddingtop10{padding-top: 10px;}
 .padding-top10{padding-top: 20px;}
 .padding-top90{padding-top: 90px;}
 .padding-bottom15{ padding-bottom: 15px !important;}

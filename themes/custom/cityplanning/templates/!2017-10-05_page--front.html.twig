@@ -5,13 +5,6 @@
       .hearing { color: #3399ff !important; }
       .commission {color: #9966cc !important; }
       .public {color: #70a300 !important; }
-
-      /** intagram image **/
-        .carousel-caption p {padding: 10px;}
-        #instagram-txt {font-size: 0.8em;}
-        .bcolor-1{background: #D4E157; height: 350px;}
-        .bcolor-2{background: #FFEE58; height: 350px;}
-        .bcolor-3{background: #FFCA28; height: 350px;}
     </style>
 
 	<div class="clear"></div>
@@ -19,63 +12,90 @@
 
 
 	<!-- banner -->
-  <div class="container">
-    	<div class="col-md-4 bcolor-1">
-    		<div class="row">
-    			<center>
-    				<a href="#"><img class="img-responsive paddingtop10" src="{{ theme_base_path }}/images/features/My-Property-Icon-128-x-128.png" alt="Fee-Calculator"  /></a>
-    				<h3>MY PROPERTY</h3>
-				</center>
-    		</div>
-    		<div class="row">
-    			<center>
-    			<form class="form" style="width: 80%;">
-              		<div class="form-group">
-              			<label for="house-number" class="sr-only">House number</label>
-              			<input type="text" id="house-number"  class="form-control" placeholder="House number">
-              		</div>
+    <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel" data-pause="hover" data-interval="5000" >
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+            <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+            <li data-target="#bootstrap-touch-slider" data-slide-to="3"></li>
+        </ol>
 
-              		<div class="form-group">
-              			<label for="street-name" class="sr-only">Street name</label>
-              			<input type="text" id="street-name" class="form-control" placeholder="Street name">
-              		</div>
-              		<div class="form-group">
-              			<button type="submit" class="btn btn-primary" id="search-zoning" style="width:100%">Lookup My Property</button>
-              		</div>
-              	</form>
-              	</center>
-    		</div>
-    	</div>
+        <!-- Wrapper For Slides -->
+        <div class="carousel-inner" role="listbox">
 
-    	<div class="col-md-4">
-    		<img class="img-responsive" src="https://scontent-lax3-1.cdninstagram.com/t51.2885-15/e35/22277571_962504990565165_416886246057443328_n.jpg">
+            <!-- 1st Slide -->
+            <div class="item active">
+                <!-- Slide Background -->
+                <img src="{{ theme_base_path }}/images/slider/image-11.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                <div class="bs-slider-overlay"></div>
 
-    		<div class="carousel-caption" style="background:#333; left: 10px; text-align: left !important; padding-top: 0px; padding-bottom:0px; bottom: 0px; right: 4%; height: 95px; margin-left: 5px; opacity: 0.7; filter: alpha(opacity=70); ">
-    			<p id="instagram-txt">
-					<a href="https://www.instagram.com/planning4la/">planning4la</a> We just hit 500 followers on #Instagram thanks to all of YOU! 👍🏼 Please continue to spread the word about us to anyone interested in Planning news and updates.
-					Together, we're <a href="https://www.instagram.com/explore/tags/planning4la/">#Planning4LA!</a>
-				</p>
-    		</div>
-    	</div>
+                <!-- Slide Text Layer -->
+                <div class="slide-text slide_style_left ">
+                    <h1 data-animation="animated zoomInRight">Housing Opportunities Within Reach</h1>
+                    <p data-animation="animated fadeInLeft">The City's growth strategy has been one of largely infill development, focused within commercial,
+                    multi-family and some industrial areas, specifically around major corridors and transit stations.</p>
+                </div>
+            </div>
+            <!-- End of Slide   -->
 
-    	<div class="col-md-4 bcolor-3">
-    		<div class="row">
-    			<center>
-    				<a href="{{ base_path }}projects/development-service-centers"><img class="img-responsive paddingtop10" src="{{ theme_base_path }}/images/features/Appointments-Locations-Icon-128-x-128.png" alt="appointments and locations" /></a>
-    				<h3>GET INVOLVED</h3>
-				</center>
-    		</div>
-    		<div class="row">
-    			<center>
-    			<h4><a href="">General Plan</a></h4>
-    			<h4><a href="">Communnity Plan</a></h4>
-    			<h4><a href="">Commission Meetings + Hearings</a></h4>
-    			</center>
-    		</div>
-    	</div>
+            <!-- 2nd Slide -->
+            <div class="item">
+                <!-- Slide Background -->
+                <img src="{{ theme_base_path }}/images/slider/image-22.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                <div class="bs-slider-overlay"></div>
 
-    </div>
-  <!-- //End banner -->
+                <!-- Slide Text Layer -->
+                <div class="slide-text slide_style_center ">
+                    <h1 data-animation="animated flipInX">New Transit Oriented Development Incentives</h1>
+                    <p data-animation="animated lightSpeedIn">The TOC program establishes a tier-based system with varying development bonuses and incentives based on a project's distance
+                    from different types of transit.</p>
+                </div>
+            </div>
+            <!-- End of Slide -->
+
+            <!-- 3rd Slide -->
+            <div class="item">
+                <!-- Slide Background -->
+                <img src="{{ theme_base_path }}/images/slider/image-33.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                <div class="bs-slider-overlay"></div>
+
+                <!-- Slide Text Layer -->
+                <div class="slide-text slide_style_left ">
+                    <h1 data-animation="animated zoomInLeft">Rising to the Challenge</h1>
+                    <p data-animation="animated fadeInRight">Land use policy plays an important role in addressing issues related to housing.</p>
+                </div>
+            </div>
+            <!-- End of Slide -->
+
+            <!-- 4th Slide -->
+            <div class="item">
+                <!-- Slide Background -->
+                <img src="{{ theme_base_path }}/images/slider/image-44.jpg" alt="Bootstrap Touch Slider"  class="slide-image"/>
+                <div class="bs-slider-overlay"></div>
+
+                <!-- Slide Text Layer -->
+                <div class="slide-text slide_style_right ">
+                    <h1 data-animation="animated zoomInLeft">Legislative Update</h1>
+                    <p data-animation="animated fadeInRight">Council adoption of BMO/BHO Revisions.</p>
+                </div>
+            </div>
+            <!-- End of Slide -->
+        </div><!-- End of Wrapper For Slides -->
+
+        <!-- Left Control -->
+        <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <!-- Right Control -->
+        <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div> <!-- End  bootstrap-touch-slider Slider -->    <!-- //End banner -->
 
 	<div class="clear"></div>
 
