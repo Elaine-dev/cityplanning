@@ -28,12 +28,20 @@
     				<!-- hearings -->
     				<div class="padding-bottom20">
     					<div class="row">
+    						<div class="col-md-12">
+								<div ng-disabled="enable=='false'">
+    	                        	<center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+    	                    	</div>
+    						</div>
+    					</div>
+    					
+    					<div class="row">
         					<div class="col-md-10 col-xs-12">
         						<label>Filter by : </label>
-        						<select name="year" ng-model="date">
-            						<option>- Year -</option>
-            						<option ng-repeat="d in years" ng-selected="d==date" ng-value="d" ng-bind="d" ></option>
-            					</select>
+        						<select name="mySelect" id="mySelect" 
+                                    	ng-options="option for option in year.availableOptions track by option"
+                                        ng-model="year.selectedOption">
+                                </select>
         					</div>
     					
     						<div class="col-md-2 col-xs-12 pull-right content-search"><input placeholder="Search bi-weekly case" ng-model="search"></div>
@@ -54,7 +62,7 @@
                     			</tr>
                             </thead>
                             
-                            <tr ng-repeat= "record in data  | filter:search | date | startFrom:currentPage*pageSize | limitTo:pageSize" >
+                            <tr ng-repeat= "record in data  | filter: search | startFrom:currentPage*pageSize | limitTo:pageSize" >
                     			<td>{[{ record.date }]}</td>
                     			<td><span ng-if="record.file"><a href="{[{record.file}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
                     		</tr>
