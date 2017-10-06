@@ -1,5 +1,5 @@
 global-styling:
-  version: VERSION
+  version: 8.4
   css:
     base:
       css/bootstrap.min.css: {}
@@ -30,7 +30,7 @@ angular-js:
     https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js: {}
 
 front-page:
-  version: VERSION
+  version: 8.4
   css:
     component:
       css/banner-bootsrap.css: {}
