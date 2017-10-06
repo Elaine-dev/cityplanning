@@ -33,7 +33,7 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
 		        }, 2000);
 		
 		        $scope.currentPage = 0;
-		        $scope.pageSize = 10;
+		        $scope.pageSize = 20;
 		        self.data = [];
 		
 		        $scope.getData = function () {
