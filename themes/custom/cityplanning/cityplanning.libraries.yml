@@ -38,6 +38,8 @@ front-page:
     js/modernizr.js: {}
     # animate number
     js/jquery.inview.js: {}
+    js/api/app.js: {}
+    js/api/homeCtrl.js: {}
 
 about-page:
   version: VERSION
