@@ -10,8 +10,9 @@
         .carousel-caption p {padding: 5px 5px 0 5px; margin-bottom: 5px !important;}
         #instagram-txt {font-size: 0.8em;}
         .bcolor-1{background: #D4E157; height: 350px;}
-        .bcolor-2{background: #FFEE58; height: 350px;}
+        .bcolor-2{background: #fff; height: 350px;}
         .bcolor-3{background: #FFCA28; height: 350px;}
+        .insta-image {position: relative; overflow:hidden;}
     </style>
 
 	<div class="clear"></div>
@@ -45,15 +46,15 @@
     		</div>
     	</div>
 
-    	<div class="col-md-4">
-        <div ng-app="app" ng-controller="homepageCtrl">
-          <img class="img-responsive" src="{[{instaFeeds[0].image_link}]}">
-
-          <div class="carousel-caption" style="background-color:#333; left: 10px; text-align: left !important; padding-top: 0px; padding-bottom:0px; bottom: 0px; right: 4%;  margin-left: 5px; opacity: 0.7; filter: alpha(opacity=70); ">
-            <span id="instagram-txt" ng-bind-html="instaFeeds[0].message"></span>
-          </div>
-        </div>
-    	</div>
+    	<div class="col-md-4 insta-image bcolor-2">
+			<div ng-app="app" ng-controller="homepageCtrl" id="insta-img">
+    			<img class="img img-responsive" src="{[{instaFeeds[0].image_link}]}">
+        		
+        		<div class="carousel-caption" style="background-color:#333; left: 10px; text-align: left !important; padding-top: 0px; padding-bottom:0px; bottom: 0px; right: 4%;  margin-left: 5px; opacity: 0.7; filter: alpha(opacity=70);  ">
+					<span id="instagram-txt" ng-bind-html="instaFeeds[0].message"></span>
+        		</div>
+        	</div>   
+	 	</div>
 
     	<div class="col-md-4 bcolor-3">
     		<div class="row">
