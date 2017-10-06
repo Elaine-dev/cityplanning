@@ -1,8 +1,7 @@
 app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportService, $filter, $timeout, $http, $location) {
-	var id = $location.absUrl().split('/')[6];		// get cpc from url in the form of query parameter.
+	var id = $location.absUrl().split('/')[5];		// get id of case filing from query sting.
 	id = (id) ? id : 163;
-	console.log($location.absUrl().split('/'));
-
+	
 	// generate years list
 	var d = new Date();
 	var current_year = d.getFullYear();
