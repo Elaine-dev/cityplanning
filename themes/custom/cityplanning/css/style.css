@@ -12,7 +12,8 @@ body {
     font-weight: 500 !important;
     letter-spacing: 0.5px !important;
     overflow-x: hidden;
-    padding-top: 70px !important;
+    /* padding-top: 70px !important; */
+    padding-top: 120px !important;
 }
 a { color: #30c2a5 !important; text-decoration: none;}
 table {
