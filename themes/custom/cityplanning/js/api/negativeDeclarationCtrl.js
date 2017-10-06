@@ -81,8 +81,6 @@
 			return function(data, start){
 				start = 0 + start;
 				if(typeof data != 'undefined' || data != null) {
-				    console.log(start);
-				    console.log(data);
 				    return data.slice(start);
                 }
 			}
