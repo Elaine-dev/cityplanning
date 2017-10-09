@@ -9,7 +9,7 @@
        .controller('negativeDeclarationCtrl', function ($scope, $timeout, $http, filterFilter, noticeService) {
            $scope.enable = true;
            $scope.loadingText = "Loading ...";
-           $scope.pageSize = 5;
+           $scope.pageSize = 20;
            $scope.currentPage = 1;
 
            // generate year list.
@@ -132,10 +132,10 @@
                 }
 			}
 		})
-        .service('noticeService', function($http){
+        .service('noticeService', function($http) {
             this.getNotice = function(date, page, number) {
-                console.log('rakesh-'+siteurl + '/rest/api/notice/'+date+'/'+page+'/'+number);
-                return $http.get(siteurl + '/rest/api/notice/'+date+'/'+page+'/'+number, {cache: false});
+                // console.log('rakesh-'+siteurl + '/rest/api/negativedeclaration/'+date+'/'+page+'/'+number);
+                return $http.get(siteurl + '/rest/api/negativedeclaration/'+date+'/'+page+'/'+number, {cache: false});
             }
         });
 }());
