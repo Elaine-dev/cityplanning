@@ -134,7 +134,7 @@
 		})
         .service('noticeService', function($http) {
             this.getNotice = function(date, page, number) {
-                // console.log('rakesh-'+siteurl + '/rest/api/negativedeclaration/'+date+'/'+page+'/'+number);
+                // console.log(siteurl + '/rest/api/negativedeclaration/'+date+'/'+page+'/'+number, {cache: false});
                 return $http.get(siteurl + '/rest/api/negativedeclaration/'+date+'/'+page+'/'+number, {cache: false});
             }
         });
