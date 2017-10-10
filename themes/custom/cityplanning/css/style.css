@@ -1344,7 +1344,7 @@ table.dataTable thead .sorting_asc {
 }
 
 @media (max-width: 1024px) {
-	.navbar-brand{padding-left: 5px !important;}
+	.navbar-brand{padding-left: 1px !important;}
     .navbar-header {
       float: none;
       height: 40px;
