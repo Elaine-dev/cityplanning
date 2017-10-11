@@ -1329,6 +1329,7 @@ table.dataTable thead .sorting_asc {
 
 @media only screen and (min-width: 768px) {
 	.gpu-height{height: 243px;}
+	.gpu-height2{height: 240px;}
   	.cd-top {right: 20px;bottom: 20px;}
   	#case-search input[type='text'] {width:600px !important; height:37px !important;}
 }
