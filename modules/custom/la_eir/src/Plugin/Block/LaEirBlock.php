@@ -62,15 +62,15 @@ class LaEirBlock extends BlockBase
             $notice_prepration = '';
             foreach($item as $row) {
                 /**
-                 * id:14 - notice of preparation
-                 * id:15 - draft
-                 * id:16 - final
+                 * id:133 - notice of preparation
+                 * id:143 - draft
+                 * id:153 - final
                  */
-                if($row['eir_type'] == 15) {
+                if($row['eir_type'] == 143) {
                     $draft = $row['path'];
-                } elseif($row['eir_type'] == 16) {
+                } elseif($row['eir_type'] == 153) {
                     $final = $row['path'];
-                } elseif($row['eir_type'] == 14) {
+                } elseif($row['eir_type'] == 133) {
                     $notice_prepration = $row['path'];
                 }
 
