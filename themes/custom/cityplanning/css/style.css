@@ -1271,10 +1271,7 @@ table.dataTable thead .sorting_asc {
 .form-item-week-day-preference-anyday{padding-left: 20px;}
 #edit-week-day-preference{padding-left: 20px;}
 .visually-hidden{color: #c9e1bd !important; text-align: center !important; text-transform: capitalize !important; visibility: hidden;}
-#eirs .pagination>.active>a {
-	background-color: #eee !important;
-	border-color: #eee !important;
-}
+#eirs .pagination>.active>a {background-color: #eee !important; border-color: #eee !important;}
 
 /***  B&E Request Form ***/
 #block-cityplanning-content .preap-textbox { margin-left: 10%; }
