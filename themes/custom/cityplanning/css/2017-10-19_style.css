@@ -1276,23 +1276,6 @@ table.dataTable thead .sorting_asc {
 	border-color: #eee !important;
 }
 
-/***  B&E Request Form ***/
-#block-cityplanning-content .preap-textbox { margin-left: 10%; }
-#block-cityplanning-content .preap-textbox-contact-name { margin-left: 11.5%; }
-#block-cityplanning-content .preap-textbox-contact-name { margin-left: 11.5%; }
-#block-cityplanning-content .preap-email { margin-left: 5.39%; }
-#block-cityplanning-content .preap-comments { width: 100%; }
-
-#block-cityplanning-content legend { padding-top: 15px !important; }
-#block-cityplanning-content .js-form-item { padding-bottom: 30px !important; }
-#block-cityplanning-content .preap-submit { width: 10%; padding: 5px; }
-
-#block-cityplanning-content .clearance-textbox { margin-left: 20.2%; }
-#block-cityplanning-content #project-address { margin-left: 15%; }
-#block-cityplanning-content #building-permit-no { margin-left: 3.5%; }
-#block-cityplanning-content #edit-abc-agent { margin-left: 9.5%; }
-#block-cityplanning-content #edit-contact-name{ margin-left: 16.5%; }
-
 /* ********************************************** */
 /* **************** Media Query **************** */
 /* ******************************************** */
