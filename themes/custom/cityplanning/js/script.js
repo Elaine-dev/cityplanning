@@ -243,6 +243,23 @@ jQuery(document).ready(function(){
 			var callAPI = "http://zimas.lacity.org/?streetname="+streetName+"&housenum="+address;
 			window.open(callAPI, '_blank');
 		});
+
+    /** redirect to selected requested form **/
+	$("#submit_request_type").on('change', function() {
+		var selected, redUrl;
+		selected = $('#submit_request_type :selected').text();
+
+		if ( selected == 'Pre-Application' || selected == 'Clearance / Effectuation' ) {
+			if (selected == 'Pre-Application'){
+				redUrl = 'request-form/pre-application-request-form';
+			}
+			if (selected == 'Clearance / Effectuation'){
+				redUrl = 'request-form/clearance-request-form';
+			}
+			window.open(redUrl, '_parent');
+		}
+
+	});
 });
 
 
