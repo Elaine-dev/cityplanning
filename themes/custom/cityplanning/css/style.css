@@ -526,17 +526,19 @@ address a:hover {color: #ff9c00 !important; text-decoration: underline !importan
 }
 
 /** image roll over  **/
+/*
 #change img {
-  	filter: gray !important; /* IE6-9 */
-  	-webkit-filter: grayscale(1) !important; /* Google Chrome, Safari 6+ & Opera 15+ */
+  	filter: gray !important;
+  	-webkit-filter: grayscale(1) !important; 
 	margin-bottom:20px !important;
 }
 
 #change img:hover {
- 	filter: none !important; /* IE6-9 */
-  	-webkit-filter: grayscale(0) !important; /* Google Chrome, Safari 6+ & Opera 15+ */
+ 	filter: none !important;
+  	-webkit-filter: grayscale(0) !important; 
 }
 #change div:hover{ opacity:5 !important; }
+*/
 
 /** Planning Team ***/
 .team-heading{ color:rgb(242,164,51) !important; }
