@@ -1,0 +1,46 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	<!-- Slider-->
+	{% include directory ~ '/partials/slider.html.twig' %}
+	
+	<div class="container">
+		{# feature section 1  #}
+		{% include directory ~ '/partials/featured_section1.html.twig' %}
+		<!-- //END feature section 1 -->
+   		
+		{# Feature section -2  #}
+		{% include directory ~ '/partials/featured_section2.html.twig' %}
+		<!-- //End Feature section -2 -->
+    </div>
+    
+   	{# Infograph  #}
+    <div class="container-fluid info-bg-color">
+		<div class="row">
+			<div class="col-md-12"><center><img class="img-responsive" src="{{ theme_base_path }}/images/infographic.jpg" alt="info stat" /></center></div>
+		</div>
+    </div>{# //End Infograph #}
+    
+    {# Promotion  #}
+    <div class="container-fluid paddingtop25 padding-bottom60" id="promotion">
+    	<div class="row">
+			<div class="col-md-12 text-center"><h1>Our City. Our Future. Our Plan</h1></div>
+		</div>
+    	<div class="row promotion-bg">
+			<div class="col-md-12" style="padding-top: 100px;"><center><img  class="img-responsive" src="{{ theme_base_path }}/images/OurLA2040-box.png" /></center></div>
+		</div>
+    </div>
+
+
+	{# Calendar #}
+	{% include directory ~ '/partials/calendar.html.twig' %}	
+	{# //End Calendar #}
+
+	
+  	{{ attach_library ('cityplanning/front-page') }}
+  	{{ attach_library ('cityplanning/calendar-page') }}
+  	{{ attach_library ('cityplanning/angular-js') }}
+	
+	{# Footer section #}
+	{% include directory ~ '/partials/footer.html.twig' %}
+	{# //End Footer section #}

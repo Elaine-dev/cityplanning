@@ -1,0 +1,28 @@
+# Date: Oct 26, 2017
+name: LA City Planning 5.0
+type: theme
+description: 'Build using bootstrap framework. The design is clean and sleek.'
+core: 8.x
+libraries:
+  - cityplanning/global-styling
+  - cityplanning/fonts
+
+libraries-override:
+  system/base: false
+
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  title_bar: 'Title Bar Block'
+  breadcrumb: Breadcrumb
+  slider: 'Slider'
+  content: Content
+  block_upcoming_meetings: 'Upcoming Meetings'
+  block_upcoming_hearings: 'Upcoming Hearings'
+  block_latest_news: 'Latest News'
+  negative_declaration_notices: 'Negative Declaration Block'
+  block_eir: 'EIR Block'
+  newsletter_year: 'Newsletter - Archive'
+  footer: 'Footer'
+settings:
+  footer_message: '2017 Copyright, City of Los Angeles Department of City Planning.'

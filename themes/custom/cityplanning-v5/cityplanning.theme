@@ -1,0 +1,67 @@
+<?php
+use Drupal\node\Entity\Node;
+
+function cityplanning_theme_rebuild () {
+    drupal_static_reset('theme_get_registry');
+    cache_clear_all('theme_registry', 'cache', TRUE);
+}
+
+/**
+ * Implement hool_preprocess_html().
+ * @param $variables
+ */
+function cityplanning_preprocess_html ( &$variables ) {
+    global $base_url;
+    $variables['base_url'] = $base_url;
+}
+
+/**
+ * Implement hook_preprocess().
+ * @param array $variables
+ */
+function cityplanning_preprocess_page ( &$variables ) {
+    global $base_url;
+	$variables['footer_message'] = theme_get_setting ( 'footer_message', 'ladcp' );
+	$variables['images_path'] = \Drupal::theme ()->getActiveTheme ()->getPath () . '/image/';
+	$variables['base_path'] = base_path ();
+	$variables['theme_base_path'] = $base_url .'/'. \Drupal::theme ()->getActiveTheme ()->getPath ();
+  	$variables['route_name'] = \Drupal::routeMatch()->getRouteName();
+}
+
+/*
+function cityplanning_preprocess_views_view( &$variables ) {
+    $view = $variables['view'];
+    @$variables['params'] = $view->args[0]; 
+}
+*/
+
+function cityplanning_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
+    // Add content type suggestions.
+    if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
+        array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+    }
+}
+
+// template suggestion for container part
+function cityplanning_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
+    $suggestions[] = 'container' . '__' . 'custom';
+}
+
+function cityplanning_preprocess_node( &$variables ) {
+    //kint($variables);
+    $node = $variables['node'];
+    $data = [];
+    if($node->bundle() == 'eir_detail') {
+        $eir_id = $node->get('field_select_eir')->getString();
+        // Load parent nid and get respective field value.
+        $eir_node = Node::load($eir_id);
+        // Get field values.
+        $data['case_number'] = $eir_node->get('field_case_number')->getString();
+        $data['house_number'] = $eir_node->get('field_state_clearinghouse_number')->getString();
+        $data['community_plan_areas'] = $eir_node->get('field_community_plan_areas')->getString();
+        $data['council_district'] = $eir_node->get('field_council_district')->getString();
+        $data['project_location'] = $eir_node->get('field_project_location')->getString();
+
+        $variables['node_data'] = $data;
+    }
+}

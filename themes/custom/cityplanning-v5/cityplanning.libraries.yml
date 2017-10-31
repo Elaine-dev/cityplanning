@@ -1,0 +1,51 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/bootstrap.min.css: {}
+      css/normalize.css: {}
+      css/style.css: {}
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: {}
+  js:
+    https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js: {}
+    https://code.jquery.com/ui/1.12.1/jquery-ui.min.js: {}
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js: {}
+    js/ie-emulation-ie10-viewport.js: {}
+    js/script.js: {}
+    js/main.js: {}
+    https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js: {}
+    # los angeles top bar
+    https://globalnav.lacity.org/global_nav_2.0.js: {}
+
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300,700|Open+Sans:300italic,400,300': { type: external, minified: true }
+
+angular-js:
+  js:
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js: {}
+    https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js: {}
+
+front-page:
+  version: VERSION
+  css:
+    component:
+      css/banner-bootsrap.css: {}
+  js:
+    js/banner-bootstrap.js {}
+    
+calendar-page:
+  version: VERSION
+  css:
+    theme:
+      css/calendar/fullcalendar.css: {}
+      css/calendar/fullcalendar.print.min.css: {}
+  js:
+    js/calendar/moment.min.js: {}
+    js/calendar/fullcalendar.js: {}
+    js/calendar/dcp-calendar.js: {}
