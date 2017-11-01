@@ -29,9 +29,9 @@ function cpv3_preprocess_page ( &$variables ) {
 }
 
 /*
-function cityplanning_preprocess_views_view( &$variables ) {
+function cpv3_preprocess_views_view( &$variables ) {
     $view = $variables['view'];
-    @$variables['params'] = $view->args[0];
+    @$variables['params'] = $view->args[0]; 
 }
 */
 
