@@ -4,8 +4,8 @@ type: theme
 description: 'Build using bootstrap framework. The design is clean and sleek.'
 core: 8.x
 libraries:
-  - cityplanning/global-styling
-  - cityplanning/fonts
+  - cp-v3/global-styling
+  - cp-v3/fonts
 
 libraries-override:
   system/base: false
