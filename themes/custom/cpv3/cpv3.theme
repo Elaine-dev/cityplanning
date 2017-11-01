@@ -1,7 +1,7 @@
 <?php
 use Drupal\node\Entity\Node;
 
-function cp-v3_theme_rebuild () {
+function cpv3_theme_rebuild () {
     drupal_static_reset('theme_get_registry');
     cache_clear_all('theme_registry', 'cache', TRUE);
 }
@@ -10,7 +10,7 @@ function cp-v3_theme_rebuild () {
  * Implement hool_preprocess_html().
  * @param $variables
  */
-function cp-v3_preprocess_html ( &$variables ) {
+function cpv3_preprocess_html ( &$variables ) {
     global $base_url;
     $variables['base_url'] = $base_url;
 }
@@ -19,7 +19,7 @@ function cp-v3_preprocess_html ( &$variables ) {
  * Implement hook_preprocess().
  * @param array $variables
  */
-function cp-v3_preprocess_page ( &$variables ) {
+function cpv3_preprocess_page ( &$variables ) {
     global $base_url;
 	$variables['footer_message'] = theme_get_setting ( 'footer_message', 'ladcp' );
 	$variables['images_path'] = \Drupal::theme ()->getActiveTheme ()->getPath () . '/image/';
@@ -35,7 +35,7 @@ function cityplanning_preprocess_views_view( &$variables ) {
 }
 */
 
-function cp-v3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
+function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
     // Add content type suggestions.
     if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
         array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
@@ -43,11 +43,11 @@ function cp-v3_theme_suggestions_page_alter ( array &$suggestions, array $variab
 }
 
 // template suggestion for container part
-function cp-v3_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
+function cpv3_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
     $suggestions[] = 'container' . '__' . 'custom';
 }
 
-function cp-v3_preprocess_node( &$variables ) {
+function cpv3_preprocess_node( &$variables ) {
     //kint($variables);
     $node = $variables['node'];
     $data = [];

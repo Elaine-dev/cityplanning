@@ -1,11 +1,11 @@
 # Date: Oct 26, 2017
-name: LA City Planning 3.0
+name: City Planning 3.0
 type: theme
 description: 'Build using bootstrap framework. The design is clean and sleek.'
 core: 8.x
 libraries:
-  - cp-v3/global-styling
-  - cp-v3/fonts
+  - cpv3/global-styling
+  - cpv3/fonts
 
 libraries-override:
   system/base: false
