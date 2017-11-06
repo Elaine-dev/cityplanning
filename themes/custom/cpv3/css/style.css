@@ -181,7 +181,7 @@ q:before, q:after { content: ''; content: none; }
 	background-size: cover;
 	min-height: 425px;
 	color:#fff;
-	font-size: 12px !important;
+	font-size: 13px;
 	font-weight: 300;
 	background-color: #0b2c4b;
 	border-top:10px solid #a4a5a9;

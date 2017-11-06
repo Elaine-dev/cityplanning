@@ -3,24 +3,24 @@
 
 	<!-- Slider-->
 	{% include directory ~ '/partials/slider.html.twig' %}
-	
+
 	<div class="container">
 		{# feature section 1  #}
 		{% include directory ~ '/partials/featured_section1.html.twig' %}
 		<!-- //END feature section 1 -->
-   		
+
 		{# Feature section -2  #}
 		{% include directory ~ '/partials/featured_section2.html.twig' %}
 		<!-- //End Feature section -2 -->
     </div>
-    
+
    	{# Infograph  #}
     <div class="container-fluid info-bg-color">
 		<div class="row">
 			<div class="col-md-12"><center><img class="img-responsive" src="{{ theme_base_path }}/images/infographic.jpg" alt="info stat" /></center></div>
 		</div>
     </div>{# //End Infograph #}
-    
+
     {# Promotion  #}
     <div class="container-fluid padding-top60 padding-bottom60" id="promotion">
     	<div class="row padding-bottom15">
@@ -33,9 +33,9 @@
 
 
 	{# Calendar #}
-	{% include directory ~ '/partials/calendar.html.twig' %}	
+	{% include directory ~ '/partials/calendar.html.twig' %}
 	{# //End Calendar #}
-	
+
 	{# stay connected #}
 	<div id="say-connected">
 		<div class="container">
@@ -57,9 +57,9 @@
 		          			<label for="email" class="sr-only">Email</label>
 		          			<input type="text" id="email"  class="form-control" placeholder="Email">
 	          			</div>
-	
+
 		          		<div class="form-group">
-	          				<button type="submit" class="btn" id="btn-newsletter" style="width:100%;">SUMBIT</button>
+	          				<button type="submit" class="btn" id="btn-newsletter" style="width:100%;">SUBMIT</button>
 		          		</div>
 	          	</form>
 				</div>
@@ -67,11 +67,11 @@
 		</div>
 	</div> {# //End #say-connected #}
 
-	
+
   	{{ attach_library ('cpv3/front-page') }}
   	{{ attach_library ('cpv3/calendar-page') }}
   	{{ attach_library ('cpv3/angular-js') }}
-	
+
 	{# Footer section #}
 	{% include directory ~ '/partials/footer.html.twig' %}
 	{# //End Footer section #}
