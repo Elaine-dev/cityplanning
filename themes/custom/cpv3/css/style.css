@@ -40,6 +40,7 @@ q:before, q:after { content: ''; content: none; }
 .paddingtop10{padding-top: 10px;}
 .paddingtop15{padding-top: 15px;}
 .paddingtop25{padding-top: 25px;}
+.padding-top40{padding-top: 40px;}
 .paddingtop45{padding-top: 45px;}
 .padding-top50{padding-top: 50px !important;}
 .padding-top60{padding-top: 60px;}
@@ -123,7 +124,7 @@ q:before, q:after { content: ''; content: none; }
 
 #feature-block-2{background: #bfe7e9;}
 #feature-block-2 a{color: #4d4e4e !important;}
-#feature-block-2 p{line-height: 1;}
+#feature-block-2 p{line-height: 1.25; font-weight: bold;}
 
 #feature-block-3{background: #e2e3e4;}
 .btn-z-search{color: #fff; background-color: #70808c; border-color: #60717e;}
