@@ -155,6 +155,13 @@ q:before, q:after { content: ''; content: none; }
 
 /** calendar **/
 .fc-center h2{color:#9ea3a9 !important; font-size:28px !important;}
+#cal-hearing { float: left; width: 20px; min-height: 10px; background: #525f7c; padding-top: 19px !important; }
+#cal-commission { float: left; width: 20px; min-height: 10px; background: #3474e0; padding-top: 19px !important;}
+#cal-public-meeting { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
+#calendar { max-width: 80% !important; margin: 0 auto;	}
+.hearing { color: #525f7c !important; }
+.commission {color: #3474e0 !important; }
+.public {color: #70a300 !important; }
 
 #say-connected {background-color: #0077bd; padding: 12px 0; color:#fff;}
 #say-connected a {color: #0077bd !important;}
