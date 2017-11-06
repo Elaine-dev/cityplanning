@@ -1,6 +1,6 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
-	
+
 	<!-- page-banner -->
 	<div class="container-fluid">
 		<div class="row">
@@ -10,24 +10,24 @@
 		</div>
 	</div>
 	<!-- //End page-banner -->
-	
+
 	<!-- contain -->
 	<div class="container" id="main-container">
 		<!-- page title  -->
 		{{ page.title_bar }}
 		<!-- //End page title  -->
-		
+
 		<!-- Main content -->
 		<div class="row">
-			<!--  Left-side bar  --> 
+			<!--  Left-side bar  -->
 			<div class="col-md-9">
 				<div class="row padding-left0">
-					<div class="col-md-12">
+					<div class="col-md-12 padding-left0">
 					{{ page.content }}
 					</div>
 				</div>
 			</div><!-- //End Left-side bar -->
-			
+
 			<!-- Right-side bar -->
 			<div class="col-md-3 sidebar-menu">
 				<div class="top-bar"></div>
@@ -50,10 +50,10 @@
 					<li class="line"></li>
 				</ul>
 			</div><!-- //End Right-side bar -->
-			
+
 		</div>
 	</div>	<!-- //End container -->
 
-			
+
     <!-- footer section -->
     {% include directory ~ '/partials/footer.html.twig' %}

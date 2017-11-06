@@ -215,7 +215,7 @@ q:before, q:after { content: ''; content: none; }
 .sidebar-menu a{color:#009fe3 !important;}
 .sidebar-menu .active{color: #3a5a99 !important; font-weight: bold;}
 .sidebar-menu ul li{text-align: center; padding: 10px 0 5px 0;}
-.top-bar{border:#b8babc solid; border-top-width: 15px; margin-left: 38px;}
+.top-bar{border:#b8babc solid; border-top-width: 15px; margin-left: 38px; margin-top:55px;}
 .intro {padding-left: 0px;}
 .intro p{color:#3a5a99;line-height: 1.8; font-size: x-large; font-weight: 300;}
 .content-col-4{padding-bottom:15px; }
