@@ -26,38 +26,14 @@
  */
 #}
 
-<div id="title-bar">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-xs-12">
-				  {% if label %}
-                    <h1{{ title_attributes }}>{{ label }}</h1>
-                  {% endif %}
-                  {{ title_suffix }}
-                  {% block content %}
-                    {{ content }}
-                  {% endblock %}
-			</div>
-			
-			<!-- breadcrumb -->
-			{% if breadcrumb %}
-            <div class="col-md-4 col-xs-12">
-            	<h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
-            	<ol class="breadcrumb pull-right">
-                  	{% for item in breadcrumb %}
-              		<li>
-                    {% if item.url %}
-                      <a href="{{ item.url }}">{{ item.text }}</a>
-                    {% else %}
-                      {{ item.text }}
-                    {% endif %}
-                  </li>
-                {% endfor %}
-                </ol>
-            </div>
-            {% endif %}
-    		<!-- //END breadcrumb -->
-		</div>
-		<div class="bottom" style="padding-top:20px;"></div>
+<div class="row">
+	<div class="col-md-12">
+		  {% if label %}
+            <h1{{ title_attributes }} >{{ label }}</h1>
+          {% endif %}
+          {{ title_suffix }}
+          {% block content %}
+            {{ content }}
+          {% endblock %}
 	</div>
 </div>

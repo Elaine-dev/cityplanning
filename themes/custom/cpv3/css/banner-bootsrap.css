@@ -1,6 +1,6 @@
 .bs-slider{
     overflow: hidden;
-    max-height: 700px;
+    max-height: 500px;
     position: relative;
     background: #fff;
 }
@@ -226,7 +226,6 @@
     top: 25%;
     right: 0;
     margin: auto;
-    padding: 10px;
     position: absolute;
     text-align: left;
     padding: 10px 50px;
@@ -234,6 +233,8 @@
     filter: alpha(opacity=80);
     opacity:0.8;
     -moz-opacity: 0.8;
+    max-height: 328px;
+    max-width: 545px;
     
 }
 
