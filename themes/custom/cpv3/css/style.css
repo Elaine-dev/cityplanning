@@ -63,7 +63,7 @@ q:before, q:after { content: ''; content: none; }
 ************ Mega menu ******************
 *****************************************/
 .divider {font-size: 10px !important; color: #777;}
-.navbar-default{background-color:#fff; border-color: #ccc;}
+.navbar-default{background-color:#fff; border-color: #fff;}
 .nav>li { padding-top: 5px; }
 .navbar {
 	border-radius: 0px !important;
@@ -144,7 +144,7 @@ q:before, q:after { content: ''; content: none; }
 
 /** Promotion **/
 .promotion-bg{
-	background:url(../images/promotion.png) no-repeat center center fixed; 
+	background:url(../images/promotion.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -172,12 +172,12 @@ q:before, q:after { content: ''; content: none; }
 #connected{font-weight:bold; font-size:36px; line-height: 1;}
 
 #footer-section{
-	background:url(../images/footer_background_pattern.png) no-repeat; 
+	background:url(../images/footer_background_pattern.png) no-repeat;
 	position: relative;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover; 
+	background-size: cover;
 	min-height: 425px;
 	color:#fff;
 	font-size: 12px !important;
@@ -192,21 +192,21 @@ q:before, q:after { content: ''; content: none; }
 .border-line-top{ border-top: 1px solid #fff; padding: 25px 0;}
 
 /*** Inner pages ***/
-#page-title-bg{ 
+#page-title-bg{
   position: fixed;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 40%;
 }
 
 #page-title-bg img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   min-width: 100%;
 }
 #main-container{background-color:#fff; position:relative; top:150px; padding-bottom: 250px;}
