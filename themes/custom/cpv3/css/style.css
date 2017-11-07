@@ -91,11 +91,12 @@ q:before, q:after { content: ''; content: none; }
 .mega-dropdown {position: static !important;}
 .mega-dropdown-menu {
    padding-bottom: 20px;
-   width: 100%;
+   width: 119%;
    box-shadow: none;
    -webkit-box-shadow: none;
    font-size: 16px !important;
    font-weight: 400 !important;
+   left: -175px;
 }
 .mega-dropdown-menu > li > ul { padding: 0; margin: 1px; }
 .mega-dropdown-menu > li > ul > li {list-style: none;}
