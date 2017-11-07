@@ -87,7 +87,7 @@ q:before, q:after { content: ''; content: none; }
     color: #ffcc00 !important;
     background-color: transparent;
 }
-
+.dropdown-menu{border-radius: 0px;}
 .mega-dropdown {position: static !important;}
 .mega-dropdown-menu {
    padding-bottom: 20px;
