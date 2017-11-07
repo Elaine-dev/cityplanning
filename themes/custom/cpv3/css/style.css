@@ -230,7 +230,7 @@ q:before, q:after { content: ''; content: none; }
 .content-col-4 h4{color: #414042; font-weight: 300;}
 #main-container strong {color:#3a5a99;}
 #main-container h1{padding-top: 15px;}
-
+article img{padding-top:15px; padding-bottom: 15px;}
 
 
 
