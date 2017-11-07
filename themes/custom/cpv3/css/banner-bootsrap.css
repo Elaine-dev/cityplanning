@@ -326,7 +326,7 @@
 
 @media (min-width:1441px) {
 	/* .bs-slider > .carousel-inner > .item > img, .bs-slider > .carousel-inner > .item > a > img { width: 80% !important; } */
-	.slide-text {width: 27%; right: 570px; top:10%;"}
+	.slide-text {width: 27%; right: 594px; top:10%;"}
 	.control-round .carousel-control.left {left: 11%;}
 	.control-round .carousel-control.right {right: 11%;}
 }
