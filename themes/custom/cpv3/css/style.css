@@ -176,7 +176,7 @@ q:before, q:after { content: ''; content: none; }
 #connected{font-weight:bold; font-size:36px; line-height: 1;}
 
 #footer-section{
-	background:url(../images/footer_background_pattern.png) no-repeat;
+	background:url(../images/footer_background_pattern.png) no-repeat 0px 71%;
 	position: relative;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
