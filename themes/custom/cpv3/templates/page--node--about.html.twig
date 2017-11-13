@@ -1,6 +1,6 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
-
+	
 	<!-- page-banner -->
 	<div class="container-fluid">
 		<div class="row">
@@ -10,16 +10,16 @@
 		</div>
 	</div>
 	<!-- //End page-banner -->
-
+	
 	<!-- contain -->
 	<div class="container" id="main-container">
 		<!-- page title  -->
 		{{ page.title_bar }}
 		<!-- //End page title  -->
-
+		
 		<!-- Main content -->
 		<div class="row">
-			<!--  Left-side bar  -->
+			<!--  Left-side bar  --> 
 			<div class="col-md-9 padding-left0 padding-right-15">
 				<div class="row">
 					<div class="col-md-12">
@@ -27,33 +27,14 @@
 					</div>
 				</div>
 			</div><!-- //End Left-side bar -->
-
+			
 			<!-- Right-side bar -->
-			<div class="col-md-3 sidebar-menu">
-				<div class="top-bar"></div>
-				<ul>
-					<li><a href="#" class="active">Department of City Planning</a></li>
-					<li class="line"></li>
-					<li><a href="#">Department Org Chart</a></li>
-					<li class="line"></li>
-					<li><a href="#">Message from the Director</a></li>
-					<li class="line"></li>
-					<li><a href="#">Staff Directory</a></li>
-					<li class="line"></li>
-					<li><a href="#">City Planning Commission</a></li>
-					<li class="line"></li>
-					<li><a href="#">Agendas & Minutes</a></li>
-					<li class="line"></li>
-					<li><a href="#">Hearings</a></li>
-					<li class="line"></li>
-					<li><a href="#">Planning Calendar</a></li>
-					<li class="line"></li>
-				</ul>
-			</div><!-- //End Right-side bar -->
-
+			{% include directory ~ '/partials/right_side_bar.html.twig' %}
+			<!-- //End Right-side bar -->
+			
 		</div>
 	</div>	<!-- //End container -->
 
-
+			
     <!-- footer section -->
     {% include directory ~ '/partials/footer.html.twig' %}
