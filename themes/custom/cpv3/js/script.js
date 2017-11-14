@@ -142,22 +142,6 @@ jQuery(document).ready(function(){
       e.stopPropagation();
   });
 
-    //search
-	jQuery('#search').keyup(function(){
-		var current_query = jQuery('#search').val();
-		if (current_query !== "") {
-			jQuery(".list-group li").hide();
-			jQuery(".list-group li").each(function(){
-				var current_keyword = jQuery(this).text();
-				if (current_keyword.indexOf(current_query) >=0) {
-					jQuery(this).show();
-				};
-			});
-		} else {
-			jQuery(".list-group li").show();
-		};
-	});
-
 	// Appointment form
   // First available appointment
    $("#edit-first-available-appointment-first-available-appointment").change(function() {
@@ -243,12 +227,12 @@ jQuery(document).ready(function(){
 		var callAPI = "http://zimas.lacity.org/?streetname="+streetName+"&housenum="+address;
 		window.open(callAPI, '_blank');
 	});
-	
+
 	// redirect to selected requested form
 	$("#submit_request_type").on('change', function() {
 		var selected, redUrl;
 		selected = $('#submit_request_type :selected').text();
-		
+
 		if ( selected == 'Pre-Application' || selected == 'Clearance / Effectuation' ) {
 			if (selected == 'Pre-Application'){
 				redUrl = 'request-form/pre-application-request-form';
@@ -258,8 +242,62 @@ jQuery(document).ready(function(){
 			}
 			window.open(redUrl, '_parent');
 		}
-		
+
 	});
+
+	/*** serach ***/
+	$(function() {
+
+	    $('a[href="#toggle-search"], .navbar-search-box .search-bar-search .input-group-btn > .btn[type="reset"]').on('click', function(event) {
+			event.preventDefault();
+			$('.navbar-search-box .search-bar-search .input-group > input').val('');
+			$('.navbar-search-box .search-bar-search').toggleClass('open');
+			$('a[href="#toggle-search"]').closest('li').toggleClass('active');
+
+			if ($('.navbar-search-box .search-bar-search').hasClass('open')) {
+				/* I think .focus dosen't like css animations, set timeout to make sure input gets focus */
+				setTimeout(function() {
+					$('.navbar-search-box .search-bar-search .form-control').focus();
+				}, 100);
+			}
+		});
+
+		$(document).on('keyup', function(event) {
+			if (event.which == 27 && $('.navbar-search-box .search-bar-search').hasClass('open')) {
+				$('a[href="#toggle-search"]').trigger('click');
+			}
+		});
+
+	});
+
+	/*** Staff Directory ***/
+	jQuery('#myTable').dataTable({
+		"ajax": 'data/all.txt'
+	});
+
+	// display modal on mouseover
+	jQuery('#d-message').mouseover(function () {
+		jQuery('#myModal').modal('show')
+	});
+
+	// google map
+	jQuery('#l-1').click(function () {
+		jQuery('#map-1').show();
+		jQuery('#map-2').hide();
+		jQuery('#map-3').hide();
+	});
+
+	jQuery('#l-2').click(function () {
+		jQuery('#map-1').hide();
+		jQuery('#map-2').show();
+		jQuery('#map-3').hide();
+	});
+
+	jQuery('#l-3').click(function () {
+		jQuery('#map-1').hide();
+		jQuery('#map-2').hide();
+		jQuery('#map-3').show();
+	});
+
+
 });
-
-

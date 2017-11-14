@@ -5,7 +5,6 @@ global-styling:
       css/bootstrap.min.css: {}
       css/normalize.css: {}
       css/style.css: {}
-      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: {}
   js:
     https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js: {}
     https://code.jquery.com/ui/1.12.1/jquery-ui.min.js: {}
@@ -21,6 +20,7 @@ fonts:
   css:
     theme:
       '//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300,700|Open+Sans:300italic,400,300': { type: external, minified: true }
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: {}
 
 angular-js:
   js:
@@ -49,3 +49,15 @@ calendar-page:
     js/calendar/moment.min.js: {}
     js/calendar/fullcalendar.js: {}
     js/calendar/dcp-calendar.js: {}
+
+community-plan-areas:
+  version: VERSION
+  css:
+    theme:
+      css/communities.css: {}
+      https://js.arcgis.com/3.20/esri/css/esri.css: {}
+      https://js.arcgis.com/3.20/esri/css/esri.css: {}
+  js:
+    https://js.arcgis.com/3.20: {}
+    http://code.jquery.com/jquery-latest.min.js: {}
+    js/communities.js: {}

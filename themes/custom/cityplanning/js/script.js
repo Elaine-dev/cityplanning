@@ -142,7 +142,8 @@ jQuery(document).ready(function(){
       e.stopPropagation();
   });
 
-    //search
+  //search
+  /*
 	jQuery('#search').keyup(function(){
 		var current_query = jQuery('#search').val();
 		if (current_query !== "") {
@@ -156,7 +157,7 @@ jQuery(document).ready(function(){
 		} else {
 			jQuery(".list-group li").show();
 		};
-	});
+	});*/
 
 	// Appointment form
   // First available appointment
@@ -260,6 +261,7 @@ jQuery(document).ready(function(){
 		}
 
 	});
+
 });
 
 
