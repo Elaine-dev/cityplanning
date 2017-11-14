@@ -51,6 +51,7 @@ q:before, q:after { content: ''; content: none; }
 .padding-bottom60{ padding-bottom: 60px;}
 .padding-left0 { padding-left: 0px !important; }
 .padding-left-10 { padding-left: 10px;}
+.padding-left-15 { padding-left: 15px;}
 .padding-left-50{padding-left:50px;}
 .padding-left-60{padding-left:60px;}
 .padding-left-80{padding-left:80px;}
