@@ -263,44 +263,18 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .bottom { border-bottom: 1px dotted #ccc; }
 
 /*** search  ***/
-.navbar-search-box .search-bar-search {
-	display: none;
-}
-.navbar-search-box .search-bar-search .form-control {
-	background-color: rgb(235, 235, 235);
-	border-radius: 0px;
-	border-width: 0px;
-	font-size: 24px;
-	padding: 30px 0px;
-}
-.navbar-search-box .search-bar-search .form-control {
-	background-color: rgb(235, 235, 235);
-	border-radius: 0px;
-	border-width: 0px;
-	font-size: 24px;
-	padding: 25px 0px;
-}
-.navbar-search-box .search-bar-search .form-control:focus {
-	border-color: transparent;
-	outline: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-}
-.navbar-search-box .search-bar-search .input-group-btn > .btn {
-	padding: 14px 16px;
-	border-radius: 0px;
-}
+.navbar-search-box .search-bar-search {display: none;}
+.navbar-search-box .search-bar-search .form-control {background-color: rgb(235, 235, 235); border-radius: 0px; border-width: 0px; font-size: 24px; padding: 30px 0px;}
+.navbar-search-box .search-bar-search .form-control {background-color: rgb(235, 235, 235); border-radius: 0px; border-width: 0px; font-size: 24px; padding: 25px 0px;}
+.navbar-search-box .search-bar-search .form-control:focus {border-color: transparent; outline: 0; -webkit-box-shadow: none; box-shadow: none;}
+.navbar-search-box .search-bar-search .input-group-btn > .btn {padding: 14px 16px; border-radius: 0px;}
 .navbar-search-box .search-bar-search .input-group-btn > .btn.active,
 .navbar-search-box .search-bar-search .input-group-btn > .btn:hover,
 .navbar-search-box .search-bar-search .input-group-btn > .btn:focus {
 	padding: 14px 16px 14px 15px;
 }
-.navbar-search-box .search-bar-search .input-group-btn > .btn-default {
-	background-color: rgb(245, 245, 245);
-}
-.nav-padding {
-	padding-top: 61px;
-}
+.navbar-search-box .search-bar-search .input-group-btn > .btn-default {background-color: rgb(245, 245, 245);}
+.nav-padding {padding-top: 61px;}
 
 /***** Staff Directory ********/
 #search-directories .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {position: inherit !important;}
@@ -308,8 +282,16 @@ article img{padding-top:15px; padding-bottom: 15px;}
 #search-directories .checkbox, .radio {padding-left: 20px;}
 #map-2 { display: none;}
 #map-3 { display: none;}
+.span-flush {font-size: 18px; }
+ .span-indent1 {font-size: 18px; margin-left:40px;}
+.span-indent2 {font-size: 18px; margin-left:80px;}
+.span-phone {font-size: 18px; float: right;}
+.employee_td {padding-left:10px; padding-right:10px; width:25%;}
+
+
 
 /*-->> **************** Media Query *****************/
+
 /* Medium devices (tablets, 768px and up) */
 @media screen and (max-width: 575px ) {
 	/** navigation **/
