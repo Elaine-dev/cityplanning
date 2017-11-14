@@ -251,6 +251,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{color:#f68a3b !important; font-weight: bold;}
 .nav-tabs>li>a:hover {border-color: #000;}
 .nav>li>a:focus, .nav>li>a:hover{background-color: transparent  !important;}
+.nav-tabs a {color:#a3a5a8 !important;}
 
 #teams .social-links ul {float: left;}
 #teams .social-links ul li a {font-size:16px; font-weight: 600; text-transform: uppercase; padding-left: 0px !important; border-left-width: 0px !important; margin-left: 0px !important; margin-top: 10px !important;}
