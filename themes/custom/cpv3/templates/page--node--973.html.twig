@@ -1,0 +1,1670 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+     <script>
+var original_html = null;
+var assignment_list = [
+'1|Alameda District Specific Plan, Santos Sanchez|213-978-1361',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Arleta-Pacoima Community Plan, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Atwater Village POD, Nicole Sanchez|213-978-3034',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Avenue 57/Pasadena Gold Line, Nicole Sanchez|213-978-3034',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Baseline Mansionization Ordinance and|',
+'1|Baseline Hillside Ordinance, Erick Lopez|213-978-1323',
+'0|Unit Head, Erick Lopez|213-978-1323',
+'1|Bel Air - Beverly Crest Com Plan, Alissa Gordon|213-978-1456',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Boyle Heights Com Plan, Hakeem Parke-Davis|213-978-1487',
+'0|Unit Head, Kevin Golden|213-978-1396',
+'1|Brentwood â€“ Pacific Palisades Com Plan, Kenton Trin|213-978-1290',
+'0|Unit Head, Griselda Gonzalez|213-978-1210',
+'1|Broadway CDO, Isaiah Ross|213-978-1368',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Broadway Sign District, Isaiah Ross|213-978-1368',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Bunker Hill Specific Plan, Santos Sanchez|213-978-1361',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Canoga Park/West Hills/Winnetka/Woodland Hills Com Plan,|',
+'0|Valentina Knox-Jones|818-374-5038',
+'0|Will Hughen|818-374-5049',
+'0|Unit Head, Tom Glick|818-374-5062',
+'1|Canoga Park Commercial Corridor, CDO,|',
+'0|Valentina Knox-Jones|818-374-5038',
+'0|Will Hughen|818-374-5049',
+'0|Unit Head, Tom Glick|818-374-5062',
+'1|Canoga Park Downtown CDO; Streetscape,|',
+'0|Valentina Knox-Jones|818-374-5038',
+'0|Will Hughen|818-374-5049',
+'0|Unit Head, Tom Glick|818-374-5062',
+'1|Central City Com Plan, Santos Sanchez|213-978-1361',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Central City North Com Plan, Michael Sin|213-978-1345',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Central City West Specific Plan, Azeen Khanmalek|213-978-1336',
+'0|Unit Head, Kevin Golden|213-978-1396',
+'1|Century City No & So Specific Plan, Connie Chauv|213-978-1376',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Chatsworth/Porter Ranch Com Plan, Peg Malone-Brown|818-374-5036',
+'0|Lucy Martinez|818-374-5058',
+'0|Unit Head, Dan Oâ€™Donnel|818-374-9907',
+'1|Coastal Bluffs Specific Plan, David Solaiman-Tehrani|213-978-1193',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Colorado Blvd SP/DRB, Ondrea Tye|213-978-1197',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Cornfield Arroyo Seco Specific Plan, Michael Sin|213-978-1345',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Crenshaw Corridor Specific Plan, Steve Garcia|213-978-2298',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Cypress Park â€“ Glassell Park CDO, Nicole Sanche|213-978-3034',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Density Bonus Ordinance, Vacant|213-482-XXXX',
+'0|Unit Head, Kit Awakuni|213-482-0441',
+'1|Devonshire/Topanga Corridor SP/DRB, Lucy Martinez|818-374-5058',
+'0|Peg Malone-Brown|818-374-5036',
+'0|Unit Head, Dan Oâ€™Donnel|818-374-9907',
+'1|Downtown Design Guide, Santos Sanchez|213-978-1361',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Downtown San Pedro CDO, Matthew Lum|213-978-1172',
+'0|Ira Brown|213-978-1453',
+'0|Unit Head, Jose Carlos Romero|213-978-1348',
+'1|Downtown Westchester CDO, David Solaiman-Tehrani|213-978-1193',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Echo Park ICO/CDO, Azeen Khanmalek|213-978-1336',
+'0|Unit Head, Kevin Golden|213-978-1396',
+'1|Encinitas Sign District, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Encino-Tarzana Com Plan, Valentina Knox-Jones|818-374-5038',
+'0|Will Hughen|818-374-5049',
+'0|Unit Head, Tom Glick|818-374-5062',
+'1|Figueroa/7 TH Street Sign District, Michael Sin|213-978-1345',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Figueroa/Olympic Sign District, Santos Sanchez|213-978-1361',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Figueroa/7 TH Street Sign District, Michael Sin|213-978-1345',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Fletcher Square CDO, Nicole Sanchez|213-978-3034',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Foothill Boulevard Corridor Specific Plan, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Girard Tract Specific Plan, Will Hughen|818-374-5049',
+'0|Valentina Knox-Jones|818-374-5038',
+'0|Unit Head, Tom Glick|818-374-5062',
+'1|Glencoe-Maxella Specific Plan, Jeff Khau|213-978-1346',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Granada Hills Specific Plan & DRB w/ Signs,|',
+'0|Peg Malone-Brown|818-374-5036',
+'0|Lucy Martinez|818-374-5058',
+'0|Unit Head, Dan Oâ€™Donnel|818-374-9907',
+'1|Granada Hills/Knollwood Com Plan, Peg Malone-Brown|818-374-5036',
+'0|Lucy Martinez|818-374-5058',
+'0|Unit Head, Dan Oâ€™Donnel|818-374-9907',
+'1|Harbor Gateway Com Plan, Matthew Lum|213-978-1172',
+'0|Unit Head, Jose Carlos Romero|213-978-1348',
+'1|Hollywood Com Plan, Jason Hernandez|213-978-1276',
+'0|Unit Head, Mindy Nguyen|213-978-1241',
+'1|Hollywood Signage Supp Use District, Jason Hernandez|213-978-1276',
+'0|Unit Head, Mindy Nguyen|213-978-1241',
+'1|Hollywoodland Specific Plan & DRB, My La|213-978-1301',
+'0|Unit Head, Mindy Nguyen|213-978-1241',
+'1|Jordan Downs Specific Plan, Alan Como|213-473-9985',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Larchmont Boulevard â€œQâ€� Conditions, Ruben C. Vasq|213-978-1741',
+'0|Unit Head, Kinikia Gardner|213-978-1445',
+'1|LAX-El Segundo Dunes Specific Plan,|',
+'0|David Solaiman-Tehrani|213-978-1193',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Lincoln Blvd CDO, Jeff Khau|213-978-1346',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Lincoln Heights CDO, Nicole Sanchez|213-978-3034',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Little Tokyo CDO, Isaiah Ross|213-978-1368',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Los Angeles Sports & Entertainment District|',
+'1|(Staples Center â€“ Specific Plan), Santos Sanche|213-978-1361',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Loyola Marymount University Specific Plan,|',
+'0|David Solaiman-Tehrani|213-978-1193',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Loyola Village CDO, David Solaiman-Tehrani|213-978-1193',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Mello Coordinator, Juliet Oh|213-978-1186',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Melrose â€œQâ€� Limitations, My|213-978-1301',
+'0|Unit Head, Mindy Nguyen|213-978-1241',
+'1|Miracle Mile CDO, Andre Calderon|213-978-1395',
+'0|Unit Head, Kinikia Gardner|213-978-1445',
+'1|Mission Hills/Panorama City-North Hills-|',
+'1|Sepulveda Community Plan, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Mt. Washington/Glassell Park SP, Ondrea Tye|213-978-1197',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Mulholland Scenic Corridor SP,|',
+'0|Valentina Knox-Jones (T, TH)|818-374-5038',
+'0|Will Hughen (W, F)|818-374-5049',
+'0|Unit Head, Tom Glick (M)|818-374-5062',
+'1|North Westwood Village, Matthew Quan|213-978-1320',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Northeast Hillside Ordinance, Nicole Sanchez|213-978-3034',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|Northeast LA Community Plan, Nicole Sanchez|213-978-3034',
+'0|Unit Head, Greg Shoop|213-978-1243',
+'1|North Hollywood /Valley Village Com Plan,|',
+'0|Marianne King (T, TH)|818-374-5059',
+'0|David Pena (F)|818-374-5061',
+'0|Courtney Schoenwald (M, W)|818-374-9904',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|North University Park SP/DRB, Blair Smith|213-978-1174',
+'0|Unit Head, Naomi Guth|213-978-1198',
+'1|Northridge Community Plan, Lucy Martinez|818-374-9916',
+'0|Peg Malone-Brown|818-374-5036',
+'0|Unit Head, Dan Oâ€™Donnel|818-374-9907',
+'1|Oaks â€œDâ€� Limitations, Nuri|213-978-1177',
+'0|Unit Head, Mindy Nguyen|213-978-1241',
+'1|Oaks Hillside Mansionization Overlay, Vacant|213-978-XXXX',
+'0|Unit Head, Mindy Nguyen|213-978-1241',
+'1|Oxford Triangle Specific Plan, Juliet Oh|213-978-1186',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Pacific Palisades Commercial Village SP/DBB,|',
+'0|Kenton Trinh|213-978-1290',
+'0|Unit Head, Griselda Gonzalez|213-978-1210',
+'1|Pacoima CDO & Streetscape Plan,|',
+'0|Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Palms Mar Vista Community Plan, Connie Chauv|213-978-1376',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Panorama City CDO & Streetscape Plan,|',
+'0|Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Park Mile SP/DRB, Joe Luckey|213-978-1340',
+'0|Unit Head, Kinikia Gardner|213-978-1445',
+'1|Playa Vista Specific Plan, David Solaiman-Tehrani|213-978-1193',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Ponte Vista, Matthew Lum|213-978-1172',
+'0|Unit Head, Jose Carlos Romero|213-978-1348',
+'1|Porter Ranch Land Use/Trans Specific Plan w/DRB,|',
+'0|Peg Malone-Brown|818-374-5036',
+'0|Lucy Martinez|818-374-5058',
+'0|Unit Head, Dan Oâ€™Donnel|818-374-9907',
+'1|Priority Housing Central City/Central City North/|',
+'1|Boyle Heights Coordinator, Amanda Briones|213-978-1328',
+'0|Unit Head, Jennifer Caira|213-978-1165',
+'1|Priority Housing West/South Coordinator, Iris Wan|213-978-1397',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Priority Housing Wilshire Coordinator, Monique Acosta|213-978-1173',
+'0|Unit Head, Kinikia Gardner|213-978-1445',
+'1|Reseda Central Business District CDO & Streetscape,|',
+'0|Will Hughen|818-374-5049',
+'0|Valentina Knox-Jones|818-374-5038',
+'0|Unit Head, Tom Glick|818-374-5062',
+'1|Reseda/West Van Nuys Plan & CDO,|',
+'0|Will Hughen|818-374-5049',
+'0|Valentina Knox-Jones|818-374-5038',
+'0|Unit Head, Tom Glick|818-374-5062',
+'1|San Gabriel/Verdugo Mountains SP, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|San Pedro, Matthew Lum|213-978-1172',
+'0|Unit Head, Jose Carlos Romero|213-978-1348',
+'1|San Pedro Community Plan, Matthew Lum|213-978-1172',
+'0|Unit Head, Jose Carlos Romero|213-978-1348',
+'1|San Pedro Specific Plan, Matthew Lum|213-978-1172',
+'0|Unit Head, Jose Carlos Romero|213-978-1348',
+'1|San Vicente Specific Plan & DRB, Alissa Gordon|213-978-1456',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Sepulveda Corridor Specific Plan, Connie Chauv|213-978-1376',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Sherman Oaks/Studio City/Toluca Lake/Cahunega Pass Com Plan,|',
+'0|Marianne King (T, TH)|818-374-5059',
+'0|David Pena (F)|818-374-5061',
+'0|Courtney Schoenwald (M, W)|818-374-9904',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|Silverlake/EchoPark/Elysian Valley Com Plan,|',
+'0|Azeen Khanmalek|213-978-1336',
+'0|Unit Head, Kevin Golden|213-978-1396',
+'1|South Los Angeles Alcohol Specific Plan, Steve Garcia|213-978-2298',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|South Los Angeles Com Plan, Steve Garcia|213-978-2298',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|South Los Angeles Design Q, Steve Garcia|213-978-2298',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Southeast Los Angeles Com Plan, Alan Como|213-473-9985',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Southeast Los Angeles Design Q, Steve Garcia|213-978-2298',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Studio City Residential Floor Area,|',
+'0|Courtney Schoenwald (M, W)|818-374-9904',
+'0|Marianne King (T, TH)|818-374-5059',
+'0|David Pena (F)|818-374-5061',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|Sun Valley CDO & Streetscape Plan, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Sun Valley/La Tuna Canyon Com Plan, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Sunland/Tujunga/Shadow Hills/Lake View Terrace/|',
+'1|East La Tuna Canyon Com Plan, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Sylmar Community Plan, Nelson Rodriguez|818-374-9903',
+'0|Unit Head, Laura Frazin-Steele|818-374-9919',
+'1|Toluca Lake Village CDO, Christine Saponara|213-978-1363',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|Urban Design Studio, Simon Pastucha|213-978-0628',
+'0|Unit Head, Simon Pastucha|213-978-0628',
+'1|USC Specific Plan, Iris Wan|213-978-1397',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Valley Circle/Plummer St Scenic Corridor Specific Plan,|',
+'0|Lucy Martinez|818-374-5058',
+'0|Peg Malone-Brown|818-374-5036',
+'0|Unit Head, Dan Oâ€™Donnel|818-374-9907',
+'1|Valley Village Specific Plan,|',
+'0|Marianne King (T, TH)|818-374-5059',
+'0|David Pena (F)|818-374-5061',
+'0|Courtney Schoenwald (M, W)|818-374-9904',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|Van Nuys/North Sherman Oaks Com Plan,|',
+'0|Marianne King (T, TH)|818-374-5059',
+'0|David Pena (F)|818-374-5061',
+'0|Courtney Schoenwald (M, W)|818-374-9904',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|Van Nuys CBD, CDO & Streetscape Plan,|',
+'0|Marianne King (T, TH)|818-374-5059',
+'0|David Pena (F)|818-374-5061',
+'0|Courtney Schoenwald (M, W)|818-374-9904',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|Venice Coastal Specific Plan, Jeff Khau|213-978-1346',
+'0|Juliet Oh|213-978-1186',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Venice Community Plan, Jeff Khau|213-978-1346',
+'0|Juliet Oh|213-978-1186',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Ventura/Cahuenga Blvd Corridor Specific Plan;|',
+'1|Encino, Sherman Oaks, Studio City/Cahuenga, Tarzana,|',
+'1|and Woodland Hills Streetscape Plans|',
+'0|Marianne King (T, TH)|818-374-5059',
+'0|David Pena (F)|818-374-5061',
+'0|Courtney Schoenwald (M, W)|818-374-9904',
+'0|Unit Head, Sarah Hounsell|818-374-9917',
+'1|Vermont/Western (SNAP) Station Neighborhood|',
+'1|Area Specific Plan, Nuri Cho|213-978-1177',
+'0|Unit Head, Mindy Nguyen|213-978-1241',
+'1|Warner Center 2035 Plan, Jennifer Driver|818-374-9916',
+'0|Unit Head, Tim Fargo|818-374-9907',
+'1|West Adams CPIO, Alan Como|213-473-9985',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|West Adams/Baldwin Hills/Leimert Park Com Plan,|',
+'0|Alan Como|213-473-9985',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|West LA Community Plan, Connie Chauv|213-978-1376',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|West Pico Boulevard CDO, Alissa Gordon|213-978-1456',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|West Pico NOD, Vacant|213-978-XXXX',
+'0|Unit Head, Debbie Lawrence|213-978-1163',
+'1|Westchester-Playa Del Rey Com Plan,|',
+'0|David Solaiman-Tehrani|213-978-1193',
+'0|Unit Head, Alam Choudhury|213-978-1467',
+'1|Westfield, Connie Chauv|213-978-1376',
+'0|Unit Head, Michelle Singh|213-978-1166',
+'1|Westlake Community Plan, Azeen Khanmalek|213-978-1336',
+'0|Unit Head, Kevin Golden|213-978-1396',
+'1|West Wilshire Blvd CDO, Alissa Gordon|213-978-1456',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Westwood Community Plan, Zuriel Espinoza|213-978-1376',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Westwood Boulevard POD, Stacy Farfan|213-978-1369',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Westwood DRB, Matthew Quan|213-978-1320',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Westwood Multi-Family Q, Matthew Quan|213-978-1320',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Westwood Village SP, Matthew Quan|213-978-1320',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Westwood-Pico NOD, Stacy Farfan|213-978-1369',
+'0|Unit Head, Jason Chan|213-978-1310',
+'1|Wilmington-Harbor City Com Plan, Matthew Lum|213-978-1172',
+'0|Unit Head, Jose Carlos Romero|213-978-1348',
+'1|Wilshire Community Plan, Joe Luckey|213-978-1340',
+'0|Unit Head, Kinikia Gardner|213-978-1445',
+'1|Wilshire Westwood Scenic Corridor & DRB,|',
+'0|Matthew Quan|213-978-1320',
+'0|Unit Head, Jason Chan|213-978-1310'];
+var dept_dir  =  ["COMMISSION SECRETARIAT|N/A~City Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~Cultural Heritage Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~Central Area Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~East Los Angeles Area Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~Harbor Area Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~North Valley Area Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~South Los Angeles Area Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~South Valley Area Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~West Los Angeles Area Planning Commission|213-978-1300",
+"COMMISSION SECRETARIAT|N/A~Commission Office Manager, Rocky Wiles|213-978-1389",
+"EXECUTIVE MANAGEMENT|N/A~Director of Planning, Vince Bertoni|213-978-1271",
+"EXECUTIVE MANAGEMENT|N/A~Exec Admin Assistant, Carrie Firestone|213-978-1271",
+"EXECUTIVE MANAGEMENT|N/A~Executive Officer, Kevin Keller|213-978-1272",
+"EXECUTIVE MANAGEMENT|N/A~Deputy Director, Lisa Webber|213-978-1274",
+"EXECUTIVE MANAGEMENT|N/A~Deputy Director, Jan Zatorski|213-978-1273",
+"EXECUTIVE MANAGEMENT|N/A~Exec Admin Assistant, Monica Nunez|213-978-1271",
+"EXECUTIVE MANAGEMENT|N/A~Exec Admin Assistant, Lily Quan|213-978-1127",
+"EXECUTIVE MANAGEMENT|N/A~Case Manager, Andy Rodriguez|213-978-1294",
+"EXTERNAL AFFAIRS|N/A~External Affairs Officer, Yeghig Keshishian|213-978-1324",
+"EXTERNAL AFFAIRS|N/A~Public Affairs Officer, Cheryl Getuiza|213-978-1203",
+"EXTERNAL AFFAIRS|N/A~Public Relations Specialist, Lauren Alba|213-978-1190",
+"EXTERNAL AFFAIRS|N/A~Council Liaison, Claudia Rodriguez|213-473-5797",
+"EXTERNAL AFFAIRS|N/A~Neighborhood Liaison, Lisette Covarrubias|213-978-1321",
+"ADMINISTRATIVE SERVICES DIVISION|Administrative Services Section~Division Manager, Jason Killeen|213-978-1915",
+"ADMINISTRATIVE SERVICES DIVISION|Administrative Services Section~Section Supervisor, Ly Lam|213-978-1206",
+"ADMINISTRATIVE SERVICES DIVISION|Administrative Services Section~Sr. Analyst I, Tiffany Butler|213-978-1983",
+"ADMINISTRATIVE SERVICES DIVISION|Administrative Services Section~Analyst II, Maria Ortiz|213-978-1291",
+"ADMINISTRATIVE SERVICES DIVISION|Accounting & Purchasing~Section Supervisor, Livea Yeh|213-978-1268",
+"ADMINISTRATIVE SERVICES DIVISION|Accounting & Purchasing~Senior Accountant II, Zenaida Agustin|213-978-1286",
+"ADMINISTRATIVE SERVICES DIVISION|Accounting & Purchasing~Timekeeper Supervisor, Gina Ginete|213-978-0169",
+"ADMINISTRATIVE SERVICES DIVISION|Department Operations Section~Section Supervisor, Beatrice Pacheco|213-978-1260",
+"ADMINISTRATIVE SERVICES DIVISION|Department Operations Section~Acting Principal Clerk, Wanda Walker|213-978-1215",
+"ADMINISTRATIVE SERVICES DIVISION|Department Operations Section~Automated Records Counter|213-978-1259",
+"ADMINISTRATIVE SERVICES DIVISION|Department Operations Section~Central Publications Counter|213-978-1255",
+"ADMINISTRATIVE SERVICES DIVISION|Department Operations Section~Document Imaging|213-978-1327",
+"ADMINISTRATIVE SERVICES DIVISION|Department Operations Section~Mail/Duplicating Counter|213-978-1257",
+"ADMINISTRATIVE SERVICES DIVISION|Performance Management Unit~Principal City Planner, Rebecca Valdez|213-978-1416",
+"ADMINISTRATIVE SERVICES DIVISION|Personnel Services Section~Personnel Director II, Ruben Vasquez|213-978-1772",
+"ADMINISTRATIVE SERVICES DIVISION|Personnel Services Section~Sr. Personnel Analyst I, Bryan Tamashiro|213-973-9938",
+"ADMINISTRATIVE SERVICES DIVISION|Personnel Services Section~Personnel Analyst II, James Schuyler|213-473-9958",
+"INFORMATION TECHNOLOGIES DIVISION|N/A~General Information/Helpdesk|213-978-1455",
+"INFORMATION TECHNOLOGIES DIVISION|N/A~Director of Systems, James VanGerpen|213-978-1399",
+"INFORMATION TECHNOLOGIES DIVISION|N/A~Secretary, Mary Quon|213-978-1393",
+"INFORMATION TECHNOLOGIES DIVISION|N/A~GIS Chief, Betty Dong|213-978-1392",
+"INFORMATION TECHNOLOGIES DIVISION|N/A~GIS Supervisor II, Fae Tsukamoto|213-978-1420",
+"INFORMATION TECHNOLOGIES DIVISION|N/A~Sr. Systems Analyst II, David Terukina|213-978-1427",
+"INFORMATION TECHNOLOGIES DIVISION|Graphic Services~Metro, Elvia Hernandez|213-978-0639",
+"INFORMATION TECHNOLOGIES DIVISION|Graphic Services~Valley, Shakeh Boghoskhanian|818-374-5039",
+"HISTORIC RESOURCES DIVISION|N/A~General Information|213-978-6364",
+"HISTORIC RESOURCES DIVISION|N/A~Division Manager, Ken Bernstein|213-978-1181",
+"HISTORIC RESOURCES DIVISION|N/A~Historic Preservation Overlay Zones, Naomi Guth|213-978-1198",
+"HISTORIC RESOURCES DIVISION|Office of Historic Resources~SurveyLA, Janet Hansen|213-978-1191",
+"HISTORIC RESOURCES DIVISION|Office of Historic Resources~Architect, Lambert Giessinger|213-978-1183",
+"HISTORIC RESOURCES DIVISION|Office of Historic Resources~Preservation Planner, Sara Cruz|213-978-1189",
+"HISTORIC RESOURCES DIVISION|Office of Historic Resources~Preservation Planner, Melissa Jones|213-978-1192",
+"HISTORIC RESOURCES DIVISION|Citywide Policy~Sr. City Planner, Claire Bowin|213-978-1213",
+"COMMUNITY PLANNING DIVISION|N/A~General Information|213-978-1164",
+"COMMUNITY PLANNING DIVISION|N/A~Division Manager, Craig Weber|213-978-1311",
+"COMMUNITY PLANNING DIVISION|N/A~Section I, Sr. City Planner, Patricia Diefenderfer|213-978-1170",
+"COMMUNITY PLANNING DIVISION|N/A~Section II, Sr. City Planner, Conni Pallini-Tipton|213-978-1179",
+"COMMUNITY PLANNING DIVISION|N/A~Section III, Sr. City Planner, Jonathan Hershey|213-978-1337",
+"COMMUNITY PLANNING DIVISION|N/A~Section IV, Sr. City Planner, Christine Saponara|818-374-5068",
+"COMMUNITY PLANNING DIVISION|Code Studies (re:Code LA)~Division Manager, Prin. City Planner, Tom Rothmann|213-978-1891",
+"COMMUNITY PLANNING DIVISION|Code Studies (re:Code LA)~Sr. City Planner, Phyllis Nathanson|213-978-1474",
+"COMMUNITY PLANNING DIVISION|Code Studies (re:Code LA)~re:Code LA Unit 1 - City Planner, Erick Lopez|213-978-1323",
+"COMMUNITY PLANNING DIVISION|Code Studies (re:Code LA)~re:Code LA Unit 2 - City Planner, Deborah Kahen|213-978-1202",
+"PROJECT PLANNING DIVISION|Major Projects & EIR~General Information|213-978-1332",
+"PROJECT PLANNING DIVISION|Major Projects & EIR~Major Projects, (Metro) Luci Ibarra|213-978-1378",
+"PROJECT PLANNING DIVISION|Major Projects & EIR~Major Projects, (Valley), Elva Oâ€™Donnell|818-374-5066",
+"PROJECT PLANNING DIVISION|Major Projects & EIR~Environmental Analysis, Karen Hoo|213-978-1331",
+"PROJECT PLANNING DIVISION|Major Projects & EIR~Urban Design Studio, Sarah Molina-Pearson|213-473-9983",
+"PROJECT PLANNING DIVISION|Central Projects Planning~General Information|213-978-1160",
+"PROJECT PLANNING DIVISION|Central Projects Planning~Principal City Planner, Shana Bonstin|213-978-1217",
+"PROJECT PLANNING DIVISION|Central Projects Planning~Sr. City Planner, Blake Lamb|213-978-1167",
+"PROJECT PLANNING DIVISION|Central Projects Planning~Sr. City Planner, Jane Choi|213-978-1379",
+"PROJECT PLANNING DIVISION|West/Coastal & South Project Planning~General Information|213-978-1371",
+"PROJECT PLANNING DIVISION|West/Coastal & South Project Planning~Principal City Planner, Faisal Robles|213-978-1168",
+"PROJECT PLANNING DIVISION|West/Coastal & South Project Planning~Sr. City Planner, Debbie Lawrence|213-978-1163",
+"PROJECT PLANNING DIVISION|West/Coastal & South Project Planning~Sr. City Planner, Jae Kim|213-978-1322",
+"PROJECT PLANNING DIVISION|Valley Project Planning~General Information|818-374-9941",
+"PROJECT PLANNING DIVISION|Valley Project Planning~Principal City Planner, Shana Bonstin|213-978-1217",
+"PROJECT PLANNING DIVISION|Valley Project Planning~Sr. City Planner, Kevin Jones|818-374-5072",
+"PROJECT PLANNING DIVISION|Valley Project Planning~Northeast Valley, Laura Frazin Steele|818-374-9919",
+"PROJECT PLANNING DIVISION|Valley Project Planning~Northwest Valley, Dan Oâ€™Donnell|818-374-9907",
+"PROJECT PLANNING DIVISION|Valley Project Planning~Southeast Valley, Sarah Hounsell|818-374-9917",
+"PROJECT PLANNING DIVISION|Valley Project Planning~Southwest Valley, Tom Glick|818-374-5062",
+"PROJECT PLANNING DIVISION|Valley Project Planning~West Valley, Tim Fargo|818-374-9911",
+"PROJECT PLANNING DIVISION|Expedited Processing Section~General Information|213-473-9984",
+"PROJECT PLANNING DIVISION|Expedited Processing~Sr. City Planner, Nicholas Hendricks|213-978-1383",
+"PROJECT PLANNING DIVISION|City Planners:~Heather Bleemers|213-978-0092",
+"PROJECT PLANNING DIVISION|City Planners:~Jenna Monterrosa|213-978-1377",
+"PROJECT PLANNING DIVISION|City Planners:~May Sirinopwongsagon|213-978-1372",
+"PROJECT PLANNING DIVISION|City Planners:~Jordann Turner|213-978-1365",
+"ZONING ADMINISTRATION DIVISION|N/A~General Information|213-978-1318",
+"ZONING ADMINISTRATION DIVISION|N/A~Chief Zoning Administrator, Charlie Rausch|213-978-1306",
+"ZONING ADMINISTRATION DIVISION|N/A~Sr. City Planner, Jon Foreman|213-978-1387",
+"ZONING ADMINISTRATION DIVISION|N/A~Management Analyst II, Stacy Munoz|213-978-1354",
+"ZONING ADMINISTRATION DIVISION|N/A~Jack Chiang|213-978-0195",
+"ZONING ADMINISTRATION DIVISION|N/A~Henry Chu|213-978-1324",
+"ZONING ADMINISTRATION DIVISION|N/A~Lourdes Green|213-978-1313",
+"ZONING ADMINISTRATION DIVISION|N/A~Theodore Irving|213-978-1366",
+"ZONING ADMINISTRATION DIVISION|N/A~Aleta James|213-202-5402",
+"ZONING ADMINISTRATION DIVISION|N/A~Frank Quon|213-202-5421",
+"ZONING ADMINISTRATION DIVISION|N/A~Fernando Tovar|213-978-1303",
+"ZONING ADMINISTRATION DIVISION|N/A~David Weintraub|213-978-3094",
+"ZONING ADMINISTRATION DIVISION|N/A~Maya Zaitzevsky|818-374-5069",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~General Information - Metro|213-482-7077",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Principal City Planner, Estineh Mailian|213-482-0421",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Metro Counter, City Planner, Herman Van Buren|213-482-7074",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Metro Counter, City Planner, Maritza Przekop|213-482-0482",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Metro Counter, Housing Unit, Ulises Gonzalez|213-202-5414",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Metro Counter, Housing Unit, Eric Claros|213-202-5448",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Metro Counter, Wireless Unit, Tina Vacharkulksemsuk|213-202-5423",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Case Management|",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~City Planner, Kit Awakuni|213-482-0441",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~City Planning Associate, Susan Zermeno|213-482-7073",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|N/A~Planning Assistant, Cassandra Van Der Zweep|213-482-0376",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~General Information|213-202-5464",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Sr. City Planner, Bob Duenas|213-202-5460",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Sr. Administrative Clerk, Melvina Adlersberg|213-202-5434",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Administrative Clerk, Felipe Ortega|213-202-5435",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~BESt, Vanessa Soto|213-202-5409",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~MViP, Vacant|",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~City Planner, Iris Fagar-Awakuni|213-202-5475",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Nuisance Abatement/Revocations, City Planner, Lynda Smith|213-202-5408",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~General Information â€“ Valley|818-374-5050",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Sr. City Planner, Ralph Avila|818-374-9915",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Valley Counter, Herminigildo Agustin|818-374-5028",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Valley Counter, Anna Vidal|818-374-5029",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~General Information â€“ West Los Angeles|310-231-2598",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~Sr. City Planner, Ralph Avila|310-231-2907",
+"DEVELOPMENT SERVICE CENTER DIVISION Metro Office|Condition Compliance / Nuisance Abatement / Revocation Section~West LA Counter, Susan Whisnant|310-231-2906",
+"FAX NUMBERS:|N/A~Accounting, Room 570, CH|213-978-2232",
+"FAX NUMBERS:|N/A~Admin Services, Room 525, CH|213-978-0595",
+"FAX NUMBERS:|N/A~Automated Records, Room 575, CH|213-978-1263",
+"FAX NUMBERS:|N/A~Case Management, 10 TH Fl., 201 N. Figueroa|213-482-6874",
+"FAX NUMBERS:|N/A~Commission Office, Room 532, CH|213-978-1029",
+"FAX NUMBERS:|N/A~Executive Management Office, Room 525, CH|213-978-1275",
+"FAX NUMBERS:|N/A~Expediting, Room 721, CH|213-978-4656",
+"FAX NUMBERS:|N/A~Expediting, Room 721, CH|213-978-1343",
+"FAX NUMBERS:|N/A~Historic Resources, Room 559, CH|213-978-0017",
+"FAX NUMBERS:|N/A~HPOZ, Room 601, CH|213-978-6566",
+"FAX NUMBERS:|N/A~Major Projects & EIR, Room 705, CH|213-978-1343",
+"FAX NUMBERS:|N/A~Metro Neighborhood Project, Room 621, CH|213-978-1226",
+"FAX NUMBERS:|N/A~Personnel, Room 220, CH|213-978-1251",
+"FAX NUMBERS:|N/A~Planning Policy, Room 667, CH|213-978-1477",
+"FAX NUMBERS:|N/A~Subdivision, Room 720, CH|213-978-8115",
+"FAX NUMBERS:|N/A~Systems/GIS, Room 825, CH|213-978-1404",
+"FAX NUMBERS:|N/A~Zoning Administrative Office, Room 763, CH|213-978-1334",
+"FAX NUMBERS:|N/A~201 N Figueroa St, Fax #1|213-202-7070",
+"FAX NUMBERS:|N/A~6262 Van Nuys Blvd, Ste 251, Van Nuys|818-374-5075",
+"FAX NUMBERS:|N/A~6262 Van Nuys Blvd, Ste 351, Van Nuys|818-374-5070",
+"FAX NUMBERS:|N/A~6262 Van Nuys Blvd, Ste 430, Van Nuys|818-374-9955",
+"FAX NUMBERS:|N/A~1828 Sawtelle Blvd, 2 nd Fl, West Los Angeles|310-231-2597",
+"TTY|N/A~TTY|213-473-9741",
+"TTY|N/A~Department Emergency Hotline|213-978-2991",
+"TTY|N/A~Telecode/Cellular Phone Administrator|213-978-1248",
+"TTY|N/A~CityFone Coordinator|213-978-1259"];
+var employees = ["DAVID ABBOTT|(213) 978-1424|david.abbott@lacity.org|GEOG INFO SPECIALIST",
+"GRACIELA ACOSTA|(213) 202-5473|GRACIELA.ACOSTA@LACITY.ORG|CITY PLANNING ASSOC",
+"MONIQUE ACOSTA|(213) 978-1173|Monique.Acosta@lacity.org|CITY PLANNING ASSOC",
+"MELVINA ADLERSBERG|(213) 202-5434|MELVINA.ADLERSBERG@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"JULIANNA AGUILAR|(213) 978-1594|N/A|GEOG INFO SPECIALIST",
+"HERMI AGUSTIN|(818) 374-5028|Herminigildo.Agustin@lacity.org|CITY PLANNER",
+"ZENAIDA AGUSTIN|(213) 978-1286|zenaida.agustin@lacity.org|SR ACCOUNTANT II",
+"ESTHER AHN|(213) 978-1486|Esther.Ahn@lacity.org|CITY PLANNING ASSOC",
+"LAUREN ALBA|(213) 978-1190|N/A|PUBLIC RELATIONS SPECIALIST II",
+"ARMANDO ALFARO|(818) 374-5042|ARMANDO.ALFARO@LACITY.ORG|GEOG INFO SPECIALIST",
+"JASMINE ALIASGHAR|(818) 374-1120|JASMINE.ALIASGHAR@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"MELISSA ALOFAITULI|(213) 978-1201|MELISSA.ALOFAITULI@LACITY.ORG|CITY PLANNER",
+"JESSICA ALVARADO|(213) 978-1221|jessica.alvarado@lacity.org|PLANNING ASSISTANT",
+"ESTHER AMAYA|(213) 978-1211|ESTHER.AMAYA@LACITY.ORG|CITY PLANNING ASSOC",
+"BRITTANY ARCENEAUX|(213) 978-1911|brittany.arceneaux@lacity.org|CITY PLANNING ASSOC",
+"ETTA ARMSTRONG|(213) 978-1128|Etta.Armstrong@lacity.org|COMMISSION EXEC ASST I",
+"HAROLD ARRIVILLAGA|(213) 978-1296|Harold.Arrivillaga@lacity.org|SR ADMINISTRATIVE CLERK",
+"ASHLEY ATKINSON|(213) 978-1196|N/A|CITY PLANNING ASSOC",
+"RALPH AVILA|(818) 374-9915|Ralph.Avila@lacity.org|SR CITY PLANNER",
+"IRIS AWAKUNI|(213) 202-5475|Iris.Fagar-Awakuni@lacity.org|CITY PLANNER",
+"KIT AWAKUNI|(213) 482-0441|Kit.Awakuni@lacity.org|CITY PLANNER",
+"NICHOLAS AYARS|(213) 978-1347|NICHOLAS.AYARS@LACITY.ORG|CITY PLANNING ASSOC",
+"LIN BAI|(213) 978-1877|lin.bai@lacity.org|OPER & STATS RES ANL I",
+"AZIZ BAKKOURY|(213) 978-0702|N/A|GEOG INFO SPECIALIST",
+"MAKAN BARANGHOORI|(   )    -    |makan.Baranghoori@lacity.org|STUDENT PROF WORKER",
+"TERESA BATSON|(213) 202-5447|TERESA.BATSON@LACITY.ORG|CITY PLANNING ASSOC",
+"PHILLIP BAZAN|(213) 978-1309|phillip.bazan@lacity.org|MANAGEMENT ANALYST II",
+"DENISE BELL|(310) 231-2912|DENISE.BELL@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"DAISY BENICIA|(818) 374-1126|DAISY.BENICIA@LACITY.ORG|PLANNING ASSISTANT",
+"KEN BERNSTEIN|(213) 978-1181|Ken.Bernstein@lacity.org|PR CITY PLANNER",
+"VINCENT BERTONI|(213) 978-1271|Vince.Bertoni@lacity.org|DIR OF PLANNING",
+"JUSTIN BILOW|(213) 482-7083|JUSTIN.BILOW@LACITY.ORG|CITY PLANNING ASSOC",
+"ANA BLANCARTE|(818) 374-9908|analisa.blancarte@lacity.org|STUDENT PROF WORKER",
+"HEATHER BLEEMERS|(213) 978-0092|Heather.Bleemers@lacity.org|CITY PLANNER",
+"KARIN BOGHOSKHANIAN|(818) 374-9941|karin.boghoskhanian@lacity.org|STUDENT PROF WORKER",
+"SHAKEH BOGHOSKHANIAN|(818) 374-5039|SHAKEH.BOGHOSKHANIAN@LACITY.ORG|GRAPHICS SUPERVISOR I",
+"STEPHANIE BONILLA|(   )    -    |stephanie.bonilla@lacity.org|STUDENT PROF WORKER",
+"SHANA BONSTIN|(213) 978-1217|Shana.Bonstin@lacity.org|PR CITY PLANNER",
+"CLAIRE BOWIN|(213) 978-1213|Claire.Bowin@lacity.org|SR CITY PLANNER",
+"AMANDA BRIONES|(213) 978-1328|amanda.briones@lacity.org|CITY PLANNING ASSOC",
+"ARIANE BRISKI|(213) 978-2289|ARIANE.BRISKI@LACITY.ORG|CITY PLANNING ASSOC",
+"IRA BROWN|(213) 978-1453|N/A|PLANNING ASSISTANT",
+"JUNE BUI|(213) 978-1408|june.bui@lacity.org|PROGRAMMER/ANALYST IV",
+"ARSHAK BUKUJIAN|(   )    -    |N/A|STUDENT PROF WORKER",
+"TIFFANY BUTLER|(213) 978-1283|tiffany.butler@lacity.org|SR MGMT ANALYST I",
+"ANDRE CALDERON|(213) 978-1395|Andre.Calderon@lacity.org|PLANNING ASSISTANT",
+"REUBEN CALDWELL|(213) 978-1209|Reuben.Caldwell@lacity.org|CITY PLANNER",
+"HELEN CAMPBELL|(213) 978-1162|HELEN.CAMPBELL@LACITY.ORG|CITY PLANNING ASSOC",
+"BRIAN CARR|(213) 482-7078|BRIAN.R.CARR@LACITY.ORG|PLANNING ASSISTANT",
+"MICHELLE CARTER|(213) 202-5442|MICHELLE.CARTER@LACITY.ORG|PLANNING ASSISTANT",
+"IVORY CHAMBESHI|(213) 482-7076|N/A|CITY PLANNING ASSOC",
+"JASON CHAN|(213) 978-1310|Jason.Chan@lacity.org|CITY PLANNER",
+"ANGELA CHANG|(213) 978-1434|angela.chang@lacity.org|OPER & STATS RES ANL I",
+"EVA CHANG|(213) 978-0628|N/A|PLANNING ASSISTANT",
+"JONATHAN CHANG|(213) 978-2642|jonathan.chang@lacity.org|CITY PLANNING ASSOC",
+"LAMEESE CHANG|(   )    -    |Lameese.Chang@lacity.org|CITY PLANNER",
+"MICHAEL CHANG|(213) 978-1452|michael.chang@lacity.org|SYSTEMS ANALYST II",
+"LYDIA CHAPMAN|(213) 978-1797|Lydia.Chapman@lacity.org|PLANNING ASSISTANT",
+"CONNIE CHAUV|(213) 978-0016|CONNIE.CHAUV@LACITY.ORG|CITY PLANNING ASSOC",
+"DENNIS CHEW|(818) 374-5025|Dennis.Chew@lacity.org|CITY PLANNING ASSOC",
+"JACK CHIANG|(213) 978-0195|JACK.CHIANG@LACITY.ORG|ASSOC ZONING ADMINSTR",
+"JONATHAN CHIU|(213) 978-3304|JONATHAN.CHIU@LACITY.ORG|PLANNING ASSISTANT",
+"NURI CHO|(213) 978-1177|nuri.cho@lacity.org|CITY PLANNING ASSOC",
+"JANE CHOI|(213) 978-1379|Jane.Choi@lacity.org|SR CITY PLANNER",
+"LILIAN CHOU|(213) 978-1394|lilian.chou@lacity.org|STUDENT PROF WORKER",
+"ALAM CHOUDHURY|(213) 978-1467|Alam.Choudhury@lacity.org|CITY PLANNER",
+"CHERYL CHRISTENSEN|(213) 978-1203|CHERYL.GETUIZA@LACITY.ORG|ASSISTANT CHIEF GRANTS ADMIN",
+"HENRY CHU|(213) 978-1225|HENRY.CHU@LACITY.ORG|ASSOC ZONING ADMINSTR",
+"LINDA CLARKE|(213) 202-5425|Linda.Clarke@lacity.org|SR ADMINISTRATIVE CLERK",
+"ERIC CLAROS|(213) 202-5448|ERIC.CLAROS@LACITY.ORG|CITY PLANNER",
+"MARIE COBIAN|(213) 978-0626|MARIE.COBIAN@LACITY.ORG|CITY PLANNER",
+"ERIN COLEMAN|(213) 978-1338|Erin.Coleman@lacity.org|CITY PLANNING ASSOC",
+"ALAN COMO|(213) 473-9985|ALAN.COMO@LACITY.ORG|CITY PLANNER",
+"GISELLE CORELLA|(213) 978-1357|giselle.corella@lacity.org|CITY PLANNING ASSOC",
+"LISETTE COVARRUBIAS|(213) 978-1321|lisette.covarrubias@lacity.org|CITY PLANNING ASSOC",
+"MARY CROWELL|(818) 374-5074|Mary.Crowell@lacity.org|SR ADMINISTRATIVE CLERK",
+"SARA CRUZ|(213) 978-1189|sara.cruz@lacity.org|CITY PLANNING ASSOC",
+"JOHN DACEY|(213) 482-7340|JOHN.DACEY@LACITY.ORG|CITY PLANNING ASSOC",
+"MING DAI|(213) 978-1428|Ming.Dai@lacity.org|DATA BASE ARCHITECT",
+"CHI DANG|(213) 978-1307|N/A|PLANNING ASSISTANT",
+"GLORIA DEAN|(213) 482-7089|GLORIA.DEAN@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"COLLETTE DEL POSO|(213) 978-0631|collette.delposo@lacity.org|STUDENT PROF WORKER",
+"RODEL DELA CRUZ|(213) 978-1292|rodel.delacruz@lacity.org|SR ACCOUNTANT I",
+"RENATA DERMENGI DRAGLAND|(213) 473-9919|RENATA.DRAGLAND@LACITY.ORG|CITY PLANNING ASSOC",
+"RITA DIAZ|(213) 978-1461|RITA.DIAZ@LACITY.ORG|OFFICE ENGINEERING TECHNICIAN",
+"PATRICIA DIEFENDERFER|(213) 978-1170|Patricia.Diefenderfer@lacity.org|SR CITY PLANNER",
+"DAVID DIEUDONNE|(213) 978-1432|David.Dieudonne@lacity.org|GEOG INFO SYS SUPVR I",
+"DANALYNN DOMINGUEZ|(213) 482-7092|DANALYNN.DOMINGUEZ@LACITY.ORG|CITY PLANNING ASSOC",
+"XANDRO DONADO|(213) 978-0633|Xandro.Donado@lacity.org|GRAPHICS DESIGNER III",
+"BETTY DONG|(213) 978-1392|betty.dong@lacity.org|GEOG INFO SYS CHIEF",
+"BABAK DORJI|(213) 978-1558|BABAK.DORJI@LACITY.ORG|STUDENT PROF WORKER",
+"JASON DOUGLAS|(213) 978-1917|JASON.P.DOUGLAS@LACITY.ORG|CITY PLANNING ASSOC",
+"NORA DRESSER|(213) 482-7079|NORA.DRESSER@LACITY.ORG|CITY PLANNER",
+"BOB DUENAS|(213) 202-5424|BOB.DUENAS@LACITY.ORG|SR CITY PLANNER",
+"ROSE DUROY|(213) 978-1284|ROSE.DUROY@LACITY.ORG|ACCOUNTANT II",
+"BRYAN ECK|(213) 978-1304|Bryan.Eck@lacity.org|CITY PLANNER",
+"MANUEL ELIZARRARAS|(   )    -    |N/A|STUDENT PROF WORKER",
+"CAMILLE ELSTON|(   )    -    |N/A|STUDENT PROF WORKER",
+"ZURIEL ESPINOSA-SALAS|(213) 978-2390|ZURIEL.ESPINOSA@LACITY.ORG|CITY PLANNING ASSOC",
+"JAIME ESPINOZA|(213) 978-1250|jaime.espinoza@lacity.org|CITY PLANNING ASSOC",
+"CUONG FAN|(213) 978-1468|cuong.fan@lacity.org|GEOG INFO SYS SUPVR I",
+"STACY FARFAN|(213) 978-1369|stacy.farfan@lacity.org|CITY PLANNING ASSOC",
+"TIMOTHY FARGO|(818) 374-9911|TIM.FARGO@LACITY.ORG|CITY PLANNER",
+"CARRIE FIRESTONE|(213) 978-1271|CARRIE.FIRESTONE@LACITY.ORG|EXEC ADMIN ASST III",
+"ROBERT FLORES|(213) 978-1437|Robert.Flores@lacity.org|GEOG INFO SPECIALIST",
+"JON FOREMAN|(213) 978-1387|JON.FOREMAN@LACITY.ORG|SR CITY PLANNER",
+"LAURA FRAZIN STEELE|(818) 374-9919|laura.frazinsteele@lacity.org|CITY PLANNER",
+"BRADLEY FURUYA|(213) 978-1218|Bradley.Furuya@lacity.org|PLANNING ASSISTANT",
+"EMILY GABLE|(213) 978-1342|emily.gable@lacity.org|PLANNING ASSISTANT",
+"ELIZABETH GALLARDO|(213) 978-1297|elizabeth.gallardo@lacity.org|CITY PLANNING ASSOC",
+"MATTHEW GAMBOA|(213) 978-1358|N/A|PLANNING ASSISTANT",
+"EDGAR GARCIA|(   )    -    |Edgar.Garcia@lacity.org|ARTS MANAGER I",
+"STEVE GARCIA|(213) 978-1388|steve.m.garcia@lacity.org|PLANNING ASSISTANT",
+"KINIKIA GARDNER|(213) 978-1445|Kinikia.Gardner@lacity.org|CITY PLANNER",
+"SARA GERSHENHORN|(213) 978-1391|N/A|PLANNING ASSISTANT",
+"SHEILA GERSHON|(213) 202-5617|SHEILA.GERSHON@LACITY.ORG|CITY PLANNING ASSOC",
+"RUBINA GHAZARIAN|(213) 978-1194|RUBINA.GHAZARIAN@LACITY.ORG|CITY PLANNER",
+"LAMBERT GIESSINGER|(213) 978-1183|Lambert.Giessinger@lacity.org|ARCHITECT",
+"GINA GINETE|(213) 978-0169|gina.ginete@lacity.org|ACCOUNTANT II",
+"RONY GIRON|(213) 202-5403|RONY.GIRON@LACITY.ORG|CITY PLANNING ASSOC",
+"RENEE GLASCO|(213) 978-1134|renee.glasco@lacity.org|COMMISSION EXEC ASST I",
+"MATTHEW GLESNE|(213) 978-2666|Matthew.Glesne@lacity.org|CITY PLANNER",
+"TOM GLICK|(818) 374-5054|TOM.GLICK@LACITY.ORG|CITY PLANNER",
+"KEVIN GOLDEN|(213) 978-1396|Kevin.Golden@lacity.org|CITY PLANNER",
+"SARAH GOLDMAN|(310) 231-2902|SARAH.GOLDMAN@LACITY.ORG|CITY PLANNING ASSOC",
+"MOIRA GOMEZ|(213) 978-1371|moira.gomez@lacity.org|SR ADMINISTRATIVE CLERK",
+"GRISELDA GONZALEZ|(213) 978-1210|Griselda.Gonzalez@lacity.org|CITY PLANNER",
+"ULISES GONZALEZ|(213) 202-5411|ULISES.GONZALEZ@LACITY.ORG|CITY PLANNING ASSOC",
+"CLAUDE GOODING|(213) 202-5445|N/A|CITY PLANNING ASSOC",
+"ALISSA GORDON|(213) 978-1456|ALISSA.GORDON@LACITY.ORG|CITY PLANNING ASSOC",
+"KAROLINA GORSKA|(213) 978-1475|KAROLINA.GORSKA@LACITY.ORG|PLANNING ASSISTANT",
+"LOURDES GREEN|(213) 978-1313|LOURDES.GREEN@LACITY.ORG|ASSOC ZONING ADMINSTR",
+"DAVID GREENWOOD|(   )    -    |N/A|PLANNING ASSISTANT",
+"ELIZABETH GUDINO|(213) 978-0636|Elizabeth.Gudino@lacity.org|GRAPHICS DESIGNER II",
+"NAOMI GUTH|(213) 978-1198|Naomi.Guth@lacity.org|CITY PLANNER",
+"DEZIREE GUTIERREZ|(213) 978-1414|deziree.gutierrez@lacity.org|STUDENT PROF WORKER",
+"TYNA HALL BRADLEY|(213) 978-1305|TYNA.HALL@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"JORDAN HALLMAN|(   )    -    |jordan.hallman@lacity.org|STUDENT PROF WORKER",
+"DIANE HAMILTON|(213) 978-1471|diane.hamilton@lacity.org|SR ADMINISTRATIVE CLERK",
+"JANET HANSEN|(213) 978-1191|Janet.Hansen@lacity.org|SR CITY PLANNER",
+"TAL HARARI|(213) 978-1204|tal.harari@lacity.org|CITY PLANNING ASSOC",
+"CALLY HARDY|(213) 978-1643|cally.hardy@lacity.org|CITY PLANNING ASSOC",
+"ALEX HEATH|(213) 978-0627|alex.heath@lacity.org|CITY PLANNING ASSOC",
+"NICK HENDRICKS|(213) 978-1383|NICK.HENDRICKS@LACITY.ORG|SR CITY PLANNER",
+"KIMBERLY HENRY|(213) 978-1216|Kimberly.Henry@lacity.org|CITY PLANNING ASSOC",
+"TOM HENRY|(818) 374-5027|Tom.Henry@lacity.org|CITY PLANNING ASSOC",
+"CHRISTINE HERNANDEZ|(213) 978-1458|N/A|SR ADMINISTRATIVE CLERK",
+"ELVIA HERNANDEZ|(213) 978-0639|ELVIA.HERNANDEZ@LACITY.ORG|GRAPHICS SUPERVISOR I",
+"JASON HERNANDEZ|(213) 978-1276|jason.hernandez@lacity.org|PLANNING ASSISTANT",
+"LORENA HERNANDEZ|(213) 978-1429|Lorena.Hernandez@lacity.org|GEOG INFO SPECIALIST",
+"MIGUEL HERNANDEZ|(818) 374-9918|Miguel.Hernandez@lacity.org|ADMINISTRATIVE CLERK",
+"JONATHAN HERSHEY|(213) 978-1337|Jonathan.Hershey@lacity.org|SR CITY PLANNER",
+"SRIMAL HEWAWITHARANA|(213) 978-1359|Srimal.Hewawitharana@lacity.org|ENVIRONMENTAL SPEC II",
+"GARY HIMAN|(213) 978-1425|Gary.Himan@lacity.org|GEOG INFO SYS SUPVR I",
+"JOAN HOLAZA|(213) 978-1256|Joan.Holaza@lacity.org|SR ADMINISTRATIVE CLERK",
+"KAREN HOO|(213) 978-1331|karen.hoo@lacity.org|CITY PLANNER",
+"GHAZAL HOOSHMAND|(818) 374-5033|Noor.Hooshmand@lacity.org|STUDENT PROF WORKER",
+"SARAH HOUNSELL|(818) 374-9917|Sarah.Hounsell@lacity.org|CITY PLANNER",
+"JAMES HOWE|(213) 202-5439|N/A|CITY PLANNING ASSOC",
+"WILLIAM HSU|(213) 978-2289|william.hsu@lacity.org|CITY PLANNING ASSOC",
+"ALEJANDRO HUERTA|(213) 978-1454|alejandro.huerta@lacity.org|CITY PLANNING ASSOC",
+"NIALL HUFFMAN|(213) 978-3405|niall.huffman@lacity.org|CITY PLANNING ASSOC",
+"WILLIAM HUGHEN|(818) 374-5049|william.hughen@lacity.org|CITY PLANNING ASSOC",
+"LUCI IBARRA|(213) 978-1378|Luciralia.Ibarra@lacity.org|SR CITY PLANNER",
+"SERGIO IBARRA|(213) 978-1333|SERGIO.IBARRA@LACITY.ORG|CITY PLANNER",
+"NINA IDEMUDIA|(213) 978-1339|nina.idemudia@lacity.org|CITY PLANNING ASSOC",
+"FABIOLA INZUNZA ARMENTA|(213) 978-1302|Fabiola.Inzunza@lacity.org|CITY PLANNING ASSOC",
+"THEODORE IRVING|(213) 978-1366|Theodore.Irving@lacity.org|ASSOC ZONING ADMINSTR",
+"ANTONIO ISAIA|(213) 978-1353|Antonio.Isaia@lacity.org|CITY PLANNING ASSOC",
+"SCOTT JACKSON|(213) 978-1494|scott.jackson@lacity.org|GEOG INFO SPECIALIST",
+"ALETA JAMES|(213) 202-5402|ALETA.JAMES@LACITY.ORG|ASSOC ZONING ADMINSTR",
+"DIEGO JANACUA CORTEZ|(213) 978-1657|N/A|PLANNING ASSISTANT",
+"DON JEFFERSON|(213) 978-1240|DON.JEFFERSON@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"DIANA JIMENEZ|(213) 202-5446|N/A|STUDENT PROF WORKER",
+"SUSAN JIMENEZ|(213) 978-1344|susan.jimenez@lacity.org|ADMINISTRATIVE CLERK",
+"ALEX JOHNSON|(   )    -    |N/A|STUDENT PROF WORKER",
+"KEVIN JONES|(818) 374-5072|KEVIN.JONES@LACITY.ORG|SR CITY PLANNER",
+"MELISSA JONES|(213) 978-1192|melissa.jones@lacity.org|ARCHITECTURAL ASSOC II",
+"TORIKA JONES|(   )    -    |torika.jones@lacity.org|STUDENT PROF WORKER",
+"ANDREW JORGENSEN|(213) 978-1281|andrew.jorgensen@lacity.org|CITY PLANNING ASSOC",
+"GABRIELA JUAREZ|(213) 978-1199|GABRIELA.JUAREZ@LACITY.ORG|CITY PLANNER",
+"DEBORAH KAHEN|(213) 978-1202|DEBORAH.KAHEN@LACITY.ORG|CITY PLANNER",
+"BRENDA KAHINJU|(213) 978-1316|brenda.kahinju@lacity.org|SR ADMINISTRATIVE CLERK",
+"BINDU KANNAN|(213) 202-5617|N/A|CITY PLANNING ASSOC",
+"JONATHAN KAPLAN|(   )    -    |N/A|STUDENT PROF WORKER",
+"AIDA KARAPETIAN|(213) 202-5450|AIDA.KARAPETIAN@LACITY.ORG|PLANNING ASSISTANT",
+"STEVEN KATIGBAK|(213) 978-1349|Steven.Katigbak@lacity.org|CITY PLANNING ASSOC",
+"ROBERT KEATINGE|(213) 978-1558|robert.keatinge@lacity.org|STUDENT PROF WORKER",
+"KEVIN KELLER|(213) 978-1272|Kevin.Keller@lacity.org|DEPUTY DIR OF PLANNING",
+"CLARE KELLEY|(213) 978-1207|clare.kelley@lacity.org|CITY PLANNING ASSOC",
+"UWE KERNER|(213) 978-1253|uwe.kerner@lacity.org|MANAGEMENT ANALYST II",
+"YEGHIG KESHISHIAN|(213) 978-1324|YEGHIG.KESHISHIAN@LACITY.ORG|PUB INFO DIRECTOR II",
+"AZEEN KHANMALEK|(213) 978-1336|azeen.khanmalek@lacity.org|CITY PLANNING ASSOC",
+"JEFFREY KHAU|(213) 978-1346|JEFF.KHAU@LACITY.ORG|PLANNING ASSISTANT",
+"JASON KILLEEN|(213) 978-1915|N/A|CH MANAGEMENT ANALYST",
+"BONNIE KIM|(213) 978-1330|bonnie.kim@lacity.org|CITY PLANNING ASSOC",
+"JAE KIM|(213) 978-1322|Jae.H.Kim@lacity.org|SR CITY PLANNER",
+"SOPHIA KIM|(213) 978-1208|N/A|PLANNING ASSISTANT",
+"STEVE KIM|(213) 482-7340|STEVE.KIM@LACITY.ORG|CITY PLANNER",
+"KATHLEEN KING|(213) 978-1195|KATHLEEN.KING@LACITY.ORG|CITY PLANNING ASSOC",
+"MARIANNE KING|(818) 374-5059|Marianne.King@lacity.org|CITY PLANNING ASSOC",
+"CORREY KITCHENS|(818) 374-5034|N/A|PLANNING ASSISTANT",
+"DIANA KITCHING|(213) 978-1308|Diana.Kitching@lacity.org|CITY PLANNER",
+"VALENTINA KNOX-JONES|(818) 374-5038|VALENTINA.KNOX.JONES@LACITY.ORG|CITY PLANNER",
+"LAURA KRAWCZYK|(213) 978-1212|laura.krawczyk@lacity.org|CITY PLANNING ASSOC",
+"TIM KY|(213) 978-1423|Tim.Ky@lacity.org|SR SYSTEMS ANALYST I",
+"MY LA|(213) 978-1301|MY.LA@LACITY.ORG|CITY PLANNING ASSOC",
+"ERIKA LAM|(818) 374-5046|N/A|CITY PLANNING ASSOC",
+"LY LAM|(213) 978-1206|LY.T.LAM@LACITY.ORG|SR MGMT ANALYST II",
+"CECILIA LAMAS|(213) 978-1299|cecilia.lamas@lacity.org|COMMISSION EXEC ASST I",
+"BLAKE LAMB|(213) 978-1167|Blake.Lamb@lacity.org|SR CITY PLANNER",
+"WILLIAM LAMBORN|(213) 978-1470|WILLIAM.LAMBORN@LACITY.ORG|CITY PLANNER",
+"REVA LANYON|(818) 374-5033|reva.lanyon@lacity.org|STUDENT PROF WORKER",
+"NELSON LARIOS|(213) 978-1327|Nelson.Larios@lacity.org|SR ADMINISTRATIVE CLERK",
+"DEBBIE LAWRENCE|(213) 978-1163|Debbie.Lawrence@lacity.org|SR CITY PLANNER",
+"ABRAM LEAL|(213) 978-1433|Abram.Leal@lacity.org|GEOG INFO SPECIALIST",
+"CHARLES LEE|(213) 978-1441|Charles.S.Lee@lacity.org|GEOG INFO SYS SUPVR II",
+"CHRISTINA LEE|(213) 473-9723|Christina.Toy-Lee@lacity.org|CITY PLANNER",
+"JAE LEE|(213) 978-1282|Jae.Y.Lee@lacity.org|ACCOUNTING CLERK",
+"FIPE LEILUA|(213) 482-6982|FIPE.LEILUA@LACITY.ORG|PLANNING ASSISTANT",
+"MICHELLE LEVY|(213) 978-1886|Michelle.Levy@lacity.org|CITY PLANNER",
+"JOANN LIM|(213) 978-1341|JOANN.LIM@LACITY.ORG|PLANNING ASSISTANT",
+"ERICK LOPEZ|(213) 978-1323|ERICK.LOPEZ@LACITY.ORG|CITY PLANNER",
+"JACOB LOPEZ|(213) 978-1261|JACOB.LOPEZ@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"LINDA LOU|(213) 978-1473|linda.lou@lacity.org|CITY PLANNING ASSOC",
+"YI LU|(213) 978-1287|YI.LU@LACITY.ORG|CITY PLANNING ASSOC",
+"STEPHANIE LUCKETT|(213) 978-1447|Stephanie.Luckett@lacity.org|SYSTEMS ANALYST II",
+"JOE LUCKEY|(213) 978-1340|Joe.Luckey@lacity.org|CITY PLANNING ASSOC",
+"MAIDEL LUEVANO|(213) 978-1492|maidel.luevano@lacity.org|CITY PLANNING ASSOC",
+"MATTHEW LUM|(213) 978-1172|MATTHEW.LUM@LACITY.ORG|CITY PLANNING ASSOC",
+"TIMMY LUONG|(213) 978-1407|timmy.luong@lacity.org|GEOG INFO SPECIALIST",
+"EDBER MACEDO|(213) 482-7084|edber.macedo@lacity.org|CITY PLANNING ASSOC",
+"LAURA MACPHERSON|(213) 978-1187|LAURA.MACPHERSON@LACITY.ORG|CITY PLANNER",
+"LESI MAI|(213) 978-1246|N/A|GEOG INFO SPECIALIST",
+"ESTINEH MAILIAN|(213) 202-5427|Estineh.Mailian@lacity.org|PR CITY PLANNER",
+"MEGAN MALONE BROWN|(213) 978-1465|N/A|STUDENT PROF WORKER",
+"PEGGY MALONE BROWN|(818) 374-5036|peggy.malone-brown@lacity.org|CITY PLANNING ASSOC",
+"NICK MARICICH|(   )    -    |NICHOLAS.MARICICH@LACITY.ORG|PR CITY PLANNER",
+"TREVOR MARTIN|(310) 231-2909|trevor.martin@lacity.org|CITY PLANNING ASSOC",
+"HEBER MARTINEZ|(213) 978-1398|Heber.martinez@lacity.org|SYSTEMS ANALYST II",
+"LUCERITO MARTINEZ|(818) 374-5058|lucerito.martinez@lacity.org|CITY PLANNING ASSOC",
+"NORALI MARTINEZ MAZA|(213) 202-5441|NORALI.MARTINEZ@LACITY.ORG|CITY PLANNING ASSOC",
+"HIROYUKI MATSUDA|(213) 978-1390|hiroyuki.matsuda@lacity.org|GEOG INFO SPECIALIST",
+"NOAH MCCOY|(310) 231-2903|noah.mccoy@lacity.org|CITY PLANNING ASSOC",
+"SANDRA MCFARLANE|(213) 978-1255|SANDRA.MCFARLANE@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"PRIYA MEHENDALE|(213) 978-1380|Priya.Mehendale@lacity.org|CITY PLANNER",
+"ADRINEH MELKONIAN|(818) 374-9900|adrineh.melkonian@lacity.org|PLANNING ASSISTANT",
+"LENA MIK|(213) 978-2717|LENA.MIK@LACITY.ORG|CITY PLANNING ASSOC",
+"MICHELLE MONTENEGRO|(818) 374-9905|N/A|PLANNING ASSISTANT",
+"JENNA MONTERROSA|(213) 978-1377|Jenna.Monterrosa@lacity.org|CITY PLANNER",
+"ARIEL MORENO|(213) 482-7077|ARIEL.B.MORENO@LACITY.ORG|CITY PLANNING ASSOC",
+"STACY MUNOZ|(213) 978-1354|Stacy.Munoz@lacity.org|MANAGEMENT ANALYST II",
+"PHYLLIS NATHANSON|(213) 978-1474|Phyllis.Nathanson@lacity.org|SR CITY PLANNER",
+"DARLENE NAVARRETE|(213) 978-1332|Darlene.Navarrete@lacity.org|SR ADMINISTRATIVE CLERK",
+"CARL NELSON|(213) 978-1419|CARL.E.NELSON@LACITY.ORG|GEOG INFO SPECIALIST",
+"OLIVER NETBURN|(213) 978-1382|OLIVER.NETBURN@LACITY.ORG|CITY PLANNER",
+"MINDY NGUYEN|(213) 978-1241|Mindy.Nguyen@lacity.org|CITY PLANNER",
+"TIFFANNI NGUYEN|(   )    -    |N/A|STUDENT PROF WORKER",
+"CHARLES NORMAN|(213) 978-1417|CHARLES.NORMAN@LACITY.ORG|SR SYSTEMS ANALYST I",
+"MONICA NUNEZ|(213) 978-1244|MONICA.NUNEZ@LACITY.ORG|EXEC ADMIN ASST II",
+"ELVA NUNO O DONNELL|(818) 374-5066|Elva.Nuno-ODonnell@lacity.org|CITY PLANNER",
+"DAN ODONNELL|(818) 374-9907|Dan.ODonnell@lacity.org|CITY PLANNER",
+"JULIET OH|(213) 978-1186|JULIET.OH@LACITY.ORG|CITY PLANNER",
+"DAVID OLIVO|(213) 978-1205|David.Olivo@lacity.org|CITY PLANNER",
+"RENATA OOMS|(213) 978-1222|RENATA.OOMS@LACITY.ORG|CITY PLANNING ASSOC",
+"ANNA ORELLANA|(213) 978-1227|Anna.Orellana@lacity.org|SR ADMINISTRATIVE CLERK",
+"CRISTINA ORELLANA|(818) 374-5030|cristina.orellana@lacity.org|ADMINISTRATIVE CLERK",
+"FELIPE ORTEGA|(213) 202-5435|felipe.ortega@lacity.org|ADMINISTRATIVE CLERK",
+"CRUZ ORTIZ|(213) 978-1440|Cruz.Ortiz@lacity.org|GEOG INFO SYS SUPVR I",
+"MARIA ORTIZ|(213) 978-1291|Maria.Ortiz@lacity.org|MANAGEMENT ANALYST II",
+"BEATRICE PACHECO|(213) 978-1260|Beatrice.Pacheco@lacity.org|CH CLERK",
+"CONNI PALLINI TIPTON|(213) 978-1179|Conni.Pallini-Tipton@lacity.org|SR CITY PLANNER",
+"CHRISTINA PARK|(213) 473-9987|christina.park@lacity.org|CITY PLANNING ASSOC",
+"HAKEEM PARKE DAVIS|(213) 978-1487|N/A|CITY PLANNING ASSOC",
+"PHYLLIS PARKER|(213) 202-5460|Phyllis.Parker@lacity.org|CITY PLANNER",
+"SARAH PEARSON|(213) 473-9983|Sarah.Molina-Pearson@lacity.org|CITY PLANNER",
+"DAVID PENA|(818) 374-5061|David.Pena@lacity.org|PLANNING ASSISTANT",
+"YOVANA PEREZ|(213) 482-7093|N/A|CITY PLANNING ASSOC",
+"JOJO PEWSAWANG|(213) 978-1214|JOJO.PEWSAWANG@LACITY.ORG|CITY PLANNER",
+"NATALIE PHAM|(213) 978-1288|natalie.pham@lacity.org|MANAGEMENT ANALYST II",
+"CHRISTOPHE PINA|(213) 978-1012|CHRISTOPHER.PINA@LACITY.ORG|CITY PLANNING ASSOC",
+"MARITZA PRZEKOP|(213) 482-0482|MARITZA.PRZEKOP@LACITY.ORG|CITY PLANNER",
+"LILY QUAN|(213) 978-1127|Lily.Quan@lacity.org|EXEC ADMIN ASST III",
+"MATTHEW QUAN|(213) 978-1320|matthew.quan@lacity.org|CITY PLANNING ASSOC",
+"VINCENT QUITORIANO|(213) 202-5420|Vincent.Quitoriano@lacity.org|CITY PLANNING ASSOC",
+"FRANKLIN QUON|(213) 202-5421|FRANK.QUON@LACITY.ORG|ASSOC ZONING ADMINSTR",
+"MARY QUON|(213) 978-1393|Mary.Quon@lacity.org|SECRETARY",
+"JESSE RAMOS|(213) 482-7078|JESSE.RAMOS@LACITY.ORG|PLANNING ASSISTANT",
+"JESUS RAMOS|(818) 374-5037|JESUS.RAMOS@LACITY.ORG|GEOG INFO SYS SUPVR I",
+"LOUISA RANICK|(818) 374-9906|Louisa.Ranick@lacity.org|GRAPHICS DESIGNER II",
+"CHARLIE RAUSCH|(213) 978-1306|Charlie.Rausch@lacity.org|CH ZONING ADMINSTR",
+"RICHARD REASER|(213) 978-1240|N/A|CITY PLANNING ASSOC",
+"MARIA REYES|(213) 978-1160|Maria.Reyes@lacity.org|PROJECT ASSISTANT",
+"CORII RICHARDSON|(   )    -    |corii.richardson@lacity.org|STUDENT PROF WORKER",
+"MARY RICHARDSON|(213) 978-1478|Mary.Richardson@lacity.org|CITY PLANNING ASSOC",
+"KIRAN RISHI|(213) 978-1169|kiran.rishi@lacity.org|CITY PLANNING ASSOC",
+"FAISAL ROBLE|(213) 978-1168|Faisal.Roble@lacity.org|PR CITY PLANNER",
+"ANDY RODRIGUEZ|(213) 978-1294|Andy.Rodriguez@lacity.org|CITY PLANNING ASSOC",
+"CLAUDIA RODRIGUEZ|(213) 473-5797| |CITY PLANNER",
+"NELSON RODRIGUEZ|(818) 374-5048|NELSON.RODRIGUEZ@LACITY.ORG|CITY PLANNING ASSOC",
+"SIERRA RODRIGUEZ|(213) 978-1262|SIERRA.RODRIGUEZ@LACITY.ORG|STUDENT PROF WORKER",
+"JOSE ROMERO NAVARRO|(213) 482-7074|JOSE.ROMERO-NAVARRO@LACITY.ORG|CITY PLANNER",
+"ISAIAH ROSS|(213) 978-1368|isaiah.ross@lacity.org|CITY PLANNING ASSOC",
+"TOM ROTHMANN|(213) 978-1891|TOM.ROTHMANN@LACITY.ORG|PR CITY PLANNER",
+"LILIAN RUBIO|(213) 978-1840|lilian.rubio@lacity.org|CITY PLANNING ASSOC",
+"SHANNON RYAN|(213) 978-3304|SHANNON.RYAN@LACITY.ORG|CITY PLANNER",
+"NICOLE SABUTIS|(213) 978-1436|nicole.sabutis@lacity.org|GEOG INFO SPECIALIST",
+"LARA SAIKALI|(213) 978-1410|N/A|GEOG INFO SPECIALIST",
+"BRYAN SALGADO|(213) 978-1230|bryan.salgado@lacity.org|STUDENT PROF WORKER",
+"JENNIFER SANCHEZ|(818) 374-5047|jennifer.sanchez@lacity.org|STUDENT PROF WORKER",
+"LOURDES SANCHEZ|(213) 978-1252|LOURDES.SANCHEZ@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"NICOLE SANCHEZ|(213) 978-3034|Nicole.Sanchez@lacity.org|CITY PLANNING ASSOC",
+"SANTOS SANCHEZ|(213) 978-1361|Santos.Sanchez@lacity.org|PLANNING ASSISTANT",
+"CHRISTINE SAPONARA|(213) 978-1363|Christine.Saponara@lacity.org|SR CITY PLANNER",
+"STELLA SARGSYAN|(213) 202-5456|stella.sargsyan@lacity.org|STUDENT PROF WORKER",
+"COURTNEY SCHOENWALD|(818) 374-9904|COURTNEY.SCHOENWALD@LACITY.ORG|CITY PLANNER",
+"GREG SHOOP|(213) 978-1243|Greg.Shoop@lacity.org|CITY PLANNER",
+"ROWLEN SHUE|(213) 978-1409|rowlen.shue@lacity.org|SR SYSTEMS ANALYST I",
+"COURTNEY SHUM|(213) 978-1916|COURTNEY.SHUM@LACITY.ORG|CITY PLANNER",
+"MICHAEL SIN|(213) 978-1345|Michael.Sin@lacity.org|CITY PLANNING ASSOC",
+"MICHELLE SINGH|(213) 978-1166|Michelle.Singh@lacity.org|CITY PLANNER",
+"MAY SIRINOPWONGSAGON|(213) 978-1372|May.Sirinopwongsagon@lacity.org|CITY PLANNER",
+"KORY SIRKIN|(818) 374-5043|KORY.SIRKIN@LACITY.ORG|GEOG INFO SPECIALIST",
+"DYLAN SITTIG|(213) 473-9701|Dylan.Sittig@lacity.org|PLANNING ASSISTANT",
+"DANIEL SKOLNICK|(818) 374-7556|Daniel.Skolnick@lacity.org|CITY PLANNING ASSOC",
+"BLAIR SMITH|(213) 978-1174|blair.smith@lacity.org|CITY PLANNING ASSOC",
+"JAMIE SMITH|(213) 978-1285|N/A|ACCOUNTING CLERK",
+"LYNDA SMITH|(213) 202-5408|LYNDA.SMITH@LACITY.ORG|CITY PLANNER",
+"VEENA SNEHANSH|(213) 978-1220|N/A|CITY PLANNING ASSOC",
+"DAVID SOLAIMAN TEHRANI|(213) 978-1193|DAVID.SOLAIMAN-TEHRANI@LACITY.ORG|PLANNING ASSISTANT",
+"HAGU SOLOMON-CARY|(213) 978-1394|HAGU.SOLOMON-CARY@LACITY.ORG|CITY PLANNER",
+"MIGUEL SOTELO|(213) 978-6364|miguel.sotelo@lacity.org|ADMINISTRATIVE CLERK",
+"VANESSA SOTO|(213) 202-5409|Vanessa.Soto@lacity.org|CITY PLANNER",
+"TONY STAPLES|(213) 978-1257|Tony.Staples@lacity.org|ADMINISTRATIVE CLERK",
+"JAY STRAHAN|(213) 978-1579|JAY.STRAHAN@LACITY.ORG|GEOG INFO SPECIALIST",
+"ERIN STRELICH|(213) 978-1351|Erin.Strelich@lacity.org|CITY PLANNING ASSOC",
+"EVA SUN|(213) 978-1248|EVA.SUN@LACITY.ORG|SR SYSTEMS ANALYST II",
+"JACQUELINE SWARTZ|(213) 978-1439|N/A|GEOG INFO SPECIALIST",
+"ESTHER TAM|(213) 978-1381|esther.tam@lacity.org|SYSTEMS PROGRAMMER II",
+"VICKY TAVITIAN|(818) 374-9903|N/A|CITY PLANNING ASSOC",
+"FEI TENG|(   )    -    |N/A|STUDENT PROF WORKER",
+"DAVID TERUKINA|(213) 978-1427|david.terukina@lacity.org|SR SYSTEMS ANALYST II",
+"DAVID THAI|(213) 978-1415|david.thai@lacity.org|STUDENT PROF WORKER",
+"RICK TORRES|(818) 374-5024|Rick.Torres@lacity.org|CITY PLANNING ASSOC",
+"FERNANDO TOVAR|(213) 978-1303|FERNANDO.TOVAR@LACITY.ORG|ASSOC ZONING ADMINSTR",
+"DUKE TRAN|(213) 978-1411|Duke.Tran@lacity.org|SYSTEMS ANALYST II",
+"KENTON TRINH|(213) 978-1290|kenton.trinh@lacity.org|CITY PLANNING ASSOC",
+"ALEXANDER TRUONG|(213) 473-9769|N/A|CITY PLANNING ASSOC",
+"KELVIN TSAN|(213) 978-1413|KELVIN.TSAN@LACITY.ORG|SYSTEMS ANALYST II",
+"JACK TSAO|(213) 978-1367|Jack.Tsao@lacity.org|OPER & STATS RES ANL II",
+"FAE TSUKAMOTO|(213) 978-1420|Fae.Tsukamoto@lacity.org|GEOG INFO SYS SUPVR II",
+"JORDANN TURNER|(213) 978-1365|Jordann.Turner@lacity.org|CITY PLANNER",
+"ONDREA TYE|(213) 978-1197|Ondrea.Tye@lacity.org|CITY PLANNING ASSOC",
+"HAYDEE URITA LOPEZ|(213) 978-1325|Haydee.Urita-Lopez@lacity.org|CITY PLANNER",
+"TINA VACHARKULKSEMSUK|(213) 202-5423|Tina.Vacharkulksemsuk@lacity.org|CITY PLANNER",
+"LIDIA VAIZ|(818) 374-9901|LIDIA.VAIZ@LACITY.ORG|GEOG INFO SPECIALIST",
+"REBECCA VALDEZ|(213) 978-1416|N/A|PR CITY PLANNER",
+"HERMAN VAN BUREN|(213) 202-5422|HERMAN.VANBUREN@LACITY.ORG|CITY PLANNER",
+"CASSANDRA VAN DER ZWEEP|(213) 482-7973|cassandra.zweep@lacity.org|CITY PLANNING ASSOC",
+"JAMES VAN GERPEN|(213) 978-1399|james.vangerpen@lacity.org|DIR OF SYSTEMS",
+"RUBEN VASQUEZ|(213) 978-1741|Ruben.C.Vasquez@lacity.org|PLANNING ASSISTANT",
+"SEAN VEAL|(213) 482-7072|N/A|CITY PLANNING ASSOC",
+"RAFAEL VEGA|(213) 978-1298|RAFAEL.VEGA@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"PAUL VERGER|(213) 978-1449|PAUL.VERGER@LACITY.ORG|SYSTEMS ANALYST II",
+"ANNA VIDAL|(818) 374-5029|Anna.Vidal@lacity.org|CITY PLANNER",
+"ADAM VILLANI|(818) 374-5067|ADAM.VILLANI@LACITY.ORG|CITY PLANNER",
+"CAM VUONG|(213) 978-1466|CAM.VUONG@LACITY.ORG|SYSTEMS PROGRAMMER I",
+"WANDA WALKER|(213) 978-1215|Wanda.Walker@lacity.org|PR CLERK",
+"IRIS WAN|(213) 978-1397|iris.wan@lacity.org|CITY PLANNING ASSOC",
+"VINSON WATERS|(213) 978-3305|N/A|ADMINISTRATIVE CLERK",
+"LISA WEBBER|(213) 978-1274|Lisa.Webber@lacity.org|DEPUTY DIR OF PLANNING",
+"CRAIG WEBER|(213) 978-1311|Craig.Weber@lacity.org|PR CITY PLANNER",
+"STEVE WECHSLER|(818) 374-5031|STEVEN.WECHSLER@LACITY.ORG|CITY PLANNING ASSOC",
+"DAVID WEINTRAUB|(213) 978-3094|DAVID.WEINTRAUB@LACITY.ORG|ASSOC ZONING ADMINSTR",
+"PATRICK WHALEN|(213) 978-1370|PATRICK.WHALEN@LACITY.ORG|PLANNING ASSISTANT",
+"SUSAN WHISNANT|(310) 231-2906|Susan.Whisnant@lacity.org|CITY PLANNER",
+"ROCKY WILES|(213) 978-1389|Rocky.Wiles@lacity.org|CITY PLANNER",
+"JAMES WILLIAMS|(213) 978-1295|James.K.Williams@lacity.org|COMMISSION EXEC ASST II",
+"LOVELL WILLIAMS|(   )    -    |N/A|PLANNING ASSISTANT",
+"QIUANA WILLIAMS|(213) 978-1912|qiuana.williams@lacity.org|CITY PLANNING ASSOC",
+"TRACY WILLIAMS|(818) 374-5031|TRACY.D.WILLIAMS@LACITY.ORG|PLANNING ASSISTANT",
+"ALYCIA WITZLING|(818) 374-5044|alycia.witzling@lacity.org|CITY PLANNING ASSOC",
+"MARC WOERSCHING|(213) 202-5414|Marc.Woersching@lacity.org|CITY PLANNER",
+"JASON WONG|(213) 978-1364|JASON.WONG@LACITY.ORG|SR ADMINISTRATIVE CLERK",
+"SUSAN WONG|(213) 978-1472|Susan.S.Wong@lacity.org|CITY PLANNING ASSOC",
+"BRIDGETTE WOOTEN|(213) 482-7071|BRIDGETTE.WOOTEN@LACITY.ORG|CITY PLANNER",
+"DWAYNE WYATT|(213) 202-5413|DWAYNE.WYATT@LACITY.ORG|CITY PLANNING ASSOC",
+"CHERRY YAP|(213) 978-1164|Cherry.Yap@lacity.org|SR ADMINISTRATIVE CLERK",
+"LIVEA YEH|(213) 978-1268|Livea.Yeh@lacity.org|SR MGMT ANALYST I",
+"DANAI ZAIRE|(213) 202-5440|N/A|CITY PLANNING ASSOC",
+"MAYA ZAITZEVSKY|(818) 374-5069|Maya.Zaitzevsky@lacity.org|ASSOC ZONING ADMINSTR",
+"MILENA ZASADZIEN|(213) 978-1360|MILENA.ZASADZIEN@LACITY.ORG|CITY PLANNER",
+"SUSAN ZERMENO|(213) 482-7073|SUSAN.ZERMENO@LACITY.ORG|CITY PLANNER"];
+var assignment_extra = ["Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Boyle Heights,|Kiran Rishi|213-978-1169",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Boyle Heights,|Alex Heath|213-978-0627",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Boyle Heights,|Unit Head, Haydee Urita-Lopez|213-978-1325",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Central City/Central City North,|Tal Harari|213-978-1204",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Central City/Central City North,|Clare Kelley|213-978-1207",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Central City/Central City North,|Brittany Arceneaux|213-978-1911",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Central City/Central City North,|Unit Head, Bryan Eck|213-978-1304",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|CRA Transition,|Giselle Corella|213-978-1357",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|CRA Transition,|Katherine Peterson|213-978-1472",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|CRA Transition,|Unit Head, Christine Saponara|213-978-1363",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Granada Hills|Priya Mehendale|213-978-1380",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Granada Hills|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|High Speed Rail|Bryan Eck|213-978-1304",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|High Speed Rail|Unit Head, Patricia Diefenderfer|213-978-1170",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Hollywood/Wilshire,|Linda Lou|213-978-1473",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Hollywood/Wilshire,|Priya Mehendale|213-978-1380",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Hollywood/Wilshire,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Hollywood,|Linda Lou|213-978-1473",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Hollywood,|Elizabeth Gallardo|213-978-1297",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Hollywood,|Priya Mehendale|213-978-1380",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Hollywood,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|LAX|David Olivo|213-978-1205",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|LAX|Unit Head, Jonathan Hershey|213-978-1337",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Metro Transit Oriented Districts (TOD),|Lameese Chang|213-978-1178",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Metro Transit Oriented Districts (TOD),|Andrew Jorgensen|213-978-1281",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Metro Transit Oriented Districts (TOD),|Laura Krawcyzk|213-978-1212",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Metro Transit Oriented Districts (TOD),|David Olivo|213-978-1205",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Metro Transit Oriented Districts (TOD),|James Owen|213-978-1221",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Metro Transit Oriented Districts (TOD),|Dylan Sittig|213-473-9701",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Metro Transit Oriented Districts (TOD),|Unit Head, Patricia Diefenderfer|213-978-1170",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Neighborhood Conservation,|Emily Gable|213-978-1342",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Neighborhood Conservation,|Christine Saponara|213-978-1363",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Neighborhood Conservation,|Unit Head, Patricia Diefenderfer|213-978-1170",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|San Pedro/Harbor,|Esther Amaya|213-978-1211",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|San Pedro/Harbor,|Priya Mehendale|213-978-1380",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|San Pedro/Harbor,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|San Pedro,|Esther Amaya|213-978-1211",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|San Pedro,|Elizabeth Gallardo|213-978-1297",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|San Pedro,|Priya Mehendale|213-978-1380",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|San Pedro,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|South LA,|Melissa Alofaituli|213-978-1201",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|South LA,|Jessica Alvarado|213-978-1221",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|South LA,|Reuben Caldwell|213-978-1209",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|South LA,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Southeast LA,|Marie Cobian|213-978-0626",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Southeast LA,|Reuben Caldwell|213-978-1209",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Southeast LA,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Sylmar New Com Plan|Priya Mehendale|213-978-1380",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Sylmar New Com Plan|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Valley|Adam Villani|818-374-5067",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Valley|Unit Head, Jonathan Hershey|213-978-1337",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Venice Local Coastal Program,|Hagu Solomon-Carey|213-978-1394",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Venice Local Coastal Program,|Antonio Isaia|213-978-1353",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Venice Local Coastal Program,|Laura MacPherson|213-978-1187",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|Venice Local Coastal Program,|Unit Head, Jonathan Hershey|213-978-1337",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|West,|Steven Katigbak|213-978-1349",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|West,|Renata Ooms|213-978-1222",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|West,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|West Adams-Baldwin Hills-Leimert,|Jessica Alvarado|213-978-1221",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|West Adams-Baldwin Hills-Leimert,|Reuben Caldwell|213-978-1209",
+"Community Plans\nDivision Manager, Craig Weberâ€“ 213-978-1311\nGeneral Information â€“ 213-978-6364|West Adams-Baldwin Hills-Leimert,|Unit Head, Conni Pallini-Tipton|213-978-1179",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Demographics,|Angela Chang|213-978-1434",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Demographics,|Unit Head, Jack Tsao|213-978-1367",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|General Plan/CEQA/Outreach|Fabiola Inzunza|213-978-1302",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|General Plan/CEQA/Outreach|Maidel Luevano|213-978-1492",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|General Plan/CEQA/Outreach|Unit Head, Diana Kitching|213-978-1308",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|General Plan/ River /Policy|Lena Mik|213-978-2717",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|General Plan/ River /Policy|Jason Douglas|213-978-1917",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|General Plan/ River /Policy|Chris Pina|213-978-1012",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|General Plan/ River /Policy|Unit Head, Michelle Levy|213-978-1886",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Housing Planner,|Cally Hardy|213-978-1643",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Housing Planner,|William Hsu|213-978-1558",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Housing Planner,|Unit Head, Matthew Glesne|213-978-2666",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Mobility Planner,|Rubina Ghazarian|213-978-1194",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Great Streets Planner,|Qiuana Williams|213-978-1912",
+"Citywide Policy\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nSection Head, Claire Bowin - 213-978-1213\nGeneral Information â€“ 213-978-1164|Great Streets Planner,|Unit Head, Vacant|213-978-XXXX",
+"Office of Historic Resources (OHR)\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nGeneral Information â€“ 213-978-1200|SurveyLA|Janet Hansen|213-978-1191",
+"Office of Historic Resources (OHR)\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nGeneral Information â€“ 213-978-1200|Architect|Lambert Giessinger|213-978-1183",
+"Office of Historic Resources (OHR)\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nGeneral Information â€“ 213-978-1200|Preservation Planner|Sara Cruz|213-978-1189",
+"Office of Historic Resources (OHR)\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nGeneral Information â€“ 213-978-1200|Preservation Planner|Melissa Jones,|213-978-1192",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Proposed 27 th & 28 th Streets|Blair Smith|213-978-1174",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|52 ND Place/Tifal Brothers Tract|Bradley Furuya|213-978-1218",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Adams Normandie|Ariane Briski|213-978-1391",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Angelino Heights|Christina Park|213-473-9987",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Balboa Highlands|Christina Park|213-473-9987",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Banning Park|Bradley Furuya|213-978-1218",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Carthay Circle|Blair Smith|213-978-1174",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Carthay Square|Blair Smith|213-978-1174",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Country Club Park|Bradley Furuya|213-978-1218",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Gregory Ain Mar Vista Tract|Lydia Chapman|213-978-1797",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|El Sereno â€“ Berkshire|Patrick Whale|213-978-1220",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Hancock Park|Kimberly Henry|213-978-1216",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Harvard Heights|Ariane Briski|213-978-1391",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Highland Park-Garvanza|Patrick Whalen|213-978-1220",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Hollywood Grove|Ariane Briski|213-978-1391",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|HPOZ Interim Control Ordinance|Bradley Furuya|213-978-1218",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Jefferson Park|Lydia Chapman|213-978-1797",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|La Fayette Square|Christina Park|213-473-9987",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Lincoln Heights|Blair Smith|213-978-1174",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Melrose Hill|Lydia Chapman|213-978-1797",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Miracle Mile North|Christina Park|213-473-9987",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|**North University Park|Blair Smith|213-978-1174",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Pico Union|Christina Park|213-473-9987",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|South Carthay|Blair Smith|213-978-1174",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Spaulding Square|Ariane Briski|213-978-1391",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Stonehurst|Bradley Furuya|213-978-1218",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|University Park|Ariane Briski|213-978-1391",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Van Nuys|Patrick Whalen|213-978-1220",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Vinegar Hill|Bradley Furuya|213-978-1218",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|West Adams Terrace|Lydia Chapman|213-978-1797",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Western Heights|Christina Park|213-473-9987",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Whitley Heights|Kimberly Henry|213-978-1216",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Wilshire Park|Bradley Furuya|213-978-1218",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Windsor Square|Kimberly Henry|213-978-1216",
+"OHR Historic Preservation Overlay Zones (HPOZ) Unit\nDivision Manager, Ken Bernstein â€“ 213-978-1181\nUnit Head, Naomi Guth - 213-978-1198\nGeneral Information â€“ 213-978-6364|Windsor Village|Bradley Furuya|213-978-1218",
+"Zoning Administration Division\nChief Zoning Administrator, Charlie Rausch â€“ 213-978-1318\nGeneral Information â€“ 213-978-1318|Sr. City Planner|Jon Foreman|213-978-1387",
+"Zoning Administration Division\nChief Zoning Administrator, Charlie Rausch â€“ 213-978-1318\nGeneral Information â€“ 213-978-1318|Management Supportâ€“Hearing Coordinator|Stacy Muno|213-978-1354",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|Sr. City Planner|Phyllis Nathanson|213-978-1474",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 1|Erin Coleman|213-978-1338",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 1|Bonnie Kim|213-978-1330",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 1|Yi Lu|213-978-1287",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 1|Unit Head, Erick Lopez|213-978-1323",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 2|Esther Ahn|213-978-1486",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 2|Jaime Espinoza|213-978-1250",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 2|Niall Huffman|213-978-3405",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 2|Mary Richardson|213-978-1478",
+"Code Studies\nDivision Manager, Tom Rothmann â€“ 213-978-1891|re:Code LA Unit 2|Unit Head, Deborah Kahen|213-978-1202",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|General Information|General Information|213-978-1316",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|Sr. City Planner|Nick Hendricks|213-978-1383",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|Administrative Support|Brenda Kahinju|213-978-1316",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|General Information|General Information|213-978-1332",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|Metro|Luci Ibarra|213-978-1378",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|Valley|Elva Nuno-Oâ€™Donne|818-374-5056",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|Environmental Analysis|Karen Hoo|213-978-1331",
+"Citywide Projects\nDivision Manager, Charlie Rausch â€“ 213-978-1306|Environmental Clearance|Vacant|213-978-XXXX",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Section Head|David Terukina|213-978-1427",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|BuildLA|eFile, PCTS, PDIS, Charles Norman|213-202-5422",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Cybersecurity|Esther Tam|213-978-1381",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Database Architect|Ming Dai|213-978-1428",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|eForms|Web, Rowlen Shue|213-978-1409",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Infrastructure|Cam Vuong|213-978-1466",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|ZIMAS|Tim Ky|213-978-1423",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Section Head|Betty Dong|213-978-1392",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|Fae Tsukamoto|213-978-1420",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|General Plans/ Land Use, Cruz Ortiz|213-978-1440",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|SurveyLA/Radius Maps, David Dieudonne|213-978-1432",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|ZIMAS/Citywide Data, Vacant|213-978-XXXX",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|Zoning/Cases, Nicole Sabutis (Acting)|213-978-1436",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|Product Unit, Charles Lee|213-978-1441",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|Case Support, Cuong Fan|213-978-1468",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|Data Analytics, Jesus Ramos|213-978-1547",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Data Maintenance Unit|re:Code LA, Gary Himan|213-978-1425",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Section Head|City Hall, Elvia Hernandez|213-978-0639",
+"Information Technologies Division\nDirector of Systems, James VanGerpen â€“ 978-1399\nGeneral Information â€“ 213-978-1393\nHelp Desk Helpline â€“ 213-978-1455|Section Head|Valley â€“ Shakeh Boghoskhania|818-374-5039",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|General Information â€“ Metro Public Counter|3 rd F|213-482-7077",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Metro Counter|Nora Dresser|213-482-7079",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Metro Counter|Maritza Przekop|213-482-0482",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Metro Counter|Herman Van Buren|213-482-7074",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Metro Counter Housing Unit|Ulises Gonzalez|213-202-5414",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Metro Counter Wireless Unit|Tina Vacharkulksemsuk|213-202-5423",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|City Planner|Kit Awakuni|213-482-0441",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|City Planning Associate|Susan Zermeno|213-482-7073",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Planning Assistant|Cassandra Van Der Zweep|213-482-0376",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|General Information|5 th Fl|213-202-5464",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Sr. Planner|Bob Duenas|213-202-5460",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Sr. Administrative Clerk|Melvina Adlersberg|213-202-5434",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Administrative Clerk|Felipe Ortega|213-202-5435",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|City Planner|Iris Awakuni|213-202-5447",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|BESt|Vanessa Soto|213-202-5409",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|MViP|Vacant|213-202-XXXX",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Nuisance Abatement / Revocations|Lynda Smith|213-202-5408",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|General Information â€“ Valley Public Counter|Rm 251 ...... /50|818-374-5050",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Sr. Planner|Ralph Avila|818-374-9915",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Valley Counter|Herminigildo Agustin|818-374-5028",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Valley Counter|Anna Vidal|818-374-5029",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|General Information â€“ West LA Public Counter|2 nd F|310-231-2598",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|Sr. Planner|Ralph Avila|310-231-2907",
+"Development Services Division\nDivision Manager, Estineh Mailian - 213-482-0421|West LA Counter|Susan Whisnant|310-231-2906",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|City Planning Commission|James Williams|213-978-1295",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|Central APC|Etta Armstrong|213-978-1128",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|Cultural Heritage|Etta Armstrong|213-978-1128",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|East Los Angeles APC|Cecilia Lamas|213-978-1299",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|Harbor APC|Etta Armstrong|213-978-1128",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|North Valley APC|Renee Glasco|213-978-1134",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|South Los Angeles|Renee Glasco|213-978-1134",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|South Valley|Renee Glasco|213-978-1134",
+"Commission\nUnit Head, Rocky Wilesâ€“ 213-978-1389\nGeneral Information â€“ 213-978-1300|West Los Angeles APC|Cecilia Lamas|213-978-1299"];
+
+
+var searchStyle = {
+	highlightStyle: "color:#ff9c00;font-weight:bold;",
+	tdStyle: ""
+}
+
+function toggleCheckBoxes()
+{
+	var text = jQuery('input[type="text"]')[0].value;
+	if(text.length >= 2) showSearchResults(text);
+	else {
+		if(original_html != null) jQuery('#tblResults')[0].innerHTML = original_html;
+	}
+}
+
+function showSearchResults(searchString) {
+	searchString = limitAcceptableCharacters(searchString);
+	var target = jQuery('#tblResults');
+	if(original_html == null) original_html = target[0].innerHTML;
+	tableHTML = "";
+	if(jQuery("#check1")[0].checked == true) {
+		tableHTML += getDirectoryResults(searchString);
+		tableHTML += getSectionBreak();
+		}
+	if(jQuery("#check2")[0].checked == true) {
+		tableHTML += getEmployeeResults(searchString);
+		tableHTML += getSectionBreak();
+		}
+	if(jQuery("#check3")[0].checked == true) {
+		tableHTML += getAssignmentListResults(searchString);
+		tableHTML += getSectionBreak();
+		}
+
+	target[0].innerHTML = tableHTML;
+}
+
+function getSectionBreak() {
+	return "<tr style='margin-top:10px;margin-bottom:10px;'><td style='" + searchStyle.tdStyle + "'><span class='span-flush' style='font-size:30px;'>&nbsp;</span></td></tr>";
+}
+
+function limitAcceptableCharacters(searchString) {
+	var acceptable = "abcdefghijklmnopqrstuvwxyz1234567890-.' ";
+	var returnString = "";
+	for(i = 0; i < searchString.length; i++)
+	{
+		if(acceptable.indexOf(searchString[i]) >= 0) returnString += searchString[i];
+	}
+	return returnString;
+}
+
+function getDirectoryResults(searchString) {
+
+	var returnString = "<tr style='margin-top:10px;margin-bottom:10px;'><td style='" + searchStyle.tdStyle + "'><span class='span-flush' style='font-size:30px;'>Department Directory:</span></td></tr>";
+	var matched = [];
+	for(i = 0; i < dept_dir.length; i++)
+	{
+		//find everything that matches, categories are repeated on every row so the entire category should match
+		if(dept_dir[i].toUpperCase().indexOf(searchString.toUpperCase()) >= 0)
+		{
+			matched.push(dept_dir[i]);
+		}
+	}
+
+	//--------------------------------
+	//now break them out hierarctically for display
+	var prevCat = "-1|-1";
+	for(i = 0; i < matched.length; i++)
+	{
+		var cat = matched[i].split("~")[0];
+		if(prevCat != cat)
+		{
+			if(prevCat.split("|")[0] != cat.split("|")[0])
+			{
+				//add top-level category
+				var catLevel1 = cat.split("|")[0];
+				returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-flush'>" +
+					getHighlightedText(catLevel1, searchString, searchStyle.highlightStyle) + "</span><span class='span-phone'>&nbsp;</span></td></tr>";
+			}
+			var indentText = "span-indent1";
+			if(prevCat.split("|")[1] != cat.split("|")[1] && cat.split("|")[1] != "N/A")
+			{
+				var catLevel2 = cat.split("|")[1];
+				returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-indent1'>" +
+					getHighlightedText(catLevel2, searchString, searchStyle.highlightStyle) + "</span><span class='span-phone'>&nbsp;</span></td></tr>";
+				indentText = "span-indent2";
+			}
+		}
+		var parts = (matched[i].split("~")[1]).split("|");
+		returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='" + indentText + "'>" +
+			getHighlightedText(parts[0], searchString, searchStyle.highlightStyle) +
+			"</span><span class='span-phone'>" + getHighlightedText(parts[1], searchString, searchStyle.highlightStyle) + "</span></td></tr>";
+		prevCat = cat;
+	}
+	return returnString;
+}
+
+function getAssignmentListResults(searchString) {
+
+	var returnString = "";
+
+	for(i = 0; i < assignment_list.length; i++)
+	{
+		if(assignment_list[i].toUpperCase().indexOf(searchString.toUpperCase()) >= 0)
+		{
+		if(assignment_list[i][0] == "1") {
+			var parts = assignment_list[i].split("|");
+			//var parts = assignment_list[i].split("|");
+			returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-flush'>" +
+				getHighlightedText(parts[1], searchString, searchStyle.highlightStyle) +
+				"</span><span class='span-phone'>" + getHighlightedText(parts[2], searchString, searchStyle.highlightStyle) + "</span></td></tr>";
+			var j = 1;
+			while(i + j < assignment_list.length)
+			{
+				if(assignment_list[i+j][0] == "1") break;
+				var parts = assignment_list[i+j].split("|");
+				returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-indent1'>" +
+				getHighlightedText(parts[1], searchString, searchStyle.highlightStyle) +
+				"</span><span class='span-phone'>" + getHighlightedText(parts[2], searchString, searchStyle.highlightStyle) + "</span></td></tr>";
+				j+= 1;
+			}
+		}
+		else {
+			var parts = assignment_list[i].split("|");
+			var tempText = "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-indent1'>" +
+				getHighlightedText(parts[1], searchString, searchStyle.highlightStyle) +
+				"</span><span class='span-phone'>" + getHighlightedText(parts[2], searchString, searchStyle.highlightStyle) + "</span></td></tr>";
+			//backward
+			var j = 1;
+			while(i - j >= 0)
+			{
+				if(assignment_list[i-j][0] == "1") break;
+				j+= 1;
+			}
+			var parts = assignment_list[i-j].split("|");
+			returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-flush'>" +
+			getHighlightedText(parts[1], searchString, searchStyle.highlightStyle) +
+			"</span><span class='span-phone'>" + getHighlightedText(parts[2], searchString, searchStyle.highlightStyle) + "</span></td></tr>";
+			returnString += tempText;
+
+		}
+
+		}
+	}
+
+	//adding the heading for the Geo Team
+	if(returnString.length > 0) returnString = "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-flush' style='font-size:30px;'>Geo-Team</span></td></tr>" + returnString;
+	returnString = "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-flush' style='font-size:30px;'>Assignment List:</span></td></tr>" + returnString;
+	returnString += getAssignmentListResultsExtra(searchString);
+	return returnString;
+}
+
+function getAssignmentListResultsExtra(searchString) {
+	var returnString = "";
+	var matched = [];
+	for(i = 0; i < assignment_extra.length; i++)
+	{
+		//find everything that matches, categories are repeated on every row so the entire category should match
+		if(assignment_extra[i].toUpperCase().indexOf(searchString.toUpperCase()) >= 0)
+		{
+			matched.push(assignment_extra[i]);
+		}
+	}
+
+	//--------------------------------
+	//now break them out hierarctically for display
+	var prevCat = "-1|-1";
+	for(i = 0; i < matched.length; i++)
+	{
+		var cat = matched[i].split("|")[0] + "|" + matched[i].split("|")[1];
+		if(prevCat != cat)
+		{
+			if(prevCat.split("|")[0] != cat.split("|")[0])
+			{
+				//add top-level category
+				var catLevel1 = (cat.split("|")[0]);
+				var catParts = catLevel1.split("\n");
+				catParts[0] = "<span style='font-size:30px;'>" + catParts[0] + "</span>";
+				catLevel1 = catParts.join("<br/>");
+				returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-flush'>" +
+					getHighlightedText(catLevel1, searchString, searchStyle.highlightStyle) + "</span><span class='span-phone'>&nbsp;</span></td></tr>";
+			}
+			var indentText = "span-indent1";
+			if(prevCat.split("|")[1] != cat.split("|")[1] && cat.split("|")[1] != "N/A")
+			{
+				var catLevel2 = cat.split("|")[1];
+				returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='span-indent1'>" +
+					getHighlightedText(catLevel2, searchString, searchStyle.highlightStyle) + "</span><span class='span-phone'>&nbsp;</span></td></tr>";
+				indentText = "span-indent2";
+			}
+		}
+		var parts = [matched[i].split("|")[2], matched[i].split("|")[3]];
+		returnString += "<tr><td style='" + searchStyle.tdStyle + "'><span class='" + indentText + "'>" +
+			getHighlightedText(parts[0], searchString, searchStyle.highlightStyle) +
+			"</span><span class='span-phone'>" + getHighlightedText(parts[1], searchString, searchStyle.highlightStyle) + "</span></td></tr>";
+		prevCat = cat;
+	}
+	return returnString;
+}
+
+function getEmployeeResults(searchString) {
+
+	var returnString = "<tr style='margin-top:10px;margin-bottom:10px;'><td style='" + searchStyle.tdStyle + "'><span class='span-flush' style='font-size:30px;'>Employee Directory:</span></td></tr>";
+	returnString += "<tr style='margin-top:10px;margin-bottom:10px;'><td style='" + searchStyle.tdStyle + "'><table style='width:100%;font-size:18px;'>";
+	var matched = [];
+	for(i = 0; i < employees.length; i++)
+	{
+		if(employees[i].toUpperCase().indexOf(searchString.toUpperCase()) >= 0)
+		{
+			var lineText = getHighlightedText(employees[i], searchString, searchStyle.highlightStyle);
+			var parts = lineText.split("|");
+			returnString += "<tr><td><img src='{{ theme_base_path }}/images/people/avatar.png' width='24' alt='full name'  ></td>" + "<td class='employee_td'>" + parts[0] + "</td><td class='employee_td'>" + parts[2] + "</td><td class='employee_td'>" + parts[3] + "</td><td class='employee_td' style='text-align:right;padding-right:0px;'>" + parts[1] + "</td></tr>";
+		}
+	}
+	returnString += "</table></td></tr>";
+	return returnString;
+
+}
+
+function getHighlightedText(searchText, searchString, formatting) {
+	var returnString =
+	searchText.replace((new RegExp(searchString, "ig")), function (match) {
+		return "<span style='" + formatting + "'>" + match + "</span>";
+	});
+	return returnString;
+}
+
+function test_onkeyup(e)
+		{
+			var key;
+			var sender = null;
+			if (window.event)
+			{
+				key = window.event.keyCode;   //IE
+				sender = window.event.srcElement;
+			}
+			else
+			{
+				key = e.which;   //firefox
+				sender = e.target;
+			}
+
+			if (key == 13) {
+				executeFunction();
+			}
+			else if (key == 16) {
+				//do nothing
+			}
+			else {
+				//if (sender.caseSearchTypeAheadButton == null) sender.caseSearchTypeAheadButton = new caseSearchTypeAheadButton();
+				var text = sender.value;
+				if(text.length >= 2) showSearchResults(text);
+				else {
+					if(original_html != null) jQuery('#tblResults')[0].innerHTML = original_html;
+				}
+			}
+
+		};
+</script>
+
+	<!-- page-banner -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+			</div>
+		</div>
+	</div><!-- //End page-banner -->
+
+	<!-- contain -->
+	<div class="container-fluid" id="main-container">
+		<!-- page title  -->
+		<div style="padding-left:450px;">{{ page.title_bar }}</div>
+		<!-- //End page title  -->
+
+		<!-- Main content -->
+		<div class="row">
+			<!-- left side -->
+        	<div class="col-md-4 search-directories" id="search-directories">
+        		<h3>Search Our Directories</h3>
+        		<label for="search_text" class="sr-only">Enter: Department, Employee Name, or Assignment</label>
+        		<input type="text" class="form-control" id="search_text" placeholder="Enter: Department, Employee Name, or Assignment" onkeyup="test_onkeyup(event);">
+
+        		<div style='margin-top:10px;margin-bottom:-10px;'><span>Search In:</span></div>
+        		<div class="checkbox checkbox-checked">
+        		  <label class='active' for="department directory">
+        		  <input id="check1" class="yyy" type="checkbox" checked='checked' value="" onchange='toggleCheckBoxes();'>
+        		  <span class="label-padding">Department Directory</span></label>
+        		</div>
+        		<div class="checkbox">
+        		  <label class="active" for="employee directory">
+        		  <input id="check2" class="yyy"  type="checkbox" checked='checked' value="" onchange='toggleCheckBoxes();'>
+        		  <span class="label-padding">Employee Directory</span></label>
+        		</div>
+        		<div class="checkbox">
+        		  <label class="active" for="assignment list">
+        		  <input id="check3" class="yyy"  type="checkbox" checked='checked' value="" onchange='toggleCheckBoxes();'>
+        		  <span class="label-padding">Assignment List</span></label>
+        		</div>
+
+
+        		<!-- Important numbers -->
+        		<div class="row">
+        			<div class="col-md-12">
+        				<h4>Important Numbers</h4>
+        				<ul>
+        					<li><div class="row"><div class="col-md-8">Development Services Center (Metro)</div> <div class="col-md-4 float-right" style="padding-left:45px;">(213) 482-7077</div></div></li>
+        					<li><div class="row"><div class="col-md-8">Development Services Center (Valley)</div> <div class="col-md-4 float-right" style="padding-left:45px;">(818) 374-5050</div></div></li>
+        					<li><div class="row"><div class="col-md-8">TTY</div> <div class="col-md-4 float-right" style="padding-left:45px;">(213) 473-9741</div></div></li>
+        					<li><div class="row"><div class="col-md-8">Department Emergency Hotline</div> <div class="col-md-4 float-right" style="padding-left:45px;">(213) 978-2991</div></div></li>
+        					<li><div class="row"><div class="col-md-8">Telecode/Cellular Phone Administrator</div> <div class="col-md-4 float-right" style="padding-left:45px;">(213) 978-1248 </div></div></li>
+        					<li><div class="row"><div class="col-md-8">CitiFone Coordinator</div> <div class="col-md-4 float-right" style="padding-left:45px;">(213) 978-1259 </div></div></li>
+        				</ul>
+        			</div>
+
+        			<div class="col-md-12">
+        				<p class="bottom"></p>
+        				<h4>Important Email</h4>
+        				<ul>
+        					<li>General Info <span class="float-right" style="padding-left:45px;"><a href="mailto:planning-info@lacity.org?subject=General Info">planning-info@lacity.org</a></span></li>
+        					<li>ZIMAS Help <span class="float-right" style="padding-left:45px;"><a href="mailto:zimas@lacity.org?subject=ZIMAS Help">	zimas@lacity.org</a></span></li>
+        				</ul>
+        			</div>
+
+        			<!-- Location -->
+        			<div class="col-md-12">
+        				<p class="bottom"></p>
+
+        				<h4>Locations</h4>
+
+        				<span>
+        					<small>Please select below location to see address in detail.</small>
+        					<ul>
+        						<li><a href="#" id="l-1"><i class="fa fa-map" aria-hidden="true"></i> City Hall Offices</a></li>
+        						<li><a href="#" id="l-2"><i class="fa fa-map" aria-hidden="true"></i> DSC Metro (Figueroa Plaza)</a></li>
+        						<li><a href="#" id="l-3"><i class="fa fa-map" aria-hidden="true"></i> DSC Valley (Marvin Braude Building)</a></li>
+        					</ul>
+        				</span>
+
+        				<p class="bottom"></p>
+
+        				<!-- city hall -->
+        				<div id="map-1">
+            				<address>
+            					<p>
+        						<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp; 200 N. Spring St. - Los Angeles  <br>
+        							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Los Angeles, CA 90012
+        						</p>
+        						<p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; <a href="#" >213 978 1415 /</a> <a href="tel:+12139781255" >213 978 1255</a></p>
+        						<p><i class="fa fa-print" aria-hidden="true"></i> &nbsp; <a href="#" >213 978 1263</a></p>
+        						<!--  <p><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp; <a href="mailto:planning@lacity.org?subject=Request for information" target="_top" >planning@lacity.org</a></p> -->
+        						<p><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Hours: Mon - Thurs (8:30 am to 4:00 pm) / Fri (8:30 am to 3:00 pm)</p>
+        					</address>
+
+        					<p class="bottom"></p>
+
+            				<div>
+        						<iframe class="google-map-border" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.606080026404!2d-118.24543008411332!3d34.05397448060548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c64f395f4df1%3A0xa210ca08f4b2deda!2sLos+Angeles+City+Hall%2C+200+N+Spring+St%2C+Los+Angeles%2C+CA+90012!5e0!3m2!1sen!2sus!4v1487031683436"
+    								width="100%" name="200 N spring st." seamless></iframe>
+            				</div>
+            			</div>
+
+        				<!-- DSC Metro (Figueroa Plaza) -->
+        				<div id="map-2">
+            				<address>
+            					<p>
+        						<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;  201 N. Figueroa St - 4th Floor  <br>
+        							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Los Angeles, CA 90012
+        						</p>
+        						<p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; <a href="tel:+12134827077" >213 482 7077</a></p>
+        						<p><i class="fa fa-print" aria-hidden="true"></i> &nbsp; <a href="fax:+12134827080" >213 482 7080</a></p>
+        						<p><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Hours: Mon, Tues, Thurs & Fri (7:30 am to 4:30 pm) / Wed (9:00 am to 4:30 pm)</p>
+        					</address>
+
+        					<p class="bottom"></p>
+
+            				<div>
+        						<iframe class="google-map-border" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13221.907624149031!2d-118.250412!3d34.057287!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c653235a4601%3A0x8c6d4a0f2f2d51a1!2s201+N+Figueroa+St%2C+Los+Angeles%2C+CA+90012!5e0!3m2!1sen!2sus!4v1487032025323"
+    								width="100%" name="201 N Figueroa st"  seamless></iframe>
+            				</div>
+            			</div>
+
+        				<!-- DSC Valley (Marvin Braude Building) -->
+        				<div id="map-3">
+            				<address>
+            					<p>
+        						<i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;&nbsp;  6262 Van Nuys Blvd. <br>
+        							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Van Nuys, CA 91401
+        						</p>
+        						<p><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; <a href="tel:+18183745050">818 374 5050</a></p>
+        						<p><i class="fa fa-print" aria-hidden="true"></i> &nbsp; <a href="fax:+1818-375075">818 374 5075</a></p>
+        						<p><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp; Hours: Mon, Tues, Thurs & Fri (7:30 am to 4:30 pm) / Wed (9:00 am to 4:30 pm)</p>
+        					</address>
+
+        					<p class="bottom"></p>
+
+            				<div>
+    							<iframe class="google-map-border" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3301.2149146743022!2d-118.44721295239259!3d34.166422527612866!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c29706f2a8165b%3A0xf8ad98c560f35b7b!2s6262+Van+Nuys+Blvd%2C+Van+Nuys%2C+CA+91401!5e0!3m2!1sen!2sus!4v1487032163805"
+    								width="100%" name="van nuys"  seamless></iframe>
+            				</div>
+        				</div>
+        			</div> <!-- //END locatioin -->
+
+        			<p class="bottom"></p>
+
+        		</div>
+        	</div> <!-- //END leftside -->
+
+        	<!-- rightside  -->
+        	<div class="col-md-8">
+        		<div style='padding-left:20px; padding-right:20px;'>
+        			<table id = 'tblResults' class="table table-responsive table-hover">
+        				<tr>
+        					<td>
+        						<span class='span-flush' style='font-size:30px;'>Department Numbers:</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Commission Secreteriat</span>
+        						<span class='span-phone'>(213) 978-1300</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Executive Management</span>
+        						<span class='span-phone'>(213) 978-1271</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>External Affairs</span><span class='span-phone'>(213) 978-1324</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Administrative Services Division</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Administrative Services Section</span>
+        						<span class='span-phone'>(213) 978-1206</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Accounting &amp; Purchasing</span>
+        						<span class='span-phone'>(213) 978-1268</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Department Operations Section</span>
+        						<span class='span-phone'>(213) 978-1260</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Personnel Services Section</span>
+        						<span class='span-phone'>(213) 978-1772</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Information technologies Division</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>General Information/Helpdesk</span>
+        						<span class='span-phone'>(213) 978-1455</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Historic Resources Division</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>General Information</span>
+        						<span class='span-phone'>(213) 978-6364</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Office of Historic Resources</span>
+        						<span class='span-phone'>(213) 978-1191</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Citywide Policy</span>
+        						<span class='span-phone'>(213) 978-1213</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Community Planning Division</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>General Information</span>
+        						<span class='span-phone'>(213) 978-1164</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Code Studies (re:Code LA)</span>
+        						<span class='span-phone'>(213) 978-1891</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Project Planning Division</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Major Projects &amp; EIR General Information</span>
+        						<span class='span-phone'>(213) 978-1332</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Central Projects Planning General Information</span>
+        						<span class='span-phone'>(213) 978-1160</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>West/Costal &amp; South Project Planning General Information</span>
+        						<span class='span-phone'>(213) 978-1160</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Valley Project Planning General Information</span>
+        						<span class='span-phone'>(818) 374-9941</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Valley Project Planning General Information</span>
+        						<span class='span-phone'>(818) 374-9941</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Expedited Processing Section General Information</span>
+        						<span class='span-phone'>(213) 473-9984</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Zoning Administration Division</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>General Information</span>
+        						<span class='span-phone'>(213) 978-1318</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-flush'>Development Service Center Division</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>General Information - Metro</span>
+        						<span class='span-phone'>(213) 482-7077</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>General Information - Valley</span>
+        						<span class='span-phone'>(818) 374-5050</span>
+        					</td>
+        				</tr>
+        				<tr>
+        					<td>
+        						<span class='span-indent1'>Condition Compliance / Nuisance Abatement / Revoction Section</span>
+        						<span class='span-phone'>(213) 202-5464</span>
+        					</td>
+        				</tr>
+        				<tr><td></td></tr>
+        			</table>
+        		</div>
+        	</div>	<!-- //END rightside -->
+
+
+		</div>
+	</div>	<!-- //End container -->
+
+
+    <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}
