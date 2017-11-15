@@ -205,23 +205,8 @@ q:before, q:after { content: ''; content: none; }
 .border-line-top{ border-top: 1px solid #fff; padding: 25px 0;}
 
 /*** Inner pages ***/
-#page-title-bg{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-}
-
-#page-title-bg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 100%;
-}
+#page-title-bg {position: fixed; top: 0; left: 0; width: 100%; height: 40%;}
+#page-title-bg img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; min-width: 100%;}
 #main-container{background-color:#fff; position:relative; top:150px; padding-bottom: 250px;}
 #main-container .row{padding-left:15px; padding-right:15px;}
 
@@ -241,7 +226,8 @@ q:before, q:after { content: ''; content: none; }
 article img{padding-top:15px; padding-bottom: 15px;}
 
 .info-bg-color-2{background: #0b2d4c; position: relative; margin-bottom: 15px;}
-.blockquote{color: #3a5a99;}
+.fullpage-image-title{text-align: center; padding-top: 15px; padding-bottom: 15px;}
+.block-quote{padding:40px; color: #3a5a99; font-size: 25px;}
 #container-inner{background-color:#fff; position:relative; padding-bottom: 100px;}
 .inner-page-social-icon{color:#808081 !important; font-weight: 100; text-decoration: none !important;}
 .tab-line{border-right:#ccc 1px solid;}
@@ -288,7 +274,6 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .span-indent2 {font-size: 18px; margin-left:80px;}
 .span-phone {font-size: 18px; float: right;}
 .employee_td {padding-left:10px; padding-right:10px; width:25%;}
-
 
 
 /*-->> **************** Media Query *****************/
