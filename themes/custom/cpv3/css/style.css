@@ -170,13 +170,7 @@ q:before, q:after { content: ''; content: none; }
 
 #say-connected {background-color: #0077bd; padding: 12px 0; color:#fff;}
 #say-connected a {color: #0077bd !important;}
-.btn-circle {
-  width: 70px;
-  height: 70px;
-  border-radius: 35px !important;
-  text-align: center;
-  line-height: 1.5;
-}
+.btn-circle {width: 70px; height: 70px; border-radius: 35px !important; text-align: center; line-height: 1.5;}
 .btn-white{color:#fff; background-color:#fff; border-color:#fff;}
 #btn-newsletter{background-color:#73c5ea; border-color:#73c5ea; color:#fff; padding: 10px 12px !important;}
 #say-connected .form-control{border-radius:0px !important; height:40px !important;}
@@ -250,6 +244,13 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .bottom { border-bottom: 1px dotted #ccc; }
 
 /*** search  ***/
+.animate {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
 .navbar-search-box .search-bar-search {display: none;}
 .navbar-search-box .search-bar-search .form-control {background-color: rgb(235, 235, 235); border-radius: 0px; border-width: 0px; font-size: 24px; padding: 30px 0px;}
 .navbar-search-box .search-bar-search .form-control {background-color: rgb(235, 235, 235); border-radius: 0px; border-width: 0px; font-size: 24px; padding: 25px 0px;}
