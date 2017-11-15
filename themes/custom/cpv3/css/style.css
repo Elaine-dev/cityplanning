@@ -254,14 +254,17 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .navbar-search-box .search-bar-search .form-control {background-color: rgb(235, 235, 235); border-radius: 0px; border-width: 0px; font-size: 24px; padding: 30px 0px;}
 .navbar-search-box .search-bar-search .form-control {background-color: rgb(235, 235, 235); border-radius: 0px; border-width: 0px; font-size: 24px; padding: 25px 0px;}
 .navbar-search-box .search-bar-search .form-control:focus {border-color: transparent; outline: 0; -webkit-box-shadow: none; box-shadow: none;}
-.navbar-search-box .search-bar-search .input-group-btn > .btn {padding: 14px 16px; border-radius: 0px;}
+/* 
+.navbar-search-box .search-bar-search .input-group-btn > .btn {padding: 14px 16px; border-radius: 0px;} 
 .navbar-search-box .search-bar-search .input-group-btn > .btn.active,
 .navbar-search-box .search-bar-search .input-group-btn > .btn:hover,
 .navbar-search-box .search-bar-search .input-group-btn > .btn:focus {
 	padding: 14px 16px 14px 15px;
 }
+*/
 .navbar-search-box .search-bar-search .input-group-btn > .btn-default {background-color: rgb(245, 245, 245);}
 .nav-padding {padding-top: 61px;}
+
 
 /***** Staff Directory ********/
 #search-directories .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {position: inherit !important;}
