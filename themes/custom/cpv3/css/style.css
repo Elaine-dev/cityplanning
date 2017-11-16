@@ -273,6 +273,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 
 
 /***** Staff Directory ********/
+.list-group address{margin-top: 20px;}
 #search-directories .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {position: inherit !important;}
 #search-directories .label-padding {padding-left: 20px !important;}
 #search-directories .checkbox, .radio {padding-left: 20px;}
