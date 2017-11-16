@@ -95,25 +95,6 @@ jQuery(document).ready(function(){
 		jQuery('#myModal').modal('show')
 	});
 
-	// google map
-	jQuery('#l-1').click(function () {
-		jQuery('#map-1').show();
-		jQuery('#map-2').hide();
-		jQuery('#map-3').hide();
-	});
-
-	jQuery('#l-2').click(function () {
-		jQuery('#map-1').hide();
-		jQuery('#map-2').show();
-		jQuery('#map-3').hide();
-	});
-
-	jQuery('#l-3').click(function () {
-		jQuery('#map-1').hide();
-		jQuery('#map-2').hide();
-		jQuery('#map-3').show();
-	});
-
   //font size increase - decrease
   var fontSize = parseInt(jQuery('body').css('font-size'), 16);
   jQuery('#plus').on ('click', function(){
