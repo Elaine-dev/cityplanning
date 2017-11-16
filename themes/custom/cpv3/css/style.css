@@ -219,7 +219,8 @@ q:before, q:after { content: ''; content: none; }
 #main-container h1{padding-top: 15px;}
 article img{padding-top:15px; padding-bottom: 15px;}
 
-.message-director-social-icons{padding-left: 0px !important; left: -35px;}
+#message-director img{ min-width: 250px;}
+.message-director-social-icons{padding-left: 15px;}
 .message-director-social-icon{padding-bottom: 10px; padding-left: 0px;}
 .message-director-social-icon .fa{padding-right: 15px !important;}
 
