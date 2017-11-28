@@ -37,7 +37,7 @@ front-page:
     component:
       css/banner-bootsrap.css: {}
   js:
-    js/banner-bootstrap.js {}
+    js/banner-bootstrap.js: {}
 
 calendar-page:
   version: VERSION
