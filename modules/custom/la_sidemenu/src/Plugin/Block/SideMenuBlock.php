@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Drupal\la_sidemenu\Plugin\Block;
 
@@ -29,25 +29,25 @@ class SideMenuBlock extends BlockBase {
         $uri = $_SERVER['REQUEST_URI'];
         $uri_array = explode('/',$uri);
         $actual_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-        
+
         // load main menu
         $menu_name = 'main';
         $menu_tree = \Drupal::menuTree();
         $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
         $parameters->setMinDepth(0);
-        
+
         $tree = $menu_tree->load($menu_name, $parameters);
         $manipulators = array(
             array('callable' => 'menu.default_tree_manipulators:checkAccess'),
             array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
         );
         $tree = $menu_tree->transform($tree, $manipulators);
-        
+
         foreach ($tree as $item) {
             $title = strtolower($item->link->getTitle());
             $url = $item->link->getUrlObject();
             //Todo need to update index based on uri
-            if($title == $uri_array[2]) {
+            if($title == $uri_array[1]) {
                 if(!empty($item->subtree)) {
                     foreach($item->subtree as $child) {
                         $child_title = $child->link->getTitle();
@@ -61,7 +61,7 @@ class SideMenuBlock extends BlockBase {
                 );
             }
         }
-        
+
         // Generate side menu
         $html = '<ul>';
         foreach($list[0]['child'] as $row) {
@@ -75,7 +75,7 @@ class SideMenuBlock extends BlockBase {
                 $url = \Drupal::service('path.alias_manager')->getAliasByPath($system_path);
                 $target = '';
                 $full_url = $base_url.$url;
-                
+
                 if($actual_url == $full_url) {
                     $class = 'active';
                 } else {
@@ -90,23 +90,23 @@ class SideMenuBlock extends BlockBase {
             '#markup' => $html,
         ];
     }
-    
+
     /**
      * {@inheritdoc}
      */
     protected function blockAccess(AccountInterface $account) {
         return AccessResult::allowedIfHasPermission($account, 'access content');
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function blockForm($form, FormStateInterface $form_state) {
         $config = $this->getConfiguration();
-        
+
         return $form;
     }
-    
+
     /**
      * {@inheritdoc}
      */
