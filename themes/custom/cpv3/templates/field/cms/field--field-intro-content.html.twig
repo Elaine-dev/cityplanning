@@ -2,12 +2,12 @@
     {% if multiple %}
         <div{{ attributes }}>
             {% for item in items %}
-                <div{{ item.attributes }}>{{ item.content }}</div>
+                <div{{ item.attributes }}>{{ item.content|striptags }}</div>
             {% endfor %}
         </div>
     {% else %}
         {% for item in items %}
-            <div{{ attributes }}>{{ item.content }}</div>
+            <div{{ attributes }}>{{ item.content|striptags }}</div>
         {% endfor %}
     {% endif %}
 {% else %}
@@ -17,7 +17,7 @@
         <div>
             {% endif %}
             {% for item in items %}
-                <div{{ item.attributes }}>{{ item.content }}</div>
+                <div{{ item.attributes }}>{{ item.content|striptags }}</div>
             {% endfor %}
             {% if multiple %}
         </div>
