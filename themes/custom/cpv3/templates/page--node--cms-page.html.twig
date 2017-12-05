@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div id="page-title-bg"><img src="http://10.68.8.109:2016{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="bg"></div>
+            <div id="page-title-bg"><img src="http://ladcp.westus.cloudapp.azure.com{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="bg"></div>
         </div>
     </div>
 </div>{# End page-banner #}
@@ -43,10 +43,10 @@
         {# Right-side bar #}
         <div class="col-md-3 sidebar-menu">
             <div class="top-bar"></div>
-             {{ page.side_menu }} 
+             {{ page.side_menu }}
         </div>{# End Right-side bar #}
     </div>
-</div>{# End container #} 
+</div>{# End container #}
 
 <div class="full-width-image">
 	{% for item in full_width_data %}
