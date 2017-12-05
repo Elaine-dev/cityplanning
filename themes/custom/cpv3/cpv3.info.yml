@@ -15,6 +15,7 @@ regions:
   primary_menu: 'Primary menu'
   title_bar: 'Title Bar Block'
   breadcrumb: Breadcrumb
+  side_menu: 'Side Menu'
   slider: 'Slider'
   content: Content
   block_upcoming_meetings: 'Upcoming Meetings'

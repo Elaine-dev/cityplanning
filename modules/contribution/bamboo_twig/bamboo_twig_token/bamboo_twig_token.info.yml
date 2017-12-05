@@ -1,0 +1,14 @@
+name: Bamboo Twig - Token
+description: 'Several "Token" Twig extensions.'
+package: Bamboo Twig
+type: module
+# core: 8.x
+
+dependencies:
+ - drupal:bamboo_twig
+
+# Information added by Drupal.org packaging script on 2017-09-26
+version: '8.x-3.1'
+core: '8.x'
+project: 'bamboo_twig'
+datestamp: 1506429551

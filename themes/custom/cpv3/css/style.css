@@ -226,6 +226,10 @@ article img{padding-top:15px; padding-bottom: 15px;}
 
 .info-bg-color-2{background: #0b2d4c; position: relative; margin-bottom: 15px;}
 .fullpage-image-title{text-align: center; padding-top: 15px; padding-bottom: 15px;}
+.full-width-image{background: #fff !important; position: relative; z-index: 5000;}
+.inner-container {margin-top: 16px; padding: 40px; background-color: #fff; position: relative;}
+.white--bg {background-color: #FFFFFF;}
+.top-bar {border: #b8babc solid; border-top-width: 15px; margin-left: 38px; margin-top: 55px;}
 .block-quote{padding:40px; color: #3a5a99; font-size: 25px;}
 #container-inner{background-color:#fff; position:relative; padding-bottom: 100px;}
 .inner-page-social-icon{color:#808081 !important; font-weight: 100; text-decoration: none !important;}

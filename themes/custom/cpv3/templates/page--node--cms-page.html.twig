@@ -1,62 +1,76 @@
 <!-- Fixed navbar -->
 {% include directory ~ '/partials/header.html.twig' %}
-<!-- page-banner -->
+
+{# page-banner #}
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div id="page-title-bg"><img src="http://ladcp.westus.cloudapp.azure.com{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="page banner"></div>
+            <div id="page-title-bg"><img src="http://10.68.8.109:2016{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="bg"></div>
         </div>
     </div>
-</div><!-- //End page-banner -->
+</div>{# End page-banner #}
 
 <!-- contain -->
 <div class="container" id="main-container">
-    <!-- Main content -->
+    {# Main content #}
     <div class="row">
-        <!--  Left-side bar  -->
+        {# Left-side bar #}
         <div class="col-md-9">
-            <div class="row padding-left0 padding-right-15">
+            <div class="row padding-left0">
                 <div class="col-md-12">
-                  <!--
-                	<div class="row">
-                    	<div class="col-md-12 padding-left-10 padding-bottom25">
-                        	<h1>{# {{ node.label }} #}</h1>
-                    	</div>
-                	</div>
-                  -->
-
-                	<div class="row">
-                		<div class="col-md-12">{{ page.content }}</div>
-                	</div>
+                    <h1>{{ node.label }}</h1>
+                    {{ node.field_intro_content.value }}
+                    {% set full_width_data = [] %}
+                    {% set small_width_data = [] %}
+                    {% set break = true %}
+                    {% for parag_id in node.field_content_section.value %}
+                        {% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
+                        {% if data['#paragraph'].hasField('field_full_width_image') %}
+                            {% set full_width_data = full_width_data|merge({(loop.index0):{'para_id':parag_id['target_id'],'flag':true}}) %}
+                            {% set break = false %}
+                        {% elseif break %}
+                            <div class="section-content clear">
+                                {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                            </div>
+                        {% else %}
+                            {% set full_width_data = full_width_data|merge({(loop.index0):{'para_id':parag_id['target_id'],'flag':false}}) %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-        </div><!-- //End Left-side bar -->
+        </div>{# End Left-side bar #}
 
-        <!-- Right-side bar -->
+        {# Right-side bar #}
         <div class="col-md-3 sidebar-menu">
             <div class="top-bar"></div>
-            <ul>
-                <li><a href="#" class="active">Department of City Planning</a></li>
-                <li class="line"></li>
-                <li><a href="#">Department Org Chart</a></li>
-                <li class="line"></li>
-                <li><a href="#">Message from the Director</a></li>
-                <li class="line"></li>
-                <li><a href="#">Staff Directory</a></li>
-                <li class="line"></li>
-                <li><a href="#">City Planning Commission</a></li>
-                <li class="line"></li>
-                <li><a href="#">Agendas & Minutes</a></li>
-                <li class="line"></li>
-                <li><a href="#">Hearings</a></li>
-                <li class="line"></li>
-                <li><a href="#">Planning Calendar</a></li>
-                <li class="line"></li>
-            </ul>
-        </div><!-- //End Right-side bar -->
-
+             {{ page.side_menu }} 
+        </div>{# End Right-side bar #}
     </div>
-</div><!-- //End container -->
+</div>{# End container #} 
+
+<div class="full-width-image">
+	{% for item in full_width_data %}
+		{% if item.flag %}
+			{# full width content goes here #}
+			<div class="container-fluid info-bg-color-2">
+				<div class="row">
+					<div class="col-md-12">
+						<center>
+			            {{ bamboo_render_entity('paragraph', item.para_id) }}
+			            </center>
+    				</div>
+				</div>
+			</div>
+		{% else %}
+			{# small width content goes here #}
+			<div class="container">
+				<div class="row">
+					{{ bamboo_render_entity('paragraph', item.para_id) }}
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
 
 <!-- footer section -->
 {% include directory ~ '/partials/footer.html.twig' %}
