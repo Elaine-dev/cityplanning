@@ -32,6 +32,7 @@ q:before, q:after { content: ''; content: none; }
 .btn { border-radius: 0px !important;}
 .date{color:#999;}
 .clear{clear:both !important;}
+.section-content {margin-top: 20px;}
 
 /** latest update **/
 .padding-top2em{padding-top:2em;}
