@@ -42,7 +42,6 @@ class SideMenuBlock extends BlockBase {
             array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
         );
         $tree = $menu_tree->transform($tree, $manipulators);
-        print_r($uri_array); die("out");
 
         foreach ($tree as $item) {
             $title = strtolower($item->link->getTitle());
