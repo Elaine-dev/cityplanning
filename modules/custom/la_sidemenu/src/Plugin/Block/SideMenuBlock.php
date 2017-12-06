@@ -65,6 +65,7 @@ class SideMenuBlock extends BlockBase {
         // Generate side menu
         $html = '<ul>';
         foreach($list[0]['child'] as $row) {
+          kint($row); die('here');
             $link_text = $row->getText();
             if($row->getUrl()->isExternal()) {
                 $url = $row->getUrl()->getUri();
