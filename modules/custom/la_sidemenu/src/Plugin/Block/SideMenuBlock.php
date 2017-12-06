@@ -61,7 +61,6 @@ class SideMenuBlock extends BlockBase {
                 );
             }
         }
-        kint($list); die('here');
 
         // Generate side menu
         $html = '<ul>';
