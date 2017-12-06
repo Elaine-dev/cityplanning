@@ -78,8 +78,8 @@
                   <div class="row">
                      <div class="col-md-2 col-xs-2"><i class="fa fa-twitter fa-3x social-icon-color" aria-hidden="true"></i></div>
                      <div class="col-md-10 col-xs-10">
-                        <p><a href="https://twitter.com/Planning4LA/status/925471033871581184" target="_blank">
-                           #BOO to you, from our crew! 👻 We're still hard at work & #Planning4LA on the most #SPOOKtacular day of the year! #HappyHalloween 🎃 ...
+                        <p><a href="https://twitter.com/Planning4LA/status/938209879709204480" target="_blank">
+                           HAPPENING NOW #SouthLA Area Planning Commission Meeting. The City of #LosAngeles has 7 APCs, each entrusted with making decisions related to #neighborhood-level projects and appeals. #Planning4LA ...
                            </a>
                         </p>
                      </div>
@@ -88,8 +88,8 @@
                   <div class="row">
                      <div class="col-md-2 col-xs-2"><i class="fa fa-twitter fa-3x social-icon-color" aria-hidden="true"></i></div>
                      <div class="col-md-10 col-xs-10">
-                        <p><a href="https://twitter.com/UrbanizeLA/status/925469047487021056" target="_blank">
-                           @Planning4LA releases interactive map for the new #BoyleHeights Community Plan https://urbanize.la/post/ ...
+                        <p><a href="https://twitter.com/Planning4LA/status/938181277479399424" target="_blank">
+                           #Planning4LA seeks to provide improvements for #smallbusinesses inc. food & beverage service sector through programs like Beverage and Entertainment Streamlined (BESt) Program which standardizes conditions of approval for applications for alcohol sales & entertainment uses. ...
                            </a>
                         </p>
                      </div>
