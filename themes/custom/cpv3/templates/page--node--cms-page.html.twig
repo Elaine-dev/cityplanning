@@ -19,7 +19,7 @@
             <div class="row padding-left0">
                 <div class="col-md-12">
                     <h1>{{ node.label }}</h1>
-                    {{ node.field_intro_content.value }}
+                    {{ node.field_intro_content.value|striptags }}
                     {% set full_width_data = [] %}
                     {% set small_width_data = [] %}
                     {% set break = true %}
