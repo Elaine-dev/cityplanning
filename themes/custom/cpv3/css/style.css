@@ -59,6 +59,7 @@ q:before, q:after { content: ''; content: none; }
 .padding-left-60{padding-left:60px;}
 .padding-left-80{padding-left:80px;}
 .padding-right0 { padding-right: 0px !important; }
+.padding-right-27 {padding-right: 27px !important;}
 .skip-link {display: none;}
 .hr-line{margin-bottom:20px; border:0; border-top: 1px solid #76b1d7;}
 .left--20{left:-20px;}
