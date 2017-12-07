@@ -35,6 +35,7 @@ q:before, q:after { content: ''; content: none; }
 .section-content {margin-top: 20px;}
 
 /** latest update **/
+.white--bg {background-color: #ffffff;}
 .padding-top2em{padding-top:2em;}
 .white{color:#fff;}
 .padding-top5{padding-top: 5px;}
@@ -202,7 +203,7 @@ q:before, q:after { content: ''; content: none; }
 /*** Inner pages ***/
 #page-title-bg {position: fixed; top: 0; left: 0; width: 100%; height: 40%;}
 #page-title-bg img {position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; min-width: 100%;}
-#main-container{background-color:#fff; position:relative; top:150px; padding-bottom: 250px;}
+#main-container{background-color:#fff; position:relative; top:290px; padding-bottom: 250px;}
 #main-container .row{padding-left:15px; padding-right:15px;}
 
 .sidebar-menu {padding-left: 0px; padding-right: 30px;}
@@ -227,9 +228,8 @@ article img{padding-top:15px; padding-bottom: 15px;}
 
 .info-bg-color-2{background: #0b2d4c; position: relative; margin-bottom: 15px;}
 .fullpage-image-title{text-align: center; padding-top: 15px; padding-bottom: 15px;}
-.full-width-image{background: #fff !important; position: relative; z-index: 5000;}
+.full-width-image{background: #fff !important; position: relative; z-index: 5000; margin-top: 50px; margin-bottom: 50px;}
 .inner-container {margin-top: 16px; padding: 40px; background-color: #fff; position: relative;}
-.white--bg {background-color: #FFFFFF;}
 .top-bar {border: #b8babc solid; border-top-width: 15px; margin-left: 38px; margin-top: 55px;}
 .block-quote{padding:40px; color: #3a5a99; font-size: 25px;}
 #container-inner{background-color:#fff; position:relative; padding-bottom: 100px;}
