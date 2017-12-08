@@ -1,31 +1,40 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
-
-	<!-- title-bar -->
+    
+    <!-- title-bar -->
 	{{ page.title_bar }}
 	<!-- //End title-bar -->
 
-	<div class="clear"></div>
-
-	<!-- contain -->
-	<div class="container section-padding-inner">
-		<div class="row" id="citywide">
-			<!-- left bar -->
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-md-12">
-    					 {% if errors %}
-    					 <div class="form-item--error-message">
-                      		<strong>{{ errors }}</strong>
-                    	</div>
-    					 {% endif %}
-            			{{ page.block_eir }}
+    {# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+    
+    <!-- contain -->
+    <div class="container" id="main-container">
+        {# Main content #}
+        <div class="row">
+            {# Left-side bar #}
+            <div class="col-md-9">
+                <div class="row padding-left0">
+                    <div class="col-md-12">
+                        {{ page.block_eir }}
 						{{ page.content }}
-					</div>
-				</div>
-			</div><!-- //END left bar -->
-		</div>
-	</div>	<!-- //End container -->
+                    </div>
+                </div>
+            </div>{# End Left-side bar #}
+    
+            {# Right-side bar #}
+            <div class="col-md-3 sidebar-menu padding-right-27">
+                <div class="top-bar"></div>
+                 {{ page.side_menu }} 
+            </div>{# End Right-side bar #}
+        </div>
+    </div>{# End container #} 
 
     <!-- footer section -->
     {% include directory ~ '/partials/footer.html.twig' %}
