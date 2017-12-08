@@ -26,14 +26,12 @@
  */
 #}
 
-<div class="row">
-	<div class="col-md-12 padding-left0">
-		  {% if label %}
-            <h1{{ title_attributes }} >{{ label }}</h1>
-          {% endif %}
-          {{ title_suffix }}
-          {% block content %}
-            {{ content }}
-          {% endblock %}
-	</div>
-</div>
+{% if label %}
+<h1{{ title_attributes }} >{{ label }}</h1>
+{% endif %}
+
+{{ title_suffix }}
+
+{% block content %}
+{{ content }}
+{% endblock %}
