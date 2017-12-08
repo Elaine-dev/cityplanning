@@ -1,6 +1,6 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
-    
+
     <style>
         /* calendar */
         #calendar { max-width: 100% !important; margin: 0 auto;	}
@@ -8,16 +8,25 @@
         .commission {color: #9966cc !important; }
         .public {color: #70a300 !important; }
         .mousepointer{cursor:pointer;}
+
         .cal-hearing { float: left; width: 20px; min-height: 10px; background: #3399ff; padding-top: 19px !important; }
+        .cal-hearing-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #aed5fc; padding-top: 19px !important; }
+
         .cal-commission { float: left; width: 20px; min-height: 10px; background: #9966cc; padding-top: 19px !important;}
+        .cal-commission-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #bfaad4; padding-top: 19px !important;}
+
         .cal-public-meeting { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
+        .cal-public-meeting-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #a0a98b; padding-top: 19px !important;}
+
         .cal-box { float: left; width: 20px; min-height: 10px; border: solid 1px #ddd; background:#fff; padding-top: 19px !important;}
         .fc-other-month .fc-day-number { display:none;}
         .mousepointer:hover {background-color: #eee;}
+        .cal-section{padding: 0 !important; }
+        #ci-public,#ci-commission, #ci-hearing {cursor: pointer;}
     </style>
-    
+
     <div id="title-bar">
-    
+
         {# page-banner #}
         <div class="container-fluid">
             <div class="row">
@@ -26,7 +35,7 @@
                 </div>
             </div>
         </div>{# End page-banner #}
-        
+
         <!-- contain -->
         <div class="container" id="main-container">
             {# Main content #}
@@ -38,28 +47,37 @@
                         	{# title-bar #}
                         	<h1>{{ node.label }}</h1>
                         	{# //End title-bar #}
-            				
+
             				<div class="container-fluid section-content">
                             	<div class="row">
                             		<div class="col-md-12 padding-top13 padding-bottom20 pull-right">
                             			<div class="row">
                             				<div class="col-sm-2 pull-right">
-                            					<div id="ci-public" class="mousepointer"><span class="cal-public-meeting"></span> <span class="padding-left10">Public Meeting</span></div>
+                            					<div id="ci-public" >
+                            						<span class="cal-public-meeting" id="p"></span>
+                            						<span class="padding-left-10">Public Meeting</span>
+                        						</div>
                             				</div>
                             				<div class="col-sm-2 pull-right">
-                            					<div id="ci-commission" class="mousepointer"><span class="cal-commission"></span> <span class="padding-left10">Commission</span></div>
+                            					<div id="ci-commission" >
+                            						<span class="cal-commission" id="c"></span>
+                            						<span class="padding-left-10">Commission</span>
+                        						</div>
                             				</div>
                             				<div class="col-sm-2 pull-right">
-                            					<div id="ci-hearing" class="mousepointer"><span class="cal-hearing" style="padding-top: 10px;"></span> <span class="padding-left10">Hearing</span></div>
+                            					<div id="ci-hearing" >
+                            						<span class="cal-hearing" id="h" style="padding-top: 10px;"></span>
+                            						<span class="padding-left-10">Hearing</span>
+                        						</div>
                             				</div>
                             			</div>
                             		</div>
                             	</div>
                         	</div>
-                        	
+
                         	<!-- contain -->
                         	<div class="container-fluid">
-                        		<div class="row">
+                        		<div class="row cal-section">
                         			<div class="col-md-12 col-xs-12">
                         				<div id='calendar'></div>
                         			</div>
@@ -68,9 +86,9 @@
                         </div>
                     </div>
                 </div>{# End Left-side bar #}
-        
+
             </div>
-        </div>{# End container #} 
+        </div>{# End container #}
     </div>
 
     <!-- footer section -->
