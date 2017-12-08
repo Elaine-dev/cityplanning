@@ -298,7 +298,9 @@ article img{padding-top:15px; padding-bottom: 15px;}
 	filter: sepia(50%); */
 }
 
-/***/
+/** Agendas and Hearings **/
+.content-search input, input::-webkit-input-placeholder{font-size: 13px !important; padding-left: 5px !important;}
+.content-search select::-webkit-input-placeholder{font-size: 13px !important; padding-left: 5px !important;}
 
 /*-->> **************** Media Query *****************/
 
