@@ -34,7 +34,6 @@ q:before, q:after { content: ''; content: none; }
 .clear{clear:both !important;}
 .section-content {padding: 30px 0;}
 
-/** latest update **/
 .white--bg {background-color: #ffffff;}
 .padding-top2em{padding-top:2em;}
 .white{color:#fff;}
@@ -67,7 +66,6 @@ q:before, q:after { content: ''; content: none; }
 .left-6{left: 6px;}
 .left-12{left: 12px;}
 .line { border-bottom: 0.5px solid #939598; padding-top:5px !important;}
-
 
 
 /****************************************
@@ -299,6 +297,8 @@ article img{padding-top:15px; padding-bottom: 15px;}
 	/* -webkit-filter: sepia(50%);
 	filter: sepia(50%); */
 }
+
+/***/
 
 /*-->> **************** Media Query *****************/
 
