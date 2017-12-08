@@ -50,6 +50,17 @@ calendar-page:
     js/calendar/fullcalendar.js: {}
     js/calendar/dcp-calendar.js: {}
 
+calendar-detail:
+  version: VERSION
+  css:
+    theme:
+      css/calendar/fullcalendar.css: {}
+      css/calendar/fullcalendar.print.min.css: {}
+  js:
+    js/calendar/moment.min.js: {}
+    js/calendar/fullcalendar.js: {}
+    js/calendar/dcp-calendar-detail.js: {}
+
 community-plan-areas:
   version: VERSION
   css:
@@ -61,3 +72,11 @@ community-plan-areas:
     https://js.arcgis.com/3.20: {}
     http://code.jquery.com/jquery-latest.min.js: {}
     js/communities.js: {}
+
+agenda-hearing:
+  version: VERSION
+  js:
+    js/api/app.js: {}
+    js/api/agendaService.js: {}
+    js/api/agendaCtrl.js: {}
+    js/api/hearingsCtrl.js: {}
