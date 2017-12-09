@@ -302,6 +302,24 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .content-search input, input::-webkit-input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:30px;}
 .content-search select::-webkit-input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:30px;}
 
+/** Case Filing Appointment system **/
+#laappintment-form fieldset { padding: 0.35em 0.9em 1em !important; }
+#laappintment-form .form-item { padding-bottom: 5px; margin-bottom: 15px;}
+#block-cityplanning-content .app-textbox { margin-left: 200px; }
+#block-cityplanning-content .app-textbox-phone { margin-left: 128px; }
+#block-cityplanning-content .app-textbox-appointment { margin-left: 130px; }
+#block-cityplanning-content .app-textbox-appointment-street { margin-left: 150px; }
+#block-cityplanning-content .app-textbox-direction { margin-left: 175px; }
+#block-cityplanning-content .app-textbox-cases { margin-left: 175px; }
+#block-cityplanning-content fieldset {border: 0px !important;}
+#block-cityplanning-content legend {color: #30c2a5;}
+.form-item-week-day-preference-anyday{padding-left: 20px;}
+#edit-week-day-preference{padding-left: 20px;}
+.visually-hidden{color: #c9e1bd !important; text-align: center !important; text-transform: capitalize !important; visibility: hidden;}
+#eirs .pagination>.active>a {background-color: #eee !important; border-color: #eee !important;}
+
+
+
 /*-->> **************** Media Query *****************/
 
 /* Medium devices (tablets, 768px and up) */
