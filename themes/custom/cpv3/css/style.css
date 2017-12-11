@@ -297,6 +297,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 	/* -webkit-filter: sepia(50%);
 	filter: sepia(50%); */
 }
+.btn-black{color: #fff !important; background-color: #000; border-color: #fff !important; padding: 25px; opacity: 0.9;}
 
 /** Agendas and Hearings **/
 .content-search input, input::-webkit-input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:30px;}
