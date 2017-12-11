@@ -80,3 +80,10 @@ agenda-hearing:
     js/api/agendaService.js: {}
     js/api/agendaCtrl.js: {}
     js/api/hearingsCtrl.js: {}
+
+bi-weekly-case-filing:
+  version: VERSION
+  js:
+    js/api/app.js: {}
+    js/api/biweeklyCaseReportService.js: {}
+    js/api/biweeklyCaseReportCtrl.js: {}
