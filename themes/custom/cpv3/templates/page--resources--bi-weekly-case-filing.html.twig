@@ -1,8 +1,8 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
-    
+
      <div  ng-app="app" ng-controller="biweeklyCaseReportCtrl">
-    
+
         {# page-banner #}
         <div class="container-fluid">
             <div class="row">
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>{# End page-banner #}
-        
+
         <!-- contain -->
         <div class="container" id="main-container">
             {# Main content #}
@@ -26,13 +26,13 @@
                             <div ng-disabled="enable=='false'">
             					<center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
             				</div>
-            				
+
             				<!-- hearing -->
             				<div class="padding-bottom20">
             					<div class="row">
                 					<div class="col-md-9 col-xs-12 padding-left0">
                 						<label>Filter by : </label>
-                						<select name="mySelect" id="mySelect" 
+                						<select name="mySelect" id="mySelect"
                                             	ng-options="option for option in year.availableOptions track by option"
                                                 ng-model="year.selectedOption">
                                         </select>
@@ -40,28 +40,28 @@
             						<div class="col-md-3 col-xs-12 pull-right content-search"><input placeholder="Search bi-weekly case" ng-model="search"></div>
             					</div>
             				</div>
-            				
+
             				<div class="table-responsive">
             					<table class="table">
                                     <colgroup>
                                     	<col class="col-md-10">
                                       	<col class="col-md-1">
                                     </colgroup>
-                                    
+
                                     <thead>
                                         <tr>
                             				<th>Date</th>
                             				<th>File</th>
                             			</tr>
                                     </thead>
-                                    
+
                                     <tr ng-repeat= "record in data  | filter: search | startFrom:currentPage*pageSize | limitTo:pageSize" >
                             			<td>{[{ record.date }]}</td>
                             			<td><span ng-if="record.file"><a href="{[{record.file}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
                             		</tr>
                                 </table>
             				</div>
-            				
+
             				<div class="bottom "></div>
             				<br />
             				<button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
@@ -69,18 +69,18 @@
                             <button ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
                                 Next
                             </button>
-            				
+
                         </div>
                     </div>
                 </div>{# End Left-side bar #}
-        
+
                 {# Right-side bar #}
                 <div class="col-md-3 sidebar-menu padding-right-27">
                     <div class="top-bar"></div>
-                     {{ page.side_menu }} 
+                     {{ page.side_menu }}
                 </div>{# End Right-side bar #}
             </div>
-        </div>{# End container #} 
+        </div>{# End container #}
     </div>
 
     <!-- footer section -->

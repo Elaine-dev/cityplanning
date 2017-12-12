@@ -1,7 +1,7 @@
 app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportService, $filter, $timeout, $http, $location) {
 	var id = $location.absUrl().split('/')[6];		// get cpc from url in the form of query parameter.
 	id = (id) ? id : 163;
-
+	console.log($location.absUrl());
 	/*$scope.years = ['2017', '2016', '2015', '2014', '2013', '2012'];
 	$scope.date = $filter('date')(new Date(), 'yyyy');		// get current year
 	var date = $scope.date;*/
@@ -26,12 +26,12 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
 
      var self = this;
 
-     $scope.$watch('year.selectedOption', function(newDate){
+     $scope.$watch('year.selectedOption', function(newDate) {
     	 $scope.selectedDate = newDate;
          if(newDate) {
         	 biweeklyCaseReportService.getBiweeklyCaseFiling(id, newDate).then(function(response){
 
-                  $timeout(function(){
+                  $timeout(function() {
                       $scope.enable = "true";
                       $scope.loadingText = "";
                   }, 2000);
@@ -51,12 +51,12 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
                   $scope.data = response.data;
 
                   if (id == 163) {
-                	  $scope.pageTitle = 'Bi-Weekly Case Filing by Certified Neighborhood Council';	//163
-  					} else if (id == 173) {
-	  					$scope.pageTitle = 'Bi-Weekly Case Filing Activity by City Council District';	      // 173
-	  				} else {
-	  					$scope.pageTitle = 'Bi-Weekly Case Filing by Community Plan Area';				          // 183
-	  				}
+                	  $scope.pageTitle = 'Bi-Weekly Case Filing by Certified Neighborhood Council';			//163
+                  } else if (id == 173) {
+                	  $scope.pageTitle = 'Bi-Weekly Case Filing Activity by City Council District';	      	// 173
+                  } else {
+                	  $scope.pageTitle = 'Bi-Weekly Case Filing by Community Plan Area';				  	// 183
+              	}
 
               });
          }
