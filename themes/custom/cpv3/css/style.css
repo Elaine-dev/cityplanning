@@ -178,6 +178,9 @@ q:before, q:after { content: ''; content: none; }
 #signup-newsletter{font-weight: 300; padding-bottom: 10px; font-size: 21px;}
 #stay{font-weight: 200; font-size:36px; line-height: 1;}
 #connected{font-weight:bold; font-size:36px; line-height: 1;}
+#say-connected .social-icons{padding-left: 0; left: -25px; padding-top:50px;}
+#say-connected .stayconnected{padding-top:45px;}
+.signup-newsletter{padding-left: 50px; padding-top: 10px;}
 
 #footer-section{
 	background:url(../images/footer_background_pattern.png) no-repeat 0px 71%;
@@ -198,6 +201,10 @@ q:before, q:after { content: ''; content: none; }
 #footer-section ul{padding-left: 0px;}
 #footer-section address p{line-height:1.0 !important;}
 .border-line-top{ border-top: 1px solid #fff; padding: 25px 0;}
+.footer{padding-top: 50px;}
+#footer-section .org-profile{padding-left: 0; padding-right: 65px;}
+#footer-section .footer-sub-link{padding-left: 0;}
+#footer-section .copy-right{padding-right: 0; text-align: left;}
 
 /*** Inner pages ***/
 #page-title-bg {position: fixed; top: 0; left: 0; width: 100%; height: 40%; z-index: -2;}
@@ -366,6 +373,15 @@ article img{padding-top:15px; padding-bottom: 15px;}
 		visibility: visible;
 	}
 	.navbar-search-box .search-bar-search > .container {padding: 0px;}
+  #say-connected .social-icons{padding-left: 15px !important; left: 0px !important; padding: 25px 15px;}
+	.signup-newsletter{padding-left:15px; padding-top: 10px;}
+	#say-connected .stayconnected{padding-top:15px;}
+	#footer-section .org-profile{padding: 15px;}
+	#footer-section .footer-sub-link{padding-left: 15px;}
+	#feature-block-2{margin-bottom: 20px;}
+	#feature-block-1{padding-top: 5px;}
+	#slider h2{padding-top: 0; padding-bottom: 0; font-size: 16px;}
+	.slide-text{left: 13px !important; right: 13px !important;}
 }
 
 /* Large devices (desktops, 992px and up) */
