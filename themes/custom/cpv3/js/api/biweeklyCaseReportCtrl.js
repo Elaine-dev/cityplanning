@@ -1,7 +1,7 @@
 app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportService, $filter, $timeout, $http, $location) {
 	var id = $location.absUrl().split('/')[6];		// get cpc from url in the form of query parameter.
 	id = (id) ? id : 163;
-	console.log($location.absUrl());
+	
 	/*$scope.years = ['2017', '2016', '2015', '2014', '2013', '2012'];
 	$scope.date = $filter('date')(new Date(), 'yyyy');		// get current year
 	var date = $scope.date;*/
@@ -31,10 +31,10 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
          if(newDate) {
         	 biweeklyCaseReportService.getBiweeklyCaseFiling(id, newDate).then(function(response){
 
-                  $timeout(function() {
-                      $scope.enable = "true";
-                      $scope.loadingText = "";
-                  }, 2000);
+			      $timeout(function() {
+			          $scope.enable = "true";
+			          $scope.loadingText = "";
+			      }, 2000);
 
                   $scope.currentPage = 0;
                   $scope.pageSize = 20;
@@ -44,7 +44,7 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
                 	  return $filter('filter')($scope.data, $scope.selectedDate)
                   }
 
-                  $scope.numberOfPages=function(){
+                  $scope.numberOfPages=function() {
                 	  return Math.ceil($scope.getData().length/$scope.pageSize);
                   }
 
@@ -56,7 +56,9 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
                 	  $scope.pageTitle = 'Bi-Weekly Case Filing Activity by City Council District';	      	// 173
                   } else {
                 	  $scope.pageTitle = 'Bi-Weekly Case Filing by Community Plan Area';				  	// 183
-              	}
+                  }
+                  
+                  console.log($location.absUrl());
 
               });
          }
