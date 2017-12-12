@@ -41,7 +41,7 @@
         </div>{# End Left-side bar #}
 
         {# Right-side bar #}
-        <div class="col-md-3 sidebar-menu padding-right-27">
+        <div class="col-md-3 sidebar-menu padding-right-27 visible-lg-block">
             <div class="top-bar"></div>
               {{ page.side_menu }}
         </div>{# End Right-side bar #}
@@ -70,6 +70,16 @@
 			</div>
 		{% endif %}
 	{% endfor %}
+</div>
+
+<div class="container white--bg visible-xs-block">
+	<div class="row">
+		{# Right-side bar #}
+        <div class="col-md-12 sidebar-menu">
+            <div class="top-bar"></div>
+              {{ page.side_menu }}
+        </div>{# End Right-side bar #}
+	</div>
 </div>
 
 <!-- footer section -->
