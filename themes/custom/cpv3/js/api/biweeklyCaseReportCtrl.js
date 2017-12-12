@@ -58,7 +58,7 @@ app.controller('biweeklyCaseReportCtrl', function($scope, biweeklyCaseReportServ
                 	  $scope.pageTitle = 'Bi-Weekly Case Filing by Community Plan Area';				  	// 183
                   }
                   
-                  console.log($location.absUrl());
+                  alert($location.absUrl());
 
               });
          }
