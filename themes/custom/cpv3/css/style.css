@@ -307,6 +307,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .btn-black{color: #fff !important; background-color: #000; border-color: #fff !important; padding: 25px; opacity: 0.9;}
 
 /** Agendas and Hearings **/
+.filter-by{padding-left:0;}
 .content-search input, input::-webkit-input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:35px;}
 .content-search select::-webkit-input-placeholder, .content-search select::input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:35px !important;}
 .content-search select, input {height: 35px !important;}
