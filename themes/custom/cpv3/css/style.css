@@ -307,8 +307,9 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .btn-black{color: #fff !important; background-color: #000; border-color: #fff !important; padding: 25px; opacity: 0.9;}
 
 /** Agendas and Hearings **/
-.content-search input, input::-webkit-input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:30px;}
-.content-search select::-webkit-input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:30px;}
+.content-search input, input::-webkit-input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:35px;}
+.content-search select::-webkit-input-placeholder, .content-search select::input-placeholder{font-size: 14px !important; padding-left: 5px !important; height:35px !important;}
+.content-search select, input {height: 35px !important;}
 
 /** Case Filing Appointment system **/
 #laappintment-form fieldset { padding: 0.35em 0.9em 1em !important; }
@@ -385,6 +386,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
   #main-container{margin-left: 15px; margin-right: 15px; top:0; padding-bottom: 0 !important;}
 	.menu-region{padding-bottom: 10px;}
 	.message-director-social-icons{padding-top: 25px; padding-left: 0;}
+  .filter-by, .date, .search {padding-bottom: 15px;}
 }
 
 /* Large devices (desktops, 992px and up) */
