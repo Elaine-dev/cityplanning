@@ -75,7 +75,7 @@ q:before, q:after { content: ''; content: none; }
 .dropdown-menu{border-radius: 0px; -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.175)!important; box-shadow: 0 10px 10px rgba(0,0,0,.175) !important; }
 .navbar-brand{padding-left: 0px; padding-right: 0px;}
 .divider {font-size: 10px !important; color: #777;}
-.navbar-default{background-color:#fff; border-color: #fff;}
+.navbar-default{background-color:#fff;}
 .nav>li { padding-top: 5px; }
 .navbar {
 	border-radius: 0px !important;
