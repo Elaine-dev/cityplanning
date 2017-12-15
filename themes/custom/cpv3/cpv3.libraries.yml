@@ -2,7 +2,7 @@ global-styling:
   version: VERSION
   css:
     base:
-      css/bootstrap.min.css: {}
+      https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css: {type: external, minified: true}
       css/normalize.css: {}
       css/style.css: {}
   js:
