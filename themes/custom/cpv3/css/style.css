@@ -118,7 +118,7 @@ q:before, q:after { content: ''; content: none; }
 .top-social-icons{padding-top: 2px !important; margin-right: 0px; margin-bottom: 0px; margin-top: 0px; margin-left: 0px;}
 .top-social-icons .s-icons{ padding-left: 0; padding-right: 15;}
 .top-social-icons .fa-2x{font-size: 1.8em;}
-.top-social-icons .fa-youtube{margin-top: -1;}
+.top-social-icons .fa-youtube{margin-top: 0;}
 .menu-seperation{padding-right: 15px; padding-left: 0px; border-right: 1px dotted #3a5a99; margin-top: 25px; padding-top: 10px !important;}
 .search-icon{padding-left: 12px; padding-top: 3px;}
 /** End Menu **/
