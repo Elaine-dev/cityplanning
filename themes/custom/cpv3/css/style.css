@@ -73,7 +73,7 @@ q:before, q:after { content: ''; content: none; }
 *****************************************/
 .tog-nav{padding-top: 2em; padding-left: 0; padding-right: 0;}
 .menu-region{ padding-bottom: 0px;}
-#main-nav{padding-left:20px; font-weight: bold;}
+#main-nav{padding-left:0px; font-weight: bold;}
 .dropdown-menu{border-radius: 0px; -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.175)!important; box-shadow: 0 10px 10px rgba(0,0,0,.175) !important; }
 .navbar-brand{padding-left: 0px; padding-right: 0px;}
 .divider {font-size: 10px !important; color: #777;}
