@@ -72,7 +72,7 @@ q:before, q:after { content: ''; content: none; }
 ************ Mega menu ******************
 *****************************************/
 .tog-nav{padding-top: 2em; padding-left: 0; padding-right: 0;}
-.menu-region{ padding-bottom: 0px;}
+.menu-region{ padding-bottom: 0px; padding-left: 0px; padding-right: 0px;}
 #main-nav{padding-left:0px; font-weight: bold;}
 .dropdown-menu{border-radius: 0px; -webkit-box-shadow: 0 10px 10px rgba(0,0,0,.175)!important; box-shadow: 0 10px 10px rgba(0,0,0,.175) !important; }
 .navbar-brand{padding-left: 0px; padding-right: 0px;}
@@ -86,7 +86,7 @@ q:before, q:after { content: ''; content: none; }
     padding-top: 47px !important;
 }
 .navbar-nav {margin: 7.5px; !important; padding-top: 4px;}
-.navbar-brand > img{ padding-top: 7px;}
+/* .navbar-brand > img{ padding-top: 7px;} */
 .nav .open > a, .nav .open > a:focus, .nav  .open  > a:hover { background-color: #fff; border-color: #f8f8f8; }
 
 /** active link **/
