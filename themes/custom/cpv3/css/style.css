@@ -406,7 +406,10 @@ article img{padding-top:15px; padding-bottom: 15px;}
 	}
 	.nav.navbar-nav{padding-right: 30px !important;}
 	#slider{margin-top: -35 !important;}
-}
+  .feature-section1 .left-12, .feature-section1 .left-6{left: 0 !important;}
+	.feature-section1 #feature-block-1 {padding-top: 15px;}
+	.feature-section1 #feature-block-3 {margin-top: 15px;}
+ }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape)  {
     .navbar-toggle {display: block;}
