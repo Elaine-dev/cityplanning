@@ -64,28 +64,31 @@ class SideMenuBlock extends BlockBase {
 
         // Generate side menu
         $html = '<ul>';
-        foreach(@$list[0]['child'] as $row) {
+        if (!empty($list[0]['child'])) {
+          foreach(@$list[0]['child'] as $row) {
 
-            $link_text = $row->getText();
-            if($row->getUrl()->isExternal()) {
-                $url = $row->getUrl()->getUri();
-                $target = '_blank';
-                $class = '';
-            } else {
-                $system_path = '/'.$row->getUrl()->getInternalPath();
-                $url = \Drupal::service('path.alias_manager')->getAliasByPath($system_path);
-                $target = '';
-                $full_url = $base_url.$url;
+              $link_text = $row->getText();
+              if($row->getUrl()->isExternal()) {
+                  $url = $row->getUrl()->getUri();
+                  $target = '_blank';
+                  $class = '';
+              } else {
+                  $system_path = '/'.$row->getUrl()->getInternalPath();
+                  $url = \Drupal::service('path.alias_manager')->getAliasByPath($system_path);
+                  $target = '';
+                  $full_url = $base_url.$url;
 
-                if($actual_url == $full_url) {
-                    $class = 'active';
-                } else {
-                    $class = '';
-                }
-            }
-            $html .= '<li><a class="'.$class.'" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
-            $html .= '<li class="line"></li>';
+                  if($actual_url == $full_url) {
+                      $class = 'active';
+                  } else {
+                      $class = '';
+                  }
+              }
+              $html .= '<li><a class="'.$class.'" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
+              $html .= '<li class="line"></li>';
+          }
         }
+        
         $html .= '</ul>';
         return [
             '#markup' => $html,
