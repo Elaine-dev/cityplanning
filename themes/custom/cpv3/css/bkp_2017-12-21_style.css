@@ -52,7 +52,6 @@ q:before, q:after { content: ''; content: none; }
 .padding-bottom30{ padding-bottom: 30px;}
 .padding-bottom60{ padding-bottom: 60px;}
 .padding-left0 { padding-left: 0px !important; }
-.padding-left-5 { padding-left: 5px;}
 .padding-left-10 { padding-left: 10px;}
 .padding-left-15 { padding-left: 15px;}
 .padding-left-50{padding-left:50px;}
@@ -259,7 +258,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 
 #teams .social-links ul {float: left;}
 #teams .social-links ul li a {font-size:16px; font-weight: 600; text-transform: uppercase; padding-left: 0px !important; border-left-width: 0px !important; margin-left: 0px !important; margin-top: 10px !important;}
-.team-title {font-style: italic; font-size: 12px; color: #3a5a99;}
+.team-title {font-style: italic; font-size: 12px;}
 .seperation{padding-right: 15px; padding-left: 15px; border-right: 1px dotted #ccc;}
 .social-links{margin-left: 19%;}
 .social-links ul li{display:inline;}
@@ -326,26 +325,6 @@ article img{padding-top:15px; padding-bottom: 15px;}
 #edit-week-day-preference{padding-left: 20px;}
 .visually-hidden{color: #c9e1bd !important; text-align: center !important; text-transform: capitalize !important; visibility: hidden;}
 #eirs .pagination>.active>a {background-color: #eee !important; border-color: #eee !important;}
-
-/* Commissioners */
-.loading {
-    margin: 10% auto;
-    width: 60px;
-    height: 60px;
-    background-image: url("../images/spinner.svg");
-    background-repeat: no-repeat;
-}
-
-.loading_1 {
-    position: relative;
-    margin: 0 auto;
-    width: 60px;
-    height: 60px;
-    background-image: url("../images/spinner.svg");
-    background-repeat: no-repeat;
-}
-#apc .panel{border: 0;}
-#apc .panel-group .panel{margin-bottom: 0; border-radius: 0;}
 
 
 /*-->> **************** Media Query *****************/

@@ -14,6 +14,7 @@ regions:
   header: 'Header'
   primary_menu: 'Primary menu'
   title_bar: 'Title Bar Block'
+  top_banner: 'Top banner'
   breadcrumb: Breadcrumb
   side_menu: 'Side Menu'
   slider: 'Slider'

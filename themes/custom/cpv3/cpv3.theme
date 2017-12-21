@@ -28,12 +28,42 @@ function cpv3_preprocess_page ( &$variables ) {
   	$variables['route_name'] = \Drupal::routeMatch()->getRouteName();
 }
 
-/*
+/**
+ * Implement template_preprocess_views_view().
+ * @param array $variables
+ */
 function cpv3_preprocess_views_view( &$variables ) {
-    $view = $variables['view'];
-    @$variables['params'] = $view->args[0]; 
+    $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('commissions');
+    $i = 1;
+    foreach ($terms as $term) {
+        $name = explode(' ',$term->name, 3);
+        if(count($name) >= 3) {
+            $first_name = $name[0].' '.$name[1];
+            $last_name = $name[2];
+        } else {
+            $first_name = $term->name;
+        }
+        $term_data[] = array(
+            "id" => $term->tid,
+            "first_name" => $first_name,
+            "last_name" => $last_name,
+            "counter" => $i
+        );
+        $i++;
+    }
+
+    $variables['category'] = $term_data;
+
+    $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('area_planning_type');
+    foreach ($terms as $term) {
+        $term_data_1[] = array(
+            "id" => $term->tid,
+            "name" => $term->name,
+        );
+    }
+
+    $variables['planning_area_category'] = $term_data_1;
 }
-*/
 
 function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
     // Add content type suggestions.
