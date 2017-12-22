@@ -68,9 +68,90 @@ q:before, q:after { content: ''; content: none; }
 .left-12{left: 12px;}
 .line { border-bottom: 0.5px solid #939598; padding-top:5px !important;}
 
-/* paragraph */
+/*** paragraph ***/
 .full-width-button{ padding: 5px 0 !important; }
 .full-width-button p, .full-width-button .btn{ border-radius: 4px !important;}
+.full-width-button a{ text-decoration: none !important;}
+/*
+color - name
+#019d1 : aqua 
+#5e7393 : blue-gray
+#c6d32d : lime-green
+#a0a8a9 : med-gray
+#ffb845 : orange
+#87a28e : sage
+#53bda6 : teal-green
+*/
+.Aqua{
+    color: #fff;
+    background-color: #019d1;
+    border-color: #019d1;
+}
+.Aqua:hover{
+    color: #fff;
+    background-color: #0219c4;
+    border-color: #0117b4;
+}
+.Blue-Gray{
+    color: #fff;
+    background-color: #5e7393;
+    border-color: #5e7393;
+}
+.Blue-Gray:hover{
+    color: #fff;
+    background-color: #546784;
+    border-color: #4b5c76;
+}
+.Lime-Green{
+    color: #fff;
+    background-color: #c6d32d;
+    border-color: #c6d32d;
+}
+.Lime-Green:hover{
+    color: #fff;
+    background-color: #b9c52a;
+    border-color: #abb627;
+}
+.Med-Gray{
+    color: #fff;
+    background-color: #a0a8a9;
+    border-color: #a0a8a9;
+}
+.Med-Gray:hover{
+    color: #fff;
+    background-color: #929899;
+    border-color: #83898a;    
+}
+.Orange{
+    color: #fff;
+    background-color: #ffb845;
+    border-color: #ffb845;
+}
+.Orange:hover{
+    color: #fff;
+    background-color: #f0ad41;
+    border-color: #e1a23d;
+}
+.Sage{
+    color: #fff;
+    background-color: #87a28e;
+    border-color: #87a28e;
+}
+.Sage:hover{
+    color: #fff;
+    background-color: #7a9380;
+    border-color: #6d8473;
+}
+.Teal-Green{
+    color: #fff;
+    background-color: #53bda6;
+    border-color: #53bda6;
+}
+.Teal-Green:hover{
+    color: #fff;
+    background-color: #4baf99;
+    border-color: #439f8b;
+}
 
 /****************************************
 ************ Mega menu ******************
