@@ -69,7 +69,7 @@ q:before, q:after { content: ''; content: none; }
 .line { border-bottom: 0.5px solid #939598; padding-top:5px !important;}
 
 /* paragraph */
-.full-width-button{.full-width-button{ padding: 5px 0 !important; }
+.full-width-button{ padding: 5px 0 !important; }
 .full-width-button p, .full-width-button .btn{ border-radius: 4px !important;}
 
 /****************************************
