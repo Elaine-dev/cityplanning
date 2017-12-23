@@ -71,6 +71,8 @@ q:before, q:after { content: ''; content: none; }
 /*** paragraph ***/
 .full-width-button{ padding: 5px 0 !important; }
 .full-width-button p, .full-width-button .btn{ border-radius: 4px !important;}
+.full-width-button p{padding: 10px 15px; margin-bottom: 0px !important;}
+.full-width-button p span i{padding-left: 5px !important; padding-top: 5px !important;}
 .full-width-button a{ text-decoration: none !important;}
 /*
 color - name
