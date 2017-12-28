@@ -76,7 +76,7 @@ q:before, q:after { content: ''; content: none; }
 .full-width-button a{ text-decoration: none !important;}
 /*
 color - name
-#019d1 : aqua 
+#019d1 : aqua
 #5e7393 : blue-gray
 #c6d32d : lime-green
 #a0a8a9 : med-gray
@@ -122,7 +122,7 @@ color - name
 .Med-Gray:hover{
     color: #fff;
     background-color: #929899;
-    border-color: #83898a;    
+    border-color: #83898a;
 }
 .Orange{
     color: #fff;
@@ -260,6 +260,7 @@ color - name
 .hearing { color: #525f7c !important; }
 .commission {color: #3474e0 !important; }
 .public {color: #70a300 !important; }
+ .fc-other-month .fc-day-number { display:none;}    /* hide past and future dates */
 
 #say-connected {background-color: #0077bd; padding: 12px 0; color:#fff;}
 #say-connected a {color: #0077bd !important;}

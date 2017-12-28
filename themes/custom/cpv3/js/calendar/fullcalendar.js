@@ -135,7 +135,7 @@ function enableCursor() {
 
 // Given a total available height to fill, have `els` (essentially child rows) expand to accomodate.
 // By default, all elements that are shorter than the recommended height are expanded uniformly, not considering
-// any other els that are already too tall. if `shouldRedistribute` is on, it considers these tall rows and 
+// any other els that are already too tall. if `shouldRedistribute` is on, it considers these tall rows and
 // reduces the available height.
 function distributeHeight(els, availableHeight, shouldRedistribute) {
 
@@ -1648,7 +1648,7 @@ Parses a format string into the following:
 */
 function parseFormatString(formatStr) {
 	var chunks = chunkFormatString(formatStr);
-	
+
 	return {
 		fakeFormatString: buildFakeFormatString(chunks),
 		sameUnits: buildSameUnits(chunks)
@@ -7419,41 +7419,41 @@ DayGrid.mixin({
 		var titleColor, calEventTitle, iconFontClass;
 
 		classes.unshift('fc-day-grid-event', 'fc-h-event');
-		
+
 		if (event.type == 'Commission'){
-			titleColor = 'commission'; 						
+			titleColor = 'commission';
 			calEventTitle = event.description;
 			var cpcName = getCPCName (event.title);
 			calEventUrl = 'agenda.php?apc='+cpcName;
-			
+
 			iconFontClass = '<i class="commission fa fa-users" aria-hidden="true"></i>';
 			titleHtml =
 				'<span class="fc-title"> ' +
-					(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height 
+					(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height
 				'</span>';
-			
+
 		} else if (event.type == 'Hearing') {
-			titleColor = 'hearing'; 						
+			titleColor = 'hearing';
 			calEventTitle = 'Hearing';
 			calEventUrl = event.url;
-			
+
 			iconFontClass = '<i class="hearing fa fa-archive" aria-hidden="true"></i>';
 			titleHtml =
 				'<span class="fc-title"> ' +
-					(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height 
+					(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height
 				'</span>' +
 				'<span class="fc-case-number"> | ' +
-					(htmlEscape(event.caseNumber || '') || '&nbsp;') + 
+					(htmlEscape(event.caseNumber || '') || '&nbsp;') +
 				'</span>';
 		} else if (event.type == 'Public') {
-			titleColor = 'public'; 						
+			titleColor = 'public';
 			calEventTitle = event.description;
 			calEventUrl = event.url;
-			
+
 			iconFontClass = '<i class="public fa fa-clock-o" aria-hidden="true"></i>';
 			titleHtml =
 				'<span class="fc-title"> ' +
-					(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height 
+					(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height
 				'</span>';
 		}
 
@@ -7593,7 +7593,7 @@ DayGrid.mixin({
 		// Give preference to elements with certain criteria, so they have
 		// a chance to be closer to the top.
 		this.sortEventSegs(segs);
-		
+
 		for (i = 0; i < segs.length; i++) {
 			seg = segs[i];
 
@@ -9868,7 +9868,7 @@ var View = FC.View = Model.extend({
 	// Refreshes the vertical dimensions of the calendar
 	updateHeight: function(isResize) {
 		var calendar = this.calendar; // we poll the calendar for height information
-		
+
 		this.setHeight(
 			calendar.getSuggestedViewHeight(),
 			calendar.isHeightAuto()
@@ -11118,7 +11118,7 @@ function Toolbar(calendar, toolbarOptions) {
 					var innerHtml;
 					var classes;
 					var button; // the element
-					
+
 					if (buttonName == 'title') {
 						groupChildren = groupChildren.add($('<h2>&nbsp;</h2>')); // we always want it to take up height
 						isOnlyButtons = false;
@@ -11182,7 +11182,7 @@ function Toolbar(calendar, toolbarOptions) {
 
 							button = $( // type="button" so that it doesn't submit a form
 								'<button type="button" class="' + classes.join(' ') + '">' +
-									innerHtml + 
+									innerHtml +
 								'</button>'
 								)
 								.click(function(ev) {
@@ -12509,7 +12509,7 @@ Calendar.defaults = {
 
 	weekNumberTitle: 'W',
 	weekNumberCalculation: 'local',
-	
+
 	//editable: false,
 
 	//nowIndicator: false,
@@ -12517,8 +12517,8 @@ Calendar.defaults = {
 	scrollTime: '06:00:00',
 	minTime: '00:00:00',
 	maxTime: '24:00:00',
-	showNonCurrentDates: true,
-	
+	showNonCurrentDates: false,
+
 	// event ajax
 	lazyFetching: true,
 	startParam: 'start',
@@ -12551,7 +12551,7 @@ Calendar.defaults = {
 	},
 
 	allDayText: 'all-day',
-	
+
 	// jquery-ui theming
 	theme: false,
 	themeButtonIcons: {
@@ -12565,11 +12565,11 @@ Calendar.defaults = {
 	dragOpacity: .75,
 	dragRevertDuration: 500,
 	dragScroll: true,
-	
+
 	//selectable: false,
 	unselectAuto: true,
 	//selectMinDistance: 0,
-	
+
 	dropAccept: '*',
 
 	eventOrder: 'title',
@@ -12579,12 +12579,12 @@ Calendar.defaults = {
 	eventLimitText: 'more',
 	eventLimitClick: 'popover',
 	dayPopoverFormat: 'LL',
-	
+
 	handleWindowResize: true,
 	windowResizeDelay: 100, // milliseconds before an updateSize happens
 
 	longPressDelay: 1000
-	
+
 };
 
 
