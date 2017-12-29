@@ -252,15 +252,6 @@ color - name
 }
 
 /** calendar **/
-.fc-center h2{color:#9ea3a9 !important; font-size:28px !important;}
-#cal-hearing { float: left; width: 20px; min-height: 10px; background: #525f7c; padding-top: 19px !important; }
-#cal-commission { float: left; width: 20px; min-height: 10px; background: #3474e0; padding-top: 19px !important;}
-#cal-public-meeting { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
-#calendar { max-width: 80% !important; margin: 0 auto;	}
-.hearing { color: #525f7c !important; }
-.commission {color: #3474e0 !important; }
-.public {color: #70a300 !important; }
- .fc-other-month .fc-day-number { display:none;}    /* hide past and future dates */
 
 #say-connected {background-color: #0077bd; padding: 12px 0; color:#fff;}
 #say-connected a {color: #0077bd !important;}
@@ -312,7 +303,7 @@ color - name
 .sidebar-menu a{color:#009fe3 !important;}
 .sidebar-menu .active{color: #3a5a99 !important; font-weight: bold;}
 .sidebar-menu ul li{text-align: center; padding: 10px 0 5px 0;}
-.top-bar{border:#b8babc solid; border-top-width: 15px; margin-left: 38px; margin-top:55px;}
+.top-bar{border:#b8babc solid; border-top-width: 15px; margin-left: 38px;}
 .intro {padding-left: 0px;}
 .intro p{color:#3a5a99;line-height: 1.8; font-size: x-large; font-weight: 300;}
 .content-col-4{padding-bottom:15px; }
@@ -329,7 +320,6 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .fullpage-image-title{text-align: center; padding-top: 15px; padding-bottom: 15px;}
 .full-width-image{background: #fff !important; position: relative; z-index: 5000; margin-top: 50px; margin-bottom: 0px;}
 .inner-container {margin-top: 16px; padding: 40px; background-color: #fff; position: relative;}
-.top-bar {border: #b8babc solid; border-top-width: 15px; margin-left: 38px; margin-top: 55px;}
 .block-quote{padding:40px; color: #3a5a99; font-size: 25px;}
 #container-inner{background-color:#fff; position:relative; padding-bottom: 100px;}
 .inner-page-social-icon{color:#808081 !important; font-weight: 100; text-decoration: none !important;}
