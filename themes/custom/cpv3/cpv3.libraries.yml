@@ -44,8 +44,8 @@ calendar-page:
   version: VERSION
   css:
     theme:
-      css/calendar/fullcalendar.css: {}
-      css/calendar/fullcalendar.print.min.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css: {media: print}
   js:
     js/calendar/moment.min.js: {}
     js/calendar/fullcalendar.js: {}
@@ -55,8 +55,8 @@ calendar-detail:
   version: VERSION
   css:
     theme:
-      css/calendar/fullcalendar.css: {}
-      css/calendar/fullcalendar.print.min.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css: {media: print}
   js:
     js/calendar/moment.min.js: {}
     js/calendar/fullcalendar.js: {}
