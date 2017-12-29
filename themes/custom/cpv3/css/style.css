@@ -155,6 +155,8 @@ color - name
     border-color: #439f8b;
 }
 
+
+
 /****************************************
 ************ Mega menu ******************
 *****************************************/
@@ -250,8 +252,6 @@ color - name
 	background-size: cover;
 	min-height: 512px;
 }
-
-/** calendar **/
 
 #say-connected {background-color: #0077bd; padding: 12px 0; color:#fff;}
 #say-connected a {color: #0077bd !important;}
@@ -424,6 +424,69 @@ article img{padding-top:15px; padding-bottom: 15px;}
 #apc .panel{border: 0;}
 #apc .panel-group .panel{margin-bottom: 0; border-radius: 0;}
 .commissions-tab-pane{margin-top: -30 !important;}
+
+/**** calendar ****/
+#calendar {max-width: 100%; margin: 0 auto; padding: 0 10px;}
+#top {background: #eee; border-bottom: 1px solid #ddd; padding: 0 10px; line-height: 40px; font-size: 12px;}
+.cal-section{padding: 0 !important; }
+.commission {background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #7005da solid 3px;}
+.hearing {border-radius: 0px !important; background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #f99e0e solid 2px !important;}
+.apc {background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #70a300 solid 3px !important;}
+.public {background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #224a96 solid 2px;}
+.mousepointer{cursor:pointer;}
+
+.cal-commission { float: left; width: 20px; min-height: 10px; background: #7005da; padding-top: 19px !important;}
+.cal-commission-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #6806cb; padding-top: 19px !important;}
+
+.cal-hearing { float: left; width: 20px; min-height: 10px; background: #f99e0e; padding-top: 19px !important; }
+.cal-hearing-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #eb940b; padding-top: 19px !important; }
+
+.cal-apc { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
+.cal-apc-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #f2ae41; padding-top: 19px !important;}
+
+.cal-community-events { float: left; width: 20px; min-height: 10px; background:#224a96; padding-top: 19px !important;}
+.cal-community-events-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: #1e4388 1px solid ; padding-top: 19px !important;}
+
+.cal-zah { float: left; width: 20px; min-height: 10px; background: #3399ff; padding-top: 19px !important;}
+.cal-zah-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #aed5fc; padding-top: 19px !important;}
+
+.cal-ddah { float: left; width: 20px; min-height: 10px; background: #0192d1; padding-top: 19px !important;}
+.cal-ddah-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #0289c3; padding-top: 19px !important;}
+
+.cal-box { float: left; width: 20px; min-height: 10px; border: solid 1px #ddd; background:#fff; padding-top: 19px !important;}
+.mousepointer:hover {background-color: #eee;}
+
+#ci-public, #ci-commission, #ci-hearing {cursor: pointer;}
+
+.fc-center h2{color:#9ea3a9 !important; font-size:28px !important;}
+#cal-hearing { float: left; width: 20px; min-height: 10px; background: #525f7c; padding-top: 19px !important; }
+#cal-commission { float: left; width: 20px; min-height: 10px; background: #3474e0; padding-top: 19px !important;}
+#cal-public-meeting { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
+.fc-other-month .fc-day-number { display:none;} 		 /* hide past and future dates */
+#cal-index{font-size: 10px;}
+
+#script-warning {
+	display: none;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	padding: 0 10px;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 12px;
+	color: red;
+}
+
+#loading {display: none; position: absolute; color: #ff6600;}
+.fc-event {border-radius: 0px !important; border-top: 1px solid #d3cfcf !important; border-bottom: 1px solid #d3cfcf !important; border-right: 1px solid #d3cfcf !important;  }
+.fc-title{word-wrap: break-word;}
+/* popup box */
+.fc-unthemed .fc-popover {width: 60%;}
+/* button */
+.fc-state-default.fc-corner-right {border-top-right-radius: 0!important; border-bottom-right-radius: 0!important;}
+.fc-state-default.fc-corner-left {border-top-left-radius: 0!important; border-bottom-left-radius: 0!important;}
+
+
 
 /*-->> **************** Media Query *****************/
 

@@ -1,21 +1,25 @@
 $(document).ready(function() {
-	$.get('http://161.149.221.142/dcpapi/meetings/upcoming/calendar', function(data) {
-		$('#calendar').fullCalendar({
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month, basicWeek, basicDay'
-			},
-			defaultDate: $.now(),
-			navLinks: true, 		// can click day/week names to navigate views
-			eventLimit: true, 			// allow "more" link when too many events
-			eventLimitText: "Something",
-			editable: false,
-			//contentHeight: 50,
-			defaultView: 'month',
-			events: data,
-		});		
-	});
+	$('#calendar').fullCalendar({
+		header: {
+			left: 'prev,next',
+			center: 'title',
+			right: 'month, basicWeek, today'
+		},
+		defaultDate: $.now(),
+	    navLinks: true, // can click day/week names to navigate views
+    	eventLimit: true, // allow "more" link when too many events
+    	defaultView: 'month',
+    	events: {
+    		url: 'http://161.149.221.142/dcpapi/meetings/upcoming/calendar',
+	        error: function() {
+	          $('#script-warning').show();
+	        }
+	      },
+	      loading: function(bool) {
+	        $('#loading').toggle(bool);
+	      }
+    });
+	
 	
 	//calendar
 	$("#ci-hearing").on('click', function() {
@@ -28,7 +32,7 @@ $(document).ready(function() {
 	});
 	$("#ci-apc").click(function() {
 		$('.apc').toggle();
-		$('#p').toggleClass('cal-apc-disable');
+		$('#a').toggleClass('cal-apc-disable');
 	});
 	
 	$('.fc-scroller').css('overflow','visible');

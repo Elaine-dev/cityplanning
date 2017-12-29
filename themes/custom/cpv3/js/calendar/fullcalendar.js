@@ -7442,19 +7442,20 @@ DayGrid.mixin({
 		
 		calEventTitle = event.description;
 		calEventUrl = event.url;
-		titleHtml =
-			'<span class="fc-title"> ' +
-			(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height 
-			'</span>';
 		
-		titleHtml =
-			'<span class="fc-title"> ' +
-				(htmlEscape(calEventTitle || '') || '&nbsp;') + // if casenumber exists 
+		
+		if (event.caseNumber) {									// if casenumber exists 
+			var newTitle;
+			newTitle = htmlEscape(calEventTitle || '') + '|'+ htmlEscape(event.caseNumber || '');
+			titleHtml ='<span class="fc-title fc-case-number"> | ' +
+				(newTitle || '&nbsp;') + 
 			'</span>';
-		if (event.caseNumber) {
-			titleHtml +='<span class="fc-case-number"> | ' +
-				(htmlEscape(event.caseNumber || '') || '&nbsp;') + 
-			'</span>';
+		} else {
+			titleHtml =
+				'<span class="fc-title"> ' +
+				(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height 
+				'</span>';
+			
 		}
 
 		// Only display a timed events time if it is the starting segment
@@ -15656,4 +15657,9 @@ function getCPCName (name) {
 			break;
 	}
 	return cpcName;
+}
+
+function trimChars ( fullText ) {
+	var shortText = jQuery.trim(fullText).substring(0, 20).split(" ").slice(0, -1).join(" ") + "...";
+	return shortText;
 }

@@ -1,151 +1,110 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
 
-    <style>
-        /* calendar */
-        #calendar {max-width: 900px; margin: 0 auto; padding: 0 10px;}
-        #top {background: #eee; border-bottom: 1px solid #ddd; padding: 0 10px; line-height: 40px; font-size: 12px;}
-        .hearing {background: #eee !important; color: #000 !important; font-size: 12px; border-left: #3399ff solid 2px !important;}
-        .commission {background: #eee !important; color: #000 !important; font-size: 12px; border-left: #9966cc solid 2px;}
-        .public {background: #eee !important; color: #000 !important; font-size: 12px; border-left: #70a300 solid 2px;}
-        .apc {background: #eee !important; color: #000 !important; font-size: 12px; border-left: #0b2c4b solid 2px !important;}
-        .mousepointer{cursor:pointer;}
-
-        .cal-hearing { float: left; width: 20px; min-height: 10px; background: #3399ff; padding-top: 19px !important; }
-        .cal-hearing-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #aed5fc; padding-top: 19px !important; }
-
-        .cal-commission { float: left; width: 20px; min-height: 10px; background: #9966cc; padding-top: 19px !important;}
-        .cal-commission-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #bfaad4; padding-top: 19px !important;}
-
-        .cal-apc { float: left; width: 20px; min-height: 10px; background: #0b2c4b; padding-top: 19px !important;}
-        .cal-apc-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #09233c; padding-top: 19px !important;}
-        
-        .cal-community-events { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
-        .cal-community-events-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #f2ae41; padding-top: 19px !important;}
-
-        .cal-zah { float: left; width: 20px; min-height: 10px; background: #ffb845; padding-top: 19px !important;}
-        .cal-zah-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #f2ae41; padding-top: 19px !important;}
-        
-        .cal-ddah { float: left; width: 20px; min-height: 10px; background: #0192d1; padding-top: 19px !important;}
-        .cal-ddah-disable { float: left; width: 20px; min-height: 10px; background-color: #fff; border: 1px solid #0289c3; padding-top: 19px !important;}
-
-        .cal-box { float: left; width: 20px; min-height: 10px; border: solid 1px #ddd; background:#fff; padding-top: 19px !important;}
-        .mousepointer:hover {background-color: #eee;}
-        /*.cal-section{padding: 0 !important; }*/
-        #ci-public,#ci-commission, #ci-hearing {cursor: pointer;}
-        
-        .fc-center h2{color:#9ea3a9 !important; font-size:28px !important;}
-		#cal-hearing { float: left; width: 20px; min-height: 10px; background: #525f7c; padding-top: 19px !important; }
-        #cal-commission { float: left; width: 20px; min-height: 10px; background: #3474e0; padding-top: 19px !important;}
-        #cal-public-meeting { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
-     	.fc-other-month .fc-day-number { display:none;} 		 /* hide past and future dates */
-     	#cal-index{font-size: 12px;}	
-     	div.fc-scroller.fc-day-grid-container {
-     		overflow-x: auto;
-			overflow-y: auto;
-     	}
-    </style>
-
-
-        {# page-banner #}
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
-                </div>
+    {# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
             </div>
-        </div>{# End page-banner #}
+        </div>
+    </div>{# End page-banner #}
 
         <!-- contain -->
-        <div class="container" id="main-container">
-            {# Main content #}
-            <div class="row">
-            	<div class="col-md-12"> <h1>{{ node.label }}</h1></div>
-            </div>
-            <div class="row">
-                {# Left-side bar #}
-                <div class="col-md-9">
-                    <div class="row padding-left0">
-                        <div class="col-md-12">
-                        	<p>Cras vestibulum eleifend iaculis. Nam felis lacus, scelerisque eu bibendum vel, accumsan et nunc. Aenean cursus commodo iaculis. 
-                        	Suspendisse ac turpis placerat eros pretium varius. Nam eget posuere lorem. Mauris eleifend, tellus at vestibulum laoreet, neque 
-                        	sapien fermentum massa, tempus imperdiet dolor risus at mauris. Donec eleifend arcu eget interdum maximus. Donec facilisis 
-                        	varius porta. Proin ac odio ex. </p>
-                        	
-                        	<div class="row padding-bottom30" id="cal-index">
-                        		<div class="col-md-12">
-                        			<div class="row padding-bottom10">
-                        				<div class="col-md-4">
-                        					<div id="ci-commission" >
-                        						<span class="cal-commission" id="c"></span>
-                        						<span class="padding-left-10">Commission</span>
-                    						</div>
-                        				</div>
-                        				<div class="col-md-4">
-                        					<div id="ci-hearing" >
-                        						<span class="cal-hearing" id="h" style="padding-top: 10px;"></span>
-                        						<span class="padding-left-10">Hearing</span>
-                    						</div>
-                        				</div>
-                        				<div class="col-md-4">
-                        					<div id="ci-apc">
-                        						<span class="cal-apc" id="a"></span>
-                        						<span class="padding-left-10">Area Planning Commissions</span>
-                    						</div>
-                        				</div>
-                        			</div>
-                        			<div class="row">
-                        				<div class="col-md-4">
-                        					<div id="ci-community-events" >
-                        						<span class="cal-community-events" id="ce"></span>
-                        						<span class="padding-left-10">Community Events</span>
-                    						</div>
-                        				</div>
-                        				<div class="col-md-4">
-                        					<div id="ci-zah" >
-                        						<span class="cal-zah" id="zah"></span>
-                        						<span class="padding-left-10">Zoning Administrator Hearing</span>
-                    						</div>
-                        				</div>
-                        				<div class="col-md-4">
-                        					<div id="ci-ddah" >
-                        						<span class="cal-ddah" id="daah" style="padding-top: 10px;"></span>
-                        						<span class="padding-left-10">Deputy Advisory Agency Hearings</span>
-                    						</div>
-                        				</div>
-                        			</div>
-                        		</div>
-                        	</div>
-                        	
-                        	<div class="row cal-section">
-                    			<div class="col-md-12">
-                    				<div id='calendar'></div>
+    <div class="container" id="main-container">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12"> <h1>{{ node.label }}</h1></div>
+        </div>
+        <div class="row">
+            {# Left-side bar #}
+            <div class="col-md-9">
+                <div class="row padding-left0">
+                    <div class="col-md-12">
+                    	<p>Cras vestibulum eleifend iaculis. Nam felis lacus, scelerisque eu bibendum vel, accumsan et nunc. Aenean cursus commodo iaculis.
+                    	Suspendisse ac turpis placerat eros pretium varius. Nam eget posuere lorem. Mauris eleifend, tellus at vestibulum laoreet, neque
+                    	sapien fermentum massa, tempus imperdiet dolor risus at mauris. Donec eleifend arcu eget interdum maximus. Donec facilisis
+                    	varius porta. Proin ac odio ex. </p>
+
+                    	<div class="row padding-bottom30" id="cal-index">
+                    		<div class="col-md-12">
+                    			<div class="row padding-bottom10">
+                    				<div class="col-md-4">
+                    					<div id="ci-commission" >
+                    						<span class="cal-commission" id="c"></span>
+                    						<span class="padding-left-10">Commission</span>
+                						</div>
+                    				</div>
+                    				<div class="col-md-4">
+                    					<div id="ci-hearing" >
+                    						<span class="cal-hearing" id="h" style="padding-top: 10px;"></span>
+                    						<span class="padding-left-10">Hearing</span>
+                						</div>
+                    				</div>
+                    				<div class="col-md-4">
+                    					<div id="ci-apc">
+                    						<span class="cal-apc" id="a"></span>
+                    						<span class="padding-left-10">Area Planning Commissions</span>
+                						</div>
+                    				</div>
+                    			</div>
+                    			<div class="row">
+                    				<div class="col-md-4">
+                    					<div id="ci-community-events" >
+                    						<span class="cal-community-events" id="ce"></span>
+                    						<span class="padding-left-10">Community Events</span>
+                						</div>
+                    				</div>
+                    				<div class="col-md-4">
+                    					<div id="ci-zah" >
+                    						<span class="cal-zah" id="zah"></span>
+                    						<span class="padding-left-10">Zoning Administrator Hearing</span>
+                						</div>
+                    				</div>
+                    				<div class="col-md-4">
+                    					<div id="ci-ddah" >
+                    						<span class="cal-ddah" id="daah" style="padding-top: 10px;"></span>
+                    						<span class="padding-left-10">Deputy Advisory Agency Hearings</span>
+                						</div>
+                    				</div>
                     			</div>
                     		</div>
-                           
-                        </div>
+                    	</div>
+
+                    	<div class="row cal-section">
+                			<div class="col-md-12">
+                				<div class="row">
+                					<div class="col-md-12"><div id='loading'>loading...</div></div>
+                				</div>
+                				<div class="row">
+                					<div id='calendar'></div>
+            					</div>
+                			</div>
+                		</div>
+
                     </div>
-                </div>{# End Left-side bar #}
-        
-                {# Right-side bar #}
-                <div class="col-md-3 sidebar-menu padding-right-27 visible-lg-block">
-                    <div class="top-bar"></div>
-                      {{ page.side_menu }}
-                </div>{# End Right-side bar #}
-            </div>
-        </div>{# End container #}
-        
-        
-        <div class="container white--bg visible-xs-block visible-sm-block">
-        	<div class="row">
-        		{# Right-side bar #}
-                <div class="col-md-12 sidebar-menu">
-                    <div class="top-bar"></div>
-                      {{ page.side_menu }}
-                </div>{# End Right-side bar #}
-        	</div>
+                </div>
+            </div>{# End Left-side bar #}
+
+            {# Right-side bar #}
+            <div class="col-md-3 sidebar-menu padding-right-27 visible-lg-block">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
         </div>
-        
+    </div>{# End container #}
+
+
+    <div class="container white--bg visible-xs-block visible-sm-block">
+    	<div class="row">
+    		{# Right-side bar #}
+            <div class="col-md-12 sidebar-menu">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
+    	</div>
+    </div>
+
 
     <!-- footer section -->
     {{ attach_library ('cpv3/calendar-detail') }}
