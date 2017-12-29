@@ -456,7 +456,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .cal-box { float: left; width: 20px; min-height: 10px; border: solid 1px #ddd; background:#fff; padding-top: 19px !important;}
 .mousepointer:hover {background-color: #eee;}
 
-#ci-public, #ci-commission, #ci-hearing {cursor: pointer;}
+#ci-apc, #ci-commission, #ci-hearing {cursor: pointer;}
 
 .fc-center h2{color:#9ea3a9 !important; font-size:28px !important;}
 #cal-hearing { float: left; width: 20px; min-height: 10px; background: #525f7c; padding-top: 19px !important; }
