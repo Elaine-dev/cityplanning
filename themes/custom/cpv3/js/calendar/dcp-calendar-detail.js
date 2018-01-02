@@ -5,6 +5,7 @@ $(document).ready(function() {
 			center: 'title',
 			right: 'month, basicWeek, today'
 		},
+
 		defaultDate: $.now(),
 	    navLinks: true, // can click day/week names to navigate views
     	eventLimit: true, // allow "more" link when too many events
@@ -14,13 +15,18 @@ $(document).ready(function() {
 	        error: function() {
 	          $('#script-warning').show();
 	        }
-	      },
-	      loading: function(bool) {
-	        $('#loading').toggle(bool);
-	      }
-    });
-	
-	
+    	},
+    	loading: function(bool) {
+    		$('#loading').toggle(bool);
+    	},
+    	eventRender: function (event, element){
+    		element
+				.attr('title', event.description + '|' + event.caseNumber)
+				.tooltip();
+		},
+  });
+
+
 	//calendar
 	$("#ci-hearing").on('click', function() {
 		$('.hearing').toggle();
@@ -34,7 +40,7 @@ $(document).ready(function() {
 		$('.apc').toggle();
 		$('#a').toggleClass('cal-apc-disable');
 	});
-	
+
 	$('.fc-scroller').css('overflow','visible');
-	
+
 });
