@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 
 	//calendar
-	$("#ci-hearing").on('click', function() {
+  $("#ci-hearing").on('click', function() {
 		$('.hearing').toggle();
 		$('#h').toggleClass('cal-hearing-disable');
 	});
@@ -43,5 +43,6 @@ $(document).ready(function() {
 	});
 
 	$('.fc-scroller').css('overflow','visible');
+	$(".fc-other-month .fc-day-number").hide();
 
 });
