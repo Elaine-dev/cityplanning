@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div id="page-title-bg"><img src="http://ladcp.westus.cloudapp.azure.com{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="bg"></div>
+            <div id="page-title-bg"><img src="http://10.68.8.109:2016{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="bg"></div>
         </div>
     </div>
 </div>{# End page-banner #}
@@ -14,11 +14,13 @@
 <div class="container" id="main-container">
     {# Main content #}
     <div class="row">
+    	<div class="col-md-12"> <h1>{{ node.label }}</h1></div>
+    </div>
+    <div class="row">
         {# Left-side bar #}
         <div class="col-md-9">
             <div class="row padding-left0">
                 <div class="col-md-12">
-                    <h1>{{ node.label }}</h1>
                     {{ node.field_intro_content.value|striptags }}
                     {% set full_width_data = [] %}
                     {% set small_width_data = [] %}
@@ -83,7 +85,7 @@
 	{% endfor %}
 </div>
 
-<div class="container white--bg visible-xs-block">
+<div class="container white--bg visible-xs-block visible-sm-block">
 	<div class="row">
 		{# Right-side bar #}
         <div class="col-md-12 sidebar-menu">
