@@ -9,7 +9,8 @@ $(document).ready(function() {
 		defaultDate: $.now(),
 	    navLinks: true, // can click day/week names to navigate views
     	eventLimit: true, // allow "more" link when too many events
-    	defaultView: 'month',
+    	defaultView: 'basicWeek',
+      height: 300,
     	events: {
     		url: 'http://161.149.221.142/dcpapi/meetings/upcoming/calendar',
 	        error: function() {
