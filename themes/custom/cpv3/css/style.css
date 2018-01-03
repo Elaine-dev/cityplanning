@@ -464,7 +464,17 @@ article img{padding-top:15px; padding-bottom: 15px;}
 #cal-public-meeting { float: left; width: 20px; min-height: 10px; background: #70a300; padding-top: 19px !important;}
 .fc-other-month .fc-day-number { display:none;} 		 /* hide past and future dates */
 #cal-index{font-size: 10px;}
-
+/* date inside circle*/
+.fc-unthemed td.fc-today {background: #fff !important;}
+td .fc-state-highlight > a.fc-day-number {
+    background-color: #224a96 !important;
+    color: #fff !important;
+    border-radius: 50%;
+    height: 10%;
+    width: 16%;
+    margin: 0px;
+    text-align: center;
+}
 #script-warning {
 	display: none;
 	background: #eee;
