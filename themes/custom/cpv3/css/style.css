@@ -475,6 +475,7 @@ td .fc-state-highlight > a.fc-day-number {
     text-align: center;
 }
 .fc-event {margin-bottom: 5px !important;}
+.fc-day-grid-event > .fc-content{max-height: 35px; white-space: inherit;}
 
 #script-warning {
 	display: none;

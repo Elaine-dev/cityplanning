@@ -7,7 +7,7 @@ $(document).ready(function() {
 		},
 
 		defaultDate: $.now(),
-	    navLinks: true, // can click day/week names to navigate views
+	    //navLinks: true, // can click day/week names to navigate views
     	eventLimit: true, // allow "more" link when too many events
     	defaultView: 'month',
       height: 700,
@@ -26,6 +26,8 @@ $(document).ready(function() {
 				.tooltip();
 		},
     });
+    $('.fc-event').css('font-size', '1.35em');
+    $('.fc-event').css('white-space', 'nowrap');
 
 	//calendar
 	$("#ci-hearing").on('click', function() {
