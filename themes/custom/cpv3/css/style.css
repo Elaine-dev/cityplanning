@@ -429,10 +429,10 @@ article img{padding-top:15px; padding-bottom: 15px;}
 #calendar {max-width: 100%; margin: 0 auto; padding: 0 10px;}
 #top {background: #eee; border-bottom: 1px solid #ddd; padding: 0 10px; line-height: 40px; font-size: 12px;}
 .cal-section{padding: 0 !important; }
-.commission {background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #7005da solid 3px;}
-.hearing {border-radius: 0px !important; background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #f99e0e solid 2px !important;}
-.apc {background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #70a300 solid 3px !important;}
-.public {background: #f1f1f1 !important; color: #000 !important; font-size: 10px !important; border-left: #224a96 solid 2px;}
+.commission {background: #f1f1f1 !important; color: #000 !important; border-left: #7005da solid 3px;}
+.hearing {border-radius: 0px !important; background: #f1f1f1 !important; color: #000 !important; border-left: #f99e0e solid 3px !important;}
+.apc {background: #f1f1f1 !important; color: #000 !important; border-left: #70a300 solid 3px !important;}
+.public {background: #f1f1f1 !important; color: #000 !important; border-left: #224a96 solid 3px;}
 .mousepointer{cursor:pointer;}
 
 .cal-commission { float: left; width: 20px; min-height: 10px; background: #7005da; padding-top: 19px !important;}
