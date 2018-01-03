@@ -423,7 +423,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 }
 #apc .panel{border: 0;}
 #apc .panel-group .panel{margin-bottom: 0; border-radius: 0;}
-.commissions-tab-pane{margin-top: -30 !important;}
+.commissions-tab-pane{padding-top: 5px !important;}
 
 /**** calendar ****/
 #calendar {max-width: 100%; margin: 0 auto; padding: 0 10px;}
