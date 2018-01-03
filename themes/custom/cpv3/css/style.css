@@ -474,6 +474,8 @@ td .fc-state-highlight > a.fc-day-number {
     margin: 0px;
     text-align: center;
 }
+.fc-event {margin-bottom: 5px !important;}
+
 #script-warning {
 	display: none;
 	background: #eee;
