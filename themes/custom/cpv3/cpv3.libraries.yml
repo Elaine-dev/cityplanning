@@ -88,3 +88,8 @@ bi-weekly-case-filing:
     js/api/app.js: {}
     js/api/biweeklyCaseReportService.js: {}
     js/api/biweeklyCaseReportCtrl.js: {}
+    
+search:
+  version: 1.0
+  js:
+    js/api/search.js: {}
