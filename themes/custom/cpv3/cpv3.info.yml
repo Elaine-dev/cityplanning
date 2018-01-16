@@ -25,6 +25,7 @@ regions:
   negative_declaration_notices: 'Negative Declaration Block'
   block_eir: 'EIR Block'
   newsletter_year: 'Newsletter - Archive'
+  pub_slider: 'Publication Slider'
   footer: 'Footer'
 settings:
   footer_message: '2017 Copyright, City of Los Angeles Department of City Planning.'
