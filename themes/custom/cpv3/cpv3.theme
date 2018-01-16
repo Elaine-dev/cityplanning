@@ -78,7 +78,7 @@ function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variabl
  * Suggest template as per page--node--[content-type]--[node-title]
  * eg : page--node--page--publications.html.twig
  */
-function cpv3_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+function cpv3_theme_suggestions_page_alter (array &$suggestions, array $variables) {
     if ($node = \Drupal::routeMatch ()->getParameter ( 'node' )) {
         $title = cleanString($node->getTitle());
         $content_type = $node->bundle ();
