@@ -40,7 +40,7 @@ myApp.controller('MainCtrl', function($scope, $http, $timeout, filterFilter){
 myApp.filter('startFrom', function() {
     return function(data, start){
         start = 0 + start;
-        console.log(data);
+        //console.log(data);
         return data.slice(start);
     }
 });
