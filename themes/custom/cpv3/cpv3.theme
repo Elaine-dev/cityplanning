@@ -64,38 +64,33 @@ function cpv3_preprocess_views_view( &$variables ) {
 
     $variables['planning_area_category'] = $term_data_1;
 }
-/*
-function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
-    // Add content type suggestions.
-    if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
-        array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
-    }
-}
-*/
+
 /**
  * @param array $suggestions
  * @param array $variables
  * Suggest template as per page--node--[content-type]--[node-title]
  * eg : page--node--page--publications.html.twig
  */
-function cpv3_theme_suggestions_page_alter (array &$suggestions, array $variables) {
+function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
+    // Add content type suggestions.
+    if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
+        array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+    }
+}
+
+/* 
+ * function cpv3_theme_suggestions_page_alter (array &$suggestions, array $variables) {
     if ($node = \Drupal::routeMatch ()->getParameter ( 'node' )) {
         $title = cleanString($node->getTitle());
         $content_type = $node->bundle ();
         $suggestions [] = 'page__node__' . $node->getType() .'__'. $title;
     }
-}
+} 
+*/
 
 // template suggestion for container part
 function cpv3_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
     $suggestions[] = 'container' . '__' . 'custom';
-}
-
-function cpv3_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-    if ($node = \Drupal::routeMatch ()->getParameter ( 'node' )) {
-        $content_type = $node->bundle ();
-        $suggestions [] = 'nodes/node__' . $content_type;
-    }
 }
 
 function cpv3_preprocess_node( &$variables ) {
