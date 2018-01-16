@@ -67,6 +67,7 @@ q:before, q:after { content: ''; content: none; }
 .left-6{left: 6px;}
 .left-12{left: 12px;}
 .line { border-bottom: 0.5px solid #939598; padding-top:5px !important;}
+.dot-line {border-bottom: 0.5px dotted #939598; padding:5px !important;}
 
 /*** paragraph ***/
 .full-width-button{ padding: 5px 0 !important; }
@@ -302,7 +303,7 @@ color - name
 .sidebar-menu {padding-left: 0px; padding-right: 30px;}
 .sidebar-menu a{color:#009fe3 !important;}
 .sidebar-menu .active{color: #3a5a99 !important; font-weight: bold;}
-.sidebar-menu ul li{text-align: center; padding: 3px 0 1px 0;}
+.sidebar-menu ul li{text-align: center; padding: 6px 0 2px 0;}
 .top-bar{border:#b8babc solid; border-top-width: 15px; margin-left: 38px;}
 .intro {padding-left: 0px;}
 .intro p{color:#3a5a99;line-height: 1.8; font-size: x-large; font-weight: 300;}
@@ -356,6 +357,7 @@ article img{padding-top:15px; padding-bottom: 15px;}
 .navbar-search-box .search-bar-search .form-control:focus {border-color: transparent; outline: 0; -webkit-box-shadow: none; box-shadow: none;}
 .navbar-search-box .search-bar-search .input-group-btn > .btn-default {background-color: rgb(245, 245, 245);}
 .nav-padding {padding-top: 61px;}
+.input-group-btn{padding-top: 15px;}
 
 
 /***** Staff Directory ********/

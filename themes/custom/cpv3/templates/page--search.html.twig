@@ -1,0 +1,64 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    <div ng-app="searchApp">
+    	{# page-banner #}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+                </div>
+            </div>
+        </div>{# End page-banner #}
+    
+            <!-- contain -->
+        <div class="container" id="main-container" ng-controller='MainCtrl'>
+            {# Main content #}
+            <div class="row">
+            		<div class="col-md-12"><h1 class="visibility: visible;">Search for {[{searchQuery}]}</h1></div>
+            </div>
+            <div class="row">
+            	<div class="col-md-12" id="page2">
+                	<div class="row padding-left0">
+            			<div class="col-md-12">
+                			<input class="form-control" placeholder="Filter search result with input text..." 
+							type="text" ng-model="searchFilter">
+                		</div>
+                    </div>
+                    <div class="row ">
+                		<div class="col-md-12">
+            				<div ng-if="results.length > 0" class="paddingtop25">
+                                <ul style="padding-left: 0; margin-top: 20px;">
+                                    <li class="paddingtop15" ng-repeat="item in results | filter:searchFilter | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
+                                    	<span ng-if="item.link != ''">
+                                    		<a href="{[{ item.link }]}" target="_blank"><span ng-bind-html="item.title"></span></a>
+                                    	</span>
+                                    	<span ng-if="item.link == ''">
+                                    		<a href="#"><span ng-bind-html="item.title"></span></a>
+                                    	</span>
+                                        <div class="dot-line"></div>
+                                    </li>
+                                    
+                                </ul>
+                                <ul uib-pagination
+                                    total-items="total"
+                                    ng-model="currentPage"
+                                    max-size="noOfPages"
+                                    items-per-page="pageSize"
+                                    class="pagination-sm"
+                                    boundary-link-numbers="true"
+                                    rotate="true">
+                                </ul>
+                        	</div>
+                                
+                        	<div class="paddingtop25" ng-if="results == ''"><p><strong>No result found!</strong></p></div>
+                		</div>
+                    </div>
+                </div>{# contain #}
+            </div>
+        </div>{# End container #}
+    </div>{# End ng-app #}
+
+    <!-- footer section -->
+    {{ attach_library('cpv3/search') }}
+    {{ attach_library('cpv3/angular-js') }}
+    {% include directory ~ '/partials/footer.html.twig' %}

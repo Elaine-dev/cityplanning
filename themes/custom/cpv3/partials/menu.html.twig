@@ -218,12 +218,16 @@
 
 	<div class="search-bar-search animate">
 		<div class="container">
-			<div class="input-group">
-	      		<input type="text" class="form-control" name="q" placeholder="Search for...">
-		      	<span class="input-group-btn">
-		        	<button class="btn btn-primary" type="button">Search</button>
-		      	</span>
-		    </div>
+			<form action="/ladcp/search/node" method="get" id="search-block-form" accept-charset="UTF-8">
+				<div class="input-group">
+          <input class="form-control" title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search"
+            id="edit-keys--2" name="keys" value="" size="15" maxlength="128" placeholder="search for ...">
+          <span class="input-group-btn">
+            <input class="btn btn-primary js-form-submit form-submit" data-drupal-selector="edit-submit"
+              type="submit" id="edit-submit--3" value="Search">
+          </span>
+        </div>
+      </form>
 		</div>
 	</div>
 </nav>
