@@ -500,6 +500,22 @@ td .fc-state-highlight > a.fc-day-number {
 .fc-state-default.fc-corner-right {border-top-right-radius: 0!important; border-bottom-right-radius: 0!important;}
 .fc-state-default.fc-corner-left {border-top-left-radius: 0!important; border-bottom-left-radius: 0!important;}
 
+/* Inner page slider */
+.carousel-caption {
+	text-shadow: none !important;
+  	right: 0%;
+  	left: 57%;
+  	padding-bottom: 0;
+  	padding-top: 0; 
+  	bottom: 40px; 
+  	background: rgba(204, 204, 204);
+  	background: rgba(204, 204, 204, 0.5);
+}
+.carousel-control{color: #fff !important;}
+.carousel-caption h3, .carousel-caption p {color: #fff !important; font-weight: bolder !important;}
+
+/** publication **/
+.filter-search{padding-top: 30px; padding-bottom: 30px;}
 
 
 /*-->> **************** Media Query *****************/
