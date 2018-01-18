@@ -93,6 +93,7 @@ publications:
   version: 1.0
   js:
     js/api/publications.js: {}
+    js/api/dirPagination.js: {}
 
 search:
   version: 1.0

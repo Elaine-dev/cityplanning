@@ -114,26 +114,39 @@
                                                                     </thead>
 
                                                                     <tbody>
-                                                                        <tr ng-repeat="publication in publications | filter: search">
+                                                                        <tr dir-paginate="publication in data | filter: search | itemsPerPage: pageSize" current-page="currentPage">
                                                                             <td><a href="{[{ publication.externalDocumentUrl }]}" target="_blank"
                                                                             rel="nofollow"><span ng-bind="publication.title"></span></a></td>
                                                                             <td ng-bind="publication.adoptedEffectiveDate | date:'yyyy-MM-dd'"></td>
                                                                         </tr>
-
                                                                     </tbody>
                                                                 </table>
                                                             </div>
 
                                                             <div class="bottom "></div>
 
-                                                            {#
-                                                            <ul uib-pagination
-                                                                ng-model="currentPage"
-                                                                total-items="total"
-                                                                items-per-page="pageSize"
-                                                                max-size="noOfPages">
-                                                            </ul uib-pagination>
-                                                            #}
+                                                            <dir-pagination-controls boundary-links="false">
+                                                                <ul class="pagination" ng-if="1 < pages.length || !autoHide">
+                                                                    <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }">
+                                                                        <a href="" ng-click="setCurrent(1)">&laquo;</a>
+                                                                    </li>
+                                                                    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }">
+                                                                        <a href="" ng-click="setCurrent(pagination.current - 1)">&lsaquo;</a>
+                                                                    </li>
+                                                                    <li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+                                                                        <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+                                                                    </li>
+
+                                                                    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }">
+                                                                        <a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
+                                                                    </li>
+                                                                    <li ng-if="boundaryLinks"  ng-class="{ disabled : pagination.current == pagination.last }">
+                                                                        <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </dir-pagination-controls>
+
+
                                             			</div>
                             	 					</div>
                                             	</div>

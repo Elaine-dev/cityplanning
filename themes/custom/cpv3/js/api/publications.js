@@ -1,8 +1,8 @@
 'use strict';
 
-var app = angular.module('appPublication', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
+var app = angular.module('appPublication', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap', 'angularUtils.directives.dirPagination'])
 	.service('publicationService', function($http){
-		this.getRecord = function(q){
+		this.getRecord = function(q) {
 			return $http.get("http://161.149.221.142/dcpapi/general/pubs/"+q);
 		}
 	});
@@ -10,11 +10,9 @@ app.config(function($interpolateProvider){
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 });
 
-app.controller('PublicationCtrl', ['$scope', 'publicationService', '$filter', '$timeout', function($scope, publicationService, $filter, $timeout) {
-	$scope.enable = "false";
-	$scope.loadingText = "Loading ...";
-	
+app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter', '$timeout', function($scope, publicationService, filterFilter, $timeout) {
 	$scope.docType = 'Plan';
+
 	$scope.documentType = {
 		availableOptions: [
 			{id: 'Oriented District', name: 'Oriented District'},
@@ -23,14 +21,14 @@ app.controller('PublicationCtrl', ['$scope', 'publicationService', '$filter', '$
 			{id: 'all', name: 'All'},
 		],
 	};
-	
-	$scope.$watch('docType', function(newDocType) {
-		if(newDocType){
-			publicationService.getRecord(newDocType).then(function(response) {
-				$scope.publications = response.data;
-				//console.log($scope.publications);
-			});
-		}
+
+	  $scope.currentPage = 1;
+	  $scope.pageSize = 15;
+
+	$scope.$watch('docType', function(q) {
+		publicationService.getRecord(q).then(function(response) {
+			$scope.data = response.data;
+			//console.log($scope.data);
+		});
 	});
-	
 }]);
