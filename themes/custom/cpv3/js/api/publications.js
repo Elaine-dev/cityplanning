@@ -11,7 +11,7 @@ app.config(function($interpolateProvider){
 });
 
 app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter', '$timeout', function($scope, publicationService, filterFilter, $timeout) {
-	$scope.docType = 'Plan';
+	$scope.docType = 'all';
 
 	$scope.documentType = {
 		availableOptions: [
