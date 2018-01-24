@@ -82,6 +82,11 @@ agenda-hearing:
     js/api/agendaCtrl.js: {}
     js/api/hearingsCtrl.js: {}
 
+eir-js:
+  version: 1.0
+  js:
+    'js/api/eirCtrl.js': {}
+
 bi-weekly-case-filing:
   version: VERSION
   js:
