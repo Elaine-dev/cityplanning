@@ -87,6 +87,11 @@ eir-js:
   js:
     'js/api/eirCtrl.js': {}
 
+negative-declaration-page:
+  version: 1.0
+  js:
+    js/api/negativeDeclarationCtrl.js: {}
+    
 bi-weekly-case-filing:
   version: VERSION
   js:
