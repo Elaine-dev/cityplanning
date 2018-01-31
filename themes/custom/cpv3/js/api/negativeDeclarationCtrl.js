@@ -5,7 +5,7 @@
     	.config(function($interpolateProvider) {
     		$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 		})
-       
+
        .controller('negativeDeclarationCtrl', function ($scope, $timeout, $http, filterFilter, noticeService) {
            $scope.enable = true;
            $scope.loadingText = "Loading ...";
@@ -88,7 +88,7 @@
         .service('noticeService', function($http) {
             this.getNotice = function(date, page, number) {
                 // console.log(siteurl + '/rest/api/negativedeclaration/'+date+'/'+page+'/'+number, {cache: false});
-                return $http.get('http://ladcp.westus.cloudapp.azure.com/rest/api/negativedeclaration/'+date+'/'+page+'/'+number, {cache: false});
+                return $http.get(siteurl + '/rest/api/negativedeclaration/'+date+'/'+page+'/'+number, {cache: false});
             }
         });
 }());
