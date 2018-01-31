@@ -133,7 +133,7 @@ class ImportController extends ControllerBase {
         // Regroup csv data into notice and sub notice array.
         foreach($raw_data as $key=>$item) {
             // Grouping sub-notices
-            $sub_notices[$item['field_primary_case']][] = array(
+            $sub_notices[$item['field_primary_case'].'-'.$item['field_date']][] = array(
                 'field_case_number' => $item['field_case_number'],
                 'field_mnd' => $item['field_mnd'],
                 'field_publication' => $item['field_publication'],
@@ -141,13 +141,13 @@ class ImportController extends ControllerBase {
             // get and group notice id
             $ids[$item['field_primary_case']][] = $item['field_notice_id'];
             // Generating final grouped set of array.
-            $notice[$item['field_primary_case']] = array(
+            $notice[$item['field_primary_case'].'-'.$item['field_date']] = array(
                 'field_date' => $item['field_date'],
                 'field_primary_case' => $item['field_primary_case'],
                 'field_address' => $item['field_address'],
                 'field_council_district' => $item['field_council_district'],
                 'field_notice_id' => implode(',', $ids[$item['field_primary_case']]),
-                'sub_notice' => $sub_notices[$item['field_primary_case']],
+                'sub_notice' => $sub_notices[$item['field_primary_case'].'-'.$item['field_date']],
             );
 
         }
@@ -172,7 +172,7 @@ class ImportController extends ControllerBase {
             die();
         }
     }
-    
+
     /*
     * Format date in yy-mm-dd
     */
