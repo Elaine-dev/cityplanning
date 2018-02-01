@@ -1259,11 +1259,6 @@ table.dataTable thead .sorting_asc {
 /** Case Filing Appointment system **/
 #laappintment-form fieldset { padding: 0.35em 0.9em 1em !important; }
 #laappintment-form .form-item { padding-bottom: 5px; margin-bottom: 15px;}
-#laappintment-form fieldset legend{background: lightblue !important; padding: 5px !important;}
-#edit-guest-name, #edit-guest-email{margin-left: 73px;}
-#edit-case-add-house-number{margin-left: 49px;}
-#edit-case-add-direction{margin-left: 90px;}
-#edit-case-add-street-name{margin-left: 67px;}
 
 #block-cityplanning-content .app-textbox { margin-left: 200px; }
 #block-cityplanning-content .app-textbox-phone { margin-left: 128px; }

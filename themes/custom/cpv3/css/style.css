@@ -393,6 +393,11 @@ article img{padding-top:15px; padding-bottom: 15px;}
 /** Case Filing Appointment system **/
 #laappintment-form fieldset { padding: 0.35em 0.9em 1em !important; }
 #laappintment-form .form-item { padding-bottom: 5px; margin-bottom: 15px;}
+#edit-guest-name, #edit-guest-email{margin-left: 73px;}
+#edit-case-add-house-number{margin-left: 49px;}
+#edit-case-add-direction{margin-left: 90px;}
+#edit-case-add-street-name{margin-left: 67px;}
+
 #block-cityplanning-content .app-textbox { margin-left: 200px; }
 #block-cityplanning-content .app-textbox-phone { margin-left: 128px; }
 #block-cityplanning-content .app-textbox-appointment { margin-left: 130px; }
@@ -506,8 +511,8 @@ td .fc-state-highlight > a.fc-day-number {
   	right: 0%;
   	left: 57%;
   	padding-bottom: 0;
-  	padding-top: 0; 
-  	bottom: 40px; 
+  	padding-top: 0;
+  	bottom: 40px;
   	background: rgba(204, 204, 204);
   	background: rgba(204, 204, 204, 0.5);
 }
