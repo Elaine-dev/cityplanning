@@ -123,7 +123,24 @@ jQuery(document).ready(function(){
       e.stopPropagation();
   });
 
-	// Appointment form
+  /***
+   * Case Filing & Clearing Appointment System
+   ***
+   */
+  $("input:radio[name=appointment_location]").click(function(){
+	  var value = $(this).val();
+	  if (value != "Metro Office: Figueroa Plaza") {
+		  $("#edit-appointment-for-allwirelessfacilities").attr('disabled', true);
+		  $("#edit-appointment-for-mapprocessingservices").attr('disabled', true);
+		  $("#edit-appointment-for-bestservice").attr('disabled', true);
+		  $("#edit-appointment-for-affordablehousing").attr('disabled', true);
+	  } else {
+		  $("#edit-appointment-for-allwirelessfacilities").prop('disabled', false);
+		  $("#edit-appointment-for-mapprocessingservices").prop('disabled', false);
+		  $("#edit-appointment-for-bestservice").prop('disabled', false);
+		  $("#edit-appointment-for-affordablehousing").prop('disabled', false);
+	  }
+  });
   // First available appointment
    $("#edit-first-available-appointment-first-available-appointment").change(function() {
      if (true == $(this).prop("checked")) {

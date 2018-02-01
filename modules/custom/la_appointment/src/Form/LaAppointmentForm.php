@@ -102,7 +102,15 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['appointment_for'] = array (
             '#type' => 'radios',
             '#title' => t('Appointment for :'),
-            '#options' => ['Filing' => 'Case Filing', 'Clearing' => 'Case Condition Clearing'],
+            '#options' => [
+              'Filing' => 'Case Filing',
+              'Clearing' => 'Case Condition Clearing',
+              'AllWirelessFacilities' => 'All Wireless Facilities (Metro office only)',
+              'MapProcessingServices' => 'Map Processing Services (Metro office only) (Lot Line Adj., Private Streets, C of C)',
+              'BEStService' => 'BESt, Alcohol Sales and Service/Dancing (Metro office only) (case filing and condition clearance)',
+              'AffordableHousing' => 'Affordable Housing Projects (Metro office only) (Density Bonus, UDU, TOC)'
+            ],
+            '#attributes' => ['class' => array('disable')],
         );
 
 
