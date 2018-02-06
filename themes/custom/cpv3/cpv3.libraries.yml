@@ -15,7 +15,7 @@ global-styling:
     js/main.js: {}
     https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js: {}
     # los angeles top bar
-    //navbar.lacity.org/global_nav.js: {}
+    https://globalnav.lacity.org/global_nav_2.0.js: {}
 
 fonts:
   css:
@@ -91,14 +91,14 @@ negative-declaration-page:
   version: 1.0
   js:
     js/api/negativeDeclarationCtrl.js: {}
-    
+
 bi-weekly-case-filing:
   version: VERSION
   js:
     js/api/app.js: {}
     js/api/biweeklyCaseReportService.js: {}
     js/api/biweeklyCaseReportCtrl.js: {}
-    
+
 publications:
   version: 1.1
   js:
