@@ -29,4 +29,5 @@ app.controller('formsCtrl', [ '$scope', 'formsService', 'filterFilter', '$timeou
 		if (letter === 'All') return true;
 		return lowerStr.indexOf(letter.toLowerCase()) === 0;
 	}
+	console.log($scope);
 }]);
