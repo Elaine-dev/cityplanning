@@ -19,7 +19,7 @@ app.controller('formsCtrl', [ '$scope', 'formsService', 'filterFilter', '$timeou
 	formsService.getRecord().then (function (response) {
 		$scope.masterForms = response.data.masterForms;
 		$scope.data = response.data.forms;
-		console.log($scope.data);
+		//console.log($scope.data);
 	});
 
 	$scope.startsWith = function(data) {
@@ -28,5 +28,4 @@ app.controller('formsCtrl', [ '$scope', 'formsService', 'filterFilter', '$timeou
 		if (letter === 'All') return true;
 		return lowerStr.indexOf(letter.toLowerCase()) === 0;
 	}
-	console.log($scope);
 }]);
