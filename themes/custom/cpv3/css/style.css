@@ -524,6 +524,36 @@ td .fc-state-highlight > a.fc-day-number {
 /** publication **/
 .filter-search{padding-top: 30px; padding-bottom: 30px;}
 
+/** Tab panel **/
+.panel-title>a, .panel-title>a:active{
+	display:block;
+	padding:15px;
+  	color:#555;
+  	font-size:16px;
+  	font-weight:bold;
+	text-transform:uppercase;
+	letter-spacing:1px;
+  	word-spacing:3px;
+	text-decoration:none;
+}
+.panel-heading  a:before {
+	font-family: 'Glyphicons Halflings';
+   	content: "\e114";
+   	float: right;
+   	transition: all 0.5s;
+}
+.panel-heading.active a:before {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/** Forms **/
+ul#list-horizontal li {
+	display:inline;
+	padding: 0 3px;
+}
+.active {color : #f68a3b !important; text-decoration: underline; font-weight: bold;}
 
 /*-->> **************** Media Query *****************/
 
