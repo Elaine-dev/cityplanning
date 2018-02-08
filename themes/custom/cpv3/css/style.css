@@ -156,7 +156,7 @@ color - name
     border-color: #439f8b;
 }
 
-
+mark{background-color: #ff9 !important;}
 
 /****************************************
 ************ Mega menu ******************
@@ -392,13 +392,15 @@ article img{padding-top:15px; padding-bottom: 15px;}
 
 /** Case Filing Appointment system **/
 #laappintment-form fieldset { padding: 0.35em 0.9em 1em !important; }
-#laappintment-form .form-item { padding-bottom: 5px; margin-bottom: 15px;}
+#laappintment-form .form-item { padding-bottom: 5px; margin-bottom: 15px; font-size: 15px !important;}
 #laappintment-form fieldset legend{background: lightblue !important; padding: 5px !important;}
 #edit-guest-name, #edit-guest-email{margin-left: 73px;}
 #edit-case-add-house-number{margin-left: 49px;}
 #edit-case-add-direction{margin-left: 90px;}
 #edit-case-add-street-name{margin-left: 67px;}
 #edit-guest-phone{margin-left: 5px;}
+#laappintment-form > input[type=radio], input[type=checkbox] {height: 13px !important;}
+#laappintment-form > input[type=checkbox], input[type=radio] {height: 13px !important;}
 
 #block-cityplanning-content .app-textbox { margin-left: 200px; }
 #block-cityplanning-content .app-textbox-phone { margin-left: 128px; }
