@@ -1,0 +1,30 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+    <div class="container" id="main-container">
+    	<div class="row">
+			<div class="col-md-12"><h1>{{ page.title_bar }}</h1></div>
+    	</div>
+
+    	<div class="row">
+        	<div class="col-md-12">
+            	<div class="row padding-left0">
+                	<div class="col-md-12">
+                		{{ page.content }}
+                	</div>
+            	</div>
+        	</div>
+		</div>
+	</div>
+
+
+     <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}
