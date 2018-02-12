@@ -594,7 +594,8 @@ ul#list-horizontal li {
 
 /* Small devices (tablet) */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait)  {
-   .navbar-header {float: none;}
+    #main-container{right:6px;}
+    .navbar-header {float: none;}
     .navbar-toggle {display: block;}
     .navbar-collapse.collapse {display: none!important;}
     .navbar-nav {float: none!important; margin: 7.5px -15px;}
