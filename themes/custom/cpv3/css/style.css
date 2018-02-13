@@ -555,7 +555,7 @@ ul#list-horizontal li {
 	display:inline;
 	padding: 0 3px;
 }
-.active {color : #f68a3b !important; text-decoration: underline; font-weight: bold;}
+#list-horizontal .active {color : #f68a3b !important; text-decoration: underline; font-weight: bold;}
 
 /*-->> **************** Media Query *****************/
 
