@@ -1,0 +1,99 @@
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+{# page-banner #}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="page-title-bg"><img src="http://ladcp.westus.cloudapp.azure.com{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="bg"></div>
+        </div>
+    </div>
+</div>{# End page-banner #}
+
+<!-- contain -->
+<div class="container" id="main-container">
+    {# Main content #}
+    <div class="row">
+    	<div class="col-md-12"> <h1>{{ node.label }}</h1></div>
+    </div>
+    <div class="row">
+        {# Left-side bar #}
+        <div class="col-md-9">
+            <div class="row padding-left0">
+                <div class="col-md-12">
+                    {{ node.field_intro_content.value|striptags }}
+                    {% set full_width_data = [] %}
+                    {% set small_width_data = [] %}
+                    {% set break = true %}
+                    {% for parag_id in node.field_content_section.value %}
+                        {% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
+
+                        {# for full-width image #}
+                        {% if data['#paragraph'].hasField('field_full_width_image') %}
+                            {% set full_width_data = full_width_data|merge({(loop.index0):{'para_id':parag_id['target_id'],'flag':true}}) %}
+                            {% set break = false %}
+                        {% elseif break %}
+
+                        	{# add button class #}
+                        	{% if data['#paragraph'].hasField('field_button_link') %}
+                        		{% set class= 'full-width-button' %}
+                    		{% else %}
+                    			{% set class = '' %}
+                        	{% endif %}
+
+                        	{# regular content #}
+                            <div class="section-content clear {{ class }}">
+                                {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                            </div>
+                        {% else %}
+                            {% set full_width_data = full_width_data|merge({(loop.index0):{'para_id':parag_id['target_id'],'flag':false}}) %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>{# End Left-side bar #}
+
+        {# Right-side bar #}
+        <div class="col-md-3 sidebar-menu padding-right-27 visible-lg-block">
+            <div class="top-bar"></div>
+              {{ page.side_menu }}
+        </div>{# End Right-side bar #}
+    </div>
+</div>{# End container #}
+
+<div class="full-width-image">
+	{% for item in full_width_data %}
+		{% if item.flag %}
+			{# full width content goes here #}
+			<div class="container-fluid info-bg-color-2">
+				<div class="row">
+					<div class="col-md-12">
+						<center>
+			            {{ bamboo_render_entity('paragraph', item.para_id) }}
+			            </center>
+    				</div>
+				</div>
+			</div>
+		{% else %}
+			{# small width content goes here #}
+			<div class="container">
+				<div class="row">
+					{{ bamboo_render_entity('paragraph', item.para_id) }}
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+
+<div class="container white--bg visible-xs-block visible-sm-block">
+	<div class="row">
+		{# Right-side bar #}
+        <div class="col-md-12 sidebar-menu">
+            <div class="top-bar"></div>
+              {{ page.side_menu }}
+        </div>{# End Right-side bar #}
+	</div>
+</div>
+
+<!-- footer section -->
+{% include directory ~ '/partials/footer.html.twig' %}

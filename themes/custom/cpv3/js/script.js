@@ -123,9 +123,10 @@ jQuery(document).ready(function(){
       e.stopPropagation();
   });
 
+  
   /***
    * Case Filing & Clearing Appointment System
-   ***
+   *** 
    */
   $("input:radio[name=appointment_location]").click(function(){
 	  var value = $(this).val();
@@ -133,7 +134,7 @@ jQuery(document).ready(function(){
 		  $("#edit-appointment-for-allwirelessfacilities").attr('disabled', true);
 		  $("#edit-appointment-for-mapprocessingservices").attr('disabled', true);
 		  $("#edit-appointment-for-bestservice").attr('disabled', true);
-		  $("#edit-appointment-for-affordablehousing").attr('disabled', true);
+		  $("#edit-appointment-for-affordablehousing").attr('disabled', true);  
 	  } else {
 		  $("#edit-appointment-for-allwirelessfacilities").prop('disabled', false);
 		  $("#edit-appointment-for-mapprocessingservices").prop('disabled', false);
@@ -141,6 +142,7 @@ jQuery(document).ready(function(){
 		  $("#edit-appointment-for-affordablehousing").prop('disabled', false);
 	  }
   });
+  
   // First available appointment
    $("#edit-first-available-appointment-first-available-appointment").change(function() {
      if (true == $(this).prop("checked")) {
@@ -296,6 +298,14 @@ jQuery(document).ready(function(){
 		jQuery('#map-2').hide();
 		jQuery('#map-3').show();
 	});
+	
+	// commission tab for area planning
+	$('.panel-collapse').on('show.bs.collapse', function () {
+		$(this).siblings('.panel-heading').addClass('active');
+	});
 
+	$('.panel-collapse').on('hide.bs.collapse', function () {
+		$(this).siblings('.panel-heading').removeClass('active');
+	});
 
 });

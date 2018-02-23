@@ -1,0 +1,41 @@
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; /* Defines an attractive and clean font for the page */ 
+}
+h1, h2, h3 { /* Adds some spacing and a bottom border to the heading tags */
+  	border-bottom: 1px solid #ccc;
+    font-family: Georgia, Tahoma, sans-serif;
+    text-align: center;
+    color:  black;
+}
+
+#map {
+	float: right;
+	width: 82vw;
+	height: 92vh;
+	right: 15px;
+}
+.sessionWrapper {
+	width: 15vw;
+	height: 92vh;
+	float: left;
+	padding-left: 5px;
+	background-color: white;
+}
+#info {
+	background: #fff;
+	box-shadow: 0 0 5px #888;
+	right: 1em;
+	padding: 0.5em;
+	position: absolute;
+	top: 6em;
+	width: 20em;
+	z-index: 40;
+}

@@ -26,6 +26,7 @@ $(document).ready(function() {
 		},
     });
 	
+	
 	//calendar
 	$("#ci-hearing").on('click', function() {
 		$('.hearing').toggle();

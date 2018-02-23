@@ -1,70 +1,80 @@
-<div class="row feature-section1 padding-bottom60">
-			<div class="col-md-4 left-12">
-				<div class="col-md-12 feature-block" id="feature-block-1">
-					<h2 class="text-center">#Planning4LA</h2>
-					<div class="hr-line"></div>
-
-					<div class="row" >
-						<div class="col-md-2 col-xs-2"><i class="fa fa-twitter fa-3x social-icon-color" aria-hidden="true"></i></div>
-						<div class="col-md-10 col-xs-10">
-							<p><a href="https://twitter.com/Planning4LA/status/938209879709204480" target="_blank">
-								HAPPENING NOW: #SouthLA Area Planning Commission Meeting. The City of #LosAngeles has 7 APCs, each entrusted with making decisions related to...
-							</a></p>
-						</div>
-					</div>
-					<div class="hr-line"></div>
-
-					<div class="row" >
-						<div class="col-md-2 col-xs-2"><i class="fa fa-twitter fa-3x social-icon-color" aria-hidden="true"></i></div>
-						<div class="col-md-10 col-xs-10">
-							<p><a href="https://twitter.com/Planning4LA/status/938181277479399424" target="_blank">
-								[2/2] #Planning4LA seeks to provide improvements for #smallbusinesses inc. food & beverage service sector through...
-							</a></p>
-						</div>
-					</div>
-					<div class="hr-line"></div>
-				</div>
-		 	</div>{# //End social media #}
-
-		 	<div class="col-md-4 left-6" >
-		 		<div class="col-md-12 feature-block" id="feature-block-2">
-	 				<div class="row text-center">
-		   				<center><a href="{{ base_path }}projects/development-service-centers"><img class="img-responsive padding-top5" src="{{ theme_base_path }}/images/features/get-involve.png" alt="appointments and locations" /></a></center>
-		   				<h2>GET INVOLVED</h2>
-		    		</div>
-		    		<div class="row text-center padding-top40">
-		    			<p><a href="https://www.ourla2040.org/get-involved" target="_blank">General Plan</a></p>
-		    			<p><a href="{{ base_path }}about/commission-agendas-minutes">Agendas & Minutes</a></p>
-              <p><a href="{{ base_path }}communities/community-plan-updates">Communnity Plan Updates</a></p>
-		    		</div>
-		 		</div>
-	    	</div> {# //End Get Involved #}
-
-	   		<div class="col-md-4">
-	   			<div class="col-md-12 feature-block" id="feature-block-3">
-	   				<div class="row text-center">
-	   				<center><a href="#"><img class="img-responsive padding-top5" src="{{ theme_base_path }}/images/features/zoning-search.png" alt="Fee-Calculator" /></a></center>
-	   				<h2>ZONING SEARCH</h2>
-	   				<p>Look up your property's zone!</p>
-	    		</div>
-	    		<div class="row text-center">
-	    			<center>
-	    			<form class="form" style="width: 80%;">
-	              		<div class="form-group">
-	              			<label for="address" class="sr-only">House number</label>
-	              			<input type="text" id="address"  class="form-control" placeholder="House number">
-	              		</div>
-
-	              		<div class="form-group">
-	              			<label for="street-name" class="sr-only">Street name</label>
-	              			<input type="text" id="street-name" class="form-control" placeholder="Street name">
-	              		</div>
-	              		<div class="form-group">
-	              			<button type="submit" class="btn btn-z-search" id="search-zoning" style="width:100%">Lookup My Property</button>
-	              		</div>
-	              	</form>
-	              	</center>
-	    		</div>
-	   			</div>
-	    	</div>{# //End Zoning search #}
-   		</div>
+    <div class="row feature-section1 padding-bottom60">
+            
+    	<!-- Case Search -->
+    	<div class="col-lg-4" id="case-search-box">
+    		<div class="col-lg-12 featureBlock">
+    			<center><a href="#"><img class="img-responsive paddingtop15" src="{{ theme_base_path }}/images/case-search.png" alt="Fee-Calculator"/></a></center>
+          		<h2 class="text-center">CASE SEARCH</h2>
+      			<div class="row text-center paddingtop15">
+         			<center>
+                		<form class="form" style="width: 80%;">
+               				<div class="form-group">
+                  				<label for="address" class="sr-only">Case number</label>
+                              	<input type="text" id="address" class="form-control" placeholder="Case number">
+               				</div>
+                       		<div class="form-group">
+                          		<button type="submit" class="btn btn-z-search" id="search-zoning" style="width:100%">Search</button>
+                           </div>
+                           <div class="form-group">
+                          		<button type="submit" class="btn btn-z-search" id="search-zoning" style="width:100%">Advanced Search</button>
+                           </div>
+    					</form>
+             		</center>
+          		</div>
+       		</div>
+    	</div>
+                
+    	<!-- Zoning Search -->
+    	<div class="col-lg-4" id="zoning-search-box">
+    		<div class="col-lg-12 featureBlock">
+       			<div class="row text-center">
+                     <center><a href="#"><img class="img-responsive paddingtop15" src="{{ theme_base_path }}/images/zoning-search.png" alt="zoning search"/></a></center>
+                     <h2>ZONING SEARCH</h2>
+                  </div>
+                  
+                  <div class="row text-center paddingtop15">
+                     <center>
+                        <form class="form" style="width: 80%;">
+                           <div class="form-group">
+                              <label for="address" class="sr-only">House number</label>
+                              <input type="text" id="address" class="form-control" placeholder="House number">
+                           </div>
+                           <div class="form-group">
+                              <label for="street-name" class="sr-only">Street name</label>
+                              <input type="text" id="street-name" class="form-control" placeholder="Street name">
+                           </div>
+                           <div class="form-group">
+                              <button type="submit" class="btn btn-z-search" id="search-zoning" style="width:100%">Lookup My Property</button>
+                           </div>
+                        </form>
+                     </center>
+                  </div>
+    		</div>
+        </div>
+                
+    	<!-- Get Involved -->
+        <div class="col-lg-4" id="get-involved-box">
+           <div class="col-lg-12 featureBlock">
+              <div class="row text-center">
+                 <center><a href="/projects/development-service-centers"><img class="img-responsive paddingtop15" src="{{ theme_base_path }}/images/get-involved.png" alt="get involved"/></a></center>
+                 <h2>GET INVOLVED</h2>
+              </div>
+              <div class="row text-center paddingtop15">
+                 <center>
+                    <form class="form" style="width: 80%;">
+                    	<div class="form-group">
+                      		<button type="submit" class="btn btn-z-search" id="search-zoning" style="width:100%">Public Hearings</button>
+                       	</div>
+                    	<div class="form-group">
+                      		<button type="submit" class="btn btn-z-search" id="search-zoning" style="width:100%">Communnity Plan Updates</button>
+                       	</div>
+                    	<div class="form-group">
+                      		<button type="submit" class="btn btn-z-search" id="search-zoning" style="width:100%">Event Calendar</button>
+                       	</div>
+                      
+                    </form>
+                 </center>
+              </div>
+           </div>
+        </div>
+    </div> <!-- End Feature Block 1 -->

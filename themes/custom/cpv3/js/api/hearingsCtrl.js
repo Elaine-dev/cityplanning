@@ -21,10 +21,10 @@ appHearing.config(function($interpolateProvider) {
 appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$filter','$timeout', function($scope, $sce, hearingsService, $filter, $timeout){
 	 $scope.enable = "false";
 	 $scope.loadingText = "Loading ...";
-
+	
 	$scope.apc = 'northvalley';
 	$scope.apcAreas = {
-		availableOptions: [
+		availableOptions: [ 
 		        {id: 'cpc', name: 'City Planning Commisson'},
 				{id: 'culturalheritagecommission', name: 'Cultural Heritage Commission'},
 				{id: 'northvalley', name: 'North Valley' },
@@ -37,11 +37,11 @@ appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$fi
 				{id: 'all', name: 'All'}
 			],
 		};
-
+	
 	$scope.date = $filter('date')(new Date(), 'yyyy');		// get current year
 	var date = $scope.date;
 	$scope.assignDate = $filter('date')(new Date(), 'M/d/yyyy');
-
+	
 	$scope.$watch ('apc', function(newAPC) {
 		if(newAPC) {
 			var selectedYear = $scope.date;
@@ -49,7 +49,6 @@ appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$fi
 				$scope.hearings = response.data.Entries;
 				$scope.dates = response.data.Years;
 				$scope.planningAreaTitle = response.data.APCTitle;
-
 				$timeout(function(){
 		            $scope.enable = "true";
 		           $scope.loadingText = "";
@@ -57,7 +56,7 @@ appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$fi
 			});
 		}
 	});
-
+	
 	$scope.$watch('date', function(newYear){
 		if (newYear) {
 			var apc = $scope.apc;
@@ -67,7 +66,7 @@ appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$fi
 			});
 		}
 	});
-
+	
 	//console.log($scope);
-
+	
 }]);

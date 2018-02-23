@@ -1,10 +1,10 @@
 app.controller('agendaCtrl', function($scope, agendaService, $filter, $timeout) {
 	$scope.enable = "false";
 	$scope.loadingText = "Loading ...";
-
+	
 	$scope.apc = 'northvalley';
 	$scope.apcAreas = {
-	   availableOptions: [
+	   availableOptions: [ 
 	        {id: 'cpc', name: 'City Planning Commisson'},
 			{id: 'culturalheritagecommission', name: 'Cultural Heritage Commission'},
 			{id: 'northvalley', name: 'North Valley' },
@@ -17,14 +17,14 @@ app.controller('agendaCtrl', function($scope, agendaService, $filter, $timeout) 
 			{id: 'all', name: 'All'}
 		],
 	};
-
-
+	
+	
 	$scope.date = $filter('date')(new Date(), 'yyyy');		// get current year
 	var date = $scope.date;
-
+	
 	// display record according to apc
 	$scope.$watch('apc', function(newAPC) {
-		if (newAPC) {
+		if (newAPC) { 
 			var selectedYear = $scope.date;
 			agendaService.getAgenda(newAPC, selectedYear).then(function(response) {
 				// loading icon
@@ -32,14 +32,14 @@ app.controller('agendaCtrl', function($scope, agendaService, $filter, $timeout) 
 					$scope.enable = true;
 					$scope.loadingText = '';
 				}, 2000);
-
+				
 				$scope.agendas = response.data.Entries;
 				$scope.dates = response.data.Years;
 				$scope.planningAreaTitle = response.data.APCTitle;
 			});
 		}
 	 });
-
+	
 	// display record according to date
 	$scope.$watch('date', function(newYear) {
 		if (newYear) {

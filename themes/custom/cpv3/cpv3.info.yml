@@ -1,7 +1,7 @@
 # Date: Oct 26, 2017
-name: City Planning 3.0
+name: City Planning 4.0
 type: theme
-description: 'Build using bootstrap framework. The design is clean and sleek.'
+description: 'This is v4 theme build using bootstrap framework. The design is clean and sleek.'
 core: 8.x
 libraries:
   - cpv3/global-styling

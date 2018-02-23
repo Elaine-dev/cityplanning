@@ -1,5 +1,7 @@
 <?php
 use Drupal\node\Entity\Node;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\taxonomy\Entity\Term;
 
 function cpv3_theme_rebuild () {
     drupal_static_reset('theme_get_registry');
@@ -21,6 +23,7 @@ function cpv3_preprocess_html ( &$variables ) {
  */
 function cpv3_preprocess_page ( &$variables ) {
     global $base_url;
+    
 	$variables['footer_message'] = theme_get_setting ( 'footer_message', 'ladcp' );
 	$variables['images_path'] = \Drupal::theme ()->getActiveTheme ()->getPath () . '/image/';
 	$variables['base_path'] = base_path ();
@@ -52,7 +55,7 @@ function cpv3_preprocess_views_view( &$variables ) {
         $i++;
     }
 
-    $variables['category'] = $term_data;
+    @$variables['category'] = $term_data;
 
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('area_planning_type');
     foreach ($terms as $term) {
@@ -62,39 +65,70 @@ function cpv3_preprocess_views_view( &$variables ) {
         );
     }
 
-    $variables['planning_area_category'] = $term_data_1;
+    @$variables['planning_area_category'] = $term_data_1;
+    
+    
+    /* publication */
+    $termsNewsletter = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('newsletter_type');
+    $i = 1;
+    foreach ($termsNewsletter as $term) {
+        $name = explode(' ', $term->name, 3);
+        if (count($name) >= 3){
+            $firstPart = $name[0];
+            $lastPart = $name[1]. ' '.$name[2];
+        } else {
+            $firstPart = $term->name;
+        }
+        $term_data_newsletter[] = [
+            'id' => $term->tid,
+            'first_part' => $firstPart,
+            'last_part' => $lastPart,
+            'counter' => $i
+        ];
+        
+        $i++;
+    }
+    @$variables['newsletter_category'] = $term_data_newsletter;
+    
 }
 
-/**
- * @param array $suggestions
- * @param array $variables
- * Suggest template as per page--node--[content-type]--[node-title]
- * eg : page--node--page--publications.html.twig
- */
-function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
+// template suggestion for container part
+/* function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
     // Add content type suggestions.
     if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
         array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
     }
 }
 
-/* 
- * function cpv3_theme_suggestions_page_alter (array &$suggestions, array $variables) {
+function cpv3_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
+    $suggestions[] = 'container' . '__' . 'custom';
+} */
+/**
+ * @param array $suggestions
+ * @param array $variables
+ * Suggest template as per page--node--[content-type]--[node-title]
+ * eg : page--node--page--publications.html.twig
+ */
+function cpv3_theme_suggestions_page_alter(array &$suggestions, array $variables) {
     if ($node = \Drupal::routeMatch ()->getParameter ( 'node' )) {
         $title = cleanString($node->getTitle());
         $content_type = $node->bundle ();
         $suggestions [] = 'page__node__' . $node->getType() .'__'. $title;
     }
-} 
-*/
+}
 
-// template suggestion for container part
-function cpv3_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
-    $suggestions[] = 'container' . '__' . 'custom';
+function cpv3_theme_suggestions_container_alter ( &$suggestions, $vars, $hook) {
+    $suggestions [] = 'container' . '__' . 'custom';
+}
+
+function cpv3_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+    if ($node = \Drupal::routeMatch ()->getParameter ( 'node' )) {
+        $content_type = $node->bundle ();
+        $suggestions [] = 'nodes/node__' . $content_type;
+    }
 }
 
 function cpv3_preprocess_node( &$variables ) {
-    //kint($variables);
     $node = $variables['node'];
     $data = [];
     if($node->bundle() == 'eir_detail') {
@@ -110,4 +144,19 @@ function cpv3_preprocess_node( &$variables ) {
 
         $variables['node_data'] = $data;
     }
+}
+
+/**
+ * remove special characters & white spaces
+ * each word is seperated with dash (-)
+ * @param $string
+ * @return string
+ *
+ */
+function cleanString($string) {
+    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+    $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+    $string = strtolower($string); // Convert to lowercase
+    
+    return $string;
 }

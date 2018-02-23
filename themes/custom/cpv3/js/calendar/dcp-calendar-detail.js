@@ -5,29 +5,29 @@ $(document).ready(function() {
 			center: 'title',
 			right: 'month, basicWeek, today'
 		},
-
+		
 		defaultDate: $.now(),
 	    //navLinks: true, // can click day/week names to navigate views
     	eventLimit: true, // allow "more" link when too many events
     	defaultView: 'month',
-      events: {
+    	events: {
     		url: 'http://161.149.221.142/dcpapi/meetings/upcoming/calendar',
 	        error: function() {
-	          $('#script-warning').show();
+	        	$('#script-warning').show();
 	        }
     	},
     	loading: function(bool) {
     		$('#loading').toggle(bool);
     	},
-    	eventRender: function (event, element){
+    	eventRender: function (event, element) {
     		element
 				.attr('title', event.description + ' | ' + event.caseNumber)
 				.tooltip();
 		},
     });
-    $('.fc-event').css('font-size', '1.35em');
-    $('.fc-event').css('white-space', 'nowrap');
-
+	$('.fc-event').css('font-size', '1.35em');
+	$('.fc-event').css('white-space', 'nowrap');
+	
 	//calendar
 	$("#ci-hearing").on('click', function() {
 		$('.hearing').toggle();
@@ -41,6 +41,6 @@ $(document).ready(function() {
 		$('.apc').toggle();
 		$('#a').toggleClass('cal-apc-disable');
 	});
-
+	
 	$('.fc-scroller').css('overflow','visible');
 });

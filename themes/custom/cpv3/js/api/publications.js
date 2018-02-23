@@ -12,7 +12,7 @@ app.config(function($interpolateProvider){
 
 app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter', '$timeout', function($scope, publicationService, filterFilter, $timeout) {
 	$scope.docType = 'all';
-
+	
 	$scope.documentType = {
 		availableOptions: [
 			{id: 'Oriented District', name: 'Oriented District'},
@@ -21,10 +21,10 @@ app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter
 			{id: 'all', name: 'All'},
 		],
 	};
-
+	
 	  $scope.currentPage = 1;
 	  $scope.pageSize = 15;
-
+	
 	$scope.$watch('docType', function(q) {
 		publicationService.getRecord(q).then(function(response) {
 			$scope.data = response.data;
