@@ -22,7 +22,7 @@ fonts:
   css:
     theme:
       'https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300,700|Open+Sans:300italic,400,300': { type: external, minified: true }
-      https://use.fontawesome.com/releases/v5.0.6/css/all.css: { type: external, minified: true }
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
 
 angular-js:
   js:

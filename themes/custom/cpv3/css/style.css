@@ -155,8 +155,7 @@ mark{background-color: #ff9 !important;}
 .top-social-icons .fa-youtube{margin-top: 0;}
 .menu-seperation{padding-right: 15px; padding-left: 0px; border-right: 1px dotted #3a5a99; margin-top: 25px; padding-top: 10px !important;}
 .search-icon{padding-left: 12px; padding-top: 3px;}
-
-.top-social-icons .fas, .top-social-icons .fab {color: #3a5a99 !important;}
+.top-social-icons .fa{color: #3a5a99 !important;}
 /** End Menu **/
 
 /** slider **/
