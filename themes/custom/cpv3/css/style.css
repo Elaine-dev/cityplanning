@@ -164,8 +164,8 @@ mark{background-color: #ff9 !important;}
 .slide-text{min-height:500px !important; max-height: 500px;}
 
 /** color boxes  **/
-.pl6pc {padding-left: 8%;} 
-_:-moz-tree-row(hover), .pl6pc{padding-left: 4%;}
+.pl6pc {padding-left: 9em;} 
+_:-moz-tree-row(hover), .pl6pc{padding-left: 9em;}
 #map-promote-preserve-wrapper{padding-left: 0px; padding-right: 0px; right: 5px; height: 64px;}
 #our-mission-wrapper{padding-right: 0px; height: 64px;}
 #blank-wrapper{padding-right: 0px; left: 5px; height: 64px;}
