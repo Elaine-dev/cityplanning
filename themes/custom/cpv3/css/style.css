@@ -836,4 +836,5 @@ ul#list-horizontal li {
 		visibility: visible;
 	}
 	.navbar-search-box .search-bar-search > .container {padding: 0px;}
+	.pl6pc {padding-left: 0em !important;} 
 }
