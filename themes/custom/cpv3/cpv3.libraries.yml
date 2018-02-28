@@ -15,7 +15,7 @@ global-styling:
     #js/main.js: {}
     https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js: {}
     # los angeles top bar
-    https://globalnav.lacity.org/global_nav_2.0.js: {}
+    //navbar.lacity.org/global_nav.js: {}
 
 
 fonts:
