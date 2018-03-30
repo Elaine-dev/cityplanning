@@ -2,6 +2,10 @@
 
 Bamboo Twig. A Drupal 8 powered module.
 
+|       Travis-CI        |        Style-CI         |        Downloads        |         Releases         |
+|:----------------------:|:-----------------------:|:-----------------------:|:------------------------:|
+| [![Travis](https://img.shields.io/travis/antistatique/drupal-bamboo-twig.svg?style=flat-square)](https://travis-ci.org/antistatique/drupal-bamboo-twig) | [![StyleCI](https://styleci.io/repos/85471768/shield)](https://styleci.io/repos/85471768) | [![Downloads](https://img.shields.io/badge/downloads-8.x--3.1-green.svg?style=flat-square)](https://ftp.drupal.org/files/projects/bamboo_twig-8.x-3.1.tar.gz) | [![Latest Stable Version](https://img.shields.io/badge/release-v3.1-blue.svg?style=flat-square)](https://www.drupal.org/project/bamboo_twig/releases) |
+
 The Bamboo Twig module provides some Twig extensions with some useful functions
 and filters aimed to improve the development experience.
 
@@ -273,8 +277,8 @@ The `bamboo_render_field` function returns a render array of an entity field.
 - `field_name` string
 - `entity_type` string
 - `id` int (optional)
-- `view_mode` string - defaults to "default"
-- `langcode` string - defaults to current language
+- `langcode` string (optional) - defaults to current language
+- `formatter` string (optional) - The formatter that should be used to render the field
 
 ```twig
 {# Render the title of node 1  #}
