@@ -1,0 +1,30 @@
+la_appointment.form:
+  path: '/contact/appointment/form'
+  defaults:
+    _title: 'Case Filing & Clearing Appointment System'
+    _form: '\Drupal\la_appointment\Form\LaAppointmentForm'
+  requirements:
+    _permission: 'access content'
+
+la_appointment.admin_lis:
+  path: '/admin/appointments'
+  defaults:
+    _title: 'Appointment List'
+    _controller: 'Drupal\la_appointment\Controller\LaAppointmentController::content'
+  requirements:
+    _permission: 'administer users'
+
+la_appointment.admin_status:
+    path: '/admin/appointments/{id}'
+    defaults:
+        _tile: 'Appointment - Update Status'
+        _controller: '\Drupal\la_appointment\Controller\LaAppointmentController::updateStatus'
+    requirements:
+        _permission: 'administer users'
+
+la_appointment.admin_del:
+    path: '/admin/appointments/del/{id}'
+    defaults:
+        _controller: '\Drupal\la_appointment\Controller\LaAppointmentController::deleteRecord'
+    requirements:
+        _permission: 'administer users'

@@ -1,0 +1,12 @@
+la_api.negativedeclaration:
+  path: 'rest/api/negativedeclaration/{year}/{page}/{post_per_page}'
+  defaults:
+    _controller: '\Drupal\la_api\Controller\DefaultController::getNegativeDeclaration'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+    year: '^\d{4}$'
+    page: '^[0-9]+'
+    post_per_page: '^[0-9]+'
+    
+    

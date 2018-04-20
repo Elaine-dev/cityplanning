@@ -1,0 +1,67 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+    {# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+    <!-- contain -->
+    <div class="container" id="main-container">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12"> <h1>{{ node.label }}</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row padding-left0">
+                    <div class="col-md-12">
+                    	<p>In addition to regularly scheduled Commission meetings, the Department holds public events in order to hear
+                    	from interested groups prior to formulating a final determination or recommendation for a project or policy. </p>
+
+                    	<div class="row cal-section">
+                			<div class="col-md-12">
+                				<div class="row">
+                					<div class="col-md-12"><div id='loading'>loading...</div></div>
+                				</div>
+                				<div class="row">
+                					<div id='calendar'></div>
+            					</div>
+                			</div>
+                		</div>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-md-12">
+                		<img src="{{ theme_base_path }}/images/p-hearing.jpg" class="img-responsive paddingtop15" alt="access public hearing information"  />
+                	</div>
+                </div>
+            </div>
+            
+            {# Right-side bar #}
+            <div class="col-md-3 sidebar-menu padding-right-27 visible-lg-block">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
+        </div>
+    </div>{# End container #}
+
+
+    <div class="container white--bg visible-xs-block visible-sm-block">
+    	<div class="row">
+    		{# Right-side bar #}
+            <div class="col-md-12 sidebar-menu">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
+    	</div>
+    </div>
+
+
+    <!-- footer section -->
+    {{ attach_library ('cpv3/calendar-detail') }}
+    {% include directory ~ '/partials/footer.html.twig' %}

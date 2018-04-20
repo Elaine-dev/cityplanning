@@ -1,0 +1,8 @@
+name: Side menu block
+description: 'Display active menu sub-menu in a specified block; called sidemenu.'
+package: Custom
+type: module
+version: 1.0
+core: 8.x
+dependencies: 
+  - block

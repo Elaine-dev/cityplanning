@@ -1,0 +1,21 @@
+{% set image_url %}
+    {{content.field_background_image }}
+{% endset %}
+<div class="section-content clear" id="bgimage-title-buttons">
+    <div class="button-wrapper" 
+    		style="
+    			background: url({{ image_url|striptags }}) no-repeat center; 
+    			-webkit-background-size: cover;
+    			-moz-background-size: cover;
+    			-o-background-size: cover;
+    			background-size: cover; 
+    			height: 50%;">
+        <div class="center-content">
+            {% if content.field_title is not empty %}
+                <h6 class="button-title">{{ content.field_title }}</h6>
+            {% endif %}
+            {{ content.field_button }}
+            
+        </div>
+    </div>
+</div>

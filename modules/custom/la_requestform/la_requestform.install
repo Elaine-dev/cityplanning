@@ -1,0 +1,132 @@
+<?php 
+/**
+ * Created : Oct 16, 2017
+ * Developer: Humbal
+ *
+ * @filesource
+ * Install, update and unistall functions for the appointment module.
+ */
+
+function la_requestform_schema () {
+    $schema['requestform'] = [
+        'description' => 'Store record of request form',
+        'fields' => [
+            'nid' => array(
+                'description' => 'The primary identifier for a node.',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ),
+            'project_address' => [
+                'description' => 'Project address',
+                'type' => 'varchar',
+                'length' => 256,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'contact_name' => [
+                'description' => 'Contact name',
+                'type' => 'varchar',
+                'length' => 100,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+           'contact_email' => [
+                'description' => 'Email address',
+                'type' => 'varchar',
+                'length' => 50,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+           'contact_tel' => [
+                'description' => 'Telephone number',
+                'type' => 'varchar',
+                'length' => 10,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+           'comments' => [
+                'description' => 'Comment.',
+                'type' => 'text',
+                'size' => 'big',
+                'not null' => TRUE,
+            ],
+            'pre_application_form' => [
+                'description' => 'Full path of the Preapplication Form',
+                'type' => 'text',
+                'size' => 'big',
+            ],
+            'department_city_planning_application' => [
+                'description' => 'Full path of the City Planning Application Form',
+                'type' => 'text',
+                'size' => 'big',
+            ], 
+            
+            'application_signer' => [
+                'description' => 'Type of application signer. Owner, Applicant,Representative',
+                'type' => 'varchar',
+                'length' => 32,
+            ],
+            'signature' => [
+                'description' => 'Name of signatory',
+                'type' => 'varchar',
+                'length' => 256,
+            ],
+            'ownership_authority_doc' => [
+                'description' => 'Path of necessary documents to establish ownership/lessee authority',
+                'type' => 'text',
+                'size' => 'big',
+            ],
+            'environmental_documentation' => [
+                'description' => 'Path of Environmental Documentation.',
+                'type' => 'text',
+                'size' => 'big',
+            ],
+            'plot_plan' => [
+                'description' => 'Path of Plot  Plan.',
+                'type' => 'text',
+                'size' => 'big',
+            ],
+            'floor_plan' => [
+                'description' => 'Path of Floor  Plan.',
+                'type' => 'text',
+                'size' => 'big',
+            ],
+            
+            'created' => [
+                'description' => 'Record created time.',
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0,
+            ],
+            'status' => [
+                'description' => 'Record status.',
+                'type' => 'int',
+                'not null' => TRUE,
+                'default' => 0,
+            ],
+        ],
+            
+        'primary key' => ['nid'],
+       
+    ];
+    
+    return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function la_requestform_install() {
+    // Create thestyles directory and ensure it's writable
+    $directory = file_default_scheme() . '://styles';
+    file_prepare_directory($directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function la_requestform_uninstall() {
+    // Remove the styles directory and generated images.
+    file_unmanaged_delete_recursive(file_default_scheme()) . '://styles';
+}

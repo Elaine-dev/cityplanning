@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-offset-3 text-center">
+            <div class="row">
+            {% if items|length == 1 %}
+                {% set class = 'col-lg-offset-3 text-center' %}
+                {% elseif items|length > 2 %}
+                {% set class = 'margin-bottom' %}
+            {% endif %}
+            {% for item in items %}
+                <div class="col-lg-6 {{ class }}">
+                    <a href="{{ item.content['#url'].getUri() }}" class="button">{{ item.content['#title'] }}</a>
+                </div>
+                {% if loop.index is divisible by(2) %}
+                    </div>
+                    <div class="row">
+                {% endif %}
+            {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

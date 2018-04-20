@@ -1,0 +1,11 @@
+<?php 
+
+function la_publication_slider_theme ( $existing, $type, $theme, $path ) {
+    return ['la_publ_slider' => [
+            'variables' => [
+                'data'=> NULL
+            ],
+            'template' => 'page--publication-slider'
+        ],
+    ];
+}

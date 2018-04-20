@@ -1,0 +1,31 @@
+# Date: Oct 26, 2017
+name: City Planning 4.0
+type: theme
+description: 'This is v4 theme build using bootstrap framework. The design is clean and sleek.'
+core: 8.x
+libraries:
+  - cpv3/global-styling
+  - cpv3/fonts
+
+libraries-override:
+  system/base: false
+
+regions:
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  title_bar: 'Title Bar Block'
+  top_banner: 'Top banner'
+  breadcrumb: Breadcrumb
+  side_menu: 'Side Menu'
+  slider: 'Slider'
+  content: Content
+  block_upcoming_meetings: 'Upcoming Meetings'
+  block_upcoming_hearings: 'Upcoming Hearings'
+  block_latest_news: 'Latest News'
+  negative_declaration_notices: 'Negative Declaration Block'
+  block_eir: 'EIR Block'
+  newsletter_year: 'Newsletter - Archive'
+  pub_slider: 'Publication Slider'
+  footer: 'Footer'
+settings:
+  footer_message: '2017 Copyright, City of Los Angeles Department of City Planning.'

@@ -1,0 +1,4 @@
+{% for item in items %}
+    {% set link = item.content['#url'].getUri() %}
+    {{ link }}
+{% endfor %}

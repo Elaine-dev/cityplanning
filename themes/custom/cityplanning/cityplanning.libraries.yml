@@ -1,0 +1,128 @@
+global-styling:
+  version: 8.4
+  css:
+    base:
+      css/bootstrap.min.css: {}
+      css/normalize.css: {}
+      css/style.css: {}
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: {}
+  js:
+    https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js: {}
+    https://code.jquery.com/ui/1.12.1/jquery-ui.min.js: {}
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js: {}
+    js/ie-emulation-ie10-viewport.js: {}
+    js/script.js: {}
+    js/main.js: {}
+    https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js: {}
+    # los angeles top bar
+    https://globalnav.lacity.org/global_nav_2.0.js: {}
+
+  # dependencies:
+  #  - core/jquery
+
+angular-js:
+  js:
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js: {}
+    https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js: {}
+
+front-page:
+  version: 8.4
+  css:
+    component:
+      css/banner-bootsrap.css: {}
+  js:
+    js/modernizr.js: {}
+    # animate number
+    js/jquery.inview.js: {}
+    js/api/app.js: {}
+    js/api/homeCtrl.js: {}
+
+about-page:
+  version: VERSION
+  js:
+    # api
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js: {}
+    https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js: {}
+    # bootstrap ui
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js: {}
+    js/api/app.js: {}
+    js/api/agendaService.js: {}
+    js/api/agendaCtrl.js: {}
+    js/api/hearingsCtrl.js: {}
+
+calendar-page:
+  version: VERSION
+  css:
+    theme:
+      css/calendar/fullcalendar.css: {}
+      css/calendar/fullcalendar.print.min.css: {}
+  js:
+    js/calendar/moment.min.js: {}
+    js/calendar/fullcalendar.js: {}
+    js/calendar/dcp-calendar.js: {}
+
+calendar-detail:
+  version: VERSION
+  css:
+    theme:
+      css/calendar/fullcalendar.css: {}
+      css/calendar/fullcalendar.print.min.css: {}
+  js:
+    js/calendar/moment.min.js: {}
+    js/calendar/fullcalendar.js: {}
+    js/calendar/dcp-calendar-detail.js: {}
+
+negative-declaration-page:
+  version: VERSION
+  js:
+    js/api/negativeDeclarationCtrl.js: {}
+
+eir-js:
+  js:
+    'js/api/eirCtrl.js': {}
+
+case-search-js:
+  js:
+    'js/api/app.js': {}
+
+bi-weekly-case-filing:
+  version: VERSION
+  js:
+    js/api/app.js: {}
+    js/api/biweeklyCaseReportService.js: {}
+    js/api/biweeklyCaseReportCtrl.js: {}
+
+community-plan-areas:
+  version: VERSION
+  css:
+    theme:
+      css/communities.css: {}
+      https://js.arcgis.com/3.20/esri/css/esri.css: {}
+      https://js.arcgis.com/3.20/esri/css/esri.css: {}
+  js:
+    https://js.arcgis.com/3.20: {}
+    http://code.jquery.com/jquery-latest.min.js: {}
+    js/communities.js: {}
+
+maps-geographies-js:
+  version: VERSION
+  js:
+    js/resources/source/main.js: {}
+    js/resources/source/controllers/handleCtrl.js: {}
+    js/resources/source/controllers/nodeCtrl.js: {}
+    js/resources/source/controllers/nodesCtrl.js: {}
+    js/resources/source/controllers/treeCtrl.js: {}
+    js/resources/source/directives/uiTree.js: {}
+    js/resources/source/directives/uiTreeHandle.js: {}
+    js/resources/source/directives/uiTreeNode.js: {}
+    js/resources/source/directives/uiTreeNodes.js: {}
+    js/resources/source/services/helper.js: {}
+    js/resources/js/app.js: {}
+    js/resources/js/maps-geographies.js: {}
