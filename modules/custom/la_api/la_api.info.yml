@@ -1,5 +1,0 @@
-name: API for Planning
-description: 'Custom API for Department of Planning.'
-type: module
-package: Custom
-core: 8.x

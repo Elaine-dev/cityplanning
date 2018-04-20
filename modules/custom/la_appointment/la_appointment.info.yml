@@ -1,5 +1,0 @@
-name: LA Appointment System
-description: "Development Services Center, Case Filling & Case Condition CLearing Appointment System."
-core: 8.x
-package: Custom
-type: module

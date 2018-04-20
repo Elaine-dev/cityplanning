@@ -1,8 +1,0 @@
-la_negativedeclaration.create-json:
-  path: /create-json
-  defaults:
-    _controller: '\Drupal\la_negativedeclaration\Controller\DefaultController::createJSON'
-    _title: 'Create JSON File'
-  requirements:
-    _user_is_logged_in: 'TRUE'
-    _permission: 'access content'

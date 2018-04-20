@@ -1,8 +1,0 @@
-la_admin_menu.add_type_link:
-  route_name: node.add
-  title: 'Add New Content'
-  route_parameters:
-    node_type: 'article'
-  class: \Drupal\admin_custom_menu\Plugin\Menu\LocalAction\MenuLinkAdd
-  appears_on:
-    - view.admin_content_list_commission_hearing_.page_1

@@ -1,7 +1,0 @@
-name: Negative Declaration Public Notices
-description: 'Custom module to manage Negative Declaration Public Notices.'
-type: module
-package: Custom
-core: 8.x
-dependencies:
-  - block

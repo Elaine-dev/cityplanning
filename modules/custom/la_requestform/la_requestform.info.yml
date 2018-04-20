@@ -1,5 +1,0 @@
-name: 'LA Beverage & Entertainment Process Request Form'
-description: 'Manage request forms (Pre-application request and Clearance/EFFFCTUA Request)'
-type: module
-package: Custom
-core: 8.x
