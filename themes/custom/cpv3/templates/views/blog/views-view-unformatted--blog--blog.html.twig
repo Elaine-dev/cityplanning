@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+
+<div class="row" id="blog-social-media">
+    	<div class="col-md-8 padding-left0">
+    		<p class="lead">Follow the Department on social media <a href="https://twitter.com/Planning4LA" rel="nofollow" target="_blank">@Planning4LA</a></p>
+    	</div>
+        <div class="col-md-4" id="blog-buttons">
+        	<button type="button" class="btn btn-white btn-circle">
+          		<a href="https://www.facebook.com/Planning4LA/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+      		</button>
+          	&nbsp;&nbsp; 
+          	<button type="button" class="btn btn-white btn-circle">
+          		<a href="https://www.instagram.com/planning4la/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+      		</button>
+          	&nbsp;&nbsp;
+          	<button type="button" class="btn btn-white btn-circle">
+          		<a href="https://twitter.com/Planning4LA" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+      		</button>
+          	&nbsp;&nbsp;
+          	<button type="button" class="btn btn-white btn-circle">
+          		<a href="https://www.youtube.com/channel/UChl2PmRhAzUf158o0vZjnHw/videos"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
+      		</button>
+        </div>
+</div>
+
+<hr id="hr-blog-top" />
+
+{% for row in rows %}
+  {%
+    set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{ row.content }}
+  </div>
+{% endfor %}

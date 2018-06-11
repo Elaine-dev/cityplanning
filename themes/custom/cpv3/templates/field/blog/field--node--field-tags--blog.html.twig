@@ -1,0 +1,17 @@
+<style>
+.st-btn[data-network='sharethis'] {
+    background-color: #95D03A !important;
+}
+</style>
+<div class="blog-tags">
+	<hr />
+	<ul class="list-inline">
+	{% for item in items %}
+		<li>{{ item.content }}</li>
+	{% endfor %}
+		<div class="sharethis-inline-share-buttons" style="padding-top: 30px;"></div>
+	</ul>
+	<hr style="height:1px;" />
+</div>
+
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5ac5284b1243c10013440d04&product=inline-share-buttons' async='async'></script>
