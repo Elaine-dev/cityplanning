@@ -36,7 +36,7 @@ function import_csv_file($row, &$context) {
             $field_collection_sub_notice->set('field_publication', $item['field_publication']);
             $node->save();
         }
-    } catch(Expection $e) {
+    } catch(Exception $e) {
 
     }
 

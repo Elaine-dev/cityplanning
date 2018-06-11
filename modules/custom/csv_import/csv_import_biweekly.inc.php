@@ -21,7 +21,7 @@ function import_csv_file ($row, &$context) {
         );
         
         $node->save();
-    } catch(Expection $e) {
+    } catch(Exception $e) {
 
     }
 

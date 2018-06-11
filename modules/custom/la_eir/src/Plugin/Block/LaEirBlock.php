@@ -97,7 +97,7 @@ class LaEirBlock extends BlockBase
         fclose($fp);
 
         return [
-                '#markup' => ' ',
+            '#markup' => ' ',
         ];
     }
 
