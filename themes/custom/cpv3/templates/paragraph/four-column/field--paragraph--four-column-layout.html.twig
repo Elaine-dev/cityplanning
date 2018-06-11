@@ -1,6 +1,0 @@
-{% set class = ['padding-left-0','','','padding-right-0'] %}
-<div class="four-cols">
-{% for item in items %}
-    <div class="col-md-3 content-col-4 white--bg {{ class[(loop.index0)] }}" {{ item.attributes }}>{{ item.content }}</div>
-{% endfor %}
-</div>
