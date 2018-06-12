@@ -5,7 +5,7 @@ $(document).ready(function() {
 			center: 'title',
 			right: 'month, basicWeek, today'
 		},
-		
+
 		defaultDate: $.now(),
 	    //navLinks: true, // can click day/week names to navigate views
     	eventLimit: true, // allow "more" link when too many events
@@ -19,15 +19,19 @@ $(document).ready(function() {
     	loading: function(bool) {
     		$('#loading').toggle(bool);
     	},
-    	eventRender: function (event, element) {
-    		element
-				.attr('title', event.description + ' | ' + event.caseNumber)
-				.tooltip();
-		},
+      eventRender: function(eventObj, $el) {
+        $el.popover({
+            title: eventObj.title,
+            content: eventObj.description + " | " + eventObj.caseNumber,
+            trigger: 'hover',
+            placement: 'top',
+            container: 'body'
+        }),
+      },
     });
 	$('.fc-event').css('font-size', '1.35em');
 	$('.fc-event').css('white-space', 'nowrap');
-	
+
 	//calendar
 	$("#ci-hearing").on('click', function() {
 		$('.hearing').toggle();
@@ -41,6 +45,6 @@ $(document).ready(function() {
 		$('.apc').toggle();
 		$('#a').toggleClass('cal-apc-disable');
 	});
-	
+
 	$('.fc-scroller').css('overflow','visible');
 });
