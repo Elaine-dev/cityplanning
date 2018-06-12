@@ -20,14 +20,14 @@ $(document).ready(function() {
     		$('#loading').toggle(bool);
     	},
       eventRender: function(eventObj, $el) {
-        $el.popover({
-            title: eventObj.title,
-            content: eventObj.description + " | " + eventObj.caseNumber,
-            trigger: 'hover',
-            placement: 'top',
-            container: 'body'
-        }),
-      },
+    		$el.popover({
+		        title: eventObj.title,
+		        content: eventObj.description + " | " + eventObj.caseNumber,
+		        trigger: 'hover',
+		        placement: 'top',
+		        container: 'body'
+	      });
+    	},
     });
 	$('.fc-event').css('font-size', '1.35em');
 	$('.fc-event').css('white-space', 'nowrap');
