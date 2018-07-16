@@ -1,0 +1,50 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				<div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+	<style>
+    	iframe #headerDesktop{visibility: hidden !important; height: 0 !important;}
+    	.text-align-center{text-align: center;}
+    	.sub-heading{font-weight: bold;}
+    	@media screen and (min-width: 1200px) {
+			#main-container {top: 160px;} 
+			.sub-heading{margin-top: -9.2em; padding-left: 17%;}
+			.des{ margin-top: 20px;}
+		}
+		
+		@media screen and (min-width: 1682px) {
+			#main-container {top: 290px;} 
+			.sub-heading{padding-left: 28.3%; margin-top: 0;}
+			.des{ margin-top: 35px;}
+		}
+    </style>
+    
+   	<!-- contain -->
+    <div class="container" id="main-container">
+    	<div class="row">
+			<div class="col-md-12">{{ page.title_bar }}</div>
+    	</div>
+	</div>
+	
+    <div class="container-fluid">
+    	<div class="row">
+        	<div class="col-md-12" style="padding-left: 0px; padding-right: 0px;">
+            	<div class="row padding-left0">
+                	<div class="col-md-12">
+                		{{ page.content }}
+                	</div>
+            	</div>
+        	</div>
+		</div>
+	</div> <!-- // End .container-fluid -->
+    
+    <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}

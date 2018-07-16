@@ -76,7 +76,7 @@
 		                        		<li class="divider"></li>
 		            					<li><a href="{{ base_path }}zoning/zoning-code">Zoning Code</a></li>
 		            					<li><a href="{{ base_path }}zoning/zoning-map">Zoning Map (ZIMAS)</a></li>
-		            					<li><a href="#">FAQS</a></li>
+		            					<li><a href="{{ base_path }}zoning/faq">FAQS</a></li>
 
 		                        	</ul>
 		                        </li>
@@ -92,7 +92,7 @@
 		            					<li><a href="{{ base_path }}projects/land-use-process">Land Use Process</a></li>
 		            					<li><a href="{{ base_path }}projects/public-counters">Services</a></li>
 		            					<li><a href="{{ base_path }}projects/ceqa-environmental-review">Environmental Review</a></li>
-		            					<li><a href="#">Environmental Impact Report</a></li>
+		            					<li><a href="{{ base_path }}projects/eir">Environmental Impact Report</a></li>
 		            					<li><a href="#">Expedited Processing Services</a></li>
 		                        	</ul>
 		                        </li>
@@ -127,7 +127,7 @@
 		                        	<ul>
 		                        		<li class="divider"></li>
 		            					<li><a href="{{ base_path }}policies/general-plan-overview">General Plan</a></li>
-										<li><a href="https://www.ourla2040.org" target="_blank">General Plan Updates</a></li>
+										<li><a href="{{ base_path }}policies/general-plan-updates">General Plan Updates</a></li>
 		                        	</ul>
 		                        </li>
 
@@ -135,7 +135,7 @@
 		                        	<h3 class="dropdown-header">Community Plans</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-										<li><a href="#">Community Plans</a></li>
+										<li><a href="{{ base_path }}policies/community-plans">Community Plans</a></li>
 										<li><a href="#">Community Plan Updates</a></li>
 										<li><a href="#">Overlays</a></li>
 		                        	</ul>
@@ -228,7 +228,7 @@
 		                        	<h3 class="dropdown-header">Media Relations</h3>
 		                            <ul>
 		                              	<li class="divider"></li>
-		                                <li><a href="{{ base_path }}media/media-information">Media Relations</a></li>
+		                                <li><a href="{{ base_path }}contact/media-information">Media Relations</a></li>
 		                            </ul>
 		                      	</li>
 		                  	</ul>
@@ -245,7 +245,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					
-					<form action="/ladcp/search/node" method="get" id="search-block-form" accept-charset="utf-8">
+					<form action="/search/node" method="get" id="search-block-form" accept-charset="utf-8">
         				<div class="input-group padding-top5">
         	      			<input style="border: transparent;" class="form-control" title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search"
                 	      			id="edit-keys--2" name="keys" value="" size="15" maxlength="128" placeholder="search for ...">

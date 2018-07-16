@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2018.06.13
-version: 4.3.6
+Update Date: 2018.07.11
+version: 4.3.8
 *********************/
 
 body {
@@ -37,6 +37,7 @@ q:before, q:after { content: ''; content: none; }
 .white--bg {background-color: #ffffff;}
 .padding-top2em{padding-top:2em;}
 .white{color:#fff;}
+.padding-top0{padding-top: 0px;}
 .padding-top5{padding-top: 5px;}
 .paddingtop10{padding-top: 10px;}
 .paddingtop13{padding-top: 13px !important;}
@@ -69,7 +70,8 @@ q:before, q:after { content: ''; content: none; }
 .left-6{left: 6px;}
 .left-12{left: 12px;}
 .line { border-bottom: 0.5px solid #939598; padding-top:5px !important;}
-.dot-line {border-bottom: 0.5px dotted #939598; padding:5px !important;}
+.dot-line {border-bottom: 0.5px dotted #939598;}
+#dot-line{padding-top: 15px; padding-bottom: 20px;}
 
 /*** paragraph ***/
 #cms-content a {color: #009fe3 !important;}
@@ -98,6 +100,7 @@ q:before, q:after { content: ''; content: none; }
 .Saffron-Mango{color: #fff; background-color: #fab34f; border-color: #fbae42;}
 .Saffron-Mango:hover{color: #fff; background-color: #f8ac40; border-color: #fbae42;}
 mark{background-color: #ff9 !important;}
+.cms-fullwidth{padding-bottom: 80px;}
 
 .center-content {
     position: relative;
@@ -203,8 +206,8 @@ mark{background-color: #ff9 !important;}
 .slide-text{min-height:500px !important; max-height: 500px;}
 
 /** color boxes  **/
-.planning-tag{padding-left: 2em;}
-_:-moz-tree-row(hover), .planning-tag{padding-left: 2em;}
+.planning-tag{margin-left: -30;}
+_:-moz-tree-row(hover), .planning-tag{margin-left: -30;}
 #map-promote-preserve-wrapper{padding-left: 0px; padding-right: 0px; right: 5px; height: 64px;}
 #our-mission-wrapper{padding-right: 0px; height: 64px;}
 #blank-wrapper{padding-right: 0px; left: 5px; height: 64px;}
@@ -249,25 +252,7 @@ _:-moz-tree-row(hover), .planning-tag{padding-left: 2em;}
 	min-height: 560px;
 }
 
-/** Masonary Social media
-.box{
-	position: relative;
-  	overflow: hidden;
-  	height: 318px;
-  	border:1px solid #ffffff;
-	border-radius:0px;
-}
-.pad-left-right{padding-left: 0; padding-right: 0;}
-.social-description { position: absolute !important; top: 0px; left: 0; width: 100%; height: 100%; color: #fff; padding: 20px; overflow: hidden; }
-.social-description a {color: #fff !important;}
-.social-description p:hover{text-decoration: underline;}
-.transparent-box{top: 220px; padding: 10px 10px 0 10px; width: 100%; background-color: rgba(0,0,0,0.5); bottom: 0px; position: absolute; left: 0;}
-.facebook-bg{background-color: #193358; min-height: 168px; }
-.twitter-bg{background-color: #27a6dd; min-height: 168px;}
-.youtube-bg{background-color: #f4901e; min-height: 168px;}
-.instagram-bg{background-color: #6b4ba0; min-height: 168px;}
-**/
-
+/** Masonary Social media **/
 .masonry-column { padding: 0 1px; }
 .masonry-grid .thumbnail{
 	padding: 0;
@@ -373,7 +358,7 @@ article img{padding-top:0; padding-bottom: 15px;}
 
 .info-bg-color-2{background: #0b2d4c; position: relative; margin-bottom: 15px;}
 .fullpage-image-title{text-align: center; padding-top: 15px; padding-bottom: 15px;}
-.full-width-content{background: #fff !important; position: relative; z-index: 5000; margin-top: 50px; margin: -50px 0 120px 0;}
+.full-width-content{background: #fff !important; position: relative; z-index: 5000; margin: -50px 0 80px 0;}
 .inner-container {margin-top: 16px; padding: 40px; background-color: #fff; position: relative;}
 .block-quote{padding:40px; color: #3a5a99; font-size: 25px;}
 #container-inner{background-color:#fff; position:relative; padding-bottom: 100px;}
@@ -422,10 +407,6 @@ article img{padding-top:0; padding-bottom: 15px;}
     background-repeat: no-repeat;
 }
 
-/* 
-#apc .panel{border: 0;}
-#apc .panel-group .panel{margin-bottom: 0; border-radius: 0;} 
-*/
 .commissions-tab-pane{padding-top: 5px !important;}
 
 /** Tab panel **/
@@ -451,7 +432,7 @@ article img{padding-top:0; padding-bottom: 15px;}
 	transform: rotate(180deg);
 }
 
-/*** search  ***/
+/*** Search  ***/
 .animate {
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -470,7 +451,18 @@ article img{padding-top:0; padding-bottom: 15px;}
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
+#search .panel .panel-heading {padding: 10px; font-weight: 700;}
+#search p{padding-bottom: 0 !important;}
+#search .panel-body{padding-top: 0px; padding-bottom: 0px;}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+}
 
+.pagination>.active>a {
+    background-color: #eee !important;
+    border-color: #ccc !important;
+    font-weight: bold;
+}
 
 /***** Staff Directory ********/
 .list-group address{margin-top: 20px;}
@@ -696,6 +688,29 @@ ul#list-horizontal li {
 /* Public counter */
 #map-2 { display: none;}
 #map-3 { display: none;}
+
+/* Pagination - ordinances */
+#a-pagination .pagination>.active>a {
+	background-color: #ccc;
+	border-color: #ccc;
+	font-weight: bold;
+}
+
+/** sub heading and title box **/
+
+.sub-heading{font-weight: bold;}
+@media screen and (min-width: 1200px) {
+	#main-container {top: 160px;} 
+	.sub-heading{padding-left: 0%; margin-top: -5; }
+	.iframe-wrapper{margin-top: -115px;}
+}
+
+@media screen and (min-width: 1682px) {
+	#main-container {top: 300px;} 
+	.sub-heading{padding-left: 0%; margin-top: 0;}
+	.iframe-wrapper{margin-top: 20px;}
+	.planning-tag {margin-left: 9em !important;}
+}
 
 /*-->> **************** Media Query *****************/
 

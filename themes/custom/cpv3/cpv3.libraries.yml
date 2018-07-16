@@ -130,3 +130,13 @@ staff-directory:
   version: 1.0
   js:
     js/api/staffDirectories.js: {}
+
+adopted-ordinances:
+  version: 1.0
+  js:
+    js/api/adoptedOrdinances.js: {}
+
+proposed-ordinances:
+  version: 1.0
+  js:
+    js/api/proposedOrdinances.js: {}

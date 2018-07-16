@@ -1,0 +1,6 @@
+name: Homepage Main Slider
+description: Manage homepage slider
+core: 8.x
+package: Custom
+type: module
+version: 1.0

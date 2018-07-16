@@ -16,7 +16,7 @@
     <div class="row">
 		<div class="col-md-12"> <h1>{{ node.label }}</h1></div>
     </div>
-    
+
     <div class="row">
         <!--  Left-side bar  -->
         <div class="col-md-9" id="cms-content">
@@ -25,16 +25,16 @@
                     {% if node.field_intro_content.value %}
                     	<div id="intro-text">{{ node.field_intro_content.value|striptags }}</div>
                     {% endif %}
-                    
+
                     {% set full_width_data = [] %}
                     {% set small_width_data = [] %}
                     {% set break = true %}
                     {% for parag_id in node.field_content_section.value %}
                         {% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
-                        {% if data['#paragraph'].hasField('field_full_width_image') or 
-                        	data['#paragraph'].hasField('field_bg_image') or 
-                        	data['#paragraph'].hasField('field_button') or 
-                        	data['#paragraph'].hasField('field_fullwidth_body')  
+                        {% if data['#paragraph'].hasField('field_full_width_image') or
+                        	data['#paragraph'].hasField('field_bg_image') or
+                        	data['#paragraph'].hasField('field_button') or
+                        	data['#paragraph'].hasField('field_fullwidth_body')
                        	%}
                             {% set full_width_data = full_width_data|merge({(loop.index0):{'para_id':parag_id['target_id'],'flag':true}}) %}
                             {% set break = false %}
@@ -64,23 +64,25 @@
     </div>
 </div>	<!-- //End container -->
 
-<div class="full-width-content">
-    {% for item in full_width_data %}
-        {% if item.flag %}
-            {#full width content goes here#}
-            {{ bamboo_render_entity('paragraph', item.para_id) }}
-        {% else %}
-            {#small width content goes here#}
-            <div class="container">
-                <div class="row">
-                    <div class="section-content clear">
-                        {{ bamboo_render_entity('paragraph', item.para_id) }}
-                    </div>
+
+{% for item in full_width_data %}
+    {% if item.flag %}
+    <div class="full-width-content">
+        {# full width content goes here #}
+        {{ bamboo_render_entity('paragraph', item.para_id) }}
+    </div>
+    {% else %}
+        {# small width content goes here #}
+        <div class="container">
+            <div class="row cms-fullwidth">
+                <div class="section-content clear">
+                    {{ bamboo_render_entity('paragraph', item.para_id) }}
                 </div>
             </div>
-        {% endif %}
-    {% endfor %}
-</div>
+        </div>
+    {% endif %}
+{% endfor %}
+
 
 <!-- footer section -->
 {% include directory ~ '/partials/footer.html.twig' %}

@@ -1,0 +1,10 @@
+<?php 
+function la_slider_theme ( $existing, $type, $theme, $path ) {
+    return ['la_slider' => [
+            'variables' => [
+                'data'=> NULL
+            ],
+            'template' => 'page--slider-homepage'
+        ],
+    ];
+}

@@ -17,7 +17,7 @@
             		<div class="col-md-12"><h1 class="visibility: visible;">Search for {[{searchQuery}]}</h1></div>
             </div>
             <div class="row">
-            	<div class="col-md-12" id="page2">
+            	<div class="col-md-12" id="search">
             		<!-- 
                 	<div class="row padding-left0">
             			<div class="col-md-12">
@@ -27,18 +27,39 @@
                     </div>
                      -->
                      
+                 	<div class="row">
+						<div class="col-md-12">
+							<div ng-disabled="enable=='false'">
+               					<center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+               				</div>
+						</div>
+					</div>
+                     
                     <div class="row ">
-                		<div class="col-md-12">
+                		<div class="col-md-12 padding-left0 padding-right0" >
             				<div ng-if="results.length > 0" class="paddingtop25">
                                 <ul style="padding-left: 0; margin-top: 20px;">
-                                    <li class="paddingtop15" ng-repeat="item in results | filter:searchFilter | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
-                                    	<span ng-if="item.link != ''">
-                                    		<a href="{[{ item.link }]}" target="_blank"><span ng-bind-html="item.title"></span></a>
-                                    	</span>
-                                    	<span ng-if="item.link == ''">
-                                    		<a href="#"><span ng-bind-html="item.title"></span></a>
-                                    	</span>
-                                        <div class="dot-line"></div>
+                                    <li class="paddingtop15" ng-repeat="section in results | filter:searchFilter | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
+										
+										<div class="panel panel-default">
+									  		<div class="panel-heading">{[{ section.title }]}</div>
+										  	
+										  	<div ng-if="section.type !='message'">
+											  	<div class="panel-body" ng-repeat="item in section.items">
+											    	<a href="{[{ item.url }]}" target="_blank"><h6 ng-bind-html="item.heading"></h6></a>
+											    	<span ng-bind-html="item.subHeading"></span>
+											    	<p ng-bind-html="item.body"></p>
+											  	</div>
+										  	</div>
+										  	
+										  	<div ng-if="section.type =='message'">
+											  	<div class="panel-body">
+											    	<p>{[{ section.body }]}</p>
+											  	</div>
+										  	</div>
+										  	
+										</div>	
+										
                                     </li>
                                     
                                 </ul>

@@ -7,21 +7,30 @@ myApp.config(function($interpolateProvider,$sceProvider) {
 myApp.controller('MainCtrl', function($scope, $http, $timeout, filterFilter){
     $scope.pageSize = 10;
     $scope.currentPage = 1;
+    $scope.enable = "false";
+    $scope.loadingText = "Loading ...";
 
-    var q = getUrlVars()['keys'];
+    var queryString = getUrlVars()['keys'];
+    var formattedQueryString = queryString.replace(/\+/g, " ");		// replace + with space
+
     var self = this;
-    $scope.searchQuery = q;
-    if (typeof q != 'undefined') {
+    $scope.searchQuery = formattedQueryString;
+    if (typeof formattedQueryString != 'undefined') {
         $scope.searching = true;
         $scope.showResult = false;
-        $http.get('http://161.149.221.142/dcpapi/general/search/'+q).then(function(posts){
+        $http.get('http://161.149.221.142/dcpapi/general/search/results/'+formattedQueryString).then(function(posts) {
             $scope.posts = posts.data;
-            $scope.results = $scope.posts.results;
-            self.data = $scope.posts.results;
-            $scope.data = $scope.posts.results;
+            $scope.results = $scope.posts.sections;
+            self.data = $scope.posts.sections;
+            $scope.data = $scope.posts.sections;
             $scope.searching = false;
             $scope.showResult = true;
-            $scope.total = $scope.posts.results.length;
+            $scope.total = $scope.posts.sections.length;
+
+            $timeout(function(){
+	            $scope.enable = "true";
+	           $scope.loadingText = "";
+	        }, 2000);
         })
     }
 
@@ -38,10 +47,10 @@ myApp.controller('MainCtrl', function($scope, $http, $timeout, filterFilter){
 });
 
 myApp.filter('startFrom', function() {
-    return function(data, start){
-        start = 0 + start;
-        //console.log(data);
-        return data.slice(start);
+    return function(input, start){
+        if (!input || !input.length) { return; }
+        start = +start; //parse to int
+        return input.slice(start);
     }
 });
 

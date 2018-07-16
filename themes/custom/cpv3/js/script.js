@@ -1,5 +1,5 @@
 /*!
- * jQuery JavaScript Custom Library v1.1
+ * jQuery JavaScript Custom Library v2.0
  */
 jQuery(document).ready(function(){
 	//Function to animate slider captions
@@ -49,43 +49,7 @@ jQuery(document).ready(function(){
     jQuery('#bootstrap-touch-slider').bsTouchSlider();
     // END Bootstrap slider
 
-    // ### Infograph ###
-    jQuery('.infograph-heading').one('inview', function(event, visible) {
-    	if (visible == true ){
-    		var comma_separator_number_step = jQuery.animateNumber.numberStepFactories.separator(',')
-    		jQuery('#ic-1').animateNumber(
-    			{
-    				number: 4119,
-    				numberStep: comma_separator_number_step
-				},
-    			2000
-    		);
-    	    jQuery('#ic-2').animateNumber(
-    	    	{
-    	    		number: 3832,
-    	    		numberStep: comma_separator_number_step
-    	    	},
-    			2000
-    	    );
-    	    jQuery('#ic-3').animateNumber(
-    	    	{
-    	    		number: 20735,
-    	    		numberStep: comma_separator_number_step
-    	    	},
-    			2000
-    	    );
-    	    jQuery('#ic-4').animateNumber(
-    	    	{
-    	    		number: 76011,
-    	    		numberStep: comma_separator_number_step
-    	    	},
-    			2000
-    	    );
-    	}
-    });
-	// End Infographic
-
-	// Contact address
+    // Contact address
 	jQuery('#myTable').dataTable({
 		"ajax": 'data/all.txt'
 	});
@@ -94,18 +58,6 @@ jQuery(document).ready(function(){
 	jQuery('#d-message').mouseover(function () {
 		jQuery('#myModal').modal('show')
 	});
-
-  //font size increase - decrease
-  var fontSize = parseInt(jQuery('body').css('font-size'), 16);
-  jQuery('#plus').on ('click', function(){
-    fontSize +=0.5;
-    jQuery('body').css('font-size', fontSize+'px');
-  })
-  jQuery('#minus').on('click', function(){
-    fontSize -=0.5;
-     jQuery('body').css('font-size', fontSize+'px');
-  })
-
 
   // tree - menu
   jQuery('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
@@ -176,34 +128,7 @@ jQuery(document).ready(function(){
    });
 
 
-	   /** Auto scroll top **/
-		// browser window scroll (in pixels) after which the "back to top" link is shown
-		var offset = 300,
-			//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-			offset_opacity = 1200,
-			//duration of the top scrolling animation (in ms)
-			scroll_top_duration = 700,
-			//grab the "back to top" link
-			$back_to_top = $('.cd-top');
-
-		//hide or show the "back to top" link
-		$(window).scroll(function(){
-			( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
-			if( $(this).scrollTop() > offset_opacity ) {
-				$back_to_top.addClass('cd-fade-out');
-			}
-		});
-
-		//smooth scroll to top
-		$back_to_top.on('click', function(event){
-			event.preventDefault();
-			$('body,html').animate({
-				scrollTop: 0 ,
-			 	}, scroll_top_duration
-			);
-		});
-
-    // feature section -2
+   /** feature section -2 **/
 	var sourceSwap = function () {
 		var $this = $(this);
 		var newSource = $this.data('alt-src');
@@ -336,19 +261,5 @@ jQuery(document).ready(function(){
 			$('#sr').css('display', 'none');
 		}
 	});
-
-	/*** Dynamic height of social media ***/
-	/*$(".box").each(resize);
-	$('.box').resize(function() {
-		$('.box').each(resize);
-	});
-
-	function resize () {
-		// new height based on initial div height
-		var newHeight = 318;
-
-		// set the different height for every needed div
-		$(this).css('height', newHeight);
-	}*/
 
 });
