@@ -1,0 +1,25 @@
+    <div class="container-fluid padding-top60 padding-bottom60" ng-app="appSM" ng-controller="SocialMediaCtrl">
+	   <div class="row masonry-grid">
+
+            <!-- Iterate outer -->
+            <span ng-repeat="d in data">
+				<div class="col-md-4 col-lg-3 masonry-column padding-left-right-0">
+
+				    <!-- Iterate inner -->
+					<span ng-repeat = "sm in d">
+						<div class="box {[{ sm.type }]}-bg" style='{[{ sm.style }]}'>
+							<div class="social-description" style="height: {[{ boxSize(sm.ind) }]}px;" id="{[{ sm.ind }]}">
+								<a href="{[{ sm.url }]}" target="_blank" rel="nofollow">
+									<span><i class="fa {[{ sm.iconClass }]} fa-3x" aria-hidden="true"></i></span>
+									<div class="transparent-box">
+										<p ng-bind-html="sm.description|words:11"></p>
+									</div>
+								</a>
+							</div>
+						</div>
+			        </span>
+
+				</div>
+			</span>
+		</div>
+	</div>

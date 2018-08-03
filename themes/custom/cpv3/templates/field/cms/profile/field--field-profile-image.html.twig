@@ -1,0 +1,7 @@
+<div class="col-md-4 padding-left0" id="message-director">
+    {% for item in items %}
+        {% set url = file_url(item.content['#item'].entity.uri.value) %}
+            <img class="img-responsive" src="{{ url }}">
+    {% endfor %}
+</div>
+

@@ -1,0 +1,35 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg-community.jpg" class="img-responsive" alt="background-image-community"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+    <div class="container" id="main-container">
+    	<div class="row">
+			<div class="col-md-12">
+				{{ page.title_bar }}
+        		<div class="sub-heading">{{ node.field_sub_title.value }}</div>
+			</div>
+    	</div>
+	</div>
+
+	<div class="container-fluid">
+    	<div class="row">
+        	<div class="col-md-12">
+            	<div class="row padding-left0 iframe-wrapper">
+                	<div class="col-md-12 padding-left0 padding-right0">
+                		{{ page.content }}
+                	</div>
+            	</div>
+        	</div>
+		</div>
+	</div> <!-- // End .container-fluid -->
+
+
+     <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}

@@ -1,0 +1,29 @@
+{% set image_url %}
+    {{content.field_bg_image }}
+{% endset %}
+
+{% set image_link %}
+    {{content.field_link}}
+{% endset %}
+<div class="section-content clear">
+    <div class="bg-wrapper" 
+    		style="
+    			background: url({{ image_url|striptags }}) no-repeat center; 
+    			-webkit-background-size: cover;
+    			-moz-background-size: cover;
+    			-o-background-size: cover;
+    			background-size: cover; 
+    			height: 50%;">
+        <div class="center-content">
+            {% if image_link is not empty %}
+                <div class="front-image">
+                    <a href="{{ image_link|trim }}">{{ content.field_front_image }}</a>
+                </div>
+            {% else %}
+                <div class="front-image">
+                    {{ content.field_front_image }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
