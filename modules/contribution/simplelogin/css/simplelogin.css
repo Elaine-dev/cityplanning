@@ -1,0 +1,130 @@
+/*/**
+ * @file
+ * The Login screens, which controls the customized background image.
+ */
+
+.simplelogin-wrapper {
+  padding: 8% 0 0;
+  margin: auto;
+}
+.simplelogin .region {
+  min-height: auto !important;
+}
+.simplelogin-logo {
+  text-align: center;
+}
+.simplelogin .tabs.primary, .simplelogin .tabs--primary, .simplelogin .page-title {
+  display: none;
+}
+.simplelogin-form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  margin: 0 auto 100px;
+  padding: 45px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.simplelogin h1 {
+  font-size: 19px;
+  color: #545454;
+}
+.simplelogin a { 
+  border-bottom: 0px; 
+}
+.simplelogin .simplelogin-link a { 
+  border: 1px solid;  padding: 4px 8px; 
+}
+.simplelogin form.user-pass p,.simplelogin-form .description { 
+  font-size: 13px;
+  color: #b4b4b4;
+  text-align: left; 
+}
+.simplelogin-form input {
+  outline: 0;
+  background: #f2f2f2;
+  border: 0;
+  margin: 0 0 6px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.simplelogin-form input[type="submit"], .simplelogin-form button.form-submit {
+  text-transform: uppercase;
+  outline: 0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 0.25em;
+  font-weight: bold;
+}
+.simplelogin input.form-text, .simplelogin input.form-tel, .simplelogin input.form-email, .simplelogin input.form-url, .simplelogin input.form-search, .simplelogin input.form-file, .simplelogin input.form-number, .simplelogin input.form-color, .simplelogin textarea.form-textarea, .simplelogin select.form-select {
+  width: 100%;
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  color: #3b3b3b;
+}
+.simplelogin-form .forgot-password {
+  margin: 15px 0 0;
+  color: #b4b4b4;
+  font-size: 13px;
+  text-align: center;
+} 
+.simplelogin-form .forgot-password a {
+  text-decoration: none;
+}
+.simplelogin .region-highlighted {
+  margin: 0;
+  width: 100%;
+}
+.simplelogin {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-attachment: fixed;
+  position: relative;  
+} 
+.simplelogin .form-control {
+  height: inherit;
+}
+body.simplelogin.opacity::before {
+  content: "";
+  background-color: rgba(253, 253, 253, 0.5);  
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.simplelogin .simplelogin-link {
+  text-align: right;
+  text-transform: uppercase;
+}
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .simplelogin-form { 
+    width: 210px !important; 
+  }
+}
