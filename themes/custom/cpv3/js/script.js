@@ -234,17 +234,17 @@ jQuery(document).ready(function(){
 	/**
 	 *	Accrodian tab
 	 *	add/remove .actvie class in the panel-heading
-	 *	used in Commission tab for area planning and Staff Directory 
+	 *	used in Commission tab for area planning and Staff Directory
 	 */
 	$('.panel-group .panel-collapse.in').prev().addClass('active');
 	$('.panel-group')
 	  .on('show.bs.collapse', function(e) {
 	    $(e.target).prev('.panel-heading').addClass('active');
-	  })                           
+	  })
 	  .on('hide.bs.collapse', function(e) {
 	    $(e.target).prev('.panel-heading').removeClass('active');
 	  });
-	
+
 	// open collapse panel when search box is clicked.
 	$('#search_text').keyup(function(event){
 		var val = this.value.length;
@@ -254,12 +254,25 @@ jQuery(document).ready(function(){
 			$('#sr').css('display', 'none');
 		}
 	});
-	
+
 	$('#search_text').blur(function(event){
 		var val = $('#search_text').val().length;
 		if (val == 0) {
 			$('#sr').css('display', 'none');
 		}
 	});
+
+  /** Global Search **/
+   $('a[href="#search"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
 
 });

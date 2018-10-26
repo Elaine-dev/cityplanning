@@ -1,86 +1,6 @@
-<style>
-#search {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-
-    -webkit-transform: translate(0px, -100%) scale(0, 0);
-    -moz-transform: translate(0px, -100%) scale(0, 0);
-    -o-transform: translate(0px, -100%) scale(0, 0);
-    -ms-transform: translate(0px, -100%) scale(0, 0);
-    transform: translate(0px, -100%) scale(0, 0);
-    
-    opacity: 0;
-}
-
-#search.open {
-    -webkit-transform: translate(0px, 0px) scale(1, 1);
-    -moz-transform: translate(0px, 0px) scale(1, 1);
-    -o-transform: translate(0px, 0px) scale(1, 1);
-    -ms-transform: translate(0px, 0px) scale(1, 1);
-    transform: translate(0px, 0px) scale(1, 1); 
-    opacity: 1;
-    z-index: 9999;
-}
-
-#search input[type="search"] {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background: rgba(0, 0, 0, 0);
-    font-size: 60px;
-    font-weight: 300;
-    text-align: center;
-    border: 0px;
-    margin: 0px auto;
-    margin-top: -51px;
-    padding-left: 30px;
-    padding-right: 30px;
-    outline: none;
-}
-#search .btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 61px;
-    margin-left: -45px;
-}
-#search .close {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    color: #fff;
-    background-color: #428bca;
-    border-color: #357ebd;
-    opacity: 1;
-    padding: 10px 17px;
-    font-size: 27px;
-}
-</style>
-
 <nav class="navbar navbar-default navbar-search-box animate" role="navigation">
 	<div class="container menu-region">
-	   <div class="col-md-12">
-            <!-- google translate -->
-            <div class="row visible-lg-block">
-                <ul class="nav navbar-nav navbar-right padding-top13">
-                    <li class="google-lan"><div id="google-lan"><div id="google_translate_element"></div></div></li>
-                    <li><a href="#search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-	   </div>
-	   
-    	<div class="col-md-2">
+    	<div class="col-md-2 tog-nav">
     		<div class="navbar-header">
 	        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
 	            <span class="sr-only">Toggle navigation</span>
@@ -93,6 +13,14 @@
     	</div>
 
     	<div class="col-md-10">
+    		<!-- google translate -->
+    		<div class="row visible-lg-block">
+    			<ul class="nav navbar-nav navbar-right padding-top13">
+	                <li class="google-lan"><div id="google-lan"><div id="google_translate_element"></div></div></li>
+	                <li><a href="#toggle-search" class="animate"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+	            </ul>
+    		</div>
+
     		<!-- navbar-collapse -->
     		<div class="row">
     			<div class="collapse navbar-collapse">
@@ -100,12 +28,12 @@
 		                <li class="dropdown mega-dropdown">
 		                    <a  href="#" class="dropdown-toggle {% if currentlink == 'about' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
 		                    <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-		                        <li class="col-md-4"> 
+		                        <li class="col-md-4">
 		                        	<h3 class="dropdown-header">About</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
 		            					<li><a href="{{ base_path }}about/department-city-planning">City Planning</a></li>
-		            					<li><a href="{{ base_path }}about/executive-office">Executive Office</a></li>
+		            					<li><a href="{{ base_path }}about/message-director">Executive Office</a></li>
 		            					<li><a href="{{ base_path }}about/decision-makers">Decision Makers</a></li>
 		            					<li><a href="{{ base_path }}about/commissions">Commissions</a></li>
 		            					<li><a href="{{ base_path }}about/staff-directory">Staff Directory</a></li>
@@ -161,11 +89,11 @@
 		                        	<h3 class="dropdown-header">Applicants</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-		            					<li><a href="{{ base_path }}development-process/land-use-process">Land Use Process</a></li>
-		            					<li><a href="{{ base_path }}development-process/services">Services</a></li>
-		            					<li><a href="{{ base_path }}development-process/environmental-review">Environmental Review</a></li>
-		            					<li><a href="{{ base_path }}development-process/environmental-impact-reports">Environmental Impact Report</a></li>
-		            					<li><a href="{{ base_path }}development-process/expedited-processing-services">Expedited Processing Services</a></li>
+		            					<li><a href="{{ base_path }}projects/land-use-process">Land Use Process</a></li>
+		            					<li><a href="{{ base_path }}projects/services">Services</a></li>
+		            					<li><a href="{{ base_path }}projects/environmental-review">Environmental Review</a></li>
+		            					<li><a href="{{ base_path }}projects/environmental-impact-reports">Environmental Impact Report</a></li>
+		            					<li><a href="{{ base_path }}projects/expedited-processing-services">Expedited Processing Services</a></li>
 		                        	</ul>
 		                        </li>
 
@@ -174,7 +102,7 @@
 		            				<ul>
 		            					<li class="divider"></li>
 		                                <li><a href="{{ base_path }}resources/fee-estimator">Fee Estimator</a></li>
-		            					<li><a href="{{ base_path }}development-process/forms">Forms</a></li>
+		            					<li><a href="{{ base_path }}projects/forms">Forms</a></li>
 		            					<li><a href="{{ base_path }}contact/appointment/form">Schedule an Appointment</a></li>
 		            				</ul>
 		            			</li>
@@ -187,19 +115,19 @@
 		                    		<h3 class="dropdown-header">Guiding Principles</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-		            					<li>Housing</li>
-										<li>Mobility</li>
-										<li>Sustainability</li>
-										<li>Livability</li>
-										<li>Economic Prosperity</li>
+		            					<li><a href="#">Housing</a></li>
+										<li><a href="#">Mobility</a></li>
+										<li><a href="#">Sustainability</a></li>
+										<li><a href="#">Livability</a></li>
+										<li><a href="#">Economic Prosperity</a></li>
 		                        	</ul>
 		                        </li>
 		                    	<li class="col-md-3">
 		                    		<h3 class="dropdown-header">General Plan</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-		            					<li><a href="{{ base_path }}plans-policies/general-plan-overview">General Plan</a></li>
-										<li><a href="{{ base_path }}plans-policies/general-plan-updates">General Plan Updates</a></li>
+		            					<li><a href="{{ base_path }}policies/general-plan-overview">General Plan</a></li>
+										<li><a href="{{ base_path }}policies/general-plan-updates">General Plan Updates</a></li>
 		                        	</ul>
 		                        </li>
 
@@ -207,9 +135,9 @@
 		                        	<h3 class="dropdown-header">Community Plans</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-										<li><a href="{{ base_path }}plans-policies/community-plans">Community Plans</a></li>
-										<li><a href="{{ base_path }}plans-policies/community-plan-updates">Community Plan Updates</a></li>
-										<li><a href="{{ base_path }}plans-policies/overlays">Overlays</a></li>
+										<li><a href="{{ base_path }}policies/community-plans">Community Plans</a></li>
+										<li><a href="#">Community Plan Updates</a></li>
+										<li><a href="{{ base_path }}policies/overlays">Overlays</a></li>
 		                        	</ul>
 		                        </li>
 		                        
@@ -218,8 +146,8 @@
 		                        	<h3 class="dropdown-header">Ordinances</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-										<li><a href="{{ base_path }}plans-policies/proposed-ordinances">Proposed Ordinances</a></li>
-										<li><a href="{{ base_path }}plans-policies/adopted-ordinances">Adopted Ordinances</a></li>
+										<li><a href="{{ base_path }}policies/proposed-ordinances">Proposed Ordinances</a></li>
+										<li><a href="{{ base_path }}policies/adopted-ordinances">Adopted Ordinances</a></li>
 		                        	</ul>
 		                        </li>
 		                	</ul>
@@ -232,7 +160,7 @@
 		                    		<h3 class="dropdown-header">Urban Design</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-		            					<li><a href="{{ base_path }}design-preservation/urban-design-studio">Urban Design Studio</a></li>
+		            					<li><a href="#">Urban Design Studio</a></li>
 		            					<li><a href="#">The Team</a></li>
 		            					<li><a href="#">Public Realm</a></li>
 		            					<li><a href="#">Design Review</a></li>
@@ -260,7 +188,7 @@
 		            					<li><a href="http://ladcp.maps.arcgis.com/apps/webappviewer/index.html?id=f81bd35d8d134a868ad54a28837a08b6" target="_blank">Demographics</a></li>
 		            					<li><a href="{{ base_path }}resources/maps">Maps</a></li>
 		            					<li><a href="{{ base_path }}resources/videos">Videos</a></li>
-		            					<li><a href="{{ base_path }}development-process/forms">Forms</a></li>
+		            					<li><a href="{{ base_path }}projects/forms">Forms</a></li>
 		            					<li><a href="{{ base_path }}resources/fee-estimator">Fee Estimator</a></li>
 		                        	</ul>
 		                        </li>
@@ -311,12 +239,25 @@
     		</div>  <!-- /.navbar-collapse -->
     	</div>
     </div><!-- /.container-->
-</nav>
 
-<div id="search">
-    <button type="button" class="close">X</button>
-    <form action="/search/node" method="get" id="search-block-form" accept-charset="utf-8">
-        <input type="search" data-drupal-selector="edit-keys" type="search" id="edit-keys--2" name="keys" value="" placeholder="type keyword(s) here" />
-        <input class="btn btn-primary js-form-submit form-submit btn-lg" data-drupal-selector="edit-submit" type="submit" id="edit-submit--3" value="Search" />
-    </form>
-</div>
+	<div class="search-bar-search animate">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					
+					<form action="/search/node" method="get" id="search-block-form" accept-charset="utf-8">
+        				<div class="input-group padding-top5">
+        	      			<input style="border: transparent;" class="form-control" title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search"
+                	      			id="edit-keys--2" name="keys" value="" size="15" maxlength="128" placeholder="search for ...">
+        		      		<span class="input-group-btn">
+        	        			<input class="btn btn-primary js-form-submit form-submit btn-lg" data-drupal-selector="edit-submit"
+        	        				type="submit" id="edit-submit--3" value="Search">
+            		      	</span>
+            			</div>
+        	      	</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
