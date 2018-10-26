@@ -9,24 +9,24 @@
                 </div>
             </div>
         </div>{# End page-banner #}
-    
+
             <!-- contain -->
         <div class="container" id="main-container" ng-controller='MainCtrl'>
             {# Main content #}
             <div class="row">
             		<div class="col-md-12"><h1 class="visibility: visible;">Search for {[{searchQuery}]}</h1></div>
             </div>
-            <div class="row">
+            <div class="row paddingtop15 padding-bottom60">
             	<div class="col-md-12" id="search">
-            		<!-- 
+            		<!--
                 	<div class="row padding-left0">
             			<div class="col-md-12">
-                			<input class="form-control" placeholder="Filter search result with input text..." 
+                			<input class="form-control" placeholder="Filter search result with input text..."
 							type="text" ng-model="searchFilter">
                 		</div>
                     </div>
                      -->
-                     
+
                  	<div class="row">
 						<div class="col-md-12">
 							<div ng-disabled="enable=='false'">
@@ -34,16 +34,16 @@
                				</div>
 						</div>
 					</div>
-                     
+
                     <div class="row ">
                 		<div class="col-md-12 padding-left0 padding-right0" >
             				<div ng-if="results.length > 0" class="paddingtop25">
                                 <ul style="padding-left: 0; margin-top: 20px;">
                                     <li class="paddingtop15" ng-repeat="section in results | filter:searchFilter | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
-										
+
 										<div class="panel panel-default">
 									  		<div class="panel-heading">{[{ section.title }]}</div>
-										  	
+
 										  	<div ng-if="section.type !='message'">
 											  	<div class="panel-body" ng-repeat="item in section.items">
 											    	<a href="{[{ item.url }]}" target="_blank"><h6 ng-bind-html="item.heading"></h6></a>
@@ -51,17 +51,17 @@
 											    	<p ng-bind-html="item.body"></p>
 											  	</div>
 										  	</div>
-										  	
+
 										  	<div ng-if="section.type =='message'">
 											  	<div class="panel-body">
 											    	<p>{[{ section.body }]}</p>
 											  	</div>
 										  	</div>
-										  	
-										</div>	
-										
+
+										</div>
+
                                     </li>
-                                    
+
                                 </ul>
                                 <ul uib-pagination
                                     total-items="total"
@@ -73,7 +73,7 @@
                                     rotate="true">
                                 </ul>
                         	</div>
-                                
+
                         	<div class="paddingtop25" ng-if="results == ''"><p><strong>No result found!</strong></p></div>
                 		</div>
                     </div>
