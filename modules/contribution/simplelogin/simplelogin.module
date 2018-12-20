@@ -96,7 +96,25 @@ function simplelogin_page_attachments(array &$attachments) {
   );
 }
 
+/**
+ *
+ * Remove specific library
+ * @param array $attachments
+ */
+function simplelogin_page_attachments_alter(array &$attachments) {
+    $path = \Drupal::service('path.current')->getPath();
+    $user_path = array('/user', '/user/login', '/user/password', '/user/register');
+    if (in_array($path, $user_path)) {
+        // Conditionally remove an asset.
+        if (in_array('cpv3/lacity-global-nav', $attachments['#attached']['library'])) {
+            $index = array_search('cpv3/lacity-global-nav', $attachments['#attached']['library']);
+            unset($attachments['#attached']['library'][$index]);
+        }
+    }
+}
+
 function simplelogin_preprocess_simplelogin(&$variables) {  
+  global $base_url;
   $path = \Drupal::service('path.current')->getPath();
   $module_path = drupal_get_path('module', 'simplelogin');
 
@@ -111,6 +129,8 @@ function simplelogin_preprocess_simplelogin(&$variables) {
   $variables['wrapper_width'] = simple_login_settings('width');
   $variables['site_name'] = \Drupal::config('system.site')->get('name');
   $variables['site_register'] = \Drupal::config('user.settings')->get('register');
+  
+  $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme ()->getActiveTheme ()->getPath ();
 }
 
 /**

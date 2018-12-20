@@ -16,7 +16,7 @@
             <div class="row">
             	<div class="col-md-12"> <h1>Agendas & Minutes - {[{ planningAreaTitle }]}</h1></div>
             </div>
-            <div class="row">
+            <div class="row paddingtop15 padding-bottom60">
                 {# Left-side bar #}
                 <div class="col-md-12">
                     <div class="row padding-left0">
@@ -35,7 +35,7 @@
                                     					<select name="apc" ng-model="apc">
                                     						 <option ng-repeat="option in apcAreas.availableOptions" value="{[{option.id}]}" ng-selected="apc == option.id">{[{option.name}]}</option>
                                     					</select>
-                                    					
+
                                     					<!-- year -->
                                     					<select name="date" ng-model="date">
                                     						<option>- Year -</option>
@@ -75,6 +75,7 @@
                                                 <col class="col-md-1">
                                                 <col class="col-md-1">
                                                 <col class="col-md-1">
+                                                <col class="col-md-1">
                                             </colgroup>
                                             <thead>
                                                 <tr>
@@ -84,6 +85,7 @@
                                                     <th>Note</th>
                                                     <th>Address</th>
                                                     <th>Agenda</th>
+                                                    <th>Add'l Docs</th>
                                                     <th>Audio</th>
                                                     <th>Minutes</th>
                                                 </tr>
@@ -95,6 +97,7 @@
                                                 <td ng-bind="agenda.Note"></td>
                                                 <td ng-bind="agenda.Address"></td>
                                                 <td><span ng-if="agenda.AgendaLink"><a href="{[{agenda.AgendaLink}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
+                                                <td><span ng-if="agenda.AddDocsLink"><a href="{[{agenda.AddDocsLink}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
                                                 <td><span ng-if="agenda.AudioLink"><a href="{[{agenda.AudioLink}]}" target="_blank"><i class="fa fa-file-audio-o fa-2x" aria-hidden="true"></i></a></span></td>
                                                 <td><span ng-if="agenda.MinutesLink"><a href="{[{agenda.MinutesLink}]}" target="_blank"><i class="fa fa-file-text-o fa-2x" aria-hidden="true"></i></a></span></td>
                                             </tr>

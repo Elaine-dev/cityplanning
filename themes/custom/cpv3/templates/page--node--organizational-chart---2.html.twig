@@ -1,0 +1,88 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    
+    <style>
+		#chart-container {
+		  position: relative;
+		  display: inline-block;
+		  top: 22px;
+		  left: 0px;
+		  width: 100%;
+		  border-radius: 5px;
+		  overflow: auto;
+		  text-align: center;
+		  margin-left: 0px; 
+		}
+		.orgchart.l2r {left: 650px !important;}
+		.orgchart .lines .leftLine {border-left: 1px solid #ccc !important;}
+		.orgchart .lines .rightLine {border-right: 1px solid #ccc !important;}
+		.orgchart .lines .topLine {border-top: 2px solid #ccc !important;}
+		.downLine {background-color: #ccc !important;}
+		
+		.orgchart.l2r .node .content{width: 150px !important;}
+		.orgchart.l2r .node .title{width: 150px !important;}
+		
+		.orgchart .node .content {
+		  overflow:  inherit !important;
+		  text-overflow: inherit !important;
+		  white-space: inherit !important;
+		  padding: 5px;
+		  height: auto !important;
+		}
+		
+		.orgchart.l2r .node, .orgchart.r2l .node {width: 100px !important;}
+		
+		/* Left/Right and Top/Bottom arrow */
+		.orgchart .node .leftEdge {left: 5px !important;}
+		.orgchart .node .rightEdge {right: 14px!important;}
+		.orgchart .node .verticalEdge {left: 10px !important;}
+		
+		.level1 {background-color: #e8b240 !important;}
+		.level1_border{border: 1px solid #e8b240 !important;}
+		.level2 {background-color: #cb5b5a !important;}
+		.level2_border{border: 1px solid #cb5b5a !important;}
+		.level3 {background-color: #ac557a !important;}
+		.level3_border{border: 1px solid #ac557a !important;}
+		.level4 {background-color: #8d4c7d !important;}
+		.level4_border{border: 1px solid #8d4c7d !important;}
+		.level5 {background-color: #6b406e !important;}
+		.level5_border{border: 1px solid #6b406e !important;}
+		.level6 {background-color: #8d594c !important;}
+		.level6_border{border: 1px solid #8d594c !important;}
+		.level7 {background-color: #5c6bc0 !important;}
+		.level7_border{border: 1px solid #5c6bc0 !important;}
+		.level8 {background-color: #40324f !important;}
+		.level8_border{border: 1px solid #40324f !important;}
+	</style>
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				<div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+   	<!-- contain -->
+    <div class="container" id="main-container">
+        <div class="row">
+        	<div class="col-md-12">{{ page.title_bar }}</div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+           	<div class="col-md-12">
+                <div class="row padding-left0">
+                    <div class="col-md-12">
+						<div id="chart-container" class="chart-max-height" style="height: 700px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer section -->
+    {{ attach_library('cpv3/organizational-chart2') }}
+    {% include directory ~ '/partials/footer.html.twig' %}

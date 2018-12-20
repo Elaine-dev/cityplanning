@@ -34,18 +34,21 @@ class SideMenuBlock extends BlockBase {
         $menu_name = 'main';
         $menu_tree = \Drupal::menuTree();
         $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
-        $parameters->setMinDepth(0);
+        $parameters->setMinDepth(0)->onlyEnabledLinks();
 
         $tree = $menu_tree->load($menu_name, $parameters);
         $manipulators = array(
             array('callable' => 'menu.default_tree_manipulators:checkAccess'),
             array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
         );
+        
         $tree = $menu_tree->transform($tree, $manipulators);
 
         foreach ($tree as $item) {
             $title = strtolower($item->link->getTitle());
             $url = $item->link->getUrlObject();
+            $title = readableURLString($title);
+            
             //Todo need to update index based on uri
             if($title == $uri_array[1]) {
                 if(!empty($item->subtree)) {
@@ -63,6 +66,7 @@ class SideMenuBlock extends BlockBase {
         }
 
         // Generate side menu
+        $full_url = '';
         $html = '<ul>';
         if (!empty($list[0]['child'])) {
           foreach(@$list[0]['child'] as $row) {

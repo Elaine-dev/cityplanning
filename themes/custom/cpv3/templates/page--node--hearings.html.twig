@@ -18,7 +18,7 @@
             	<div class="col-md-12"><h1>Public Hearings - {[{ planningAreaTitle }]}</h1></div>
             </div>
 
-            <div class="row">
+            <div class="row paddingtop15 padding-bottom60">
                 {# Left-side bar #}
                 <div class="col-md-12">
                     <div class="row padding-left0">
@@ -37,13 +37,13 @@
                                     					<select name="apc" ng-model="apc" >
                                     						 <option ng-repeat="option in apcAreas.availableOptions" value="{[{option.id}]}"  ng-selected="apc == option.id">{[{option.name}]}</option>
                                     					</select>
-                        								
+
                         								<!-- year -->
                                     					<select name="date" ng-model="date">
                                                         	<option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d"></option>
                                                       	</select>
                         							</div>
-                        							
+
                         							<div class="col-md-4 col-xs-12" id="content-search">
                         								<input ng-model="CaseNumber" placeholder="Search your hearing">
                         							</div>

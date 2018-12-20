@@ -1,0 +1,264 @@
+<nav class="navbar navbar-default navbar-search-box animate" role="navigation">
+	<div class="container menu-region">
+    	<div class="col-md-2 tog-nav">
+    		<div class="navbar-header">
+	        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="{{ base_path }}"><img src="{{ theme_base_path }}/images/logo-planning.png" alt="ladcp logo" /></a>
+	        </div>
+    	</div>
+
+    	<div class="col-md-10">
+    		<!-- google translate -->
+    		<div class="row visible-lg-block">
+    			<ul class="nav navbar-nav navbar-right padding-top13">
+	                <li class="google-lan"><div id="google-lan"><div id="google_translate_element"></div></div></li>
+	                <li><a href="#toggle-search" class="animate"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+	            </ul>
+    		</div>
+
+    		<!-- navbar-collapse -->
+    		<div class="row">
+    			<div class="collapse navbar-collapse">
+		        	<ul id="main-nav" class="nav navbar-nav navbar-right" >
+		                <li class="dropdown mega-dropdown">
+		                    <a  href="#" class="dropdown-toggle {% if currentlink == 'about' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+		                    <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+		                        <li class="col-md-4">
+		                        	<h3 class="dropdown-header">About</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="{{ base_path }}about/department-city-planning">City Planning</a></li>
+		            					<li><a href="{{ base_path }}about/executive-office">Executive Office</a></li>
+		            					<li><a href="{{ base_path }}about/decision-makers">Decision Makers</a></li>
+		            					<li><a href="{{ base_path }}about/commissions">Commissions</a></li>
+		            					<li><a href="{{ base_path }}about/staff-directory">Staff Directory</a></li>
+		                        	</ul>
+		                        </li>
+		                        <li class="col-md-4">
+		                        	<h3 class="dropdown-header">Meetings</h3>
+		            				<ul>
+		            					<li class="divider"></li>
+		            					<li><a href="{{ base_path }}about/calendar">Community Calendar</a></li>
+		            					<li><a href="{{ base_path }}about/hearings">Public Hearings</a></li>
+		            					<li><a href="{{ base_path }}about/commission-agendas-minutes">Agendas & Minutes</a></li>
+		            				</ul>
+		            			</li>
+		                        <li class="col-md-4">
+		                        	<h3 class="dropdown-header">Connect</h3>
+		            				<ul>
+		            					<li class="divider"></li>
+		            					<li><a href="{{ base_path }}about/publications">Publications</a></li>
+		            					<li><a href="{{ base_path }}blog">Blog</a></li>
+		            					<li><a href="{{ base_path }}">Stay Connected</a></li>
+		            				</ul>
+		            			</li>
+		                    </ul>
+		            	</li>
+		                <li class="dropdown mega-dropdown">
+		                    <a href="#" class="dropdown-toggle {% if currentlink == 'zoning' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zoning </a>
+		                    <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+		                        <li class="col-md-6">
+		                        	<h3 class="dropdown-header">Zoning</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="{{ base_path }}zoning/zoning-overview">Overview</a></li>
+		            					<li><a href="{{ base_path }}zoning/updating-the-zoning-code-re:codeLA">Updates</a></li>
+		                        	</ul>
+		                        </li>
+		                        <li class="col-md-6">
+		                        	<h3 class="dropdown-header">Quick Links</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="{{ base_path }}zoning/zoning-code">Zoning Code</a></li>
+		            					<li><a href="{{ base_path }}zoning/zoning-map">Zoning Map (ZIMAS)</a></li>
+		            					<li><a href="{{ base_path }}zoning/faq">FAQS</a></li>
+
+		                        	</ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li class="dropdown mega-dropdown">
+		                    <a href="#" class="dropdown-toggle {% if currentlink == 'projects' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Development<br>Process</a>
+		                    <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+		                        <li class="col-md-6">
+		                        	<h3 class="dropdown-header">Applicants</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="{{ base_path }}development-process/land-use-process">Land Use Process</a></li>
+		            					<li><a href="{{ base_path }}development-process/services">Services</a></li>
+		            					<li><a href="{{ base_path }}development-process/environmental-review">Environmental Review</a></li>
+		            					<li><a href="{{ base_path }}development-process/environmental-impact-reports">Environmental Impact Report</a></li>
+		            					<li><a href="{{ base_path }}development-process/expedited-processing-services">Expedited Processing Services</a></li>
+		                        	</ul>
+		                        </li>
+
+		                        <li class="col-md-6">
+		            				<h3 class="dropdown-header">Quicks Links</h3>
+		            				<ul>
+		            					<li class="divider"></li>
+		                                <li><a href="{{ base_path }}resources/fee-estimator">Fee Estimator</a></li>
+		            					<li><a href="{{ base_path }}development-process/forms">Forms</a></li>
+		            					<li><a href="{{ base_path }}contact/appointment/form">Schedule an Appointment</a></li>
+		            				</ul>
+		            			</li>
+		                    </ul>
+		                </li>
+		                <li class="dropdown mega-dropdown">
+		                    <a href="#" class="dropdown-toggle {% if currentlink == 'policies' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plans &<br>Policies</a>
+		                	<ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+		                    	<li class="col-md-3">
+		                    		<h3 class="dropdown-header">Guiding Principles</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li>Housing</li>
+										<li>Mobility</li>
+										<li>Sustainability</li>
+										<li>Livability</li>
+										<li>Economic Prosperity</li>
+		                        	</ul>
+		                        </li>
+		                    	<li class="col-md-3">
+		                    		<h3 class="dropdown-header">General Plan</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="{{ base_path }}plans-policies/general-plan-overview">General Plan</a></li>
+										<li><a href="{{ base_path }}plans-policies/general-plan-updates">General Plan Updates</a></li>
+		                        	</ul>
+		                        </li>
+
+		                        <li class="col-md-3">
+		                        	<h3 class="dropdown-header">Community Plans</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+										<li><a href="{{ base_path }}plans-policies/community-plans">Community Plans</a></li>
+										<li><a href="{{ base_path }}plans-policies/community-plan-updates">Community Plan Updates</a></li>
+										<li><a href="{{ base_path }}plans-policies/overlays">Overlays</a></li>
+		                        	</ul>
+		                        </li>
+
+
+		                        <li class="col-md-3">
+		                        	<h3 class="dropdown-header">Ordinances</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+										<li><a href="{{ base_path }}plans-policies/proposed-ordinances">Proposed Ordinances</a></li>
+										<li><a href="{{ base_path }}plans-policies/adopted-ordinances">Adopted Ordinances</a></li>
+		                        	</ul>
+		                        </li>
+		                	</ul>
+		            	</li>
+
+		              	<li class="dropdown mega-dropdown">
+		                	<a href="#" class="dropdown-toggle {% if currentlink == 'communities' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Design &<br>Preservation</a>
+		                    <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+		                        <li class="col-md-6" >
+		                    		<h3 class="dropdown-header">Urban Design</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="{{ base_path }}design-preservation/urban-design-studio">Urban Design Studio</a></li>
+		            					<li><a href="#">The Team</a></li>
+		            					<li><a href="#">Public Realm</a></li>
+		            					<li><a href="#">Design Review</a></li>
+		            					<li><a href="#">Design Excellent</a></li>
+		            					<li><a href="#">Resources</a></li>
+		                        	</ul>
+		                        </li>
+		                        <li class="col-md-6">
+		                    		<h3 class="dropdown-header">Historic Preservation</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="#">Historic Preservation</a></li>
+		                        	</ul>
+		                    	</li>
+		                    </ul>
+		            	</li>
+
+		            	<li class="dropdown mega-dropdown">
+		                    <a href="#" class="dropdown-toggle {% if currentlink == 'resources' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+		                    <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+		                        <li class="col-md-4">
+		                        	<h3 class="dropdown-header">Resources</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		            					<li><a href="http://ladcp.maps.arcgis.com/apps/webappviewer/index.html?id=f81bd35d8d134a868ad54a28837a08b6" target="_blank">Demographics</a></li>
+		            					<li><a href="{{ base_path }}resources/maps">Maps</a></li>
+		            					<li><a href="{{ base_path }}resources/videos">Videos</a></li>
+		            					<li><a href="{{ base_path }}development-process/forms">Forms</a></li>
+		            					<li><a href="{{ base_path }}resources/fee-estimator">Fee Estimator</a></li>
+		                        	</ul>
+		                        </li>
+		                        <li class="col-md-4">
+		                        	<h3 class="dropdown-header">Open Data</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		                        		<li><a href="{{ base_path }}resources/open-data">Open Data</a></li>
+		                        		<li><a href="#">Performance Metrics</a></li>
+		                        	</ul>
+		                        </li>
+		                        <li class="col-md-4">
+		                        	<h3 class="dropdown-header">Case Report</h3>
+		                        	<ul>
+		                        		<li class="divider"></li>
+		                                <li><a href="{{ base_path }}resources/bi-weekly-case-filing/163">Case Reports</a></li>
+		                                <li><a href="#">Prefix & Suffix</a></li>
+                                    <li><a href="{{ base_path }}resources/new-pcts-cases">New PCTS Case Fillings</a></li>
+		                        	</ul>
+		                        </li>
+		                    </ul>
+		                </li>
+
+		                <li class="dropdown mega-dropdown">
+		              		<a href="#" class="dropdown-toggle {% if currentlink == 'contact' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+		                  	<ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+		                      	<li class="col-md-6" >
+		                        	<h3 class="dropdown-header">Contact</h3>
+		                            <ul>
+		                              	<li class="divider"></li>
+		                                <li><a href="{{ base_path }}contact/public-counters">Public Counters</a></li>
+		                                <li><a href="{{ base_path }}contact/appointment/form">Schedule an Appoitment</a></li>
+		                                <li><a href="{{ base_path }}about/staff-directory">Staff Directory</a></li>
+		                                <li><a href="#">Organizational Chart</a></li>
+		                            </ul>
+		                      	</li>
+		                      	<li class="col-md-6" >
+		                        	<h3 class="dropdown-header">Media Relations</h3>
+		                            <ul>
+		                              	<li class="divider"></li>
+		                                <li><a href="{{ base_path }}contact/media-information">Media Relations</a></li>
+		                            </ul>
+		                      	</li>
+		                  	</ul>
+		              	</li>
+		            </ul>
+
+		        </div>
+    		</div>  <!-- /.navbar-collapse -->
+    	</div>
+    </div><!-- /.container-->
+
+	<div class="search-bar-search animate">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+
+					<form action="/search/node" method="get" id="search-block-form" accept-charset="utf-8">
+        				<div class="input-group padding-top5">
+        	      			<input style="border: transparent;" class="form-control" title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search"
+                	      			id="edit-keys--2" name="keys" value="" size="15" maxlength="128" placeholder="search for ...">
+        		      		<span class="input-group-btn">
+        	        			<input class="btn btn-primary js-form-submit form-submit btn-lg" data-drupal-selector="edit-submit"
+        	        				type="submit" id="edit-submit--3" value="Search">
+            		      	</span>
+            			</div>
+        	      	</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

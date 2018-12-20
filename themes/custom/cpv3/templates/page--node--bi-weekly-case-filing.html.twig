@@ -1,0 +1,92 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				{{ page.top_banner }}
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+        <!-- contain -->
+    <div class="container" id="main-container" ng-app="appBW" ng-controller="biweeklyCaseReportCtrl">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12">
+        	   <h1>Bi-Weekly Case Filing - {[{ title }]}</h1>
+        	</div>
+        </div>
+        <div class="row paddingtop15 padding-bottom60">
+
+            <div class="col-md-9">
+                <div class="row padding-left0">
+                    <div class="col-md-12">
+
+						<div class="row padding-bottom30 content-search">
+							<div class="col-md-8 col-xs-12 filter-by">
+    							<label>Filter by : </label>
+    							<select name="caseType" ng-model="caseType">
+                                    <option ng-repeat="option in caseTypes.availableOptions" value="{[{option.id}]}" ng-selected="CNC == option.id">{[{option.name}]}</option>
+                                </select>
+                                
+               					<select name="mySelect" id="mySelect"
+                                      	ng-options="option for option in year.availableOptions track by option"
+                                        ng-model="year.selectedOption">
+                               	</select>
+							</div>
+						</div>
+
+						<div class="row">
+                                <div class="col-md-12">
+                                    <div ng-disabled="enable=='false'">
+                                        <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+                                    </div>
+                                </div>
+                            </div>
+
+						<div class="row padding-left0 padding-right0">
+							<div class="col-md-12 padding-bottom30 table-responsive">
+								<table class="table">
+                                    <colgroup>
+                                    	<col class="col-md-10">
+                                      	<col class="col-md-1">
+                                    </colgroup>
+
+                                    <thead>
+                                        <tr>
+                            				<th>Date</th>
+                            				<th>File</th>
+                            			</tr>
+                                    </thead>
+
+                                    <tr ng-if="data.length > 0" ng-repeat= "val in data  | filter: search | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize" >
+                            			<td>{[{ val.Date }]}</td>
+                            			<td><span ng-if="val.url"><a href="{[{val.url}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
+                            		</tr>
+
+                            		<tr ng-if="data.length < 1">
+                            			<td colspan="2">No record!</td>
+                            		</tr>
+                                </table>
+							</div>
+						</div>
+
+                    </div>
+                </div>
+            </div>
+
+            {# Right-side bar #}
+            <div class="col-md-3 sidebar-menu padding-right-27 visible-lg-block">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
+        </div>
+    </div>{# End container #}
+
+
+    <!-- footer section -->
+    {{ attach_library ('cpv3/bi-weekly-case-filing') }}
+    {{ attach_library ('cpv3/angular-js') }}
+    {% include directory ~ '/partials/footer.html.twig' %}

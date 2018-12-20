@@ -16,7 +16,7 @@
         <div class="row">
         	<div class="col-md-12">{{ page.title_bar }}</div>
         </div>
-        <div class="row" ng-controller="PublicationCtrl">
+        <div class="row paddingtop15 padding-bottom60" ng-controller="PublicationCtrl">
             {# Left-side bar #}
             <div class="col-md-9">
                 <div class="row padding-left0">
@@ -50,21 +50,21 @@
                                             class="{{ class }}">{{ item.first_name}}<br>{{ item.last_name}}
                                         </a></li>
                                     {% endfor %}
-                                        
+
                                         <li role="presentation" class="tab-line js-publication-tab">
-                                            <a href="#4" aria-controls="4"  id="4" role="tab" data-toggle="tab"> 
+                                            <a href="#4" aria-controls="4"  id="4" role="tab" data-toggle="tab">
                                                 <i class="fa fa-search fa-2x" aria-hidden="true"></i>
                                                 <div class="pull-right" style="padding-left: 10px; margin-top: -7;">
                                                     Search All<br>Publications...
                                                 </div>
                                         </a></li>
                                     </ul>
-                                    
+
                                      <div id="publication-tabs">
                                            <div id="js-content" class="publication-data">
                                                {{ page.publications }}
                                            </div>
-                                             
+
                                              <!-- tab 4 -->
                                              <div id="4" class="publication-data js-tab4 hidden">
 	                                            <div class="row padding-left0">
@@ -80,7 +80,7 @@
 	                                                            <input ng-model="search" class="pull-right" type="text" placeholder="Filter search result ..."/>
 	                                                        </div>
 	                                                    </div>
-	
+
 	                                                    <div class="row paddingtop10">
 	                                                        <div class="col-md-12">
 	                                                            <div class="table-responsive">
@@ -89,14 +89,14 @@
 	                                                                        <col class="col-md-8">
 	                                                                        <col class="col-md-4">
 	                                                                    </colgroup>
-	
+
 	                                                                    <thead>
 	                                                                        <tr>
 	                                                                            <th>Title</th>
 	                                                                            <th>Adopted/Effective Date</th>
 	                                                                        </tr>
 	                                                                    </thead>
-	
+
 	                                                                    <tbody>
 	                                                                        <tr dir-paginate="publication in data | filter: search | itemsPerPage: pageSize" current-page="currentPage">
 	                                                                            <td><a href="{[{ publication.externalDocumentUrl }]}" target="_blank"
@@ -106,9 +106,9 @@
 	                                                                    </tbody>
 	                                                                </table>
 	                                                            </div>
-	
+
 	                                                            <div class="bottom "></div>
-	
+
 	                                                            <dir-pagination-controls boundary-links="false">
 	                                                                <ul class="pagination" ng-if="1 < pages.length || !autoHide">
 	                                                                    <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == 1 }">
@@ -120,7 +120,7 @@
 	                                                                    <li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
 	                                                                        <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
 	                                                                    </li>
-	
+
 	                                                                    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }">
 	                                                                        <a href="" ng-click="setCurrent(pagination.current + 1)">&rsaquo;</a>
 	                                                                    </li>
@@ -129,21 +129,21 @@
 	                                                                    </li>
 	                                                                </ul>
 	                                                            </dir-pagination-controls>
-	
-	
+
+
 	                                                        </div>
 	                                                    </div>
 	                                                </div>
 	                                            </div>
 	                                        </div> <!-- // end tabpanel 4 -->
                                     </div><!-- // end tabpanel 1 -->
-                                    
+
                                  </div><!-- //End #commissions-tab -->
 						    </div>
 						</div>
-						
-						
-						
+
+
+
 
                     </div>
                 </div>

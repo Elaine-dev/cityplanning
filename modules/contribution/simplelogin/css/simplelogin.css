@@ -3,6 +3,7 @@
  * The Login screens, which controls the customized background image.
  */
 
+#block-cpv3-local-tasks{display: none;}
 .simplelogin-wrapper {
   padding: 8% 0 0;
   margin: auto;

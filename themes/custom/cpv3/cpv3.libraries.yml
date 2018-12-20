@@ -181,5 +181,10 @@ organizational-chart5:
   js:
     js/org/jquery.orgchart-5.js: {}
     js/org/jquery.mockjax.min.js: {}
-    js/org/html2canvas.js: {}
     js/org/ocscripts5.js: {}
+    
+organizational-chart6:
+  version: 1.0
+  js:
+    js/api/orgchart.js: {}
+    js/api/orgscript.js: {}

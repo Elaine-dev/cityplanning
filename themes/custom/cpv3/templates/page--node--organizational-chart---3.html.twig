@@ -1,0 +1,65 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    
+    <style>
+		.node {cursor: pointer;}
+		
+		.node circle {
+		  fill: #fff;
+		  /* stroke: steelblue;*/
+		  stroke-width: 1.5px;
+		}
+		.node text {font: 10px sans-serif;}
+		.link {
+		  fill: none;
+		  stroke: #ccc;
+		  stroke-width: 1.5px;
+		}
+		
+		.level1 {color: #e8b240 !important;}
+		.level1_border{border: 1px solid #e8b240 !important;}
+		.level2 {color: #cb5b5a !important;}
+		.level2_border{border: 1px solid #cb5b5a !important;}
+		.level3 {color: #ac557a !important;}
+		.level3_border{border: 1px solid #ac557a !important;}
+		.level4 {color: #8d4c7d !important;}
+		.level4_border{border: 1px solid #8d4c7d !important;}
+		.level5 {color: #6b406e !important;}
+		.level5_border{border: 1px solid #6b406e !important;}
+		.level6 {color: #8d594c !important;}
+		.level6_border{border: 1px solid #8d594c !important;}
+		.level7 {color: #5c6bc0 !important;}
+		.level7_border{border: 1px solid #5c6bc0 !important;}
+		.level8 {color: #40324f !important;}
+		.level8_border{border: 1px solid #40324f !important;}
+	</style>
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				<div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+   	<!-- contain -->
+    <div class="container" id="main-container">
+        <div class="row">
+        	<div class="col-md-12">{{ page.title_bar }}</div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+           	<div class="col-md-12">
+                <div class="row padding-left0">
+                    <div class="col-md-12" style="padding-bottom: 150px; padding-left: 725px;" id="body" ></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- footer section -->
+    {{ attach_library('cpv3/organizational-chart3') }}
+    {% include directory ~ '/partials/footer.html.twig' %}

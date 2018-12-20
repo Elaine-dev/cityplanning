@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-6">
+         {% if content.field_project_planner_contact %}
+         <div>
+            <strong class="overlays-field-title">Project Planner Contact: </strong> <br>
+            {{ content.field_project_planner_contact }}
+
+            <br /><br />
+         </div>
+        {% endif %}
+
+
+        {% if content.field_policy_planner_contact %}
+        <div>
+            <strong class="overlays-field-title">Policy Planner Contact:</strong> <br>
+            {{ content.field_policy_planner_contact }}
+
+            <br /><br />
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="col-md-6">
+        {% if content.field_community_info %}
+        <div class="field-community-info">
+            <a href="{{ content.field_community_info[0]['#url']|render }}" target="_blank" rel="nofollow">
+                <div class="col-md-2 padding-left0"><img src="{{ theme_base_path }}/images/i-planUpdating.png" alt="community plan area info" /></div>
+                <div class="col-md-10 community-icon-color"><strong>This plan is currently going<br>through a community update.</strong><br>Click here for more info.</div>
+            </a>
+        </div>
+        {% endif %}
+
+         {% if content.field_general_information %}
+         <div>
+            <strong class="overlays-field-title">General Information:</strong><br>
+            {{ content.field_general_information }}
+
+            <br /><br />
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row padding-top2em padding-bottom60" id="community-plan-area">
+    <div class="col-md-12">
+      {% for parag_id in node.field_content_section.value %}
+        {% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
+        {% set class = data['#paragraph'].getType %}
+
+         <div class = "section-content clear {{class}}">
+             {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+         </div>
+      {% endfor %}
+    </div>
+</div>

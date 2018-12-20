@@ -1,6 +1,6 @@
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
-    
+
 	{# page-banner #}
     <div class="container-fluid">
         <div class="row">
@@ -16,8 +16,8 @@
         <div class="row">
         	<div class="col-md-12">{{ page.title_bar }}</div>
         </div>
-        
-        <div class="row" ng-controller = "formsCtrl">
+
+        <div class="row paddingtop15 padding-bottom60" ng-controller = "formsCtrl">
             {# Left-side bar #}
             <div class="col-md-12">
                 <div class="row padding-left0">
@@ -32,13 +32,13 @@
 								</ul>
 							</div>
 						</div>
-						
+
 						<div class="row padding-bottom30">
 							<div class="col-md-12">
 								<div class="bottom "></div>
 							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="col-md-12">
 								<div class="table-responsive">
@@ -48,29 +48,29 @@
                                             <col class="col-md-10">
                                             <col class="col-md-2">
                                         </colgroup>
-            
+
                                         <thead>
                                             <tr>
                                                 <th>Title</th>
                                                 <th>Code</th>
                                             </tr>
                                         </thead>
-            
+
                                         <tbody>
                                             <tr ng-repeat="form in masterForms">
-                                                <td><a href="{[{ form.url }]}" target="_blank" 
+                                                <td><a href="{[{ form.url }]}" target="_blank"
                                                 rel="nofollow"><span ng-bind="form.title"></span></a></td>
                                                 <td ng-bind="form.number"></td>
                                             </tr>
-                                            
+
                                         </tbody>
                                     </table>
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="bottom "></div>
-						
+
 						<div class="row">
 							<div class="col-md-12 table-responsive">
 								<h5>Forms</h5>
@@ -79,14 +79,14 @@
                                         <col class="col-md-10">
                                         <col class="col-md-2">
                                     </colgroup>
-            
+
                                     <thead>
                                         <tr>
                                             <th>Title</th>
                                             <th>Code</th>
                                         </tr>
                                     </thead>
-                   					
+
                    					<tbody ng-repeat="form in data | filter: startsWith | orderBy: 'title'">
                    						<tr>
                    							<td>
@@ -95,7 +95,7 @@
                								</td>
                    							<td>{[{ form.number }]}</td>
                    						</tr>
-                   						
+
                    						<tr ng-repeat="sf in form.subForms">
                								<td><a href="{[{ sf.url }]}" target="_blank" rel="nofollow">- <span ng-bind="sf.title"></span></a></td>
                								<td>{[{ sf.number }]}</td>
@@ -109,7 +109,7 @@
 			</div>
         </div>
     </div>{# End container #}
-        
+
 
     <!-- footer section -->
     {{ attach_library ('cpv3/forms') }}

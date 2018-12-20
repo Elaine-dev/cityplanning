@@ -125,7 +125,8 @@ class ImportController extends ControllerBase {
             foreach($item as $key=>$row) {
                 if(!empty($final_mapping[$keys[$key]])) {
                     $base = $final_mapping[$keys[$key]];
-                    $formated_array[$base] = $row;}
+                    $formated_array[$base] = $row;
+                }
             }
             $raw_data[] = $formated_array;
         }

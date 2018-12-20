@@ -1,14 +1,14 @@
 /**
  * File: proposedOrdinances.js
  * Author: Humbal
- * Created date: 06/26/2018 
- * Created date: 06/26/2018 
+ * Created date: 06/26/2018
+ * Updated date: 09/10/2018
  */
 
 var appOrdi = angular.module('appOrdinances', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
 	.service('proposedOrdinanceService', function($http) {
 		this.getRecord = function () {
-			return $http.get("http://ladcp.westus.cloudapp.azure.com/api/v1/proposed-ordinance/");
+			return $http.get("/api/v1/proposed-ordinance/");
 		}
 	})
 	.config(function($interpolateProvider) {
@@ -20,17 +20,17 @@ appOrdi.controller('proposedOrdinanceCtrl', ['$scope', '$sce', 'proposedOrdinanc
 	$scope.currentPage = 1;
 	$scope.enable = "false";
 	$scope.loadingText = "Loading ...";
-	
+
 	proposedOrdinanceService.getRecord().then(function(response){
 		$scope.data = response.data;
 		$scope.total = $scope.data.length;
 	});
-	
+
 	$timeout(function() {
 		$scope.enable = "true";
 		$scope.loadingText = "";
     }, 2000);
-	
+
     // $watch search to update pagination
     $scope.noOfPages = Math.ceil($scope.total / $scope.pageSize);
     $scope.$watch('searchFilter', function (newVal, oldVal) {

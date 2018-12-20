@@ -1,86 +1,6 @@
-<style>
-#search {
-    position: fixed;
-    top: 50px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-
-    -webkit-transform: translate(0px, -100%) scale(0, 0);
-    -moz-transform: translate(0px, -100%) scale(0, 0);
-    -o-transform: translate(0px, -100%) scale(0, 0);
-    -ms-transform: translate(0px, -100%) scale(0, 0);
-    transform: translate(0px, -100%) scale(0, 0);
-
-    opacity: 0;
-}
-
-#search.open {
-    -webkit-transform: translate(0px, 0px) scale(1, 1);
-    -moz-transform: translate(0px, 0px) scale(1, 1);
-    -o-transform: translate(0px, 0px) scale(1, 1);
-    -ms-transform: translate(0px, 0px) scale(1, 1);
-    transform: translate(0px, 0px) scale(1, 1);
-    opacity: 1;
-    z-index: 9999;
-}
-
-#search input[type="search"] {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background: rgba(0, 0, 0, 0);
-    font-size: 60px;
-    font-weight: 300;
-    text-align: center;
-    border: 0px;
-    margin: 0px auto;
-    margin-top: -51px;
-    padding-left: 30px;
-    padding-right: 30px;
-    outline: none;
-}
-#search .btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: 61px;
-    margin-left: -45px;
-}
-#search .close {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    color: #fff;
-    background-color: #428bca;
-    border-color: #357ebd;
-    opacity: 1;
-    padding: 10px 17px;
-    font-size: 27px;
-}
-</style>
-
 <nav class="navbar navbar-default navbar-search-box animate" role="navigation">
 	<div class="container menu-region">
-	   <div class="col-md-12">
-            <!-- google translate -->
-            <div class="row visible-lg-block">
-                <ul class="nav navbar-nav navbar-right padding-top13">
-                    <li class="google-lan"><div id="google-lan"><div id="google_translate_element"></div></div></li>
-                    <li><a href="#search"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-	   </div>
-
-    	<div class="col-md-2">
+    	<div class="col-md-2 tog-nav">
     		<div class="navbar-header">
 	        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
 	            <span class="sr-only">Toggle navigation</span>
@@ -93,6 +13,20 @@
     	</div>
 
     	<div class="col-md-10">
+    		<!-- google translate -->
+    		<div class="row visible-lg-block">
+    			<ul class="nav navbar-nav navbar-right padding-top13 search-google-lan">
+	                <li id="search" style="padding-right: 10px !important; ">
+                        <form  action="/search/node" method="get" id="search-block-form" accept-charset="utf-8" class="searchbox">
+			                <input type="search" maxlength="128" placeholder="Search for ..." class="searchbox-input" data-drupal-selector="edit-keys" id="edit-keys--2" name="keys" onkeyup="buttonUp();" required />
+			                <input type="submit" class="searchbox-submit js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--3" />
+			                <span class="searchbox-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+			            </form>
+                   </li>
+	                <li class="google-lan"><div id="google-lan"><div id="google_translate_element"></div></div></li>
+	            </ul>
+    		</div>
+
     		<!-- navbar-collapse -->
     		<div class="row">
     			<div class="collapse navbar-collapse">
@@ -104,7 +38,7 @@
 		                        	<h3 class="dropdown-header">About</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-		            					<li><a href="{{ base_path }}about/department-city-planning">City Planning</a></li>
+		            					<li><a href="{{ base_path }}about/our-mission">Our Mission</a></li>
 		            					<li><a href="{{ base_path }}about/executive-office">Executive Office</a></li>
 		            					<li><a href="{{ base_path }}about/decision-makers">Decision Makers</a></li>
 		            					<li><a href="{{ base_path }}about/commissions">Commissions</a></li>
@@ -162,7 +96,7 @@
 		                        	<ul>
 		                        		<li class="divider"></li>
 		            					<li><a href="{{ base_path }}development-process/land-use-process">Land Use Process</a></li>
-		            					<li><a href="{{ base_path }}development-process/services">Services</a></li>
+		            					<li><a href="{{ base_path }}development-process/public-counter-services">Public Counter Services</a></li>
 		            					<li><a href="{{ base_path }}development-process/environmental-review">Environmental Review</a></li>
 		            					<li><a href="{{ base_path }}development-process/environmental-impact-reports">Environmental Impact Report</a></li>
 		            					<li><a href="{{ base_path }}development-process/expedited-processing-services">Expedited Processing Services</a></li>
@@ -276,8 +210,9 @@
 		                        	<h3 class="dropdown-header">Case Report</h3>
 		                        	<ul>
 		                        		<li class="divider"></li>
-		                                <li><a href="{{ base_path }}resources/bi-weekly-case-filing/163">Case Reports</a></li>
-		                                <li><a href="#">Prefix & Suffix</a></li>
+		                                <li><a href="{{ base_path }}resources/bi-weekly-case-filing/">Bi-Weekly Case Filing</a></li>
+		                                <li><a href="#">Case Prefix and Suffic Codes</a></li>
+                                        <li><a href="{{ base_path }}resources/bi-weekly-case-filings-web-map">Bi-Weekly Case Filings Web Map</a></li>
 		                        	</ul>
 		                        </li>
 		                    </ul>
@@ -311,12 +246,5 @@
     		</div>  <!-- /.navbar-collapse -->
     	</div>
     </div><!-- /.container-->
-</nav>
 
-<div id="search">
-    <button type="button" class="close">X</button>
-    <form action="/search/node" method="get" id="search-block-form" accept-charset="utf-8">
-        <input type="search" data-drupal-selector="edit-keys" type="search" id="edit-keys--2" name="keys" value="" placeholder="type keyword(s) here" />
-        <input class="btn btn-primary js-form-submit form-submit btn-lg" data-drupal-selector="edit-submit" type="submit" id="edit-submit--3" value="Search" />
-    </form>
-</div>
+</nav>

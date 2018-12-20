@@ -4,17 +4,21 @@
     {% for item in items %}
         {% set title = item.content['#title'] %}
         {% set url = item.content['#url'].getUri() %}
+        {% set splitUrl = url|split('/') %}
+        {% set splitDot = splitUrl[7]|split('.') %}
+        
         {% for social_item in social %}
-            {% if(social_item in url) %}
+            {% if(social_item in splitDot[0]) %}
                 {% if(social_item == 'bio') %}
                     {% set class = class|merge(['file-text-o']) %}
                 {% else %}
-                    {% set class = class|merge([social_item]) %}
+                    {% set class = class|merge(['user']) %}
                 {% endif %}
             {% endif %}
         {% endfor %}
+        
         <div class="row message-director-social-icon">
-            <a href="{{ url }}" class="inner-page-social-icon"><i class="fa fa-{{ class[loop.index0]|lower }} fa-lg" aria-hidden="true"></i> {{ title|upper }}</a>
+            <a href="{{ url }}" class="inner-page-social-icon" target="_blank"><i class="fa fa-{{ class[loop.index0]|lower }} fa-lg" aria-hidden="true"></i> {{ title|upper }}</a>
         </div>
     {% endfor %}
 </div>

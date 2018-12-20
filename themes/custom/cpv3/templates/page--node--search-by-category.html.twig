@@ -1,0 +1,171 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    
+    <style>
+        .advance-search-block{background: #d4d9dd; min-height: 180px; padding: 3px 5px 5px 5px;}
+        .advance-search-block h2{color: #4d4e4e !important; font-size: 26px !important; font-weight: 600; }
+        .advance-search-block p {margin-bottom: 10px !important; font-size: 15px; }
+        .advance-search-block-button{width:100%; height: 40px; line-height: 2;}
+        .advance-search-block-form{width: 95%; padding: 5px 5px 0 5px; }
+        
+        .borderless td, .borderless th {
+            border: none !important;
+        }
+    </style>
+    
+    <div ng-app="searchApp">
+        {# page-banner #}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg-ad-search.jpg" class="img-responsive " alt="bg"></div>
+                </div>
+            </div>
+        </div>{# End page-banner #}
+
+            <!-- contain -->
+        <div class="container" id="main-container">
+            {# Main content #}
+            <div class="row">
+                <div class="col-md-12">{{ page.title_bar }}</div>
+            </div>
+            
+            <div class="row paddingtop15 padding-bottom60">
+                <div class="col-md-12">
+                    <div class="row padding-left0">
+                        <div class="col-md-12">
+                               <!-- <p>
+                               Search by Case Number, Ordinance, Zoning Information or CPC Card. 
+                               </p>
+                               
+                               <table class="table table-condensed borderless">
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <th>Format:</th>
+                                        <th>Examples:</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Case Number</td>
+                                        <td>AA-YYYY-1234</td>
+                                        <td>ZA-2011-3269</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ordinance</td>
+                                        <td>ORD-000000</td>
+                                        <td>ORD-127564</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zoning Info.</td>
+                                        <td>ZI-0000</td>
+                                        <td>ZI-1232</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPC Card</td>
+                                        <td>CPC-00000</td>
+                                        <td>CPC-19701</td>
+                                    </tr>
+                               </table> -->
+                               
+                               <div class="row" style="padding-bottom: 15px;padding-top: 15px;">
+                                    <div class="col-md-4" style="padding-left: 0px;">
+                                       <div class="advance-search-block">
+                                           <h2 class="text-center">CASES</h2>
+                                           <center>
+                                                <form class="form advance-search-block-form">
+                                                    <div class="form-group">
+                                                        <label for="address" class="sr-only">Case number</label>
+                                                        <input type="text" id="case-number" class="form-control" placeholder="Example: ZA-2011-3269">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-z-search advance-search-block-button" id="case-search">Search</button>
+                                                   </div>
+                                                </form>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4" style="padding-left: 0px;">
+                                       <div class="advance-search-block">
+                                           <h2 class="text-center">ORDINANCES</h2>
+                                           <center>
+                                                <form class="form advance-search-block-form">
+                                                    <div class="form-group">
+                                                        <label for="address" class="sr-only">Case number</label>
+                                                        <input type="text" id="ordinances" class="form-control" placeholder="Example: ORD-127564">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-z-search advance-search-block-button" id="case-search">Search</button>
+                                                   </div>
+                                                </form>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4" style="padding-left: 0px;">
+                                       <div class="advance-search-block">
+                                           <h2 class="text-center">CASES</h2>
+                                           <center>
+                                                <form class="form advance-search-block-form">
+                                                    <div class="form-group">
+                                                        <label for="address" class="sr-only">ZONING CASES</label>
+                                                        <input type="text" id="case-number" class="form-control" placeholder="Example: ZA-1232">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-z-search advance-search-block-button" id="case-search">Search</button>
+                                                   </div>
+                                                </form>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    
+                               </div>
+                               
+                               <div class="row" style="padding-bottom: 15px;padding-top: 15px;">
+                               <center>
+                                    <div class="col-md-4 col-md-offset-2" style="padding-left: 0px;">
+                                       <div class="advance-search-block">
+                                           <h2 class="text-center">CPC CARDS</h2>
+                                           <center>
+                                                <form class="form advance-search-block-form">
+                                                    <div class="form-group">
+                                                        <label for="address" class="sr-only">CPC Card</label>
+                                                        <input type="text" id="case-number" class="form-control" placeholder="Example: ZA-2011-3269">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-z-search advance-search-block-button" id="case-search">Search</button>
+                                                   </div>
+                                                </form>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4" style="padding-left: 0px;">
+                                       <div class="advance-search-block">
+                                           <h2 class="text-center">ZA CARDS</h2>
+                                           <center>
+                                                <form class="form advance-search-block-form">
+                                                    <div class="form-group">
+                                                        <label for="address" class="sr-only">ZA Cards</label>
+                                                        <input type="text" id="ordinances" class="form-control" placeholder="Example: ORD-127564">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-z-search advance-search-block-button" id="case-search">Search</button>
+                                                   </div>
+                                                </form>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    </center>
+                               </div>
+                               <br>
+                               <p>If you have any problems with the application, please contact helpdesk at: E-Mail: planning@lacity.org</p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>{# End container #}
+    </div>{# End ng-app #}
+
+    <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}

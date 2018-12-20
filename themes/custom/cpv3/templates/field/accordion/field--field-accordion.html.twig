@@ -1,0 +1,32 @@
+{% for item in items %}
+
+	{% set title = item.content['#field_collection_item'].get('field_title').value   %}
+	{% set body = item.content['#field_collection_item'].get('field_body').value   %}
+	{% set item_id = item.content['#field_collection_item'].get('item_id').value   %}
+	
+    {% if title == 'Maps' %}
+        {% set panel_head_title = 'maps' %}
+    {% elseif title == 'Community Plan Document' %}
+        {% set panel_head_title = 'community-pan-document' %}
+    {% elseif title == 'Community Profile' %}
+        {% set panel_head_title = 'community_profile' %}
+    {% else %}
+	    {% set panel_head_title = 'overlays' %}
+    {% endif %}
+	
+	<div class="panel-group" id="accordion">
+		<div class="panel panel-default collapse-list">
+			<div class="panel-heading {{ panel_head_title }}">
+				<h6 class="panel-title">
+				    <a class="title" data-toggle="collapse" href="#collapse{{item_id}}">{{ title }}</a>
+				</h6>
+			</div>
+		        
+			<div id="collapse{{item_id}}" class="panel-collapse collapse">
+				<div class="list-group">
+				    {{ body|raw }}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}

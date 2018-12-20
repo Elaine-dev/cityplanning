@@ -1,0 +1,122 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+    <style>
+    html,body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #chart-container {
+      position: relative;
+      display: inline-block;
+      top: 10px;
+      left: 10px;
+      height: 420px;
+      width: calc(100% - 24px);
+      border-radius: 5px;
+      overflow: auto;
+      text-align: center;
+    }
+
+    .hidden { display: none; }
+    .orgchart .drill-icon {
+      transition: opacity .5s;
+      opacity: 0;
+      /* right: -10px; */
+      top: 30px;
+      z-index: 2;
+      color: rgba(198, 195, 195, 0.5);
+      font-size: 24px;
+      position: absolute;
+      cursor: pointer;
+    }
+    .orgchart .drill-icon:hover { color: #9d9b9b; }
+    .orgchart .node:hover .drill-icon { opacity: 1; }
+
+    /** custom css **/
+    .level0 {background-color: #bf6196 !important;}
+    .level0_border{border: 1px solid #bf6196 !important;}
+    .level1 {background-color: #33cc99 !important;}
+    .level1_border{border: 1px solid #33cc99 !important;}
+
+    .level2 {background-color: #6b406e !important;}
+    .level2_border{border: 1px solid #6b406e !important;}
+    .level3 {background-color: #e8b240 !important;}
+    .level3_border{border: 1px solid #e8b240 !important;}
+    .level4 {background-color: #cb5b5a !important;}
+    .level4_border{border: 1px solid #cb5b5a !important;}
+
+    .level5 {background-color: #8d594c !important;}
+    .level5_border{border: 1px solid #8d594c !important;}
+    .level6 {background-color: #5c6bc0 !important;}
+    .level6_border{border: 1px solid #5c6bc0 !important;}
+    .level7 {background-color: #40324f !important;}
+    .level7_border{border: 1px solid #40324f !important;}
+
+    .orgchart .node .edge { display: none;}     /* hide arrows */
+    .orgchart .node{width: 190px !important;}
+    .orgchart .node .content {
+      overflow:  inherit !important;
+      text-overflow: inherit !important;
+      white-space: inherit !important;
+      padding: 5px;
+      height: 50px !important;
+    }
+
+
+    .orgchart tr.lines td.topLine {
+      border-top: 2px solid rgba(102, 204, 204, 0.8) !important;
+    }
+
+    .orgchart tr.lines td.rightLine {
+      border-right: 1px solid rgba(102, 204, 204, 0.8) !important;
+    }
+
+    .orgchart tr.lines td.leftLine {
+      border-left: 1px solid rgba(102, 204, 204, 0.8) !important;
+    }
+
+    .orgchart tr.lines .downLine {
+      background-color: rgba(102, 204, 204, 0.8) !important;
+    }
+    </style>
+
+    {# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+    <!-- contain -->
+    <div class="container" id="main-container">
+        <div class="row">
+            <div class="col-md-12">{{ page.title_bar }}</div>
+        </div>
+    </div>
+
+	<!-- contain -->
+	<div class="container-fluid section-padding-inner">
+	    <div class="row">
+	        <!-- left bar -->
+	        <div class="col-md-12">
+	            <div class="row">
+	                <div class="col-md-12 padding-bottom25">
+	                    <div id="chart-container"></div>
+	                </div>
+	            </div>
+	        </div><!-- //END left bar -->
+
+	    </div>
+	</div>  <!-- //End container -->
+
+
+
+    <!-- footer section -->
+    {{ attach_library('cpv3/organizational-chart5') }}
+    {% include directory ~ '/partials/footer.html.twig' %}

@@ -34,6 +34,7 @@
                         {% if data['#paragraph'].hasField('field_full_width_image') or
                         	data['#paragraph'].hasField('field_bg_image') or
                         	data['#paragraph'].hasField('field_button') or
+                          data['#paragraph'].hasField('field_block_quote') or
                         	data['#paragraph'].hasField('field_fullwidth_body')
                        	%}
                             {% set full_width_data = full_width_data|merge({(loop.index0):{'para_id':parag_id['target_id'],'flag':true}}) %}
@@ -67,21 +68,12 @@
 
 {% for item in full_width_data %}
     {% if item.flag %}
-    <div class="full-width-content">
+    <div class="clear full-width-content {% if item.para_id == 122 %} block-qoute-wrapper {% endif %}">
         {# full width content goes here #}
         {{ bamboo_render_entity('paragraph', item.para_id) }}
     </div>
-    
-  	{% elseif item.para_id == 136 %}
-		<div class="block-quote-wrapper">
-			<div class="row">
-				<div class="section-content clear">
-               		{{ bamboo_render_entity('paragraph', item.para_id) }}
-              	</div>
-			</div>
-		</div>
-		
-    {% else %}
+
+  	{% else %}
         {# small width content goes here #}
         <div class="container">
             <div class="row cms-fullwidth">

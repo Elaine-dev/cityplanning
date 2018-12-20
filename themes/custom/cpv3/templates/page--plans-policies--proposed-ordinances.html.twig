@@ -1,0 +1,104 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				{{ page.top_banner }}
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+        <!-- contain -->
+    <div class="container" id="main-container" ng-app="appOrdinances">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12">{{ page.title_bar }}</div>
+        </div>
+        <div class="row paddingtop15 padding-bottom60" ng-controller="proposedOrdinanceCtrl">
+            
+            <div class="col-md-9">
+                <div class="row padding-left0">
+                    <div class="col-md-12">
+						
+						<div class="row padding-left0">
+							<div class="col-md-12">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem odio, lacinia mattis consequat et, maximus sit amet est. 
+								Quisque blandit lectus sit amet varius tincidunt. Maecenas euismod purus a ipsum hendrerit, at gravida ipsum aliquet. 
+								Vivamus dolor nibh, pharetra vitae pretium ut, gravida at magna. Nulla suscipit sit amet ante id varius.</p>
+							</div>
+						</div>
+						
+						<hr>
+						
+						<div class="row padding-bottom30" >
+							<div class="col-md-offset-8 col-md-4 col-xs-12" id="content-search">
+   								<input ng-model="filterdata" placeholder="Search" />
+   							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-12">
+								<div ng-disabled="enable=='false'">
+	               					<center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+	               				</div>
+							</div>
+						</div>
+						
+						<div ng-if="data.length > 0">
+							<div class="row padding-left0 padding-right0" ng-repeat="val in data | filter:filterdata | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
+								<div class="col-md-12 padding-bottom30">
+									<div>
+										<h5 class="padding-top0"> {[{ val.title }]} </h5>
+										<div class="date" style="font-size: 12px;">
+											<span class="glyphicon glyphicon-time" aria-hidden="true"></span> {[{ val.date }]}
+										</div>
+									</div>
+									<div class="paddingtop15" ng-bind-html="val.body"></div>
+								</div>
+								<div class="col-md-12"><hr /></div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-12" id="a-pagination">
+									<ul uib-pagination
+	                                    total-items="total"
+	                                    ng-model="currentPage"
+	                                    max-size="noOfPages"
+	                                    items-per-page="pageSize"
+	                                    class="pagination-sm"
+	                                    boundary-link-numbers="true"
+	                                    rotate="true">
+	                                </ul>
+								</div>
+							</div>
+						</div>
+						
+						<div ng-if="data.length < 1">
+							<div class="row padding-left0 padding-right0">
+								<div class="col-md-12 padding-bottom30">
+									<strong>No record found!</strong>
+								</div>
+							</div>
+                   		</div>
+						
+
+                    </div>
+                </div>
+            </div>
+
+            {# Right-side bar #}
+            <div class="col-md-3 sidebar-menu padding-right-27 visible-lg-block">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
+        </div>
+    </div>{# End container #}
+
+
+    <!-- footer section -->
+    {{ attach_library ('cpv3/proposed-ordinances') }}
+    {{ attach_library ('cpv3/angular-js') }}
+    {% include directory ~ '/partials/footer.html.twig' %}
+    

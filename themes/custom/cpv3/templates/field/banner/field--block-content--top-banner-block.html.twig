@@ -1,7 +1,7 @@
 <div id="page-title-bg">
     {% for item in items %}
         {% set url = file_url(item.content['#item'].entity.uri.value | image_style('top_banner')) %}
-        <img class="img-responsive" src="{{ url }}">
+        <img class="img-responsive" src="{{ url }}" alt="top banner">
     {% endfor %}
 </div>
 
