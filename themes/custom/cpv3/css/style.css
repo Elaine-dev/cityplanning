@@ -314,7 +314,7 @@ _:-moz-tree-row(hover), .planning-tag{margin-left: -30;}
 .stay-connected-social-icons{padding-left: 0; padding-top: 90px;}
 #btn-newsletter{background-color:#73c5ea; border-color:#73c5ea; color:#fff; padding: 10px 12px !important;}
 #say-connected .form-control{border-radius:0px !important; height:40px !important;}
-#signup-newsletter{font-weight: 300; padding-bottom: 10px; font-size: 21px;}
+#signup-newsletter{font-weight: 300; padding-bottom: 10px; font-size: 21px; text-align: center; }
 #stay{font-weight: 200; font-size: 45px; line-height: 1;}
 #connected{font-weight:bold; font-size: 40px; line-height: 1;}
 #say-connected .social-icons{padding-left: 0; left: -25px; padding-top:50px;}
