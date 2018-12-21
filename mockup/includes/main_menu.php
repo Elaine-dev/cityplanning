@@ -33,7 +33,6 @@
 		            					<li><a href="<?php echo BASEURL; ?>about/department-city-planning.php">Department of City Planning</a></li>
 		            					<li><a href="<?php echo BASEURL; ?>/archieves/about/2017.10.10_OrgChart_a.DptCityPlanning.pdf" target="_blank">Department Org Chart</a></li>
 		            					<li><a href="<?php echo BASEURL; ?>about/message-director.php">Message from the Director</a></li>
-		            					<li><a href="<?php echo BASEURL; ?>about/staff-directory">Staff Directory</a></li>
 		            					<li><a href="<?php echo BASEURL; ?>about/commissions.php">City Planning Commission</a></li>
 		                        	</ul>
 		                        </li>
@@ -41,7 +40,7 @@
 		                        	<h3 class="dropdown-header">Meetings, Hearings & Agendas</h3>
 		            				<ul>
 		            					<li class="divider"></li>
-		            					<li><a href="<?php echo BASEURL; ?>about/commission-agendas-minutes">Agendas & Minutes</a></li>
+		            					<li><a href="<?php echo BASEURL; ?>about/commission-meetings">Commission Meetings</a></li>
 		            					<li><a href="<?php echo BASEURL; ?>about/hearings">Hearings</a></li>
 		            					<li><a href="<?php echo BASEURL; ?>about/calendar">Planning Calendar</a></li>
 		            				</ul>
@@ -101,7 +100,7 @@
 		                                <li><a href="http://planning.lacity.org/fees/" target="_blank">Fee Estimator</a></li>
 		                                <li><a href="<?php echo BASEURL; ?>projects/ceqa-environmental-review">CEQA / Environmental Review</a></li>
 		            					<li><a href="<?php echo BASEURL; ?>about/hearings">Hearings</a></li>
-		            					<li><a href="<?php echo BASEURL; ?>about/commission-agendas-minutes">Commission Agendas & Minutes</a></li>
+		            					<li><a href="<?php echo BASEURL; ?>about/commission-meetings">Commission Meetings</a></li>
 		            					<li><a href="#">Forms</a></li>
 		            				</ul>
 		            			</li>

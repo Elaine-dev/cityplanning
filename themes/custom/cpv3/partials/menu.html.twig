@@ -18,7 +18,7 @@
     			<ul class="nav navbar-nav navbar-right padding-top13 search-google-lan">
 	                <li id="search" style="padding-right: 10px !important; ">
                         <form  action="/search/node" method="get" id="search-block-form" accept-charset="utf-8" class="searchbox">
-			                <input type="search" maxlength="128" placeholder="Search for ..." class="searchbox-input" data-drupal-selector="edit-keys" id="edit-keys--2" name="keys" onkeyup="buttonUp();" required />
+              <input type="search" maxlength="128" placeholder="Search for ..." class="searchbox-input" data-drupal-selector="edit-keys" id="edit-keys--2" name="keys" onkeyup="buttonUp();" required="required"/>
 			                <input type="submit" class="searchbox-submit js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--3" />
 			                <span class="searchbox-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
 			            </form>
@@ -42,25 +42,30 @@
 		            					<li><a href="{{ base_path }}about/executive-office">Executive Office</a></li>
 		            					<li><a href="{{ base_path }}about/decision-makers">Decision Makers</a></li>
 		            					<li><a href="{{ base_path }}about/commissions">Commissions</a></li>
-		            					<li><a href="{{ base_path }}about/staff-directory">Staff Directory</a></li>
 		                        	</ul>
 		                        </li>
 		                        <li class="col-md-4">
 		                        	<h3 class="dropdown-header">Meetings</h3>
 		            				<ul>
 		            					<li class="divider"></li>
-		            					<li><a href="{{ base_path }}about/calendar">Community Calendar</a></li>
+                    <li>
+                      <a href="{{ base_path }}about/calendar">Events Calendar</a>
+                    </li>
 		            					<li><a href="{{ base_path }}about/hearings">Public Hearings</a></li>
-		            					<li><a href="{{ base_path }}about/commission-agendas-minutes">Agendas & Minutes</a></li>
+                    <li>
+                      <a href="{{ base_path }}about/commission-meetings">Commission Meetings</a>
+                    </li>
 		            				</ul>
 		            			</li>
 		                        <li class="col-md-4">
 		                        	<h3 class="dropdown-header">Connect</h3>
 		            				<ul>
 		            					<li class="divider"></li>
-		            					<li><a href="{{ base_path }}about/publications">Publications</a></li>
 		            					<li><a href="{{ base_path }}blog">Blog</a></li>
 		            					<li><a href="{{ base_path }}">Stay Connected</a></li>
+                    <li>
+                      <a href="{{ base_path }}about/staff-directory">Staff Directory</a>
+                    </li>
 		            				</ul>
 		            			</li>
 		                    </ul>
@@ -196,6 +201,9 @@
 		            					<li><a href="{{ base_path }}resources/videos">Videos</a></li>
 		            					<li><a href="{{ base_path }}development-process/forms">Forms</a></li>
 		            					<li><a href="{{ base_path }}resources/fee-estimator">Fee Estimator</a></li>
+                    <li>
+                      <a href="{{ base_path }}resources/publications">Publications</a>
+                    </li>
 		                        	</ul>
 		                        </li>
 		                        <li class="col-md-4">

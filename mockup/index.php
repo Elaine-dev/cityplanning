@@ -106,7 +106,7 @@
                   <div class="row text-center padding-top40">
                      <p><a href="https://www.ourla2040.org/get-involved" target="_blank">General Plan</a></p>
                      <p><a href="/communities/community-plan-updates">Communnity Plan Updates</a></p>
-                     <p><a href="/about/commission-agendas-minutes">Commission Meetings + Hearings</a></p>
+                     <p><a href="/about/commission-meetings">Commission Meetings</a></p>
                   </div>
                </div>
             </div>

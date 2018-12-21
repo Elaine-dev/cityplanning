@@ -568,7 +568,7 @@ article img{padding-top:0; padding-bottom: 15px;}
 	padding: 15px;
   	color: #555 !important;
   	font-size: 14px;
-	text-transform: uppercase;
+  text-transform: capitalize;
 	text-decoration: none;
 }
 #staff-directory .panel-heading  a:before {

@@ -22,7 +22,7 @@
         </li>
         <li class="line"></li>
         <li>
-            <a href="#">Agendas & Minutes</a>
+            <a href="#">Commission Meetings</a>
         </li>
         <li class="line"></li>
         <li>
