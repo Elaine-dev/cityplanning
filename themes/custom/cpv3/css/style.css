@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2018.12.12
-version: 4.4.4
+Update Date: 2018.12.24
+version: 4.4.5
 *********************/
 body {
     line-height: 1.5 !important;
@@ -838,199 +838,99 @@ ul#list-horizontal li {
 .field-community-info{margin-bottom: 115px;}
 
 /** Org Chart **/
+.col-centered {float: none; margin: 0 auto;}
+#org-background{
+	/* background-image: linear-gradient(to bottom, royalblue, orchid 90%); height: 1049px; */
+	background-image: url('../images/city-planning-bureaus/social-b.jpg');
+	background-repeat: no-repeat;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
 #org-slider {
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	text-transform: capitalize;
 }
 .main-section {
     position: relative;
     margin: 0;
     padding: 0;
 }
-.col-centered {float: none; margin: 0 auto; background-image: url("../images/city-planning-bureaus/social-t.jpg");}
-.col-centered-2 {float: none; margin: 0 auto; background-image: none;}
-.card{background-color: #fff;  position: relative; left: 55px; width: 600px; height: 122px; padding: 15px; margin: 25px 15px;}
-.image-placeholder{float: left;}
-.card-body{float: right;}
-.card-title{color: #333; font-weight: bold !important;}
-.card-text{color: #777; text-transform: uppercase; font-size: 15px;}
-.boss-card2 {
-	background-image: url("../images/boss-card.png");
-	background-repeat: repeat-y;
-	height: 160px;
-	text-align: left;
-}
-.boss-card {
-    margin: 15px;
-    background: #fff;
-    position: relative;
-    margin-bottom: 80px;
-    padding: 20px;
-    height: 117px;
-    text-align: left;
-}
-.boss-card:after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-left: 385px solid transparent;
-    border-right: 385px solid transparent;
-    border-top: 40px solid #ffffff;
-    left: 0;
-}
-.parent-content {display: table;}
 .leaf {
     position: relative;
     display: block;
     float: left;
-    margin: 0;
-    padding: 0;
     width: 800px;
-    height: 1100px;
+    height: 1049px;
     text-align: center;
     text-transform: capitalize;
 }
-a.control_prev {
-    border-radius: 0 2px 2px 0;
-}
-a.control_next {
-    right: 0;
-    border-radius: 2px 0 0 2px;
-}
-a.control_prev, a.control_next {
-    position: absolute;
-    top: 40%;
-    z-index: 999;
-    display: block;
-    padding: 4% 3%;
-    width: auto;
-    height: auto;
-    background: #2a2a2a;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    opacity: 0.8;
-    cursor: pointer;
-}
-a.control_prev:hover, a.control_next:hover {
-    opacity: 1;
-    -webkit-transition: all 0.2s ease;
-}
-.slider_option {
-    position: relative;
-    margin: 10px auto;
-    width: 160px;
-    font-size: 18px;
-}
-
-*, *:before, *:after {
-    box-sizing: border-box;
-}
-
-.avatar {
-    margin: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: table-cell;
-}
-.info{
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
+.boss-card2 {
+    background-image: url("../images/boss-card-6855x160.png");
+    background-repeat:no-repeat;
+    height: 160px;
     text-align: left;
-    padding-left: 30px;
+    margin-left: 57px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding: 25px;
 }
+.card-title{color: #333; font-weight: bold !important; font-size: 22px;}
+.card-text{color: #777; text-transform: uppercase; font-size: 15px;}
+.cursor-on{cursor: pointer;}
 .icon {
     cursor: pointer;
     color: #6398f8;
-    padding: 10px 15px !important;
+    padding: 20px 15px !important;
     float: right;
 }
 .next {cursor: pointer;}
+.footer-background{
+    background-color: #235;
+}
+.clear{clear:both !important;}
+
+/* Child list */
+.leaf-2 {}
+.child-card {
+    display: table;
+    width: 83%;
+    padding: 13px;
+    background: white;
+    text-align: left;
+    margin: 5px;
+}
+
+.card-list {
+    display: table;
+    width: 83%;
+    padding: 13px;
+    background: white;
+    text-align: left;
+    margin: 5px;
+    -webkit-box-shadow: 2px 6px 0px -3px #99ccff;
+    -moz-box-shadow: 2px 6px 0px -3px #99ccff;
+    box-shadow: 2px 6px 0px -3px #99ccff;
+
+}
+.user-title{padding-right: 35%;}
+.user-icon{padding: 12px;}
+.card-list-fullname {color: #6398f8; font-weight: bold !important; font-size: 22px;}
 .icon-prev {
     display: block;
     margin-top: 10px;
     padding-left: 10px;
 }
-.p-prev-icon{float: left;}
-.child-card {
-    display: table;
-    width: 90%;
-    padding: 20px;
-    background: white;
-    text-align: left;
-    margin: 20px 20px 20px 25px;
-}
-.child-avatar{
-    width: 80px;
-    height: 80px;
-}
-.leaf-2 {}
-.parent-info {
-    padding: 10px;
-    display: table;
-    background: white;
-    width: 100%;
-    border-right: #6398f8 5px solid;
-    border-bottom: solid 2px #6398f8;
-}
+.p-prev-icon{float: left; margin-top: -20;}
 .child-info {
-    /* background: white; */
     text-align: left;
     padding-right: 0;
     padding-left: 0;
 }
-.child-leaf {
-    padding: 10px;
-    border-bottom: solid 2px #6398f8;
-}
-.small-avatar{
-    width: 60px;
-    height: 60px;
-}
-.card-head {
-    background-color: #fff;
-    padding: 15px;
-    margin: 0;
-    position: relative;
-    font-size: 11px;
-    border-right: #6398f8 5px solid;
-    margin-bottom: 5px;
-    -webkit-box-shadow: 2px 6px 0px -3px #99ccff;
-    -moz-box-shadow: 2px 6px 0px -3px #99ccff;
-    box-shadow: 2px 6px 0px -3px #99ccff;
-}
-.card-list {
-    padding: 15px;
-    background-color: #f4f9ff;
-    position: relative;
-    color: #6398f8;
-    font-size: 11px;
-    margin-bottom: 10px;
-    -webkit-box-shadow: 2px 6px 0px -3px #99ccff;
-    -moz-box-shadow: 2px 6px 0px -3px #99ccff;
-    box-shadow: 2px 6px 0px -3px #99ccff;
-}
-.card-list-fullname {color: #6398f8; font-weight: bold !important;}
-.card-list p{margin-bottom: 5px;}
-.image-placeholder{float: left;}
-.card-list-body{float: right;}
-.card-list-position{text-transform: uppercase; font-size: 11px;}
-.padding-top-10{padding-top: 10px;}
-.user-icon{margin-left: 10px; margin-top: 10px;}
 .scrollStyle {
+    height: 800px;
     overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 220px;
-}
-.footer-background{
-    background-color: #235;
-    height: 45px;
-    width: 100%;
+    margin-right: 0;
 }
 
 /*-->> **************** Media Query *****************/

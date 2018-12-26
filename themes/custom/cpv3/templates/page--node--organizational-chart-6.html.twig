@@ -16,93 +16,104 @@
 	</div>
 
 	<div class="row" style="padding-top: 35px; padding-bottom: 35px;">
+        <div class="col-md-9 col-centered">
+            <div class="row">
+                <div class="col-md-12" id="org-background">
+                    <div id="org-slider">
+                        <div class="main-section" ng-app="myApp" ng-controller="myController">
+                            
+                            <div class="leaf leaf-1" style="padding-top: 25px; padding-bottom: 25px;" ng-repeat="member in list">
+                            
+                                <!-- Boss card -->
+                                <div class="row" sytle="float: none; margin: 0 auto;">
+                                    <div class="boss-card2">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-2">
+                                            <img
+                                                src="{{ theme_base_path }}/images/city-planning-bureaus/{[{member.avatar}]}"
+                                                class="img-responsive img-circle" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h4 class="card-title">{[{member.name|camelize}]}</h4>
+                                              <p class="card-text">{[{member.title|camelize}]}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="clear"></div>
+                                
+                                <!-- Child card -->
+                                <div class="row">
+                                    <div class="col-md-12" style="padding-left: 125px;">
+                                        
+                                        <!-- child list -->
+                                        <div class="row" ng-repeat="child in member.children">
+                                            <div class="child-card">
+                                                <div class="col-md-2 cursor-on" data-children="" data-filter="{[{child.name}]}" data-parent=""
+                                                    style="padding-top: 15px; padding-bottom: 15px;" >
+                                                    <img
+                                                        src="{{ theme_base_path }}/images/city-planning-bureaus/{[{child.avatar}]}"
+                                                        class="img-responsive img-circle" />
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <h4 class="card-title cursor-on" data-children="" data-filter="{[{child.name}]}" data-parent="">{[{child.name|camelize}]}</h4>
+                                                    <p class="card-text">{[{child.title|camelize}]}</p>
+                                                </div>
+                                                <div class="col-md-1 next" data-children="" data-filter="{[{child.name}]}" data-parent="">
+                                                    <i class="fa fa-angle-right fa-3x icon"></i>
+                                                </div>
+                                            </div>
+                                        </div> <!-- // end child list -->
+                                        
+                                    </div> <!-- // end .col-md-12 -->
+                                </div> <!-- // end .row -->
+                                
+                            </div> <!-- // end .leaf .leaf-1  -->
+                            
+                            <!-- Leaf 2 -->
+                            <div class="leaf leaf-2" style="padding-top: 25px; padding-bottom: 25px;" ng-repeat="n in [] | range:10">
+                                
+                                <!-- Boss card -->
+                                <div class="row">
+                                    <div class="boss-card2">
+                                       <div class="col-md-1 icon-prev">
+                                             <span class="p-prev-icon"></span>
+                                       </div>
+                                      <div class="col-md-2">
+                                           <img class="img-responsive img-circle p-avatar" src="" />
+                                      </div>
+                                      <div class="col-md-9">
+                                          <div class="user-title">
+                                           <h4 class="p-name card-title"></h4>
+                                            <p class="p-title card-text"></p>
+                                          </div> 
+                                      </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="clear"></div>
+                                
+                                <div class="row scrollStyle">
+                                     <div class="col-md-12 child-info" style="padding-left: 125px; bottom: 60px; padding-top: 50px"></div>
+                                </div>
+                            
+                            </div>
+                            
+                        </div> <!-- // end .main-section -->
+                    </div> <!-- // end #org-slider -->
 
-		<div class="col-md-9 col-md-offset-3 col-centered">
-			<div class="row">
-				<div class="col-md-12 ">
-
-					<div id="org-slider">
-						<div class="main-section" ng-app="myApp" ng-controller="myController">
-
-							<div class="leaf leaf-1" style="padding-top: 25px; padding-bottom: 25px;">
-
-								<!--main loop-->
-								<div ng-repeat="member in list">
-									<div class="boss-card2">
-										<div class="row" style="padding: 25px;">
-											<div class="col-md-2 col-xs-2">
-												<img src="{{ theme_base_path }}/images/city-planning-bureaus/{[{member.avatar}]}" class="img-responsive img-circle" style="margin-top: -10;">
-											</div>
-											<div class="col-md-8 col-xs-8"">
-												<h4 class="card-title">{[{member.name|camelize}]}</h4>
-												<p class="card-text">{[{member.title}]}</p>
-											</div>
-										</div>
-									</div>
-
-									<!--first child loop-->
-									<div class="child-card" ng-repeat="child in member.children">
-										<div class="row">
-									       <div class="col-md-2 col-xs-2">
-	                                            <img src="{{ theme_base_path }}/images/city-planning-bureaus/{[{child.avatar}]}" class="img-responsive img-circle">
-	                                        </div>
-	                                        <div class="col-md-8 col-xs-8"">
-	                                            <h4 class="card-title">{[{child.name|camelize}]}</h4>
-	                                            <p class="card-text">{[{child.title}]}</p>
-	                                        </div>
-	                                        <div class="col-md-2 col-xs-2 icon next" data-children="" data-filter="{[{child.name}]}" data-parent="">
-	                                            <i class="icon fa fa-angle-right fa-3x"></i>
-	                                        </div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="leaf leaf-2 scrollStyle" ng-repeat="n in [] | range:10">
-								<div class="row" style="padding-left: 0; padding-right: 0;">
-									<div class="col-md-6" style="margin: 0; padding: 0;">
-										<div class="card-head" style="padding-top: 15px;">
-											<div class="row" style="padding-left: 0;">
-												<div class="col-md-2 icon-prev">
-													<span class="p-prev-icon"></span>
-												</div>
-
-												<div class="col-md-2" style="padding-left: 0; padding-top: 10px;">
-													<div class="avatar small-avatar">
-														<img class="p-avatar" src="" width="60" height="60">
-													</div>
-												</div>
-
-												<div class="col-md-8" style="text-align: left; text-transform: capitalize;">
-													<h4 class="p-name card-list-fullname"></h4>
-													<p class="p-title card-text"></p>
-												</div>
-
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-6 child-info"></div>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-
-			<div class="row" style="padding: 5px 0 0 0;">
-				<div class="col-md footer-background">
-					<a href="{{ base_path }}about/organizational-chart-6"
-						style="margin-left: 50%;"><i class="fa fa-home fa-2x"
-						aria-hidden="true" style="color: #999; padding-top: 5px;"></i></a>
-				</div>
-			</div>
-
-		</div>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <!-- footer -->
+            <div class="row">
+                <div class="col-md-12 footer-background">
+                    <a href="{{ base_path }}about/organizational-chart-6" style="margin-left: 375px;"><i class="fa fa-home fa-3x" aria-hidden="true" style="color: #999; padding-top: 1px;"></i></a>
+                </div>
+            </div>
+        </div><!-- // .col-md-9 .col-centered -->		
 
 	</div>
 </div>
