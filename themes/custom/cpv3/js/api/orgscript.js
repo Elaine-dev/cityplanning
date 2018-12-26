@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-	var baseURL = 'http://10.68.8.153/themes/custom/cpv3/';
+	var baseURL = '/themes/custom/cpv3/';
 	
 	$('#checkbox').change(function() {
 		setInterval(function () {
