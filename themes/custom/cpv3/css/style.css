@@ -887,6 +887,8 @@ ul#list-horizontal li {
 .next {cursor: pointer;}
 .footer-background{
     background-color: #235;
+    padding-top: 5px;
+    height: 47px;
 }
 .clear{clear:both !important;}
 
@@ -908,10 +910,10 @@ ul#list-horizontal li {
     background: white;
     text-align: left;
     margin: 5px;
-    -webkit-box-shadow: 2px 6px 0px -3px #99ccff;
+/*  -webkit-box-shadow: 2px 6px 0px -3px #99ccff;
     -moz-box-shadow: 2px 6px 0px -3px #99ccff;
     box-shadow: 2px 6px 0px -3px #99ccff;
-
+    */
 }
 .user-title{padding-right: 35%;}
 .user-icon{padding: 12px;}
