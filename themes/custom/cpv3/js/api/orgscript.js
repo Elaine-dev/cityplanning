@@ -36,27 +36,25 @@ jQuery(document).ready(function ($) {
 		 $('.main-section').css('left', '');
 	  });
    };
-
+   
+   // Next
    $(document).on('click','.next, .card-title, .col-md-2', function () {
 	  var q = $(this).attr("data-filter");
 	  var parentEle = $(this).attr("data-parent");
 	  
-	  //setBackgroundImage(q);
-	  
 	  search_data(q, parentEle);
 	  moveRight();
    });
-
+   
+   // Previous
+   parent_name = '';
    $(document).on('click','.prev',function () {
-	  var q = $(this).attr("data-filter");
-	  var parentEle = $(this).attr("data-parent");
-	 
-	  //setBackgroundImage(q);
-	  
-	  search_data(q, parentEle);
-	  moveLeft();
+	   var q = $(this).attr("data-filter");
+       search_parent(q);
+       moveLeft();
    });
 
+   // Search
    var rs;
    function search_data(q, parentEle) {
 	  $.getJSON(baseURL+'js/api/organization.json', function (data) {
@@ -68,7 +66,8 @@ jQuery(document).ready(function ($) {
 		 });
 	  });
    }
-
+   
+   // Search recursively
    function recursive_function(d, q, parentEle) {
 	  $.each(d,function (i,j) {
 		 if(q == j.name) {
@@ -80,7 +79,36 @@ jQuery(document).ready(function ($) {
 		 }
 	  });
    }
-
+   
+   // Search parent
+   function search_parent(q) {
+       $.getJSON(baseURL+'js/api/organization.json', function (data) {
+           rs = $(data).filter(function (x,y) {
+               if(y.children) {
+                   parent_name_1 = recursive_function_parent(y, q);
+                   search_data(parent_name_1, parent_name_1);
+               }
+           });
+       });
+   }
+   
+   // Prepare html layout
+   function recursive_function_parent(y, q) {
+       $.each(y.children, function (i,j) {
+           console.log('search parent of '+q);
+          if(q == j.name) {
+              parent_name = y.name; 	// parent element name
+              return false;
+          } else {
+              if(j.children) {
+                  recursive_function_parent(j, q);
+              }
+          }
+       });
+       return parent_name;
+   }
+   
+   // Prepare html layout
    function prepare_html(rows, q, parentEle) {
 	  var parent = [];
 	  var childList = '';
@@ -126,25 +154,11 @@ jQuery(document).ready(function ($) {
 		 avatar = rows['avatar'];
 	  }
 	  
-	  $('.p-prev-icon').html("<div class='icon prev' data-children='' data-filter='"+parentEle+"' data-parent=''><i class='fa fa-angle-left fa-3x'></i></div>")
+	  $('.p-prev-icon').html("<div class='icon prev' data-children='' data-filter='"+parent[0]+"' data-parent='"+parentEle+"'><i class='fa fa-angle-left fa-3x'></i></div>");
 	  $('.p-avatar').attr('src', baseURL+'images/city-planning-bureaus/'+avatar);
 	  $('.p-name').html(parent[0].toLowerCase());
 	  $('.p-title').html(parent[1]);
 
 	  $('.child-info').html(childList);
    }
-   
-   // set background image
-   function setBackgroundImage( q = '' ) {
-	var bgImage = baseURL+"/images/city-planning-bureaus/social-t.jpg";
-
-	if (q != ""){
-	  $('.col-centered').css({"background-image": "none"});
-	    $('.leaf').css({"background-color": "#cfdde6", "background-image": "none"});
-	} else {
-	    $('.col-centered').css({"background-image": "none"});
-	    $('.leaf').css({"background-image": "url(\"" + bgImage + "\")"});
-	}
-   }
-
 });
