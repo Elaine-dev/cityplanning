@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2018.12.24
-version: 4.4.5
+Update Date: 2018.12.27
+version: 4.4.6
 *********************/
 body {
     line-height: 1.5 !important;
@@ -831,8 +831,8 @@ ul#list-horizontal li {
 .community-pan-document {color: #fff !important; background-color: #ffb846 !important;}
 .overlays {color: #fff !important; background-color: #53bda6 !important;}
 .community_profile {color: #fff !important; background-color: #a0a8aa !important;}
-/* #community-plan-area, ol, ul,
-#accordion ol, ul {list-style: inherit;} */
+.default-title{color: #fff !important; background-color: #999 !important;}
+.no-uppercase{text-transform: none !important;}
 
 .community-icon-color{color: #f58c29 !important; font-size: 14px; padding-left: 25px;}
 .field-community-info{margin-bottom: 115px;}
