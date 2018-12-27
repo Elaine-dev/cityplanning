@@ -11,7 +11,7 @@ app.controller('myController', function ($scope, $http) {
 
     var request = {
         method: 'get',
-        url: 'http://ladcp.westus.cloudapp.azure.com/themes/custom/cpv3/js/api/organization.json',
+        url: '/themes/custom/cpv3/js/api/organization.json',
         dataType: 'json',
         contentType: "application/json"
     };
