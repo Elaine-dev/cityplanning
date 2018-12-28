@@ -406,6 +406,9 @@ article img{padding-top:0; padding-bottom: 15px;}
 .nav>li>a:focus, .nav>li>a:hover{background-color: transparent  !important;}
 .nav-tabs a {color:#a3a5a8 !important;}
 
+/*publications*/
+#commissions-tab.sizer {font-size: 14px;}
+
 .team-name {color: #3a5a99;}
 .team-position {color: #333;}
 #teams .fa-2x{font-size: 1.3em;}
