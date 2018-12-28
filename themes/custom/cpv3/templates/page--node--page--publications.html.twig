@@ -24,8 +24,7 @@
 						{# content goes here #}
 						<div class="row padding-left0">
 							<div class="col-md-12">
-								<p>The Department issues publications to keep stakeholders updated on important milestones and
-								further engage community members on neighborhood specific issues and policies.</p>
+								<p>The City Planning Department issues publications to keep neighborhood and business interests updated on important milestones, in addition to furthering engagement efforts on specific issues and policies. Referenced below are some of the Department's reoccurring publications. For questions, comments, or reprint requests, please contact Rayna Plummer by email <a target="_top" href="mailto:rayna@plummer@lacity.org">rayna@plummer@lacity.org</a> or phone (213) 978-1234.</p>
 							</div>
 						</div>
 
@@ -35,7 +34,7 @@
 						{# tab #}
 						<div class="row padding-left0">
 						    <div class="col-md-12">
-						        <div id="commissions-tab">
+						        <div id="commissions-tab" class="sizer">
                                     <ul class="nav nav-tabs" role="tablist">
                                      {% for item in publication_categories %}
                                          {% if loop.index0 == 0 %}
@@ -50,14 +49,15 @@
                                             class="{{ class }}">{{ item.first_name}}<br>{{ item.last_name}}
                                         </a></li>
                                     {% endfor %}
-
-                                        <li role="presentation" class="tab-line js-publication-tab">
+                                  {# REMOVED
+                                      <li role="presentation" class="tab-line js-publication-tab">
                                             <a href="#4" aria-controls="4"  id="4" role="tab" data-toggle="tab">
                                                 <i class="fa fa-search fa-2x" aria-hidden="true"></i>
                                                 <div class="pull-right" style="padding-left: 10px; margin-top: -7;">
                                                     Search All<br>Publications...
                                                 </div>
                                         </a></li>
+                                        #}
                                     </ul>
 
                                      <div id="publication-tabs">
