@@ -4,15 +4,22 @@
 	{% set body = item.content['#field_collection_item'].get('field_body').value   %}
 	{% set item_id = item.content['#field_collection_item'].get('item_id').value   %}
 	
-    {% if title == 'Maps' %}
-        {% set panel_head_title = 'maps' %}
-    {% elseif title == 'Community Plan Document' %}
-        {% set panel_head_title = 'community-pan-document' %}
-    {% elseif title == 'Community Profile' %}
-        {% set panel_head_title = 'community_profile' %}
-    {% else %}
-	    {% set panel_head_title = 'overlays' %}
-    {% endif %}
+	{# panel head background color #}
+	{# 
+	    {% if title == 'Maps' %}
+		   {% set panel_head_title = 'maps' %}
+	    {% elseif title == 'Community Plan Document' %}
+		   {% set panel_head_title = 'community-pan-document' %}
+	    {% elseif title == 'Community Profile' %}
+		   {% set panel_head_title = 'community_profile' %}
+	    {% elseif title == 'Overlays' %}
+		   {% set panel_head_title = 'overlays' %}
+	    {% else %}
+		    {% set panel_head_title = 'default-title' %}
+	    {% endif %}
+    #}
+    
+    {% set panel_head_bgcolor = 'panelHeadingTitle-'~loop.index %}
 	
 	<div class="panel-group" id="accordion">
 		<div class="panel panel-default collapse-list">

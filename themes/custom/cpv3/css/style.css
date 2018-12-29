@@ -829,13 +829,20 @@ ul#list-horizontal li {
 
 /** Accordion / Community Plan Area **/
 #accordion .list-group {padding: 5px 15px; border-bottom: solid 1px #ddd;}
-#accordion .title {width: 100%; display: block; font-weight: normal !important; color: #fff !important;}
-.maps {color: #fff !important; background-color: #5e7293 !important;}
-.community-pan-document {color: #fff !important; background-color: #ffb846 !important;}
-.overlays {color: #fff !important; background-color: #53bda6 !important;}
-.community_profile {color: #fff !important; background-color: #a0a8aa !important;}
+#accordion .title {width: 100%; display: block; font-weight: normal !important; color: #fff !important; line-height: 24px;}
+.panelHeadingTitle-1 {color: #fff !important; background-color: #5e7293 !important;}
+.panelHeadingTitle-2 {color: #fff !important; background-color: #ffb846 !important;}
+.panelHeadingTitle-3 {color: #fff !important; background-color: #53bda6 !important;}
+.panelHeadingTitle-4 {color: #fff !important; background-color: #a0a8aa !important;}
+.panelHeadingTitle-5 {color: #fff !important; background-color: #cc99cc !important;}
+.panelHeadingTitle-6 {color: #fff !important; background-color: #cc9999 !important;}
+.panelHeadingTitle-7 {color: #fff !important; background-color: #339999 !important;}
+.panelHeadingTitle-8 {color: #fff !important; background-color: #663399 !important;}
+.panelHeadingTitle-9 {color: #fff !important; background-color: #663333 !important;}
+.panelHeadingTitle-10 {color: #fff !important; background-color: #cc6699 !important;}
 .default-title{color: #fff !important; background-color: #999 !important;}
 .no-uppercase{text-transform: none !important;}
+.accordion .panel-heading {background-color: #ccc;}
 
 .community-icon-color{color: #f58c29 !important; font-size: 14px; padding-left: 25px;}
 .field-community-info{margin-bottom: 115px;}
