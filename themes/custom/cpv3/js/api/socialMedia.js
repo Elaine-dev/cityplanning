@@ -45,6 +45,7 @@ appSM.controller('SocialMediaCtrl', ['$scope', '$sce', 'socialMediaService', fun
 			var arrIndex = [300, 300, 350, 250, 200, 400, 400, 200];
 			return arrIndex[id];
 		} 
+		console.log($scope);
 	});
 }]);
 
