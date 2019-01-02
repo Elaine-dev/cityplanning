@@ -200,7 +200,7 @@ function formatTabTitle ($terms) {
     $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
-            'last_name' => $lastPart,
+            'last_name' => @$lastPart,
             'counter' => $i
     ];
 
