@@ -46,7 +46,7 @@
         {% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
         {% set class = data['#paragraph'].getType %}
 
-         <div class = "section-content clear {{class}}">
+         <div class = "section-content {{class}} clear">
              {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
          </div>
       {% endfor %}
