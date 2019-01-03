@@ -1,15 +1,5 @@
 <div class="row">
     <div class="col-md-6">
-         {% if content.field_project_planner_contact %}
-         <div>
-            <strong class="overlays-field-title">Project Planner Contact: </strong> <br>
-            {{ content.field_project_planner_contact }}
-
-            <br /><br />
-         </div>
-        {% endif %}
-
-
         {% if content.field_policy_planner_contact %}
         <div>
             <strong class="overlays-field-title">Policy Planner Contact:</strong> <br>
@@ -17,6 +7,15 @@
 
             <br /><br />
         </div>
+        {% endif %}
+        
+         {% if content.field_project_planner_contact %}
+         <div>
+            <strong class="overlays-field-title">Project Planner Contact: </strong> <br>
+            {{ content.field_project_planner_contact }}
+
+            <br /><br />
+         </div>
         {% endif %}
     </div>
 
