@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains community_plan_update.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function community_plan_update_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the community_plan_update module.
+    case 'help.page.community_plan_update':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Community Plan Update content type') . '</p>';
+      return $output;
+
+    default:
+  }
+}

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.community_plan_update.field_image
+    - node.type.community_plan_update
+  module:
+    - user
+id: node.community_plan_update.teaser
+targetEntityType: node
+bundle: community_plan_update
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_image: true

@@ -5,6 +5,7 @@ global-styling:
       https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css: {type: external, minified: true}
       css/normalize.css: {}
       css/style.css: {}
+      css/swiper/swiper.css: {}
   js:
     https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js: {}
     https://code.jquery.com/ui/1.12.1/jquery-ui.min.js: {}
@@ -13,6 +14,8 @@ global-styling:
     js/script.js: {}
     js/iscript.js: {}
     #js/main.js: {}
+    js/swiper.js: {}
+    #https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js: {}
     https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js: {}
     js/google-analytics.js: {}
 
@@ -172,7 +175,7 @@ organizational-chart4:
   js:
     //d3js.org/d3.v3.min.js: {}
     js/org/oscripts4.js: {}
-    
+
 organizational-chart5:
   version: 1.0
   css:
@@ -182,7 +185,7 @@ organizational-chart5:
     js/org/jquery.orgchart-5.js: {}
     js/org/jquery.mockjax.min.js: {}
     js/org/ocscripts5.js: {}
-    
+
 organizational-chart6:
   version: 1.0
   js:

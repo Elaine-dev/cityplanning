@@ -1,0 +1,9 @@
+uuid: eb652c67-2626-4d0d-acc2-f4cc0505b3e0
+langcode: en
+status: true
+dependencies: {  }
+id: profile_with_social_icons
+label: 'Profile with social icons'
+icon_uuid: null
+description: 'Manage profile with social icons content.'
+behavior_plugins: {  }

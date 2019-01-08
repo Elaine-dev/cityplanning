@@ -1,0 +1,9 @@
+uuid: c346a0f5-df62-4154-8a8c-1bb7e292f707
+langcode: en
+status: true
+dependencies: {  }
+id: full_width_image
+label: 'Full width image'
+icon_uuid: null
+description: 'Content with full width image.'
+behavior_plugins: {  }

@@ -1,0 +1,8 @@
+name: 'Community Plan Update'
+type: module
+description: 'Community Plan Update content type'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - paragraphs
+  - field_collection

@@ -34,6 +34,10 @@ function cpv3_preprocess_page ( &$variables ) {
   	$publicationTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('publication_type');
   	$variables['publication_categories'] = formatTabTitle($publicationTerms);
 
+    // Community Plan Update/Hollywood Tab Menu
+  	$hollywoodCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('hollywood_community_plan');
+  	$variables['hollywood_menu'] = formatTabTitle($hollywoodCpuTerms);
+
   	// get current uri
   	$current_uri = \Drupal::request()->getRequestUri();
   	$current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
@@ -176,7 +180,7 @@ function readableURLString($string) {
     $string = preg_replace('/[&]/', '', $string);               // Removes special chars.
     $string = trim(preg_replace('/-+/', '-', $string), '-');    //combine two or more dash with single dash
     $string = strtolower($string);                              // Convert to lowercase
-    
+
     return $string;
 }
 

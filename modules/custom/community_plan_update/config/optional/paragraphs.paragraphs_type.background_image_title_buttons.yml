@@ -1,0 +1,9 @@
+uuid: bdd840ba-4a31-4053-ae24-af38cd9a06b5
+langcode: en
+status: true
+dependencies: {  }
+id: background_image_title_buttons
+label: 'Background Image - Title - Buttons'
+icon_uuid: null
+description: 'Full width background image with Title, and multiple buttons'
+behavior_plugins: {  }

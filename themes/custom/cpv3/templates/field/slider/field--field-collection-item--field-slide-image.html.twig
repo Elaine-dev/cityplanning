@@ -1,0 +1,4 @@
+{% for item in items %}
+    {% set url = file_url(item.content['#item'].entity.uri.value | image_style('full_width_button_image')) %}
+    {{ url }}
+{% endfor %}

@@ -1,0 +1,115 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_section
+    - node.type.community_plan_update
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.background_image_title_buttons
+    - paragraphs.paragraphs_type.block_quote
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.content_only
+    - paragraphs.paragraphs_type.embed_code
+    - paragraphs.paragraphs_type.four_column_layout
+    - paragraphs.paragraphs_type.full_width_image
+    - paragraphs.paragraphs_type.fullwidth_buttons
+    - paragraphs.paragraphs_type.fullwidth_content
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.image_button_two_columns
+    - paragraphs.paragraphs_type.image_over_image_with_button
+    - paragraphs.paragraphs_type.profile_with_social_icons
+    - paragraphs.paragraphs_type.slider
+    - paragraphs.paragraphs_type.tab_menu
+    - paragraphs.paragraphs_type.two_column_layout
+  module:
+    - entity_reference_revisions
+id: node.community_plan_update.field_content_section
+field_name: field_content_section
+entity_type: node
+bundle: community_plan_update
+label: 'Content Section'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      tab_menu: tab_menu
+      accordion: accordion
+      background_image_title_buttons: background_image_title_buttons
+      block_quote: block_quote
+      button: button
+      call_to_action: call_to_action
+      content_only: content_only
+      embed_code: embed_code
+      four_column_layout: four_column_layout
+      full_width_image: full_width_image
+      fullwidth_buttons: fullwidth_buttons
+      fullwidth_content: fullwidth_content
+      image: image
+      image_button_two_columns: image_button_two_columns
+      image_over_image_with_button: image_over_image_with_button
+      profile_with_social_icons: profile_with_social_icons
+      slider: slider
+      two_column_layout: two_column_layout
+    target_bundles_drag_drop:
+      tab_menu:
+        enabled: true
+        weight: 19
+      accordion:
+        enabled: true
+        weight: 19
+      background_image_title_buttons:
+        enabled: true
+        weight: 20
+      block_quote:
+        enabled: true
+        weight: 21
+      button:
+        enabled: true
+        weight: 22
+      call_to_action:
+        enabled: true
+        weight: 23
+      content_only:
+        enabled: true
+        weight: 24
+      embed_code:
+        enabled: true
+        weight: 25
+      four_column_layout:
+        enabled: true
+        weight: 26
+      full_width_image:
+        enabled: true
+        weight: 27
+      fullwidth_buttons:
+        enabled: true
+        weight: 28
+      fullwidth_content:
+        enabled: true
+        weight: 29
+      image:
+        enabled: true
+        weight: 30
+      image_button_two_columns:
+        enabled: true
+        weight: 31
+      image_over_image_with_button:
+        enabled: true
+        weight: 32
+      profile_with_social_icons:
+        enabled: true
+        weight: 33
+      slider:
+        enabled: true
+        weight: 34
+      two_column_layout:
+        enabled: true
+        weight: 35
+field_type: entity_reference_revisions

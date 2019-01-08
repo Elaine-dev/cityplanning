@@ -945,6 +945,112 @@ ul#list-horizontal li {
     margin-right: 0;
 }
 
+
+/** slider ***/
+.swiper-button-next, .swiper-button-prev {
+  top: 40%!important;
+  color: #FFFFFF;
+}
+.slider-content {
+  float: right;
+  margin-top: -8%;
+  z-index: 2000;
+  position: relative;
+  padding: 2%;
+  background: rgba(250,250,250,0.5);
+  color: #000000;
+  font-weight: bold;
+}
+
+.front-image {
+  margin-left: 25%;
+}
+
+.img-btn-link {
+  float: left;
+  margin-left: 16px;
+  margin-top: -20%;
+  z-index: 2000;
+  position: relative;
+  color: #ffffff!important;
+}
+
+.img-btn-link:hover {
+  color: #3a5a99!important;
+}
+
+.loading-location {
+  background: url("../images/Spinner.svg") no-repeat;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+/** Community Plan Update **/
+ul.nav.nav-tabs.community-plan {
+    margin-top: -8%;
+  }
+li.tab-line:first-child {
+    color: orange !important;
+    font-weight: 700 !important;
+}
+#commissions-tab .nav-tabs>li>a  {
+    color: #a3a5a8 !important;
+}
+
+
+
+/** slider ***/
+.swiper-button-next, .swiper-button-prev {
+  top: 40%!important;
+  color: #FFFFFF;
+}
+.slider-content {
+  float: right;
+  margin-top: -8%;
+  z-index: 2000;
+  position: relative;
+  padding: 2%;
+  background: rgba(250,250,250,0.5);
+  color: #000000;
+  font-weight: bold;
+}
+
+.front-image {
+  margin-left: 25%;
+}
+
+.img-btn-link {
+  float: left;
+  margin-left: 16px;
+  margin-top: -20%;
+  z-index: 2000;
+  position: relative;
+  color: #ffffff!important;
+}
+
+.img-btn-link:hover {
+  color: #3a5a99!important;
+}
+
+.loading-location {
+  background: url("../images/Spinner.svg") no-repeat;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+/** Community Plan Update **/
+ul.nav.nav-tabs.community-plan {
+    margin-top: -8%;
+  }
+li.tab-line:first-child {
+    color: orange !important;
+    font-weight: 700 !important;
+}
+#commissions-tab .nav-tabs>li>a  {
+    color: #a3a5a8 !important;
+}
+
+
 /*-->> **************** Media Query *****************/
 
 /* Small devices (mobile phone < 576px) */

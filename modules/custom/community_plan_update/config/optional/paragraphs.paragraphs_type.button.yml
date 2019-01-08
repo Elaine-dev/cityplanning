@@ -1,0 +1,9 @@
+uuid: 01583c6a-52bc-42bd-a29e-7b00cdd6bf95
+langcode: en
+status: true
+dependencies: {  }
+id: button
+label: Button
+icon_uuid: null
+description: 'Manage full width button with custom background color, icon and link.'
+behavior_plugins: {  }

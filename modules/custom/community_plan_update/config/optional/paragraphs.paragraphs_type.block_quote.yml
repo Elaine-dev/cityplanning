@@ -1,0 +1,9 @@
+uuid: 9b76851d-33e7-4f07-be5e-192ffb7a1b8a
+langcode: en
+status: true
+dependencies: {  }
+id: block_quote
+label: 'Block Quote'
+icon_uuid: null
+description: 'Manage content related to block quote.'
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+uuid: 72035c61-d142-4f6f-9124-bd789629c450
+langcode: en
+status: true
+dependencies: {  }
+id: embed_code
+label: 'Embed code'
+icon_uuid: null
+description: 'To embed code like, googlemap, iframe content...'
+behavior_plugins: {  }

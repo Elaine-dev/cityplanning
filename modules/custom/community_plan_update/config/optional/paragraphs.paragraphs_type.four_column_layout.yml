@@ -1,0 +1,9 @@
+uuid: 24412e79-d5b1-4d0f-8585-cdb1dd129dfd
+langcode: en
+status: true
+dependencies: {  }
+id: four_column_layout
+label: 'Four Column Layout'
+icon_uuid: null
+description: 'Manage four column layout.'
+behavior_plugins: {  }

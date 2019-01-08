@@ -1,0 +1,9 @@
+uuid: 0e98ba05-7faf-4195-b94a-427d7017cb68
+langcode: en
+status: true
+dependencies: {  }
+id: fullwidth_content
+label: 'Fullwidth Content'
+icon_uuid: null
+description: 'Manage fullwidth content. You can add any text or embade code.'
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+uuid: b4d0dea0-4f1c-4fb9-9831-ccb5e055ecdc
+langcode: en
+status: true
+dependencies: {  }
+id: image_button_two_columns
+label: 'Image button two columns'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
