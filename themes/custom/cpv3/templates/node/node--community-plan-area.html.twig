@@ -20,9 +20,10 @@
     </div>
 
     <div class="col-md-6">
-        {% if content.field_community_info %}
+        {% set url = content.field_community_info.0['#url'].getUri() %}
+        {% if url != "" %}
         <div class="field-community-info">
-            <a href="{{ content.field_community_info[0]['#url']|render }}" target="_blank" rel="nofollow">
+            <a href="{{ url|render }}" target="_blank" rel="nofollow">
                 <div class="col-md-2 padding-left0"><img src="{{ theme_base_path }}/images/i-planUpdating.png" alt="community plan area info" /></div>
                 <div class="col-md-10 community-icon-color"><strong>This plan is currently going<br>through a community update.</strong><br>Click here for more info.</div>
             </a>
