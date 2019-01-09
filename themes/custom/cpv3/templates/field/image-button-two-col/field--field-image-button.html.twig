@@ -1,7 +1,9 @@
-<div class="container">
+{#}<div class="container">
     <div class="row">
-        <div class="col-md-12 padding-left0">
-            <div class="row">
+        <div class="col-md-12 padding-left0"> 
+{#}
+            
+		  <div class="row padding-left0 padding-right0">
                 {% if items|length == 1 %}
                     {% set class = 'col-md-offset-3 text-center' %}
                 {% elseif items|length > 2 %}
@@ -13,16 +15,17 @@
                     <img src="{{ url }}" class="img-responsive" />
 
                     {% set link = item.content['#field_collection_item'].get('field_link').value.0.uri %}
-                    <a href="{{ link }}" class="img-btn-link">{{ item.content['#field_collection_item'].get('field_title').value }}</a>
+                    <a href="{{ link }}" class="img-btn-link" style="color: #fff !important;">{{ item.content['#field_collection_item'].get('field_title').value }}</a>
                 </div>
                 {% if loop.index is divisible by(2) %}
             </div>
-            <div class="row">
+		  
+            <div class="row padding-left0 padding-right0">
                 {% endif %}
                 {% endfor %}
             </div>
-
+{#}
         </div>
-
     </div>
 </div>
+{#}
