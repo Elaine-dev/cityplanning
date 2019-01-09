@@ -967,7 +967,7 @@ ul#list-horizontal li {
 .img-btn-link {
   float: left;
   margin-left: 16px;
-  margin-top: -20%;
+  margin-top: -50px
   z-index: 2000;
   position: relative;
   color: #ffffff!important;
