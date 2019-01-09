@@ -137,12 +137,10 @@ mark{background-color: #ff9 !important;}
 .front-image {
     margin-left: 25%;
 }
-.img-btn-link {
-    float: left;
+.img-btn-link {    
     margin-left: 15px;
     margin-right: 15px;
-    font-size: 18px;   
-    margin-top: -13%;
+    font-size: 18px;    
     z-index: 2000;
     position: relative;
     color: #fff !important;
