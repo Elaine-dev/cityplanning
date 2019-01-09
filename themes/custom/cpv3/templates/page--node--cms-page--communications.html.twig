@@ -64,22 +64,7 @@
       </div>
             </div>
         </div><!-- //End Left-side bar -->
-
-        {#  Social media #}
-        {% include directory ~ '/partials/social_media.html.twig' %}
-        {#  // End Social media #}
-
-        {# stay connected icons only #}
-        {% include directory ~ '/partials/stay_connected.html.twig' %}
-        {# // End #say-connected #}
-
-
-
-
-
-
 </div>	<!-- //End container -->
-
 
 {% for item in full_width_data %}
     {% if item.flag %}
@@ -99,7 +84,6 @@
         </div>
     {% endif %}
 {% endfor %}
-
 
 <!-- footer section -->
 {% include directory ~ '/partials/footer.html.twig' %}
