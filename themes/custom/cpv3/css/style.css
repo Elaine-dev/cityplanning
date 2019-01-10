@@ -405,7 +405,7 @@ article img{padding-top:0; padding-bottom: 15px;}
 .nav-tabs a {color:#a3a5a8 !important;}
 
 /*publications*/
-#commissions-tab.sizer {font-size: 14px;}
+#commissions-tab.sizer {font-size: 16px;}
 
 .team-name {color: #3a5a99;}
 .team-position {color: #333;}
@@ -985,6 +985,7 @@ ul#list-horizontal li {
 }
 
 /** Community Plan Update **/
+/*
 ul.nav.nav-tabs.community-plan {
     margin-top: -8%;
   }
@@ -995,7 +996,7 @@ li.tab-line:first-child {
 #commissions-tab .nav-tabs>li>a  {
     color: #a3a5a8 !important;
 }
-
+*/
 
 /*-->> **************** Media Query *****************/
 
