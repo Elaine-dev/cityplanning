@@ -193,10 +193,10 @@ function formatTabTitle ($terms) {
     $i = 1;
     $term_data = array();
     foreach ($terms as $term) :
-    $name = explode(' ',$term->name, 3);
-    if (count($name) >= 3) {
-        $firstPart = $name[0] . ' ' . $name[1];
-        $lastPart = $name[2];
+    $name = explode(' ',$term->name, 2);
+    if (count($name) >= 2) {
+        $firstPart = $name[0];
+        $lastPart = $name[1] . ' ' . $name[2];
     } else {
         $firstPart = $term->name;
     }
