@@ -9,7 +9,7 @@
     				 	<div id="commissions-tab">
                 			<ul class="nav nav-tabs">
                             {% for item in category %}
-                                {% if loop.index0 == 0 %}
+                                {% if loop.index == 0 %}
                                     {% set active_class = 'active'  %}
                                     {% set class = 'padding-left0'  %}
                                 {% else %}

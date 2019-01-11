@@ -978,7 +978,7 @@ ul#list-horizontal li {
 }
 
 .loading-location {
-  background: url("../images/Spinner.svg") no-repeat;
+  background: url("../images/spinner.svg") no-repeat;
   width: 60px;
   height: 60px;
   text-align: center;
