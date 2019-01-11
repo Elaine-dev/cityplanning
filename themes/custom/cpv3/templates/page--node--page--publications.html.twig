@@ -44,7 +44,7 @@
                                              {% set active_class = ''  %}
                                              {% set class = ''  %}
                                          {% endif %}
-                                        <li role="presentation" class="{% if loop.index != 5 %}tab-line{% endif %} js-publication-tab {{ active_class }}">
+                                        <li role="presentation" class="{{ (loop.last) ? '' : 'tab-line'  }} js-publication-tab {{ active_class }}">
                                             <a href="#{{ item.counter }}" id="{{ item.id }}"  aria-controls="{{ item.counter }}" role="tab" data-toggle="tab"
                                             class="{{ class }}">{{ item.first_name}}<br>{{ item.last_name}}
                                         </a></li>
