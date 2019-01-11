@@ -193,22 +193,22 @@ function formatTabTitle ($terms) {
     $i = 1;
     $term_data = array();
     foreach ($terms as $term) :
-    $name = explode(' ',$term->name, 2);
-    if (count($name) >= 2) {
-        $firstPart = $name[0];
-        $lastPart = $name[1] . ' ' . $name[2];
-    } else {
-        $firstPart = $term->name;
-    }
-
-    $term_data [] = [
+        $name = explode(' ',$term->name, 2);
+        if (count($name) >= 2) {
+            $firstPart = $name[0];
+            $lastPart = @$name[1] . ' ' . @$name[2];
+        } else {
+            $firstPart = $term->name;
+        }
+    
+        $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
             'last_name' => @$lastPart,
             'counter' => $i
-    ];
-
-    $i++;
+        ];
+    
+        $i++;
     endforeach;
 
     return $term_data;
