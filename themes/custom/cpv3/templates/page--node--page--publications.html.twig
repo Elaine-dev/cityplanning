@@ -47,7 +47,7 @@
                                         <li role="presentation" class="{{ (loop.last) ? '' : 'tab-line' }} js-publication-tab {{ active_class }}">
                                             <a href="#{{ item.counter }}" id="{{ item.id }}" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" class="{{ class }}">
                                                 {{ item.first_name}}<br>
-                                                {{ item.last_name}} {{loop.index}}
+                                                {{ item.last_name}}
                                             </a>
                                         </li>
                                     {% endfor %}
