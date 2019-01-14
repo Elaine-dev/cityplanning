@@ -196,7 +196,7 @@ function formatTabTitle ($terms) {
         $name = explode(' ',$term->name, 2);
         if (count($name) >= 2) {
             $firstPart = $name[0];
-            $lastPart = @$name[1] . ' ' . @$name[2];
+            @$lastPart = @$name[1] . ' ' . @$name[2];
         } else {
             $firstPart = $term->name;
         }
