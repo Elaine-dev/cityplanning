@@ -757,7 +757,9 @@ ul#list-horizontal li {
 /* social icon : share */
 .st-inline-share-buttons >.st-btn > svg{ height: 20px !important; width: 20px !important;}
 .st-btn[data-network='sharethis'] {background-color: #000 !important; opacity: 0.6;}
-.sharethis-inline-share-buttons{margin-top: -55; padding-right: 15px;}
+.sharethis-inline-share-buttons{margin-top: -35; padding-right: 15px; padding-top: 41px;}
+.tags-list{padding-top: 11px;}
+
 .mini-navigation{font-size: 1.3em;}
 /* pagination */
 .pager li>a, .pager li>span{border-radius: 0px;}
