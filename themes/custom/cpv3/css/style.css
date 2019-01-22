@@ -744,7 +744,7 @@ ul#list-horizontal li {
 	text-align: center;
 }
 #blog-social-media .btn{padding: 0 !important;}
-#blog-buttons{right: -40;}
+#blog-buttons{right: -40; position: -10;}
 #blog-social-media .lead{font-size: 20px; padding-top: 10px;}
 #hr-blog-top{margin-bottom: 41px; margin-top: 0px; border-top: 3px solid #d6d5d0;}
 
@@ -1354,11 +1354,7 @@ li.tab-line:first-child {
     .planning-tag {margin-left: 11em !important;}
 }
 
-/*@media screen and (min-width: 1682px) {
-  #main-container {top: 300px;}
-  .sub-heading{padding-left: 0%; margin-top: 0;}
-  .iframe-wrapper{margin-top: 20px;}
-
-  !* slider *!
-  .planning-tag {margin-left: 11em !important;}
-}*/
+/* Large screens ----------- */
+@media screen and (min-width: 1824px) {
+    #main-container {top: 222px;} 
+}
