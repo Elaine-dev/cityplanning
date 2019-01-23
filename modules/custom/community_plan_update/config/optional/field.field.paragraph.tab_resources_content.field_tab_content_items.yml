@@ -1,0 +1,103 @@
+langcode:                              en
+status:                                true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_content_items
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.block_quote
+    - paragraphs.paragraphs_type.full_width_image
+    - paragraphs.paragraphs_type.fullwidth_buttons
+    - paragraphs.paragraphs_type.fullwidth_content
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.tab_resources_content
+  module:
+    - entity_reference_revisions
+id:                                    paragraph.tab_resources_content.field_tab_content_items
+field_name:                            field_tab_content_items
+entity_type:                           paragraph
+bundle:                                tab_resources_content
+label:                                 'Tab Resources Content Items'
+description:                           ''
+required:                              false
+translatable:                          true
+default_value:                         {  }
+default_value_callback:                ''
+settings:
+  handler:                             'default:paragraph'
+  handler_settings:
+    negate:                            0
+    target_bundles:
+      accordion:                       accordion
+      block_quote:                     block_quote
+      full_width_image:                full_width_image
+      fullwidth_buttons:               fullwidth_buttons
+      fullwidth_content:               fullwidth_content
+      image:                           image
+    target_bundles_drag_drop:
+      accordion:
+        enabled:                       true
+        weight:                        23
+      background_image_title_buttons:
+        weight:                        24
+        enabled:                       false
+      block_quote:
+        enabled:                       true
+        weight:                        25
+      button:
+        weight:                        26
+        enabled:                       false
+      call_to_action:
+        weight:                        27
+        enabled:                       false
+      content_only:
+        weight:                        28
+        enabled:                       false
+      embed_code:
+        weight:                        29
+        enabled:                       false
+      four_column_layout:
+        weight:                        30
+        enabled:                       false
+      full_width_image:
+        enabled:                       true
+        weight:                        31
+      fullwidth_buttons:
+        enabled:                       true
+        weight:                        32
+      fullwidth_content:
+        enabled:                       true
+        weight:                        33
+      hollywood_tab_menu:
+        weight:                        34
+        enabled:                       false
+      image:
+        enabled:                       true
+        weight:                        35
+      image_button_two_columns:
+        weight:                        36
+        enabled:                       false
+      image_over_image_with_button:
+        weight:                        37
+        enabled:                       false
+      profile_with_social_icons:
+        weight:                        38
+        enabled:                       false
+      slider:
+        weight:                        39
+        enabled:                       false
+      tab_content:
+        weight:                        40
+        enabled:                       false
+      tab_map_content:
+        weight:                        41
+        enabled:                       false
+      tab_plan_content:
+        weight:                        42
+        enabled:                       false
+      tab_resources_content:
+        weight:                        43
+        enabled:                       false
+      two_column_layout:
+        weight:                        44
+        enabled:                       false
+field_type:                            entity_reference_revisions

@@ -1,0 +1,8 @@
+langcode:          en
+status:            true
+dependencies:      {  }
+id:                tab_map_content
+label:             'Tab Map Content'
+icon_uuid:         null
+description:       ''
+behavior_plugins:  {  }

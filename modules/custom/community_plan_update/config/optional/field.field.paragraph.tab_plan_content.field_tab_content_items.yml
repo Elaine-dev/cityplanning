@@ -1,0 +1,97 @@
+langcode:                              en
+status:                                true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tab_content_items
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.block_quote
+    - paragraphs.paragraphs_type.full_width_image
+    - paragraphs.paragraphs_type.fullwidth_buttons
+    - paragraphs.paragraphs_type.fullwidth_content
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.tab_plan_content
+  module:
+    - entity_reference_revisions
+id:                                    paragraph.tab_plan_content.field_tab_content_items
+field_name:                            field_tab_content_items
+entity_type:                           paragraph
+bundle:                                tab_plan_content
+label:                                 'Tab Plan Content Items'
+description:                           ''
+required:                              false
+translatable:                          true
+default_value:                         {  }
+default_value_callback:                ''
+settings:
+  handler:                             'default:paragraph'
+  handler_settings:
+    negate:                            0
+    target_bundles:
+      accordion:                       accordion
+      block_quote:                     block_quote
+      full_width_image:                full_width_image
+      fullwidth_buttons:               fullwidth_buttons
+      fullwidth_content:               fullwidth_content
+      image:                           image
+    target_bundles_drag_drop:
+      accordion:
+        enabled:                       true
+        weight:                        21
+      background_image_title_buttons:
+        weight:                        22
+        enabled:                       false
+      block_quote:
+        enabled:                       true
+        weight:                        23
+      button:
+        weight:                        24
+        enabled:                       false
+      call_to_action:
+        weight:                        25
+        enabled:                       false
+      content_only:
+        weight:                        26
+        enabled:                       false
+      embed_code:
+        weight:                        27
+        enabled:                       false
+      four_column_layout:
+        weight:                        28
+        enabled:                       false
+      full_width_image:
+        enabled:                       true
+        weight:                        29
+      fullwidth_buttons:
+        enabled:                       true
+        weight:                        30
+      fullwidth_content:
+        enabled:                       true
+        weight:                        31
+      hollywood_tab_menu:
+        weight:                        32
+        enabled:                       false
+      image:
+        enabled:                       true
+        weight:                        33
+      image_button_two_columns:
+        weight:                        34
+        enabled:                       false
+      image_over_image_with_button:
+        weight:                        35
+        enabled:                       false
+      profile_with_social_icons:
+        weight:                        36
+        enabled:                       false
+      slider:
+        weight:                        37
+        enabled:                       false
+      tab_content:
+        weight:                        38
+        enabled:                       false
+      tab_plan_content:
+        weight:                        39
+        enabled:                       false
+      two_column_layout:
+        weight:                        40
+        enabled:                       false
+field_type:                            entity_reference_revisions
