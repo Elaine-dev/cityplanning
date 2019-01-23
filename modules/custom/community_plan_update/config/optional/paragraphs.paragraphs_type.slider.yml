@@ -1,9 +1,10 @@
-uuid: 7e1db299-53dd-4282-801a-a0fdc76c9c7b
-langcode: en
-status: true
-dependencies: {  }
-id: slider
-label: Slider
-icon_uuid: null
-description: ''
-behavior_plugins: {  }
+langcode:              en
+status:                true
+dependencies:          {  }
+_core:
+  default_config_hash: hqsRvcW9sEONfDQcXUo5O6YBRR7s1zp1uzMVkxxjzUg
+id:                    slider
+label:                 Slider
+icon_uuid:             null
+description:           ''
+behavior_plugins:      {  }
