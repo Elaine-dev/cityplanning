@@ -359,7 +359,7 @@ _:-moz-tree-row(hover), .planning-tag{margin-left: -30;}
 #main-container .row{padding-left:15px; padding-right:15px;}
 #main-container h1{padding-top: 15px;}
 
-.sidebar-menu {padding-left: 0px; padding-right: 30px;}
+.sidebar-menu {padding-left: 0px; padding-right: 30px; padding-top: 7px;}
 .sidebar-menu a{color:#009fe3 !important;}
 .sidebar-menu .active{color: #3a5a99 !important; font-weight: bold;}
 .sidebar-menu ul li{text-align: center; padding: 6px 0 2px 0; list-style: none;}
