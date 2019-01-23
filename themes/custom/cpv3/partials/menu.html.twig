@@ -207,10 +207,10 @@
 		                        <li class="col-md-4">
 		                        	<h3 class="dropdown-header">Reports and Publications</h3>
 		                        	<ul>
-															<li class="divider"></li>
-															<li><a href="{{ base_path }}resources/publications">Publications</a></li>
-															<li><a href="{{ base_path }}resources/housing-reports">Housing Progress Reports</a></li>
-															<li><a href="{{ base_path }}resources/bi-weekly-case-filing/">Bi-Weekly Case Filing</a></li>
+										<li class="divider"></li>
+										<li><a href="{{ base_path }}resources/publications">Publications</a></li>
+										<li><a href="{{ base_path }}resources/housing-reports">Housing Progress Reports</a></li>
+										<li><a href="{{ base_path }}resources/bi-weekly-case-filing/">Bi-Weekly Case Filing</a></li>
 					           	    </ul>
 		                        </li>
 		                        <li class="col-md-4">
@@ -236,7 +236,7 @@
 		                <li class="dropdown mega-dropdown">
 		              		<a href="#" class="dropdown-toggle {% if currentlink == 'contact' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
 		                  	<ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-		                      	<li class="col-md-4" >
+		                      	<li class="col-md-3" >
 		                        	<h3 class="dropdown-header">Contact</h3>
 		                            <ul>
 		                              	<li class="divider"></li>
@@ -244,20 +244,28 @@
 		                                <li><a href="#">Organizational Chart</a></li>
 		                            </ul>
 		                      	</li>
-														<li class="col-md-4" >
-															<h3 class="dropdown-header">Schedule Appointment</h3>
-																<ul>
-																		<li class="divider"></li>
-																		<li><a href="{{ base_path }}contact/public-counters">Public Counters</a></li>
-																		<li><a href="{{ base_path }}contact/locations-and-hours">Locations and Hours</a></li>
-																</ul>
-														</li>
-		                      	<li class="col-md-4" >
+								<li class="col-md-3" >
+									<h3 class="dropdown-header">Appointments</h3>
+										<ul>
+											<li class="divider"></li>
+											<li><a href="{{ base_path }}contact/public-counters">Public Counters</a></li>
+											<li><a href="{{ base_path }}contact/locations-and-hours">Locations and Hours</a></li>
+										</ul>
+								</li>
+		                      	<li class="col-md-3" >
 		                        	<h3 class="dropdown-header">Media Inquiries</h3>
 		                            <ul>
 		                              	<li class="divider"></li>
 		                                <li><a href="{{ base_path }}contact/communications">Communications</a></li>
-																		<li><a href="{{ base_path }}contact/statements-and-releases">Statements and Releases</a></li>
+										<li><a href="{{ base_path }}contact/statements-and-releases">Press Releases and Statements</a></li>
+		                            </ul>
+		                      	</li>
+		                      	<li class="col-md-3" >
+		                        	<h3 class="dropdown-header">Employments</h3>
+		                            <ul>
+		                              	<li class="divider"></li>
+		                                <li><a href="{{ base_path }}">Job Oppertunities</a></li>
+									   <li><a href="{{ base_path }}">Internships</a></li>
 		                            </ul>
 		                      	</li>
 		                  	</ul>
