@@ -1,5 +1,5 @@
-langcode: en
-status: true
+langcode:              en
+status:                true
 dependencies:
   module:
     - menu_ui
@@ -7,11 +7,13 @@ third_party_settings:
   menu_ui:
     available_menus:
       - main
-    parent: 'main:'
-name: 'Community Plan Update'
-type: community_plan_update
-description: 'The generic content type for Community Plan Updates'
-help: ''
-new_revision: true
-preview_mode: 1
-display_submitted: true
+    parent:            'main:'
+_core:
+  default_config_hash: 7L-FxNsBlEog9jPx9Sc7M7pOxX8kXvJseLTTzXsZF7g
+name:                  'Community Plan Update'
+type:                  community_plan_update
+description:           'The generic content type for Community Plan Updates'
+help:                  ''
+new_revision:          true
+preview_mode:          1
+display_submitted:     true

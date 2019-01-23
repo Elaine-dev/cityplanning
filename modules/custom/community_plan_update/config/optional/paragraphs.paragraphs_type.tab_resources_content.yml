@@ -1,0 +1,8 @@
+langcode:          en
+status:            true
+dependencies:      {  }
+id:                tab_resources_content
+label:             'Tab Resources Content'
+icon_uuid:         null
+description:       ''
+behavior_plugins:  {  }

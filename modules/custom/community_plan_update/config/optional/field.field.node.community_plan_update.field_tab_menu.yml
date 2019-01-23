@@ -1,0 +1,28 @@
+langcode:                        en
+status:                          true
+dependencies:
+  config:
+    - field.storage.node.field_tab_menu
+    - node.type.community_plan_update
+    - taxonomy.vocabulary.hollywood_community_plan
+id:                              node.community_plan_update.field_tab_menu
+field_name:                      field_tab_menu
+entity_type:                     node
+bundle:                          community_plan_update
+label:                           'Tab Menu'
+description:                     ''
+required:                        false
+translatable:                    false
+default_value:                   {  }
+default_value_callback:          ''
+settings:
+  handler:                       'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hollywood_community_plan:  hollywood_community_plan
+    sort:
+      field:                     name
+      direction:                 asc
+    auto_create:                 false
+    auto_create_bundle:          ''
+field_type:                      entity_reference

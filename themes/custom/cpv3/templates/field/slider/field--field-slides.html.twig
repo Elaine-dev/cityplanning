@@ -1,8 +1,9 @@
 {% for item in items %}
-<div class="swiper-slide">
+  <div class="swiper-slide">
     {% set url = file_url(item.content['#field_collection_item'].get('field_slide_image').entity.uri.value | image_style('slider_image')) %}
 
     <img src="{{ url }}"/>
-    <div class="slider-content">{{ item.content['#field_collection_item'].get('field_content').value }}</div>
-</div>
+
+    <div class="slider-content">{{ item.content['#field_collection_item'].get('field_content_captions').value|raw }}</div>
+  </div>
 {% endfor %}

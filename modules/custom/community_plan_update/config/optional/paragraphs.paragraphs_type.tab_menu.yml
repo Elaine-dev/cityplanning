@@ -1,9 +1,9 @@
-uuid: b2c0c7c7-7394-4179-a142-e690b6028960
-langcode: en
-status: true
-dependencies: {  }
-id: tab_menu
-label: 'Tab Menu'
-icon_uuid: null
-description: 'The tabbed menu for Community Plan Updates.'
+uuid:             b2c0c7c7-7394-4179-a142-e690b6028960
+langcode:         en
+status:           true
+dependencies:     {  }
+id:               tab_menu
+label:            'Tab Menu'
+icon_uuid:        null
+description:      ''
 behavior_plugins: {  }
