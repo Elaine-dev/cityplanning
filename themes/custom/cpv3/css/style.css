@@ -758,7 +758,6 @@ ul#list-horizontal li {
 .st-inline-share-buttons >.st-btn > svg{ height: 20px !important; width: 20px !important;}
 .st-btn[data-network='sharethis'] {background-color: #000 !important; opacity: 0.6;}
 .sharethis-inline-share-buttons{margin-top: -50px; padding-right: 15px;}
-.st-btn[data-network='sharethis'] {background-color: #95D03A !important;}
 #blog-hr {
 	border-top: #ddd 1px solid;
 	border-bottom: #ddd 1px solid;
