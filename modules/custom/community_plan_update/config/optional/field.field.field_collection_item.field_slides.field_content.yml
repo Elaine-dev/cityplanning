@@ -1,0 +1,21 @@
+langcode:                en
+status:                  true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_content
+    - field_collection.field_collection.field_slides
+  module:
+    - field_collection
+id:                      field_collection_item.field_slides.field_content
+field_name:              field_content
+entity_type:             field_collection_item
+bundle:                  field_slides
+label:                   Content
+description:             ''
+required:                false
+translatable:            false
+default_value:
+  - {  }
+default_value_callback:  ''
+settings:                {  }
+field_type:              field_collection
