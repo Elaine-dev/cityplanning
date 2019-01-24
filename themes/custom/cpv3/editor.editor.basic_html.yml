@@ -1,0 +1,87 @@
+langcode:               en
+status:                 true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor
+    - editor_file
+third_party_settings:
+  editor_file:
+    status:             true
+    scheme:             public
+    directory:          inline-files
+    extensions:         pdf
+    max_size:           '32 MB'
+_core:
+  default_config_hash:  AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
+format:                 basic_html
+editor:                 ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name:         Clipboard
+          items:
+            - Undo
+            - Redo
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+        -
+          name:         Formatting
+          items:
+            - Bold
+            - Underline
+            - Italic
+            - Strike
+            - Superscript
+            - Subscript
+        -
+          name:         Paragraph
+          items:
+            - BulletedList
+            - NumberedList
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+        -
+          name:         Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+            - DrupalFile
+        -
+          name:         Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - Table
+            - SpecialChar
+            - HorizontalRule
+        -
+          name:         'Block Formatting'
+          items:
+            - Format
+        -
+          name:         Tools
+          items:
+            - Source
+            - Styles
+  plugins:
+    language:
+      language_list:    un
+    stylescombo:
+      styles:           "p.slider-title|Slider Title\r\np.slider-caption|Slider Caption"
+image_upload:
+  status:               true
+  scheme:               public
+  directory:            inline-images
+  max_size:             '32 MB'
+  max_dimensions:
+    width:              null
+    height:             null
