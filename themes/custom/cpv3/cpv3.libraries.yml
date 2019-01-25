@@ -1,23 +1,24 @@
 global-styling:
-  version: VERSION
+  version:                                                                                                          VERSION
   css:
     base:
-      https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css: {type: external, minified: true}
-      css/normalize.css: {}
-      css/style.css: {}
-      css/swiper/swiper.css: {}
+      https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css: {type: external, minified:             true}
+      css/normalize.css:                                                                                            {}
+      css/style.css:                                                                                                {}
+      css/swiper/swiper.css:                                                                                        {}
+      css/webform/webform.css:                                                                                      {}
   js:
-    https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js: {}
-    https://code.jquery.com/ui/1.12.1/jquery-ui.min.js: {}
-    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js: {}
-    js/ie-emulation-ie10-viewport.js: {}
-    js/script.js: {}
-    js/iscript.js: {}
-    #js/main.js: {}
-    js/swiper.js: {}
-    #https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js: {}
-    https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js: {}
-    js/google-analytics.js: {}
+    https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js:                                              {}
+    https://code.jquery.com/ui/1.12.1/jquery-ui.min.js:                                                             {}
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js:                                            {}
+    js/ie-emulation-ie10-viewport.js:                                                                               {}
+    js/script.js:                                                                                                   {}
+    js/iscript.js:                                                                                                  {}
+    #js/main.js:                                                                                                    {}
+    js/swiper.js:                                                                                                   {}
+    #https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js:                                          {}
+    https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js:                                                 {}
+    js/google-analytics.js:                                                                                         {}
 
   #dependencies:
     #- core/jquery
@@ -26,168 +27,168 @@ global-styling:
 lacity-global-nav:
   js:
     # los angeles top bar
-    //navbar.lacity.org/global_nav.js: {}
+    //navbar.lacity.org/global_nav.js:                                                                              {}
 
 fonts:
   css:
     theme:
       'https://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400,300,700|Open+Sans:300italic,400,300': { type: external, minified: true }
-      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified:      true }
 
 angular-js:
   js:
-    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js: {}
-    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js: {}
-    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js: {}
-    https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js: {}
-    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js: {}
-    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js: {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js:                                           {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.min.js:                                     {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js:                                  {}
+    https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js:                                          {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js:                                   {}
+    https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.min.js:                                  {}
 
 front-page:
-  version: VERSION
+  version:                                                                                                          VERSION
   css:
     component:
-      css/banner-bootsrap.css: {}
+      css/banner-bootsrap.css:                                                                                      {}
   js:
-    js/banner-bootstrap.js: {}
-    https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js: {}
+    js/banner-bootstrap.js:                                                                                         {}
+    https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js:                                                    {}
 
 calendar-page:
-  version: VERSION
+  version:                                                                                                          VERSION
   css:
     theme:
-      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css: {}
-      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css: {media: print}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css:                               {}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css: {media:                     print}
   js:
-    js/calendar/moment.min.js: {}
-    js/calendar/fullcalendar.js: {}
-    js/calendar/dcp-calendar.js: {}
+    js/calendar/moment.min.js:                                                                                      {}
+    js/calendar/fullcalendar.js:                                                                                    {}
+    js/calendar/dcp-calendar.js:                                                                                    {}
 
 calendar-detail:
-  version: VERSION
+  version:                                                                                                          VERSION
   css:
     theme:
-      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css: {}
-      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css: {media: print}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css:                               {}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css: {media:                     print}
   js:
-    js/calendar/moment.min.js: {}
-    js/calendar/fullcalendar.js: {}
-    js/calendar/dcp-calendar-detail.js: {}
+    js/calendar/moment.min.js:                                                                                      {}
+    js/calendar/fullcalendar.js:                                                                                    {}
+    js/calendar/dcp-calendar-detail.js:                                                                             {}
 
 community-plan-areas:
-  version: VERSION
+  version:                                                                                                          VERSION
   css:
     theme:
-      css/communities.css: {}
-      https://js.arcgis.com/3.20/esri/css/esri.css: {}
-      https://js.arcgis.com/3.20/esri/css/esri.css: {}
+      css/communities.css:                                                                                          {}
+      https://js.arcgis.com/3.20/esri/css/esri.css:                                                                 {}
+      https://js.arcgis.com/3.20/esri/css/esri.css:                                                                 {}
   js:
-    https://js.arcgis.com/3.20: {}
-    http://code.jquery.com/jquery-latest.min.js: {}
-    js/communities.js: {}
+    https://js.arcgis.com/3.20:                                                                                     {}
+    http://code.jquery.com/jquery-latest.min.js:                                                                    {}
+    js/communities.js:                                                                                              {}
 
 agenda-hearing:
-  version: VERSION
+  version:                                                                                                          VERSION
   js:
-    js/api/app.js: {}
-    js/api/agendaService.js: {}
-    js/api/agendaCtrl.js: {}
-    js/api/hearingsCtrl.js: {}
+    js/api/app.js:                                                                                                  {}
+    js/api/agendaService.js:                                                                                        {}
+    js/api/agendaCtrl.js:                                                                                           {}
+    js/api/hearingsCtrl.js:                                                                                         {}
 
 eir-js:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    'js/api/eirCtrl.js': {}
+    'js/api/eirCtrl.js':                                                                                            {}
 
 negative-declaration-page:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    'js/api/negativeDeclarationCtrl.js': {}
+    'js/api/negativeDeclarationCtrl.js':                                                                            {}
 
 bi-weekly-case-filing:
-  version: VERSION
+  version:                                                                                                          VERSION
   js:
-    js/api/app.js: {}
-    js/api/biweeklyCaseReportCtrl.js: {}
+    js/api/app.js:                                                                                                  {}
+    js/api/biweeklyCaseReportCtrl.js:                                                                               {}
 
 publications:
-  version: 1.1
+  version:                                                                                                          1.1
   js:
-    js/api/publications.js: {}
-    js/api/dirPagination.js: {}
+    js/api/publications.js:                                                                                         {}
+    js/api/dirPagination.js:                                                                                        {}
 
 forms:
-  version: 1.2
+  version:                                                                                                          1.2
   js:
-    js/api/forms.js: {}
+    js/api/forms.js:                                                                                                {}
 
 search:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    js/api/search.js: {}
+    js/api/search.js:                                                                                               {}
 
 social-media:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    js/api/socialMedia.js: {}
+    js/api/socialMedia.js:                                                                                          {}
 
 staff-directory:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    js/api/staffDirectories.js: {}
+    js/api/staffDirectories.js:                                                                                     {}
 
 adopted-ordinances:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    js/api/adoptedOrdinances.js: {}
+    js/api/adoptedOrdinances.js:                                                                                    {}
 
 proposed-ordinances:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    js/api/proposedOrdinances.js: {}
+    js/api/proposedOrdinances.js:                                                                                   {}
 
 organizational-chart:
-  version: 1.0
+  version:                                                                                                          1.0
   css:
     theme:
-      css/jquery.orgchart.css: {}
+      css/jquery.orgchart.css:                                                                                      {}
   js:
-    js/org/jquery.orgchart.js: {}
-    js/org/oscripts.js: {}
+    js/org/jquery.orgchart.js:                                                                                      {}
+    js/org/oscripts.js:                                                                                             {}
 
 organizational-chart2:
-  version: 1.0
+  version:                                                                                                          1.0
   css:
     theme:
-      css/jquery.orgchart-2.css: {}
+      css/jquery.orgchart-2.css:                                                                                    {}
   js:
-    js/org/jquery.orgchart-2.js: {}
-    js/org/oscripts2.js: {}
+    js/org/jquery.orgchart-2.js:                                                                                    {}
+    js/org/oscripts2.js:                                                                                            {}
 
 organizational-chart3:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    //d3js.org/d3.v3.min.js: {}
-    js/org/oscripts3.js: {}
+    //d3js.org/d3.v3.min.js:                                                                                        {}
+    js/org/oscripts3.js:                                                                                            {}
 
 organizational-chart4:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    //d3js.org/d3.v3.min.js: {}
-    js/org/oscripts4.js: {}
+    //d3js.org/d3.v3.min.js:                                                                                        {}
+    js/org/oscripts4.js:                                                                                            {}
 
 organizational-chart5:
-  version: 1.0
+  version:                                                                                                          1.0
   css:
     theme:
-        css/jquery.orgchart-5.css: {}
+        css/jquery.orgchart-5.css:                                                                                  {}
   js:
-    js/org/jquery.orgchart-5.js: {}
-    js/org/jquery.mockjax.min.js: {}
-    js/org/ocscripts5.js: {}
+    js/org/jquery.orgchart-5.js:                                                                                    {}
+    js/org/jquery.mockjax.min.js:                                                                                   {}
+    js/org/ocscripts5.js:                                                                                           {}
 
 organizational-chart6:
-  version: 1.0
+  version:                                                                                                          1.0
   js:
-    js/api/orgchart.js: {}
-    js/api/orgscript.js: {}
+    js/api/orgchart.js:                                                                                             {}
+    js/api/orgscript.js:                                                                                            {}

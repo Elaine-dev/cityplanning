@@ -1,0 +1,41 @@
+#email-form-wrapper {
+  float: left;
+  width: 50%;
+}
+
+#contact-form-wrapper {
+  float: right;
+  width: 40%;
+}
+
+textarea#edit-question--2 {
+  padding: 10px 0 0 10px;
+  width: 206%;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+input#edit-email--4 {
+  width: 206%;
+}
+
+.form-wrap>p {
+  font-size: 14px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d3d3d3;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #d3d3d3;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #d3d3d3;
+}
