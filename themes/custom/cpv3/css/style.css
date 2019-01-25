@@ -1259,24 +1259,24 @@ article img {
   border-right: #ccc 1px solid;
 }
 
-#commissions-tab .nav-tabs>li {
+#commissions-tab .nav-tabs>li, #hollywood-tab .nav-tabs>li, {
   margin-bottom: 0px;
 }
 
-#commissions-tab .nav-tabs>li>a {
+#commissions-tab .nav-tabs>li>a, #hollywood-tab .nav-tabs>li>a {
   border: 0px;
   border-radius: 0px;
 }
 
-#commissions-tab .nav-tabs>li> {
+#commissions-tab .nav-tabs>li>, #hollywood-tab .nav-tabs>li> {
   border-right: #000 !important;
 }
 
-#commissions-tab .nav-tabs {
+#commissions-tab .nav-tabs, #hollywood-tab .nav-tabs {
   padding-bottom: 10px;
 }
 
-#commissions-tab .nav>li>a {
+#commissions-tab .nav>li>a, #hollywood-tab .nav>li>a {
   padding-top: 0 !important;
   padding-bottom: 0;
 }
@@ -2579,36 +2579,30 @@ ul#list-horizontal li {
   text-align: center;
 }
 
-/** Community Plan Update **/
-ul.nav.nav-tabs.community-plan {
-  margin-top: -8%;
+/** COMMUNITY PLAN UPDATE MENU CHANGES **/
+#hollywood-tab ul.nav.nav-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  list-style-type: none;
+  margin-bottom: 2%;
 }
 
-.tab-content>.active {
-  padding-left: 15px !important;
-  padding-top: 24px;
+#hollywood-tab ul.nav.nav-tabs>li.padding-top0.tab-line, #hollywood-tab ul.nav.nav-tabs>li.padding-top0 {
+  flex: 1;
+  text-align: center;
 }
 
-.swiper-slide .slider-content {
-  margin-top: -58%;
+#hollywood-tab {
+  margin-top: -2%;
 }
 
-.slider-content>h5 {
-  color: #708090;
-  text-transform: uppercase;
-  font-stretch: ultra-condensed;
-  font-weight: 400;
-  font-size: 26px !important;
+#hollywood-tab .nav>li>a {
+  padding-bottom: 16px;
 }
 
-.slider-content>h2 {
-  color: #708090;
-  font-weight: 100;
-  text-transform: uppercase;
-  font-stretch: condensed;
-  font-kerning: none;
-  font-size: 38px !important;
-  line-height: 0;
+#hollywood-tab .tab-content {
+  margin-left: 16px;
 }
 
 /*-->> **************** Media Query *****************/

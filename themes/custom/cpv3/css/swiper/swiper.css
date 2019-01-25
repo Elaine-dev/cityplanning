@@ -706,3 +706,7 @@ p.slider-title {
   line-height: 1;
   margin-top: 10px;
 }
+
+.swiper-slide .slider-content {
+  margin-top: -58%;
+}
