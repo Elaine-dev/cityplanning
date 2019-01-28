@@ -2418,7 +2418,7 @@ ul#list-horizontal li {
   padding: 0;
 }
 
-.leaf {
+#org-slider .leaf {
   position: relative;
   display: block;
   float: left;
