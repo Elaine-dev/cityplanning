@@ -12,32 +12,6 @@
   content: "Read\2009\2009More\2009\2009\003e\003e";
 }
 
-/* Icon when the collapsible content is shown */
-.readlink2:after {
-  content: "Read\2009\2009Less\2009\2009\003c\003c";
-  color: #000;
-  text-decoration: underline;
-  color: orange;
-}
-
-/* Icon when the collapsible content is hidden */
-.readlink2.collapsed:after {
-  content: "Read\2009\2009More\2009\2009\003e\003e";
-}
-
-/* Icon when the collapsible content is shown */
-.readlink3:after {
-  content: "Read\2009\2009Less\2009\2009\003c\003c";
-  color: #000;
-  text-decoration: underline;
-  color: orange;
-}
-
-/* Icon when the collapsible content is hidden */
-.readlink3.collapsed:after {
-  content: "Read\2009\2009More\2009\2009\003e\003e";
-}
-
 /** example html
 <div class="readlink collapsed" data-toggle="collapse" data-target="#purpose"></div>
 <div id="purpose" class="collapse">
