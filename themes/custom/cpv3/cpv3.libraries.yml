@@ -191,4 +191,10 @@ organizational-chart6:
   version:                                                                                                          1.0
   js:
     js/api/orgchart.js:                                                                                             {}
-    js/api/orgscript.js:                                                                                            {}
+    js/api/orgscript.js:
+
+cpu:
+  version:                                                                                                          1.0
+  css:
+    theme:
+        css/cpu.css:                                                                                                {}
