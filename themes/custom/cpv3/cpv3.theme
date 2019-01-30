@@ -3,16 +3,18 @@ use Drupal\node\Entity\Node;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\taxonomy\Entity\Term;
 
-function cpv3_theme_rebuild () {
+function cpv3_theme_rebuild()
+{
     drupal_static_reset('theme_get_registry');
-    cache_clear_all('theme_registry', 'cache', TRUE);
+    cache_clear_all('theme_registry', 'cache', true);
 }
 
 /**
  * Implement hool_preprocess_html().
  * @param $variables
  */
-function cpv3_preprocess_html ( &$variables ) {
+function cpv3_preprocess_html(&$variables)
+{
     global $base_url;
     $variables['base_url'] = $base_url;
 }
@@ -21,40 +23,41 @@ function cpv3_preprocess_html ( &$variables ) {
  * Implement hook_preprocess().
  * @param array $variables
  */
-function cpv3_preprocess_page ( &$variables ) {
+function cpv3_preprocess_page(&$variables)
+{
     global $base_url;
 
-	$variables['footer_message'] = theme_get_setting ( 'footer_message', 'ladcp' );
-	$variables['images_path'] = \Drupal::theme ()->getActiveTheme ()->getPath () . '/image/';
-	$variables['base_path'] = base_path ();
-	$variables['theme_base_path'] = $base_url .'/'. \Drupal::theme ()->getActiveTheme ()->getPath ();
-  	$variables['route_name'] = \Drupal::routeMatch()->getRouteName();
+    $variables['footer_message'] = theme_get_setting('footer_message', 'ladcp');
+    $variables['images_path'] = \Drupal::theme()->getActiveTheme()->getPath() . '/image/';
+    $variables['base_path'] = base_path();
+    $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();
+    $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
 
-  	// Publication/Newsletter
-  	$publicationTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('publication_type');
-  	$variables['publication_categories'] = formatTabTitle($publicationTerms);
+    // Publication/Newsletter
+    $publicationTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('publication_type');
+    $variables['publication_categories'] = formatTabTitle($publicationTerms);
 
     // Community Plan Update/Hollywood Tab Menu
-  	$hollywoodCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('hollywood_community_plan');
-  	$variables['hollywood_menu'] = formatTabMenuTitle($hollywoodCpuTerms);
+    $hollywoodCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('hollywood_community_plan');
+    $variables['hollywood_menu'] = formatTabMenuTitle($hollywoodCpuTerms);
 
-  	// get current uri
-  	$current_uri = \Drupal::request()->getRequestUri();
-  	$current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
-  	$current = $current_uri_split[1];
-  	$variables['currentlink'] = $current;
+    // get current uri
+    $current_uri = \Drupal::request()->getRequestUri();
+    $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
+    $current = $current_uri_split[1];
+    $variables['currentlink'] = $current;
 
     // overlay
-  	$nodes_storage = \Drupal::entityTypeManager()->getStorage('node');
-  	$terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('overlays');
-  	foreach ($terms as $term) {
-  	    $tid = $term->tid;
-  	    $tname = $term->name;
+    $nodes_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('overlays');
+    foreach ($terms as $term) {
+        $tid = $term->tid;
+        $tname = $term->name;
 
-  	    // load nodes according to the field type
-  	    $query = \Drupal::entityQuery('node')
-  	             ->condition('type', 'overlays')
-  	             ->condition('field_type', $tid)
+        // load nodes according to the field type
+        $query = \Drupal::entityQuery('node')
+                 ->condition('type', 'overlays')
+                 ->condition('field_type', $tid)
                  ->condition('status', 1)
                  ->sort('title', 'asc');
         $nids = $query->execute();
@@ -71,14 +74,15 @@ function cpv3_preprocess_page ( &$variables ) {
                 ];
             }
         }
-  	}
+    }
 }
 
 /**
  * Implement template_preprocess_views_view().
  * @param array $variables
  */
-function cpv3_preprocess_views_view( &$variables ) {
+function cpv3_preprocess_views_view(&$variables)
+{
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('commissions');
     @$variables['category'] = formatTabCommissionTitle($terms);
 
@@ -111,33 +115,37 @@ function cpv3_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
  * Suggest template as per page--node--[content-type]--[node-title]
  * eg : page--node--page--publications.html.twig
  */
-function cpv3_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-    if ($node = \Drupal::routeMatch ()->getParameter ( 'node' )) {
+function cpv3_theme_suggestions_page_alter(array &$suggestions, array $variables)
+{
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
         $title = cleanString($node->getTitle());
-        $content_type = $node->bundle ();
+        $content_type = $node->bundle();
         $suggestions [] = 'page__node__' . $node->getType();
         $suggestions [] = 'page__node__' . $node->getType() .'__'. $title;
         $suggestions [] = 'page__node__' . $title;
     }
 }
 
-function cpv3_theme_suggestions_container_alter ( &$suggestions, $vars, $hook) {
+function cpv3_theme_suggestions_container_alter(&$suggestions, $vars, $hook)
+{
     $suggestions [] = 'container' . '__' . 'custom';
 }
 
-function cpv3_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-    if ($node = \Drupal::routeMatch ()->getParameter ( 'node' )) {
-        $content_type = $node->bundle ();
+function cpv3_theme_suggestions_node_alter(array &$suggestions, array $variables)
+{
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+        $content_type = $node->bundle();
         $suggestions [] = 'nodes/node__' . $content_type;
     }
 }
 
-function cpv3_preprocess_node( &$variables ) {
+function cpv3_preprocess_node(&$variables)
+{
     global $base_url;
-    $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme ()->getActiveTheme ()->getPath ();
+    $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();
     $node = $variables['node'];
     $data = [];
-    if($node->bundle() == 'eir_detail') {
+    if ($node->bundle() == 'eir_detail') {
         $eir_id = $node->get('field_select_eir')->getString();
         // Load parent nid and get respective field value.
         $eir_node = Node::load($eir_id);
@@ -159,7 +167,8 @@ function cpv3_preprocess_node( &$variables ) {
  * @return string
  *
  */
-function cleanString($string) {
+function cleanString($string)
+{
     $string = str_replace(' ', '-', $string);                   // Replaces all spaces with hyphens.
     $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);    // Removes special chars.
     $string = str_replace('-', '_', $string);                   // Replaces all dash (-) with underscore(_).
@@ -175,7 +184,8 @@ function cleanString($string) {
  * @return string
  *
  */
-function readableURLString($string) {
+function readableURLString($string)
+{
     $string = str_replace(' ', '-', $string);                   // Replaces all spaces with hyphens.
     $string = preg_replace('/[&]/', '', $string);               // Removes special chars.
     $string = trim(preg_replace('/-+/', '-', $string), '-');    //combine two or more dash with single dash
@@ -189,19 +199,20 @@ function readableURLString($string) {
  * @var $terms object
  * @return array
  */
-function formatTabTitle ($terms) {
+function formatTabTitle($terms)
+{
     $i = 1;
     $term_data = array();
     foreach ($terms as $term) :
-        $name = explode(' ',$term->name, 2);
-        if (count($name) >= 2) {
-            $firstPart = $name[0];
-            @$lastPart = @$name[1] . ' ' . @$name[2];
-        } else {
-            $firstPart = $term->name;
-        }
+        $name = explode(' ', $term->name, 2);
+    if (count($name) >= 2) {
+        $firstPart = $name[0];
+        @$lastPart = @$name[1] . ' ' . @$name[2];
+    } else {
+        $firstPart = $term->name;
+    }
 
-        $term_data [] = [
+    $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
             'last_name' => @$lastPart,
@@ -209,7 +220,7 @@ function formatTabTitle ($terms) {
 
         ];
 
-        $i++;
+    $i++;
     endforeach;
 
     return $term_data;
@@ -220,25 +231,26 @@ function formatTabTitle ($terms) {
  * @var $terms object
  * @return array
  */
-function formatTabMenuTitle ($terms) {
+function formatTabMenuTitle($terms)
+{
     $i = 1;
     $term_data = array();
-foreach ($terms as $term) :
-  $name = explode(' ',$term->name, 2);
+    foreach ($terms as $term) :
+  $name = explode(' ', $term->name, 2);
     $firstPart = $name[0] = "";
-  if (count($name) >= 1) {
-      $firstPart = $term->name;
-  }
-        $term_data [] = [
+    if (count($name) >= 1) {
+        $firstPart = $term->name;
+    }
+    $term_data [] = [
             'id' => $term->tid,
             'name' => $firstPart,
             'counter' => $i
 
         ];
 
-        $i++;
+    $i++;
 
-  endforeach;
+    endforeach;
     return $term_data;
 }
 
@@ -248,27 +260,28 @@ foreach ($terms as $term) :
  * @var $terms object
  * @return array
  */
-function formatTabCommissionTitle ($terms) {
+function formatTabCommissionTitle($terms)
+{
     $i = 1;
     $term_data = array();
     foreach ($terms as $term) :
         $name = explode(' ', $term->name, 3);
-        if (count($name) >= 3) {
-            $firstPart = $name[0] . ' ' . $name[1];
-            @$lastPart = @$name[2];
-        } else {
-            $firstPart = $term->name;
-        }
-        
-        $term_data [] = [
+    if (count($name) >= 3) {
+        $firstPart = $name[0] . ' ' . $name[1];
+        @$lastPart = @$name[2];
+    } else {
+        $firstPart = $term->name;
+    }
+
+    $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
             'last_name' => @$lastPart,
             'counter' => $i
         ];
-        
-        $i++;
+
+    $i++;
     endforeach;
-    
+
     return $term_data;
 }
