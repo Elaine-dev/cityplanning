@@ -1,5 +1,5 @@
 la_appointment.form:
-  path: '/contact/appointment/form'
+  path: '/development-services/appointment/form'
   defaults:
     _title: 'Case Filing & Clearing Appointment System'
     _form: '\Drupal\la_appointment\Form\LaAppointmentForm'
