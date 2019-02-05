@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.2.4
-version: 4.4.11
+Update Date: 2019.1.29
+version: 4.4.10
 *********************/
 body {
   line-height: 1.5 !important;
@@ -1107,7 +1107,7 @@ _:-moz-tree-row(hover), .planning-tag {
 
 .sidebar-menu {
   padding-left: 0px;
-  padding-right: 15px;
+  padding-right: 30px;
 }
 
 .sidebar-menu a {
@@ -2325,12 +2325,12 @@ ul#list-horizontal li {
 
 .panelHeadingTitle-1 {
   color: #fff !important;
-  background-color: #ffb846 !important;
+  background-color: #5e7293 !important;
 }
 
 .panelHeadingTitle-2 {
   color: #fff !important;
-  background-color: #5e7293 !important;
+  background-color: #ffb846 !important;
 }
 
 .panelHeadingTitle-3 {
@@ -2603,6 +2603,7 @@ ul#list-horizontal li {
 
 #hollywood-tab .nav>li>a {
   padding-bottom: 16px;
+  display: block;
 }
 
 #hollywood-tab .tab-content {
@@ -2990,10 +2991,10 @@ ul#list-horizontal li {
     right: 15px;
   }
 
-/*  .sidebar-menu {
+  .sidebar-menu {
     padding-right: 30px;
     right: 10;
-  }*/
+  }
 
   #main-container {
     margin-left: 15px;
@@ -3442,23 +3443,45 @@ ul#list-horizontal li {
 }
 
 @media screen and (min-width: 1680px) {
-  #main-container {top: 160px;}
-  .sub-heading {padding-left: 0%; margin-top: 0;}
-  .iframe-wrapper {margin-top: 20px;}
+  #main-container {
+    top: 160px;
+  }
+
+  .sub-heading {
+    padding-left: 0%;
+    margin-top: 0;
+  }
+
+  .iframe-wrapper {
+    margin-top: 20px;
+  }
 
   /* slider */
-  .planning-tag {margin-left: 11em !important;}
+  .planning-tag {
+    margin-left: 11em !important;
+  }
 }
 
 @media screen and (min-width: 1824px) {
-    #main-container {top: 205px;} 
-} 
-
-@media screen and (min-width: 1900px){
-	#main-container {top: 205px;} 
+  #main-container {
+    top: 205px;
+  }
 }
 
+@media screen and (min-width: 1900px) {
+  #main-container {
+    top: 205px;
+  }
+}
+
+<<<<<<< Updated upstream
 @media screen and (min-width: 2560px){
 	#main-container {top: 300px;} 
 	.content-wrapper{padding-top: 25px;}
+=======
+@media screen and (min-width: 2560px) {
+  #main-container {
+    top: 300px;
+  }
+>>>>>>> Stashed changes
 }

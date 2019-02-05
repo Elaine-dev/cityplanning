@@ -6,6 +6,7 @@
 
     <div class="col-md-12">
       <div id="page-title-bg"><img src="{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="bg"></div>
+  
     </div>
   </div>
 </div>
@@ -15,7 +16,7 @@
 <div class="container" id="main-container">
   <!-- Main content -->
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" style="padding-left: 30px;">
       <h1>{{ node.label }}</h1>
     </div>
   </div>
@@ -25,7 +26,7 @@
     <div class="col-md-9">
       <div class="section-content clear">
 
-        <div class="row padding-left0">
+        <div class="row">
           <div class="col-md-12">
             {% if node.field_slider %}
               {% for parag_id in node.field_slider.value %}
@@ -37,7 +38,7 @@
           </div>
         </div>
         {# menu #}
-        <div class="row padding-left0">
+        <div class="row">
           <div class="col-md-12">
             <div id="hollywood-tab">
               <ul class="nav nav-tabs" role="tablist">
@@ -136,7 +137,7 @@
     <!-- //End Right-side bar -->
 
     <!-- //End container -->
-
+{# breakpoint() #}
     {% for item in full_width_data %}
       {% if item.flag %}
         <div class="clear full-width-content {% if item.para_id == 122 %} block-qoute-wrapper {% endif %}">

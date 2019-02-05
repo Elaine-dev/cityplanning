@@ -14,6 +14,7 @@ libraries-override:
 ckeditor_stylesheets:
   - css/style.css
   - css/swiper/swiper.css
+  - css/cpu.css
 
 regions:
   header:                       'Header'

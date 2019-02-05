@@ -11,6 +11,68 @@
 .readlink.collapsed:after {
   content: "Read\2009\2009More\2009\2009\003e\003e";
 }
+/* prevents accordion from floating above webforms */
+
+.panel-group {
+    margin-bottom: 20px;
+    clear: both;
+}
+
+/*
+
+.panelHeadingTitle-1 {
+  color: #fff !important;
+  background-color: #5e7293 !important;
+}
+
+.panelHeadingTitle-2 {
+  color: #fff !important;
+  background-color: #ffb846 !important;
+}
+
+.panelHeadingTitle-3 {
+  color: #fff !important;
+  background-color: #53bda6 !important;
+}
+
+.panelHeadingTitle-4 {
+  color: #fff !important;
+  background-color: #a0a8aa !important;
+}
+
+.panelHeadingTitle-5 {
+  color: #fff !important;
+  background-color: #cc99cc !important;
+}
+
+.panelHeadingTitle-6 {
+  color: #fff !important;
+  background-color: #cc9999 !important;
+}
+
+.panelHeadingTitle-7 {
+  color: #fff !important;
+  background-color: #339999 !important;
+}
+
+.panelHeadingTitle-8 {
+  color: #fff !important;
+  background-color: #663399 !important;
+}
+
+.panelHeadingTitle-9 {
+  color: #fff !important;
+  background-color: #663333 !important;
+}
+
+.panelHeadingTitle-10 {
+  color: #fff !important;
+  background-color: #cc6699 !important;
+}
+*/
+
+
+
 
 /** example html
 <div class="readlink collapsed" data-toggle="collapse" data-target="#purpose"></div>

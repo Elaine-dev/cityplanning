@@ -175,14 +175,15 @@
 .swiper-button-prev {
   position: absolute;
   top: 50% !important;
-  width: 27px;
-  height: 44px;
+  width: 30px;
+  height: 38px;
   margin-top: -22px;
   z-index: 10;
   cursor: pointer;
   background-size: 27px 44px;
   background-position: center;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+
 }
 
 .swiper-button-next.swiper-button-disabled,
@@ -194,16 +195,33 @@
 
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221.28005%22%20height%3D%221.8782%22%20viewBox%3D%220%200%201.28005%201.8782%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3Bopacity%3A0.7%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EAsset%2011%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M.92116%2C0l.34693.323L.658.93312l.62208.61012-.34693.335L0%2C.94508Z%22%2F%3E%3C%2Fsvg%3E");
+
   left: 10px;
-  right: auto
+  right: auto;
+  -webkit-transform:scale(.75);
+  -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .6));
+  filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .6));
+}
+
+.swiper-button-next:hover {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221.28005%22%20height%3D%221.8782%22%20viewBox%3D%220%200%201.28005%201.8782%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EAsset%2013%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M.35889%2C1.8782.012%2C1.5552.62208.94508%2C0%2C.335.34693%2C0l.93312.93312Z%22%2F%3E%3C%2Fsvg%3E")
+}
+.swiper-button-prev:hover {
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221.28005%22%20height%3D%221.8782%22%20viewBox%3D%220%200%201.28005%201.8782%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EAsset%2012%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M.92116%2C0l.34693.323L.658.93312l.62208.61012-.34693.335L0%2C.94508Z%22%2F%3E%3C%2Fsvg%3E");
 }
 
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221.28005%22%20height%3D%221.8782%22%20viewBox%3D%220%200%201.28005%201.8782%22%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%23fff%3Bfill-rule%3Aevenodd%3Bopacity%3A0.7%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3EAsset%2010%3C%2Ftitle%3E%3Cpath%20class%3D%22a%22%20d%3D%22M.35889%2C1.8782.012%2C1.5552.62208.94508%2C0%2C.335.34693%2C0l.93312.93312Z%22%2F%3E%3C%2Fsvg%3E");
+
   right: 10px;
-  left: auto
+  left: auto;
+  font-weight:700;
+  transform:scale(.75);
+  -webkit-transform:scale(.75);
+  -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .6));
+  filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .6));
 }
 
 .swiper-button-prev.swiper-button-white,
@@ -296,11 +314,12 @@
 }
 
 .swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
+  width: 11px;
+  height: 11px;
   display: inline-block;
   border-radius: 100%;
-  background: #fff;
+  background: none;
+  border: 1px solid white;
 }
 
 button.swiper-pagination-bullet {
@@ -311,23 +330,23 @@ button.swiper-pagination-bullet {
   box-shadow: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none
+  appearance: none;
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #007aff
+  background: #fff;
 }
 
 .swiper-container-vertical>.swiper-pagination-bullets {
   right: 10px;
   top: 50%;
   -webkit-transform: translate3d(0, -50%, 0);
-  transform: translate3d(0, -50%, 0)
+  transform: translate3d(0, -50%, 0);
 }
 
 .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
@@ -689,25 +708,25 @@ button.swiper-pagination-bullet {
 /** Added to CKeditor **/
 p.slider-caption {
   color: #708090;
-  text-transform: uppercase;
-  font-stretch: ultra-condensed;
+  font-size: 20px;
+  line-height: 1.2;
   font-weight: 400;
-  font-size: 26px;
-  line-height: 1;
 }
 
 p.slider-title {
   color: #708090;
-  font-weight: 100;
+  font-weight: 600;
   text-transform: uppercase;
   font-stretch: condensed;
   font-kerning: none;
   font-size: 38px;
+  line-height: 1.2;
   margin-bottom: 0 !important;
-  line-height: 1;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .swiper-slide .slider-content {
-  margin-top: -58%;
+  margin-top: -58% !important;
+  padding:0;
+  padding-left: 40px;
 }

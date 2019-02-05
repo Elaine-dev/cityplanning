@@ -6,7 +6,7 @@ global-styling:
       css/normalize.css:                                                                                            {}
       css/style.css:                                                                                                {}
       css/swiper/swiper.css:                                                                                        {}
-      css/webform/webform.css:                                                                                      {}
+
   js:
     https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js:                                              {}
     https://code.jquery.com/ui/1.12.1/jquery-ui.min.js:                                                             {}
@@ -198,3 +198,4 @@ cpu:
   css:
     theme:
         css/cpu.css:                                                                                                {}
+        css/webform/webform.css: {}
