@@ -18,107 +18,105 @@
             	<div class="col-md-12"><h1>Public Hearings - {[{ planningAreaTitle }]}</h1></div>
             </div>
 
-    <p>
-      In accordance with the Zoning Code, the Department holds public hearings. These hearings are for the purposes of soliciting community feedback and informing planning recommendations prior to legislative action.
-    </p>
             <div class="row paddingtop15 padding-bottom60">
-                {# Left-side bar #}
-                <div class="col-md-12">
-                    <div class="row padding-left0">
-                        <div class="col-md-12">
-    						{# content goes here  #}
+              {# Left-side bar #}
+              <div class="col-md-12">
+                <div class="row padding-left0">
+                  <div class="col-md-12">
+    						    {# content goes here  #}
+                    {{ page.content }}
 
-						    {# filter & search #}
-    						<div class="row">
-    							<div class="col-md-12">
-                    				<div class="padding-bottom20">
-                    					<div class="row">
-                        					<div class="col-md-12 col-xs-12 padding-left0">
-                        						<div class="row padding-bottom25 content-search">
-                        							<div class="col-md-8 col-xs-12 filter-by">
-                        								<label>Filter by Region: </label>
-                                    					<select name="apc" ng-model="apc" >
-                                    						 <option ng-repeat="option in apcAreas.availableOptions" value="{[{option.id}]}"  ng-selected="apc == option.id">{[{option.name}]}</option>
-                                    					</select>
+						        {# filter & search #}
+    						    <div class="row">
+    							    <div class="col-md-12">
+                        <div class="padding-bottom20">
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 padding-left0">
+                              <div class="row padding-bottom25 content-search">
+                                <div class="col-md-8 col-xs-12 filter-by">
+                                  <label>Filter by Region: </label>
+                                    <select name="apc" ng-model="apc" >
+                                       <option ng-repeat="option in apcAreas.availableOptions" value="{[{option.id}]}"  ng-selected="apc == option.id">{[{option.name}]}</option>
+                                    </select>
 
-                        								<!-- year -->
-                                    					<select name="date" ng-model="date">
-                                                        	<option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d"></option>
-                                                      	</select>
-                        							</div>
+                                    <!-- year -->
+                                    <select name="date" ng-model="date">
+                                      <option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d"></option>
+                                    </select>
+                                  </div>
 
-                        							<div class="col-md-4 col-xs-12" id="content-search">
-                        								<input ng-model="CaseNumber" placeholder="Search your hearing">
-                        							</div>
-                        						</div>
-                        					</div>
-                    					</div>
-                    				</div>
+                                  <div class="col-md-4 col-xs-12" id="content-search">
+                                    <input ng-model="CaseNumber" placeholder="Search your hearing">
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
     							</div>
     						</div>{# end filter & search #}
 
     						<div class="row">
     							<div class="col-md-12">
     								<div ng-disabled="enable=='false'">
-                    					<center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
-                    				</div>
+                      <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+                    </div>
     							</div>
     						</div>
 
     						<div class="row">
     							<div class="col-md-12">
     								<div class="table-responsive">
-                    					<table class="table">
-                                            <colgroup>
-                                            	<col class="col-md-1">
-                                              	<col class="col-md-1">
-                                               	<col class="col-md-2">
-                                              	<col class="col-md-1">
-                                              	<col class="col-md-4">
-                                              	<col class="col-md-1">
-                                               	<col class="col-md-1">
-                                               	<col class="col-md-4">
-                                            </colgroup>
+                      <table class="table">
+                        <colgroup>
+                          <col class="col-md-1">
+                            <col class="col-md-1">
+                            <col class="col-md-2">
+                            <col class="col-md-1">
+                            <col class="col-md-4">
+                            <col class="col-md-1">
+                            <col class="col-md-1">
+                            <col class="col-md-4">
+                        </colgroup>
 
-                                            <thead>
-                                                <tr>
-                                    				<th>Date</th>
-                        <th>Decision Maker</th>
-                                    				<th>Case Number</th>
-                                    				<th>Note</th>
-                                    				<th>Address</th>
-                        <th>Council District</th>
-                                    				<th>Hearing</th>
-                        <th>Letter of Determination</th>
-                                    			</tr>
-                                            </thead>
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Decision Maker</th>
+                            <th>Case Number</th>
+                            <th>Note</th>
+                            <th>Address</th>
+                            <th>Council District</th>
+                            <th>Hearing</th>
+                            <th>Letter of Determination</th>
+                          </tr>
+                        </thead>
 
-                                            <tr ng-repeat="hearing in hearings | filter:CaseNumber">
-                                    			<td ng-bind="hearing.Date"></td>
-                                    			<td ng-bind="hearing.Type"></td>
-                                    			<td ng-bind="hearing.CaseNumber"></td>
-                                    			<td ng-bind="hearing.Note"></td>
-                                    			<td ng-bind="hearing.Address"></td>
-                                    			<td ng-bind="hearing.CD"></td>
-                                    			<td><span ng-if="hearing.HearingLink"><a href="{[{hearing.HearingLink}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
-                                    			<td>
-                                    				<div class="tooltip" ng-if="assignDate >= hearing.Date"><a href="#"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></a>
-                                                      <span class="tooltiptext">
-                                                      	<a href="#">A</a> <a href="#">B</a> <a href="#">C</a>
-                                                      </span>
-                                                    </div>
-                                    			</td>
-                                    		</tr>
-                                        </table>
-                    				</div>
-    							</div>
+                        <tr ng-repeat="hearing in hearings | filter:CaseNumber">
+                          <td ng-bind="hearing.Date"></td>
+                          <td ng-bind="hearing.Type"></td>
+                          <td ng-bind="hearing.CaseNumber"></td>
+                          <td ng-bind="hearing.Note"></td>
+                          <td ng-bind="hearing.Address"></td>
+                          <td ng-bind="hearing.CD"></td>
+                          <td><span ng-if="hearing.HearingLink"><a href="{[{hearing.HearingLink}]}" target="_blank"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></span></td>
+                          <td>
+                            <div class="tooltip" ng-if="assignDate >= hearing.Date"><a href="#"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></a>
+                              <span class="tooltiptext">
+                                <a href="#">A</a> <a href="#">B</a> <a href="#">C</a>
+                              </span>
+                            </div>
+                          </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
 							</div>
 
-                        </div>
-                    </div>
-                </div>{# End Left-side bar #}
+              </div>
             </div>
-        </div>{# End container #}
+          </div>{# End Left-side bar #}
+        </div>
+      </div>{# End container #}
 
 
         <div class="container white--bg visible-xs-block visible-sm-block">
