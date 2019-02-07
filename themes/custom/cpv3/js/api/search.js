@@ -18,7 +18,7 @@ myApp.controller('MainCtrl', function($scope, $http, $timeout, filterFilter){
     if (typeof formattedQueryString != 'undefined') {
         $scope.searching = true;
         $scope.showResult = false;
-        $http.get('http://161.149.221.142/dcpapi/general/search/results/'+formattedQueryString).then(function(posts) {
+        $http.get('http://161.149.221.137/dcpapi/general/search/results/'+formattedQueryString).then(function(posts) {
             $scope.posts = posts.data;
             $scope.results = $scope.posts.sections;
             self.data = $scope.posts.sections;
