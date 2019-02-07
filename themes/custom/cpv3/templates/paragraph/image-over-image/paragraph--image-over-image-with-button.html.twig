@@ -17,7 +17,7 @@
         <div class="center-content">
             {% if image_link is not empty %}
                 <div class="front-image">
-                    <a href="{{ image_link|trim }}">{{ content.field_front_image }}</a>
+                    <a href="{{ image_link|render|striptags|trim }}">{{ content.field_front_image }}</a>
                 </div>
             {% else %}
                 <div class="front-image">
