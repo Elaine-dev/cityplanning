@@ -22,7 +22,7 @@ appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$fi
 	 $scope.enable = "false";
 	 $scope.loadingText = "Loading ...";
 	
-	$scope.apc = 'northvalley';
+	$scope.apc = 'all';
 	$scope.apcAreas = {
 		availableOptions: [ 
 				{id: 'northvalley', name: 'North Valley' },
