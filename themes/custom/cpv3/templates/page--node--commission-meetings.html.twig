@@ -16,9 +16,10 @@
     {# Main content #}
     <div class="row">
       <div class="col-md-12">
-        <h1>Commission Meetings - {[{ planningAreaTitle }]}</h1>
+        <h1>Commission Meetings</h1>
       </div>
     </div>
+
     <div class="row paddingtop15 padding-bottom60">
       {# Left-side bar #}
       <div class="col-md-12">
@@ -29,11 +30,11 @@
 
             {# filter & search #}
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 padding-left0 padding-right0">
                 <div class="padding-bottom20">
                   <div class="row">
-                    <div class="col-md-12 col-xs-12 padding-left0">
-                      <div class="row padding-bottom25 content-search">
+                    <div class="col-md-12 col-xs-12">
+                      <div class="row padding-bottom25 content-search padding-left0">
                         <div class="col-md-8 col-xs-12 filter-by">
                           <label>Filter by :
                           </label>
@@ -47,10 +48,11 @@
                             <option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d"></option>
                           </select>
                         </div>
-
+                        {# removed filter option
                         <div class="col-md-4 col-xs-12 search" id="content-search">
                           <input ng-model="Date" placeholder="Search your agenda">
                         </div>
+                        #}
                       </div>
                     </div>
                   </div>
@@ -70,15 +72,10 @@
             </div>
 
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12 padding-left0 padding-right0">
                 <div class="table-responsive">
                   <table class="table">
                     <colgroup>
-                      <col class="col-md-1">
-                      <col class="col-md-2">
-                      <col class="col-md-1">
-                      <col class="col-md-4">
-                      <col class="col-md-2">
                       <col class="col-md-1">
                       <col class="col-md-1">
                       <col class="col-md-1">
@@ -86,22 +83,16 @@
                       <col class="col-md-1">
                     </colgroup>
                     <thead>
-                      <tr>
-                        <th>Date</th>
-                        <th>Commission</th>
-                        <th>Note</th>
-                        <th>Address</th>
-                        <th>Agenda</th>
-                        <th>Add'l Docs</th>
-                        <th>Audio</th>
-                        <th>Minutes</th>
-                      </tr>
+                    <tr>
+                      <th>Date</th>
+                      <th>Agenda</th>
+                      <th>Supplemental Docs</th>
+                      <th>Audio</th>
+                      <th>Minutes</th>
+                    </tr>
                     </thead>
-                    <tr ng-repeat="agenda in agendas | filter:Date">
+                    <tr ng-repeat="agenda in agendas">
                       <td ng-bind="agenda.Date"></td>
-                      <td ng-bind="agenda.Type"></td>
-                      <td ng-bind="agenda.Note"></td>
-                      <td ng-bind="agenda.Address"></td>
                       <td>
                         <span ng-if="agenda.AgendaLink">
                           <a href="{[{agenda.AgendaLink}]}" target="_blank">
@@ -138,22 +129,9 @@
 
           </div>
         </div>
-      </div>
-      {# End Left-side bar #}
+      </div> {# End Left-side bar #}
     </div>
-  </div>
-  {# End container #}
-</div>
-
-<div class="container white--bg visible-xs-block visible-sm-block">
-  <div class="row">
-    {# Right-side bar #}
-    <div class="col-md-12 sidebar-menu">
-      <div class="top-bar"></div>
-      {{ page.side_menu }}
-    </div>
-    {# End Right-side bar #}
-  </div>
+  </div> {# End container #}
 </div>
 
 <!-- footer section -->

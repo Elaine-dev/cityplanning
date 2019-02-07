@@ -2,7 +2,7 @@ app.controller('agendaCtrl', function($scope, agendaService, $filter, $timeout) 
 	$scope.enable = "false";
 	$scope.loadingText = "Loading ...";
 	
-	$scope.apc = 'cpc';
+	$scope.apc = 'all';
 	$scope.apcAreas = {
 	   availableOptions: [ 
 	        {id: 'cpc', name: 'City Planning Commisson'},
@@ -17,7 +17,6 @@ app.controller('agendaCtrl', function($scope, agendaService, $filter, $timeout) 
 			{id: 'all', name: 'All'}
 		],
 	};
-	
 	
 	$scope.date = $filter('date')(new Date(), 'yyyy');		// get current year
 	var date = $scope.date;
