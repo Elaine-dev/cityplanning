@@ -303,4 +303,12 @@ jQuery(document).ready(function(){
 	         $('.searchbox-icon').css('display','block');
 	     }
 	 }
+
+  /** Open external link in new window  **/
+  $('a').each(function() {
+    var a = new RegExp('/' + window.location.host + '/');
+    if (!a.test(this.href)) {
+      $(this).attr("target","_blank");
+    }
+  });
 });
