@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.2.7
-version: 4.4.12
+Update Date: 2019.2.8
+version: 4.4.13
 *********************/
 body {
   line-height: 1.5 !important;
@@ -2608,6 +2608,57 @@ ul#list-horizontal li {
 
 #hollywood-tab .tab-content {
   margin-left: 16px;
+}
+
+/** Web Form: Email Sign-up  **/
+.email_sign_up_form .js-form-item{
+  padding-bottom: 10px;
+}
+
+.email_sign_up_form #edit-first-name--2{
+  float: left;
+}
+
+.email_sign_up_form #edit-last-name--2{
+  float: left;
+}
+
+.email_sign_up_form #edit-mailing-address--2{
+  padding-top: 50px;
+}
+
+.email_sign_up_form fieldset.webform-composite-hidden-title {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.email_sign_up_form fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.email_sign_up_form legend{
+  display: none;
+}
+
+.email_sign_up_form .webform-flexbox {
+  margin: -1em -.5em;
+}
+
+.email_sign_up_form #edit-contact--2--wrapper{
+  margin-top: -20px;
+}
+
+.email_sign_up_form .form-select{
+  height: 40px;
+}
+
+.email_sign_up_form .webform-button--submit{
+  background-color: #009fe3;
+  width: 100%;
+  margin-top: 10px;
 }
 
 /*-->> **************** Media Query *****************/
