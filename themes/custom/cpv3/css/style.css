@@ -2611,8 +2611,8 @@ ul#list-horizontal li {
 }
 
 /** Web Form: Email Sign-up  **/
-.email_sign_up_form .js-form-item{
-  padding-bottom: 10px;
+.email_sign_up_form label {
+  margin-bottom: 15px;
 }
 
 .email_sign_up_form #edit-first-name--2{
@@ -2647,10 +2647,6 @@ ul#list-horizontal li {
   margin: -1em -.5em;
 }
 
-.email_sign_up_form #edit-contact--2--wrapper{
-  margin-top: -20px;
-}
-
 .email_sign_up_form .form-select{
   height: 40px;
 }
@@ -2658,7 +2654,8 @@ ul#list-horizontal li {
 .email_sign_up_form .webform-button--submit{
   background-color: #009fe3;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
+  border-radius: 0;
 }
 
 /*-->> **************** Media Query *****************/
