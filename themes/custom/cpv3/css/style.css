@@ -2654,6 +2654,12 @@ ul#list-horizontal li {
   border-radius: 0;
 }
 
+/* Custom button */
+.customButton{
+  background-color: #ccc;
+  padding: 10px;
+}
+
 /*-->> **************** Media Query *****************/
 /* Small devices (mobile phone < 576px) */
 @media screen and (max-width: 575px) {
