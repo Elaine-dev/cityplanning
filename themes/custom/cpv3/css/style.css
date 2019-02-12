@@ -2680,6 +2680,11 @@ ul#list-horizontal li {
   padding: 10px;
 }
 
+/* search results highlighting */
+.search_highlight {
+  background-color: #ffff99;
+}
+
 /*-->> **************** Media Query *****************/
 /* Small devices (mobile phone < 576px) */
 @media screen and (max-width: 575px) {
