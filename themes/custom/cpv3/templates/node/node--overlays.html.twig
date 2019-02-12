@@ -6,13 +6,6 @@
 			
 			<br />
 		{% endif %}
-		
-		{% if content.field_council_district_s_ %}
-			<strong class="overlays-field-title">Council District(s):</strong><br>
-			{{ content.field_council_district_s_ }} 
-			
-			<br />
-		{% endif %}
 	</div>
 	<div class="col-md-6">
 		{% if content.field_community_plan_area_s_ %}
@@ -21,8 +14,18 @@
 			
 			<br />
 		{% endif %}
-		
-		
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		{% if content.field_council_district_s_ %}
+			<strong class="overlays-field-title">Council District(s):</strong><br>
+			{{ content.field_council_district_s_ }} 
+			
+			<br />
+		{% endif %}
+	</div>
+	<div class="col-md-6">
 		{% if content.field_area_planning_commission_s %}
 			<strong class="overlays-field-title">Area Planning Commission(s):</strong><br>
 			{{ content.field_area_planning_commission_s }} 
@@ -30,7 +33,8 @@
 			<br />
 		{% endif %}
 	</div>
-	
+</div>
+<div class="row">
 	<div class="col-md-6">
 		{% set strlen = content.field_design_review_board_drb_ | length  %}
 		{% if strlen > 3  %}
