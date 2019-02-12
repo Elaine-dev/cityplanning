@@ -2678,12 +2678,6 @@ ul#list-horizontal li {
   border: 0;
 }
 
-/* Custom button */
-.customButton{
-  background-color: #ccc;
-  padding: 10px;
-}
-
 /* search results highlighting */
 .search_highlight {
   background-color: #ffff99;
