@@ -295,108 +295,126 @@ q:before, q:after {
   color: #fff;
   background-color: #0066cc;
   border-color: #003399;
+  font-size: 18px !important;
 }
 
 .Azure:hover {
   color: #fff;
   background-color: #0066ff;
   border-color: #003399;
+  font-size: 18px !important;
 }
 
 .Blue-Gray {
   color: #fff;
   background-color: #5e7393;
   border-color: #5e7393;
+  font-size: 18px !important;
 }
 
 .Blue-Gray:hover {
   color: #fff;
   background-color: #546784;
   border-color: #4b5c76;
+  font-size: 18px !important;
 }
 
 .Lime-Green {
   color: #fff;
   background-color: #c6d32d;
   border-color: #c6d32d;
+  font-size: 18px !important;
 }
 
 .Lime-Green:hover {
   color: #fff;
   background-color: #b9c52a;
   border-color: #abb627;
+  font-size: 18px !important;
 }
 
 .Med-Gray {
   color: #fff;
   background-color: #a0a8a9;
   border-color: #a0a8a9;
+  font-size: 18px !important;
 }
 
 .Med-Gray:hover {
   color: #fff;
   background-color: #929899;
   border-color: #83898a;
+  font-size: 18px !important;
 }
 
 .Orange {
   color: #fff;
   background-color: #ffb845;
   border-color: #ffb845;
+  font-size: 18px !important;
 }
 
 .Orange:hover {
   color: #fff;
   background-color: #f0ad41;
   border-color: #e1a23d;
+  font-size: 18px !important;
 }
 
 .Sage {
   color: #fff;
   background-color: #87a28e;
   border-color: #87a28e;
+  font-size: 18px !important;
 }
 
 .Sage:hover {
   color: #fff;
   background-color: #7a9380;
   border-color: #6d8473;
+  font-size: 18px !important;
 }
 
 .Teal-Green {
   color: #fff;
   background-color: #53bda6;
   border-color: #53bda6;
+  font-size: 18px !important;
 }
 
 .Teal-Green:hover {
   color: #fff;
   background-color: #4baf99;
   border-color: #439f8b;
+  font-size: 18px !important;
 }
 
 .Dark-Orange {
   color: #fff;
   background-color: #f3901d;
   border-color: #f3901d;
+  font-size: 18px !important;
 }
 
 .Dark-Orange:hover {
   color: #fff;
   background-color: #f38b11;
   border-color: #f3901d;
+  font-size: 18px !important;
 }
 
 .Saffron-Mango {
   color: #fff;
   background-color: #fab34f;
   border-color: #fbae42;
+  font-size: 18px !important;
 }
 
 .Saffron-Mango:hover {
   color: #fff;
   background-color: #f8ac40;
   border-color: #fbae42;
+  font-size: 18px !important;
 }
 
 mark {
