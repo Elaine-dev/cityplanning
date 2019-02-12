@@ -83,6 +83,9 @@ function cpv3_preprocess_page(&$variables)
  */
 function cpv3_preprocess_views_view(&$variables)
 {
+    global $base_url;
+    $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();  // active theme path
+    
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('commissions');
     @$variables['category'] = formatTabCommissionTitle($terms);
 
