@@ -74,7 +74,6 @@
                       <col class="col-md-5">
                       <col class="col-md-2">
                       <col class="col-md-2">
-                      <col class="col-md-2">
                     </colgroup>
 
                     <thead>
@@ -84,7 +83,6 @@
                       <th>Address</th>
                       <th>Hearing Notice</th>
                       <th>Council District</th>
-                      <th>Letter of Determination</th>
                     </tr>
                     </thead>
 
@@ -98,14 +96,6 @@
                         </span>
                       </td>
                       <td ng-bind="hearing.CD"></td>
-                      <td>
-                        <div class="tooltip" ng-if="assignDate > hearing.Date">
-                          <a href="#"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></a>
-                          <span class="tooltiptext">
-                            <a href="#">A</a> <a href="#">B</a> <a href="#">C</a>
-                          </span>
-                        </div>
-                      </td>
                     </tr>
                   </table>
                 </div>
