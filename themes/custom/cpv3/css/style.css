@@ -1114,7 +1114,7 @@ _:-moz-tree-row(hover), .planning-tag {
 #main-container {
   background-color: #fff;
   position: relative;
-  top: 178px;
+  top: 195px;
   padding-bottom: 300px;
 }
 
@@ -1130,6 +1130,7 @@ _:-moz-tree-row(hover), .planning-tag {
 .sidebar-menu {
   padding-left: 0px;
   padding-right: 15px;
+  padding-top: 6px;
 }
 
 .sidebar-menu a {
@@ -2157,8 +2158,8 @@ ul#list-horizontal li {
 }
 
 #blog-social-media {
-    padding-top: 15px;
-    padding-bottom: 15px;
+   padding-top: 15px;
+   padding-bottom: 15px;
 }
 
 #blog-social-media .btn-white {
@@ -3520,7 +3521,7 @@ ul#list-horizontal li {
 
 @media screen and (min-width: 1680px) {
   #main-container {
-    top: 160px;
+    top: 170px;
   }
 
   .sub-heading {
