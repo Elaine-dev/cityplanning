@@ -9,7 +9,7 @@
 var app = angular.module('appStaffDirectory', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ui.bootstrap'])
 	.service('staffDirService', function($http){
 		this.getRecord = function() {
-			return $http.get('http://161.149.221.137/dcpapi/general/phonelist/');
+			return $http.get('https://planning.lacity.org/dcpapi/general/phonelist/');
 		}
 	})
 	.config(function($interpolateProvider) {

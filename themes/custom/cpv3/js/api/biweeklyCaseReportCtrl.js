@@ -18,7 +18,7 @@ var appBW = angular.module('appBW', ['ngResource','ngRoute','ngAnimate','ngSanit
 })
 .service('biweeklyCaseReportService', function($http) {
 	this.getData = function (type, year) {
-		return $http.get("http://161.149.221.137/dcpapi/general/biweeklycase/"+type+"/"+year);
+		return $http.get("https://planning.lacity.org/dcpapi/general/biweeklycase/"+type+"/"+year);
 	}
 })
 

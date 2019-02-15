@@ -1,7 +1,7 @@
 var app = angular.module('appForms', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
 	.service('formsService', function($http){
 		this.getRecord = function() {
-			return $http.get("http://161.149.221.142/dcpapi/general/forms");
+			return $http.get("https://planning.lacity.org/dcpapi/general/forms");
 		}
 	})
 	.config(function($interpolateProvider){

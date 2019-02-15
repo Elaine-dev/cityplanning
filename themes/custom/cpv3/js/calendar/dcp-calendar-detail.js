@@ -11,7 +11,7 @@ $(document).ready(function() {
     	eventLimit: true, // allow "more" link when too many events
     	defaultView: 'month',
     	events: {
-    		url: 'http://161.149.221.137/dcpapi/meetings/upcoming/calendar',
+    		url: 'https://planning.lacity.org/dcpapi/meetings/upcoming/calendar',
 	        error: function() {
 	        	$('#script-warning').show();
 	        }

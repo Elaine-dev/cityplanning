@@ -1,13 +1,13 @@
 app.service('homepageService', function ( $http ){
 	this.getUpcommingMeetings = function() {
-		return $http.get("http://161.149.221.137/dcpapi/meetings/upcoming");
+		return $http.get("https://planning.lacity.org/dcpapi/meetings/upcoming");
 	}
 	
 	this.getUpcommingHearings = function () {
-		return $http.get("http://161.149.221.137/dcpapi/meetings/upcoming/hearings");
+		return $http.get("https://planning.lacity.org/dcpapi/meetings/upcoming/hearings");
 	}
 	
 	this.getLatestNews = function () {
-		return $http.get("http://161.149.221.137/dcpapi/general/whatsnew");
+		return $http.get("https://planning.lacity.org/dcpapi/general/whatsnew");
 	}
 });

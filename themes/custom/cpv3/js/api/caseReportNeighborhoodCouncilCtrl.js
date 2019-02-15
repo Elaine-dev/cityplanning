@@ -10,7 +10,7 @@
 var appHearing = angular.module('appHearing', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
 	.service('hearingsService', function($http) {
 		this.getHearing = function (apc, year) {
-			return $http.get("http://161.149.221.142/dcpapi/meetings/api/"+apc+"/hearings/"+year);
+			return $http.get("https://planning.lacity.org/dcpapi/meetings/api/"+apc+"/hearings/"+year);
 		}
 	});
 

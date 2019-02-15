@@ -306,7 +306,7 @@ class PreApplicationRequestForm extends FormBase
      */
     private function callAPI ( $jsonData ) {
         $ch = curl_init();
-        $url = "http://161.149.221.142/dcpapi/general/forms/process";
+        $url = "https://planning.lacity.org/dcpapi/general/forms/process";
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);

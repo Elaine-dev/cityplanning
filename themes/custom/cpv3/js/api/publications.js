@@ -3,7 +3,7 @@
 var app = angular.module('appPublication', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap', 'angularUtils.directives.dirPagination'])
 	.service('publicationService', function($http){
 		this.getRecord = function(q) {
-			return $http.get("http://161.149.221.142/dcpapi/general/pubs/"+q);
+			return $http.get("https://planning.lacity.org/dcpapi/general/pubs/"+q);
 		}
 	});
 app.config(function($interpolateProvider){
