@@ -2154,6 +2154,11 @@ ul#list-horizontal li {
   text-align: left;
 }
 
+#blog-social-media {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 #blog-social-media .btn-white {
   color: #fff;
   background-color: #fff;
