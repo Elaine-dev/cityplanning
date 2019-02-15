@@ -1114,7 +1114,7 @@ _:-moz-tree-row(hover), .planning-tag {
 #main-container {
   background-color: #fff;
   position: relative;
-  top: 195px;
+  top: 178px;
   padding-bottom: 300px;
 }
 
@@ -2430,6 +2430,7 @@ ul#list-horizontal li {
 .col-centered {
   float: none;
   margin: 0 auto;
+  padding-top: 7px;
 }
 
 #org-background {
