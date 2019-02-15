@@ -11,7 +11,7 @@
 var appSM = angular.module('appSM', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ui.bootstrap'])
 .service('socialMediaService', function($http){
 	this.getRecord = function() {
-		return $http.get('http://161.149.221.142/dcpapi/general/social/8');
+		return $http.get('https://planning.lacity.org/dcpapi/general/social/8');
 	}
 })
 .filter('words', function () {
