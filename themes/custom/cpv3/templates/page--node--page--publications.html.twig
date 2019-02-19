@@ -24,7 +24,7 @@
 						{# content goes here #}
 						<div class="row padding-left0">
 							<div class="col-md-12">
-								<p>The City Planning Department issues publications to keep neighborhood and business interests updated on important milestones, in addition to furthering engagement efforts on specific issues and policies. Referenced below are some of the Department's reoccurring publications. For questions, comments, or reprint requests, please contact Rayna Plummer by email <a target="_top" href="mailto:rayna@plummer@lacity.org">rayna@plummer@lacity.org</a> or phone (213) 978-1234.</p>
+								{{ page.content }}
 							</div>
 						</div>
 
@@ -44,7 +44,7 @@
                                              {% set active_class = ''  %}
                                              {% set class = ''  %}
                                          {% endif %}
-                                        <li role="presentation" class="padding-top0 {{ (loop.last) ? '' : 'tab-line' }} js-publication-tab {{ active_class }}">
+                                        <li role="presentation" class="padding-top0 tab-line js-publication-tab {{ active_class }}">
                                             <a href="#{{ item.counter }}" id="{{ item.id }}" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" class="{{ class }}">
                                                 {{ item.first_name}}<br>
                                                 {{ item.last_name}}
@@ -52,15 +52,14 @@
                                         </li>
                                     {% endfor %}
 							 
-                                  {# REMOVED
-                                      <li role="presentation" class="tab-line js-publication-tab">
-                                            <a href="#4" aria-controls="4"  id="4" role="tab" data-toggle="tab">
-                                                <i class="fa fa-search fa-2x" aria-hidden="true"></i>
-                                                <div class="pull-right" style="padding-left: 10px; margin-top: -7;">
-                                                    Search All<br>Publications...
-                                                </div>
-                                        </a></li>
-                                        #}
+                                     <li role="presentation" class="js-publication-tab">
+                                        <a href="#4" aria-controls="4"  id="4" role="tab" data-toggle="tab">
+                                            <i class="fa fa-search fa-2x" aria-hidden="true" style="margin-top: 5px;"></i>
+                                            <div class="pull-right" style="padding-left: 10px;">
+                                                Search All<br>Publications
+                                            </div>
+                                        </a>
+                                     </li>
                                     </ul>
 
                                      <div id="publication-tabs">
@@ -72,20 +71,20 @@
                                              <div id="4" class="publication-data js-tab4 hidden">
 	                                            <div class="row padding-left0">
 	                                                <div class="col-md-12">
-	                                                    <div class="row filter-search">
+	                                                    <div class="row content-search">
 	                                                        <div class="col-md-6">
 	                                                            <label>Filter by : </label>
 	                                                            <select ng-model="docType" style="height: 30px;">
 	                                                                <option ng-repeat="option in documentType.availableOptions" value="{[{ option.id }]}" ng-selected="docType == option.id">{[{ option.name }]}</option>
 	                                                            </select>
 	                                                        </div>
-	                                                        <div class="col-md-6">
+	                                                        <div class="col-md-6" id="content-search">
 	                                                            <input ng-model="search" class="pull-right" type="text" placeholder="Filter search result ..."/>
 	                                                        </div>
 	                                                    </div>
 
 	                                                    <div class="row paddingtop10">
-	                                                        <div class="col-md-12">
+	                                                        <div class="col-md-12 padding-left0 padding-right0">
 	                                                            <div class="table-responsive">
 	                                                                <table class="table table-hover">
 	                                                                    <colgroup>
