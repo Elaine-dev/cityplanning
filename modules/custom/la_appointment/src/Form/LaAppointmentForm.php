@@ -220,7 +220,7 @@ class LaAppointmentForm extends FormBase {
         $form['actions']['submit'] = array (
             '#type' => 'submit',
             '#value' => $this->t('Submit'),
-            '#button_type' => 'primary',
+            /* '#button_type' => 'primary', */
         );
 
         return $form;

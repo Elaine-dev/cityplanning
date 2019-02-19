@@ -1807,6 +1807,14 @@ article img {
   border-color: #eee !important;
 }
 
+#laappintment-form input[type=submit] {
+    background-color: #009fe3 !important;
+    width: 100% !important;
+    margin-top: 20px;
+    border-radius: 0;
+    border: 0;
+}
+
 /**** calendar ****/
 #main-container-calendar {
   background-color: #fff;
