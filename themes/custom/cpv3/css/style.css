@@ -1861,6 +1861,12 @@ article img {
   border-left: #1967d3 solid 3px !important;
 }
 
+.event {
+  background: #f1f1f1 !important;
+  color: #000 !important;
+  border-left: #1967d3 solid 3px !important;
+}
+
 .public {
   background: #f1f1f1 !important;
   color: #000 !important;
@@ -1965,6 +1971,23 @@ article img {
 }
 
 .cal-ddah-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #0289c3;
+  padding-top: 19px !important;
+}
+
+.cal-event {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #0192d1;
+  padding-top: 19px !important;
+}
+
+.cal-event-disable {
   float: left;
   width: 20px;
   min-height: 10px;

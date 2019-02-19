@@ -7436,14 +7436,14 @@ DayGrid.mixin({
 			//calEventTitle = event.description;
 		} else if (event.type == 'Area Planning Commission') {
 			titleColor = 'apc'; 						
+		} else {
+			titleColor = 'event';
 		}
 		
 		classes.unshift('cal-item', titleColor);		// categorywise sidebar color
 		
 		calEventTitle = event.description;
 		calEventUrl = event.url;
-		
-		
 		
 		if (event.caseNumber) {									// if casenumber exists 
 			var newTitle;
@@ -7457,7 +7457,8 @@ DayGrid.mixin({
 				(htmlEscape(calEventTitle || '') || '&nbsp;') + // we always want one line of height 
 				'</span>';
 		}
-		console.log('title: '+newTitle);
+
+		//console.log('title: '+newTitle);
 
 		// Only display a timed events time if it is the starting segment
 		if (seg.isStart) {

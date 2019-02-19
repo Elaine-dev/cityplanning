@@ -45,6 +45,10 @@ $(document).ready(function() {
 		$('.apc').toggle();
 		$('#a').toggleClass('cal-apc-disable');
 	});
+	$("#ci-event").click(function() {
+		$('.event').toggle();
+		$('#a').toggleClass('cal-event-disable');
+	});
 	
 	$('.fc-scroller').css('overflow','visible');
 });
