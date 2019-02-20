@@ -1643,7 +1643,7 @@ article img {
   display: block;
   padding: 15px;
   color: #555 !important;
-  font-size: 14px;
+  font-size: 18px;
   text-transform: capitalize;
   text-decoration: none;
 }
@@ -1663,6 +1663,8 @@ article img {
 
 .hr {
   border-top: 1px dotted #d6d5d0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #sr {
