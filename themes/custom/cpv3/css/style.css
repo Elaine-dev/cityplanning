@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.2.16
-version: 4.4.19
+Update Date: 2019.2.21
+version: 4.4.20
 *********************/
 body {
   line-height: 1.5 !important;
@@ -510,6 +510,16 @@ mark {
 figcaption {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+/* 
+# Change hyper link color dark blue inside content
+# Add id="id="alink-dark-blue"
+# Eg:
+# <div id="alink-dark-blue"><a href="#"> ... </a></div>
+*/
+#alink-dark-blue a {
+    color: #183357 !important;
 }
 
 /****************************************
