@@ -18,6 +18,9 @@
                             {% set class = '' %}
                         {% endif %}
                         <div id="collapseOne-{{ loop.index0 }}" class="panel-collapse collapse {{ class }}">
+                            {# display Rules & Procedures link #}
+                            <div class="padding-left-15 paddingtop15">{{ item.description|raw }}</div>
+                            
                             <div class="loading_1 hidden"></div>
                             <div class="js-response panel-body">
                                 {{ rows }}

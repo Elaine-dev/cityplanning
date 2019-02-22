@@ -86,31 +86,22 @@ function cpv3_preprocess_views_view(&$variables)
     global $base_url;
     $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();  // active theme path
     
+    // Commissions
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('commissions');
     @$variables['category'] = formatTabCommissionTitle($terms);
 
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('area_planning_type');
     foreach ($terms as $term) {
+        @$description = $term->description__value;
         $term_data_1[] = array(
             "id" => $term->tid,
             "name" => $term->name,
+            "description" => $description,
         );
     }
 
     @$variables['planning_area_category'] = $term_data_1;
 }
-
-// template suggestion for container part
-/* function cpv3_theme_suggestions_page_alter ( array &$suggestions, array $variables ) {
-    // Add content type suggestions.
-    if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
-        array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
-    }
-}
-
-function cpv3_theme_suggestions_container_alter ( $suggestions, $vars, $hook ) {
-    $suggestions[] = 'container' . '__' . 'custom';
-} */
 
 /**
  * @param array $suggestions
@@ -257,7 +248,6 @@ function formatTabMenuTitle($terms)
     return $term_data;
 }
 
-
 /**
  * Format Title for Commission tab
  * @var $terms object
@@ -268,22 +258,25 @@ function formatTabCommissionTitle($terms)
     $i = 1;
     $term_data = array();
     foreach ($terms as $term) :
+        $description = $term->description__value;
         $name = explode(' ', $term->name, 3);
-    if (count($name) >= 3) {
-        $firstPart = $name[0] . ' ' . $name[1];
-        @$lastPart = @$name[2];
-    } else {
-        $firstPart = $term->name;
-    }
+        
+        if (count($name) >= 3) {
+            $firstPart = $name[0] . ' ' . $name[1];
+            @$lastPart = @$name[2];
+        } else {
+            $firstPart = $term->name;
+        }
 
-    $term_data [] = [
+        $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
             'last_name' => @$lastPart,
+            'description' => $description,
             'counter' => $i
         ];
 
-    $i++;
+        $i++;
     endforeach;
 
     return $term_data;
