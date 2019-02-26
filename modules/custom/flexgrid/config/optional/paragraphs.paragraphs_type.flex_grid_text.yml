@@ -1,0 +1,9 @@
+uuid: 38318ef1-8966-47b1-a9de-5bdbf0782f91
+langcode: en
+status: true
+dependencies: {  }
+id: flex_grid_text
+label: 'Flex Grid Text'
+icon_uuid: null
+description: 'The text style to be used in the Flex Grid for Urban Design Studio.'
+behavior_plugins: {  }

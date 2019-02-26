@@ -1,0 +1,9 @@
+uuid: d42d9fbe-28a8-4019-bda0-9fddd9a714a3
+langcode: en
+status: true
+dependencies: {  }
+id: fullwidth_buttons
+label: 'Fullwidth Buttons'
+icon_uuid: null
+description: 'Full width buttons.'
+behavior_plugins: {  }
