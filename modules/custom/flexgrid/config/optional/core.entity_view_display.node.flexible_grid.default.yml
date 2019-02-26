@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.flexible_grid.body
+    - field.field.node.flexible_grid.field_flexible_grid
+    - field.field.node.flexible_grid.field_image
+    - field.field.node.flexible_grid.field_intro_content
+    - node.type.flexible_grid
+  module:
+    - paragraphs_grid
+    - user
+id: node.flexible_grid.default
+targetEntityType: node
+bundle: flexible_grid
+mode: default
+content:
+  field_flexible_grid:
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      container: container-fluid
+      link: false
+    third_party_settings: {  }
+    type: paragraphs_grid_formatter
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_image: true
+  field_intro_content: true
