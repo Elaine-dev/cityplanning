@@ -26,6 +26,7 @@ function cpv3_preprocess_html(&$variables)
 function cpv3_preprocess_page(&$variables)
 {
     global $base_url;
+    $variables['base_url'] = $base_url;
 
     $variables['footer_message'] = theme_get_setting('footer_message', 'ladcp');
     $variables['images_path'] = \Drupal::theme()->getActiveTheme()->getPath() . '/image/';
@@ -199,22 +200,21 @@ function formatTabTitle($terms)
     $term_data = array();
     foreach ($terms as $term) :
         $name = explode(' ', $term->name, 2);
-    if (count($name) >= 2) {
-        $firstPart = $name[0];
-        @$lastPart = @$name[1] . ' ' . @$name[2];
-    } else {
-        $firstPart = $term->name;
-    }
+        if (count($name) >= 2) {
+            $firstPart = $name[0];
+            @$lastPart = @$name[1] . ' ' . @$name[2];
+        } else {
+            $firstPart = $term->name;
+        }
 
-    $term_data [] = [
+        $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
-            'last_name' => @$lastPart,
+            'last_name' => ($lastPart) ? $lastPart : '',
             'counter' => $i
-
         ];
-
-    $i++;
+    
+        $i++;
     endforeach;
 
     return $term_data;
@@ -230,21 +230,20 @@ function formatTabMenuTitle($terms)
     $i = 1;
     $term_data = array();
     foreach ($terms as $term) :
-  $name = explode(' ', $term->name, 2);
-    $firstPart = $name[0] = "";
-    if (count($name) >= 1) {
-        $firstPart = $term->name;
-    }
-    $term_data [] = [
+      $name = explode(' ', $term->name, 2);
+        $firstPart = $name[0] = "";
+        if (count($name) >= 1) {
+            $firstPart = $term->name;
+        }
+        $term_data [] = [
             'id' => $term->tid,
             'name' => $firstPart,
             'counter' => $i
-
         ];
-
-    $i++;
-
+    
+        $i++;
     endforeach;
+    
     return $term_data;
 }
 
@@ -260,21 +259,22 @@ function formatTabCommissionTitle($terms)
     $term_data = array();
     foreach ($terms as $term) :
         $name = explode(' ', $term->name, 3);
-    if (count($name) >= 3) {
-        $firstPart = $name[0] . ' ' . $name[1];
-        @$lastPart = @$name[2];
-    } else {
-        $firstPart = $term->name;
-    }
-
-    $term_data [] = [
+        if (count($name) >= 3) {
+            $firstPart = $name[0] . ' ' . $name[1];
+            $lastPart = ($name[2]) ? $name[2] : '';
+        } else {
+            $firstPart = $term->name;
+        }
+    
+        $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
-            'last_name' => @$lastPart,
+            'last_name' => $lastPart,
+            'description' => $description,						 
             'counter' => $i
         ];
-
-    $i++;
+    
+        $i++;
     endforeach;
 
     return $term_data;
