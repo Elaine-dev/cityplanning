@@ -1335,6 +1335,11 @@ article img {
   color: #a3a5a8 !important;
 }
 
+/* Remove top border from panel-body in Area Planning Commission */
+#apc .panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+    border-top: 0;
+}
+
 /*publications*/
 #commissions-tab.sizer {
   font-size: 16px;
