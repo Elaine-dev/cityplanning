@@ -29,11 +29,23 @@
                       </li>
                     {% endfor %}
                     </ul>
+                    
+                    {# display Rules & Procedures link #}
+                    {% for item in category %}
+                       <div class="paddingtop15 item-{{ item.id }} hidden js-desc">{{ item.description|raw }}</div>
+                    {% endfor %}
 
                     <div class="loading hidden"></div>
 
                     <div class="tab-content paddingtop15" id="js-content">
                       <div class="tab-pane fade in active">
+                        <!-- display content -->
+                        {# 
+                            display Rules & Procedures link 
+                            set first index to display content                        
+                        #}
+                        {{ category.0.description|raw }}
+                        
                         {{ rows }}
                         {{ empty }}
                       </div>
