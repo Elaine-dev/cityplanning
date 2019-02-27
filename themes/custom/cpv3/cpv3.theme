@@ -258,6 +258,7 @@ function formatTabCommissionTitle($terms)
     $i = 1;
     $term_data = array();
     foreach ($terms as $term) :
+        $description = ($term->description__value) ? $term->description__value : '';
         $name = explode(' ', $term->name, 3);
         if (count($name) >= 3) {
             $firstPart = $name[0] . ' ' . $name[1];
