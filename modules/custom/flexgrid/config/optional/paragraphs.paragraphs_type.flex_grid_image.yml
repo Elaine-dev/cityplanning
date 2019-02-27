@@ -1,9 +1,0 @@
-uuid: e97d1756-fddb-43a7-b1ef-db62ae887c1d
-langcode: en
-status: true
-dependencies: {  }
-id: flex_grid_image
-label: 'Flex Grid Image'
-icon_uuid: null
-description: 'The image style to be used in Flex Grids for Urban Design Studio'
-behavior_plugins: {  }

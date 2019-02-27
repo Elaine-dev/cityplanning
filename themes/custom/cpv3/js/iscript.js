@@ -4,8 +4,7 @@ jQuery(document).ready(function($){
             // do nothing
         } else {
             var id = $(this).find('a').attr('id');
-            $('.js-desc').addClass('hidden');
-        	$('.item-'+id).removeClass('hidden');
+            console.log(id);
             getData(id);
         }
     });

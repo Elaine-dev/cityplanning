@@ -3,7 +3,7 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.2.22
+Update Date: 2019.2.21
 version: 4.4.20
 *********************/
 body {
@@ -1333,11 +1333,6 @@ article img {
 
 .nav-tabs a {
   color: #a3a5a8 !important;
-}
-
-/* Remove top border from panel-body in Area Planning Commission */
-#apc .panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
-    border-top: 0;
 }
 
 /*publications*/

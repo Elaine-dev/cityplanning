@@ -1,9 +1,0 @@
-uuid: c2e8f21f-8ec6-490f-8a3b-74e46500fe7b
-langcode: en
-status: true
-dependencies: {  }
-id: content_only
-label: 'Content only'
-icon_uuid: null
-description: 'Manage text type content.'
-behavior_plugins: {  }
