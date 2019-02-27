@@ -2,9 +2,11 @@ jQuery(document).ready(function($){
     $('.js-tab').click(function() {
         if($(this).hasClass('active')) {
             // do nothing
+        	return;
         } else {
             var id = $(this).find('a').attr('id');
-            console.log(id);
+        	$('.js-desc').addClass('hidden');
+        	$('.item-'+id).removeClass('hidden');
             getData(id);
         }
     });
