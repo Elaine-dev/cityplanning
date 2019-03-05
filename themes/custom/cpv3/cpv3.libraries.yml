@@ -199,3 +199,14 @@ cpu:
     theme:
         css/cpu.css:                                                                                                {}
         css/webform/webform.css: {}
+
+demography:
+  version:                                                                                                          1.0
+  css:
+    theme:
+        https://js.arcgis.com/3.23/dijit/themes/tundra/tundra.css:                                                 {}
+        https://js.arcgis.com/3.23/esri/css/esri.css:                                                              {}
+  js:
+    js/demographics/echarts.min.js:                                                                                {}
+    https://js.arcgis.com/3.23/:                                                                                   {}
+    js/demographics/demographics.js:                                                                               {}

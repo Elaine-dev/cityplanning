@@ -1,0 +1,165 @@
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+    
+   <style>
+      #mapDiv {
+        position: relative;
+        width: 60%
+        height:100%;
+      }
+      
+      #info {
+        background: #fff;
+        box-shadow: 0 0 5px #888;
+        left: 1em;
+        padding: 0.5em;
+        position: absolute;
+        top: 1em;
+        z-index: 40;
+      }
+    </style>
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				{{ page.top_banner }}
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+        <!-- contain -->
+    <div class="container" id="main-container">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12">{{ page.title_bar }}</div>
+        </div>
+        <div class="row content-wrapper" id="demographics">
+            {# Left-side bar #}
+            <div class="col-md-12">
+                <div class="row padding-left0">
+                    <div class="col-md-12">
+						{# content goes here #}
+						<div class="row padding-left0">
+							<div class="col-md-12">
+								{{ page.content }}
+								
+								<!--  -->
+								<div id="commissions-tab">
+		                            <ul class="nav nav-tabs">
+		                                <li class="active tab-line"><a data-toggle="tab" href="#cw" class="padding-left0">Citywide</a></li>
+		                                <li class="tab-line"><a data-toggle="tab" href="#cp">Community Plans</a></li>
+		                                <li class="tab-line"><a data-toggle="tab" href="#apc">Area Planning Commissions</a></li>
+		                                <li class="tab-line"><a data-toggle="tab" href="#cd">Council Districts</a></li>
+		                                <li class="tab-line"><a data-toggle="tab" href="#resources">Resources</a></li>
+		                            </ul>
+		
+		                            <div class="tab-content paddingtop15">
+		                                <div id="cw" class="tab-pane fade in active">
+		                                    <div class="row">
+		                                        <div class="col-md-7">
+		                                            <!-- arcgis map -->
+		                                            <div id="mapDiv"></div>
+		                                            
+		                                            <p><a style="display: none;" href="javascript: load_all_charts();">Load charts</a></p>
+		                                            
+		                                        </div>
+		                                        
+		                                        <div class="col-md-5">
+		                                            <h5>&nbsp;</h5>
+		                                            
+		                                            <div class="pull-right"><a href="#" class="btn btn-default openall">open all</a> <a href="#" class="btn btn-default closeall">close all</a></div>
+		                                            <br><br>
+		                                            
+		                                            <!-- accordion -->
+		                                            <div class="panel-group" id="accordion" role="tablist" >
+		                                                <!-- Item 1 -->
+		                                                <div class="panel panel-default">
+		                                                    <div class="panel-heading" id="h-1">
+		                                                        <h4 class="panel-title">
+		                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-controls="collapseOne">
+		                                                              Own Vs Rent
+		                                                            </a>
+		                                                        </h4>
+		                                                    </div>
+		                                                    
+		                                                    <div id="collapseOne" class="panel-collapse collapse in"  aria-labelledby="h-1">
+		                                                        <div class="panel-body">
+		                                                            <div id="own_rent_bar" style="width: 300px; height: 300px;">Select Community Plan on map to left</div>
+		                                                        </div>
+		                                                    </div>
+		                                                </div>
+		                                                
+		                                                <!-- Item 2 -->  
+		                                                <div class="panel panel-default">
+		                                                    <div class="panel-heading" id="h-2">
+		                                                        <h4 class="panel-title">
+		                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-controls="collapseTwo">
+		                                                              Household Poverty
+		                                                            </a>
+		                                                      </h4>
+		                                                    </div>
+		                                                    
+		                                                    <div id="collapseTwo" class="panel-collapse collapse"  aria-labelledby="h-2">
+		                                                        <div class="panel-body">
+		                                                            <div id="poverty_donut" style="width: 300px; height: 300px;"></div>
+		                                                          </div>
+		                                                    </div>
+		                                                </div>
+		                                                
+		                                                <!-- Item 3 -->
+		                                                <div class="panel panel-default">
+		                                                    <div class="panel-heading" id="h-3">
+		                                                        <h4 class="panel-title">
+		                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-controls="collapseThree">
+		                                                              Education: Current Enrollment
+		                                                            </a>
+		                                                        </h4>
+		                                                    </div>
+		                                                    <div id="collapseThree" class="panel-collapse collapse" aria-labelledby="h-3">
+		                                                        <div class="panel-body">
+		                                                            <div id="education_donut" style="width: 300px; height: 300px;"></div>
+		                                                        </div>
+		                                                    </div>
+		                                                </div>
+		                                                
+		                                                <!-- Item 4 -->
+		                                                <div class="panel panel-default">
+		                                                    <div class="panel-heading"  id="h-4">
+		                                                        <h4 class="panel-title">
+		                                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"  aria-controls="collapseFour">
+		                                                              Household Size 
+		                                                            </a>
+		                                                        </h4>
+		                                                    </div>
+		                                                    <div id="collapseFour" class="panel-collapse collapse"  aria-labelledby="h-4">
+		                                                        <div class="panel-body">
+		                                                            <div id="household_donut" style="width: 300px; height: 300px;"></div>
+		                                                        </div>
+		                                                    </div>
+		                                                </div>
+		                                                
+		                                                
+		                                                
+		                                            </div><!--// End #accordion -->
+		                                        </div>
+		                                    </div>
+		                                </div> <!-- // End #cw -->
+		                                
+		                                
+		                            </div> <!-- // End .tab-content -->
+		                        </div><!-- // End #commissions-tab -->
+								<!--  -->
+							</div>
+						</div>
+                    </div>
+                </div>
+            </div>{# End Left-side bar #}
+
+        </div>
+    </div>{# End container #}
+
+
+    <!-- footer section -->
+    {{ attach_library('cpv3/demography') }}
+    {% include directory ~ '/partials/footer.html.twig' %}
