@@ -1,0 +1,87 @@
+{% include directory ~ '/partials/header.html.twig' %}
+<div ng-app="appHistoricLandmark" ng-controller="historicLandmarkCtrl">
+
+  {# page-banner #}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+      </div>
+    </div>
+  </div>
+  {# End page-banner #}
+
+  <!-- contain -->
+  <div class="container" id="main-container">
+    {# Main content #}
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Historic Landmarks - {[{ currentTitle }]}</h1>
+      </div>
+    </div>
+
+    <div class="row content-wrapper">
+      {# Left-side bar #}
+      <div class="col-md-12">
+        <div class="row padding-left0">
+          <div class="col-md-12">
+            {# content goes here  #}
+            {{ page.content }}
+
+            <div class="row">
+              <div class="col-md-12">
+                <div ng-disabled="enable=='false'">
+                  <center ng-show="loadingText == 'Loading ...'">
+                    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+                    <span class="sr-only">Loading...</span></center>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 padding-left0 padding-right0">
+	                <div class="table-responsive">
+                        <table class="table">
+                            <colgroup>
+		                      <col class="col-md-1">
+		                      <col class="col-md-1">
+		                      <col class="col-md-3">
+		                      <col class="col-md-3">
+		                      <col class="col-md-1">
+		                    </colgroup>
+		                    
+		                    <thead>
+			                    <tr>
+			                      <th>Monument No.</th>
+			                      <th>Date Adopted/Approved</th>
+			                      <th>Monument Name</th>
+			                      <th>Address</th>
+			                      <th>Photo</th>
+			                    </tr>
+		                    </thead>
+		                    
+                            <tr ng-repeat="lm in data.landmarks">
+                                <td ng-bind='lm.mnt_num'></td>
+                                <td ng-bind='lm.date_approved'></td>
+                                <td ng-bind='lm.name'></td>
+                                <td ng-bind='lm.address'></td>
+                                <td>
+			                        <span ng-if='lm.img_url'><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></span>
+                                </td>
+		                    </tr>
+                         </table>
+	                </div>
+                 </div>
+            </div>
+
+          </div>
+        </div>
+      </div> {# End Left-side bar #}
+    </div>
+  </div> {# End container #}
+</div>
+
+<!-- footer section -->
+{{ attach_library ('cpv3/historic-landmarks') }}
+{{ attach_library ('cpv3/angular-js') }}
+{% include directory ~ '/partials/footer.html.twig' %}
