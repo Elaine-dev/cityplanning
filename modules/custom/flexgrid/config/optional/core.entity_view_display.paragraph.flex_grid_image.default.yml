@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.flex_grid_image.field_grid_ui
+    - field.field.paragraph.flex_grid_image.field_image
+    - paragraphs.paragraphs_type.flex_grid_image
+  module:
+    - image
+id: paragraph.flex_grid_image.default
+targetEntityType: paragraph
+bundle: flex_grid_image
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_grid_ui: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_grid_ui
+    - paragraphs.paragraphs_type.flex_grid_text
+  module:
+    - paragraphs_grid
+id: paragraph.flex_grid_text.field_grid_ui
+field_name: field_grid_ui
+entity_type: paragraph
+bundle: flex_grid_text
+label: 'Grid UI'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: grid_field_type

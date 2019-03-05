@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fexible_grid.field_flexible_grid
+    - paragraphs.paragraphs_type.fexible_grid
+  module:
+    - paragraphs_grid
+id: paragraph.fexible_grid.default
+targetEntityType: paragraph
+bundle: fexible_grid
+mode: default
+content:
+  field_flexible_grid:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: grid_field_formatter
+    region: content
+hidden: {  }

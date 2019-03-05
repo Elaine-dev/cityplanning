@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: fexible_grid
+label: 'Fexible Grid'
+icon_uuid: null
+description: 'Flexible Grid used for Urban Design Studio'
+behavior_plugins: {  }

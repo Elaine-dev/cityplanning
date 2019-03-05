@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.flex_grid_image.field_grid_ui
+    - field.field.paragraph.flex_grid_image.field_image
+    - image.style.medium
+    - paragraphs.paragraphs_type.flex_grid_image
+  module:
+    - image
+    - paragraphs_grid
+id: paragraph.flex_grid_image.default
+targetEntityType: paragraph
+bundle: flex_grid_image
+mode: default
+content:
+  field_grid_ui:
+    weight: 0
+    settings:
+      excluded_view_modes:
+        - preview
+    third_party_settings: {  }
+    type: grid_widget
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      preview_image_style: medium
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: false

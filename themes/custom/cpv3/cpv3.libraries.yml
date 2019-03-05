@@ -210,3 +210,9 @@ demography:
     js/demographics/echarts.min.js:                                                                                {}
     https://js.arcgis.com/3.23/:                                                                                   {}
     js/demographics/demographics.js:                                                                               {}
+
+flexgrid:
+  version: 1.0
+  css:
+    theme:
+        css/flexgrid/flexgrid.css: {}

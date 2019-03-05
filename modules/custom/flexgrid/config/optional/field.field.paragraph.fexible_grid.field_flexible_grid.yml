@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_flexible_grid
+    - paragraphs.paragraphs_type.fexible_grid
+  module:
+    - paragraphs_grid
+id: paragraph.fexible_grid.field_flexible_grid
+field_name: field_flexible_grid
+entity_type: paragraph
+bundle: fexible_grid
+label: 'Flexible Grid'
+description: 'Flexible Grid layout used by Urban Design Studio'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: grid_field_type

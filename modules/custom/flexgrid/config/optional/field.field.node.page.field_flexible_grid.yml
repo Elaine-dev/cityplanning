@@ -1,0 +1,119 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_flexible_grid
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.content_only
+    - paragraphs.paragraphs_type.flex_grid_image
+    - paragraphs.paragraphs_type.flex_grid_text
+    - paragraphs.paragraphs_type.fullwidth_buttons
+  module:
+    - entity_reference_revisions
+id: node.page.field_flexible_grid
+field_name: field_flexible_grid
+entity_type: node
+bundle: page
+label: 'Flexible Grid'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      content_only: content_only
+      flex_grid_image: flex_grid_image
+      flex_grid_text: flex_grid_text
+      fullwidth_buttons: fullwidth_buttons
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: 29
+      background_image_title_buttons:
+        weight: 30
+        enabled: false
+      block_quote:
+        weight: 31
+        enabled: false
+      button:
+        weight: 32
+        enabled: false
+      call_to_action:
+        weight: 33
+        enabled: false
+      contact_form_hcpu:
+        weight: 34
+        enabled: false
+      content_only:
+        enabled: true
+        weight: 35
+      email_sign_up_form:
+        weight: 36
+        enabled: false
+      embed_code:
+        weight: 37
+        enabled: false
+      fexible_grid:
+        weight: 38
+        enabled: false
+      flex_grid_image:
+        enabled: true
+        weight: 39
+      flex_grid_text:
+        enabled: true
+        weight: 40
+      four_column_layout:
+        weight: 41
+        enabled: false
+      full_width_image:
+        weight: 42
+        enabled: false
+      fullwidth_buttons:
+        enabled: true
+        weight: 43
+      fullwidth_content:
+        weight: 44
+        enabled: false
+      image:
+        weight: 45
+        enabled: false
+      image_button_two_columns:
+        weight: 46
+        enabled: false
+      image_over_image_with_button:
+        weight: 47
+        enabled: false
+      profile_with_social_icons:
+        weight: 48
+        enabled: false
+      slider:
+        weight: 49
+        enabled: false
+      tab_contact_content:
+        weight: 50
+        enabled: false
+      tab_content:
+        weight: 51
+        enabled: false
+      tab_map_content:
+        weight: 52
+        enabled: false
+      tab_menu:
+        weight: 53
+        enabled: false
+      tab_plan_content:
+        weight: 54
+        enabled: false
+      tab_resources_content:
+        weight: 55
+        enabled: false
+      two_column_layout:
+        weight: 56
+        enabled: false
+field_type: entity_reference_revisions

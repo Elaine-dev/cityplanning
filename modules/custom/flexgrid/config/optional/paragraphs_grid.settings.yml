@@ -1,0 +1,6 @@
+langcode: en
+gridtype: paragraphs_grid.grid_entity.bs3-custom
+uselibrary: 0
+use_lib_admin_pages: 0
+_core:
+  default_config_hash: t8XXoQPL_bcSokXNKXRprDWarD-z4ZdctOeM0JqCSbA

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.flex_grid_text.field_content
+    - field.field.paragraph.flex_grid_text.field_grid_ui
+    - field.field.paragraph.flex_grid_text.field_text_background_color
+    - paragraphs.paragraphs_type.flex_grid_text
+  module:
+    - options
+    - text
+id: paragraph.flex_grid_text.default
+targetEntityType: paragraph
+bundle: flex_grid_text
+mode: default
+content:
+  field_content:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text_background_color:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+hidden:
+  field_grid_ui: true
