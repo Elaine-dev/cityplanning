@@ -212,7 +212,12 @@ demography:
     js/demographics/demographics.js:                                                                               {}
 
 flexgrid:
-  version: 1.0
+  version:                                                                                                         1.0
   css:
     theme:
-        css/flexgrid/flexgrid.css: {}
+        css/flexgrid/flexgrid.css:                                                                                  {}
+    
+historic-landmarks:
+  version:                                                                                                          1.0
+  js:
+    js/api/historicLandmarkCtrl.js:                                                                               {}
