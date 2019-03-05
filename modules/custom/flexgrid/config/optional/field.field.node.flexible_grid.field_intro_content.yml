@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_intro_content
+    - node.type.flexible_grid
+  module:
+    - text
+id: node.flexible_grid.field_intro_content
+field_name: field_intro_content
+entity_type: node
+bundle: flexible_grid
+label: 'Intro Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
