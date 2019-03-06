@@ -52,7 +52,7 @@
                     {% set class = '' %}
                   {% endif %}
                   <li role="presentation" class="padding-top0 {{ (loop.last) ? '' : 'tab-line' }} {{ active_class }}">
-                    <a href="#{{ item.id }}" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" class="{{ class }}">
+                    <a href="#{{ item.name|clean_id }}" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" data-value="{{ item.name }}" class="{{ class }}">
                       {{ item.name }}
                     </a>
                   </li>
@@ -63,7 +63,7 @@
               <div class="tab-content">
                 {% for item in hollywood_menu %}
                   {% if loop.index == 1 %}
-                    <div class="tab-pane active fade in row padding-left0" id="{{ item.id }}">
+                    <div class="tab-pane active fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
                   {% if node.field_tab_about_content_items %}
@@ -75,7 +75,7 @@
 
                 {% for item in hollywood_menu %}
                   {% if loop.index == 2 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.id }}">
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
                   {% if node.field_tab_plan_content_items %}
@@ -87,7 +87,7 @@
 
                 {% for item in hollywood_menu %}
                   {% if loop.index == 3 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.id }}">
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
                   {% if node.field_tab_map_content_items %}
@@ -99,7 +99,7 @@
 
                 {% for item in hollywood_menu %}
                   {% if loop.index == 4 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.id }}">
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
                   {% if node.field_tab_resources_content_item %}
@@ -111,7 +111,7 @@
 
                 {% for item in hollywood_menu %}
                   {% if loop.index == 5 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.id }}">
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
                   {% if node.field_tab_contact_content_items %}
@@ -162,3 +162,27 @@
 {{ attach_library('cpv3/cpu') }}
 <!-- footer section -->
 {% include directory ~ '/partials/footer.html.twig' %}
+{# javascript used in conjunction with twig clean_id and clean_class to rename tab href to name of tab and create hash URL #}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/themes/custom/cpv3/js/bootstrap.js"></script>
+<script type = "text/javascript">
+    // store the currently selected tab in the hash value
+
+$(document).ready(function(){
+  $(function(){
+    var hash = window.location.hash;
+    hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+    $('.nav-tabs a').click(function (e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      $(this).tab('show');
+      var scrollmem = $('body').scrollTop();
+      window.location.hash = this.hash;
+      $('body,html').scrollTop(scrollmem);
+    });
+  });
+
+});
+
+</script>

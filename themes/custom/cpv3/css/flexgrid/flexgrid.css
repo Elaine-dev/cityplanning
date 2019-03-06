@@ -76,7 +76,7 @@
 
 /* unequal rows text+image 1st img = col-md-5, text = col-md-7 */
 
-.col-md-7 .cornflower-blue {
+.container-custom-grid .col-md-7 .cornflower-blue {
     max-height: 300px;
     height: 100%;
   }
