@@ -1,0 +1,6 @@
+{% for row in rows %}
+    {% set nid = row['content']['#row'].nid %}
+    {% set link = path('entity.node.canonical', {'node': nid}) %}
+    <li>{{ row }}</li>
+    <li class="line"></li>
+{% endfor %}
