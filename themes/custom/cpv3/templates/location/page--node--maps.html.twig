@@ -1,0 +1,165 @@
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+<style>
+  .dropdown-submenu {
+    position: relative;
+  }
+
+  .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+  }
+
+  .margin-left {
+    margin-left: 14px;
+  }
+  .btn-default:hover .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+    border-radius: 0;
+  }
+
+  .views-element-container {
+    padding: 5px;
+    color: #000;
+  }
+
+</style>
+
+<script>
+  var site_url = '{{ base_url }}';
+</script>
+
+
+{# page-banner #}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="page-title-bg"><img src="{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive " alt="map page background image"></div>
+    </div>
+  </div>
+</div>{# End page-banner #}
+
+<!-- contain -->
+<div class="container" id="main-container">
+  {# Main content #}
+  <div class="row">
+    <div class="col-md-12">{{ page.title_bar }}</div>
+  </div>
+  <div class="row content-wrapper">
+
+    {% if page.side_menu %}
+      {# Left-side bar #}
+      <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12 padding-left0 padding-right0">
+          {# content goes here #}
+          {{ page.block_eir }}
+          {{ page.content }}
+
+
+          <div class="row" id="map-gallery">
+            {% for row in taxonomy_tree  %}
+              {% if (loop.index is even) %}
+                {% set paddingClass = 'padding-right0' %}
+              {% else %}
+                {% set paddingClass = 'padding-left0' %}
+              {% endif %}
+              <div class="col-md-6 parent padding-bottom30 {{ paddingClass }}">
+                <div class="row">
+                  <div class="col-md-12 text-center" style="background-color: #465766; height: 40px; padding: 10px 15px; color: #fff;">{{ row['name'] }}</div>
+                  <div class="col-md-12 padding-left0 padding-right0"><img src="{{ row['image'] }}" class="img-responsive" alt="{{ row['name'] }}" /></div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 padding-left0 padding-right0">
+                    <div class="row" style="color: #fff;">
+                      <div class="col-md-6 text-center" style="background-color: #66ccff; height: 43px; padding: 10px 15px;">Interactive +</div>
+                      <div class="col-md-6 text-center" style="background-color: #ff9966; height: 43px;">
+                        <div class="dropdown">
+                          <!-- drop down -->
+                          {% set class = '' %}
+                          {% if row['sub'] is empty %}
+                            {% set class = 'call-ajax' %}
+                          {% endif %}
+                          <button style="background-color: #ff9966; padding: 9px 12px; font-size: 16px;" class="btn btn-default-1 {{ class }}"
+                                  data-tid="{{ row['tid'] }}" data-toggle="dropdown" >Static
+                                  <span class="clear" style="position: absolute; margin: -5px 10px;">
+                                    <i class="fa fa-angle-down fa-2x"></i>
+                                  </span>
+                          </button>
+
+                          <ul class="dropdown-menu js-dropdown js-content-1">
+                            {% for sub in row['sub'] %}
+                              {% set class = '' %} {# Reset class #}
+                              {% if sub['sub'] is empty %}
+                                {% set class = 'call-ajax' %}
+                              {% endif %}
+                              <li class="dropdown-submenu">
+                                <a class="childLevel-1 {{ class }}" data-tid="{{ sub['tid'] }}" tabindex="-1" href="#">{{ sub['name'] }} <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu level-2 js-content-2">
+                                  {% for grand in sub['sub'] %}
+                                    {% set class = '' %} {# Reset class #}
+                                    {% if grand['sub'] is empty %}
+                                      {% set class = 'call-ajax' %}
+                                    {% endif %}
+                                    <li class="dropdown-submenu">
+                                      <a class="childLevel-2 {{ class }}" data-tid="{{ grand['tid'] }}" href="#">{{ grand['name'] }} <span class="caret"></span></a>
+                                      <ul class="dropdown-menu last-level js-content-3">
+
+                                      </ul> 
+                                    </li>
+                                    <li class="line" style="margin-left: 5px; margin-right: 10px;"></li>
+
+                                  {% endfor %}
+                                </ul>
+
+                              </li>
+
+                              <li class="line" style="margin-left: 5px; margin-right: 10px;"></li>
+
+                            {% endfor %}
+                          </ul>
+
+                          <!-- drop down -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+      </div>{# End Left-side bar #}
+
+      {# Right-side bar #}
+      <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+      <div class="top-bar"></div>
+      {{ page.side_menu }}
+      </div>{# End Right-side bar #}
+    {% else %}
+      <div class="col-md-12">
+        <div class="row padding-left0">
+          <div class="col-md-12 padding-left0 padding-right0">
+            {# content goes here #}
+            {{ page.block_eir }}
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</div>{# End container #}
+
+<!-- footer section -->
+{% include directory ~ '/partials/footer.html.twig' %}
