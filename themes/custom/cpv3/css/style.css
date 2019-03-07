@@ -511,7 +511,11 @@ figcaption {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-
+/* Adds styling for smaller descriptive text */
+.desc-text {
+  font-size: 15px;
+  line-height: 1.3;
+}
 /*
 # Change hyper link color dark blue inside content
 # Add id="id="alink-dark-blue"

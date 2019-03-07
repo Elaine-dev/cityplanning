@@ -13,6 +13,9 @@
   padding-left: 0 !important;
 
 }
+.desc-text > h5 {
+  padding-bottom: 20px;
+}
 
 .container-custom-grid img.img-responsive {
   padding-bottom:0;
