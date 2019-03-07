@@ -76,6 +76,59 @@ function cpv3_preprocess_page(&$variables)
             }
         }
     }
+    
+    // Map Gallery
+    $vid = 'location';
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, 0, 1);
+    
+    if (!empty($terms)) {
+        foreach ($terms as $term) {
+            $image = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid)->get('field_image')->entity->uri->value;
+            $imagePath = ($image) ? file_create_url($image) : '';   // Image path
+            $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $term->tid, 2);
+            
+            if (empty($children)) {
+                // no child
+                if ($term->parents[0] == 0)
+                    $tax_tree[$term->tid] = [
+                        'tid' => $term->tid,
+                        'name' => $term->name,
+                        'image' => $imagePath,
+                    ];
+            } else {
+                $tax_tree[$term->tid] = [
+                    'tid' => $term->tid,
+                    'name' => $term->name,
+                    'image' => $imagePath,
+                ];
+                
+                foreach ($children as $child) {
+                    $grand_children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $child->tid, 3);
+                    if (!empty($grand_children)) {
+                        $tax_tree[$term->tid]['sub'][$child->tid] = [
+                            'tid' => $child->tid,
+                            'name' => $child->name,
+                        ];
+                        foreach ($grand_children as $grand_child) {
+                            $tax_tree[$term->tid]['sub'][$child->tid]['sub'][] = [
+                                'tid' => $grand_child->tid,
+                                'name' => $grand_child->name,
+                            ];
+                        }
+                    } else {
+                        if ($child->depth == 0) {
+                            $tax_tree[$term->tid]['sub'][] = [
+                                'tid' => $child->tid,
+                                'name' => $child->name,
+                            ];
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    $variables['taxonomy_tree'] = $tax_tree;
 }
 
 /**
