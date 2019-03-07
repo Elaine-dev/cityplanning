@@ -96,7 +96,7 @@
   }
 
   .container-custom-grid .cornflower-blue .bottom-align-text > p, .container-custom-grid .sea-green .bottom-align-text > p, .container-custom-grid .milk-chocolate .bottom-align-text > p {
-    font-size: 100%;
+    font-size: 90%;
     line-height:130%;
     font-family: "Open Sans", sans-serif;
     font-weight:100;
@@ -108,7 +108,6 @@
       max-height: 141px;
        }
     .container-custom-grid .cornflower-blue .bottom-align-text > p, .container-custom-grid .sea-green .bottom-align-text > p, .container-custom-grid .milk-chocolate .bottom-align-text > p {
-      font-size: 90%;
       line-height:120%;
 
   }
