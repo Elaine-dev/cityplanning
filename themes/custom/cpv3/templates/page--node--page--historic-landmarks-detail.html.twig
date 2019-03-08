@@ -60,15 +60,21 @@
 			                    </tr>
 		                    </thead>
 		                    
-                            <tr ng-repeat="lm in data.landmarks">
+                            <tr ng-if="data.landmarks.length > 0" ng-repeat="lm in data.landmarks">
                                 <td ng-bind='lm.mnt_num'></td>
                                 <td ng-bind='lm.date_approved'></td>
                                 <td ng-bind='lm.name'></td>
                                 <td ng-bind='lm.address'></td>
                                 <td>
-			                        <span ng-if='lm.img_url'><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></span>
+                                    <span ng-if='lm.img_url'><a href="{[{ lm.img_url }]}" target="_blank">
+                                         <img src="{[{ lm.thumb_url }]}" alt="historic landmarks-{[{ lm.name }]}" class="img-responsive thumbnail" />
+                                    </a></span>
                                 </td>
-		                    </tr>
+                            </tr>
+                            
+                            <tr ng-if="data.landmarks.length < 1">
+                                <td colspan="5"> No record found! </td>
+                            </tr>
                          </table>
 	                </div>
                  </div>
