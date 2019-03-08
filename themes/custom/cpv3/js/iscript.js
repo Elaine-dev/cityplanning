@@ -93,7 +93,6 @@ jQuery(document).ready(function($){
 
     $('.btn-default-1').on('click',function(){
       tid = $(this).data('tid');
-      console.log('tid'+tid);
       $('.js-dropdown').hide();
       $(this).next('ul').show();
       if($(this).hasClass('call-ajax')) {
