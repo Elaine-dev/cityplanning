@@ -43,31 +43,38 @@
 	                <div class="table-responsive">
                         <table class="table">
                             <colgroup>
-		                      <col class="col-md-1">
-		                      <col class="col-md-1">
-		                      <col class="col-md-3">
-		                      <col class="col-md-3">
-		                      <col class="col-md-1">
-		                    </colgroup>
-		                    
-		                    <thead>
-			                    <tr>
-			                      <th>Monument No.</th>
-			                      <th>Date Adopted/Approved</th>
-			                      <th>Monument Name</th>
-			                      <th>Address</th>
-			                      <th>Photo</th>
-			                    </tr>
-		                    </thead>
+                              <col class="col-md-1">
+                              <col class="col-md-1">
+                              <col class="col-md-3">
+                              <col class="col-md-3">
+                              <col class="col-md-2">
+                              <col class="col-md-1">
+                            </colgroup>
+                            
+                            <thead>
+                                <tr>
+                                  <th>Monument No.</th>
+                                  <th>Date Adopted/Approved</th>
+                                  <th>Monument Name</th>
+                                  <th>Address</th>
+                                  <th>Notes</th>
+                                  <th>Photo</th>
+                                </tr>
+                            </thead>
 		                    
                             <tr ng-if="data.landmarks.length > 0" ng-repeat="lm in data.landmarks">
                                 <td ng-bind='lm.mnt_num'></td>
                                 <td ng-bind='lm.date_approved'></td>
-                                <td ng-bind='lm.name'></td>
+                                <td>
+                                    <a ng-if="lm.map_link.length > 0" href="{[{ lm.map_link }]}" rel="nofollow" target="_blank">{[{ lm.name }]}</a>
+                                    <span ng-if="lm.map_link.length < 1">{[{ lm.name }]}</span>
+                                    
+                                </td>
                                 <td ng-bind='lm.address'></td>
+                                <td ng-bind='lm.notes'></td>
                                 <td>
                                     <span ng-if='lm.img_url'><a href="{[{ lm.img_url }]}" target="_blank">
-                                         <img src="{[{ lm.thumb_url }]}" alt="historic landmarks-{[{ lm.name }]}" class="img-responsive thumbnail" />
+                                       <img src="{[{ lm.thumb_url }]}" alt="historic landmarks-{[{ lm.name }]}" class="img-responsive thumbnail"  />
                                     </a></span>
                                 </td>
                             </tr>
