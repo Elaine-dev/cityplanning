@@ -17,26 +17,26 @@
         	<div class="col-md-12">{{ page.title_bar }}</div>
         </div>
         <div class="row content-wrapper" ng-controller="adopOrdinanceCtrl">
-            
+
             <div class="col-md-9">
                 <div class="row padding-left0">
                     <div class="col-md-12">
-						
+
 						<div class="row padding-left0">
 							<div class="col-md-12">
-								<p>The Department issues publications to keep stakeholders updated on important milestones and
-								further engage community members on neighborhood specific issues and policies.</p>
+								<p>The City Planning Department advances a number of strategic initiatives, in addition to drafting local land use legislation. These initiatives can be in response to specific citywide goals, planning objectives, or in response to Mayoral or Council requests. Included below is information about the various planning initiatives. Consult the <a href="/plans-policies/proposed-ordinances">proposed ordinances</a> page for a complete assessment of the Department’s current work program.</p>
+        
 							</div>
 						</div>
-						
+
 						<hr>
-						
+
 						<div class="row padding-bottom30" >
    							<div class="col-md-offset-8 col-md-4 col-xs-12" id="content-search">
    								<input ng-model="filterdata" placeholder="Search" />
    							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="col-md-12">
 								<div ng-disabled="enable=='false'">
@@ -44,7 +44,7 @@
 	               				</div>
 							</div>
 						</div>
-						
+
 						<div ng-if="data.length > 0">
 							<div class="row padding-left0 padding-right0" ng-repeat="val in data | filter:filterdata | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
 								<div class="col-md-12 padding-bottom30">
@@ -58,7 +58,7 @@
 								</div>
 								<div class="col-md-12"><hr /></div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-12" id="a-pagination">
 									<ul uib-pagination
@@ -73,7 +73,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div ng-if="data.length < 1">
 							<div class="row padding-left0 padding-right0">
 								<div class="col-md-12 padding-bottom30">

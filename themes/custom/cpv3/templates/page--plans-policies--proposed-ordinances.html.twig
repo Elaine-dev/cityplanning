@@ -17,27 +17,25 @@
         	<div class="col-md-12">{{ page.title_bar }}</div>
         </div>
         <div class="row content-wrapper" ng-controller="proposedOrdinanceCtrl">
-            
+
             <div class="col-md-9">
                 <div class="row padding-left0">
                     <div class="col-md-12">
-						
+
 						<div class="row padding-left0">
 							<div class="col-md-12">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem odio, lacinia mattis consequat et, maximus sit amet est. 
-								Quisque blandit lectus sit amet varius tincidunt. Maecenas euismod purus a ipsum hendrerit, at gravida ipsum aliquet. 
-								Vivamus dolor nibh, pharetra vitae pretium ut, gravida at magna. Nulla suscipit sit amet ante id varius.</p>
+								<p>Listed below are land use policies that the City Planning Department is drafting. These policies are initiated at the request of the <a href="/about/commissions">City Planning Commission</a>, City Council, or City Planning Department. For a list of adopted ordinances, visit the City Clerk’s <a href="https://cityclerk.lacity.org/lacityclerkconnect/">Council File Management System</a> — the City’s official repository for all adopted and proposed ordinances.</p>
 							</div>
 						</div>
-						
+
 						<hr>
-						
+
 						<div class="row padding-bottom30" >
 							<div class="col-md-offset-8 col-md-4 col-xs-12" id="content-search">
    								<input ng-model="filterdata" placeholder="Search" />
    							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="col-md-12">
 								<div ng-disabled="enable=='false'">
@@ -45,7 +43,7 @@
 	               				</div>
 							</div>
 						</div>
-						
+
 						<div ng-if="data.length > 0">
 							<div class="row padding-left0 padding-right0" ng-repeat="val in data | filter:filterdata | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
 								<div class="col-md-12 padding-bottom30">
@@ -59,7 +57,7 @@
 								</div>
 								<div class="col-md-12"><hr /></div>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-12" id="a-pagination">
 									<ul uib-pagination
@@ -74,7 +72,7 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<div ng-if="data.length < 1">
 							<div class="row padding-left0 padding-right0">
 								<div class="col-md-12 padding-bottom30">
@@ -82,7 +80,7 @@
 								</div>
 							</div>
                    		</div>
-						
+
 
                     </div>
                 </div>
@@ -101,4 +99,3 @@
     {{ attach_library ('cpv3/proposed-ordinances') }}
     {{ attach_library ('cpv3/angular-js') }}
     {% include directory ~ '/partials/footer.html.twig' %}
-    
