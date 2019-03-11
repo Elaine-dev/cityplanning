@@ -27,6 +27,14 @@
     padding: 5px;
     color: #000;
   }
+  
+  #map-gallery .dropdown-menu {
+    width: 250px;
+  }
+  
+  #map-gallery .line {
+    margin-left: 10px; margin-right: 10px; margin-bottom: 5px;
+  }
 
 </style>
 
@@ -101,7 +109,8 @@
                                 {% set class = 'call-ajax' %}
                               {% endif %}
                               <li class="dropdown-submenu">
-                                <a class="childLevel-1 {{ class }}" data-tid="{{ sub['tid'] }}" tabindex="-1" href="#">{{ sub['name'] }} <span class="caret"></span></a>
+                                <a class="childLevel-1 {{ class }}" data-tid="{{ sub['tid'] }}" tabindex="-1" href="#">{{ sub['name'] }} 
+                                    <i class="fa fa-caret-right pull-right" style="padding-top: 3px;"></i></a>
 
                                 <ul class="dropdown-menu level-2 js-content-2">
                                   {% for grand in sub['sub'] %}
@@ -110,19 +119,20 @@
                                       {% set class = 'call-ajax' %}
                                     {% endif %}
                                     <li class="dropdown-submenu">
-                                      <a class="childLevel-2 {{ class }}" data-tid="{{ grand['tid'] }}" href="#">{{ grand['name'] }} <span class="caret"></span></a>
+                                      <a class="childLevel-2 {{ class }}" data-tid="{{ grand['tid'] }}" href="#">{{ grand['name'] }} 
+                                        <i class="fa fa-caret-right pull-right" style="padding-top: 3px;"></i></a>
                                       <ul class="dropdown-menu last-level js-content-3">
 
                                       </ul> 
                                     </li>
-                                    <li class="line" style="margin-left: 5px; margin-right: 10px;"></li>
+                                    <li class="line"></li>
 
                                   {% endfor %}
                                 </ul>
 
                               </li>
 
-                              <li class="line" style="margin-left: 5px; margin-right: 10px;"></li>
+                              <li class="line"></li>
 
                             {% endfor %}
                           </ul>

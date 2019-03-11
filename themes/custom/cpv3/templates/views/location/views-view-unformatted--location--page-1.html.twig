@@ -2,5 +2,5 @@
     {% set nid = row['content']['#row'].nid %}
     {% set link = path('entity.node.canonical', {'node': nid}) %}
     <li>{{ row }}</li>
-    <li class="line"></li>
+    <li class="line" style="margin: 0 0 5px 0;"></li>
 {% endfor %}
