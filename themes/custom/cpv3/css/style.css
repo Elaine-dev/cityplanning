@@ -2757,6 +2757,7 @@ ul#list-horizontal li {
     padding-top: 0 !important;
   }
 
+
   .navbar-toggle {
     display: block;
   }
@@ -2962,9 +2963,33 @@ ul#list-horizontal li {
     padding-left: 37px;
     padding-right: 37px;
   }
+
+/*Set a fixed width for the navigation tabs*/
+#hollywood-tab ul.nav.nav-tabs {
+    flex-direction: column;
+    border-bottom:none;
+     }
+/*Cause each link to fill the entire row*/
+
+#hollywood-tab .nav-tabs li a {
+   width: 100%;
+   border-bottom: 1px solid #e8e8e8;
+   padding-bottom: 10px;
+   background-color: #F9F7F5;
+   padding-top: 10px !important;
+
+    }
+    #hollywood-tab .nav-tabs li a:hover {
+    background-color: #f9f8ed !important;
+  }
+  .tab-line {
+       border-right: none;
+            }
 }
 
+
 @media screen and (min-width: 576px) and (max-width: 767px) {
+
   .navbar-header {
     float: none;
     padding-bottom: 15px;
