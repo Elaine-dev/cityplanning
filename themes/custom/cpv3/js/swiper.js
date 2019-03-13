@@ -7266,9 +7266,11 @@ return Swiper$1;
 })));
 // Added by EB 2
 $(document).ready(function() {
-
+ //$('#imgId').addClass('img-responsive');
+ //$("img").addClass("img-responsive"); 
     var mySwiper = new Swiper ('.swiper-container', {
       // Optional parameters
+
       autoplay: {
    delay: 5000,
  },
