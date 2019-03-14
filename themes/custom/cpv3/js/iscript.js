@@ -126,10 +126,9 @@ jQuery(document).ready(function($){
     });
 
     function call_ajax(selector, $this) {
-      //console.log(siteurl);
       $.ajax({
         url : siteurl+'/location/'+tid,
-        type : 'POST',
+        type : 'get',
         beforeSend: function() {
           $this.next('ul').html('');
           $('.'+selector).addClass('loading-location');
