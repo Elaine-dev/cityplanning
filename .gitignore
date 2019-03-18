@@ -30,3 +30,7 @@ sites/*/files/config*
 # Exclude IDE's project directory
 nbproject
 .idea
+
+# Exclude composer files since we have different setups
+composer.lock
+composer.phar
