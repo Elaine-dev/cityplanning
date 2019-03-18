@@ -1,0 +1,50 @@
+<div id="d-tab">
+	<ul class="nav nav-tabs" role="tablist" style="display: block"> 
+	{% for item in items %}
+         {% if loop.index0 == 0 %}
+		     {%  set active_class = 'active' %}
+		     {% set class = 'padding-left0'  %}
+		 {% else %}
+		     {% set active_class = ''  %}
+		     {% set class = ''  %}
+		 {% endif %}
+     
+       {% set title = item.content['#field_collection_item'].get('field_title').value %} 
+       {% set splitTitle = title|split(' ') %}
+	    <li role="presentation" class="padding-top0 tab-line {{ active_class }} video-tab">
+            <a class="{{ class }} video-title" href="#{{ loop.index0 }}" role="tab" data-toggle="tab" data-tid="{{ title }}">
+                {% for i in splitTitle %}
+                    {% if (loop.first) %}
+                        {{ i }}<br>
+                    {% else %}
+                        {{ i }}
+                    {% endif %}
+                {% endfor %}
+            </a>
+        </li>
+	{% endfor %}
+	
+		<li role="presentation" class="padding-top0 {{ active_class }}">
+			<a href="https://www.youtube.com/channel/UChl2PmRhAzUf158o0vZjnHw/videos" target="_blank" rel="nofollow">
+				<i class="fa fa-search fa-2x" aria-hidden="true" style="margin-top: 5px;"></i>
+				<div class="pull-right" style="padding-left: 10px;">
+				    Search All<br>Videos ...
+				</div>
+			</a>
+		</li>
+	</ul>
+	
+   <div class="tab-content d-tab-detail">
+    {% for item in items %}
+        {% set title = item.content['#field_collection_item'].get('field_title').value %}
+        {% set content = item.content['#field_collection_item'].get('field_main_content').value %}
+        <div id="{{ loop.index0 }}" class="tab-pane fade {{ (loop.index0 == 0) ? 'in active' : '' }}">
+            {% for para_id in content %}
+                {{ bamboo_render_entity('paragraph', para_id['target_id']) }}
+            {% endfor %}
+        </div>
+    {% endfor %}
+    
+   </div>
+	
+</div>
