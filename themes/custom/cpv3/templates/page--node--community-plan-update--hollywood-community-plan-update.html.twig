@@ -22,13 +22,11 @@
 
     </div>
   </div>
-
-  <div class="row">
-    <!-- Left-side bar -->
+ <!-- Left-side bar -->
+<div class="row content-wrapper" id="planning-update">
     <div class="col-md-9">
       <div class="section-content clear">
-        <div class="row">
-          <div class="col-md-12">
+        <div class="row ">
             {% if node.field_slider %}
               {% for parag_id in node.field_slider.value %}
                 {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}

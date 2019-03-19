@@ -732,6 +732,10 @@ p.slider-title {
   padding-right: 60px !important;
   position: relative;
 }
+/**fixes caption in slider spacing*/
+#planning-update .swiper-slide .slider-content {
+    top: -410px !important;
+  }
 
 /* Media Queries tablets */
 
@@ -739,8 +743,11 @@ p.slider-title {
 
 @media screen and (max-width: 600px) {
 .swiper-slide .slider-content {
-    top: -90% !important;
+    top: -410px !important;
   }
+#planning-update .swiper-slide .slider-content {
+      top: -490px !important;
+    }
 }
 
 @media screen and (max-width: 467px) {
