@@ -34,3 +34,7 @@ nbproject
 # Exclude composer files since we have different setups
 composer.lock
 composer.phar
+
+# Exclude text editor setting files
+.buildpath
+.settings/
