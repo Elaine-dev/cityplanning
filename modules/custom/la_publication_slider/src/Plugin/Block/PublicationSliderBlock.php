@@ -28,7 +28,7 @@ class PublicationSliderBlock extends BlockBase {
 
         $records = [];          //Array to hold newly formatted records
         $images_styles = [
-            'large' => ImageStyle::load('large'),
+            'large' => ImageStyle::load('slider_image'),
             'thumbnail' => ImageStyle::load('thumbnail')
         ];
         foreach ($result as $key => $value) {

@@ -14,12 +14,12 @@
             <div class="carousel-inner">
              {# iterate the items #}
 		    {% for key, record in data %}
-              <div class="item {% if loop.index == 1 %}active {% endif %}">
-                <img src="{{ record.imagePath }}" alt="{{ record.title }}" style="width:100%;">
+              <div class="item {% if loop.index == 1 %} active {% endif %}">
                 <div class="carousel-caption ">
-                  <h3 style="opacity: 1 !important;">{{ record.title }}</h3>
-                  <p style="opacity: 1 !important;">{{ record.detail }}</p>
+                  <p class="slider-title">{{ record.title }}</p>
+                  <p class="slider-caption">{{ record.detail }}</p>
                 </div>
+                <img src="{{ record.imagePath }}" alt="{{ record.title }}">
               </div>
               {% endfor %}
             </div>
