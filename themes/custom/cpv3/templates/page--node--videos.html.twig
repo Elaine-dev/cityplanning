@@ -1,0 +1,54 @@
+    {# page template #}
+    
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				<div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg-community.jpg" class="img-responsive" alt="background-image-community"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+        <!-- contain -->
+    <div class="container" id="main-container">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12">{{ page.title_bar }}</div>
+        </div>
+        <div class="row content-wrapper">
+        
+            {% if page.side_menu %}
+            	{# Left-side bar #}
+	            <div class="col-md-9">
+	                <div class="row padding-left0">
+	                    <div class="col-md-12">
+							{# content goes here #}
+							{{ page.content }}
+	                    </div>
+	                </div>
+	            </div>{# End Left-side bar #}
+            
+	            {# Right-side bar #}
+	            <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+	                <div class="top-bar"></div>
+	                  {{ page.side_menu }}
+	            </div>{# End Right-side bar #}
+            {% else %}
+            	<div class="col-md-12">
+	                <div class="row padding-left0">
+	                    <div class="col-md-12 padding-left0 padding-right0">
+							{# content goes here #}
+							{{ page.content }}
+	                    </div>
+	                </div>
+	            </div>
+            {% endif %} 
+            
+        </div>
+    </div>{# End container #}
+    
+    <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}
