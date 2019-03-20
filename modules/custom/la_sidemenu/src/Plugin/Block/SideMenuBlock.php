@@ -73,7 +73,7 @@ class SideMenuBlock extends BlockBase {
 
               $link_text = $row->getText();
               if($row->getUrl()->isExternal()) {
-                  $url = $row->getUrl()->getUri();
+                  $full_url = $row->getUrl()->getUri();
                   $target = '_blank';
                   $class = '';
               } else {
