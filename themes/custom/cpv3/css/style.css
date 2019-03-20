@@ -3,7 +3,7 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.3.19
+Update Date: 2019.3.20
 version: 4.4.23
 *********************/
 body {
@@ -92,10 +92,7 @@ q:before, q:after {
 }
 
 .section-content {
-  padding-top: 5px;
-  padding-bottom: 40px;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0 0 15px 0;
 }
 
 .white--bg {
