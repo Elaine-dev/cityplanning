@@ -7,7 +7,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-				<div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive" alt="background-image-video"></div>
+				<div id="page-title-bg">
+					<img src="{{ base_url }}{{ file_url(node.field_image.entity.fileuri) }}" class="img-responsive" alt="background-image-video">
+				</div>
             </div>
         </div>
     </div>{# End page-banner #}
