@@ -91,7 +91,7 @@ jQuery(document).ready(function($){
     // Map Gallery
     currentRequest = null;
 
-    $('.btn-default-1').on('click',function(){
+    $('.btn-default-1').on('click', function(){
       tid = $(this).data('tid');
       $('.js-dropdown').hide();
       $(this).next('ul').show();
@@ -105,7 +105,7 @@ jQuery(document).ready(function($){
       $('.js-dropdown').hide();
     });
 
-    $('.childLevel-1').mouseenter(function(){
+    $('.childLevel-1').on('click', function(){
       tid = $(this).data('tid');
       $('.level-2').hide();
       $(this).next('ul').show();
@@ -115,7 +115,7 @@ jQuery(document).ready(function($){
       }
     });
 
-    $('.childLevel-2').mouseenter(function(){
+    $('.childLevel-2').on('click', function() {
       tid = $(this).data('tid');
       $('.last-level').hide();
       $(this).next('ul').show();

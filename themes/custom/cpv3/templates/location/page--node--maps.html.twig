@@ -157,7 +157,7 @@
                                 {% set class = 'call-ajax' %}
                               {% endif %}
                               <li class="dropdown-submenu">
-                                <a class="childLevel-1 {{ class }}" data-tid="{{ sub['tid'] }}" tabindex="-1" href="#">{{ sub['name'] }} 
+                                <a class="childLevel-1 {{ class }}" data-tid="{{ sub['tid'] }}" tabindex="-1" style="cursor: pointer;">{{ sub['name'] }} 
                                     <i class="fa fa-caret-right pull-right"></i></a>
 
                                 <ul class="dropdown-menu level-2 js-content-2">
@@ -167,7 +167,7 @@
                                       {% set class = 'call-ajax' %}
                                     {% endif %}
                                     <li class="dropdown-submenu">
-                                      <a class="childLevel-2 {{ class }}" data-tid="{{ grand['tid'] }}" href="#">{{ grand['name'] }} 
+                                      <a class="childLevel-2 {{ class }}" data-tid="{{ grand['tid'] }}" style="cursor: pointer;">{{ grand['name'] }} 
                                         <i class="fa fa-caret-right pull-right" ></i></a>
                                       <ul class="dropdown-menu last-level js-content-3">
 
