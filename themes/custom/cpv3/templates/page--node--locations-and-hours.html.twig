@@ -1,0 +1,156 @@
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+<!-- page-banner -->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12">
+    <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
+  </div>
+</div>
+</div><!-- //End page-banner -->
+<div class="container" id="main-container" ng-app="appPubCounter" >
+  <div class="row">
+    <div class="col-md-12"><h1>{{ node.label }}</h1></div>
+  </div>
+
+<div class="row content-wrapper padding-bottom60">
+
+    {# Left-side bar #}
+    <div class="col-md-9">
+      {% if page.content %}
+        <div class="row padding-left0">
+          <div class="col-md-12">
+            {{ page.content }}
+          </div>
+        </div>
+      {% endif %}
+
+
+      <div class="row padding-left0">
+        <div class="col-md-12">
+          <div ng-disabled="enable=='false'">
+                    <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+                  </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6" ng-controller="pubCounterMetroCtrl" style="padding-left:0;">
+<div class="desc-text" style="font-size:12px;">
+          <h6>Metro Downtown<br >
+        (Fiqueroa Plaza)</h6>
+        <div>201 N. Fiqueroa St.<br>
+          4th Floor<br>
+          Los Angeles, CA 90012</div>
+          <strong><a href="https://www.google.com/maps/dir//201+N+Figueroa+St,+Los+Angeles,+CA+90012/@34.0589655,-118.253579,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80c2c6533ce33c37:0x4eacbc863fcd7d11!2m2!1d-118.2514289!2d34.0590933" target="_blank">Get Directions</a></strong>
+          <p>TEL: 213-482-7077<br>
+            FAX: 213-482-7080</p>
+            <div class="sub-head"><strong>Main Public Counter - 4th Floor</strong></div>
+            <div class="hours"><strong>Hours of Opration:</strong></div>
+              <p style="float:left">Monday<br>
+                Tuesday<br>
+                Wednesday<br>
+                Thursday<br>
+                Friday</p>
+                <p style="float:right">7:30am - 4:30pm<br>
+                  7:30am - 4:30pm<br>
+                  7:30am - 4:30pm<br>
+                  9:00am - 4:30pm<br>
+                  7:30am - 4:30pm</p>
+</div>
+        <div class="col-md-12" style="padding: 0px;">
+              <ul class="pub-counters" style="background-color: #76b1d7;
+    padding: 0px 10px 20px 10px; color:#fff; clear:left; display:block;" ng-repeat="p in data | filterWithOr:{queueName:['Planning Check-In','Planning Express']}">
+              <li class="pub-header" style="font-size: 18px; font-weight: 600; padding-top: 15px;">{[{ p.queueName  }]}</li>
+    <li><i class="fa fa-clock-o fa-2x" style="font-size:2.5em; float: left;  padding-right: 11px;"></i>Current Wait Time<br> {[{ p.actualWaitTime | time:'mm' }]}</li>
+              <li><i class="fa fa-user-circle-o fa-2x" style="float: left;  padding-right: 11px;"></i>{[{ p.numberOfTicketsWaiting }]} Person(s) Waiting</li>
+    </ul>
+    </div>
+    </div>
+
+      <div class="col-md-4 col-sm-6" ng-controller="pubCounterValleyCtrl" style="padding-left:0;">
+<div class="desc-text" style="font-size:12px;">
+        <h6>Valley - Van Nuys<br>
+        (Marvin Braude Building)</h6>
+        <div>6262 Van Nuys Blvd.<br>
+          Suite 251<br>
+          Van Nuys, CA 91401</div>
+          <strong><a href="https://www.google.com/maps/dir//6262+Van+Nuys+Blvd,+Van+Nuys,+CA/@34.184405,-118.4827583,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x80c29706f2a8165b:0xf8ad98c560f35b7b!2m2!1d-118.4476531!2d34.184339" target="_blank">Get Directions</a></strong>
+          <p>TEL: 818-374-5050<br>
+            FAX: 818-374-5075</p>
+            <div class="sub-head"><strong>Main Public Counter - 2nd Floor</strong></div>
+            <div class="hours"><strong>Hours of Opration:</strong></div>
+              <p style="float:left">Monday<br>
+                Tuesday<br>
+                Wednesday<br>
+                Thursday<br>
+                Friday</p>
+                <p style="float:right">7:30am - 4:30pm<br>
+                  7:30am - 4:30pm<br>
+                  9:00am - 4:30pm<br>
+                  7:30am - 4:30pm<br>
+                  7:30am - 4:30pm</p>
+</div>
+        <div class="col-md-12" style="padding: 0px;">
+              <ul class="pub-counters" style="background-color: #76b1d7;
+    padding: 0px 10px 20px 10px; color:#fff;clear:left; display:block;" ng-repeat="p in data | filterWithOr:{queueName:['Planning Check-In','Planning Express']}">
+              <li class="pub-header" style="font-size: 18px; font-weight: 600; padding-top: 15px;">{[{ p.queueName  }]}</li>
+  <li><i class="fa fa-clock-o fa-2x" style="font-size:2.5em; float: left; padding-right: 11px;"></i>Current Wait Time<br> {[{ p.actualWaitTime | time:'mm' }]}</li>
+              <li><i class="fa fa-user-circle-o fa-2x" style="float: left;  padding-right: 11px;"></i>{[{ p.numberOfTicketsWaiting }]} Person(s) Waiting</li>
+</ul>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-6" ng-controller="pubCounterWestlaCtrl" style="padding-left:0;">
+  <div class="desc-text" style="font-size:12px;">
+<h6>West<br>
+  Los Angeles</h6>
+  <div>1828 Sawtelle Blvd.<br>
+    2nd Floor<br>
+    West Los Angeles, CA 90025</div>
+    <strong><a href="https://www.google.com/maps/dir//1828+Sawtelle+Blvd,+Los+Angeles,+CA/@34.0434138,-118.4804847,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80c2bb76ac95d6b9:0x40b5edc4d4c6da2f!2m2!1d-118.4453795!2d34.0433477" target="_blank">Get Directions</a></strong>    <p>TEL: 310-231-2901<br>
+      FAX: </p>
+      <div class="sub-head"><strong>Main Public Counter - 2nd Floor</strong></div>
+        <div class="hours"><strong>Hours of Opration:</strong></div>
+        <p style="float:left">Monday<br>
+          Tuesday<br>
+          Wednesday<br>
+          Thursday<br>
+          Friday</p>
+          <p style="float:right">7:30am - 4:30pm<br>
+            7:30am - 4:30pm<br>
+            9:00am - 4:30pm<br>
+            7:30am - 4:30pm<br>
+            7:30am - 4:30pm</p>
+</div>
+    <div class="col-md-12" style="padding: 0px;">
+          <ul class="pub-counters" style="background-color: #76b1d7;
+padding: 0px 10px 20px 10px; color:#fff;clear:left; display:block;" ng-repeat="p in data | filterWithOr:{queueName:['Planning Check-In','Planning Express']}">
+          <li class="pub-header" style="font-size: 18px; font-weight: 600; padding-top: 15px;">{[{ p.queueName  }]}</li>
+<li><i class="fa fa-clock-o fa-2x" style="font-size:2.5em; float: left; padding-right: 11px;"></i>Current Wait Time<br> {[{ p.actualWaitTime | time:'mm' }]}</li>
+          <li><i class="fa fa-user-circle-o fa-2x" style="float: left;  padding-right: 11px;"></i>{[{ p.numberOfTicketsWaiting }]} Person(s) Waiting</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+{# Right-side bar #}
+<div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+  <div class="top-bar"></div>
+  {{ page.side_menu }}
+
+</div>{# End Right-side bar #}
+</div>
+</div>{# End container #} {# End Right-side bar #} <!-- // .container -->
+
+<!-- footer section -->
+{{ attach_library ('cpv3/public-counters') }}
+{{ attach_library ('cpv3/angular-js') }}
+{% include directory ~ '/partials/footer.html.twig' %}
+<script>
+function pageloadEvery(t) {
+setTimeout('location.reload(true)', t);
+}
+</script>
+<body onload="javascript:pageloadEvery(6*30000);">

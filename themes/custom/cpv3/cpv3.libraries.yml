@@ -221,3 +221,8 @@ historic-landmarks:
   version:                                                                                                          1.0
   js:
     js/api/historicLandmarkCtrl.js:                                                                               {}
+
+public-counters:
+  version: 1.0
+  js:
+    js/api/publicCounters.js: {}
