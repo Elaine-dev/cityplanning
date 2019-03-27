@@ -1,8 +1,10 @@
 /**
  * File: hearingsCtrl.js
- * author: Humbal Shahi
+ * Author: Humbal Shahi
  * Email: humbal.shahi@lacity.org
  * Created date: 03/17/2017
+ * Update date: 03/27/2019
+ * Version: 1.1
  */
 
 'use strict';
@@ -14,17 +16,20 @@ var appHearing = angular.module('appHearing', ['ngSanitize', 'ngRoute', 'ngAnima
 		}
 	});
 
-appHearing.config(function($interpolateProvider) {
+appHearing.config(function($interpolateProvider, $locationProvider) {
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+	
+	// Enabled html5Mode to get query string.
+	$locationProvider.html5Mode({
+	  enabled: true,
+	  requireBase: false
+	});
 });
 
-appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$filter','$timeout', function($scope, $sce, hearingsService, $filter, $timeout){
-	 $scope.enable = "false";
-	 $scope.loadingText = "Loading ...";
-	
-	$scope.apc = 'all';
-	$scope.apcAreas = {
-		availableOptions: [ 
+appHearing.controller('hearingsCtrl', ['$scope', '$sce', '$location', 'hearingsService', '$filter','$timeout', 
+	function($scope, $sce, $location, hearingsService, $filter, $timeout) {
+		$scope.apcAreas = {
+			availableOptions: [ 
 				{id: 'northvalley', name: 'North Valley' },
 				{id: 'southvalley', name: 'South Valley'},
 				{id: 'westlosangeles', name: 'West Los Angeles'},
@@ -35,36 +40,45 @@ appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$fi
 				{id: 'all', name: 'All'}
 			],
 		};
+		
+		/**
+		 * Check if query string has a paramerter or not. If not, set default value 'all'.
+		 * Format for query string :  <base_url>/about/hearings?q=centrallosangeles
+		 */ 
+		var query_string = $location.search();
+		$scope.apc = (query_string.q !== undefined) ? query_string.q : 'all';
 	
-	$scope.date = $filter('date')(new Date(), 'yyyy');		// get current year
-	var date = $scope.date;
-	$scope.assignDate = $filter('date')(new Date(), 'M/d/yyyy');
+		$scope.enable = "false";
+		$scope.loadingText = "Loading ...";
 	
-	$scope.$watch ('apc', function(newAPC) {
-		if(newAPC) {
-			var selectedYear = $scope.date;
-			hearingsService.getHearing(newAPC, selectedYear).then(function (response){
-				$scope.hearings = response.data.Entries;
-				$scope.dates = response.data.Years;
-				$scope.planningAreaTitle = response.data.APCTitle;
-				$timeout(function(){
-		            $scope.enable = "true";
-		           $scope.loadingText = "";
-		        }, 2000);
-			});
-		}
-	});
-	
-	$scope.$watch('date', function(newYear){
-		if (newYear) {
-			var apc = $scope.apc;
-			hearingsService.getHearing(apc, newYear).then(function (response){
-				$scope.hearings = response.data.Entries;
-				$scope.planningAreaTitle = response.data.APCTitle;
-			});
-		}
-	});
+		$scope.date = $filter('date')(new Date(), 'yyyy');		// get current year
+		var date = $scope.date;
+		$scope.assignDate = $filter('date')(new Date(), 'M/d/yyyy');
+		
+		$scope.$watch ('apc', function(newAPC) {
+			if(newAPC) {
+				var selectedYear = $scope.date;
+				hearingsService.getHearing(newAPC, selectedYear).then(function (response){
+					$scope.hearings = response.data.Entries;
+					$scope.dates = response.data.Years;
+					$scope.planningAreaTitle = response.data.APCTitle;
+					$timeout(function(){
+			            $scope.enable = "true";
+			           $scope.loadingText = "";
+			        }, 2000);
+				});
+			}
+		});
+		
+		$scope.$watch('date', function(newYear){
+			if (newYear) {
+				var apc = $scope.apc;
+				hearingsService.getHearing(apc, newYear).then(function (response){
+					$scope.hearings = response.data.Entries;
+					$scope.planningAreaTitle = response.data.APCTitle;
+				});
+			}
+		});
 	
 	//console.log($scope);
-	
 }]);
