@@ -84,6 +84,15 @@
   .btn-mapgallery span {
     position: absolute; margin: -5px 10px;
   }
+  
+ #btn-interactive a {
+  	color: #fff !important; 
+  	text-decoration: none;
+  }
+  
+  #btn-interactive a:hover {
+  	color: #000 !important;
+  }
 </style>
 
 <script>
@@ -135,7 +144,9 @@
                 <div class="row">
                   <div class="col-md-12 padding-left0 padding-right0">
                     <div class="row" style="color: #fff;">
-                      <div class="col-md-6 text-center" id="btn-interactive">Interactive +</div>
+                      <div class="col-md-6 text-center" id="btn-interactive">
+                      	<a href="{{ row['interactive_map_link'] }}" target="_blank">Interactive +</a>
+                  		</div>
                       <div class="col-md-6 text-center" id="btn-static-wrapper">
                         <div class="dropdown">
                           <!-- drop down -->
