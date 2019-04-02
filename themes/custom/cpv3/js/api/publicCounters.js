@@ -120,7 +120,7 @@ app.controller('pubCounterMetroCtrl', ['$scope', 'pubCounterMetroService', funct
 			pubCounterMetroService.getRecord()
 	 .then(function(response) {
 		 $scope.pubCounterMetroServices = response.data
-	 	 console.log($scope.pubCounterMetroService)
+	 	 console.log($scope.pubCounterMetroServices)
 	 	 }).catch(function(data) {
       // handle errors
 		 console.log('fail') }
@@ -131,7 +131,7 @@ app.controller('pubCounterValleyCtrl', ['$scope', 'pubCounterValleyService', fun
 	pubCounterValleyService.getRecord()
 .then(function(response) {
 	$scope.pubCounterValleyServices = response.data
- console.log($scope.pubCounterValleyService)
+ console.log($scope.pubCounterValleyServices)
 }).catch(function(data) {
  // handle errors
 console.log('fail') }
@@ -142,7 +142,7 @@ app.controller('pubCounterWestlaCtrl', ['$scope', 'pubCounterWestlaService', fun
 	pubCounterWestlaService.getRecord()
 .then(function(response) {
 	$scope.pubCounterWestlaServices = response.data
-console.log($scope.pubCounterWestlaService)
+console.log($scope.pubCounterWestlaServices)
 }).catch(function(response) {
  // handle errors
 console.log('fail') }
