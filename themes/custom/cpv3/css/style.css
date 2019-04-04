@@ -65,9 +65,10 @@ p {
   margin-bottom: 20px !important;
 }
 
-/* ol, ul {
-  list-style: none;
-} */
+ol, ul {
+  /* list-style: none; */
+  line-height: 2;
+}
 
 blockquote, q {
   quotes: none;
