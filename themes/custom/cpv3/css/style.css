@@ -2824,6 +2824,16 @@ ul.pub-counters.ng-scope {
 .col-md-4.col-sm-6.ng-scope {
     padding-right: 50px;
   }
+i.fa.fa-user-circle-o.fa-2x {
+    font-size: 1.7em !important;
+  }
+ul.pub-counters li.ng-binding {
+    font-size: 13px;
+    margin-top:7px;
+}
+li.pub-header.ng-binding {
+    font-size: 16px !important;
+}
 
 /*-->> **************** Media Query *****************/
 /* public counters -- locations and hours page */
