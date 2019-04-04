@@ -2834,6 +2834,10 @@ ul.pub-counters li.ng-binding {
 li.pub-header.ng-binding {
     font-size: 16px !important;
 }
+/* special custom case for social media icons on Communications page */
+.comm-blog {
+    margin-top: -27px;
+}
 
 /*-->> **************** Media Query *****************/
 /* public counters -- locations and hours page */

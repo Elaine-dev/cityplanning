@@ -1,5 +1,6 @@
 .container-custom-grid .col-md-3 img.img-responsive {
   padding-bottom:0;
+  border: 1px #eee solid;
 }
 .container-custom-grid {
         padding-right: 0;
