@@ -66,8 +66,12 @@ p {
 }
 
 ol, ul {
-  /* list-style: none; */
   line-height: 1.5;
+}
+
+#cms-content ol > li, #cms-content ul > li {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 blockquote, q {
