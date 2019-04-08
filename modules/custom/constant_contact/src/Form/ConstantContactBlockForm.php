@@ -221,7 +221,7 @@ class ConstantContactBlockForm extends FormBase {
     }
     
     // Call API
-    private function callConstantContactAPI ($val = '') {
+    public function callConstantContactAPI ($val = '') {
         // Get data from setting
         $config = \Drupal::config('constant_contact.settings');
         $APIKEY = $config->get('cc_apikey');
