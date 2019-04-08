@@ -65,6 +65,10 @@
               }) %}
             {% endif %}
           {% endfor %}
+          
+          {% if page.email_signup %}
+              {{ page.email_signup }}
+          {% endif %}
         </div>
       </div>
     </div>
