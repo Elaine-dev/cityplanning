@@ -1,0 +1,5 @@
+constant_contact.admin_settings_form:
+  title: 'Constant Contact Settings'
+  description: 'Configure settings for the Costant Contact module.'
+  route_name: constant_contact.admin_settings_form
+  parent: 'system.admin_config_services'

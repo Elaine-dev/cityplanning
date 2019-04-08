@@ -1,0 +1,7 @@
+cc_libraries:
+  version:                                        1.0
+  css:
+    layout:
+      css/constant_contact.css:                   {}
+  js:
+    js/constant-contact.js:                       {}
