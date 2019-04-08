@@ -6,7 +6,7 @@
 namespace Drupal\constant_contact\Form;
 
 module_load_include('php', 'constant_contact','lib/src/Ctct/autoload.php');
-module_load_include('php', 'constant_contact','lib/vendorautoload.php');
+module_load_include('php', 'constant_contact','lib/vendor/autoload.php');
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\ConfigFormBase;
