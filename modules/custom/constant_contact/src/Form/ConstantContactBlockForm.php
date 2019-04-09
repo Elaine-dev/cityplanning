@@ -6,18 +6,14 @@
 namespace Drupal\constant_contact\Form;
 
 module_load_include('php', 'constant_contact','lib/src/Ctct/autoload.php');
-module_load_include('php', 'constant_contact','lib/vendor/autoload.php');
 
 use Drupal\Core\Form\FormBase;
-use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 // constant contact
 use Ctct\ConstantContact;
 use Ctct\Components\Contacts\Address;
 use Ctct\Components\Contacts\Contact;
-use Ctct\Components\Contacts\ContactList;
-use Ctct\Components\Contacts\EmailAddress;
 use Ctct\Exceptions\CtctException;
 
 class ConstantContactBlockForm extends FormBase {
@@ -36,9 +32,6 @@ class ConstantContactBlockForm extends FormBase {
      * @see \Drupal\Core\Form\FormInterface::buildForm()
      */
     public function buildForm(array $form, FormStateInterface $form_state) {
-        // Form constructor.
-        //$form = parent::buildForm($form, $form_state);
-        //$form['#attributes']['class'][] = 'form-inline';
         $form['intro'] = array(
             '#markup' => "<strong>Contact Information</strong> (Fields mark with an * are required)",
         );
