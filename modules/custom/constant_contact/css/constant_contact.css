@@ -12,8 +12,38 @@
 
 #block-constantcontactblock .form-group {
 	margin-bottom: 0;
+	margin-top: 0;
 }
 
 /** change option color **/
 #edit-state option { color: black; }
 .empty { color: #999999 !important; }
+
+/* message */
+.messages {
+  margin: 9px 0 10px 8px;
+}
+
+.messages {
+  background: no-repeat 10px 17px;
+  border: 1px solid;
+  border-width: 1px 1px 1px 0;
+  border-radius: 2px;
+  padding: 15px 20px 15px 35px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.messages--status {
+  color: #325e1c;
+  background-color: #f3faef !important;
+  border-color: #c9e1bd #c9e1bd #c9e1bd transparent !important;
+  box-shadow: -8px 0 0 #77b259;
+}
+
+.messages-error-status {
+  color: #b06300;
+  background-color: rgba(255, 245, 245, 0.9) !important;
+  border-color: #ffcc99 #ffcc99 #ffcc99 transparent !important;
+  box-shadow: -8px 0 0 #b06300;
+}

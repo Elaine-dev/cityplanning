@@ -5,8 +5,8 @@
  */
 namespace Drupal\constant_contact\Form;
 
-module_load_include('php', 'constant_contact','lib/src/Ctct/autoload.php');
-module_load_include('php', 'constant_contact','lib/vendor/autoload.php'); 
+require drupal_get_path('module', 'constant_contact').'/lib/src/Ctct/autoload.php';
+require drupal_get_path('module', 'constant_contact').'/lib/vendor/autoload.php';
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -15,9 +15,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Ctct\ConstantContact;
 use Ctct\Components\Contacts\Address;
 use Ctct\Components\Contacts\Contact;
-use Ctct\Components\Contacts\ContactList;
-use Ctct\Components\Contacts\EmailAddress;
 use Ctct\Exceptions\CtctException;
+
 
 class ConstantContactBlockForm extends FormBase {
     /**
@@ -47,10 +46,10 @@ class ConstantContactBlockForm extends FormBase {
             '#placeholder' => 'first name *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control')), 
-            '#maxlength' => 100,
-            '#required' => TRUE
-        
+            '#attributes' => array('class' => array('form-control'), 'maxlength' => 50),
+            '#maxlength' => 50,
+            '#maxlength_js' => TRUE,
+            '#required' => TRUE,
         ];
         
         $form['last_name'] = [
@@ -60,8 +59,9 @@ class ConstantContactBlockForm extends FormBase {
             '#placeholder' => 'last name *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control')), 
-            '#maxlength' => 100,
+            '#attributes' => array('class' => array('form-control'), 'maxlength' => 80),
+            '#maxlength' => 80,
+            '#maxlength_js' => TRUE,
             '#required' => TRUE
         ];
         
@@ -84,8 +84,9 @@ class ConstantContactBlockForm extends FormBase {
             '#placeholder' => 'street address *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control')), 
+            '#attributes' => array('class' => array('form-control'), 'maxlength' => 60),
             '#maxlength' => 60,
+            '#maxlength_js' => TRUE,
             '#required' => TRUE
         ];
         
@@ -160,8 +161,7 @@ class ConstantContactBlockForm extends FormBase {
                 "WV" => $this->t("West Virginia"),
                 "WI" => $this->t("Wisconsin"),
                 "WY" => $this->t("Wyoming"),
-            ],
-            //'#default_value' => 'RI',
+            ],           
             '#required' => TRUE
         ];
         
@@ -172,8 +172,9 @@ class ConstantContactBlockForm extends FormBase {
             '#placeholder' => 'zip *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control')), 
-            '#maxlength' => 9,
+            '#attributes' => array('class' => array('form-control'), 'maxlength' => 5),
+            '#maxlength' => 5,
+            '#maxlength_js' => TRUE,
             '#required' => TRUE,
         ];
         
@@ -208,60 +209,68 @@ class ConstantContactBlockForm extends FormBase {
         $inputVal['city'] = $form_state->getValue('city');
         $inputVal['state'] = $form_state->getValue('state');
         $inputVal['zip'] = $form_state->getValue('zip');
-        
+
         $op = $this->callConstantContactAPI($inputVal);
-        
+
         if ($op) {
-            \Drupal::messenger($this->t('Your information saved.'), 'status', FALSE);
-       } 
+          drupal_set_message(t('Thank you! Your\'s contact detail successfully submitted.'), 'status', TRUE);
+       } else {
+           drupal_set_message(t('Oops! Something went wrong. Please try again.'), 'error', TRUE);
+        }
     }
     
     // Call API
-    public function callConstantContactAPI ($val = '') {
-        // Get data from setting
-        $config = \Drupal::config('constant_contact.settings');
-        $APIKEY = $config->get('cc_apikey');
-        $ACCESS_TOKEN = $config->get('cc_access_token');
-        
-        // See: https://developer.constantcontact.com/get-started.html
-        $ctct = new ConstantContact($APIKEY);
-        $listId = '1114618156';                     // 'General Interest' => '1365616101', 'News' => '1114618156'
-        $contact = new Contact();
- 
-        // check if the form was submitted
-        if (isset($val['email']) && strlen($val['email']) > 1) {
-            try {
-                // check to see if a contact with the email address already exists in the account
-                $response = $ctct->contactService->getContacts($ACCESS_TOKEN, array('email' => $val['email']));
-                
-                // create a new contact if one doesn't exist
-                if (empty($response->results)) {
-                    $action = "Creating Contact";
-                    
-                    $contact = new Contact();
-                    $contact->first_name = $val['first_name'];
-                    $contact->last_name = $val['last_name'];
-                    $contact->addEmail($val['email']);
-                    $contact->addAddress(Address::create(array(
-                        "address_type"  => "BUSINESS",
-                        "line1"         => $val['street_address'],
-                        "city"          => $val['city'],
-                        "state"         => $val['state'],
-                        "postal_code"   => $val['zip']
-                    )));
-                    
-                    $contact->addList($listId);
-                    
-                    $returnContact = $ctct->contactService->addContact($ACCESS_TOKEN, $contact, true);
-                    return $returnContact;
-                }
-            } catch (CtctException $ex) {
-                echo '<span class="label label-important">Error ' . @$action . '</span>';
-                echo '<div class="container alert-error"><pre class="failure-pre">';
-                print_r($ex->getErrors());
-                echo '</pre></div>';
-                die();
-            }
-        }
+
+  /**
+   * @param string $val
+   * @return mixed
+   */
+  public function callConstantContactAPI ($val = '') {
+      // Get data from setting
+      $config = \Drupal::config('constant_contact.settings');
+      $APIKEY = $config->get('cc_apikey');
+      $ACCESS_TOKEN = $config->get('cc_access_token');
+
+      // See: https://developer.constantcontact.com/get-started.html
+      $cc = new ConstantContact($APIKEY);
+      $listId = '1114618156';                     // 'General Interest' => '1365616101', 'News' => '1114618156'
+
+     // check if the form was submitted
+      if (isset($val['email']) && strlen($val['email']) > 1) {
+          try {
+              // check to see if a contact with the email address already exists in the account
+              $response = $cc->contactService->getContacts($ACCESS_TOKEN, array('email' => $val['email']));
+
+              // create a new contact if one doesn't exist
+              if (empty($response->results)) {
+                  $action = "Creating Contact";
+
+                  $contact = new Contact();
+                  $contact->first_name = $val['first_name'];
+                  $contact->last_name = $val['last_name'];
+                  $contact->addEmail($val['email']);
+                  $contact->addAddress(Address::create(array(
+                      "address_type"  => "BUSINESS",
+                      "line1"         => $val['street_address'],
+                      "city"          => $val['city'],
+                      "state"         => $val['state'],
+                      "postal_code"   => $val['zip']
+                  )));
+
+                  $contact->addList($listId);
+
+                  $returnContact = $cc->contactService->addContact($ACCESS_TOKEN, $contact, true);
+                  return $returnContact;
+              } else{
+                drupal_set_message(t('Email has been already registered.'), 'error', TRUE);
+              }
+          } catch (CtctException $ex) {
+              echo '<span class="label label-important">Error ' . @$action . '</span>';
+              echo '<div class="container alert-error"><pre class="failure-pre">';
+              print_r($ex->getErrors());
+              echo '</pre></div>';
+              die();
+          }
+      }
     }
 }

@@ -20,6 +20,7 @@ CONFIGURATION
 REFERENCE
 ---------
 	Constant Contact API Documentation (V2 API)
+	https://github.com/constantcontact/php-sdk
 	https://constantcontact.mashery.com/
 	https://developer.constantcontact.com/
-	https://www.drupal.org/node/1254710  [captcha]
+	
