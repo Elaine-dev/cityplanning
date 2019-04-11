@@ -46,7 +46,7 @@ class ConstantContactBlockForm extends FormBase {
             '#placeholder' => 'first name *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control'), 'maxlength' => 50),
+            '#attributes' => array('class' => array('form-control')),
             '#maxlength' => 50,
             '#maxlength_js' => TRUE,
             '#required' => TRUE,
@@ -59,8 +59,8 @@ class ConstantContactBlockForm extends FormBase {
             '#placeholder' => 'last name *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control'), 'maxlength' => 80),
-            '#maxlength' => 80,
+            '#attributes' => array('class' => array('form-control')),
+            '#maxlength' => 50,
             '#maxlength_js' => TRUE,
             '#required' => TRUE
         ];
@@ -73,7 +73,7 @@ class ConstantContactBlockForm extends FormBase {
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
             '#attributes' => array('class' => array('form-control')), 
-            '#maxlength' => 100,
+            '#maxlength' => 50,
             '#required' => TRUE
         ];
         
@@ -85,7 +85,7 @@ class ConstantContactBlockForm extends FormBase {
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
             '#attributes' => array('class' => array('form-control'), 'maxlength' => 60),
-            '#maxlength' => 60,
+            '#maxlength' => 64,
             '#maxlength_js' => TRUE,
             '#required' => TRUE
         ];
@@ -98,7 +98,7 @@ class ConstantContactBlockForm extends FormBase {
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
             '#attributes' => array('class' => array('form-control')), 
-            '#maxlength' => 64,
+            '#maxlength' => 60,
             '#required' => TRUE
         ];
         
@@ -172,7 +172,7 @@ class ConstantContactBlockForm extends FormBase {
             '#placeholder' => 'zip *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control'), 'maxlength' => 5, 'pattern' => '[0-9]+'),
+            '#attributes' => array('class' => array('form-control'), 'pattern' => '[0-9]+'),
             '#maxlength' => 5,
             '#maxlength_js' => TRUE,
             '#required' => TRUE,
@@ -192,10 +192,37 @@ class ConstantContactBlockForm extends FormBase {
      * {@inheritdoc}
      */
     public function validateForm(array &$form, FormStateInterface $form_state) {
-        parent::validateForm($form, $form_state);
-        if (strlen($form_state->getValue('email')) < 1) {
+        $message = parent::validateForm($form, $form_state);
+        
+        if (strlen($form_state->getValue('first_name')) < 2) {
+            $form_state->setErrorByName('first_name', $this->t('First name can\'t be blank.'));
+        }
+        
+        if (strlen($form_state->getValue('last_name')) < 2) {
+            $form_state->setErrorByName('last_name', $this->t('First name can\'t be blank.'));
+        }
+        
+        if (strlen($form_state->getValue('email')) < 2) {
             $form_state->setErrorByName('email', $this->t('Email can\'t be blank.'));
         }
+        
+        if (strlen($form_state->getValue('street_address')) < 2) {
+            $form_state->setErrorByName('street_address', $this->t('Street address can\'t be blank.'));
+        }
+        
+        if (strlen($form_state->getValue('city')) < 2) {
+            $form_state->setErrorByName('city', $this->t('City can\'t be blank.'));
+        }
+        
+        if (strlen($form_state->getValue('state')) < 2) {
+            $form_state->setErrorByName('state', $this->t('State can\'t be blank.'));
+        }
+        
+        if (strlen($form_state->getValue('zip')) > 5 || !is_numeric($form_state->getValue('zip'))) {
+            $form_state->setErrorByName('zip', $this->t('Zip is not valid.'));
+        }
+        
+        return $message;
     }
     
     /**
@@ -231,7 +258,7 @@ class ConstantContactBlockForm extends FormBase {
 
       // See: https://developer.constantcontact.com/get-started.html
       $cc = new ConstantContact($APIKEY);
-      $listId = '1114618156';                     // 'General Interest' => '1365616101', 'News' => '1114618156'
+      $listId = '1734008585';                     // Email list id
 
      // check if the form was submitted
       if (isset($val['email']) && strlen($val['email']) > 1) {
