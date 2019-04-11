@@ -15,8 +15,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Ctct\Components\Contacts\Contact;
 use Ctct\ConstantContact;
 use Ctct\Components\Contacts\Address;
-use Ctct\Components\Contacts\ContactList;
-use Ctct\Components\Contacts\EmailAddress;
 use Ctct\Exceptions\CtctException;
 
 
@@ -168,13 +166,13 @@ class ConstantContactBlockForm extends FormBase {
         ];
         
         $form['zip'] = [
-            '#type' => 'number',
+            '#type' => 'textfield',
             '#title' => $this->t('Zip'),
             '#title_display' => 'invisible', 
             '#placeholder' => 'zip *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
-            '#attributes' => array('class' => array('form-control'), 'maxlength' => 5),
+            '#attributes' => array('class' => array('form-control'), 'maxlength' => 5, 'pattern' => '[0-9]+'),
             '#maxlength' => 5,
             '#maxlength_js' => TRUE,
             '#required' => TRUE,
@@ -215,10 +213,8 @@ class ConstantContactBlockForm extends FormBase {
         $op = $this->callConstantContactAPI($inputVal);
 
         if ($op) {
-          drupal_set_message(t('Thank you! Your\'s contact detail successfully submitted.'), 'status', TRUE);
-       } else {
-           drupal_set_message(t('Oops! Something went wrong. Please try again.'), 'error', TRUE);
-        }
+          drupal_set_message(t('Thank you! your\'s contact detail successfully added.'), 'status', TRUE);
+       }
     }
     
     // Call API
@@ -264,7 +260,7 @@ class ConstantContactBlockForm extends FormBase {
                   $returnContact = $cc->contactService->addContact($ACCESS_TOKEN, $contact, true);
                   return $returnContact;
               } else{
-                drupal_set_message(t('Email has been already registered.'), 'error', TRUE);
+                drupal_set_message(t('Oops! the provided email already exists in our system.'), 'error', TRUE);
               }
           } catch (CtctException $ex) {
               echo '<span class="label label-important">Error ' . @$action . '</span>';
