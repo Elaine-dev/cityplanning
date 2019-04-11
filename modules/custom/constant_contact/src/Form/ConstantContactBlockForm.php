@@ -15,6 +15,8 @@ use Drupal\Core\Form\FormStateInterface;
 use Ctct\Components\Contacts\Contact;
 use Ctct\ConstantContact;
 use Ctct\Components\Contacts\Address;
+use Ctct\Components\Contacts\ContactList;
+use Ctct\Components\Contacts\EmailAddress;
 use Ctct\Exceptions\CtctException;
 
 
