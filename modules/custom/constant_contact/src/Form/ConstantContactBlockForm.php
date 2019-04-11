@@ -12,9 +12,9 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 // constant contact
+use Ctct\Components\Contacts\Contact;
 use Ctct\ConstantContact;
 use Ctct\Components\Contacts\Address;
-use Ctct\Components\Contacts\Contact;
 use Ctct\Exceptions\CtctException;
 
 
