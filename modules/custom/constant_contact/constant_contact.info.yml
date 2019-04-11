@@ -1,0 +1,6 @@
+name: Constant Contact
+type: module
+description: 'Module helps to manage subscriber address using API provided by the Constant Contact.'
+package: Custom
+core: 8.x
+version: 1.0
