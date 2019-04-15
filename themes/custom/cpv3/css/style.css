@@ -2858,7 +2858,20 @@ li.pub-header.ng-binding {
   padding-left: 0;
   padding-right: 0;
 }
+/* Steps Graphics (blue hexagons)*/
+.media-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #4664ae;
+    font-size: 20px;
+    line-height: 24px;
+}
 
+.media-left img.align-left {
+    height: 59%;
+    width: auto;
+    padding-top: 3px;
+	}
 /*-->> **************** Media Query *****************/
 /* public counters -- locations and hours page */
 @media screen and (min-width: 900px) and (max-width: 1200px) {
