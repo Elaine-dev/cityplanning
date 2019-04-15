@@ -222,12 +222,12 @@ historic-landmarks:
   js:
     js/api/historicLandmarkCtrl.js:                                                                               {}
 
+jsonp-array:
+  version: 1.0
+  js:
+    js/api/toArrayFilter.js: {}
+
 public-counters:
   version: 1.0
   js:
     js/api/publicCounters.js: {}
-
-jsonp_array:
-    version: 1.0
-    js:
-      js/api/toArrayFilter.js: {}

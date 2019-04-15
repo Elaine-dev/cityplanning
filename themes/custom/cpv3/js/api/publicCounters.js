@@ -1,52 +1,63 @@
 'use strict';
-var app = angular.module('appPubCounter', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'angular-toArrayFilter'])
-.service('pubCounterMetroService', function($http) {
-    this.getRecord = function() {
-        return $http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=7&json=true?callback', {jsonpCallbackParam: 'callback'})
-				then(function(data){
+var app = angular.module('appPubCounter', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ui.bootstrap', 'ngResource', 'angular-toArrayFilter']) .service('pubCounterMetroService', function($http) {
+
+    this.getRecord = function () {
+
+        return $http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=7&json=true?callback', {jsonpCallbackParam: 'callback', 'Cache-Control':'no-cache'})
+        then(function(data){
 				 $scope.pubCounterMetroServices= response.data
+
 				 	 console.log(response.data)
 				 }).catch(function(response) {
  // handle errors
-				 console.log("nope");
-				 }
-    )}
-}).service('pubCounterValleyService', function($http) {
-    this.getRecord = function() {
-        return $http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=4&json=true?callback1', {jsonpCallbackParam: 'callback'})
+				 console.log("nope")
+
+     })}
+
+
+   }).service('pubCounterValleyService', function($http) {
+
+  this.getRecord = function () {
+        return $http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=4&json=true?callback', {jsonpCallbackParam: 'callback', 'Cache-Control':'no-cache'})
 				then(function(data){
          $scope.pubCounterValleyServices = response.data
+
 				 	 console.log(response.data)
 				 }).catch(function(response) {
 // handle errors
 				 console.log("nope");
-				 }
-       )}
-}).service('pubCounterWestlaService', function($http) {
-    this.getRecord = function() {
-        return $http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=3&json=true?callback', {jsonpCallbackParam: 'callback'})
+
+     })}
+   }).service('pubCounterWestlaService', function($http) {
+
+  this.getRecord = function () {
+
+        return $http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=3&json=true?callback', {jsonpCallbackParam: 'callback', 'Cache-Control':'no-cache'})
 				then(function(data){
 				 $scope.pubCounterWestlaServices = response.data
 				 	 console.log(response.data)
 				 }).catch(function(response) {
  // handle errors
 				 console.log("nope");
-    }
-	)}
 
-}).config(function($interpolateProvider) {
-    $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+     })}
+   }).config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{[{').endSymbol('}]}')
+
+
 	/*
  // Whitelist the JSONP endpoint to show it is trusted
  */
 
-}).config(['$sceDelegateProvider', function($sceDelegateProvider) {
+  }).config(['$sceDelegateProvider', function($sceDelegateProvider) {
 		$sceDelegateProvider.resourceUrlWhitelist([
 				'self',
 				'https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/**',
 				'127.0.0.1'
 			])
-
+// used to update async calls
+    }]).config(function ($httpProvider) {
+      $httpProvider.useApplyAsync(true);
 
 			/*
 		 // Custom filter to filter on OR
@@ -54,7 +65,7 @@ var app = angular.module('appPubCounter', ['ngRoute', 'ngSanitize', 'ngAnimate',
 		 */
 
 
-}]).filter('filterWithOr', function($filter) {
+}).filter('filterWithOr', function($filter) {
     var comparator = function(actual, expected) {
         if (angular.isUndefined(actual)) {
             return false;
@@ -116,35 +127,66 @@ var app = angular.module('appPubCounter', ['ngRoute', 'ngSanitize', 'ngAnimate',
     }
 });
 
-app.controller('pubCounterMetroCtrl', ['$scope', 'pubCounterMetroService', function($scope,pubCounterMetroService) {
-			pubCounterMetroService.getRecord()
-	 .then(function(response) {
-		 $scope.pubCounterMetroServices = response.data
-	 	 console.log($scope.pubCounterMetroServices)
-	 	 }).catch(function(data) {
-      // handle errors
-		 console.log('fail') }
-)}
-])
+app.controller('pubCounterMetroCtrl', ['$http', '$scope', '$interval', 'pubCounterMetroService', function($http, $scope, $interval, pubCounterMetroService) {
+  pubCounterMetroService.getRecord()
+    .then(function(response) {
+         $scope.pubCounterMetroServices = response.data
+  // start interval
+  var interval = $interval(function(){$http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=7&json=true?callback', {jsonpCallbackParam: 'callback'})
+pubCounterMetroService.getRecord()
+  .then(function(response) {
 
-app.controller('pubCounterValleyCtrl', ['$scope', 'pubCounterValleyService', function($scope,pubCounterValleyService) {
-	pubCounterValleyService.getRecord()
-.then(function(response) {
-	$scope.pubCounterValleyServices = response.data
- console.log($scope.pubCounterValleyServices)
-}).catch(function(data) {
- // handle errors
-console.log('fail') }
-)}
-])
+       $scope.pubCounterMetroServices = response.data
+     console.log('interval started')
+     console.log(response.data)
+     //console.log(response.data)
+})
+} , 30000)
 
-app.controller('pubCounterWestlaCtrl', ['$scope', 'pubCounterWestlaService', function($scope,pubCounterWestlaService) {
-	pubCounterWestlaService.getRecord()
-.then(function(response) {
-	$scope.pubCounterWestlaServices = response.data
-console.log($scope.pubCounterWestlaServices)
 }).catch(function(response) {
- // handle errors
-console.log('fail') }
-)}
-]);
+  console.log('interval broke')
+    //.then(function(response) {
+    //   $scope.$watch(function () {
+    //  $scope.pubCounterMetroServices = response.data
+
+
+
+
+ })
+}])
+app.controller('pubCounterValleyCtrl', ['$http', '$scope', 'pubCounterValleyService', '$interval', function($http, $scope, pubCounterValleyService, $interval) {
+	pubCounterValleyService.getRecord()
+  .then(function(response) {
+       $scope.pubCounterValleyServices = response.data
+  // start interval
+  var interval = $interval(function(){$http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=4&json=true?callback', {jsonpCallbackParam: 'callback'})
+  pubCounterValleyService.getRecord()
+  .then(function(response) {
+
+     $scope.pubCounterValleyServices = response.data
+   console.log('interval started')
+   console.log(response.data)
+
+  })
+} , 30000)
+
+ })
+
+}])
+app.controller('pubCounterWestlaCtrl', ['$http', '$scope', 'pubCounterWestlaService', '$interval', function($http, $scope, pubCounterWestlaService, $interval) {
+	pubCounterWestlaService.getRecord()
+  .then(function(response) {
+       $scope.pubCounterWestlaServices = response.data
+  // start interval
+  var interval = $interval(function(){$http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=3&json=true?callback', {jsonpCallbackParam: 'callback'})
+  pubCounterWestlaService.getRecord()
+  .then(function(response) {
+
+     $scope.pubCounterWestlaServices = response.data
+   console.log('interval started')
+   console.log(response.data)
+
+  })
+} , 30000)
+ })
+}]);
