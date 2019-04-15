@@ -15,7 +15,7 @@ class ConstantContactForm extends ConfigFormBase {
     const SETTINGS = 'constant_contact.settings';   
     
     /**
-     * {@inheritdoc}
+     * {@inheritdoc}    
      */
     protected function getEditableConfigNames() {
         return [
@@ -43,6 +43,12 @@ class ConstantContactForm extends ConfigFormBase {
         // Default configuration.
         $config = $this->config(static::SETTINGS);
         
+        // fetch email lists in the account
+        $options = getEmailList();
+        if(($options)){
+            asort($options);
+        }
+                
         $form['cc_apikey'] = [
             '#type' => 'textfield',
             '#title' => $this->t('API KEY'),
@@ -63,6 +69,15 @@ class ConstantContactForm extends ConfigFormBase {
                                 2. Follow the steps unitll you receive the token strings.            
                                 '),
             '#default_value' => $config->get('cc_access_token'), 
+        ]; 
+        
+        $form['cc_email_list'] = [
+            '#type' => 'select',
+            '#title' => $this->t('Email List'),
+            '#options' => ($options) ? $options : '',
+            '#description' => $this->t('Set the default List from the drop-dwon. <br>
+                                    <em>Note: The list will be displayed only when you provide API Key and Access Token to the above fields.</em> '),
+            '#default_value' => $config->get('cc_email_list'),
         ]; 
         
         return $form;
@@ -91,7 +106,7 @@ class ConstantContactForm extends ConfigFormBase {
         $this->config(static::SETTINGS)
             ->set('cc_apikey', trim($form_state->getValue('cc_apikey')))
             ->set('cc_access_token', trim($form_state->getValue('cc_access_token')))
+            ->set('cc_email_list', trim($form_state->getValue('cc_email_list')))
             ->save();
-    }
-    
+    }          
 }

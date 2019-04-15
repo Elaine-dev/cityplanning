@@ -1,5 +1,17 @@
 <?php
+require drupal_get_path('module', 'constant_contact').'/lib/src/Ctct/autoload.php';
+require drupal_get_path('module', 'constant_contact').'/lib/vendor/autoload.php';
+
 use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\Core\Messenger\MessengerInterface;
+
+
+
+// constant contact
+use Ctct\Components\Contacts\Contact;
+use Ctct\ConstantContact;
+use Ctct\Components\Contacts\Address;
+use Ctct\Exceptions\CtctException;
 
 /**
  * Implements hook_help().
@@ -37,3 +49,108 @@ function constant_contact_form_constant_contact_form_alter(&$form, \Drupal\Core\
     $form['#theme'] = 'custom_form_template';
     $form['#attached']['library'][] = 'constant_contact/cc_libraries';
 }
+
+/**
+ * File validation callback.
+ * 
+ * @param \Drupal\file\FileInterface $file
+ *      The file to be validated.
+ *  
+ *  @return array
+ *      List of validation issues, if any.    
+ *  
+ */
+function form_validatate_csv (\Drupal\file\FileInterface $file) {
+    $errors = array();
+    $errors[] = t("This CVS format is incorrect. Use commas.");
+    return $errors; 
+}
+
+
+/**
+ * Call API
+ * 
+ * @param string $val
+ * @return mixed
+ */
+function callConstantContactAPI ($val = '') {
+    // Get data from setting
+    $config = \Drupal::config('constant_contact.settings');
+    $APIKEY = $config->get('cc_apikey');
+    $ACCESS_TOKEN = $config->get('cc_access_token');
+    $SELECTED_EMAILLIST_ID = $config->get('cc_email_list');
+    
+    // See: https://developer.constantcontact.com/get-started.html
+    $cc = new ConstantContact($APIKEY);
+        
+    // check if the form was submitted
+    if (isset($val['email']) && strlen($val['email']) > 1) {
+        try {
+            // check to see if a contact with the email address already exists in the account
+            $response = $cc->contactService->getContacts($ACCESS_TOKEN, array('email' => $val['email']));
+            
+            // create a new contact if one doesn't exist
+            if (empty($response->results)) {
+                $action = "Creating Contact";
+                
+                $contact = new Contact();
+                $contact->first_name = $val['first_name'];
+                $contact->last_name = $val['last_name'];
+                $contact->addEmail($val['email']);
+                $contact->addAddress(Address::create(array(
+                    "address_type"  => "BUSINESS",
+                    "line1"         => $val['street_address'],
+                    "city"          => $val['city'],
+                    "state"         => $val['state'],
+                    "postal_code"   => $val['zip']
+                )));
+                
+                $contact->addList($SELECTED_EMAILLIST_ID);
+                
+                $returnContact = $cc->contactService->addContact($ACCESS_TOKEN, $contact, true);
+                
+                return $returnContact;
+            } else{
+                drupal_set_message(t('Oops! the provided email already exists in our system.'), 'error', TRUE);
+            }
+        } catch (CtctException $ex) {
+            echo '<span class="label label-important">Error ' . @$action . '</span>';
+            echo '<div class="container alert-error"><pre class="failure-pre">';
+            print_r($ex->getErrors());
+            echo '</pre></div>';
+            die();
+        }
+    }
+}
+
+/*
+ * Get Email List from Constant Contact
+ */
+function getEmailList () {
+    $config_api_setting = \Drupal::config('constant_contact.settings');
+    $APIKEY = $config_api_setting->get('cc_apikey');
+    $ACCESS_TOKEN = $config_api_setting->get('cc_access_token');
+    $options = null;
+    
+    if (isset($APIKEY)) {
+        $cc = new ConstantContact($APIKEY);
+        
+        // attempt to fetch lists in the account, catching any exceptions and printing the errors to screen
+        try {
+            $lists = $cc->listService->getLists($ACCESS_TOKEN);
+            
+            foreach ($lists as $list) {
+                $options[$list->id] = $list->name;
+            }
+        } catch (CtctException $ex) {
+            foreach ($ex->getErrors() as $error) {
+                print_r($error);
+            }
+            if (!isset($lists)) {
+                $options = null;
+            }
+        }
+    }
+    
+    return $options;
+} 
