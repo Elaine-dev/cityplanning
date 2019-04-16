@@ -202,16 +202,16 @@ class ConstantContactBlockForm extends FormBase {
             $form_state->setErrorByName('street_address', $this->t('Street address can\'t be blank.'));
         }
         
-        if (strlen($form_state->getValue('city')) < 2) {
+        if (strlen($form_state->getValue('city')) < 3) {
             $form_state->setErrorByName('city', $this->t('City can\'t be blank.'));
         }
         
-        if (strlen($form_state->getValue('state')) < 2) {
+        if (strlen($form_state->getValue('state')) != 2) {
             $form_state->setErrorByName('state', $this->t('State can\'t be blank.'));
         }
         
         if (strlen($form_state->getValue('zip')) != 5 || !is_numeric($form_state->getValue('zip'))) {
-            $form_state->setErrorByName('zip', $this->t('ZIP is not valid.'));
+            $form_state->setErrorByName('zip', $this->t('ZIP is invalid.'));
         }
         
         return $message;

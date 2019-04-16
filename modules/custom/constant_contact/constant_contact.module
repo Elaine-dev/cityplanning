@@ -51,24 +51,7 @@ function constant_contact_form_constant_contact_form_alter(&$form, \Drupal\Core\
 }
 
 /**
- * File validation callback.
- * 
- * @param \Drupal\file\FileInterface $file
- *      The file to be validated.
- *  
- *  @return array
- *      List of validation issues, if any.    
- *  
- */
-function form_validatate_csv (\Drupal\file\FileInterface $file) {
-    $errors = array();
-    $errors[] = t("This CVS format is incorrect. Use commas.");
-    return $errors; 
-}
-
-
-/**
- * Call API
+ * Call Constnat Contact API V2
  * 
  * @param string $val
  * @return mixed
