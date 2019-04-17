@@ -96,12 +96,14 @@ class ConstantContactBlockForm extends FormBase {
         $form['state'] = [
             '#type' => 'select',
             '#title' => $this->t('State'),
+            '#default_value' => '',
             '#title_display' => 'invisible', 
             '#placeholder' => 'state *',
             '#prefix' => '<div class="form-group">',
             '#suffix' => '</div>',
             '#attributes' => array('class' => array('form-control')), 
             '#options' => [
+                "" => $this->t("state *"),
                 "AL" => $this->t("Alabama"),
                 "AK" => $this->t("Alaska"),
                 "AZ" => $this->t("Arizona"),
