@@ -6,8 +6,8 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
-use Drupal\node\Entity\Node;
-use Drupal\Core\Url;
+// use Drupal\node\Entity\Node;
+// use Drupal\Core\Url;
 use Drupal\Core\Link;
 
 /**
@@ -68,6 +68,11 @@ class SideMenuBlock extends BlockBase {
         // Generate side menu
         $full_url = '';
         $html = '<ul>';
+        
+        // hide/unhide Urban Design sub-menus
+        $urban_design_menu = ['Urban Design Program Overview','Urban Design Policy Objectives','Urban Design Guidelines & Standards'];
+        $class_for_preservation_design = '';
+        
         if (!empty($list[0]['child'])) {
           foreach(@$list[0]['child'] as $row) {
 
@@ -88,8 +93,33 @@ class SideMenuBlock extends BlockBase {
                       $class = '';
                   }
               }
-              $html .= '<li><a class="'.$class.'" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
-              $html .= '<li class="line"></li>';
+              
+              /**
+               * Hide Urban Design sub-menu when navigating to Historic Resources and Historic Districs submenus.
+               *
+               * add css classes 'unhide-urd' & 'hide-urd' to unhide/hide Urban Design sub-menus
+               * when clicked on menus under Preservation & Design.
+               *
+               * Also add jQuery condition to implement it.
+               *    $('.hide-urd').hide();
+               *    $('.unhide-urd').show();
+               *
+               *  $uri_array = explode('/', $uri); :
+               *    http://ladcp.westus.cloudapp.azure.com/preservation-design/urban-design/policy-objectives
+               *    Array
+               *    (
+               *         [0] =>
+               *         [1] => preservation-design
+               *         [2] => urban-design
+               *         [3] => policy-objectives
+               *     )
+               */
+              if ($uri_array[1]== 'preservation-design') {
+                  $class_for_preservation_design =  (in_array($link_text, $urban_design_menu)) ? 'unhide-urd' : 'hide-urd';
+              }
+                       
+              $html .= '<li class ="' . $class_for_preservation_design . '"><a class="'. $class . '" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
+              $html .= '<li class="line '.$class_for_preservation_design.'"></li>';
           }
         }
         

@@ -311,4 +311,29 @@ jQuery(document).ready(function(){
       $(this).attr("target","_blank");
     }
   });
+  
+  // side menu : Preservation & Design > Urban Design
+  var pathname = $(location).attr('pathname');
+  var splitPathName = pathname.split('/');
+  
+  var subLevel1 = splitPathName[1];					// preservation-design
+  var subLevel2 = splitPathName[2];					// urban-design
+  var subLevel3 = splitPathName[3];					// program-overview
+  
+  var urbanDesignMenus = ['program-overview', 'policy-objectives', 'guidelines-standards'];
+  
+  if (subLevel1 == 'preservation-design' && subLevel2 == 'urban-design') {
+	 
+	  if (jQuery.inArray(subLevel3, urbanDesignMenus) != -1) {
+		  $('.hide-urd').hide();
+		  $('.unhide-urd').show();
+	  }
+	  else{
+		  $('.hide-urd').show();
+		  $('.unhide-urd').hide();
+	  }
+  } else {
+	  $('.unhide-urd').hide();
+  }
+  
 });
