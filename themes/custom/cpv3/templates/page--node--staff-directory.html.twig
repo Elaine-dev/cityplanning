@@ -1,129 +1,131 @@
-    <!-- Fixed navbar -->
-    {% include directory ~ '/partials/header.html.twig' %}
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
 
-    <!-- page-banner -->
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
-			</div>
-		</div>
-	</div><!-- //End page-banner -->
-
-	<div class="container" id="main-container" ng-app="appStaffDirectory" ng-controller="staffDirectoryCtrl">
-		<div class="row">
-      <div class="col-md-12"><h1>{{ node.label }}</h1></div>
+<!-- page-banner -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div id="page-title-bg"><img src="{{ theme_base_path }}/images/page-bg.jpg" class="img-responsive " alt="bg"></div>
     </div>
+  </div>
+</div>
+<!-- //End page-banner -->
 
-	<div class="row content-wrapper padding-bottom60">
-      {# Left-side bar #}
-      <div class="col-md-9">
-        {% if page.content %}
-          <div class="row padding-left0">
-            <div class="col-md-12">
-              {{ page.content }}
+<div class="container" id="main-container" ng-app="appStaffDirectory" ng-controller="staffDirectoryCtrl">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ node.label }}</h1>
+    </div>
+  </div>
+
+  <div class="row content-wrapper padding-bottom60">
+    {# Left-side bar #}
+    <div class="col-md-9">
+      {% if page.content %}
+        <div class="row padding-left0">
+          <div class="col-md-12">
+            {{ page.content }}
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="row padding-left0">
+        <div class="col-md-12 padding-left0">
+          <!-- search our directories -->
+          <div class="row">
+            <div class="col-md-12 search-directories" id="search-directories">
+              <h3>Search Directory</h3>
+              <label for="search_text" class="sr-only">Enter: Employee Name or Bureau/Division/Section/Unit</label>
+              <input type="text" class="form-control" id="search_text" placeholder="Enter: Employee Name or Bureau/Division/Section/Unit" ng-model="staffName"/>
             </div>
           </div>
-        {% endif %}
 
-        <div class="row padding-left0">
-          <div class="col-md-12 padding-left0">
-            <!-- search our directories -->
-            <div class="row">
-              <div class="col-md-12 search-directories" id="search-directories">
-                <h3>Search Directory</h3>
-                <label for="search_text" class="sr-only">Enter: Employee Name or Bureau/Division/Section/Unit</label>
-                <input type="text" class="form-control" id="search_text" placeholder="Enter: Employee Name or Bureau/Division/Section/Unit" ng-model="staffName"/>
-              </div>
+          <div class="row paddingtop15" id="sr">
+            <div class="col-md-12 table-responsive">
+              <table class="table table-condensed sd-search-result">
+                <tr>
+                  <th>Name</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                  <th>Department</th>
+                  <th>Position</th>
+                </tr>
+                <tr ng-repeat="v in data.people | filter : staffName">
+                  <td>{[{ v.name }]}</td>
+                  <td>{[{ v.phone }]}</td>
+                  <td>{[{ v.email | lowercase }]}</td>
+                  <td>{[{ v.dept }]}</td>
+                  <td>{[{ v.title }]}</td>
+                </tr>
+              </table>
+
             </div>
+          </div>
 
-            <div class="row paddingtop15" id="sr">
-              <div class="col-md-12 table-responsive">
-                <table class="table table-condensed sd-search-result">
-                  <tr>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Department</th>
-                    <th>Position</th>
-                  </tr>
-                  <tr ng-repeat="v in data.people | filter : staffName">
-                    <td>{[{ v.name }]}</td>
-                    <td>{[{ v.phone }]}</td>
-                    <td>{[{ v.email | lowercase }]}</td>
-                    <td>{[{ v.dept }]}</td>
-                    <td>{[{ v.title }]}</td>
-                  </tr>
-                </table>
-
-              </div>
+          <!-- Helpfull Numbers -->
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="line" style="padding-bottom: 5px;">Helpful Numbers</h3>
+              <ul class="padding-left0 list-style-none">
+                <li>
+                  <div class="row  padding-left0">
+                    <div class="col-md-9">Automated Records</div>
+                    <div class="col-md-3 float-right" style="padding-left: 30px;">(213) 978-1259</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row  padding-left0">
+                    <div class="col-md-9">Development Services Center (Metro)</div>
+                    <div class="col-md-3 float-right" style="padding-left: 30px;">(213) 978-1259</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row  padding-left0">
+                    <div class="col-md-9">Development Services Center (Valley)</div>
+                    <div class="col-md-3 float-right" style="padding-left: 30px;">(818) 374-5050</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row  padding-left0">
+                    <div class="col-md-9">Development Services Center (West LA)</div>
+                    <div class="col-md-3 float-right" style="padding-left: 30px;">(310) 231-2901</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row  padding-left0">
+                    <div class="col-md-9">Executive Office</div>
+                    <div class="col-md-3 float-right" style="padding-left: 30px;">(213) 978-1271</div>
+                  </div>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <!-- Helpfull Numbers -->
-            <div class="row">
-              <div class="col-md-12">
-                <h3 class="line" style="padding-bottom: 5px;">Helpful Numbers</h3>
-                <ul class="padding-left0 list-style-none">
-                  <li>
-                    <div class="row  padding-left0">
-                      <div class="col-md-9">Automated Records</div>
-                      <div class="col-md-3 float-right" style="padding-left: 30px;">(213) 978-1259</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row  padding-left0">
-                      <div class="col-md-9">Development Services Center (Metro)</div>
-                      <div class="col-md-3 float-right"  style="padding-left: 30px;" >(213) 978-1259</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row  padding-left0">
-                      <div class="col-md-9">Development Services Center (Valley)</div>
-                      <div class="col-md-3 float-right"  style="padding-left: 30px;">(818) 374-5050</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row  padding-left0">
-                      <div class="col-md-9">Development Services Center (West LA)</div>
-                      <div class="col-md-3 float-right"  style="padding-left: 30px;">(310) 231-2901</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="row  padding-left0">
-                      <div class="col-md-9">Executive Office</div>
-                      <div class="col-md-3 float-right"  style="padding-left: 30px;">(213) 978-1271</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <!-- Department directory -->
+          <div class="row" id="staff-directory">
+            <div class="col-md-12">
+              <h3 class="line">Divisions</h3>
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-            <!-- Department directory -->
-            <div class="row" id="staff-directory">
-              <div class="col-md-12">
-                <h3 class="line">Divisions</h3>
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default" ng-repeat="val in data.depts">
 
-                  <div class="panel panel-default" ng-repeat="val in data.depts">
+                  <div class="panel-heading" role="tab" id="heading{[{ $index }]}">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{[{ $index }]}" aria-expanded="true" aria-controls="collapse{[{ $index }]}">
+                        {[{ val.sectionName }]}
+                      </a>
+                    </h4>
+                  </div>
 
-                    <div class="panel-heading" role="tab" id="heading{[{ $index }]}">
-                      <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{[{ $index }]}" aria-expanded="true" aria-controls="collapse{[{ $index }]}">
-                          {[{ val.sectionName }]}
-                        </a>
-                      </h4>
-                    </div>
-
-                    <div id="collapse{[{ $index }]}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{[{ $index }]}">
-                      <div class="panel-body">
-                        <div class="row sd-search-result hr" ng-repeat="p in val.people">
-                          <div class="col-md-5">
-                            {[{ p.name }]}<br>
-                            {[{ p.title }]}
-                          </div>
-                          <div class="col-md-3">{[{ p.phone }]}</div>
-                          <div class="col-md-4">{[{ p.email|lowercase }]}</div>
+                  <div id="collapse{[{ $index }]}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{[{ $index }]}">
+                    <div class="panel-body">
+                      <div class="row sd-search-result hr" ng-repeat="p in val.people">
+                        <div class="col-md-5">
+                          {[{ p.name }]}<br>
+                          {[{ p.title }]}
                         </div>
+                        <div class="col-md-3">{[{ p.phone }]}</div>
+                        <div class="col-md-4">{[{ p.email|lowercase }]}</div>
                       </div>
                     </div>
                   </div>
@@ -132,31 +134,37 @@
             </div>
           </div>
         </div>
-      </div>{# End Left-side bar #}
-
-      {# Right-side bar #}
-      <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
-        <div class="top-bar"></div>
-        {{ page.side_menu }}
-      </div>{# End Right-side bar #}
+      </div>
     </div>
-  </div>{# End container #} {# End Right-side bar #} <!-- // .container -->
+    {# End Left-side bar #}
 
-	<div class="container-fluid section-content">
-		<div class="row white--bg paddingtop10 padding-bottom10">
-		  <div class="col-md-12 contact-page--p-bg">
-		      <div style="margin-top: 250px;">
-		          <center>
-                    <span style="padding-right:50px;">
-                        <a href="{{ base_path }}contact/locations-and-hours" type="button" class="btn btn-yellow btn-lg" style="font-size: 24px;">LOCATIONS & HOURS</a>
-                    </span>
-                  </center>
-             </div>
-          </div>
-		</div>
-	</div>
+    {# Right-side bar #}
+    <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+      <div class="top-bar"></div>
+      {{ page.side_menu }}
+    </div>
+    {# End Right-side bar #}
+  </div>
+</div>
+{# End container #}
+{# End Right-side bar #}
+<!-- // .container -->
 
-  <!-- footer section -->
-  {{ attach_library ('cpv3/staff-directory') }}
-  {{ attach_library ('cpv3/angular-js') }}
-  {% include directory ~ '/partials/footer.html.twig' %}
+<div class="clear full-width-content">
+  <div
+    class="bg-wrapper"
+    style="background:url(/themes/custom/cpv3/images/about/contact-page-bg.jpg) no-repeat center;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;height:50%;margin-bottom: 90px;">
+    <div class="center-content" style="text-align:center">
+      <div class="front-image" style="display:inline-block; margin: auto 0;">
+
+        <a href="{{ base_path }}contact/locations-and-hours" type="button" class="btn btn-yellow btn-lg" style="font-size: 24px;">LOCATIONS & HOURS</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer section -->
+{{ attach_library ('cpv3/staff-directory') }}
+{{ attach_library ('cpv3/angular-js') }}
+{% include directory ~ '/partials/footer.html.twig' %}
