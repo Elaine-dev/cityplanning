@@ -4,7 +4,7 @@ Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
 Update Date: 2019.4.22
-version: 4.4.28
+version: 4.4.27
 *********************/
 body {
   line-height: 1.5 !important;
@@ -1152,14 +1152,12 @@ _:-moz-tree-row(hover), .planning-tag {
 
 /*** Inner pages ***/
 #page-title-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: -2;
-	height: 17.70vw;
-	background-size: cover;
-	background-position: center center;						 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  z-index: -2;
 }
 
 #page-title-bg img {
@@ -1179,7 +1177,7 @@ _:-moz-tree-row(hover), .planning-tag {
 #main-container {
   background-color: #fff;
   position: relative;
-  top: 11.7vw;
+  top: 195px;
   padding-bottom: 300px;
 }
 
@@ -2917,9 +2915,9 @@ li.pub-header.ng-binding {
     float: right;
   }
 
-  /* #main-container {
+  #main-container {
     top: 40px !important;
-  } */
+  }
 
   .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     margin-top: 15px;
@@ -3287,12 +3285,12 @@ li.pub-header.ng-binding {
     right: 15px;
   }
 
-  /* #main-container {
+  #main-container {
     margin-left: 15px;
     margin-right: 15px;
     top: 0;
     padding-bottom: 0 !important;
-  } */
+  }
 
   #say-connected .social-icons {
     padding-left: 15px !important;
@@ -3329,10 +3327,10 @@ li.pub-header.ng-binding {
 
 /* Small devices (tablet) */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  /* #main-container {
+  #main-container {
     right: 6px;
     top: 40px !important;
-  } */
+  }
 
   .navbar-brand {
     height: 86px;
@@ -3711,9 +3709,9 @@ li.pub-header.ng-binding {
     padding: 0px;
   }
 
-  /* #main-container {
+  #main-container {
     top: 160px;
-  } */
+  }
 
   .sub-heading {
     padding-left: 0%;
@@ -3734,9 +3732,9 @@ li.pub-header.ng-binding {
 }
 
 @media screen and (min-width: 1680px) {
-  /* #main-container {
+  #main-container {
     top: 170px;
-  } */
+  }
 
   .sub-heading {
     padding-left: 0%;
@@ -3754,21 +3752,21 @@ li.pub-header.ng-binding {
 }
 
 @media screen and (min-width: 1824px) {
- /*  #main-container {
+  #main-container {
     top: 205px;
-  } */
+  }
 }
 
 @media screen and (min-width: 1900px) {
-  /* #main-container {
+  #main-container {
     top: 205px;
-  } */
+  }
 }
 
 @media screen and (min-width: 2560px) {
-  /* #main-container {
+  #main-container {
     top: 300px;
-  } */
+  }
 
   .content-wrapper {
     padding-top: 25px;
