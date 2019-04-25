@@ -1,0 +1,215 @@
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+{# page-banner #}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      {{ page.top_banner }}
+    </div>
+  </div>
+</div>
+{# End page-banner #}
+
+<!-- contain -->
+
+{# Main content #}
+<div class="container" id="main-container" ng-app="appPS" ng-controller="prefixSuffixCtrl">
+  <div class="row">
+    <div class="col-md-12">{{ page.title_bar }}</div>
+  </div>
+
+  <div class="row content-wrapper">
+    {# Left-side bar #}
+    <!-- drupal workaround:https://www.drupal.org/project/twig_tweak/issues/2915201#comment-13072778 -->
+    <span data-quickedit-entity-id="node/131948"></span>
+    {{ drupal_field('body', 'node', 131948) }}
+    <!-- end drupal workaround -->
+    <div class="col-md-9">
+      <div class="row padding-left0">
+        <div class="col-md-12">
+          {# content goes here #}
+
+          <div class="row">
+            <div class="col-md-12 table-responsive">
+
+              <h5>Active Codes</h5>
+              <table class="table table-hover">
+                <colgroup>
+                  <col class="col-md-6">
+                  <col class="col-md-6">
+                  <col class="col-md-2">
+                </colgroup>
+
+                <thead>
+                  <tr>
+                    <th>
+                      <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/active/pdf/">Active Codes (PDF)</a>
+                    </th>
+                    <th>
+                      <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/active/csv/">Active Codes (CSV)</a>
+                    </th>
+                  </thead>
+
+                </table>
+
+                <h5>Active Prefixes</h5>
+                <table class="table table-hover">
+                  <colgroup>
+                    <col class="col-md-2">
+                    <col class="col-md-4">
+                    <col class="col-md-3">
+                  </colgroup>
+
+                  <thead>
+                    <tr>
+                      <th>Prefix</th>
+                      <th>Description</th>
+                      <th>Note</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr ng-repeat="v in prefixSuffixes.PrefixActive | toArray : false">
+                      <td>{[{ v.prefix }]}</td>
+                      <td>{[{ v.desc }]}</td>
+                      <td>{[{ v.note }]}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 table-responsive">
+                <h5>Active Suffixes</h5>
+                <table class="table table-hover">
+                  <colgroup>
+                    <col class="col-md-2">
+                    <col class="col-md-4">
+                    <col class="col-md-3">
+                  </colgroup>
+
+                  <thead>
+                    <tr>
+                      <th>Suffix</th>
+                      <th>Description</th>
+                      <th>Note</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr ng-repeat="v in prefixSuffixes.SuffixActive | toArray : false">
+                      <td>{[{ v.suffix }]}</td>
+                      <td>{[{ v.desc }]}</td>
+                      <td>{[{ v.note }]}</td>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 table-responsive">
+                <h5>Inactive Codes</h5>
+                <table class="table table-hover">
+                  <colgroup>
+                    <col class="col-md-6">
+                    <col class="col-md-6">
+                    <col class="col-md-2">
+                  </colgroup>
+
+                  <thead>
+                    <tr>
+                      <th>
+                        <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/pdf/">Inactive Codes (PDF)</a>
+                      </th>
+                      <th>
+                        <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/csv/">Inactive Codes (CSV)</a>
+                      </th>
+                    </thead>
+
+                  </table>
+                  <h5>Inactive Prefixes</h5>
+                  <table class="table table-hover">
+                    <colgroup>
+                      <col class="col-md-2">
+                      <col class="col-md-4">
+                      <col class="col-md-3">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>Prefix</th>
+                        <th>Description</th>
+                        <th>Note</th>
+                      </tr>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr ng-repeat="v in prefixSuffixes.PrefixInactive | toArray : false">
+                      <td>{[{ v.prefix }]}</td>
+                      <td>{[{ v.desc }]}</td>
+                      <td>{[{ v.note }]}</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <div class="row">
+                <div class="col-md-12 table-responsive">
+                  <h5>Inactive Suffixes</h5>
+                  <table class="table table-hover">
+                    <colgroup>
+                      <col class="col-md-2">
+                      <col class="col-md-4">
+                      <col class="col-md-3">
+                    </colgroup>
+
+                    <thead>
+                      <tr>
+                        <th>Suffix</th>
+                        <th>Description</th>
+                        <th>Note</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr ng-repeat="v in prefixSuffixes.SuffixInactive | toArray : false">
+                        <td>{[{ v.suffix }]}</td>
+                        <td>{[{ v.desc }]}</td>
+                        <td>{[{ v.note }]}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {# End Left-side bar #}
+
+      {# Right-side bar #}
+      <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+        <div class="top-bar"></div>
+        {{ page.side_menu }}
+
+      </div>
+      {# End Right-side bar #}
+    </div>
+  </div>
+  {# End container #}
+  {# End Right-side bar #}
+  <!-- // .container -->
+
+</div>
+</div>
+{# End container #}
+
+<!-- footer section -->
+{{ attach_library ('cpv3/jsonp-array') }}
+{{ attach_library ('cpv3/prefix-suffix-report') }}
+{{ attach_library ('cpv3/angular-js') }}
+{% include directory ~ '/partials/footer.html.twig' %}

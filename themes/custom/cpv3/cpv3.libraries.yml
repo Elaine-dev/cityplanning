@@ -231,3 +231,8 @@ public-counters:
   version: 1.0
   js:
     js/api/publicCounters.js: {}
+
+prefix-suffix-report:
+  version: 1.0
+  js:
+    js/api/prefixSuffix.js: {}
