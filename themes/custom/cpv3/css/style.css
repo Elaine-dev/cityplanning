@@ -1411,6 +1411,7 @@ p a {
 
 .team-position {
   color: #333;
+  margin-bottom: 10px !important;  
 }
 
 #teams .fa-2x {
@@ -1425,6 +1426,7 @@ p a {
 
 .bottom {
   border-bottom: 1px dotted #ccc;
+  margin-bottom: 10px !important; 
 }
 
 .bottom-solid-line {
