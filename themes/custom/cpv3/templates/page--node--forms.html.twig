@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-				{{ page.top_banner }}
+				<div id="page-title-bg" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}')"></div>
             </div>
         </div>
     </div>{# End page-banner #}
