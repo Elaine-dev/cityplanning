@@ -6,7 +6,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <div id="page-title-bg" style="background-image: url('{{ theme_base_path }}/images/page-bg.jpg')"></div>
+        <div id="page-title-bg" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}')"></div>
       </div>
     </div>
   </div>{# End page-banner #}
@@ -15,7 +15,7 @@
   <div class="container" id="main-container">
     {# Main content #}
     <div class="row">
-      <div class="col-md-12"><h1>Public Hearings</h1></div>
+      <div class="col-md-12"><h1>{{ node.label }}</h1></div>
     </div>
 
 
