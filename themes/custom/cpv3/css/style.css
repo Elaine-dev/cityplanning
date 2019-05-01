@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.4.29
-version: 4.4.31
+Update Date: 2019.5.01
+version: 4.4.32
 *********************/
 body {
   line-height: 1.5 !important;
@@ -246,6 +246,9 @@ q:before, q:after {
   left: 12px;
 }
 
+.margin-left-15 {
+	margin-left: 15px; 
+}				
 .line {
   border-bottom: 0.5px solid #939598;
   padding-top: 5px !important;
@@ -578,6 +581,17 @@ figcaption {
     margin-right: 20px;
 }
 
+/** **/		    
+.align-right {
+	float: right;
+}
+
+.align-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+} 			    				 
 /****************************************
 ************ Mega menu ******************
 *****************************************/
@@ -2298,6 +2312,7 @@ ul#list-horizontal li {
 /** Blog **/
 .blog-categories {
   padding-top: 24px;
+  padding-left: 5px;
 }
 
 .views-element-container h2 {
@@ -3757,9 +3772,9 @@ li.pub-header.ng-binding {
 }
 
 @media screen and (min-width: 1680px) {
-  /* #main-container {
+  #main-container {
     top: 170px;
-  } */
+  }
 
   .sub-heading {
     padding-left: 0%;
@@ -3777,27 +3792,31 @@ li.pub-header.ng-binding {
 }
 
 @media screen and (min-width: 1824px) {
- /*  #main-container {
+  #main-container {
     top: 205px;
-  } */
+  }
 }
 
 @media screen and (min-width: 1900px) {
-  /* #main-container {
-    top: 205px;
-  } */
+  #main-container {
+    top: 270px;
+  }
 }
 
 @media screen and (min-width: 2560px) {
-  /* #main-container {
-    top: 300px;
-  } */
+  #main-container {
+    top: 247px;
+  }
 
   .content-wrapper {
     padding-top: 25px;
     padding-bottom: 60px;
   }
 
+  .content-wrapper-page {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }  
   #main-container-calendar {
     top: 247px;
   }
