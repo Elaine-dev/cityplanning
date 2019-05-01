@@ -47,7 +47,7 @@
 
 						<div ng-if="data.length > 0">
 							<div class="row padding-left0 padding-right0" ng-repeat="val in data | filter:filterdata | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
-								<div class="col-md-12 padding-bottom30">
+								<div class="col-md-12">
 									<div>
 										<h5 class="padding-top0"> {[{ val.title }]} </h5>
 										<div class="date" style="font-size: 12px;">
@@ -76,7 +76,7 @@
 
 						<div ng-if="data.length < 1">
 							<div class="row padding-left0 padding-right0">
-								<div class="col-md-12 padding-bottom30">
+								<div class="col-md-12">
 									<strong>No record found!</strong>
 								</div>
 							</div>
