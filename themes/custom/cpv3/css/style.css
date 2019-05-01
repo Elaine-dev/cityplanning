@@ -3734,9 +3734,9 @@ li.pub-header.ng-binding {
     padding: 0px;
   }
 
-  /* #main-container {
-    top: 160px;
-  } */
+  #main-container {
+    top: 271px;
+  }
 
   .sub-heading {
     padding-left: 0%;
