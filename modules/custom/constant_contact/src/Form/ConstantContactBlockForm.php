@@ -200,6 +200,8 @@ class ConstantContactBlockForm extends FormBase {
             $form_state->setErrorByName('email', $this->t('Email can\'t be blank.'));
         }
         
+       /* * comment address fields. *
+        *        
         if (strlen($form_state->getValue('street_address')) < 2) {
             $form_state->setErrorByName('street_address', $this->t('Street address can\'t be blank.'));
         }
@@ -214,7 +216,8 @@ class ConstantContactBlockForm extends FormBase {
         
         if (strlen($form_state->getValue('zip')) != 5 || !is_numeric($form_state->getValue('zip'))) {
             $form_state->setErrorByName('zip', $this->t('ZIP is invalid.'));
-        }
+        } 
+        */
         
         return $message;
     }
@@ -226,6 +229,7 @@ class ConstantContactBlockForm extends FormBase {
         $inputVal['first_name'] = $form_state->getValue('first_name');
         $inputVal['last_name'] = $form_state->getValue('last_name');
         $inputVal['email'] = $form_state->getValue('email');
+        
         $inputVal['street_address'] = $form_state->getValue('street_address');
         $inputVal['city'] = $form_state->getValue('city');
         $inputVal['state'] = $form_state->getValue('state');

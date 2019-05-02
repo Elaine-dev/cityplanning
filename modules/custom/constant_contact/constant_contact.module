@@ -80,14 +80,15 @@ function callConstantContactAPI ($val = '') {
                 $contact->first_name = $val['first_name'];
                 $contact->last_name = $val['last_name'];
                 $contact->addEmail($val['email']);
-                $contact->addAddress(Address::create(array(
+                
+/*              $contact->addAddress(Address::create(array(
                     "address_type"  => "BUSINESS",
                     "line1"         => $val['street_address'],
                     "city"          => $val['city'],
                     "state"         => $val['state'],
                     "postal_code"   => $val['zip']
                 )));
-                
+                 */
                 $contact->addList($SELECTED_EMAILLIST_ID);
                 
                 $returnContact = $cc->contactService->addContact($ACCESS_TOKEN, $contact, true);
