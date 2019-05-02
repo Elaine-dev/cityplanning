@@ -230,10 +230,10 @@ class ConstantContactBlockForm extends FormBase {
         $inputVal['last_name'] = $form_state->getValue('last_name');
         $inputVal['email'] = $form_state->getValue('email');
         
-        $inputVal['street_address'] = $form_state->getValue('street_address');
+/*         $inputVal['street_address'] = $form_state->getValue('street_address');
         $inputVal['city'] = $form_state->getValue('city');
         $inputVal['state'] = $form_state->getValue('state');
-        $inputVal['zip'] = $form_state->getValue('zip');
+        $inputVal['zip'] = $form_state->getValue('zip'); */
 
         $op = callConstantContactAPI($inputVal);
                
