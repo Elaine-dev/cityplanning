@@ -1,5 +1,5 @@
 csv_import.import_form:
-    path: '/admin/import'
+    path: '/admin/dev/import'
     defaults:
       _form: '\Drupal\csv_import\Form\ImportForm'
       _title: 'Import Form'
@@ -7,3 +7,11 @@ csv_import.import_form:
       _user_is_logged_in: 'TRUE'
       _permission: 'access content'
 
+csv_import.update_form:
+  path: '/admin/dev/updatedata'
+  defaults:
+    _title: 'Update Record - Overlays'
+    _form: '\Drupal\csv_import\Form\UpdatedataTitleForm'
+  requirements:
+    _user_is_logged_in: 'TRUE'
+    _permission: 'access content'   

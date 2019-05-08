@@ -1,5 +1,6 @@
 name: CSV Import Module
-description: 'Custom module for importing csv file for different modules.'
+description: 'Custom module for importing, updating data using csv file.'
 core: '8.x'
 type: module
 package: Custom
+version: 1.2
