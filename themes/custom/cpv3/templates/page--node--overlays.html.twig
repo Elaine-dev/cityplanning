@@ -1,0 +1,374 @@
+    {# page template #}
+    {# 
+    	Current URL is splitted and check the condition accordingly
+    	to display Title and Sub-title in the title bar on different nodes.
+    	    
+    #}
+
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				{{ page.top_banner }}
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+    <!-- contain -->
+    {% set currUrl = url('<current>') %}  {# http://10.68.8.153/plans-policies/overlays #}
+    {% set splitUrl = currUrl['#markup']|split('/') %}
+    
+    <div class="container" id="main-container">
+        {# Main content #}
+        {% if splitUrl[5] %}
+        	<div class="row content-wrapper">
+                {# Left-side bar #}
+	            <div class="col-md-9">
+	                <div class="row padding-left0">
+	                    <div class="col-md-12 padding-left0 padding-right0">
+							{# content goes here #}
+							{% if page.content %}
+							    {{ page.content }}
+						    {% endif  %}
+						    
+	                    </div>
+	                </div>
+	            </div>{# End Left-side bar #}
+            
+	            {# Right-side bar #}
+	            <div class="col-md-3 sidebar-menu hidden-sm hidden-xs" id="sidebar-menu-overlay">
+	                <div class="top-bar"></div>
+	                  {{ page.side_menu }}
+	            </div>{# End Right-side bar #}
+            </div>
+        
+        {% else %}
+	   
+        	<div class="row">
+            	<div class="col-md-12" style="padding-left: 20px;">{{ page.title_bar }}</div>
+            </div>
+               
+            <div class="row content-wrapper">    
+        	    {# Left-side bar #}
+	            <div class="col-md-9">
+	                <div class="row padding-left0">
+	                   <div class="col-md-12" id="overlays-landingpage">
+                            <p><img alt="search" data-align="left" data-entity-type="file" data-entity-uuid="94ec1e3d-df3a-486e-a5ff-eebe5f7b2d7b" src="/sites/default/files/inline-images/search-icon.png" />
+                            <input placeholder="Search" style="margin-left:15px; width: 70%; border-radius: 5px;" type="text" /></p>
+
+                            <p>&nbsp;</p>
+                            <p>
+                                An overlay is an additional layer of planning control applied to properties located within a clearly defined geographic area. Overlays function as tailored zoning districts,
+                                each with their own specialized set of regulations.
+                            </p>
+                            <p>
+                                Overlays implement the City's General Plan and Community Plans through neighborhood-specific policy objectives beyond what is already established through the underlying base zoning.
+                                Applicants seeking to develop in an overlay must demonstrate they are in compliance with all applicable regulations
+                            </p>
+
+                            <p>
+                                In the City of Los Angeles, there are numerous types of overlays. They are listed alphabetically below:
+                            </p>
+
+                            <!-- item -->
+                            <h3>Certified Coastal Land Use Plan</h3>
+                            <p>
+                                In order to comply with the California Coastal Act of 1976, the City prepared the Local Coastal Program (LCP) for areas located in the State's designated Coastal Zone.
+                                The LCP consists of the City's land use plans, zoning ordinances, and zoning district maps which collectively implement the provisions and policies of the California Coastal Act at the local level.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse1">View Full List of CCLUP</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse1" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Certified Coastal Land Use Plan']   %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Commercial and Artcraft Districts (CAD)</h3>
+                            <p>
+                                Commercial and Artcraft Districts (CAD) are districts whereby the artisan segments of the population may live, create and market their pieces.
+                                Artcraft uses, combined with commercial and residential uses are permitted in those areas appropriate for the establishment of a CAD.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse2">View Full List</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Commercial Artcraft District']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Community Design Overlays (CDO)</h3>
+                            <p>
+                                Community Design Overlays (CDO) contain design guidelines that enhance the visual identity and character of a neighborhood.
+                                They can apply to new development projects, as well to improvements to existing properties.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse3">View Full List of CDOs</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Community Design Overlays (CDOs)'] %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Community Plan Implementation Overlays (CPIO)</h3>
+                            <p>
+                                Community Plan Implementation Overlays (CPIO) are specialized zoning tools that implement the policy goals and objectives associated with a Community Plan.
+                                Customized to fit the needs of individual neighborhoods, they further regulate different aspects of proposed projects.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse4">View Full List of CPIOs</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse4" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Community Plan Implementation Overlays (CPIOs)']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Dual Coastal Plan Zones</h3>
+                            <p>
+                                Dual Coastal Plan Zones encompass properties that lie within the dual jurisdiction of the State's designated Coastal Zone and the City of Los Angeles' Coastal Zone.
+                                The State Coastal Zone is defined in the California Public Resources Code (CA PRC) Division 20, Section 30000, pursuant to the California Coastal Act of 1976.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse6">View Full List of Dual Coastal Plan Zones</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse6" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Dual Coastal Plan Zones']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+
+                            <!-- item -->
+                            <h3>Historic Preservation Overlay Zones (HPOZ)</h3>
+                            <p>
+                                In order to protect neighborhoods with distinct architectural and cultural resources, the City created Historic Preservation Overlay Zones (HPOZ) to govern the review of project applications.
+                                These regulations address exterior alterations or additions to historic properties within designated districts.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse7">View Full List of HPOZs</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse7" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Historic Preservation Overlay Zones (HPOZs)']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Northeast LA Hillside Zone Change</h3>
+                            <p>
+                                The Northeast Los Angeles Hillsides consists of additional development regulations for properties in the adopted hillside area boundary within the Northeast Los Angeles Community Plan area.
+                                The regulations focus on size, height, retaining walls and grading limitations.
+                            </p>
+
+                            <a href="{{ base_path }}plans-policies/overlays/northeast-la-hillside-zone-change" class="btn btn-default overlay-custom-button" style="text-transform: uppercase !important; color: #555 !important;">View Northeast LA Hillside Zone</a>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>The Oaks</h3>
+                            <p>
+                                The Oaks D Limitations consist of additional development regulations for properties in the adopted hillside area boundary within the Hollywood Community Plan area.
+                                The regulations focus on size, height, and lot coverage limitations.
+                            </p>
+
+                            <a href="{{ base_path }}plans-policies/overlays/oaks-d-limitations" class="btn btn-default overlay-custom-button" style="text-transform: uppercase !important; color: #555 !important;">View The Oaks</a>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Pedestrian/Neighborhood Oriented Districts (POD/NOD)</h3>
+                            <p>
+                                Pedestrian or Neighborhood Oriented Districts (POD/NOD) are districts where a variety of commercial uses and activities are located along major streets that have a majority of
+                                structures with similar size and architectural details such as location of windows, building walls and pedestrian entrances. These corridors feature regulations that preserve and enhance form,
+                                encouraging people in the surrounding neighborhoods to walk and shop along them.
+                            </p>
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse8">View Full List of PODs/NODs</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse8" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Pedestrian Oriented Districts/Neighborhood Oriented Districts (PODs/NODs)']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Sign Districts (SN)</h3>
+                            <p>
+                                Sign Districts (SNs) are districts where the continuing contribution of signage in specific areas are acknowledged and promoted.
+                                These districts also control blight created by poorly placed and badly designed signs throughout the City.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse9">View Full List of SN</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse9" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Sign Districts']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+
+                            <!-- item -->
+                            <h3>Specific Plans (SP)</h3>
+                            <p>
+                                A Specific Plans (SP) are districts where special zoning stipulates what types of development is permitted within a zoning district.
+                                Aligned with the goals of the General Plan and Community Plans, they include development regulations for applicants to follow.
+                            </p>
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse10">View Full List of SP</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse10" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Specific Plans (SPs)']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                            <!-- item -->
+                            <h3>Streetscape Plans</h3>
+                            <p>
+                                Streetscape Plans provide a blueprint for streetscape improvements in the public right-of-way on key street segments with the goal of
+                                creating pedestrian friendly environments and enhancing the identity of the neighborhood in which each segment is located.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse11">View Full List of Streetscape Plans</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse11" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Streetscape Plans']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+
+                        </div>
+
+	                </div>
+	            </div>{# End Left-side bar #}
+    
+	            {# Right-side bar #}
+	            <div class="col-md-3 sidebar-menu padding-right-27 hidden-sm hidden-xs">
+            		<div class="top-bar"></div>
+                      {{ page.side_menu }}
+	            </div>{# End Right-side bar #} 
+            </div>       	
+        {% endif %}
+        
+        </div>{# End container #}  
+    
+
+    <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}

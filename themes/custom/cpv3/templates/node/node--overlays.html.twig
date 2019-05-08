@@ -1,4 +1,8 @@
 <div class="row">
+	<div class="col-md-12"><h1>{{ label }} {{ content.field_sub_title.0['#context'].value }}</h1></div>
+</div>
+
+<div class="row">
 	<div class="col-md-6 padding-bottom15">
 		{% if content.field_project_planner_contact %}
 			<strong class="overlays-field-title">Project Planner Contact: </strong><br>
@@ -16,6 +20,7 @@
 		{% endif %}
 	</div>
 </div>
+
 <div class="row">
 	<div class="col-md-6">
 		{% if content.field_council_district_s_ %}
@@ -34,6 +39,7 @@
 		{% endif %}
 	</div>
 </div>
+
 <div class="row">
 	<div class="col-md-6">
 		{% set strlen = content.field_design_review_board_drb_ | length  %}
