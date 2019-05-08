@@ -59,8 +59,8 @@ class SideMenuBlock extends BlockBase {
                     }
                 }
                 $list[] = array(
-                        $title => Link::fromTextAndUrl($title, $url),
-                        'child' => $child_list,
+                    $title => Link::fromTextAndUrl($title, $url),
+                    'child' => ($child_list) ? $child_list : '',
                 );
             }
         }
