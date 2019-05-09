@@ -68,20 +68,19 @@
                 <a href="#" class="dropdown-toggle {% if currentlink == 'zoning' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zoning </a>
                 <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
                   <li class="col-md-4">
-                    <h3 class="dropdown-header">Introduction</h3>
+                    <h3 class="dropdown-header">Code</h3>
                     <ul>
                       <li class="divider"></li>
                       <li><a href="{{ base_path }}zoning/overview">Overview</a></li>
-                      <li><a href="{{ base_path }}zoning/zoning-101">Zoning 101</a></li>
+                      <li><a href="{{ base_path }}zoning/updating-the-zoning-code-re:codeLA">History</a></li>
                     </ul>
                   </li>
                   <li class="col-md-4">
                     <h3 class="dropdown-header">Regulations</h3>
                     <ul>
                       <li class="divider"></li>
-                      <li><a href="{{ base_path }}zoning/zoning-code">Zoning Code</a></li>
-                      <li><a href="{{ base_path }}zoning/zoning-code-updates">Zoning Code Updates</a></li>
                       <li><a href="{{ base_path }}zoning/summary">Summary</a></li>
+				  <li><a href="{{ base_path }}zoning/updates">Updates</a></li>
                     </ul>
                   </li>
                   <li class="col-md-4">
@@ -90,6 +89,7 @@
                       <li class="divider"></li>
                       <li><a href="{{ base_path }}zoning/zoning-map">Zoning Map (ZIMAS)</a></li>
                       <li><a href="{{ base_path }}zoning/enforcement">Enforcement</a></li>
+				  <li><a href="{{ base_path }}zoning/faq">Glossary of Terms</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -134,32 +134,43 @@
                 <a href="#" class="dropdown-toggle {% if currentlink == 'plans-policies' %} active {% endif %}" data-toggle="dropdown"
                     role="button" aria-haspopup="true" aria-expanded="false">Plans &<br>Policies</a>
                 <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                    <li class="col-md-4">
+                    <li class="col-md-3">
                       <h3 class="dropdown-header">General Plan</h3>
                       <ul>
                         <li class="divider"></li>
-                        <li><a href="{{ base_path }}plans-policies/general-plan-overview">Overview</a></li>
-                        <li><a href="{{ base_path }}plans-policies/general-plan-updates">Updates</a></li>
+                        <li><a href="{{ base_path }}plans-policies/general-plan-overview">General Plan Overview</a></li>
+                        <li><a href="{{ base_path }}">General Plan Elements</a></li>
+                        <li><a href="{{ base_path }}plans-policies/general-plan-updates">General Plan Updates</a></li>
                       </ul>
                     </li>
 
-                    <li class="col-md-4">
+                    <li class="col-md-3">
                       <h3 class="dropdown-header">Community Plans</h3>
                       <ul>
                         <li class="divider"></li>
-                        <li><a href="{{ base_path }}plans-policies/community-plans">Overview</a></li>
-                        <li><a href="{{ base_path }}plans-policies/community-plan-updates">Updates</a></li>
+                        <li><a href="{{ base_path }}plans-policies/community-plans">Community Plans Overview</a></li>
+                        <li><a href="{{ base_path }}plans-policies/community-plan-updates">Community Plans Updates</a></li>
                         <li><a href="{{ base_path }}plans-policies/overlays">Overlays</a></li>
                       </ul>
                     </li>
 
-                    <li class="col-md-4">
-                      <h3 class="dropdown-header">Ordinances & Initiatives</h3>
+                    <li class="col-md-3">
+                      <h3 class="dropdown-header">Ordinances</h3>
                       <ul>
                         <li class="divider"></li>
                         <li><a href="{{ base_path }}plans-policies/proposed-ordinances">Proposed Ordinances</a></li>
                         <li><a href="{{ base_path }}plans-policies/adopted-ordinances">Adopted Ordinances</a></li>
-                        <li><a href="{{ base_path }}plans-policies/ordinances-initiatives/land-use-initiatives">Land Use Initiatives</a></li>
+                      </ul>
+                    </li>
+                    
+                    <li class="col-md-3">
+                      <h3 class="dropdown-header">Initiatives & Policies</h3>
+                      <ul>
+                        <li class="divider"></li>
+                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/housing">Housing</a></li>
+                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/mobility">Mobility</a></li>
+                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/transit-neighborhood-plans">Transit Neighborhood Plans</a></li>
+                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/additional-initiatives">Additional Initiatives</a></li>
                       </ul>
                     </li>
                 </ul>
