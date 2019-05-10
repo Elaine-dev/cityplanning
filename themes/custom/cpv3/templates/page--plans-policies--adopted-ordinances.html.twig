@@ -49,7 +49,7 @@
 							<div class="row padding-left0 padding-right0" ng-repeat="val in data | filter:filterdata | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
 								<div class="col-md-12">
 									<div>
-										<h5 class="padding-top0"> {[{ val.title }]} </h5>
+										<h5 class="padding-top0" ng-bind-html="val.title"></h5>
 										<div class="date" style="font-size: 12px;">
 											<span class="glyphicon glyphicon-time" aria-hidden="true"></span> {[{ val.date }]}
 										</div>
