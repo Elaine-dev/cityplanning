@@ -3,40 +3,9 @@
  * The UserLogin screens, which controls the customized background image.
  */
 
-html {
-  height: 100%;
-}
-body.simplelogin {
-  min-height: 100%;
-  line-height: 1.5;
-  word-wrap: break-word;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 87.5%;
-}
-.simplelogin summary {
-  background: #dbdbdb;
-  color: #3b3b3b;
-  text-shadow: 0 1px 0 #fff;
-}
-.simplelogin .form-type-radio .description, .simplelogin .form-type-checkbox .description {
-  margin-left: 2px;
-}
-.simplelogin .form-type-radio label, .simplelogin .form-type-checkbox label {
-  margin-left: 4px;
-}
-.simplelogin .form-item label, .simplelogin .form-wrapper .label {
-  font-size: 0.929em;
-}
-.simplelogin h1, .simplelogin .heading-a {
-  margin: 1em 0 0.5em;
-  font-weight: inherit;
-}
-.simplelogin a, .simplelogin a.link {
-  text-decoration: none;
-}
-.simplelogin input, .simplelogin textarea, .simplelogin select {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
-}
+#global_nav_la_4324422{display: none;} 		/* hide global nav */
+#block-cpv3-local-tasks{display: none;}
+
 .simplelogin-wrapper {
   padding: 8% 0 0;
   margin: auto;

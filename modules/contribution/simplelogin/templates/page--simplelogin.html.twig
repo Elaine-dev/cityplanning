@@ -1,5 +1,6 @@
 <div class="simplelogin-wrapper {{ background_class }} {{ background_opacity }}" style="">
   <div class="simplelogin-form" style="width: {{ wrapper_width }}px">
+    {#
     <div class="simplelogin-link">
       {% if path == '/user/password' %}
         <a href="{{ base_path }}user/login" class="signreg">Login</a>
@@ -11,10 +12,11 @@
         {% endif %}
       {% endif %}
     </div>
+    #}
     
   <div class="simplelogin-bg">  
     <div class="simplelogin-logo">
-      <a href="{{ base_path }}"><img src="{{ logo }}" alt="Home"/></a>
+      <a href="{{ base_path }}"><img src="{{ theme_base_path }}/images/logo-planning.png" alt="Home"/></a>
       <h1>{{ site_name }}</h1>
     </div>
 

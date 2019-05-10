@@ -117,6 +117,7 @@ function simplelogin_preprocess_simplelogin(&$variables) {
   $variables['wrapper_width'] = simple_login_settings('width');
   $variables['site_name'] = \Drupal::config('system.site')->get('name');
   $variables['site_register'] = \Drupal::config('user.settings')->get('register');
+  $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme ()->getActiveTheme ()->getPath ();
 }
 
 /**
