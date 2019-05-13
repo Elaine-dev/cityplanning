@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   color: #414042;
   font-size: 44px;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 h2 {
@@ -1169,7 +1169,7 @@ _:-moz-tree-row(hover), .planning-tag {
 
 /*** Inner pages ***/
 /* #page-title-bg {
-	positin: absolute;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -2906,7 +2906,7 @@ li.pub-header.ng-binding {
   margin-bottom: 0;
 }
 
-#constant-contdruhact-form .row {
+#constant-contact-form .row {
   padding-left: 0;
   padding-right: 0;
 }
@@ -3777,10 +3777,6 @@ span.icon {
     top: 271px;
   }
 
-  /* #main-container {
-    top: 160px;
-  } */
-
   .sub-heading {
     padding-left: 0%;
     margin-top: -5;
@@ -3804,12 +3800,6 @@ span.icon {
   #main-container {
     top: 170px;
   }
-
-
-
-  /* #main-container {
-    top: 170px;
-  } */
 
   .sub-heading {
     padding-left: 0%;
@@ -3844,10 +3834,6 @@ span.icon {
   #main-container {
     top: 247px;
   }
-
-  /* #main-container {
-    top: 300px;
-  } */
 
   .content-wrapper {
     padding-top: 25px;
