@@ -28,14 +28,14 @@ var appSM = angular.module('appSM', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ui.b
 	}
 });
 
-appSM.config(function($interpolateProvider) { 
+appSM.config(function($interpolateProvider) {
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 });
 
 appSM.controller('SocialMediaCtrl', ['$scope', '$sce', 'socialMediaService', function($scope, $sce, socialMediaService) {
 	socialMediaService.getRecord().then(function(response) {
 		var currentData, limitData, filterData;
-		
+
 		currentData = response.data;
 		limitData = currentData.slice(0, 8);		// get first 8 array data
 		filterData = filterRecord(limitData);
@@ -44,7 +44,7 @@ appSM.controller('SocialMediaCtrl', ['$scope', '$sce', 'socialMediaService', fun
 		$scope.boxSize = function (id) {
 			var arrIndex = [300, 300, 350, 250, 200, 400, 400, 200];
 			return arrIndex[id];
-		} 
+		}
 	});
 }]);
 
@@ -70,16 +70,16 @@ function filterRecord (arr) {
 			iconClass = 'fa-twitter';
 		} else if (newRecord[i]['type'] == 'youtube') {
 			iconClass = 'fa-youtube';
-			
+
 		} else if (newRecord[i]['type'] == 'instagram') {
 			iconClass = 'fa-instagram';
 		} else {
 			iconClass = 'fa-facebook';
 		}
-		
+
 		// add background image style
 		if (newRecord[i]['hasImage']) {
-			style = 'background:url('+newRecord[i]['imageUrl']+') no-repeat center center; background-size: cover; border-bottom-width: 5px; border-top-width: 5px; border-left-width: 5px; border-right-width: 5px;';
+			style = 'background:url('+newRecord[i]['imageUrl']+') no-repeat center center; background-size: cover; border-bottom-width: 10px; border-top-width: 10px; border-left-width: 10px; border-right-width: 10px;';
 		} else {
 			style = '';
 		}
