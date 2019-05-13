@@ -201,6 +201,33 @@ jQuery(document).ready(function(){
 		});
 
 	});
+	
+	/** Advance Search **/
+	var apiPath = 'http://161.149.135.111:8080/pdisinternetv2/search';
+	$("#adv-case-search").on('click', function(){
+		var advCaseNumber = $('#adv-case-number').val();
+		window.open(apiPath+'/case/'+advCaseNumber, '_blank');
+	});
+	     
+	$("#ordinances-search").on('click', function(){
+		var ordNumber = $('#ordinances').val();
+		window.open(apiPath+'/ord/'+ordNumber, '_blank');
+	});
+	
+	$("#zoning-case-search").on('click', function(){
+		var zoningNumber = $('#zoning-case').val();
+		window.open(apiPath+'/zi/'+zoningNumber, '_blank');
+	});
+	
+	$("#cpc-card-search").on('click', function(){
+		var cpcNumber = $('#cpc-card').val();
+		window.open(apiPath+'/cpc/'+cpcNumber, '_blank');
+	});
+	
+	$("#za-card-search").on('click', function(){
+		var zaNumber = $('#za-card').val();
+		window.open(apiPath+'/za/'+zaNumber, '_blank');
+	});
 
 	/*** Staff Directory ***/
 	jQuery('#myTable').dataTable({
