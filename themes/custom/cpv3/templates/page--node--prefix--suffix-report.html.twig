@@ -3,210 +3,208 @@
 
 {# page-banner #}
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      {{ page.top_banner }}
-    </div>
-  </div>
+<div class="row">
+ <div class="col-md-12">
+   <div id="page-title-bg" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}')"></div>
+ </div>
+</div>
 </div>
 {# End page-banner #}
 
 <!-- contain -->
+<!-- drupal bug see workaround: https://www.drupal.org/project/twig_tweak/issues/2915201 -->
+<span data-quickedit-entity-id="node/131948"></span>
+{{ drupal_field('body', 'node', 131948) }}
 
-{# Main content #}
-<div class="container" id="main-container" ng-app="appPS" ng-controller="prefixSuffixCtrl">
+
+<!-- prevent console errors on prod -->
+  <span data-quickedit-entity-id="node/131940"></span>
+  {{ drupal_field('body', 'node', 131940) }}
+<div class="container" id="main-container" ng-app="appPS" ng-init="prefixSuffixes">
+  {# Main content #}
   <div class="row">
     <div class="col-md-12">{{ page.title_bar }}</div>
   </div>
 
-  <div class="row content-wrapper">
+  <div class="row content-wrapper" ng-controller="prefixSuffixCtrl">
     {# Left-side bar #}
-    <!-- drupal workaround:https://www.drupal.org/project/twig_tweak/issues/2915201#comment-13072778 -->
-    <span data-quickedit-entity-id="node/131948"></span>
-    {{ drupal_field('body', 'node', 131948) }}
-    <!-- end drupal workaround -->
+
     <div class="col-md-9">
-      <div class="row padding-left0">
-        <div class="col-md-12">
+
+            <div class="row padding-left0">
+              <div class="col-md-12">
+                <div ng-disabled="enable=='false'">
+                          <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
+                        </div>
+              </div>
+            </div>
+
           {# content goes here #}
-
           <div class="row">
-            <div class="col-md-12 table-responsive">
+            <div class="col-md-12">
+              <ul style="list-style-type:none; float:right;font-size: 11px;line-height: 2.5;padding:0">
+                <span style="float:left;padding: 0 5px 0 0 !important;" class='icon'>&#xe025;</span>
+                <li style="float:left"><a href="#" onclick="window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/active/pdf/');
+window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/active/csv/')">ACTIVE CODES&thinsp;|&thinsp;</a></li>
+<li style="float:right"><a href="#" onclick="window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/pdf/');
+window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/csv/')">INACTIVE CODES </a></li>
+</ul>
+              <ul id="list-horizontal" style="padding:0;margin:0">
 
-              <h5>Active Codes</h5>
+                <li ng-repeat="tab in tabs" style="padding:0" ng-class="{active:isActiveTab(taba)}" ng-click="onClickTab(tab)">
+                  <a href="#" ng-click="setFilter(tab)" ng-class="{active : filt === tab}">{[{tab}]} </a>
+                  <span style="padding-left: 0px;">|</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 table-responsive ps-tab tab-1" ng-class="{'fadein active': currentTab=='Active Prefixes' || currentTab=='All'}" ng-if="PrefixActive" ng-show="visible===true | json">
+
+              <h5>Active Prefixes</h5>
               <table class="table table-hover">
                 <colgroup>
-                  <col class="col-md-6">
-                  <col class="col-md-6">
                   <col class="col-md-2">
+                  <col class="col-md-4">
+                  <col class="col-md-3">
+                </colgroup>
+
+                <thead>
+                  <tr >
+                    <th>Prefix</th>
+                    <th>Description</th>
+                    <th>Note</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr ng-repeat="item in PrefixActive">
+                    <td>{[{ item.prefix }]}</td>
+                    <td>{[{ item.desc }]}</td>
+                    <td>{[{ item.note }]}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 table-responsive ps-tab tab-2" ng-class="{'fadein active': currentTab=='Active Suffixes' || currentTab=='All'}" ng-if="SuffixActive" ng-show="visible===true | json">
+
+              <h5>Active Suffixes</h5>
+              <table class="table table-hover">
+                <colgroup>
+                  <col class="col-md-2">
+                  <col class="col-md-4">
+                  <col class="col-md-3">
                 </colgroup>
 
                 <thead>
                   <tr>
-                    <th>
-                      <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/active/pdf/">Active Codes (PDF)</a>
-                    </th>
-                    <th>
-                      <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/active/csv/">Active Codes (CSV)</a>
-                    </th>
-                  </thead>
+                    <th>Suffix</th>
+                    <th>Description</th>
+                    <th>Note</th>
+                  </tr>
+                </thead>
 
-                </table>
+                <tbody>
+                  <tr ng-repeat="item in SuffixActive">
+                    <td>{[{ item.suffix }]}</td>
+                    <td>{[{ item.desc }]}</td>
+                    <td>{[{ item.note }]}</td>
 
-                <h5>Active Prefixes</h5>
-                <table class="table table-hover">
-                  <colgroup>
-                    <col class="col-md-2">
-                    <col class="col-md-4">
-                    <col class="col-md-3">
-                  </colgroup>
+                  </tr>
 
-                  <thead>
-                    <tr>
-                      <th>Prefix</th>
-                      <th>Description</th>
-                      <th>Note</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="v in prefixSuffixes.PrefixActive | toArray : false">
-                      <td>{[{ v.prefix }]}</td>
-                      <td>{[{ v.desc }]}</td>
-                      <td>{[{ v.note }]}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 table-responsive">
-                <h5>Active Suffixes</h5>
-                <table class="table table-hover">
-                  <colgroup>
-                    <col class="col-md-2">
-                    <col class="col-md-4">
-                    <col class="col-md-3">
-                  </colgroup>
-
-                  <thead>
-                    <tr>
-                      <th>Suffix</th>
-                      <th>Description</th>
-                      <th>Note</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="v in prefixSuffixes.SuffixActive | toArray : false">
-                      <td>{[{ v.suffix }]}</td>
-                      <td>{[{ v.desc }]}</td>
-                      <td>{[{ v.note }]}</td>
-
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 table-responsive">
-                <h5>Inactive Codes</h5>
-                <table class="table table-hover">
-                  <colgroup>
-                    <col class="col-md-6">
-                    <col class="col-md-6">
-                    <col class="col-md-2">
-                  </colgroup>
-
-                  <thead>
-                    <tr>
-                      <th>
-                        <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/pdf/">Inactive Codes (PDF)</a>
-                      </th>
-                      <th>
-                        <a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/csv/">Inactive Codes (CSV)</a>
-                      </th>
-                    </thead>
-
-                  </table>
-                  <h5>Inactive Prefixes</h5>
-                  <table class="table table-hover">
-                    <colgroup>
-                      <col class="col-md-2">
-                      <col class="col-md-4">
-                      <col class="col-md-3">
-                    </colgroup>
-
-                    <thead>
-                      <tr>
-                        <th>Prefix</th>
-                        <th>Description</th>
-                        <th>Note</th>
-                      </tr>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr ng-repeat="v in prefixSuffixes.PrefixInactive | toArray : false">
-                      <td>{[{ v.prefix }]}</td>
-                      <td>{[{ v.desc }]}</td>
-                      <td>{[{ v.note }]}</td>
-                    </tr>
-
-                  </tbody>
-                </table>
-              </div>
-              <div class="row">
-                <div class="col-md-12 table-responsive">
-                  <h5>Inactive Suffixes</h5>
-                  <table class="table table-hover">
-                    <colgroup>
-                      <col class="col-md-2">
-                      <col class="col-md-4">
-                      <col class="col-md-3">
-                    </colgroup>
-
-                    <thead>
-                      <tr>
-                        <th>Suffix</th>
-                        <th>Description</th>
-                        <th>Note</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      <tr ng-repeat="v in prefixSuffixes.SuffixInactive | toArray : false">
-                        <td>{[{ v.suffix }]}</td>
-                        <td>{[{ v.desc }]}</td>
-                        <td>{[{ v.note }]}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
-      </div>
-      {# End Left-side bar #}
+          <div class="row">
+            <div class="col-md-12 table-responsive ps-tab tab-3" ng-class="{'fadein active': currentTab=='Inactive Prefixes' || currentTab=='All'}" ng-if="PrefixInactive" ng-show="visible===true | json">
+              <h5>Inactive Prefixes</h5>
+              <table class="table table-hover">
+                <colgroup>
+                  <col class="col-md-2">
+                  <col class="col-md-4">
+                  <col class="col-md-3">
+                </colgroup>
 
-      {# Right-side bar #}
-      <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
-        <div class="top-bar"></div>
-        {{ page.side_menu }}
+                <thead>
+                  <tr >
+                    <th>Prefix</th>
+                    <th>Description</th>
+                    <th>Note</th>
+                  </tr>
 
+                </thead>
+
+                <tbody>
+
+                  <tr ng-repeat="item in PrefixInactive">
+                    <td>{[{ item.prefix }]}</td>
+                    <td>{[{ item.desc }]}</td>
+                    <td>{[{ item.note }]}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 table-responsive ps-tab tab-4" ng-class="{'fadein active': currentTab=='Inactive Suffixes' || currentTab=='All'}" ng-if="SuffixInactive" ng-show="visible===true | json">
+
+
+              <h5>Inactive Suffixes</h5>
+              <table class="table table-hover">
+                <colgroup>
+                  <col class="col-md-2">
+                  <col class="col-md-4">
+                  <col class="col-md-3">
+                </colgroup>
+
+                <thead>
+                  <tr>
+                    <th>Suffix</th>
+                    <th>Description</th>
+                    <th>Note</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr ng-repeat="item in SuffixInactive">
+                    <td>{[{ item.suffix }]}</td>
+                    <td>{[{ item.desc }]}</td>
+                    <td>{[{ item.note }]}</td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+              <div></div>
+
+
+            </div>
+
+
+        {# End Left-side bar #}
       </div>
-      {# End Right-side bar #}
+    </div>
+    {# Right-side bar #}
+    <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+      <div class="top-bar"></div>
+      {{ page.side_menu }}
     </div>
   </div>
-  {# End container #}
-  {# End Right-side bar #}
-  <!-- // .container -->
+</div>
+{# End Right-side bar #}
+</div>
 
-</div>
-</div>
 {# End container #}
+{# End Right-side bar #}
+<!-- // .container -->
+
+{# End container #}
+
+
 
 <!-- footer section -->
 {{ attach_library ('cpv3/jsonp-array') }}
