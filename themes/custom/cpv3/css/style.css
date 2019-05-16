@@ -269,8 +269,7 @@ q:before, q:after {
 
 /* ADDS no bullet indent style to ckeditor */
 .span-indent-body {
-  text-indent:40px;
-  line-height:14%;
+  margin-left:40px;
 }
 
 /*** paragraph ***/
