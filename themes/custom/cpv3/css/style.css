@@ -267,6 +267,12 @@ q:before, q:after {
   list-style: none;
 }
 
+/* ADDS no bullet indent style to ckeditor */
+.span-indent-body {
+  text-indent:40px;
+  line-height:14%;
+}
+
 /*** paragraph ***/
 #cms-content a {
   color: #009fe3 !important;
