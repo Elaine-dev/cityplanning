@@ -60,11 +60,15 @@ class LaEirBlock extends BlockBase
             $draft = '';
             $final = '';
             $notice_prepration = '';
+            $additional_docs = '';
+            
             foreach($item as $row) {
                 /**
-                 * id:133 - notice of preparation
-                 * id:143 - draft
-                 * id:153 - final
+                 * tid:133 - Notice of P
+                 * reparation
+                 * tid:143 - Draft EIR
+                 * tid:153 - Final EIR
+                 * tid:317 - Additional Docs
                  */
                 if($row['eir_type'] == 143) {
                     $draft = $row['path'];
@@ -72,6 +76,8 @@ class LaEirBlock extends BlockBase
                     $final = $row['path'];
                 } elseif($row['eir_type'] == 133) {
                     $notice_prepration = $row['path'];
+                } elseif($row['eir_type'] == 317) {
+                    $additional_docs = $row['path'];
                 }
 
                 $new_notice[$key] = array(
@@ -80,6 +86,7 @@ class LaEirBlock extends BlockBase
                     'draftEIR' => $draft,
                     'finalEIR' => $final,
                     'noticeOfPreparation' => $notice_prepration,
+                    'additionalDocs' => $additional_docs,
                 );
             }
         }
@@ -88,7 +95,6 @@ class LaEirBlock extends BlockBase
         foreach($new_notice as $item) {
             $new_eir[] = $item;
         }
-
 
         // Create json file
         $file_path = 'file/eir.json';

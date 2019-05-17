@@ -36,6 +36,8 @@
                                         <col class="col-md-6">
                                         <col class="col-md-1">
                                         <col class="col-md-1">
+                                        <col class="col-md-1">
+                                        <col class="col-md-1">
                                     </colgroup>
 
                                     <thead>
@@ -45,6 +47,7 @@
                                             <th>Notice of Preparation</th>
                                             <th>Draft EIR</th>
                                             <th>Final EIR</th>
+                                            <th>Add'l Docs</th>
                                         </tr>
                                     </thead>
 
@@ -60,6 +63,9 @@
                                         </td>
                                         <td ngIf: x.finalEIR>
                                             <a href="{[{ x.finalEIR }]}" ng-if="x.finalEIR" class="ng-scope"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a>
+                                        </td>
+                                        <td ngIf: x.additionalDocs>
+                                            <a href="{[{ x.additionalDocs }]}" ng-if="x.additionalDocs" class="ng-scope"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                     </tbody>
