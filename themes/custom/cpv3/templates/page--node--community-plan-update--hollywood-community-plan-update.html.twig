@@ -1,15 +1,16 @@
 <!-- Fixed navbar -->
 {% include directory ~ '/partials/header.html.twig' %}
 
-<div class="container-fluid">
-  <div class="row">
 
-    <div class="col-md-12">
- 		<div id="page-title-bg" style="background-image: url('{{ theme_base_path }}/images/page-bg.jpg')"></div>
-    </div>
-  </div>
-</div>
-<!-- //End page-banner -->
+    {# page-banner #}
+ <div class="container-fluid">
+   <div class="row">
+     <div class="col-md-12">
+       <div id="page-title-bg" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}')"></div>
+     </div>
+   </div>
+ </div>
+ {# End page-banner #}
 
 <!-- contain -->
 <div class="container" id="main-container">
@@ -180,5 +181,8 @@ $(document).ready(function(){
   });
 
 });
-
+$("#pop").on("click", function() {
+   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
 </script>
