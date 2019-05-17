@@ -273,6 +273,10 @@ q:before, q:after {
 }
 
 /*** paragraph ***/
+.two_column_layout {
+	margin-bottom: 225px;
+}
+
 #cms-content a {
   color: #009fe3 !important;
 }
