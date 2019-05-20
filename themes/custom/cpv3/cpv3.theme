@@ -42,6 +42,10 @@ function cpv3_preprocess_page(&$variables)
     $hollywoodCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('hollywood_community_plan');
     $variables['hollywood_menu'] = formatTabMenuTitle($hollywoodCpuTerms);
 
+   // Community Plan Update/Southwest Valley Tab Menu
+   $swvalleyCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('southwest_valley_community_plan_');
+   $variables['swvalley_menu'] = formatTabMenuTitle($swvalleyCpuTerms);
+
     // get current uri
     $current_uri = \Drupal::request()->getRequestUri();
     $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
@@ -76,19 +80,19 @@ function cpv3_preprocess_page(&$variables)
             }
         }
     }
-    
+
     // Map Gallery
     $vid = 'location';
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, 0, 1);
-    
+
     if (!empty($terms)) {
         foreach ($terms as $term) {
             $image = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid)->get('field_image')->entity->uri->value;
             $imagePath = ($image) ? file_create_url($image) : '';   // Image path
             $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $term->tid, 2);
-            
+
             $interactive_link = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid)->get('field_interactive_link')->value;
-            
+
             if (empty($children)) {
                 // no child
                 if ($term->parents[0] == 0)
@@ -105,7 +109,7 @@ function cpv3_preprocess_page(&$variables)
                     'image' => $imagePath,
                     'interactive_map_link' => $interactive_link,
                 ];
-                
+
                 foreach ($children as $child) {
                     $grand_children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $child->tid, 3);
                     if (!empty($grand_children)) {
@@ -131,7 +135,7 @@ function cpv3_preprocess_page(&$variables)
             }
         }
     }
-    
+
     $variables['taxonomy_tree'] = $tax_tree;
 }
 
@@ -143,11 +147,11 @@ function cpv3_preprocess_views_view(&$variables)
 {
     global $base_url;
     $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();  // active theme path
-    
+
     // Commissions
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('commissions');
     @$variables['category'] = formatTabCommissionTitle($terms);
-    
+
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('area_planning_type');
     foreach ($terms as $term) {
         $description = ($term->description__value) ? $term->description__value : '';
@@ -157,7 +161,7 @@ function cpv3_preprocess_views_view(&$variables)
             "description" => $description,
         );
     }
-    
+
     @$variables['planning_area_category'] = $term_data_1;
 }
 
@@ -270,7 +274,7 @@ function formatTabTitle($terms)
             'last_name' => ($lastPart) ? $lastPart : '',
             'counter' => $i
         ];
-    
+
         $i++;
     endforeach;
 
@@ -297,10 +301,10 @@ function formatTabMenuTitle($terms)
             'name' => $firstPart,
             'counter' => $i
         ];
-    
+
         $i++;
     endforeach;
-    
+
     return $term_data;
 }
 
@@ -323,15 +327,15 @@ function formatTabCommissionTitle($terms)
         } else {
             $firstPart = $term->name;
         }
-    
+
         $term_data [] = [
             'id' => $term->tid,
             'first_name' => $firstPart,
             'last_name' => $lastPart,
-            'description' => $description,						 
+            'description' => $description,
             'counter' => $i
         ];
-    
+
         $i++;
     endforeach;
 
