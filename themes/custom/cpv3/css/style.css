@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.5.07
-version: 4.4.33
+Update Date: 2019.5.20
+version: 4.4.35
 *********************/
 body {
   line-height: 1.5 !important;
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   color: #414042;
   font-size: 44px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h2 {
@@ -245,7 +245,8 @@ q:before, q:after {
 .left-12 {
   left: 12px;
 }
-.margin-left-15{
+
+.margin-left-15 {
   margin-left: 15px;
 }
 
@@ -1178,7 +1179,7 @@ _:-moz-tree-row(hover), .planning-tag {
 
 /*** Inner pages ***/
 /* #page-title-bg {
-	position: absolute;
+	positin: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -1387,35 +1388,36 @@ article img {
   border-top: 1px solid #ccc !important;
 }
 
+/** On image hover, change image to grayscale 
 .section-content img:hover {
   -webkit-filter: grayscale(100%);
-  /* Safari 6.0 - 9.0 */
+  Safari 6.0 - 9.0
   filter: grayscale(100%);
-}
+} */
 
 /* commissioners */
 .tab-line {
   border-right: #ccc 1px solid;
 }
 
-#commissions-tab .nav-tabs>li, #hollywood-tab .nav-tabs>li, {
+#commissions-tab .nav-tabs>li, #hollywood-tab .nav-tabs>li, #demographics-tab .nav-tabs>li{
   margin-bottom: 0px;
 }
 
-#commissions-tab .nav-tabs>li>a, #hollywood-tab .nav-tabs>li>a {
+#commissions-tab .nav-tabs>li>a, #hollywood-tab .nav-tabs>li>a, #demographics-tab .nav-tabs>li>a {
   border: 0px;
   border-radius: 0px;
 }
 
-#commissions-tab .nav-tabs>li>, #hollywood-tab .nav-tabs>li> {
+#commissions-tab .nav-tabs>li>, #hollywood-tab .nav-tabs>li>, #demographics-tab .nav-tabs>li> {
   border-right: #000 !important;
 }
 
-#commissions-tab .nav-tabs, #hollywood-tab .nav-tabs {
+#commissions-tab .nav-tabs, #hollywood-tab .nav-tabs, #demographics-tab .nav-tabs {
   padding-bottom: 10px;
 }
 
-#commissions-tab .nav>li>a, #hollywood-tab .nav>li>a {
+#commissions-tab .nav>li>a, #hollywood-tab .nav>li>a, #demographics-tab .nav>li>a {
   padding-top: 0 !important;
   padding-bottom: 0;
   z-index: 100;
@@ -2523,6 +2525,7 @@ ul#list-horizontal li {
 #sidebar-menu-overlay {
   padding-top: 127px;
 }
+
 /** sub heading and title box **/
 .sub-heading {
   font-weight: bold;
@@ -2915,7 +2918,7 @@ li.pub-header.ng-binding {
   margin-bottom: 0;
 }
 
-#constant-contact-form .row {
+#constant-contdruhact-form .row {
   padding-left: 0;
   padding-right: 0;
 }
@@ -3786,6 +3789,10 @@ span.icon {
     top: 271px;
   }
 
+  /* #main-container {
+    top: 160px;
+  } */
+
   .sub-heading {
     padding-left: 0%;
     margin-top: -5;
@@ -3809,6 +3816,12 @@ span.icon {
   #main-container {
     top: 170px;
   }
+
+
+
+  /* #main-container {
+    top: 170px;
+  } */
 
   .sub-heading {
     padding-left: 0%;
@@ -3843,6 +3856,10 @@ span.icon {
   #main-container {
     top: 247px;
   }
+
+  /* #main-container {
+    top: 300px;
+  } */
 
   .content-wrapper {
     padding-top: 25px;
