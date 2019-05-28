@@ -136,7 +136,7 @@ require([
 			Enrolled_Grade_5_8, Enrolled_Grade_9_12, Enrolled_College, 
 			Enrolled_Grad_Professional_School, Not_Enrolled);
         
-        console.log(arr);
+        // console.log(arr);
 
         $("h5").html(Area_Planning_Commission_APC_Na);
         
