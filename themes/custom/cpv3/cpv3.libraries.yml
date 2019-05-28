@@ -236,3 +236,14 @@ prefix-suffix-report:
   version: 1.0
   js:
     js/api/prefixSuffix.js: {}
+    
+hpozs-calendar:
+  version:                                                                                                          1.0
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css:                               {}
+      https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.print.css:                             {media: print}
+  js:
+    js/calendar/moment.min.js:                                                                                      {}
+    js/calendar/fullcalendar.js:                                                                                    {}
+    js/calendar/hpozs-calendar.js:                                                                                  {}

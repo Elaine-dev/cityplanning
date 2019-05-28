@@ -28,7 +28,7 @@
 							{# content goes here #}
 							{{ page.content }}
 							
-							<h3>HPOZ Zones</h3>							
+							<h3 class="paddingtop15">HPOZ Zones</h3>							
 							<div class="panel-group" id="overlays">
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
@@ -38,7 +38,7 @@
                                     </div>
 
                                     <div id="collapse7" class="panel-collapse collapse">
-                                        <ul class="list-group">
+                                         <ul class="list-group">
                                             {% for item in overlays['Historic Preservation Overlay Zones (HPOZs)']  %}
                                             <li><a href="{{ item.url }}">{{ item.title}}</a></li>
                                             {% endfor %}
@@ -46,8 +46,28 @@
                                     </div>
                                 </div>
                             </div>
-                            
 	                    </div>
+	                    
+	                    <div class="col-md-12 paddingtop15">
+	                    	<p>
+                          		<strong>Each HPOZ Board</strong> consists of five to seven members appointed by the Mayor, the City Councilmember representing the area, the City’s Cultural Heritage 
+                              	Commission, and the Board itself. A majority of the members must live within the HPOZ, one member must have extensive real estate or construction 
+                              	experience, one must be a licensed architect, and all should have knowledge of and interest in the culture, history and architecture of the HPOZ area.
+                              	HPOZ Boards, in addition to their formal role in reviewing process as an advisory body to the Department of City Planning, serve as an informal source 
+                              	of technical expertise and guidance. Board members often offer property owners excellent advice on cost-effective ways to remodel their properties 
+                              	to maintain and enhance their historic character, and may even suggest local contractors and craftspersons who have worked on similar rehabilitation 
+                          		projects.
+                          	</p>
+                          
+                          	<p>Board meetings occur twice monthly and are subject to cancellation if a quorum cannot be met or if no agenda items are pending.</p>  
+                        </div>
+                        
+                        <div class="col-md-12 paddingtop15">
+                        	<h3 class="padding-bottom15">HPOZ Board Calendar</h3>
+                        	<div id='loading'>loading...</div>
+                        	<div id='hpozs-calendar'></div>
+                        </div>
+                        
 	                </div>
 	            </div>{# End Left-side bar #}
             
@@ -56,39 +76,12 @@
 	                <div class="top-bar"></div>
 	                  {{ page.side_menu }}
 	            </div>{# End Right-side bar #}
-            {% else %}
-            	<div class="col-md-12">
-	                <div class="row padding-left0">
-	                    <div class="col-md-12 padding-left0 padding-right0">
-							{# content goes here #}
-							{{ page.content }}
-							
-							<h3>HPOZ Zones</h3>							
-							<div class="panel-group" id="overlays">
-                                <div class="panel panel-default collapse-list">
-                                    <div class="panel-heading">
-                                        <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse7">View Full List of HPOZs</a>
-                                        </h6>
-                                    </div>
 
-                                    <div id="collapse7" class="panel-collapse collapse">
-                                        <ul class="list-group">
-                                            {% for item in overlays['Historic Preservation Overlay Zones (HPOZs)']  %}
-                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-	                    </div>
-	                </div>
-	            </div>
             {% endif %} 
             
         </div>
     </div>{# End container #}
     
     <!-- footer section -->
+    {{ attach_library ('cpv3/hpozs-calendar') }}
     {% include directory ~ '/partials/footer.html.twig' %}
