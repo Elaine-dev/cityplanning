@@ -7421,21 +7421,23 @@ DayGrid.mixin({
 
 		classes.unshift('fc-day-grid-event', 'fc-h-event');
 		
-		if (event.type == 'Commission'){
-			titleColor = 'commission'; 						
-			//calEventTitle = event.description;
-			/*var cpcName = getCPCName (event.title);
-			calEventUrl = 'agenda.php?apc='+cpcName;*/
-			
-		} else if (event.type == 'Hearing') {
-			titleColor = 'hearing'; 						
-			//calEventTitle = 'Hearing';
-			
-		} else if (event.type == 'Public') {
-			titleColor = 'public'; 						
-			//calEventTitle = event.description;
+		// Set color band for each Event Type		
+		if (event.type == 'Hearing') {
+			titleColor = 'hearing';
 		} else if (event.type == 'Area Planning Commission') {
 			titleColor = 'apc'; 						
+		} else if (event.type == 'Community Event') {
+			titleColor = 'community-event'; 
+		} else if (event.type == 'Information Session') {
+			titleColor = 'info-session'; 
+		} else if (event.type == 'Open House') {
+			titleColor = 'open-house'; 
+		} else if (event.type == 'Planning Workshop') {
+			titleColor = 'planning-workshop'; 
+		} else if (event.type == 'Drop-In Hours') {
+			titleColor = 'drop-in-hours'; 
+		} else if (event.type == 'HPOZ Event') {
+			titleColor = 'hpoz-event'; 
 		} else {
 			titleColor = 'event';
 		}
