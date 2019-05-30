@@ -1948,7 +1948,193 @@ p a {
   border: 0;
 }
 
-/**** calendar ****/
+/*******************************
+********* Calendar *************
+*******************************/
+/** Calender : Category color index **/
+.cal-cat-hearing {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #f99e0e;
+  padding-top: 19px !important;
+}
+
+.cal-cat-hearing-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #eb940b;
+  padding-top: 19px !important;
+}
+
+.cal-cat-apc {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #70a300;
+  padding-top: 19px !important;
+}
+
+.cal-cat-apc-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #f2ae41;
+  padding-top: 19px !important;
+}
+
+.cal-cat-community-event {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #224a96;
+  padding-top: 19px !important;
+}
+
+.cal-cat-community-event-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: #1e4388 1px solid;
+  padding-top: 19px !important;
+}
+
+.cal-cat-info-session {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #7005da;
+  padding-top: 19px !important;
+}
+
+.cal-cat-info-session-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #6806cb;
+  padding-top: 19px !important;
+}
+
+.cal-cat-open-house {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #3399ff;
+  padding-top: 19px !important;
+}
+
+.cal-cat-open-house-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #aed5fc;
+  padding-top: 19px !important;
+}
+
+.cal-cat-planning-workshop {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #e3bd2d;
+  padding-top: 19px !important;
+}
+
+.cal-cat-planning-workshop-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #e3bd2d;
+  padding-top: 19px !important;
+}
+
+.cal-cat-drop-in-hours {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #674d3e;
+  padding-top: 19px !important;
+}
+
+.cal-cat-drop-in-hours-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #674d3e;
+  padding-top: 19px !important;
+}
+
+.cal-cat-hpoz-event {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #c87c6d;
+  padding-top: 19px !important;
+}
+
+.cal-cat-hpoz-event-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #c87c6d;
+  padding-top: 19px !important;
+}
+
+.cal-cat-event {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #0192d1;
+  padding-top: 19px !important;
+}
+
+.cal-event {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background: #585858;
+  padding-top: 19px !important;
+}
+
+.cal-event-disable {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  background-color: #fff;
+  border: 1px solid #585858;
+  padding-top: 19px !important;
+}
+
+.cal-box {
+  float: left;
+  width: 20px;
+  min-height: 10px;
+  border: solid 1px #ddd;
+  background: #fff;
+  padding-top: 19px !important;
+}
+
+.mousepointer {
+  cursor: pointer;
+}
+
+.mousepointer:hover {
+  background-color: #eee;
+}
+
+#ci-apc, #ci-hearing, #ci-community-event, #ci-info-session, #ci-open-house, #ci-planning-workshop, #ci-drop-in-hours, #ci-hpoz-event {
+  cursor: pointer;
+}
+
+/** Calendar detail **/
 #main-container-calendar {
   background-color: #fff;
   position: relative;
@@ -1983,175 +2169,59 @@ p a {
   padding: 0 !important;
 }
 
-.commission {
-  background: #f1f1f1 !important;
-  color: #000 !important;
-  border-left: #1967d3 solid 3px;
-}
-
 .hearing {
   border-radius: 0px !important;
   background: #f1f1f1 !important;
   color: #000 !important;
-  border-left: #1967d3 solid 3px !important;
+  border-left: #f99e0e solid 3px !important;
 }
 
 .apc {
   background: #f1f1f1 !important;
   color: #000 !important;
-  border-left: #1967d3 solid 3px !important;
+  border-left: #70a300 solid 3px !important;
+}
+
+.community-event {
+  background: #f1f1f1 !important;
+  color: #000 !important;
+  border-left: #224a96 solid 3px;
+}
+
+.info-session {
+  background: #f1f1f1 !important;
+  color: #000 !important;
+  border-left: #7005da solid 3px;
+}
+
+.open-house {
+  background: #f1f1f1 !important;
+  color: #000 !important;
+  border-left: #3399ff solid 3px;
+}
+
+.planning-workshop {
+  background: #f1f1f1 !important;
+  color: #000 !important;
+  border-left: #e3bd2d solid 3px;
+}
+
+.drop-in-hours {
+  background: #f1f1f1 !important;
+  color: #000 !important;
+  border-left: #674d3e solid 3px;
+}
+
+.hpoz-event {
+  background: #f1f1f1 !important;
+  color: #000 !important;
+  border-left: #c87c6d solid 3px !important;
 }
 
 .event {
   background: #f1f1f1 !important;
   color: #000 !important;
-  border-left: #1967d3 solid 3px !important;
-}
-
-.public {
-  background: #f1f1f1 !important;
-  color: #000 !important;
-  border-left: #1967d3 solid 3px;
-}
-
-.mousepointer {
-  cursor: pointer;
-}
-
-.cal-commission {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background: #7005da;
-  padding-top: 19px !important;
-}
-
-.cal-commission-disable {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background-color: #fff;
-  border: 1px solid #6806cb;
-  padding-top: 19px !important;
-}
-
-.cal-hearing {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background: #f99e0e;
-  padding-top: 19px !important;
-}
-
-.cal-hearing-disable {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background-color: #fff;
-  border: 1px solid #eb940b;
-  padding-top: 19px !important;
-}
-
-.cal-apc {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background: #70a300;
-  padding-top: 19px !important;
-}
-
-.cal-apc-disable {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background-color: #fff;
-  border: 1px solid #f2ae41;
-  padding-top: 19px !important;
-}
-
-.cal-community-events {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background: #224a96;
-  padding-top: 19px !important;
-}
-
-.cal-community-events-disable {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background-color: #fff;
-  border: #1e4388 1px solid;
-  padding-top: 19px !important;
-}
-
-.cal-zah {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background: #3399ff;
-  padding-top: 19px !important;
-}
-
-.cal-zah-disable {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background-color: #fff;
-  border: 1px solid #aed5fc;
-  padding-top: 19px !important;
-}
-
-.cal-ddah {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background: #0192d1;
-  padding-top: 19px !important;
-}
-
-.cal-ddah-disable {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background-color: #fff;
-  border: 1px solid #0289c3;
-  padding-top: 19px !important;
-}
-
-.cal-event {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background: #0192d1;
-  padding-top: 19px !important;
-}
-
-.cal-event-disable {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  background-color: #fff;
-  border: 1px solid #0289c3;
-  padding-top: 19px !important;
-}
-
-.cal-box {
-  float: left;
-  width: 20px;
-  min-height: 10px;
-  border: solid 1px #ddd;
-  background: #fff;
-  padding-top: 19px !important;
-}
-
-.mousepointer:hover {
-  background-color: #eee;
-}
-
-#ci-apc, #ci-commission, #ci-hearing {
-  cursor: pointer;
+  border-left: #585858 solid 3px !important;
 }
 
 .fc-center h2 {
@@ -2167,7 +2237,7 @@ p a {
   padding-top: 19px !important;
 }
 
-#cal-commission {
+#cal-info-session {
   float: left;
   width: 20px;
   min-height: 10px;
