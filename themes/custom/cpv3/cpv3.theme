@@ -46,6 +46,10 @@ function cpv3_preprocess_page(&$variables)
    $swvalleyCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('southwest_valley_community_plan_');
    $variables['swvalley_menu'] = formatTabMenuTitle($swvalleyCpuTerms);
 
+   // Community Plan Update/OurLA General Plan Update Tab Menu
+   $generalCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('gerneral_plan_update');
+   $variables['general_menu'] = formatTabMenuTitle($generalCpuTerms);
+
     // get current uri
     $current_uri = \Drupal::request()->getRequestUri();
     $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )

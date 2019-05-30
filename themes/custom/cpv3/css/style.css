@@ -1388,7 +1388,7 @@ article img {
   border-top: 1px solid #ccc !important;
 }
 
-/** On image hover, change image to grayscale 
+/** On image hover, change image to grayscale
 .section-content img:hover {
   -webkit-filter: grayscale(100%);
   Safari 6.0 - 9.0
@@ -2832,6 +2832,17 @@ ul#list-horizontal li {
 
 #hollywood-tab .tab-content {
   margin-left: 16px;
+}
+/** Read More Buttons on Blogs **/
+.btn.btn-primary > a {
+    color: white !important;
+  }
+
+  /**Social media for ourLA **/
+
+  #social-buttons {
+    width: 100%;
+    margin-left:20px;
 }
 
 /** Web Form: Email Sign-up  **/
