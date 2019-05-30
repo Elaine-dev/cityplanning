@@ -9,12 +9,18 @@
   <div class="sharethis-inline-share-buttons"></div>
 
 <div class="info" style="font-size:13px;margin-top:20px;">
-<strong>Event Date:</strong> {{ content.field_date.value | date("M d, Y") }}<br />
-<strong>Event Time:</strong> {{ fields.field_event_time.content }}<br />
-<strong>Location:</strong> {{ fields.field_event_location.content }}<br />
-<strong>{{ fields.field_mapit.content }}</strong><br />
-<strong>Phone Contact:</strong> {{ fields.field_contact.content }}<br />
-<strong>Email Contact:</strong> {{ fields.field_email.content }}<br />
+
+<div><strong>{{ fields.field_event_date.label }}</strong></div>
+<div>{{ fields.field_event_date.content}}</div>
+<div><strong>{{ fields.field_event_time.label }}</strong></div>
+<div>{{ fields.field_event_time.content }}</div>
+<div><strong>{{ fields.field_event_location.label }}</strong></div>
+<div>{{ fields.field_event_location.content }}</div>
+<div><strong>{{ fields.field_mapit.content }}</strong></div>
+<div><strong>{{ fields.field_contact.label }}</strong></div>
+<div>{{ fields.field_contact.content }}</div>
+<div><strong>{{ fields.field_email.label }}</strong></div>
+<div>{{ fields.field_email.content }}</div>
 </div>
  </div>
 
