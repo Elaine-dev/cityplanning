@@ -1,4 +1,4 @@
-var myApp = angular.module('searchApp', ['ngAnimate', 'ui.bootstrap']);
+var myApp = angular.module('searchApp', ['ngAnimate', 'ui.bootstrap', 'ngSanitize']);
 myApp.config(function($interpolateProvider,$sceProvider) {
     $sceProvider.enabled(false);
     $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
@@ -10,8 +10,8 @@ myApp.controller('MainCtrl', function($scope, $http, $timeout, filterFilter){
     $scope.enable = "false";
     $scope.loadingText = "Loading ...";
 
-    var queryString = getUrlVars()['keys'];
-    var formattedQueryString = queryString.replace(/\+/g, " ");		// replace + with space
+    var queryString = decodeURIComponent(getUrlVars()['keys']);					// gets query string and decode URI
+    var formattedQueryString = queryString.replace(/\+/g, " ");					// replace + with space
 
     var self = this;
     $scope.searchQuery = formattedQueryString;
