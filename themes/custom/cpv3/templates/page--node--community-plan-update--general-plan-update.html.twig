@@ -1,8 +1,7 @@
 <!-- Fixed navbar -->
 {% include directory ~ '/partials/header.html.twig' %}
 
-
-    {# page-banner #}
+  {# page-banner #}
  <div class="container-fluid">
    <div class="row">
      <div class="col-md-12">
@@ -89,8 +88,8 @@
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
-                  {% if node.field_tab_event_content_items %}
-                    {% for parag_id in node.field_tab_event_content_items.value %}
+                  {% if node.field_tab_map_content_items %}
+                    {% for parag_id in node.field_tab_map_content_items.value %}
                       {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
                     {% endfor %}
                   {% endif %}
@@ -101,8 +100,8 @@
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
-                  {% if node.field_tab_map_content_items %}
-                    {% for parag_id in node.field_tab_map_content_items.value %}
+                  {% if node.field_tab_resources_content_item %}
+                    {% for parag_id in node.field_tab_resources_content_item.value %}
                       {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
                     {% endfor %}
                   {% endif %}
@@ -113,8 +112,8 @@
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
                   {% endfor %}
-                  {% if node.field_tab_resources_content_item %}
-                    {% for parag_id in node.field_tab_resources_content_item.value %}
+                  {% if node.field_tab_event_content_items %}
+                    {% for parag_id in node.field_tab_event_content_items.value %}
                       {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
                     {% endfor %}
                   {% endif %}
@@ -134,7 +133,6 @@
               </div>
             </div>
           </div>
-
 
     <!-- //End Left-side bar -->
 
