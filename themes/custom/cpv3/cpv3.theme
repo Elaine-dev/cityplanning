@@ -54,6 +54,10 @@ function cpv3_preprocess_page(&$variables)
    $generalCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('gerneral_plan_update');
    $variables['general_menu'] = formatTabMenuTitle($generalCpuTerms);
 
+   // Community Plan Update/Downtown Plan Update Tab Menu
+   $downtownCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('downtown_community_plan_update');
+   $variables['downtown_menu'] = formatTabMenuTitle($downtownCpuTerms);
+
     // get current uri
     $current_uri = \Drupal::request()->getRequestUri();
     $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
