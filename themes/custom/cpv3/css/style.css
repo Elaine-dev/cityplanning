@@ -2630,6 +2630,10 @@ ul#list-horizontal li {
   font-size: 18px;
 }
 
+.panelHeadingTitle-Default {
+	background-color: #f5f5f5;
+}
+
 .panelHeadingTitle-Orange {
   background-color: #ffb846 !important;
 }
