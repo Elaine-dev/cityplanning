@@ -3,29 +3,17 @@
 	{% set title = item.content['#field_collection_item'].get('field_title').value   %}
 	{% set body = item.content['#field_collection_item'].get('field_body').value   %}
 	{% set item_id = item.content['#field_collection_item'].get('item_id').value   %}
+	{% set bg = item.content['#field_collection_item'].get('field_panel_heading_bgcolor').value %}	
 	
-	{# panel head background color #}
-	{# 
-	    {% if title == 'Maps' %}
-		   {% set panel_head_title = 'maps' %}
-	    {% elseif title == 'Community Plan Document' %}
-		   {% set panel_head_title = 'community-pan-document' %}
-	    {% elseif title == 'Community Profile' %}
-		   {% set panel_head_title = 'community_profile' %}
-	    {% elseif title == 'Overlays' %}
-		   {% set panel_head_title = 'overlays' %}
-	    {% else %}
-		    {% set panel_head_title = 'default-title' %}
-	    {% endif %}
-    #}
-    
-    {% set panel_head_bgcolor = 'panelHeadingTitle-'~loop.index %}
+    {# set Panel Head: Background Color #}
+    {% set panel_head_bgcolor = 'panelHeadingTitle-'~bg %}
+    {% set title_color = bg == "Default" ? "panel-title-default" : "panel-title-white" %}
 	
 	<div class="panel-group" id="accordion">
 		<div class="panel panel-default collapse-list">
 			<div class="panel-heading {{ panel_head_bgcolor }}">
 				<h6 class="panel-title">
-				    <a class="title no-uppercase" data-toggle="collapse" href="#collapse{{item_id}}">{{ title }}</a>
+				    <a class="title no-uppercase {{ title_color }}" data-toggle="collapse" href="#collapse{{item_id}}">{{ title }}</a>
 				</h6>
 			</div>
 		        
