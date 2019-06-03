@@ -47,6 +47,10 @@ function cpv3_preprocess_page(&$variables)
    $variables['swvalley_menu'] = formatTabMenuTitle($swvalleyCpuTerms);
 
    // Community Plan Update/OurLA General Plan Update Tab Menu
+   $veniceCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('venice_local_coastal_program');
+   $variables['venice_menu'] = formatTabMenuTitle($veniceCpuTerms);
+
+   // Community Plan Update/Venice Local Coastal Program Tab Menu
    $generalCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('gerneral_plan_update');
    $variables['general_menu'] = formatTabMenuTitle($generalCpuTerms);
 

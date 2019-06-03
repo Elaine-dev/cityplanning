@@ -1,0 +1,200 @@
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+  {# page-banner #}
+ <div class="container-fluid">
+   <div class="row">
+     <div class="col-md-12">
+       <div id="page-title-bg" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}')"></div>
+     </div>
+   </div>
+ </div>
+ {# End page-banner #}
+
+<!-- contain -->
+<div class="container" id="main-container">
+  <!-- Main content -->
+  <div class="row">
+    {{ drupal_entity('block', 'cpv3_local_tasks') }}
+    <div class="col-md-12" style="padding-left: 30px;">
+      <h1>{{ node.label }}</h1>
+
+    </div>
+  </div>
+
+ <!-- Left-side bar -->
+<div class="row content-wrapper" id="planning-update">
+    <div class="col-md-9">
+      <div class="section-content clear">
+        <div class="row ">
+            {% if node.field_slider %}
+              {% for parag_id in node.field_slider.value %}
+                {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+
+              {% endfor %}
+            {% endif %}
+
+          </div>
+        </div>
+        {# menu #}
+        <div class="row">
+          <div class="col-md-12">
+            <div id="hollywood-tab">
+              <ul class="nav nav-tabs" role="tablist">
+                {% for item in venice_menu %}
+                  {% if loop.index == 1 %}
+                    {% set active_class = 'active' %}
+                    {% set class = 'padding-left0'  %}
+                  {% else %}
+                    {% set active_class = '' %}
+                    {% set class = '' %}
+                  {% endif %}
+                  <li role="presentation" class="padding-top0 {{ (loop.last) ? '' : 'tab-line' }} {{ active_class }}">
+                    <a href="#{{ item.name|clean_id }}" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" data-value="{{ item.name }}" class="{{ class }}">
+                      {{ item.name }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+              <!-- //End hollywood-tab -->
+
+              <div class="tab-content">
+                {% for item in venice_menu %}
+                  {% if loop.index == 1 %}
+                    <div class="tab-pane active fade in row padding-left0" id="{{ item.name|clean_class }}">
+                    {% endif %}
+                  {% endfor %}
+                  {% if node.field_tab_about_content_items %}
+                    {% for parag_id in node.field_tab_about_content_items.value %}
+                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+
+                {% for item in venice_menu %}
+                  {% if loop.index == 2 %}
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
+                    {% endif %}
+                  {% endfor %}
+                  {% if node.field_tab_plan_content_items %}
+                    {% for parag_id in node.field_tab_plan_content_items.value %}
+                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+
+                {% for item in venice_menu %}
+                  {% if loop.index == 3 %}
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
+                    {% endif %}
+                  {% endfor %}
+                  {% if node.field_tab_map_content_items %}
+                    {% for parag_id in node.field_tab_map_content_items.value %}
+                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+
+                {% for item in venice_menu %}
+                  {% if loop.index == 4 %}
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
+                    {% endif %}
+                  {% endfor %}
+                  {% if node.field_tab_resources_content_item %}
+                    {% for parag_id in node.field_tab_resources_content_item.value %}
+                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+
+                {% for item in venice_menu %}
+                  {% if loop.index == 5 %}
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
+                    {% endif %}
+                  {% endfor %}
+                  {% if node.field_tab_event_content_items %}
+                    {% for parag_id in node.field_tab_event_content_items.value %}
+                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+
+                {% for item in venice_menu %}
+                  {% if loop.index == 6 %}
+                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
+                    {% endif %}
+                  {% endfor %}
+                  {% if node.field_tab_contact_content_items %}
+                    {% for parag_id in node.field_tab_contact_content_items.value %}
+                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- //End Left-side bar -->
+
+    <!-- Right-side bar -->
+
+    <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+      <div class="top-bar"></div>
+      {{ page.side_menu }}
+
+    </div>    <!-- //End Right-side bar -->
+
+    <!-- //End container -->
+{# breakpoint() #}
+    {% for item in full_width_data %}
+      {% if item.flag %}
+        <div class="clear full-width-content {% if item.para_id == 122 %} block-qoute-wrapper {% endif %}">
+          {# full width content goes here #}
+          {{ bamboo_render_entity('paragraph', item.para_id) }}
+        </div>
+      {% else %}
+        {# small width content goes here #}
+        <div class="container">
+          <div class="row cms-fullwidth">
+            <div class="section-content clear">
+
+              {{ bamboo_render_entity('paragraph', item.para_id) }}
+            </div>
+          </div>
+
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{{ attach_library('cpv3/cpu') }}
+<!-- footer section -->
+{% include directory ~ '/partials/footer.html.twig' %}
+{{ attach_library ('cpv3/social-media') }}
+{# javascript used in conjunction with twig clean_id and clean_class to rename tab href to name of tab and create hash URL #}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type = "text/javascript">
+    // store the currently selected tab in the hash value
+
+$(document).ready(function(){
+  $(function(){
+    var hash = window.location.hash;
+    hash && $('#hollywood-tab ul.nav.nav-tabs a[href="' + hash + '"]').tab('show');
+
+    $('#hollywood-tab ul.nav.nav-tabs a').click(function (e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      $(this).tab('show');
+      var scrollmem = $('body').scrollTop();
+      window.location.hash = this.hash;
+      $('body,html').scrollTop(scrollmem);
+    });
+  });
+
+});
+$("#pop").on("click", function() {
+   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+</script>
