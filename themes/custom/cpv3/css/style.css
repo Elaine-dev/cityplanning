@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.5.30
-version: 4.4.36
+Update Date: 2019.6.3
+version: 4.4.37
 *********************/
 body {
   line-height: 1.5 !important;
@@ -1982,7 +1982,7 @@ p a {
   width: 20px;
   min-height: 10px;
   background-color: #fff;
-  border: 1px solid #f2ae41;
+  border: 1px solid #70a300;
   padding-top: 19px !important;
 }
 
@@ -2606,74 +2606,52 @@ ul#list-horizontal li {
   font-weight: bold;
 }
 
-/** Accordion / Community Plan Area **/
+/***********************************
+ * Accordion / Community Plan Area
+ ***********************************/ 
 #accordion .list-group {
   padding: 5px 15px;
   border-bottom: solid 1px #ddd;
 }
 
-#accordion .title {
+#accordion .panel-title-default {
   width: 100%;
   display: block;
-  font-weight: normal !important;
+  color: #555 !important;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+#accordion .panel-title-white {
+  width: 100%;
+  display: block;
   color: #fff !important;
   line-height: 24px;
   font-size: 18px;
 }
 
-.panelHeadingTitle-1 {
-  color: #fff !important;
+.panelHeadingTitle-Orange {
   background-color: #ffb846 !important;
 }
 
-.panelHeadingTitle-2 {
-  color: #fff !important;
+.panelHeadingTitle-Blue-Gray {
   background-color: #5e7293 !important;
 }
 
-.panelHeadingTitle-3 {
-  color: #fff !important;
+.panelHeadingTitle-Teal-Green {
   background-color: #53bda6 !important;
 }
 
-.panelHeadingTitle-4 {
-  color: #fff !important;
+.panelHeadingTitle-Med-Gray {
   background-color: #a0a8aa !important;
 }
 
-.panelHeadingTitle-5 {
-  color: #fff !important;
-  background-color: #cc99cc !important;
-}
-
-.panelHeadingTitle-6 {
-  color: #fff !important;
-  background-color: #cc9999 !important;
-}
-
-.panelHeadingTitle-7 {
-  color: #fff !important;
+.panelHeadingTitle-Lime-Green {
   background-color: #339999 !important;
 }
 
-.panelHeadingTitle-8 {
-  color: #fff !important;
-  background-color: #663399 !important;
-}
-
-.panelHeadingTitle-9 {
-  color: #fff !important;
-  background-color: #663333 !important;
-}
-
-.panelHeadingTitle-10 {
-  color: #fff !important;
-  background-color: #cc6699 !important;
-}
-
-.default-title {
-  color: #fff !important;
-  background-color: #999 !important;
+.panelHeadingTitle-Dark-Orange {
+  background-color: #f3901d !important;
 }
 
 .no-uppercase {
