@@ -145,5 +145,18 @@ jQuery(document).ready(function($){
         }
       });
     }
+    
+    // Activate tab using URL
+    function hasURLtoTab() {
+    	var hasURL = window.location.hash;
+    	var urlParam = hasURL.substr(hasURL.indexOf('#')+1);
+    	
+    	if (hasURL.length) {
+    		jQuery('#'+urlParam).trigger('click');
+    		getData(urlParam);
+    	}
+    }
+    
+    hasURLtoTab();
 });
 
