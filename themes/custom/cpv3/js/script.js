@@ -3,7 +3,7 @@
  */
 jQuery(document).ready(function(){
 	/** Main Slider **/
-	// homepageSlider();
+	homepageSlider();
 	
 	/** Slider **/
 	//slider();	
