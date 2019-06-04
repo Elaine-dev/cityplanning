@@ -1,7 +1,8 @@
 <!-- Fixed navbar -->
 {% include directory ~ '/partials/header.html.twig' %}
 
-  {# page-banner #}
+
+    {# page-banner #}
  <div class="container-fluid">
    <div class="row">
      <div class="col-md-12">
@@ -21,7 +22,6 @@
 
     </div>
   </div>
-
  <!-- Left-side bar -->
 <div class="row content-wrapper" id="planning-update">
     <div class="col-md-9">
@@ -41,7 +41,7 @@
           <div class="col-md-12">
             <div id="hollywood-tab">
               <ul class="nav nav-tabs" role="tablist">
-                {% for item in venice_menu %}
+                {% for item in swvalley_menu %}
                   {% if loop.index == 1 %}
                     {% set active_class = 'active' %}
                     {% set class = 'padding-left0'  %}
@@ -59,7 +59,7 @@
               <!-- //End hollywood-tab -->
 
               <div class="tab-content">
-                {% for item in venice_menu %}
+                {% for item in swvalley_menu %}
                   {% if loop.index == 1 %}
                     <div class="tab-pane active fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
@@ -71,7 +71,7 @@
                   {% endif %}
                 </div>
 
-                {% for item in venice_menu %}
+                {% for item in swvalley_menu %}
                   {% if loop.index == 2 %}
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
@@ -83,7 +83,7 @@
                   {% endif %}
                 </div>
 
-                {% for item in venice_menu %}
+                {% for item in swvalley_menu %}
                   {% if loop.index == 3 %}
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
@@ -95,7 +95,8 @@
                   {% endif %}
                 </div>
 
-                {% for item in venice_menu %}
+
+                {% for item in swvalley_menu %}
                   {% if loop.index == 4 %}
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
@@ -107,7 +108,7 @@
                   {% endif %}
                 </div>
 
-                {% for item in venice_menu %}
+                {% for item in swvalley_menu %}
                   {% if loop.index == 5 %}
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
@@ -119,7 +120,7 @@
                   {% endif %}
                 </div>
 
-                {% for item in venice_menu %}
+                {% for item in swvalley_menu %}
                   {% if loop.index == 6 %}
                     <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
                     {% endif %}
@@ -135,6 +136,8 @@
           </div>
         </div>
 
+
+
     <!-- //End Left-side bar -->
 
     <!-- Right-side bar -->
@@ -142,8 +145,8 @@
     <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
       <div class="top-bar"></div>
       {{ page.side_menu }}
-
-    </div>    <!-- //End Right-side bar -->
+    </div>
+    <!-- //End Right-side bar -->
 
     <!-- //End container -->
 {# breakpoint() #}
@@ -158,7 +161,6 @@
         <div class="container">
           <div class="row cms-fullwidth">
             <div class="section-content clear">
-
               {{ bamboo_render_entity('paragraph', item.para_id) }}
             </div>
           </div>
