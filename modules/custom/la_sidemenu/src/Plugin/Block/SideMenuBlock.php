@@ -6,8 +6,6 @@ use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
-// use Drupal\node\Entity\Node;
-// use Drupal\Core\Url;
 use Drupal\Core\Link;
 
 /**
@@ -152,4 +150,3 @@ class SideMenuBlock extends BlockBase {
         $this->configuration['my_block_settings'] = $form_state->getValue('my_block_settings');
     }
 }
-
