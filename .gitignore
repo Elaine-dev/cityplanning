@@ -27,7 +27,7 @@ sites/*/files/
 sites/*/settings.php
 sites/*/services.yml
 sites/*/files/config*
-sites/*/development.services.yml
+sites/development.services.yml
 
 # Exclude IDE's project directory
 nbproject
