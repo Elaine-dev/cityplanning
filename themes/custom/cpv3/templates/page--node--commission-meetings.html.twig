@@ -94,10 +94,10 @@
                     </tr>
                     </thead>
                     <tr ng-repeat="agenda in agendas">
-                    <td>
+                      <td ng-bind="agenda.Date"></td>
+                      <td>
                         <span ng-if="agenda.Type" ng-bind="agenda.Type"></span>
                       </td>
-                      <td ng-bind="agenda.Date"></td>
                       <td>
                         <span ng-if="agenda.AgendaLink">
                           <a href="{[{agenda.AgendaLink}]}" target="_blank">
