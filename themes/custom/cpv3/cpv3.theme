@@ -54,6 +54,10 @@ function cpv3_preprocess_page(&$variables)
    $generalCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('gerneral_plan_update');
    $variables['general_menu'] = formatTabMenuTitle($generalCpuTerms);
 
+   // TNP Plan/Orange Line Tab Menu
+   $orangeTnpCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('orange_line_tnp_menu');
+   $variables['orange_line_menu'] = formatTabMenuTitle($orangeTnpCpuTerms);
+
    // Community Plan Update/Downtown Plan Update Tab Menu
    $downtownCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('downtown_community_plan_update');
    $variables['downtown_menu'] = formatTabMenuTitle($downtownCpuTerms);
@@ -191,6 +195,9 @@ function cpv3_theme_suggestions_page_alter(array &$suggestions, array $variables
         $suggestions [] = 'page__node__' . $node->getType();
         $suggestions [] = 'page__node__' . $node->getType() .'__'. $title;
         $suggestions [] = 'page__node__' . $title;
+        $suggestions[] = 'page__node__' . 'orange__' . $node->bundle();
+	      $suggestions[] = 'page__node__' . 'purple__' . $node->bundle();
+	      $suggestions[] = 'page__node__' . 'slauson__' . $node->bundle();
     }
 }
 

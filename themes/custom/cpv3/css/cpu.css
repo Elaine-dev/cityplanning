@@ -72,7 +72,11 @@
 */
 
 
-
+#hollywood-tab {
+    margin-top: -2%;
+    width: 103%;
+    margin-left: -10px;
+}
 
 /** example html
 <div class="readlink collapsed" data-toggle="collapse" data-target="#purpose"></div>
