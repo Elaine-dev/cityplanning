@@ -2662,9 +2662,9 @@ ul#list-horizontal li {
   text-transform: none !important;
 }
 
-.accordion .panel-heading {
+/* .accordion .panel-heading {
   background-color: #ccc;
-}
+} */
 
 .community-icon-color {
   color: #f58c29 !important;
