@@ -34,7 +34,7 @@
 						{# tab #}
 						<div class="row padding-left0">
 						    <div class="col-md-12">
-						        <div id="commissions-tab" class="sizer">
+						        <div id="publication-tab" class="sizer">
                                     <ul class="nav nav-tabs" role="tablist">
                                      {% for item in publication_categories %}
                                          {% if loop.index == 1 %}
@@ -53,7 +53,7 @@
                                     {% endfor %}
 							 
                                      <li role="presentation" class="js-publication-tab">
-                                        <a href="#4" aria-controls="4"  id="4" role="tab" data-toggle="tab">
+                                        <a href="#5" aria-controls="5"  id="5" role="tab" data-toggle="tab">
                                             <i class="fa fa-search fa-2x" aria-hidden="true" style="margin-top: 5px;"></i>
                                             <div class="pull-right" style="padding-left: 10px;">
                                                 Search All<br>Publications
@@ -67,8 +67,8 @@
                                                {{ page.publications }}
                                            </div>
 
-                                             <!-- tab 4 -->
-                                             <div id="4" class="publication-data js-tab4 hidden">
+                                             <!-- tab 5 -->
+                                             <div id="5" class="publication-data js-tab4 hidden">
 	                                            <div class="row padding-left0">
 	                                                <div class="col-md-12">
 	                                                    <div class="row content-search">
@@ -106,7 +106,7 @@
 	                                                                            		<span ng-bind="publication.title"></span>
                                                                             		</a>
                                                                         		</td>
-	                                                                            {#<td ng-bind="publication.created"></td>#}
+	                                                                            {# <td ng-bind="publication.created"></td> #}
 	                                                                            <td>-</td>
 	                                                                        </tr>
 	                                                                    </tbody>
@@ -136,15 +136,14 @@
 	                                                                </ul>
 	                                                            </dir-pagination-controls>
 
-
 	                                                        </div>
 	                                                    </div>
 	                                                </div>
 	                                            </div>
-	                                        </div> <!-- // end tabpanel 4 -->
+	                                        </div> <!-- // end tabpanel 5 -->
                                     </div><!-- // end tabpanel 1 -->
 
-                                 </div><!-- //End #commissions-tab -->
+                                 </div><!-- //End #publication-tab -->
 						    </div>
 						</div>
 
