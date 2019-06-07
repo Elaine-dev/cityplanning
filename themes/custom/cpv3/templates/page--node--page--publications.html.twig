@@ -101,9 +101,12 @@
 
 	                                                                    <tbody>
 	                                                                        <tr dir-paginate="publication in data | filter: search | itemsPerPage: pageSize" current-page="currentPage">
-	                                                                            <td><a href="{[{ publication.externalDocumentUrl }]}" target="_blank"
-	                                                                            rel="nofollow"><span ng-bind="publication.title"></span></a></td>
-	                                                                            <td ng-bind="publication.adoptedEffectiveDate | date:'yyyy-MM-dd'"></td>
+	                                                                            <td>
+	                                                                            	<a href="{[{ publication.document_link }]}" target="_blank" rel="nofollow">
+	                                                                            		<span ng-bind="publication.title"></span>
+                                                                            		</a>
+                                                                        		</td>
+	                                                                            <td ng-bind="publication.created"></td>
 	                                                                        </tr>
 	                                                                    </tbody>
 	                                                                </table>

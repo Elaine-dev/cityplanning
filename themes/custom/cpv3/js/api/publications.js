@@ -3,7 +3,7 @@
 var app = angular.module('appPublication', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap', 'angularUtils.directives.dirPagination'])
 	.service('publicationService', function($http){
 		this.getRecord = function(q) {
-			return $http.get("https://planning.lacity.org/dcpapi/general/pubs/"+q);
+			return $http.get("/api/v1/publication/"+q);
 		}
 	});
 app.config(function($interpolateProvider){
@@ -15,15 +15,16 @@ app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter
 	
 	$scope.documentType = {
 		availableOptions: [
-			{id: 'Oriented District', name: 'Oriented District'},
-			{id: 'Plan', name: 'Plan'},
-			{id: 'Report', name: 'Report'},
+			{id: 203, name: 'Annual Report'},
+			{id: 202, name: 'Quarterly Newsletter'},
+			{id: 218, name: 'Housing Progress Report'},
+			{id: 219, name: 'Community Corner'},
 			{id: 'all', name: 'All'},
 		],
 	};
 	
-	  $scope.currentPage = 1;
-	  $scope.pageSize = 15;
+	$scope.currentPage = 1;
+	$scope.pageSize = 15;
 	
 	$scope.$watch('docType', function(q) {
 		publicationService.getRecord(q).then(function(response) {
