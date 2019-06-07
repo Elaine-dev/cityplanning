@@ -172,6 +172,35 @@
                                 </div>
                             </div>
                             <!-- // end item -->
+                            
+                            <!-- item -->
+                            <h3>Community Redevelopment Area (CRA)</h3>
+                            <p>
+                                Redevelopment Plans, similar to specific plans, include unique development regulations designed to implement a community vision with the 
+                                purpose of revitalizing and rebuilding communities.  They are required to be consistent with the goals of the 
+                                General Plan and Community Plans. Established by the California Community Redevelopment Law (Health and Safety Code Section 33000), 
+                                the Redevelopment Plans remain effective until their expiration, despite the dissolution of redevelopment agencies pursuant to 
+                                Assembly Bill (AB)X1 26.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse5">See Full List</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse5" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Community Redevelopment Areas (CRA)']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
 
                             <!-- item -->
                             <h3>Dual Coastal Plan Zones</h3>
@@ -224,30 +253,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- // end item -->
-
-                            <!-- item -->
-                            <!--
-                            <h3>Northeast LA Hillside Zone Change</h3>
-                            <p>
-                                The Northeast Los Angeles Hillsides consists of additional development regulations for properties in the adopted hillside area boundary within the Northeast Los Angeles Community Plan area.
-                                The regulations focus on size, height, retaining walls and grading limitations.
-                            </p>
-
-                            <a href="{{ base_path }}plans-policies/overlays/northeast-la-hillside-zone-change" class="btn btn-default overlay-custom-button" style="text-transform: uppercase !important; color: #555 !important;">View Northeast LA Hillside Zone</a>
-                            -->
-                            <!-- // end item -->
-
-                            <!-- item -->
-                            <!--
-                            <h3>The Oaks</h3>
-                            <p>
-                                The Oaks D Limitations consist of additional development regulations for properties in the adopted hillside area boundary within the Hollywood Community Plan area.
-                                The regulations focus on size, height, and lot coverage limitations.
-                            </p>
-
-                            <a href="{{ base_path }}plans-policies/overlays/oaks-d-limitations" class="btn btn-default overlay-custom-button" style="text-transform: uppercase !important; color: #555 !important;">View The Oaks</a>
-                            -->
                             <!-- // end item -->
 
                             <!-- item -->
