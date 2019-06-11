@@ -13,6 +13,7 @@ function import_csv_file($row, &$context) {
         $node = Node::create([
             'type' => 'overlays',
             'title' => $row['title'],
+            'field_sub_title' => $row['field_sub_title'],
             'field_type' => $row['field_type'],
             'field_project_planner_contact' => $row['field_project_planner_contact'],
             'field_community_plan_area_s_' => [
