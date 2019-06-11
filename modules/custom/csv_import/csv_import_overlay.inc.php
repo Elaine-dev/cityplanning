@@ -5,6 +5,7 @@ use Drupal\file\Entity\File;
 function import_csv_file($row, &$context) {
     // Do heavy coding here
     $message = 'Ready importing...';
+    $context['sandbox']['progress'] = 1;
     $context['sandbox']['progress']++;
     $context['sandbox']['current_row'] = @$row['title'];
 

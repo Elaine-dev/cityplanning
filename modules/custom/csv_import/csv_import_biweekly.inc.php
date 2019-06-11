@@ -5,6 +5,7 @@ use \Drupal\node\Entity\Node;
 function import_csv_file ($row, &$context) {
     // Do heavy coding here
     $row['prime'] = 'Biweekly case';
+    $context['sandbox']['progress'] = 1;
     $message = 'Ready importing...';
     $context['sandbox']['progress']++;
     $context['sandbox']['current_row'] = @$row['prime'];
