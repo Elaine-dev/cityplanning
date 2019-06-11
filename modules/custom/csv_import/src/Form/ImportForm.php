@@ -65,7 +65,7 @@ class ImportForm extends FormBase {
          * Delete files from import folder.
          * Copy new uploaded file to csv folder.
          */
-        $import_path = 'C:\xampp\htdocs\ladcp\sites\default\files\import\*';
+        $import_path = '/home/bitnami/apps/drupal/htdocs/sites/default/files/import/*';
         //$import_path = '/home/dcprootadmin/apps/drupal/htdocs/sites/default/files/import/*';
         if(!empty($form_state->getValues()['csv_file'][0])) {
             $import_type = $form_state->getValues()['import_for'];
