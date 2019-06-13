@@ -1028,6 +1028,7 @@ _:-moz-tree-row(hover), .planning-tag {
   background-color: #0077bd;
   color: #fff;
   position: relative;
+  min-height: 200px;
 }
 
 #say-connected a {
@@ -1049,8 +1050,7 @@ _:-moz-tree-row(hover), .planning-tag {
 }
 
 .stay-connected-social-icons {
-  padding-left: 0;
-  padding-top: 90px;
+  padding: 70px 35px;
 }
 
 #btn-newsletter {
@@ -1100,9 +1100,7 @@ _:-moz-tree-row(hover), .planning-tag {
 }
 
 .stay-connected-newsletter {
-  padding-left: 50px;
-  padding-right: 15px;
-  padding-top: 10px;
+  padding: 47px 15px 47px 50px;
 }
 
 #say-connected .btn-primary {
@@ -1117,13 +1115,44 @@ _:-moz-tree-row(hover), .planning-tag {
 }
 
 #stay-connected-text {
-  padding-top: 65px;
-  padding-left: 17px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 #say-connected button {
   margin: 4px;
 }
+.stay-connected-newsletter .btn-lg {
+	width: 338px;
+	line-height: .8;
+}
+
+.stay-connected-newsletter .newsletter-signup {
+	width: 338px;
+	background-color: #fff;
+	border-color: #ccc;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	touch-action: manipulation;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 10px 0;
+	font-size: 18px;
+}
+.stay-connected-newsletter .newsletter-signup a, .stay-connected-newsletter .newsletter-signup a:hover{
+	text-decoration: none;
+}
+
+
+#footer-contactus {
+	padding-left: 80px;
+}
+
+#footer-toolkit h6, #footer-toolkit p {
+	float: right !important;
+} 
 
 #footer-section {
   background: url(../images/footer_background_pattern.png) no-repeat 0px 71%;
