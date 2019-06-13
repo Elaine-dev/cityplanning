@@ -70,8 +70,13 @@
   background-color: #cc6699 !important;
 }
 */
-
-
+ .col-md-4 > .section-content.clear.fullwidth_buttons > div > div > a > p {
+   font-size:16px !important;
+ }
+ .info span.file a {
+     font-weight: 600;
+     color: #f68a3b !important
+ }
 #hollywood-tab {
     margin-top: -2%;
     width: 103%;
