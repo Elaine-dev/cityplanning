@@ -42,7 +42,7 @@ appSM.controller('SocialMediaCtrl', ['$scope', '$sce', 'socialMediaService', fun
 		$scope.data = chunk(filterData, 2);
 
 		$scope.boxSize = function (id) {
-			var arrIndex = [300, 300, 350, 250, 200, 400, 400, 200];
+			var arrIndex = [400, 400, 400, 400, 400, 400, 400, 400];
 			return arrIndex[id];
 		}
 	});
