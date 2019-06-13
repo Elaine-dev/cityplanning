@@ -3,7 +3,8 @@
  * author: Humbal Shahi
  * Email: humbal.shahi@lacity.org
  * Created date: 05/03/2018
- * Updated date: 05/11/2018
+ * Updated date: 06/13/2019
+ * Version: 1.1
  */
 
 'use strict';
@@ -19,7 +20,9 @@ var appSM = angular.module('appSM', ['ngRoute', 'ngSanitize', 'ngAnimate', 'ui.b
 	    if (isNaN(words)) return input;
 	    if (words <= 0) return '';
 	    if (input) {
-	        var inputWords = input.split(/\s+/);
+	    	var removeHtmlTags = input.replace(/<[^>]+>/g, '');				// use regex to remove html tags <img></img>, <div></div>, ...
+	        var inputWords = removeHtmlTags.split(/\s+/);
+	        
 	        if (inputWords.length > words) {
 	            input = inputWords.slice(0, words).join(' ') + '…';
 	        }
