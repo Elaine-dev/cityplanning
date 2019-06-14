@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.6.10
-version: 4.4.40
+Update Date: 2019.6.14
+Version: 4.4.41
 *********************/
 body {
   line-height: 1.5 !important;
@@ -456,7 +456,7 @@ mark {
 .center-content {
   position: relative;
   top: 50%;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
 }
 
 .button-title {
@@ -957,18 +957,7 @@ _:-moz-tree-row(hover), .planning-tag {
   min-height: 560px;
 }
 
-/** Masonary Social media **/
-.masonry-column {
-  padding: 0 1px;
-}
-
-.masonry-grid .thumbnail {
-  padding: 0;
-  margin-bottom: 0;
-  line-height: 0;
-  border-radius: 0;
-}
-
+/** Social media feeds **/
 .box {
   overflow: hidden;
   border: 1px solid #ffffff;
@@ -978,6 +967,7 @@ _:-moz-tree-row(hover), .planning-tag {
 
 .social-description {
   position: relative;
+  height: 348px;
 }
 
 .social-description a {
@@ -1060,11 +1050,6 @@ _:-moz-tree-row(hover), .planning-tag {
   padding: 10px 12px !important;
 }
 
-#say-connected .form-control {
-  border-radius: 0px !important;
-  height: 40px !important;
-}
-
 #signup-newsletter {
   font-weight: 300;
   padding-bottom: 10px;
@@ -1099,21 +1084,6 @@ _:-moz-tree-row(hover), .planning-tag {
   padding-top: 10px;
 }
 
-.stay-connected-newsletter {
-  padding: 47px 15px 47px 50px;
-}
-
-#say-connected .btn-primary {
-  background-color: #73c5ea !important;
-  border-color: #73c5ea;
-  color: #fff;
-  padding: 10px 12px !important;
-}
-
-.stay-connected-newsletter input {
-  height: 40px !important;
-}
-
 #stay-connected-text {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -1122,15 +1092,16 @@ _:-moz-tree-row(hover), .planning-tag {
 #say-connected button {
   margin: 4px;
 }
-.stay-connected-newsletter .btn-lg {
-	width: 338px;
-	line-height: .8;
+
+.stay-connected-newsletter {
+  padding: 47px 15px 47px 50px;
 }
 
-.stay-connected-newsletter .newsletter-signup {
+.newsletter-signup{
 	width: 338px;
-	background-color: #fff;
-	border-color: #ccc;
+	background-color: #73c5ea;
+	border-color: #73c5ea;
+	color: #fff !important;
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
@@ -1144,7 +1115,6 @@ _:-moz-tree-row(hover), .planning-tag {
 .stay-connected-newsletter .newsletter-signup a, .stay-connected-newsletter .newsletter-signup a:hover{
 	text-decoration: none;
 }
-
 
 #footer-contactus {
 	padding-left: 80px;
@@ -1211,27 +1181,6 @@ _:-moz-tree-row(hover), .planning-tag {
 }
 
 /*** Inner pages ***/
-/* #page-title-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: -2;
-	height: 17.70vw;
-	background-size: cover;
-	background-position: center center;
-}
-
-#page-title-bg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 100%;
-} */
-
 #page-title-bg {
     position: absolute;
     overflow: hidden;
@@ -1256,13 +1205,6 @@ _:-moz-tree-row(hover), .planning-tag {
 .content-wrapper {
   padding-top: 0;
 }
-
-/* #main-container {
-  background-color: #fff;
-  position: relative;
-  top: 11.7vw;
-  padding-bottom: 300px;
-} */
 
 #main-container .row {
   padding-left: 15px;

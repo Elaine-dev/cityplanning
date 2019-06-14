@@ -3,7 +3,7 @@
  * author: Humbal Shahi
  * Email: humbal.shahi@lacity.org
  * Created date: 05/03/2018
- * Updated date: 06/13/2019
+ * Updated date: 06/14/2019
  * Version: 1.1
  */
 
@@ -40,9 +40,9 @@ appSM.controller('SocialMediaCtrl', ['$scope', '$sce', 'socialMediaService', fun
 		var currentData, limitData, filterData;
 
 		currentData = response.data;
-		limitData = currentData.slice(0, 8);		// get first 8 array data
-		filterData = filterRecord(limitData);
-		$scope.data = chunk(filterData, 2);
+		limitData = currentData.slice(0, 6);		// get first 6 array data
+		$scope.data = filterRecord(limitData);
+		//$scope.data = chunk(filterData, 2);
 
 		$scope.boxSize = function (id) {
 			var arrIndex = [400, 400, 400, 400, 400, 400, 400, 400];
