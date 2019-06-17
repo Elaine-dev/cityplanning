@@ -24,62 +24,119 @@
 
   <div class="row content-wrapper">
     <!-- Left-side bar -->
-    <div class="col-md-9" id="cms-content">
-      <div class="row padding-left0">
+{% set uri = path('entity.node.canonical', {'node': node.id}) %}
+{% if '/venice/' in url %}
+<div class="col-md-9" id="cms-content">
+  <div class="row padding-left0">
+{{ node.body.value|raw }}
+
+{% if node.field_image_cpu_news_feed.value %}
+<div>{{ node.field_image_cpu_news_feed.content }}</div>
+{% endif %}
+
+
+
+{% set full_width_data = [] %}
+{% set small_width_data = [] %}
+{% set break = true %}
+
+{% for parag_id in node.field_content_section.value %}
+{% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
+{% if data['#paragraph'].hasField('field_full_width_image')or
+data['#paragraph'].hasField('field_bg_image')or
+data['#paragraph'].hasField('field_button')or
+data['#paragraph'].hasField('field_block_quote')or
+data['#paragraph'].hasField('field_fullwidth_body')
+%}
+  {% set full_width_data = full_width_data | merge({
+    (loop.index0): {
+      'para_id': parag_id['target_id'],
+      'flag': true
+    }
+  }) %}
+  {% set break = false %}
+{% elseif break %}
+  {% if data['#paragraph'].hasField('field_full_width_image') %}
+    {% set class = 'button' %}
+  {% else %}
+    {% set class = data['#paragraph'].getType %}
+  {% endif %}
+  <div class="section-content clear {{ class }}">
+    {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+  </div>
+{% else %}
+  {% set full_width_data = full_width_data | merge({
+    (loop.index0): {
+      'para_id': parag_id['target_id'],
+      'flag': false
+    }
+  }) %}
+{% endif %}
+{% endfor %}
+
+</div>
+</div>
+{% else %}
+<div class="col-md-9" id="cms-content">
+  <div class="row padding-left0">
 <div class="col-md-8" style="border-right: 1px solid #f2f2f2;">
-  {% if node.field_hero_image.value %}
+{% if node.field_hero_image.value %}
 <img src="{{ file_url(node.field_hero_image.entity.fileuri | image_style('cpu_news_feed')) }}">
 {% endif %}
 {% if node.field_caption_subhead.value %}
 <span class="news-text">{{ node.field_caption_subhead.value|raw}}</span><br /><br />
 {% endif %}
 {{ node.body.value|raw }}
-        </div>
+    </div>
 
 <div class="col-md-4">
-  {% if node.field_image_cpu_news_feed.value %}
-    <div>{{ node.field_image_cpu_news_feed.content }}</div>
-  {% endif %}
+{% if node.field_image_cpu_news_feed.value %}
+<div>{{ node.field_image_cpu_news_feed.content }}</div>
+{% endif %}
 
 
 
-  {% set full_width_data = [] %}
-  {% set small_width_data = [] %}
-  {% set break = true %}
+{% set full_width_data = [] %}
+{% set small_width_data = [] %}
+{% set break = true %}
 
-  {% for parag_id in node.field_content_section.value %}
-    {% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
-    {% if data['#paragraph'].hasField('field_full_width_image')or
-    data['#paragraph'].hasField('field_bg_image')or
-    data['#paragraph'].hasField('field_button')or
-    data['#paragraph'].hasField('field_block_quote')or
-    data['#paragraph'].hasField('field_fullwidth_body')
+{% for parag_id in node.field_content_section.value %}
+{% set data = bamboo_render_entity('paragraph', parag_id['target_id']) %}
+{% if data['#paragraph'].hasField('field_full_width_image')or
+data['#paragraph'].hasField('field_bg_image')or
+data['#paragraph'].hasField('field_button')or
+data['#paragraph'].hasField('field_block_quote')or
+data['#paragraph'].hasField('field_fullwidth_body')
 %}
-      {% set full_width_data = full_width_data | merge({
-        (loop.index0): {
-          'para_id': parag_id['target_id'],
-          'flag': true
-        }
-      }) %}
-      {% set break = false %}
-    {% elseif break %}
-      {% if data['#paragraph'].hasField('field_full_width_image') %}
-        {% set class = 'button' %}
-      {% else %}
-        {% set class = data['#paragraph'].getType %}
-      {% endif %}
-      <div class="section-content clear {{ class }}">
-        {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-      </div>
-    {% else %}
-      {% set full_width_data = full_width_data | merge({
-        (loop.index0): {
-          'para_id': parag_id['target_id'],
-          'flag': false
-        }
-      }) %}
-    {% endif %}
-  {% endfor %}
+  {% set full_width_data = full_width_data | merge({
+    (loop.index0): {
+      'para_id': parag_id['target_id'],
+      'flag': true
+    }
+  }) %}
+  {% set break = false %}
+{% elseif break %}
+  {% if data['#paragraph'].hasField('field_full_width_image') %}
+    {% set class = 'button' %}
+  {% else %}
+    {% set class = data['#paragraph'].getType %}
+  {% endif %}
+  <div class="section-content clear {{ class }}">
+    {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+  </div>
+{% else %}
+  {% set full_width_data = full_width_data | merge({
+    (loop.index0): {
+      'para_id': parag_id['target_id'],
+      'flag': false
+    }
+  }) %}
+{% endif %}
+{% endfor %}
+
+{% endif %}
+
+
 
 
 
