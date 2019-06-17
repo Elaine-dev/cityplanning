@@ -66,6 +66,10 @@ function cpv3_preprocess_page(&$variables)
    $westsideCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('westside_community_plan_update');
    $variables['westside_menu'] = formatTabMenuTitle($westsideCpuTerms);
 
+   // Community Plan Update/Boyle Heights Plan Update Tab Menu
+   $boyleheightsCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('boyle_heights_cpu');
+   $variables['boyleheights_menu'] = formatTabMenuTitle($boyleheightsCpuTerms);
+
     // get current uri
     $current_uri = \Drupal::request()->getRequestUri();
     $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
