@@ -3022,6 +3022,7 @@ span.icon {
 	background-color: #f6ab40;
 	border-color: #f5a532;
 	font-size: 16px;
+	margin: 10px 0;
 }
 
 .orange-line:hover {	
@@ -3036,6 +3037,7 @@ span.icon {
 	background-color: #93358d;
 	border-color: #811a7a;
 	font-size: 16px;
+	margin: 10px 0;
 }
 
 .purple-line:hover{
@@ -3049,6 +3051,7 @@ span.icon {
 	background-color: #00a0a6;
 	border-color: #017f84;
 	font-size: 16px;
+	margin: 10px 0;
 }
 
 .slauson-line:hover{
