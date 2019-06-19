@@ -328,7 +328,7 @@ function globalSearch() {
 }
 
 function advanceSearch() {
-	var apiPath = 'http://161.149.135.111:8080/pdisinternetv2/search';
+	var apiPath = 'http://ladcp.westus.cloudapp.azure.com/pdiscaseinfo2/search';
 	$("#adv-case-search").on('click', function(){
 		var advCaseNumber = $('#adv-case-number').val();
 		window.open(apiPath+'/case/'+advCaseNumber, '_blank');
