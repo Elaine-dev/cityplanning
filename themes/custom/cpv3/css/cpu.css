@@ -1,15 +1,17 @@
 /* up to three per page **/
 /* Icon when the collapsible content is shown */
-.readlink:after {
-  content: "Read\2009\2009Less\2009\2009\003c\003c";
-  color: #000;
-  text-decoration: underline;
-  color: orange;
-}
+.readlink.collapsed::after {
 
-/* Icon when the collapsible content is hidden */
-.readlink.collapsed:after {
-  content: "Read\2009\2009More\2009\2009\003e\003e";
+    content: "READ\2009\2009MORE\2009\2009\002B";
+
+}
+.readlink::after {
+
+    content: "READ\2009\2009LESS\2009\2009\2212";
+    color: #000;
+    text-decoration: underline;
+    color: orange;
+
 }
 /* prevents accordion from floating above webforms */
 
