@@ -82,7 +82,7 @@ function filterRecord (arr) {
 
 		// add background image style
 		if (newRecord[i]['hasImage']) {
-			style = 'background:url('+newRecord[i]['imageUrl']+') no-repeat center center; background-size: cover; border: 10px solid #fff;';
+			style = 'background:url('+newRecord[i]['imageUrl']+') no-repeat center center; background-size: cover; border-left: 5px solid #fff; border-right: 5px solid #fff; height: 416px;';
 		} else {
 			style = '';
 		}
