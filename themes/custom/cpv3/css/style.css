@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.6.20
-Version: 4.4.43
+Update Date: 2019.6.21
+Version: 4.4.44
 *********************/
 body {
   line-height: 1.5 !important;
@@ -958,9 +958,63 @@ _:-moz-tree-row(hover), .planning-tag {
 }
 
 /** Social media feeds **/
-.box {
+.social-media {
+	margin: 10px 0;
+}
+   	
+.social-media a, .social-media .fa {
+	color: #fff !important;
+}
+    
+.square {
+	width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+}
+	
+.transparent-box {
+	position: absolute;
+  	background-color: rgba(0, 0, 0, 0.5);
+  	bottom: 0px;
+    right: 15px;
+    left: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+		
+.social-icon {
+	position: absolute;
+ 	top: 8px;
+ 	left: 16px;
+ 	padding: 10px;
+}
+
+.facebook-bg {
+	background-color: #193358;
+  	min-height: 168px;
+}
+
+.twitter-bg {
+	background-color: #27a6dd;
+	min-height: 168px;
+}
+
+.youtube-bg {
+	background-color: #f4901e;
+	min-height: 168px;
+}
+
+.instagram-bg {
+	background-color: #6b4ba0;
+	min-height: 168px;
+}
+
+/* .box {
   overflow: hidden;
-  /* border: 1px solid #ffffff; */
+  border: 1px solid #ffffff;
   border-radius: 0px;
   display: block;
 }
@@ -982,26 +1036,6 @@ _:-moz-tree-row(hover), .planning-tag {
   padding: 10px;
 }
 
-.facebook-bg {
-  background-color: #193358;
-  min-height: 168px;
-}
-
-.twitter-bg {
-  background-color: #27a6dd;
-  min-height: 168px;
-}
-
-.youtube-bg {
-  background-color: #f4901e;
-  min-height: 168px;
-}
-
-.instagram-bg {
-  background-color: #6b4ba0;
-  min-height: 168px;
-}
-
 .transparent-box {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0px;
@@ -1011,7 +1045,7 @@ _:-moz-tree-row(hover), .planning-tag {
   left: 0;
   height: 60px;
   margin: auto;
-}
+} */
 
 /** Stay connected  **/
 #say-connected {
