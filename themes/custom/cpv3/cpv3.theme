@@ -70,6 +70,14 @@ function cpv3_preprocess_page(&$variables)
    $boyleheightsCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('boyle_heights_cpu');
    $variables['boyleheights_menu'] = formatTabMenuTitle($boyleheightsCpuTerms);
 
+   // Community Plan Update/Harbor Plan Update Tab Menu
+   $harborCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('harbor_menu');
+   $variables['harborplans_menu'] = formatTabMenuTitle($harborCpuTerms);
+
+   // Community Plan Update/Southeast Valley Plans Update Tab Menu
+   $sevplansCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('southeast_valley_menu');
+   $variables['sevplans_menu'] = formatTabMenuTitle($sevplansCpuTerms);
+
     // get current uri
     $current_uri = \Drupal::request()->getRequestUri();
     $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )

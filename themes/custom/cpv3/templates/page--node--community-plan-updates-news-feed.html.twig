@@ -74,7 +74,7 @@
   <div class="row padding-left0">
 <div class="col-md-8" style="border-right: 1px solid #f2f2f2;">
 {% if node.field_hero_image.value %}
-<img src="{{ file_url(node.field_hero_image.entity.fileuri | image_style('cpu_news_feed')) }}">
+<img src="{{ file_url(node.field_hero_image.entity.fileuri | image_style('cpu_news_feed')) }}" style="float:left; padding:0 10 10 0;"/>
 {% endif %}
 {% if node.field_caption_subhead.value %}
 <span class="news-text">{{ node.field_caption_subhead.value|raw}}</span><br /><br />
