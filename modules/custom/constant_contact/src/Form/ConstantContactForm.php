@@ -66,7 +66,7 @@ class ConstantContactForm extends ConfigFormBase {
             '#placeholder' => 'API Token',
             '#description' => $this->t('To get API Token / Access Token, follow the instruction below: <br>
                                 1. After getting the API key, you have to click the Get Token Button. <br>
-                                2. Follow the steps unitll you receive the token strings.            
+                                2. Follow the steps until you receive the token strings.            
                                 '),
             '#default_value' => $config->get('cc_access_token'), 
         ]; 
@@ -75,7 +75,7 @@ class ConstantContactForm extends ConfigFormBase {
             '#type' => 'select',
             '#title' => $this->t('Email List'),
             '#options' => ($options) ? $options : '',
-            '#description' => $this->t('Set the default List from the drop-dwon. <br>
+            '#description' => $this->t('Set the default List from the drop down. <br>
                                     <em>Note: The list will be displayed only when you provide API Key and Access Token to the above fields.</em> '),
             '#default_value' => $config->get('cc_email_list'),
         ]; 
