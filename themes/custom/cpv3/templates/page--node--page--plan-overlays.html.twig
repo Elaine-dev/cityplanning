@@ -1,4 +1,9 @@
     {# page template #}
+    {# 
+    	Current URL is splitted and check the condition accordingly
+    	to display Title and Sub-title in the title bar on different nodes.
+    	    
+    #}
 
     <!-- Fixed navbar -->
     {% include directory ~ '/partials/header.html.twig' %}
@@ -12,34 +17,51 @@
         </div>
     </div>{# End page-banner #}
 
-        <!-- contain -->
+    <!-- contain -->
+    {% set currUrl = url('<current>') %}  {# http://10.68.8.153/plans-policies/overlays #}
+    {% set splitUrl = currUrl['#markup']|split('/') %}
+    
     <div class="container" id="main-container">
         {# Main content #}
-        <div class="row">
-        	<div class="col-md-12" style="padding-left: 20px;">{{ page.title_bar }}</div>
-        </div>
-        <div class="row content-wrapper">
-
-            	{# Left-side bar #}
+        {% if splitUrl[6] %}
+        	<div class="row content-wrapper">
+                {# Left-side bar #}
+	            <div class="col-md-9">
+	                <div class="row padding-left0">
+	                    <div class="col-md-12 padding-left0 padding-right0">
+							{# content goes here #}
+							{% if page.content %}
+							    {{ page.content }}
+						    {% endif  %}
+						    
+	                    </div>
+	                </div>
+	            </div>{# End Left-side bar #}
+            
+	            {# Right-side bar #}
+	            <div class="col-md-3 sidebar-menu hidden-sm hidden-xs" id="sidebar-menu-overlay">
+	                <div class="top-bar"></div>
+	                  {{ page.side_menu }}
+	            </div>{# End Right-side bar #}
+            </div>
+        
+        {% else %}
+	   
+        	<div class="row">
+            	<div class="col-md-12" style="padding-left: 20px;">{{ page.title_bar }}</div>
+            </div>
+               
+            <div class="row content-wrapper">    
+        	    {# Left-side bar #}
 	            <div class="col-md-9">
 	                <div class="row padding-left0">
 	                   <div class="col-md-12" id="overlays-landingpage">
-                            <p><img alt="search" data-align="left" data-entity-type="file" data-entity-uuid="94ec1e3d-df3a-486e-a5ff-eebe5f7b2d7b" src="/sites/default/files/inline-images/search-icon.png" />
-                            <input placeholder="Search" style="margin-left:15px; width: 70%; border-radius: 5px;" type="text" /></p>
+                            <p>1An overlay is an additional layer of planning control applied to properties located within a clearly defined geographic area. Overlays function as tailored zoning districts, each with their own specialized set of regulations.</p>
 
-                            <p>&nbsp;</p>
-                            <p>
-                                An overlay is an additional layer of planning control applied to properties located within a clearly defined geographic area. Overlays function as tailored zoning districts,
-                                each with their own specialized set of regulations.
-                            </p>
-                            <p>
-                                Overlays implement the City's General Plan and Community Plans through neighborhood-specific policy objectives beyond what is already established through the underlying base zoning.
-                                Applicants seeking to develop in an overlay must demonstrate they are in compliance with all applicable regulations
-                            </p>
-
-                            <p>
-                                In the City of Los Angeles, there are numerous types of overlays. They are listed alphabetically below:
-                            </p>
+                            <p>Overlays implement the City's General Plan and Community Plans through neighborhood-specific policy objectives beyond what is already established through the underlying base zoning. Applicants seeking to develop in an overlay must demonstrate they are in compliance with all applicable regulations</p>
+                            
+                            <p>In the City of Los Angeles, there are numerous types of overlays. They are listed alphabetically below:</p>
+        	    
 
                             <!-- item -->
                             <h3>Certified Coastal Land Use Plan</h3>
@@ -52,7 +74,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse1">View Full List of CCLUP</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse1">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -78,7 +100,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse2">View Full List</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse2">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -104,7 +126,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse3">View Full List of CDOs</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse3">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -130,13 +152,42 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse4">View Full List of CPIOs</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse4">See Full List</a>
                                         </h6>
                                     </div>
 
                                     <div id="collapse4" class="panel-collapse collapse">
                                         <ul class="list-group">
                                             {% for item in overlays['Community Plan Implementation Overlays (CPIOs)']  %}
+                                            <li><a href="{{ item.url }}">{{ item.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // end item -->
+                            
+                            <!-- item -->
+                            <h3>Community Redevelopment Agency Plans (CRA)</h3>
+                            <p>
+                                Redevelopment Plans, similar to specific plans, include unique development regulations designed to implement a community vision with the 
+                                purpose of revitalizing and rebuilding communities.  They are required to be consistent with the goals of the 
+                                General Plan and Community Plans. Established by the California Community Redevelopment Law (Health and Safety Code Section 33000), 
+                                the Redevelopment Plans remain effective until their expiration, despite the dissolution of redevelopment agencies pursuant to 
+                                Assembly Bill (AB)X1 26.
+                            </p>
+
+                            <div class="panel-group" id="overlays">
+                                <div class="panel panel-default collapse-list">
+                                    <div class="panel-heading">
+                                        <h6 class="panel-title">
+                                            <a class="title" data-toggle="collapse" href="#collapse5">See Full List</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapse5" class="panel-collapse collapse">
+                                        <ul class="list-group">
+                                            {% for item in overlays['Community Redevelopment Areas (CRA)']  %}
                                             <li><a href="{{ item.url }}">{{ item.title}}</a></li>
                                             {% endfor %}
                                         </ul>
@@ -156,7 +207,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse6">View Full List of Dual Coastal Plan Zones</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse6">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -183,7 +234,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse7">View Full List of HPOZs</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse7">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -199,26 +250,6 @@
                             <!-- // end item -->
 
                             <!-- item -->
-                            <h3>Northeast LA Hillside Zone Change</h3>
-                            <p>
-                                The Northeast Los Angeles Hillsides consists of additional development regulations for properties in the adopted hillside area boundary within the Northeast Los Angeles Community Plan area.
-                                The regulations focus on size, height, retaining walls and grading limitations.
-                            </p>
-
-                            <a href="{{ base_path }}plans-policies/overlays/northeast-la-hillside-zone-change" class="btn btn-default overlay-custom-button" style="text-transform: uppercase !important; color: #555 !important;">View Northeast LA Hillside Zone</a>
-                            <!-- // end item -->
-
-                            <!-- item -->
-                            <h3>The Oaks</h3>
-                            <p>
-                                The Oaks D Limitations consist of additional development regulations for properties in the adopted hillside area boundary within the Hollywood Community Plan area.
-                                The regulations focus on size, height, and lot coverage limitations.
-                            </p>
-
-                            <a href="{{ base_path }}plans-policies/overlays/oaks-d-limitations" class="btn btn-default overlay-custom-button" style="text-transform: uppercase !important; color: #555 !important;">View The Oaks</a>
-                            <!-- // end item -->
-
-                            <!-- item -->
                             <h3>Pedestrian/Neighborhood Oriented Districts (POD/NOD)</h3>
                             <p>
                                 Pedestrian or Neighborhood Oriented Districts (POD/NOD) are districts where a variety of commercial uses and activities are located along major streets that have a majority of
@@ -229,7 +260,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse8">View Full List of PODs/NODs</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse8">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -255,7 +286,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse9">View Full List of SN</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse9">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -281,7 +312,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse10">View Full List of SP</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse10">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -307,7 +338,7 @@
                                 <div class="panel panel-default collapse-list">
                                     <div class="panel-heading">
                                         <h6 class="panel-title">
-                                            <a class="title" data-toggle="collapse" href="#collapse11">View Full List of Streetscape Plans</a>
+                                            <a class="title" data-toggle="collapse" href="#collapse11">See Full List</a>
                                         </h6>
                                     </div>
 
@@ -326,15 +357,17 @@
 
 	                </div>
 	            </div>{# End Left-side bar #}
-
+    
 	            {# Right-side bar #}
 	            <div class="col-md-3 sidebar-menu padding-right-27 hidden-sm hidden-xs">
-	                <div class="top-bar"></div>
-	                  {{ page.side_menu }}
-	            </div>{# End Right-side bar #}
-
-        </div>
-    </div>{# End container #}
+            		<div class="top-bar"></div>
+                      {{ page.side_menu }}
+	            </div>{# End Right-side bar #} 
+            </div>       	
+        {% endif %}
+        
+        </div>{# End container #}  
+    
 
     <!-- footer section -->
     {% include directory ~ '/partials/footer.html.twig' %}

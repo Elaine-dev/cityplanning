@@ -1,0 +1,51 @@
+    {# page template #}
+    {# 
+    	Current URL is splitted and check the condition accordingly
+    	to display Title and Sub-title in the title bar on different nodes.
+    	    
+    #}
+
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				{{ page.top_banner }}
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+    <!-- contain -->
+    {# % set currUrl = url('<current>') % #}  {# http://10.68.8.153/plans-policies/overlays #}
+    {# % set splitUrl = currUrl['#markup']|split('/') % #}
+    
+    <div class="container" id="main-container">
+        {# Main content #}        
+    	<div class="row content-wrapper">
+            {# Left-side bar #}
+            <div class="col-md-9">
+                <div class="row padding-left0">
+                    <div class="col-md-12 padding-left0 padding-right0">
+						{# content goes here #}
+						{% if page.content %}
+						    {{ page.content }}
+					    {% endif  %}
+					    
+                    </div>
+                </div>
+            </div>{# End Left-side bar #}
+        
+            {# Right-side bar #}
+            <div class="col-md-3 sidebar-menu hidden-sm hidden-xs" id="sidebar-menu-overlay">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
+        </div>
+    
+    </div>{# End container #}  
+    
+
+    <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}
