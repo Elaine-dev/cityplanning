@@ -53,7 +53,7 @@
               {% else %}
                 {% set class = data['#paragraph'].getType %}
               {% endif %}
-              <div class="section-content clear {{ class }}">
+              <div class="section-content {{ class }} clearfix">
                 {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
               </div>
             {% else %}
@@ -87,17 +87,19 @@
 
 {% for item in full_width_data %}
   {% if item.flag %}
-    <div class="clear full-width-content {% if item.para_id == 122 %} block-qoute-wrapper {% endif %}">
+    <div class="full-width-content {% if item.para_id == 122 %} block-qoute-wrapper {% endif %} clearfix">
       {# full width content goes here #}
       {{ bamboo_render_entity('paragraph', item.para_id) }}
     </div>
 
   {% else %}
     {# small width content goes here #}
-    <div class="container">
-      <div class="row cms-fullwidth">
-        <div class="section-content clear">
-          {{ bamboo_render_entity('paragraph', item.para_id) }}
+    <div class="container clearfix">
+      <div class="row">
+      	<div class="col-md-12">
+            <div class="section-content clearfix" style="padding-bottom: 50px;">
+              {{ bamboo_render_entity('paragraph', item.para_id) }}
+            </div>
         </div>
       </div>
     </div>
