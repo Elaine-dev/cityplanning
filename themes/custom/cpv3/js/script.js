@@ -46,6 +46,9 @@ jQuery(document).ready(function(){
   
 	/** Side menu : Preservation & Design > Urban Design **/
 	urbanDesignSideMenu();  
+	
+	/** Image pop-up  **/
+	imagePopUpGallery();
 });
 
 function homepageSlider() {
@@ -389,4 +392,26 @@ function urbanDesignSideMenu() {
 			  $('.unhide-urd').hide();
 		  }
 	  }
+}
+
+function imagePopUpGallery() {
+	var groups = {};
+	$('.galleryItem').each(function() {
+	  var id = parseInt($(this).attr('data-group'), 10);
+	  
+	  if(!groups[id]) {
+	    groups[id] = [];
+	  } 
+	  
+	  groups[id].push( this );
+	});
+
+	$.each(groups, function() {			  
+	  $(this).magnificPopup({
+	      type: 'image',
+	      closeOnContentClick: true,
+	      closeBtnInside: false,
+	      gallery: { enabled:true }
+	  })			  
+	});
 }
