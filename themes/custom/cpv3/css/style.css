@@ -3094,6 +3094,22 @@ span.icon {
 	background-color: #01868b;
 }
 
+/*********************************  
+ * Venice LCP : Image gallery
+ * 
+ *********************************/
+.flex-container {
+	display: flex;
+  	flex-wrap: wrap;	
+}
+
+.flex-container > div {
+  width: 22%;
+  height: 118px;
+  margin: 5px;
+  overflow: hidden;
+}
+
 /***************** Media Query *****************/
 /* public counters -- locations and hours page */
 @media screen and (min-width: 900px) and (max-width: 1200px) {
@@ -3340,6 +3356,15 @@ span.icon {
 
   .tab-line {
     border-right: none;
+  }
+  
+ /*********************************  
+  * Venice LCP : Image gallery
+  * 
+  *********************************/
+  .flex-container > div {
+    width: 100%;
+  	height: auto;
   }
 }
 
