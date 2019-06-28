@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.6.21
-Version: 4.4.44
+Update Date: 2019.6.28
+Version: 4.4.45
 *********************/
 body {
   line-height: 1.5 !important;
@@ -2616,7 +2616,7 @@ ul#list-horizontal li {
  * Accordion / Community Plan Area
  ***********************************/ 
 #accordion .list-group {
-  padding: 5px 15px;
+  padding: 15px;
   border-bottom: solid 1px #ddd;
 }
 
