@@ -376,7 +376,7 @@ function urbanDesignSideMenu() {
 	  	var subLevel2 = splitPathName[2];					// urban-design
 	  	var subLevel3 = splitPathName[3];					// program-overview
 		  
-	  	var urbanDesignMenus = ['program-overview', 'policy-objectives', 'guidelines-standards'];
+	  	var urbanDesignMenus = ['program-overview', 'project-review', 'guidelines-standards'];
 		  
 		  if (subLevel1 == 'preservation-design' && subLevel2 == 'urban-design') {
 			 
