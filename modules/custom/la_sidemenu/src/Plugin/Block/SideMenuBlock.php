@@ -25,10 +25,16 @@ class SideMenuBlock extends BlockBase {
         $list = array();
         //Get uri
         $uri = $_SERVER['REQUEST_URI'];
-        $uri_array = explode('/',$uri);
-        echo "<pre>";
-        print_r($uri_array);
+        $uri_array = explode('/', $uri);
         
+        /**
+         * Array (
+            [0] =>
+            [1] => preservation-design
+            [2] => urban-design
+            [3] => program-overview
+            )
+         */        
         $menu_level = $uri_array[1];
         $actual_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
@@ -72,7 +78,7 @@ class SideMenuBlock extends BlockBase {
         $html = '<ul>';
         
         // hide/unhide Urban Design sub-menus
-        $urban_design_menu = ['Urban Design Program Overview','Urban Design Policy Objectives','Urban Design Guidelines & Standards'];
+        $urban_design_menu = ['Urban Design Program Overview','Urban Design Project Review','Urban Design Guidelines & Standards'];
         $class_for_preservation_design = '';
         
         if (!empty($list[0]['child'])) {
