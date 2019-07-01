@@ -26,6 +26,10 @@ class SideMenuBlock extends BlockBase {
         //Get uri
         $uri = $_SERVER['REQUEST_URI'];
         $uri_array = explode('/',$uri);
+        echo "<pre>";
+        print_r($uri_array);
+        
+        $menu_level = $uri_array[1];
         $actual_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
         // load main menu
@@ -48,7 +52,7 @@ class SideMenuBlock extends BlockBase {
             $title = readableURLString($title);
             
             //Todo need to update index based on uri
-            if($title == $uri_array[1]) {
+            if($title == $menu_level) {
                 if(!empty($item->subtree)) {
                     foreach($item->subtree as $child) {
                         $child_title = $child->link->getTitle();
@@ -112,7 +116,7 @@ class SideMenuBlock extends BlockBase {
                *         [3] => policy-objectives
                *     )
                */
-              if ($uri_array[1]== 'preservation-design') {
+              if ($menu_level== 'preservation-design') {
                   $class_for_preservation_design =  (in_array($link_text, $urban_design_menu)) ? 'unhide-urd' : 'hide-urd';
               }
                        
