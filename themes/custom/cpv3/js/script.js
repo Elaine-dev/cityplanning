@@ -394,6 +394,9 @@ function urbanDesignSideMenu() {
 	  }
 }
 
+/**
+ * Ref: https://dimsemenov.com/plugins/magnific-popup/
+ */
 function imagePopUpGallery() {
 	var groups = {};
 	$('.galleryItem').each(function() {
