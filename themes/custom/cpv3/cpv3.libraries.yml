@@ -92,10 +92,11 @@ community-plan-areas:
 agenda-hearing:
   version:                                                                                                          VERSION
   js:
-    js/api/app.js:                                                                                                  {}
-    js/api/agendaService.js:                                                                                        {}
-    js/api/agendaCtrl.js:                                                                                           {}
-    js/api/hearingsCtrl.js:                                                                                         {}
+    #js/api/app.js:                                                                                                  {}
+    #js/api/agendaService.js:                                                                                        {}
+    #js/api/agendaCtrl.js:                                                                                           {}
+    #js/api/hearingsCtrl.js:                                                                                         {}
+    js/api/commissionsMeetings.js:                                                                                  {}
 
 eir-js:
   version:                                                                                                          1.0

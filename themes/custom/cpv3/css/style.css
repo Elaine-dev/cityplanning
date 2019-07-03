@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.6.28
-Version: 4.4.45
+Update Date: 2019.7.03
+Version: 4.4.46
 *********************/
 body {
   line-height: 1.5 !important;
@@ -1411,24 +1411,24 @@ article img {
   border-right: #ccc 1px solid;
 }
 
-#commissions-tab .nav-tabs>li, #hollywood-tab .nav-tabs>li, #demographics-tab .nav-tabs>li, #publication-tab .nav-tabs>li{
+#commissions-tab .nav-tabs>li, #hollywood-tab .nav-tabs>li, #demographics-tab .nav-tabs>li, #publication-tab .nav-tabs>li, #commissions-meeting-tab .nav-tabs>li {
   margin-bottom: 0px;
 }
 
-#commissions-tab .nav-tabs>li>a, #hollywood-tab .nav-tabs>li>a, #demographics-tab .nav-tabs>li>a, #publication-tab .nav-tabs>li>a {
+#commissions-tab .nav-tabs>li>a, #hollywood-tab .nav-tabs>li>a, #demographics-tab .nav-tabs>li>a, #publication-tab .nav-tabs>li>a, #commissions-meeting-tab .nav-tabs>li>a {
   border: 0px;
   border-radius: 0px;
 }
 
-#commissions-tab .nav-tabs>li>, #hollywood-tab .nav-tabs>li>, #demographics-tab .nav-tabs>li>, #publication-tab .nav-tabs>li> {
+#commissions-tab .nav-tabs>li>, #hollywood-tab .nav-tabs>li>, #demographics-tab .nav-tabs>li>, #publication-tab .nav-tabs>li>, #commissions-meeting-tab .nav-tabs>li> {
   border-right: #000 !important;
 }
 
-#commissions-tab .nav-tabs, #hollywood-tab .nav-tabs, #demographics-tab .nav-tabs, #publication-tab .nav-tabs {
+#commissions-tab .nav-tabs, #hollywood-tab .nav-tabs, #demographics-tab .nav-tabs, #publication-tab .nav-tabs, #commissions-meeting-tab .nav-tabs {
   padding-bottom: 10px;
 }
 
-#commissions-tab .nav>li>a, #hollywood-tab .nav>li>a, #demographics-tab .nav>li>a, #publication-tab .nav>li>a {
+#commissions-tab .nav>li>a, #hollywood-tab .nav>li>a, #demographics-tab .nav>li>a, #publication-tab .nav>li>a, #commissions-meeting-tab .nav>li>a {
   padding-top: 0 !important;
   padding-bottom: 0;
   z-index: 100;
