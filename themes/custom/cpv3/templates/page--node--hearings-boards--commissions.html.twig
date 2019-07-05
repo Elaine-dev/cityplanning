@@ -105,11 +105,13 @@
                                           <col class="col-md-1">
                                           <col class="col-md-1">
                                           <col class="col-md-1">
+                                          <col class="col-md-1">
                                         </colgroup>
                                         <thead>
                                         <tr>
                                           <th>Date</th>
                                           <th>Type</th>
+                                          <th>APC</th>
                                           <th>Agenda</th>
                                           <th>Supplemental Docs</th>
                                           <th>Audio</th>
@@ -120,6 +122,9 @@
                                           <td ng-bind="agenda.Date"></td>
                                           <td>
                                             <span ng-if="agenda.Type" ng-bind="agenda.Type"></span>
+                                          </td>
+                                          <td>
+                                          	<span ng-if="agenda.APC" ng-bind="agenda.APC"></span>
                                           </td>
                                           <td>
                                             <span ng-if="agenda.AgendaLink">
@@ -153,8 +158,7 @@
                                       </table>
                                     </div>
                                   </div>
-                                </div>
-                                
+                                </div>                               
                                             		
                     		</div>
                     		
@@ -202,8 +206,7 @@
                                           <col class="col-md-2">
                                           <col class="col-md-3">
                                           <col class="col-md-5">
-                                          <col class="col-md-2">
-                                          
+                                          <col class="col-md-2">                                          
                                         </colgroup>
                     
                                         <thead>
@@ -212,8 +215,7 @@
                                           <th>Type</th>
                                           <th>Board Name</th>
                                           <th>Address</th>
-                                          <th>Agenda</th>
-                                          
+                                          <th>Agenda</th>                                          
                                         </tr>
                                         </thead>
                     
@@ -226,8 +228,7 @@
                                             <span ng-if="board.AgendaLink"><a href="{[{board.AgendaLink}]}" target="_blank">
                                                 <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
                                             </span>
-                                          </td>
-                                          
+                                          </td>                                          
                                         </tr>
                                       </table>
                                     </div>
@@ -294,8 +295,8 @@
                                           <th>Case Number</th>
                                           <th>Address</th>
                                           <th>Notes</th>
-                                          <th>Hearing Notice</th>
                                           <th>Agenda</th>
+                                          <th>Hearing Notice</th>
                                           <th>Council District</th>
                                         </tr>
                                         </thead>
@@ -306,14 +307,14 @@
                                           <td ng-bind="hearing.Address"></td>
                                           <td ng-bind="hearing.Note"></td>
                                           <td>
-                                            <span ng-if="hearing.HearingLink"><a href="{[{hearing.HearingLink}]}" target="_blank">
-                                                <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
-                                            </span>
-                                          </td>
-                                          <td>
                                           	<span ng-if="hearing.AgendaLink"><a href="{[{hearing.AgendaLink}]}" target="_blank">
                                                 <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>                                          	
                                           	</span>                                          
+                                          </td>
+                                          <td>
+                                            <span ng-if="hearing.HearingLink"><a href="{[{hearing.HearingLink}]}" target="_blank">
+                                                <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
+                                            </span>
                                           </td>
                                           <td ng-bind="hearing.CD"></td>
                                         </tr>
@@ -330,8 +331,7 @@
             		
         		</div>
             
-            </div>{# //end Tabs #}            
-            
+            </div>{# //end Tabs #}     
 
           </div>
         </div>
