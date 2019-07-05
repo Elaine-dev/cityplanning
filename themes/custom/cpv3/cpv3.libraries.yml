@@ -213,3 +213,4 @@ hpozs-calendar:
     js/calendar/moment.min.js:                                                                                      {}
     js/calendar/fullcalendar.js:                                                                                    {}
     js/calendar/hpozs-calendar.js:                                                                                  {}
+    js/calendar/hpozs-calendar-detail.js:                                                                           {}

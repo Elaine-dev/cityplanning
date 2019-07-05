@@ -1,0 +1,64 @@
+    {# page template #}
+    
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				<div id="page-title-bg" style="background-image: url('{{ file_url(node.field_image.entity.fileuri) }}')"></div>
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+        <!-- contain -->
+    <div class="container" id="main-container" ng-app="appHPOZ" ng-controller="HPOZCtrl">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12"><h1>{[{ data.title }]}</h1></div>
+        </div>
+        <div class="row content-wrapper" >
+        
+        	{# Left-side bar #}
+            <div class="col-md-9">
+                <div class="row padding-left0">
+                    <div class="col-md-12 padding-left0 padding-right0">
+						{# content goes here #}
+						
+						<div>
+							<div ng-if="data.date_time_text.length > 0"><i class="fa fa-calendar" aria-hidden="true"></i> {[{ data.date_time_text }]}</div>
+							<div ng-if="data.location_map != ''"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; <a href="{[{ data.location_map }]}" target="_blank">{[{ data.location }]}</a></div>
+						</div>
+						
+						<div ng-if="data.html_description.length > 0">
+    						<hr>
+    						<div ng-bind-html="data.html_description"></div>
+						</div>						
+						
+						<div ng-if="data.attachments.length > 0">
+							<hr>
+							<h6>Attachments</h6>
+							<ul ng-repeat="val in data.attachments">
+								<li><a href="{[{ val.url  }]}">{[{ val.filename }]}</a></li>
+							</ul>
+						</div>
+						
+                    </div>
+                </div>
+            </div>{# End Left-side bar #}
+        
+            {# Right-side bar #}
+            <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+                <div class="top-bar"></div>
+                  {{ page.side_menu }}
+            </div>{# End Right-side bar #}
+            
+            
+        </div>
+    </div>{# End container #}
+    
+    <!-- footer section -->
+    {{ attach_library ('cpv3/hpozs-calendar') }}
+    {{ attach_library ('cpv3/angular-js') }}
+    {% include directory ~ '/partials/footer.html.twig' %}
