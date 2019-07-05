@@ -157,6 +157,6 @@ jQuery(document).ready(function($){
     	}
     }
     
-    // hasURLtoTab();
+    hasURLtoTab();
 });
 
