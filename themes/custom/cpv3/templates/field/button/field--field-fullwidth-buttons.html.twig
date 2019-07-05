@@ -1,7 +1,7 @@
 {% for item in items %}
 	{% set bg = item.content['#field_collection_item'].get('field_bg_class').value %}
 	{% set icon = item.content['#field_collection_item'].get('field_icon_class').value %}
-	{% set link = item.content['#field_collection_item'].get('field_button_link_url').value[0]['uri'] %}
+    {% set link = item.content['#field_collection_item'].field_button_link_url.0.url %}
 	{% set text = item.content['#field_collection_item'].get('field_text').value %}
 	<div>
 		<a href="{{ link }}">
