@@ -283,6 +283,8 @@
                                           <col class="col-md-5">
                                           <col class="col-md-2">
                                           <col class="col-md-2">
+                                          <col class="col-md-2">
+                                          <col class="col-md-2">
                                         </colgroup>
                     
                                         <thead>
@@ -290,7 +292,9 @@
                                           <th>Date</th>
                                           <th>Case Number</th>
                                           <th>Address</th>
+                                          <th>Notes</th>
                                           <th>Hearing Notice</th>
+                                          <th>Agenda</th>
                                           <th>Council District</th>
                                         </tr>
                                         </thead>
@@ -299,10 +303,16 @@
                                           <td ng-bind="hearing.Date"></td>
                                           <td ng-bind="hearing.CaseNumber"></td>
                                           <td ng-bind="hearing.Address"></td>
+                                          <td ng-bind="hearing.Note"></td>
                                           <td>
                                             <span ng-if="hearing.HearingLink"><a href="{[{hearing.HearingLink}]}" target="_blank">
                                                 <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
                                             </span>
+                                          </td>
+                                          <td>
+                                          	<span ng-if="hearing.AgendaLink"><a href="{[{hearing.AgendaLink}]}" target="_blank">
+                                                <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>                                          	
+                                          	</span>                                          
                                           </td>
                                           <td ng-bind="hearing.CD"></td>
                                         </tr>
@@ -311,7 +321,7 @@
                                   </div>
                                 </div>  
                                                 		
-                    		</div>                		
+                    		</div> {# //end hearings tab #}               		
                 		
                 		</div> <!-- //end .tab-content -->
                 		
