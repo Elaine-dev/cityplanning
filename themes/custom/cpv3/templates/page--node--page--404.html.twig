@@ -16,7 +16,10 @@
     <div class="container" id="main-container">
         {# Main content #}
         <div class="row">
-            <div class="col-md-12"><h1>Oops!</h1></div>
+            <div class="col-md-12">
+            	<h1>Oops!</h1>
+            	<span style="font-size: x-large;">The page you were looking for was not found.</span>
+            </div>
         </div>
         
         <div class="row content-wrapper" style="min-height: 290px;">
@@ -24,7 +27,7 @@
             	<div class="row padding-left0">
                 	<div class="col-md-12 padding-left0 padding-right0">
                         {# content goes here #}
-                        <p style="font-size: x-large;">The page you were looking for was not found.<br>GO BACK TO THE HOME PAGE?</p>
+                        <div style="font-size: x-large; padding-left: 15px;">GO BACK TO THE HOME PAGE?</div>
                         {{ page.content }}
                     </div>
                 </div>
