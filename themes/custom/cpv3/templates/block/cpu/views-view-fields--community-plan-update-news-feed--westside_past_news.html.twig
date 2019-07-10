@@ -7,6 +7,17 @@
 {%
   set class =  ''
 %}
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default collapse-list">
+    <div class="panel-heading">
+      <h6 class="panel-title">
+          <a class="title no-uppercase" data-toggle="collapse" href="#collapse-past-news">Past Updates</a>
+      </h6>
+    </div>
+
+    <div id="collapse-past-news" class="panel-collapse collapse">
+      <div class="list-group">
+
 
 <div class="row padding-left0 padding-right0" style="padding-bottom: 1px;">
     <div class="col-md-12">
@@ -19,8 +30,7 @@
 <div class="col-md-8">
  <div class="padding-bottom15">
   <h5 style="margin-top: 0px; margin-left:-15px;">{{ fields.title.content }}</h5>
-  <div class="date" style="font-size: 12px; margin-left:-15px">
-  </div>
+
  </div>
 </div>
 
@@ -28,15 +38,15 @@
 
  <div class="news-content">{{ fields.body.content }}</div>
 
- {# READ MORE button, if needed #}
-  {# <div class="btn btn-primary">{{ fields.view_node.content }} </div> #}
+
 
 </div>
  </div>
 
  <div class="row paddingtop15 padding-left0 padding-right0">
  <div class="col-md-12"><p class="bottom-solid-line"></p></div>
-
-
-
- </div>
+</div>
+</div>
+</div>
+</div>
+</div>

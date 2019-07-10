@@ -9,18 +9,19 @@ global-styling:
       css/magnific-popup.css:                                                                                       {}
 
   js:
-    https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js:                                              {}
-    https://code.jquery.com/ui/1.12.1/jquery-ui.min.js:                                                             {}
-    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js:                                            {}
-    js/ie-emulation-ie10-viewport.js:                                                                               {}
-    js/script.js:                                                                                                   {}
-    js/iscript.js:                                                                                                  {}
-    #js/main.js:                                                                                                    {}
-    js/swiper.js:                                                                                                   {}
-    #https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js:                                          {}
-    https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js:                                                 {}
-    js/jquery.magnific-popup.js:                                                                                    {}
-    js/google-analytics.js:                                                                                         {}
+    https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.js: {}
+    https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js:                                                    {}
+    https://code.jquery.com/ui/1.12.1/jquery-ui.min.js:                                                                   {}
+    https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js:                                                  {}
+    js/ie-emulation-ie10-viewport.js:                                                                                     {}
+    js/script.js:                                                                                                         {}
+    js/iscript.js:                                                                                                        {}
+    #js/main.js:                                                                                                          {}
+    js/swiper.js:                                                                                                         {}
+    #https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js:                                                {}
+    https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js:                                                       {}
+    js/jquery.magnific-popup.js:                                                                                          {}
+    js/google-analytics.js:                                                                                               {}
 
   #dependencies:
     #- core/jquery

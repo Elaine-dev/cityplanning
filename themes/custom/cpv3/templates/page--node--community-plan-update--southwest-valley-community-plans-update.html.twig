@@ -160,29 +160,3 @@
 {{ attach_library('cpv3/cpu') }}
 <!-- footer section -->
 {% include directory ~ '/partials/footer.html.twig' %}
-{# javascript used in conjunction with twig clean_id and clean_class to rename tab href to name of tab and create hash URL #}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type = "text/javascript">
-    // store the currently selected tab in the hash value
-
-$(document).ready(function(){
-  $(function(){
-    var hash = window.location.hash;
-    hash && $('#hollywood-tab ul.nav.nav-tabs a[href="' + hash + '"]').tab('show');
-
-    $('#hollywood-tab ul.nav.nav-tabs a').click(function (e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      $(this).tab('show');
-      var scrollmem = $('body').scrollTop();
-      window.location.hash = this.hash;
-      $('body,html').scrollTop(scrollmem);
-    });
-  });
-
-});
-$("#pop").on("click", function() {
-   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
-   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
-});
-</script>
