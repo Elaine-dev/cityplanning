@@ -57,6 +57,10 @@ function cpv3_preprocess_page(&$variables)
    // TNP Plan/Orange Line Tab Menu
    $orangeTnpCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('orange_line_tnp_menu');
    $variables['orange_line_menu'] = formatTabMenuTitle($orangeTnpCpuTerms);
+   
+   // TNP Plan/ Slauson Corridor Tab Menu
+   $slausonTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('slauson_corridor_tnp_menu');
+   $variables['slauson_corridor_menu'] = formatTabMenuTitle($slausonTNPCpuTerms);
 
    // Community Plan Update/Downtown Plan Update Tab Menu
    $downtownCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('downtown_community_plan_update');
