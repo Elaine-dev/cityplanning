@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.7.03
-Version: 4.4.46
+Update Date: 2019.7.11
+Version: 4.4.47
 *********************/
 body {
   line-height: 1.5 !important;
@@ -321,6 +321,118 @@ q:before, q:after {
   font-size: 18px;
 }
 
+.Orange {
+  color: #fff;
+  background-color: #f7962f;
+  border-color: #f78f21;
+  font-size: 18px !important;
+}
+
+.Orange:hover {
+  color: #fff;
+  background-color: #f7962f;
+  border-color: #f68813;
+  font-size: 18px !important;
+}
+
+.Gray-Light {
+  color: #fff;
+  background-color: #A0A8A9;
+  border-color: #949b9c;
+  font-size: 18px !important;
+}
+
+.Gray-Light:hover {
+  color: #fff;
+  background-color: #A0A8A9;
+  border-color: #878e8f;
+  font-size: 18px !important;
+}
+
+.Gray-Dark {
+  color: #fff;
+  background-color: #7b7979;
+  border-color: #6d6a6a;
+  font-size: 18px !important;
+}
+
+.Gray-Dark:hover {
+  color: #fff;
+  background-color: #7b7979;
+  border-color: #5e5b5b;
+  font-size: 18px !important;
+}
+
+.Fountain-Teal {
+  color: #fff;
+  background-color: #0EB1C2;
+  border-color: #06afc1;
+  font-size: 18px !important;
+}
+
+.Fountain-Teal:hover {
+  color: #fff;
+  background-color: #0EB1C2;
+  border-color: #00afc1;
+  font-size: 18px !important;
+}
+
+.Fountain-Teal-60 {
+  color: #fff;
+  background-color: #66d1dc;
+  border-color: #59cdd9;
+  font-size: 18px !important;
+}
+
+.Fountain-Teal-60:hover {
+  color: #fff;
+  background-color: #66d1dc;
+  border-color: #4fcdda;
+  font-size: 18px !important;
+}
+
+.Studio-Sky-80 {
+  color: #fff;
+  background-color: #609ACC;
+  border-color: #5594cb;
+  font-size: 18px !important;
+}
+
+.Studio-Sky-80:hover {
+  color: #fff;
+  background-color: #609ACC;
+  border-color: #498eca;
+  font-size: 18px !important;
+}
+
+.Catalina-Blue {
+  color: #fff;
+  background-color: #057C99;
+  border-color: #027490;
+  font-size: 18px !important;
+}
+
+.Catalina-Blue:hover {
+  color: #fff;
+  background-color: #057C99;
+  border-color: #026c86;
+  font-size: 18px !important;
+}
+
+.Catalina-Blue-60 {
+  color: #fff;
+  background-color: #66b0c1;
+  border-color: #5dafc2;
+  font-size: 18px !important;
+}
+
+.Catalina-Blue-60:hover {
+  color: #fff;
+  background-color: #66b0c1;
+  border-color: #51acc1;
+  font-size: 18px !important;
+}
+
 .Azure {
   color: #fff;
   background-color: #0066cc;
@@ -374,20 +486,6 @@ q:before, q:after {
   color: #fff;
   background-color: #929899;
   border-color: #83898a;
-  font-size: 18px !important;
-}
-
-.Orange {
-  color: #fff;
-  background-color: #ffb845;
-  border-color: #ffb845;
-  font-size: 18px !important;
-}
-
-.Orange:hover {
-  color: #fff;
-  background-color: #f0ad41;
-  border-color: #e1a23d;
   font-size: 18px !important;
 }
 
@@ -2642,6 +2740,34 @@ ul#list-horizontal li {
 
 .panelHeadingTitle-Orange {
   background-color: #ffb846 !important;
+}
+
+.panelHeadingTitle-Gray-Light {
+  background-color: #A0A8A9 !important;
+}
+
+.panelHeadingTitle-Gray-Dark {
+  background-color: #7b7979 !important;
+}
+
+.panelHeadingTitle-Fountain-Teal {
+  background-color: #0EB1C2 !important;
+}
+
+.panelHeadingTitle-Fountain-Teal-60 {
+  background-color: #66d1dc !important;
+}
+
+.panelHeadingTitle-Studio-Sky-80 {
+  background-color: #609ACC !important;
+}
+
+.panelHeadingTitle-Catalina-Blue {
+  background-color: #057C99 !important;
+}
+
+.panelHeadingTitle-Catalina-Blue-60 {
+  background-color: #66b0c1 !important;
 }
 
 .panelHeadingTitle-Blue-Gray {
