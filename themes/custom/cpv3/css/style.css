@@ -2812,6 +2812,18 @@ ul#list-horizontal li {
   background-color: #66b0c1 !important;
 }
 
+.panelHeadingTitle-CPU-Venice {
+  background-color: #b5d7c9 !important;
+}
+
+.panelHeadingTitle-CPU-Harbor-Gate {
+  background-color: #2db0a9 !important;
+}
+
+.panelHeadingTitle-CPU-Wilmington {
+  background-color: #1d3d6b !important;
+}
+
 .panelHeadingTitle-Blue-Gray {
   background-color: #5e7293 !important;
 }
