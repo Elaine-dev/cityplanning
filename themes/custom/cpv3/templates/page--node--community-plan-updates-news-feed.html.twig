@@ -11,7 +11,7 @@
 </div>
 <!-- //End page-banner -->
 
-<!-- contain -->
+<!-- container -->
 <div class="container" id="main-container">
   <!-- Main content -->
   <div class="row">
@@ -24,7 +24,8 @@
   <div class="row content-wrapper">
     <div class="col-md-9" id="cms-content">
     <!-- Left-side bar -->
-    <!-- adds conditional based on Venice in URL -->
+
+    <!-- adds conditional based on Venice in URL for VENICE TEMPLATE only -->
     {% set url = url('<current>') %}
     {% if 'venice-news-item' in url|render|render %}
 
@@ -68,7 +69,20 @@
       {% endif %}
       {% endfor %}
 </div>
+
+<!-- Right-side bar -->
+<div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+  <div class="top-bar"></div>
+  {{ page.side_menu }}
+<!-- //End Right-side bar -->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
     {% else %}
+
 <!-- ALL THE REST of the templates EXCEPT Venice use this-->
 <!-- BEGIN LEFT SMALL COL -->
   <div class="row padding-left0">
@@ -125,38 +139,33 @@ data['#paragraph'].hasField('field_fullwidth_body')
 {% endfor %}
 
 </div>
-    <!-- //End LEFT SMALL COL -->
+<!-- //End LEFT SMALL COL -->
 
 <!-- BEGIN MIDDLE COL -->
-
 <div class="col-md-8 vertical-line">
 <span class="hero_image">{% if node.field_hero_image.value %}
 <img src="{{ file_url(node.field_hero_image.entity.fileuri | image_style('cpu_news_feed')) }}"/></span>
 {% endif %}
-{% endif %}
+
 {% if node.field_caption_subhead.value %}
 <span class="news-text">{{ node.field_caption_subhead.value|raw}}</span><br /><br />
 {% endif %}
-
 {{ node.body.value|raw }}
-
+</div>
+</div>
 </div>
 
-</div>
-
-</div>
-
-
-    <!-- Right-side bar ALL TEMPLATES USE THIS -->
+    <!-- Right-side bar -->
     <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
       <div class="top-bar"></div>
       {{ page.side_menu }}
-
     <!-- //End Right-side bar -->
-
-  </div>
-    </div>
 </div>
+</div>
+</div>
+{% endif %}
+
+<!-- All templates -->
 <!-- //End container -->
 
 {% for item in full_width_data %}
