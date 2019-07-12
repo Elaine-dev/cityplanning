@@ -74,6 +74,7 @@
   <div class="row padding-left0">
 <div class="col-md-4">
   <h4>Event Date</h4>
+
   <p><strong>{{ node.field_event_date.0.value|date('F d, Y') }}</strong></p>
 
   {% if node.field_image_cpu_news_feed.value %}
@@ -131,7 +132,7 @@ data['#paragraph'].hasField('field_fullwidth_body')
 {% endif %}
 {% if node.field_caption_subhead.value %}
 <span class="news-text">{{ node.field_caption_subhead.value|raw}}</span><br /><br />
-
+{% endif %}
 
 {{ node.body.value|raw }}
 
@@ -140,7 +141,7 @@ data['#paragraph'].hasField('field_fullwidth_body')
 </div>
 
 </div>
-{% endif %}
+
 
     <!-- Right-side bar ALL TEMPLATES USE THIS -->
     <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
