@@ -45,7 +45,7 @@ span.hero_image > img {
 .col-md-8.vertical-line {
     border-left: .5px solid #bfbfbf;
   }
-span.img-border a img.img-responsive {
+span.img-border a img.img-responsive, span.img-border img.img-responsive {
       border: .5px solid #bfbfbf;
       padding: 1px;
   }

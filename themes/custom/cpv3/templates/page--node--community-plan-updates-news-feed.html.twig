@@ -74,7 +74,7 @@
   <div class="row padding-left0">
 <div class="col-md-4">
   <h4>Event Date</h4>
-  <p><strong>{{ node.field_event_date.value|date('F d, Y') }}</strong></p>
+  <p><strong>{{ node.field_event_date.0.value|date('F d, Y') }}</strong></p>
 
   {% if node.field_image_cpu_news_feed.value %}
     <div>{{ node.field_image_cpu_news_feed.content }}</div>
