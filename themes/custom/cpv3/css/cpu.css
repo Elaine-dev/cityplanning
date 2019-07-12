@@ -20,61 +20,8 @@
     clear: both;
 }
 
-/*
-
-.panelHeadingTitle-1 {
-  color: #fff !important;
-  background-color: #5e7293 !important;
-}
-
-.panelHeadingTitle-2 {
-  color: #fff !important;
-  background-color: #ffb846 !important;
-}
-
-.panelHeadingTitle-3 {
-  color: #fff !important;
-  background-color: #53bda6 !important;
-}
-
-.panelHeadingTitle-4 {
-  color: #fff !important;
-  background-color: #a0a8aa !important;
-}
-
-.panelHeadingTitle-5 {
-  color: #fff !important;
-  background-color: #cc99cc !important;
-}
-
-.panelHeadingTitle-6 {
-  color: #fff !important;
-  background-color: #cc9999 !important;
-}
-
-.panelHeadingTitle-7 {
-  color: #fff !important;
-  background-color: #339999 !important;
-}
-
-.panelHeadingTitle-8 {
-  color: #fff !important;
-  background-color: #663399 !important;
-}
-
-.panelHeadingTitle-9 {
-  color: #fff !important;
-  background-color: #663333 !important;
-}
-
-.panelHeadingTitle-10 {
-  color: #fff !important;
-  background-color: #cc6699 !important;
-}
-*/
  .col-md-4 > .section-content.clear.fullwidth_buttons > div > div > a > p {
-   font-size: 11px !important;
-   font-weight: 600;
+   padding:16px;
  }
  .info span.file a {
      font-weight: 600;
@@ -89,11 +36,16 @@
     padding-left: 5px;
     padding-right: 5px;
   }
-/** example html
-<div class="readlink collapsed" data-toggle="collapse" data-target="#purpose"></div>
-<div id="purpose" class="collapse">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</div>
-**/
+
+span.hero_image > img {
+    border: .5px solid #bfbfbf;
+    padding: 1px 1px 1px 1px;
+    margin: 5px 20px 20px 0;
+}
+.col-md-8.vertical-line {
+    border-left: .5px solid #bfbfbf;
+  }
+span.img-border a img.img-responsive {
+      border: .5px solid #bfbfbf;
+      padding: 1px;
+  }
