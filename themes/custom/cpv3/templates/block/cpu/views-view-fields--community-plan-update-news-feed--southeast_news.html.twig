@@ -1,0 +1,42 @@
+<style>
+.news-content p img {
+    float: left !important;
+    padding: 0 10 10 0;
+}
+</style>
+{%
+  set class =  ''
+%}
+
+<div class="row padding-left0 padding-right0" style="padding-bottom: 1px;">
+    <div class="col-md-12">
+  <div class="col-md-4" style="padding:0 20px 40px 0">
+
+  <div{{ attributes.addClass(class) }}>{{ fields.field_image_cpu_news_feed.content }}
+ </div>
+</div>
+
+<div class="col-md-8">
+ <div class="padding-bottom15">
+  <h5 style="margin-top: 0px; margin-left:-15px;">{{ fields.title.content }}</h5>
+  <div class="date" style="font-size: 12px; margin-left:-15px">
+  </div>
+ </div>
+</div>
+
+
+
+ <div class="news-content">{{ fields.body.content }}</div>
+
+ {# READ MORE button, if needed #}
+  {# <div class="btn btn-primary">{{ fields.view_node.content }} </div> #}
+
+</div>
+ </div>
+
+ <div class="row paddingtop15 padding-left0 padding-right0">
+ <div class="col-md-12"><p class="bottom-solid-line"></p></div>
+
+
+
+ </div>
