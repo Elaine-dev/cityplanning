@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.7.12
-Version: 4.4.48
+Update Date: 2019.7.15
+Version: 4.4.49
 *********************/
 body {
   line-height: 1.5 !important;
@@ -1593,6 +1593,10 @@ article img {
 
 p a {
   color: #009fe3 !important;
+}
+
+ul > li > a, ol > li > a {
+	color: #009fe3 !important;
 }
 
 /* Remove top border from panel-body in Area Planning Commission */
