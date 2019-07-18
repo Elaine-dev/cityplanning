@@ -41,7 +41,7 @@ class SideMenuCPUBlock extends BlockBase {
         
         if(isset($menu_level) && $uri_array[2] == 'community-plan-update') { 
             
-            $menu_base_path = '/ladcp/plans-policies/community-plan-update/';
+            $menu_base_path = '/plans-policies/community-plan-update/';
             
             /**
              * $menu_name: Vocabulary name in the Taxonomy. Each Community Plan Update has different menu.
