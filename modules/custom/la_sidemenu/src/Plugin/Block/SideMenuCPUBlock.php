@@ -66,11 +66,7 @@ class SideMenuCPUBlock extends BlockBase {
                 case 'downtown-events':
                     $menu_name = 'downtown_community_plan_update';
                     $parent_link = $menu_base_path.'downtown-los-angeles-community-plan-update';
-                    break;  
-                    
-                default:
-                    die("Invalid option!");
-               
+                    break;
             }
             
             if ($menu_name) {
