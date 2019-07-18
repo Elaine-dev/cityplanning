@@ -39,9 +39,10 @@ class SideMenuCPUBlock extends BlockBase {
         $menu_level = $uri_array[3];        // tax term in the form of url   
         $html = '';
         
-        if(isset($menu_level) && $uri_array[2] == 'community-plan-update') { 
+        if (isset($menu_level) && $uri_array[2] == 'community-plan-update') { 
             
             $menu_base_path = '/plans-policies/community-plan-update/';
+            $menu_name = '';
             
             /**
              * $menu_name: Vocabulary name in the Taxonomy. Each Community Plan Update has different menu.
@@ -69,7 +70,7 @@ class SideMenuCPUBlock extends BlockBase {
                     break;
             }
             
-            if ($menu_name) {
+            if (!empty($menu_name)) {
                 // load menu from taxonomy
                 $menu_list = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($menu_name);
                 $menu_format = formatTabMenuTitleForCP($menu_list);
