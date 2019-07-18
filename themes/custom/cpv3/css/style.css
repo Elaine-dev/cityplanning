@@ -2708,15 +2708,6 @@ ul#list-horizontal li {
   list-style: none;
 }
 
-.overlay_content_flush_left {
-  padding-bottom: 25px;
-}
-
-.overlay_content_flash_left ul {
-  list-style: none;
-  padding-left: 0px;
-}
-
 .overlay_content li {
   display: inline;
 }
