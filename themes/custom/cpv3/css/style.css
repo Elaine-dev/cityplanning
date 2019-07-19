@@ -3298,6 +3298,13 @@ span.icon {
   overflow: hidden;
 }
 
+/*********************************  
+ * Social icon buttons in Inner page
+ ********************************/
+#social-icons-buttons-innerpage {
+	padding-left: 0;
+}
+
 /***************** Media Query *****************/
 /* public counters -- locations and hours page */
 @media screen and (min-width: 900px) and (max-width: 1200px) {
