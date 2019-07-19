@@ -64,9 +64,29 @@ class SideMenuCPUBlock extends BlockBase {
                     $parent_link = $menu_base_path.'planning-westside';
                     break;
                     
+                case 'westside-events':
+                    $menu_name = 'westside_community_plan_update';
+                    $parent_link = $menu_base_path.'planning-westside';
+                    break;
+                    
                 case 'downtown-events':
                     $menu_name = 'downtown_community_plan_update';
                     $parent_link = $menu_base_path.'downtown-los-angeles-community-plan-update';
+                    break;
+                    
+                case 'boyle-heights-events':
+                    $menu_name = 'boyle_heights_cpu';
+                    $parent_link = $menu_base_path.'boyle-heights-community-plan-update';
+                    break;
+                    
+                case 'southeast-valley-news':
+                    $menu_name = 'southeast_valley_menu';
+                    $parent_link = $menu_base_path.'southeast-valley-community-plan-update';
+                    break; 
+                    
+                case 'harbor-events':
+                    $menu_name = 'harbor_menu';
+                    $parent_link = $menu_base_path.'harbor-la-community-plans-update';
                     break;
             }
             
