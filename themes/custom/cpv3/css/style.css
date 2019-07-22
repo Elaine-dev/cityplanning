@@ -1595,9 +1595,11 @@ p a {
   color: #009fe3 !important;
 }
 
+/*
 ul > li > a, ol > li > a {
 	color: #009fe3 !important;
 }
+*/
 
 /* Remove top border from panel-body in Area Planning Commission */
 #apc .panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
