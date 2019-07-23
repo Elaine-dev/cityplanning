@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.7.19
-Version: 4.4.50
+Update Date: 2019.7.23
+Version: 4.4.52
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3239,16 +3239,19 @@ span.icon {
  * orange: #f6ab40
  * purple: #93358d
  * slauson: #00a0a6
+ * regional-connector: #5a7e94
  **********************************/
-
-.orange-line {
-	width: 250px;
+.tnp-button {
+	width: 185px;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	background-color: #f6ab40;
-	border-color: #f5a532;
 	font-size: 16px;
-	margin: 10px 0;
+	margin: 10px 0;	
+}
+
+.orange-line {
+	background-color: #f6ab40;
+	border-color: #f5a532;	
 }
 
 .orange-line:hover {	
@@ -3257,31 +3260,30 @@ span.icon {
 }
 
 .purple-line {
-	width: 250px;
-	padding-top: 15px;
-	padding-bottom: 15px;
 	background-color: #93358d;
 	border-color: #811a7a;
-	font-size: 16px;
-	margin: 10px 0;
 }
 
-.purple-line:hover{
+.purple-line:hover {
 	background-color: #920289;	
 }
 
 .slauson-line {
-	width: 250px;
-	padding-top: 15px;
-	padding-bottom: 15px;
 	background-color: #00a0a6;
 	border-color: #017f84;
-	font-size: 16px;
-	margin: 10px 0;
 }
 
 .slauson-line:hover{
 	background-color: #01868b;
+}
+
+.regional-connector {
+	background-color: #5a7e94;
+	border-color: #517992;
+}
+
+.regional-connector:hover {
+	background-color: #4a7793;
 }
 
 /*********************************  
@@ -3579,6 +3581,12 @@ span.icon {
     width: 100%;
   	height: auto;
   }
+  
+  	/** TNP **/
+	.tnp-button {
+		width: 100%;
+		margin: 0;
+	}	
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -3779,6 +3787,12 @@ span.icon {
   #helpful-links {
     padding-left: 16px;
   }
+  
+   	/** TNP **/
+	.tnp-button {
+		width: 100%;
+		margin: 0;
+	}
 }
 
 /* Small devices (tablet) */
@@ -4118,6 +4132,12 @@ span.icon {
   #helpful-links {
     padding-left: 18px;
   }
+  
+	/** TNP **/
+	.tnp-button {
+		width: 100%;
+		margin: 0;
+	}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
