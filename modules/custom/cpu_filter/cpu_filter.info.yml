@@ -1,0 +1,5 @@
+name: 'Date Filter Null to Empty String'
+type: module
+description: 'Community Plan Update overrides twig date filter'
+core: 8.x
+package: 'Custom'

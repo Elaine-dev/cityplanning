@@ -1,0 +1,6 @@
+services:
+  cpu_filter.twig_extension:
+    arguments: ['@renderer']
+    class: Drupal\cpu_filter\TwigExtension\DateEmptyIfNull
+    tags:
+      - { name: twig.extension }

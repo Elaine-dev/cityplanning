@@ -48,6 +48,7 @@
             'flag': true
           }
         }) %}
+
         {% set break = false %}
       {% elseif break %}
         {% if data['#paragraph'].hasField('field_full_width_image') %}
@@ -81,6 +82,7 @@
 </div>
 </div>
 </div>
+
     {% else %}
 
 <!-- ALL THE REST of the templates EXCEPT Venice use this-->
@@ -88,13 +90,16 @@
   <div class="row padding-left0">
 <div class="col-md-4">
 
+{# This relies on cpu_filter custom module (custom twig extension) to display properly #}
   {% if node.field_event_date.value is not empty %}
-    <h4>Event Date</h4>
-<p><strong>{{ node.field_event_date.0.value|date('F d, Y') }}</strong></p>
+    <h4>Event Date(s)</h4>
+     <p><strong>{{ node.field_event_date.0.value|date('F d, Y') }}</strong><br>
+     <strong>{{ node.field_event_date.1.value|date('F d, Y') }}</strong><br>
+     <strong>{{ node.field_event_date.2.value|date('F d, Y') }}</strong><br>
+     <strong>{{ node.field_event_date.3.value|date('F d, Y') }}</strong><br>
+     <strong>{{ node.field_event_date.4.value|date('F d, Y') }}</strong><br>
+
 {% endif %}
-
-
-
   {% if node.field_image_cpu_news_feed.value %}
     <div>{{ node.field_image_cpu_news_feed.content }}</div>
   {% endif %}
