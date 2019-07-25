@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.7.23
-Version: 4.4.52
+Update Date: 2019.7.25
+Version: 4.4.53
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3325,6 +3325,10 @@ span.icon {
  	border-radius: 4px;
  	width: 100%; 
  }
+ 
+/** Community Plan Area: fields **/
+.cpa-fields{padding: 10px 0;}
+
 
 /***************** Media Query *****************/
 /* public counters -- locations and hours page */
