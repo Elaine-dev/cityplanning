@@ -6,11 +6,12 @@
   {% if link is not empty %}
 <a href="{{ link }}">
   <img src="{{ url }}"/></a>
-  </div>
+  <div class="slider-content">{{ item.content['#field_collection_item'].get('field_content_captions').value|raw }}    </div>
+</div>
       {% else %}
   <img src="{{ url }}"/>
     <div class="slider-content">{{ item.content['#field_collection_item'].get('field_content_captions').value|raw }}    </div>
   </div>
-  
+
   {% endif %}
 {% endfor %}
