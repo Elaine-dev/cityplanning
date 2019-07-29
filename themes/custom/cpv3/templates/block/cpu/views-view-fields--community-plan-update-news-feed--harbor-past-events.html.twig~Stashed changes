@@ -4,8 +4,10 @@
 
 <div class="row padding-left0 padding-right0" style="padding-bottom: 1px;">
 	<div class="col-md-4">
+
     <div class="news-feed" {{ attributes.addClass(class) }}>{{ fields.field_image_cpu_news_feed.content }}
 </div>
+
 <div class="info" style="font-size:13px;margin-top:20px;">
 
 <div><strong>{{ fields.field_event_time.label }}</strong></div>
@@ -31,7 +33,7 @@
 
  <div><strong>{{ fields.field_event_date.label }}</strong></div>
  <div><strong>{{ fields.field_event_date.content}}</strong></div><br>
-  <div class="news-content">{{ fields.body.content }}</div>
+ <div>{{ fields.body.content }}</div>
  </div>
 
  </div>
