@@ -50,7 +50,7 @@ span.img-border a img.img-responsive, span.img-border img.img-responsive {
       border: .5px solid #bfbfbf;
       padding: 1px;
   }
-  .news-content p img {
+.news-content p img {
       float: left !important;
       padding: 0 10 10 0;
   }
