@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.7.25
-Version: 4.4.53
+Update Date: 2019.7.29
+Version: 4.4.54
 *********************/
 body {
   line-height: 1.5 !important;
@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: #3a5a99 !important;
+  color: #009fe3;
   text-decoration: none;
 }
 
@@ -285,9 +285,11 @@ q:before, q:after {
   	padding-left: 0;
 }
 
+/*
 #cms-content a {
   color: #009fe3 !important;
 }
+*/
 
 .full-width-button p {
   padding: 10px 15px;
@@ -829,9 +831,15 @@ figcaption {
   letter-spacing: 1px;
 }
 
+/* color change on hover */
+.navbar-default .navbar-nav .mega-dropdown>a:hover {
+  color: #3a5a99 !important;
+  background-color: transparent;
+}	
+		  
 /** active link **/
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
-  color: #000 !important;
+  color: #3a5a99 !important;
   background-color: transparent;
 }
 
@@ -901,8 +909,8 @@ figcaption {
   padding-bottom: 4px;
   padding-right: 5px;
 }
-
 /** End Menu **/
+
 /** slider **/
 #slider h2 {
   color: #fff !important;
@@ -1058,25 +1066,29 @@ _:-moz-tree-row(hover), .planning-tag {
 
 /* Microsoft Edge */
 /** feature section: 2 **/
-#ft-section .caption h5 {
+.ft-section {
+  padding: 20px 0;
+}
+
+.ft-section .caption h5 {
   text-align: center;
   text-transform: uppercase;
   font-size: 19px;
   margin-bottom: 0px;
 }
 
-#ft-section .caption h5 a {
+.ft-section .caption h5 a {
   color: #183357 !important;
 }
 
-#ft-section .caption p {
+.ft-section .caption p {
   color: #183357 !important;
   text-align: center;
   line-height: 1.1em;
   padding-top: 5px;
 }
 
-#ft-section .f-block:hover h5 a, #ft-section .f-block:hover p {
+.ft-section .f-block:hover h5 a, .ft-section .f-block:hover p {
   color: #345fa6 !important;
 }
 
@@ -1084,11 +1096,10 @@ _:-moz-tree-row(hover), .planning-tag {
   min-height: 265px;
 }
 
-/** end latest update**/
 /** Infographics **/
-.info-bg-color {
+/* .info-bg-color {
   background: #0b2d4c;
-}
+} */
 
 .promotion-bg {
   background: url(../images/LATradeTech-Planning.jpg) no-repeat center fixed;
@@ -1591,11 +1602,11 @@ article img {
   color: #a3a5a8 !important;
 }
 
+/*
 p a {
   color: #009fe3 !important;
 }
 
-/*
 ul > li > a, ol > li > a {
 	color: #009fe3 !important;
 }
