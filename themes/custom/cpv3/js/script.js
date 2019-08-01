@@ -50,14 +50,17 @@ jQuery(document).ready(function(){
 	/** Image pop-up  **/
 	imagePopUpGallery();
 
-/**Video pop-up **/
+	/**Video pop-up **/
    videoPopup();
 
- /**Bootstrap popup **/
-	 popImage();
+   /**Bootstrap popup **/
+   popImage();
 
-/**CPU hash url **/
+   /**CPU hash url **/
    hashUrlCpu();
+   
+   /** remove hover effect in all image link **/
+   removeHoverEffectOnImageLink();
 });
 
 
@@ -425,28 +428,43 @@ function imagePopUpGallery() {
 	  })
 	})
 };
-  function videoPopup() {
+  
+function videoPopup() {
   	$('.launch-modal').on('click', function(e) {
       e.preventDefault();
       $( '#' + $(this).data('modal-id') ).modal();
   	});
-  };
-	function popImage() {
+};
+
+function popImage() {
 	$("#pop").on("click", function() {
-	   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
-	   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+		$('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+		$('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
 	});
-	};
-	// store the currently selected tab in the hash value
+};
+
+// store the currently selected tab in the hash value
 function hashUrlCpu() {
-			var url = document.location.toString();
-if (url.match('#')) {
-			$('#hollywood-tab ul.nav.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+	var url = document.location.toString();
+	if (url.match('#')) {
+		$('#hollywood-tab ul.nav.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+	}
+	
+	$('#hollywood-tab ul.nav.nav-tabs a').click(function(e) {
+		//e.preventDefault();
+		//  e.stopPropagation();
+		$(this).tab('show');
+		window.location.hash = e.target.hash;
+	});
+};
+
+/**
+ * This function adds a css class 'image-link' to it's parent tag (<a>) which includes image tag (<img>).
+ * 
+ * For instance, we have html code as: 	<a href="#"><img src="#" /></a>
+ * The o/p will be: 					<a href="#" class="image-link"><img src="#" /></a>
+ * 
+ */
+function removeHoverEffectOnImageLink() {
+	$('img').parent('a').addClass('image-link');
 }
-			$('#hollywood-tab ul.nav.nav-tabs a').click(function(e) {
-				//e.preventDefault();
-			//  e.stopPropagation();
-				$(this).tab('show');
-	 window.location.hash = e.target.hash;
-			});
-		};

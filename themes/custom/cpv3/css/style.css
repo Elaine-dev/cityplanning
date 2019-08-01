@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.7.29
-Version: 4.4.54
+Update Date: 2019.8.1
+Version: 4.4.55
 *********************/
 body {
   line-height: 1.5 !important;
@@ -18,6 +18,34 @@ body {
 a {
   color: #009fe3;
   text-decoration: none;
+}
+
+#main-container a {
+  color: #009fe3;
+  text-decoration: none;
+  background-image: linear-gradient(180deg,transparent 65%, #a6e4eb 0);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .4s ease;
+}
+
+#main-container a:focus, #main-container a:hover {
+  background-size: 100% 95%;
+  cursor: pointer;
+}
+
+/** Remove mouse-hover effect in hyperlink.
+ *  For the image link, I've added jquery function 'removeHoverEffectOnImageLink()' to append a css class .image-link to a tag.
+ **/
+#accordion .panel-title a:focus, #accordion .panel-title a:hover,
+#commissions-tab ul li a:focus, #commissions-tab ul li a:hover,
+#hollywood-tab ul li a:focus, #hollywood-tab ul li a:hover,
+#d-tab ul li a:focus, #d-tab ul li a:hover,
+#publication-tab ul li a:focus, #publication-tab ul li a:hover,
+#main-container img:focus, #main-container img:hover, .image-link:hover, .image-link:focus {
+  background: none !important;
+  background-size: 0 !important;
+  background-image: none !important;
 }
 
 table {
