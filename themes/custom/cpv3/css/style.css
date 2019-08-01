@@ -4,7 +4,7 @@ Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
 Update Date: 2019.8.1
-Version: 4.4.55
+Version: 4.4.56
 *********************/
 body {
   line-height: 1.5 !important;
@@ -26,7 +26,7 @@ a {
   background-image: linear-gradient(180deg,transparent 65%, #a6e4eb 0);
   background-size: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size .4s ease;
+  transition: background-size .5s ease;
 }
 
 #main-container a:focus, #main-container a:hover {
@@ -1107,6 +1107,16 @@ _:-moz-tree-row(hover), .planning-tag {
 
 .ft-section .caption h5 a {
   color: #183357 !important;
+  text-decoration: none;
+  background-image: linear-gradient(180deg,transparent 65%, #a6e4eb 0);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease;
+}
+
+.ft-section .caption h5 a:focus, .ft-section .caption h5 a:hover {
+  background-size: 100% 95%;
+  cursor: pointer;
 }
 
 .ft-section .caption p {
