@@ -708,7 +708,6 @@ button.swiper-pagination-bullet {
 p.slider-caption {
   color: #708090;
   font-size: 20px;
-  line-height: 1.2;
   font-weight: 400;
 }
 
@@ -719,9 +718,11 @@ p.slider-title {
   font-stretch: condensed;
   font-kerning: none;
   font-size: 38px;
-  line-height: 1.2;
-  margin-bottom: 0 !important;
-  margin-top: 30px;
+  margin-top: 10px;
+}
+p.slider-title + p {
+  line-height:0;
+  margin-top:-14px;
 }
 
 .swiper-slide .slider-content {
