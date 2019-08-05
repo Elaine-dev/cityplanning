@@ -1080,15 +1080,6 @@ _:-moz-tree-row(hover), .planning-tag {
 .ft-section .caption h5 a {
   color: #183357 !important;
   text-decoration: none;
-  background-image: linear-gradient(180deg,transparent 65%, #a6e4eb 0);
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size .5s ease;
-}
-
-.ft-section .caption h5 a:focus, .ft-section .caption h5 a:hover {
-  background-size: 100% 95%;
-  cursor: pointer;
 }
 
 .ft-section .caption p {
