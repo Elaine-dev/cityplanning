@@ -60,7 +60,7 @@ jQuery(document).ready(function(){
    hashUrlCpu();
    
    /** remove hover effect in all image link **/
-   removeHoverEffectOnImageLink();
+   // removeHoverEffectOnImageLink();
 });
 
 
