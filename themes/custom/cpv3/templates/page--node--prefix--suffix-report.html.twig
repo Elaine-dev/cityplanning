@@ -40,15 +40,10 @@
             </div>
 
           {# content goes here #}
-          <div class="row">
-            <div class="col-md-12">
-              <ul style="list-style-type:none; float:right;font-size: 11px;line-height: 2.5;padding:0">
-                <span style="float:left;padding: 0 5px 0 0 !important;" class='icon'>&#xe025;</span>
-                <li style="float:left"><a href="#" onclick="window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/active/pdf/');
-window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/active/csv/')">ACTIVE CODES&thinsp;|&thinsp;</a></li>
-<li style="float:right"><a href="#" onclick="window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/pdf/');
-window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/csv/')">INACTIVE CODES </a></li>
-</ul>
+
+<div class="row">
+  <div class="col-md-12">
+
               <ul id="list-horizontal" style="padding:0;margin:0">
 
                 <li ng-repeat="tab in tabs" style="padding:0" ng-class="{active:isActiveTab(taba)}" ng-click="onClickTab(tab)">
@@ -58,6 +53,20 @@ window.open('https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/cs
               </ul>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-12">
+              <ul style="float:left; list-style-type:none; font-size: 11px;line-height: 2.5;padding:0">
+                <i style="padding: 0 0 0 0 !important;" class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                <li style="display:inline"><a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/active/pdf/">ACTIVE CODES</a>
+  <i style="padding: 0 0 0 5px !important;" class="fa fa-file-excel-o" aria-hidden="true"></i>
+  <li style="display:inline"><a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/active/csv/">ACTIVE CODES</a></li>
+  <i style="padding: 0 0 0 5px !important;" class="fa fa-file-pdf-o" aria-hidden="true">&thinsp;</i>
+<li style="display:inline"><a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/pdf/">INACTIVE CODES</a>
+  <i style="padding: 0 0 0 5px !important;" class="fa fa-file-excel-o" aria-hidden="true">&thinsp;</i>
+<li style="display:inline"><a href="https://planning.lacity.org/dcpapi/general/prefixsuffix/inactive/csv/">INACTIVE CODES </a></li>
+</ul>
+</div>
+</div>
           <div class="row">
             <div class="col-md-12 table-responsive ps-tab tab-1" ng-class="{'fadein active': currentTab=='Active Prefixes' || currentTab=='All'}" ng-if="PrefixActive" ng-show="visible===true | json">
 
