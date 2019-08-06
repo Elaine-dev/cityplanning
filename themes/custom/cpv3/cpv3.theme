@@ -186,6 +186,8 @@ function cpv3_preprocess_node(&$variables)
     $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();
     $node = $variables['node'];
     $data = [];
+
+    // EIR Detail
     if ($node->bundle() == 'eir_detail') {
         $eir_id = $node->get('field_select_eir')->getString();
         // Load parent nid and get respective field value.
@@ -198,6 +200,20 @@ function cpv3_preprocess_node(&$variables)
         $data['project_location'] = $eir_node->get('field_project_location')->getString();
 
         $variables['node_data'] = $data;
+    }
+    
+    // SCEA Detail
+    if ($node->bundle() == 'scea_detail') {
+        $scea_id = $node->get('field_select_scea_title')->getString();
+        $scea_node = Node::load($scea_id);
+        
+        $data['case_number'] = $scea_node->get('field_case_number')->getString();
+        $data['related_case_numbers'] = $scea_node->get('field_related_case_numbers')->getString();
+        $data['community_plan_areas'] = $scea_node->get('field_community_plan_areas')->getString();
+        $data['council_district'] = $scea_node->get('field_council_district')->getString();
+        $data['project_location'] = $scea_node->get('field_project_location')->getString();
+        
+        $variables['scea_data'] = $data;
     }
 }
 
