@@ -1,0 +1,57 @@
+<article{{ attributes }}>
+  <div {{ content_attributes }}>
+  	  	
+  	<div class="col-md-12">
+  		<div class="row">
+  			<div class="col-md-12">
+  				<div class="bottom" style="padding-top: 15px; margin-bottom: 15px;"></div>
+  			</div>
+  		</div>
+  		
+		<div class="row">
+			<div class="col-md-6">
+				<em>
+                    {% if scea_data.case_number %}
+                        <strong>Case Number:</strong> {{ scea_data.case_number }}<br>
+                    {% endif %}
+                    
+                    {% if scea_data.related_case_numbers %}
+                        <strong>Related Case Number:</strong> {{ scea_data.related_case_numbers }}
+                    {% endif %}
+                </em>
+			</div>
+			
+			<div class="col-md-6">
+				<em>
+                    {% if scea_data.council_district %}
+                        <strong>Council District</strong>: {{ scea_data.council_district }} <br>
+                    {% endif %}
+                    
+                    {% if scea_data.community_plan_areas %}
+                        <strong>Community Plan Areas</strong>: {{ scea_data.community_plan_areas }}
+                    {% endif %}
+                </em>
+			</div>
+			
+			<div class="col-md-12">
+				<em>
+                  {% if scea_data.project_location %}
+                     <strong>Project Location:</strong> {{ scea_data.project_location }}
+                  {% endif %}
+          		</em>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="bottom" style="padding-top:20px;"></div>
+				
+				 {{ content }}
+			
+			</div>
+		</div>
+  	
+  	</div> <!-- //end .col-md-12 -->
+  	
+  </div>
+</article>
