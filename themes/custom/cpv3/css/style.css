@@ -835,8 +835,8 @@ figcaption {
 .navbar-default .navbar-nav .mega-dropdown>a:hover {
   color: #3a5a99 !important;
   background-color: transparent;
-}	
-		  
+}
+
 /** active link **/
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
   color: #3a5a99 !important;
@@ -1115,18 +1115,18 @@ _:-moz-tree-row(hover), .planning-tag {
 .social-media {
 	margin: 10px 0;
 }
-   	
+
 .social-media a, .social-media .fa {
 	color: #fff !important;
 }
-    
+
 .square {
 	width: 100%;
     padding-bottom: 100%;
     background-size: cover;
     background-position: center;
 }
-	
+
 .transparent-box {
 	position: absolute;
   	background-color: rgba(0, 0, 0, 0.5);
@@ -1138,7 +1138,7 @@ _:-moz-tree-row(hover), .planning-tag {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-		
+
 .social-icon {
 	position: absolute;
  	top: 8px;
@@ -1310,7 +1310,7 @@ _:-moz-tree-row(hover), .planning-tag {
 
 #footer-toolkit h6, #footer-toolkit p {
 	float: right !important;
-} 
+}
 
 #footer-section {
   background: url(../images/footer_background_pattern.png) no-repeat 0px 71%;
@@ -2776,7 +2776,7 @@ ul#list-horizontal li {
 
 /***********************************
  * Accordion / Community Plan Area
- ***********************************/ 
+ ***********************************/
 #accordion .list-group {
   padding: 15px;
   border-bottom: solid 1px #ddd;
@@ -3176,15 +3176,6 @@ i.fa.fa-user-circle-o.fa-2x {
   font-size: 1.7em !important;
 }
 
-ul.pub-counters li.ng-binding {
-  font-size: 13px;
-  margin-top: 7px;
-}
-
-li.pub-header.ng-binding {
-  font-size: 16px !important;
-}
-
 /* special custom case for social media icons on Communications page */
 .comm-blog {
   margin-top: -27px;
@@ -3234,7 +3225,7 @@ span.icon {
  * Eg. http://ladcp.westus.cloudapp.azure.com/plans-policies/community-plans
  ***********************************/
 .list-group > #list-with-hr > p {
-	margin-bottom: 10px; 
+	margin-bottom: 10px;
 }
 
 .list-group > #list-with-hr > p > a {
@@ -3247,7 +3238,7 @@ span.icon {
 }
 
 /***********************************
- * TNP 
+ * TNP
  * orange: #f6ab40
  * purple: #93358d
  * slauson: #00a0a6
@@ -3258,18 +3249,18 @@ span.icon {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	font-size: 16px;
-	margin: 10px 0;	
-	border-radius: 4px !important; 
+	margin: 10px 0;
+	border-radius: 4px !important;
 }
 
 .orange-line {
 	background-color: #f6ab40;
-	border-color: #f5a532;	
+	border-color: #f5a532;
 }
 
-.orange-line:hover {	
+.orange-line:hover {
 	background-color: #fb9504;
-	border-color: #fb9504;	
+	border-color: #fb9504;
 }
 
 .purple-line {
@@ -3278,7 +3269,7 @@ span.icon {
 }
 
 .purple-line:hover {
-	background-color: #920289;	
+	background-color: #920289;
 }
 
 .slauson-line {
@@ -3299,13 +3290,13 @@ span.icon {
 	background-color: #4a7793;
 }
 
-/*********************************  
+/*********************************
  * Venice LCP : Image gallery
- * 
+ *
  *********************************/
 .flex-container {
 	display: flex;
-  	flex-wrap: wrap;	
+  	flex-wrap: wrap;
 }
 
 .flex-container > div {
@@ -3315,7 +3306,7 @@ span.icon {
   overflow: hidden;
 }
 
-/*********************************  
+/*********************************
  * Social icon buttons in Inner page
  ********************************/
 #social-icons-buttons-innerpage {
@@ -3323,21 +3314,21 @@ span.icon {
 }
 
 
-/********************************* 
+/*********************************
  * Constant form
  ********************************/
  .ladcp-contact-form .row {
  	padding-left: 0;
  	padding-right: 0;
  }
- 
+
  .ladcp-contact-form .button {
  	background-color: #009fe3;
  	border-color: #0194d3;
  	border-radius: 4px;
- 	width: 100%; 
+ 	width: 100%;
  }
- 
+
 /** Community Plan Area: fields **/
 .cpa-fields{padding: 10px 0;}
 
@@ -3589,21 +3580,21 @@ span.icon {
   .tab-line {
     border-right: none;
   }
-  
- /*********************************  
+
+ /*********************************
   * Venice LCP : Image gallery
-  * 
+  *
   *********************************/
   .flex-container > div {
     width: 100%;
   	height: auto;
   }
-  
+
   	/** TNP **/
 	.tnp-button {
 		width: 100%;
 		margin: 0;
-	}	
+	}
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -3804,7 +3795,7 @@ span.icon {
   #helpful-links {
     padding-left: 16px;
   }
-  
+
    	/** TNP **/
 	.tnp-button {
 		width: 100%;
@@ -4149,7 +4140,7 @@ span.icon {
   #helpful-links {
     padding-left: 18px;
   }
-  
+
 	/** TNP **/
 	.tnp-button {
 		width: 100%;
