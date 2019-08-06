@@ -77,7 +77,7 @@ class LaSCEABlock extends BlockBase
                 }
             }
             
-            $new_scea = [];
+            $new_scea = [];              
             foreach($new_notices as $item) {
                 $new_scea[] = $item;
             }
@@ -85,14 +85,7 @@ class LaSCEABlock extends BlockBase
             // Create json file
             $root_path = DRUPAL_ROOT;
             $file_path = $root_path.'/file/scea.json';
-            
-            echo "root path: " . $root_path;
-            echo "<br> file path: " . $file_path;
-            
-            kint($new_scea);
-            
-            die("<br>here");
-            
+                       
             if(file_exists($file_path)){
                 unlink($file_path);                
             }            
