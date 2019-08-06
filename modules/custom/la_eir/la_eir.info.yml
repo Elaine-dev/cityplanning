@@ -1,5 +1,5 @@
-name: Environmental Impact Reports (EIR)
-description:  'Custom module to manage EIR'
+name: 'JSON File Generate: EIR and SCEA'
+description:  'Custom module to create JSON file and store data in it. Data is retrived from Views. EIR and SCEA uses this functionality.'
 type: module
 package: Custom
 core: 8.x

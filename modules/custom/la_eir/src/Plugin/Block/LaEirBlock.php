@@ -97,7 +97,13 @@ class LaEirBlock extends BlockBase
         }
 
         // Create json file
-        $file_path = 'file/eir.json';
+        $root_path = DRUPAL_ROOT;
+        $file_path = $root_path.'/file/eir.json';
+        
+        if(file_exists($file_path)){
+            unlink($file_path);
+        }
+        
         $fp = fopen( $file_path, 'w');
         fwrite($fp, json_encode($new_eir));
         fclose($fp);

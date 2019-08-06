@@ -8,13 +8,13 @@
 
 'use strict';
 
-var appEIR = angular.module('appEIR', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var appSCEA = angular.module('appSCEA', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap']);
 
-appEIR.config(function($interpolateProvider) {
+appSCEA.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 });
 
-appEIR.controller('eirCtrl', function($scope, $filter, $timeout, $http, filterFilter) {
+appSCEA.controller('sceaCtrl', function($scope, $filter, $timeout, $http, filterFilter) {
     $scope.enable = "false";
     $scope.loadingText = "Loading ...";
     $scope.pageSize = 25;
@@ -23,7 +23,7 @@ appEIR.controller('eirCtrl', function($scope, $filter, $timeout, $http, filterFi
     // Extract data from json file
     $http({
         method: 'POST',
-        url: siteurl + '/file/eir.json',
+        url: siteurl + '/file/scea.json',
     }).then( function(response) {
         $scope.events = response;
         self.data = response.data;
