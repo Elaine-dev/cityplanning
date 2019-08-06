@@ -217,6 +217,6 @@ hpozs-calendar:
     js/calendar/hpozs-calendar-detail.js:                                                                           {}
     
 scea-js:
-  version: 1.0
+  version:                                                                                                           1.0
   js:
     js/api/sceaCtrl.js: {}

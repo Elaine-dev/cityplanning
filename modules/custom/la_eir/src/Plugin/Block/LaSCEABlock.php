@@ -60,11 +60,14 @@ class LaSCEABlock extends BlockBase
                 $default = '';
                 foreach ($item as $row) {
                     /**
-                     * tid: 395 - Default
+                     * if SCEA has different types, add condition to get path.
+                     * tid: 394 - Default
                      */
-                    if($row['scea_type'] == 395) {
+                    /* if($row['scea_type'] == 394) {
                         $default = $row['path'];
-                    }
+                     } */
+                   
+                    $default = $row['path'];
                     
                     $new_notices[$key] = array(
                         'projectTitle' => $row['project_title'],
@@ -82,6 +85,13 @@ class LaSCEABlock extends BlockBase
             // Create json file
             $root_path = DRUPAL_ROOT;
             $file_path = $root_path.'/file/scea.json';
+            
+            echo "root path: " . $root_path;
+            echo "<br> file path: " . $file_path;
+            
+            kint($new_scea);
+            
+            die("<br>here");
             
             if(file_exists($file_path)){
                 unlink($file_path);                
