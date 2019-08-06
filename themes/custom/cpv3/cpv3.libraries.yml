@@ -215,3 +215,8 @@ hpozs-calendar:
     js/calendar/fullcalendar.js:                                                                                    {}
     js/calendar/hpozs-calendar.js:                                                                                  {}
     js/calendar/hpozs-calendar-detail.js:                                                                           {}
+    
+scea-js:
+  version: 1.0
+  js:
+    js/api/sceaCtrl.js: {}
