@@ -25,7 +25,7 @@ class ConstantContactBlockForm extends FormBase {
      */
     public function buildForm(array $form, FormStateInterface $form_state) {
         $form['intro'] = array(
-            '#markup' => "<strong>Contact Information</strong> (Fields mark with an * are required)",
+            '#markup' => "<strong>Contact Information</strong> (Fields marked with an asterisk [*] are required)",
         );
         
         $form['first_name'] = [
