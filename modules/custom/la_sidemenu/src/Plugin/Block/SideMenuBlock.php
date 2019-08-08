@@ -51,6 +51,7 @@ class SideMenuBlock extends BlockBase {
         );
         
         $tree = $menu_tree->transform($tree, $manipulators);
+        $child_list = [];
 
         foreach ($tree as $item) {
             $title = strtolower($item->link->getTitle());
