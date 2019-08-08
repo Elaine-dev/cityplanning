@@ -28,15 +28,16 @@
 
 
       <div class="row padding-left0">
-        <div class="col-md-12 shift" style="margin-left:-28px;">
+        <div class="col-md-12 shift" style="margin-left:-15px;">
           <div ng-disabled="enable=='false'">
                     <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
                   </div>
 
 
-      <div class="col-md-12" ng-controller="pubCounterMetroCtrl" style="padding-left:0;">
-<div class="col-md-6" style="margin-left:15px; width:42%;">
-  <p><strong>Metro Downtown (Fiqueroa Plaza)</strong><br>
+      <div class="col-md-12" ng-controller="pubCounterMetroCtrl">
+          <h3>Metro Downtown (Fiqueroa Plaza)</h3>
+<div class="col-md-6" style="margin-left:-15px; width:42%;">
+
   201 N. Fiqueroa St.<br>
     4th Floor<br>
     Los Angeles, CA 90012<br>
@@ -44,7 +45,7 @@
     TEL: 213-482-7077<br>
       FAX: 213-482-7080</p>
     </div>
-      <div class="col-md-6 col-xs-12 sub-head">
+      <div class="col-md-6 col-xs-12 sub-head" style="margin-left:6px">
         <p><strong>Main Public Counter - 4th Floor</strong><br>
       <strong>Hours of Operation:</strong></p>
         <p style="float:left; margin-top:-16px;">Monday<br>
@@ -52,15 +53,15 @@
           Wednesday<br>
           Thursday<br>
           Friday</p>
-          <p style="float:right; margin-top:-16px; margin-right:45px">7:30am - 4:30pm<br>
+          <p style="float:right; margin-top:-16px; margin-right:69px">7:30am - 4:30pm<br>
             7:30am - 4:30pm<br>
             9:00am - 4:30pm<br>
             7:30am - 4:30pm<br>
             7:30am - 4:30pm</p>
 
 </div>
- <div class="col-md-12 info" style="padding: 0px; margin-left:-10px;">
-              <ul class="pub-counters" style="background-color: rgb(160, 168, 169);padding: 0px 10px 20px 30px;list-style: none;display: inline-block;width: 40%; margin-left: 34px;" ng-Repeat="pubCounterMetroService in pubCounterMetroServices | toArray : false | filterWithOr:{queueName:['Planning Check-In','Planning Express']} track by $index">
+ <div class="col-md-12 info" style="padding: 0px;margin-left: -37px;width: 90%;">
+              <ul class="pub-counters blue" style="background-color: #c5eaef; padding: 0px 10px 20px 30px;list-style: none;display: inline-block;width: 42%; margin-left: 37px;" ng-Repeat="pubCounterMetroService in pubCounterMetroServices | toArray : false | filterWithOr:{queueName:['Planning Check-In','Planning Express']} track by $index">
               <li class="pub-header" style="font-weight: 600; padding-top: 15px;">{[{ pubCounterMetroService.queueName }]}</li>
     <li><i class="fa fa-clock-o fa-1x" style="float: left;  padding-right: 11px; padding-bottom: 1px; font-size:20px;"></i>Current Wait Time: {[{ pubCounterMetroService.actualWaitTime | time:'mm' }]}</li>
               <li><i class="fa fa-user-circle-o fa-1x" style="float: left;  padding-right: 11px;font-size: 1.1em;margin-top: 3px;"></i>{[{ pubCounterMetroService.numberOfTicketsWaiting }]} Person(s) Waiting</li>
@@ -68,9 +69,10 @@
     </div>
     </div>
 
-      <div class="col-md-12" ng-controller="pubCounterValleyCtrl" style="padding-left:0;">
-        <div class="col-md-6" style="margin-top:30px; margin-left:15px; width:42%;">
-        <p><strong>Valley - Van Nuys (Marvin Braude Building)</strong><br>
+      <div class="col-md-12" style="margin-top:30px" ng-controller="pubCounterValleyCtrl">
+            <h3>Valley - Van Nuys (Marvin Braude Building)</h3>
+        <div class="col-md-6" style="margin-left:-15px; width:42%;">
+
                 6262 Van Nuys Blvd.<br>
           Suite 251<br>
           Van Nuys, CA 91401<br>
@@ -78,7 +80,7 @@
           TEL: 818-374-5050<br>
             FAX: 818-374-5075</p>
           </div>
-            <div class="col-md-6 col-xs-12 sub-head" style="margin-top:30px">
+            <div class="col-md-6 col-xs-12 sub-head" style="margin-left:6px">
               <p><strong>Main Public Counter - 2nd Floor</strong><br>
             <strong>Hours of Operation:</strong></p>
               <p style="float:left; margin-top:-16px;">Monday<br>
@@ -86,14 +88,14 @@
                 Wednesday<br>
                 Thursday<br>
                 Friday</p>
-                <p style="float:right; margin-top:-16px; margin-right:45px">7:30am - 4:30pm<br>
+                <p style="float:right; margin-top:-16px; margin-right:69px">7:30am - 4:30pm<br>
                   7:30am - 4:30pm<br>
                   9:00am - 4:30pm<br>
                   7:30am - 4:30pm<br>
                   7:30am - 4:30pm</p>
 </div>
-<div class="col-md-12 info" style="padding: 0px; margin-left:-10px;">
-         <ul class="pub-counters" style="background-color: rgb(160, 168, 169);padding: 0px 10px 20px 30px;list-style: none;display: inline-block;width: 40%; margin-left: 34px;"  ng-Repeat="pubCounterValleyService in pubCounterValleyServices | toArray : false | filterWithOr:{queueName:['Planning Check-In','Planning Express']} track by $index">
+<div class="col-md-12 info" style="padding: 0px;margin-left: -37px;width: 90%;">
+         <ul class="pub-counters yellow" style="background-color: #efd6a8; padding: 0px 10px 20px 30px;list-style: none;display: inline-block;width: 42%; margin-left: 37px" ng-Repeat="pubCounterValleyService in pubCounterValleyServices | toArray : false | filterWithOr:{queueName:['Planning Check-In','Planning Express']} track by $index">
          <li class="pub-header" style="font-weight: 600; padding-top: 15px;">{[{ pubCounterValleyService.queueName }]}</li>
 <li><i class="fa fa-clock-o fa-1x" style="float: left;  padding-right: 11px; padding-bottom: 1px; font-size:20px;"></i>Current Wait Time:  {[{ pubCounterValleyService.actualWaitTime | time:'mm' }]}</li>
          <li><i class="fa fa-user-circle-o fa-1x fa-1x" style="float: left; padding-right: 11px;font-size: 1.1em;margin-top: 3px;"></i>{[{ pubCounterValleyService.numberOfTicketsWaiting }]} Person(s) Waiting</li>
@@ -101,9 +103,10 @@
 </div>
 </div>
 
-<div class="col-md-12" ng-controller="pubCounterWestlaCtrl" style="padding-left:0;">
-  <div class="col-md-6" style="margin-top:30px; margin-left:15px; width:42%;">
-  <p><strong>West Los Angeles</strong><br>
+<div class="col-md-12" style="margin-top:30px;" ng-controller="pubCounterWestlaCtrl">
+    <h3>West Los Angeles</h3>
+  <div class="col-md-6" style="margin-left:-15px; width:42%;">
+
   1828 Sawtelle Blvd.<br>
     2nd Floor<br>
     West Los Angeles, CA 90025<br>
@@ -111,7 +114,7 @@
      TEL: 310-231-2901<br>
       FAX: </p>
     </div>
-        <div class="col-md-6 col-xs-12 sub-head" style="margin-top:30px">
+        <div class="col-md-6 col-xs-12 sub-head" style="margin-left:6px">
           <p><strong>Main Public Counter - 2nd Floor</strong><br>
             <strong>Hours of Operation:</strong></p>
               <p style="float:left; margin-top:-16px;">Monday<br>
@@ -119,14 +122,14 @@
           Wednesday<br>
           Thursday<br>
           Friday</p>
-      <p style="float:right; margin-top:-16px; margin-right:45px">7:30am - 4:30pm<br>
+      <p style="float:right; margin-top:-16px; margin-right:69px">7:30am - 4:30pm<br>
             7:30am - 4:30pm<br>
             9:00am - 4:30pm<br>
             7:30am - 4:30pm<br>
             7:30am - 4:30pm</p>
 </div>
-<div class="col-md-12 info" style="padding: 0px; margin-left:-10px;">
-          <ul class="pub-counters" style="background-color: rgb(160, 168, 169);padding: 0px 10px 20px 30px;list-style: none;display: inline-block;width: 40%; margin-left: 34px;" ng-Repeat="pubCounterWestlaService in pubCounterWestlaServices | toArray : false | filterWithOr:{queueName:['Planning Check-In','Planning Express']} track by $index">
+<div class="col-md-12 info" style="padding: 0px;margin-left: -37px;width: 90%;">
+          <ul class="pub-counters dark-blue" style="background-color: #bdd2e8; padding: 0px 10px 20px 30px;list-style: none;display: inline-block;width: 42%; margin-left: 37px;" ng-Repeat="pubCounterWestlaService in pubCounterWestlaServices | toArray : false | filterWithOr:{queueName:['Planning Check-In','Planning Express']} track by $index">
           <li class="pub-header" style="font-weight: 600; padding-top: 15px;">{[{ pubCounterWestlaService.queueName }]}</li>
 <li><i class="fa fa-clock-o fa-1x" style="float: left;  padding-right: 11px; padding-bottom: 1px; font-size:20px;"></i>Current Wait Time:  {[{ pubCounterWestlaService.actualWaitTime | time:'mm' }]}</li>
           <li><i class="fa fa-user-circle-o fa-1x fa-1x" style="float: left;  padding-right: 11px;font-size: 1.1em;margin-top: 3px;"></i>{[{ pubCounterWestlaService.numberOfTicketsWaiting }]} Person(s) Waiting</li>
@@ -134,16 +137,17 @@
 </div>
 
 </div>
-<div class="col-md-12" style="padding-left:0;">
-      <div class="col-md-6" style="margin-top:30px; margin-left:15px; width:42%;">
-    <p><strong>Executive Offices</strong><br>
+<div class="col-md-12" style="margin-top:30px;">
+    <h3>Executive Offices</h3>
+      <div class="col-md-6" style="margin-left:-15px; width:42%;">
+
   Los Angeles City Hall<br>
     200 N. Spring Street<br>
     Suite 525<br>
   Los Angeles, CA 90012<br>
    TEL: 213-978-1271</p>
      </div>
-   <div class="col-md-6 col-xs-12 sub-head" style="margin-top:30px">
+   <div class="col-md-6 col-xs-12 sub-head" style="margin-left:6px">
    <strong>Hours of Operation:</strong></p>
      <p style="float:left; margin-top:-16px;">Monday<br>
           Tuesday<br>
