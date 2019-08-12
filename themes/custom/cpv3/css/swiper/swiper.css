@@ -712,17 +712,18 @@ p.slider-caption-cpu {
 }
 
 p.slider-title-cpu {
-  color: #708090;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-stretch: condensed;
-  font-kerning: none;
-  font-size: 38px;
-  margin-top: 10px;
+    color: #708090;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-stretch: condensed;
+    font-kerning: none;
+    font-size: 38px;
+    margin-top: 10px;
+    line-height: 1;
 }
 p.slider-title-cpu + p {
   line-height:0;
-  margin-top:-14px;
+  margin-top:-4px;
 }
 
 .swiper-slide .slider-content {
