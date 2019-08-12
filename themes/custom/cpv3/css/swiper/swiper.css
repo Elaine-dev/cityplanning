@@ -705,13 +705,13 @@ button.swiper-pagination-bullet {
 
 /** COMMUNITY PLAN UPDATE CUSTOM CSS **/
 /** Added to CKeditor **/
-p.slider-caption {
+p.slider-caption-cpu {
   color: #708090;
   font-size: 20px;
   font-weight: 400;
 }
 
-p.slider-title {
+p.slider-title-cpu {
   color: #708090;
   font-weight: 600;
   text-transform: uppercase;
@@ -720,7 +720,7 @@ p.slider-title {
   font-size: 38px;
   margin-top: 10px;
 }
-p.slider-title + p {
+p.slider-title-cpu + p {
   line-height:0;
   margin-top:-14px;
 }
