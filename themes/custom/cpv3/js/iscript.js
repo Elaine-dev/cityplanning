@@ -148,13 +148,14 @@ jQuery(document).ready(function($){
     
     // Activate tab using URL
     function hasURLtoTab() {
-    	var hasURL = window.location.hash;
-    	var urlParam = hasURL.substr(hasURL.indexOf('#')+1);
-    	
-    	if (hasURL.length) {
-    		jQuery('#'+urlParam).trigger('click');
-    		getData(urlParam);
-    	}
+    	var hashURL = window.location.hash;
+        var urlParam = hashURL.substr(hashURL.indexOf('#') + 1);
+        var uriSegment = urlParam = urlParam.replace('!#','');
+
+        if (hashURL.length) {
+          jQuery('#' + uriSegment).trigger('click');
+          getData(uriSegment);
+        }
     }
     
     hasURLtoTab();
