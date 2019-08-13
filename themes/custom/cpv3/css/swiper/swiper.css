@@ -725,6 +725,9 @@ p.slider-title-cpu + p {
   line-height:0;
   margin-top:-4px;
 }
+p.slider-caption-cpu:last-of-type {
+    margin-top: -9px;
+}
 
 .swiper-slide .slider-content {
   top: -80% !important;
