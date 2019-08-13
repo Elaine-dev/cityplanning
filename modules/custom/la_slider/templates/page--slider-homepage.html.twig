@@ -21,7 +21,7 @@
                       <!-- Slide Text Layer -->
                       <div class="slide-text slide_style_left">
                          <h2 data-animation="animated flipInX">{{ record.detail|striptags|slice(0, 160) }}</h2>
-                          <span class="read-more" ><a href="{{ path('entity.node.canonical', {'node': record.nid}) }}">Read more +</a></span>
+                         {% if record.link %} <span class="read-more" ><a href="{{ record.link }}">Read more +</a></span> {% endif %}
                       </div>
                    </div> <!-- //End of Slide -->
                    {% endfor %}

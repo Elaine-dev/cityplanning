@@ -3,6 +3,8 @@ namespace Drupal\la_slider\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Url;
 
 /**
  * Provides 'side menu'.
@@ -36,12 +38,20 @@ class LaSliderBlock extends BlockBase {
             $detail = $entity->get('body')->getValue()[0]['value'];
             $path = $entity->get('field_slider_images')[0]->entity->getFileUri();
             $imagePath = $images_styles['large']->buildUrl($path);
+            $linkPath = $entity->get('field_link')->uri;
+            
+            /**
+             * Checks if the link is external or internal
+             * If internal, convert entity:node/id to url
+             */
+            $link = (UrlHelper::isExternal($linkPath)) ? $linkPath : Url::fromUri($linkPath)->toString();
             
             $records[] = array(
                 'title' => $title,
                 'detail' => $detail,
                 'imagePath' => $imagePath,
                 'nid' => $nid,
+                'link' => $link,
             );
         }
         
