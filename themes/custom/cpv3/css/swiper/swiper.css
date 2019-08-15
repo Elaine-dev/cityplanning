@@ -712,21 +712,18 @@ p.slider-caption-cpu {
 }
 
 p.slider-title-cpu {
-    color: #708090;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-stretch: condensed;
-    font-kerning: none;
-    font-size: 38px;
-    margin-top: 10px;
-    line-height: 1;
+  color: #708090;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-stretch: condensed;
+  font-kerning: none;
+  font-size: 38px;
+  margin-top: 10px;
+  line-height:1;
 }
 p.slider-title-cpu + p {
-  line-height:0;
-  margin-top:-4px;
-}
-p.slider-caption-cpu:last-of-type {
-    margin-top: -9px;
+  line-height:1;
+  margin-top:-13px;
 }
 
 .swiper-slide .slider-content {
