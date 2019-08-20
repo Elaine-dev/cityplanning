@@ -51,18 +51,17 @@ jQuery(document).ready(function(){
 	imagePopUpGallery();
 
 	/**Video pop-up **/
-   videoPopup();
+  videoPopup();
 
    /**Bootstrap popup **/
    popImage();
 
    /**CPU hash url **/
    hashUrlCpu();
-   
+
    /** remove hover effect in all image link **/
    // removeHoverEffectOnImageLink();
 });
-
 
 function homepageSlider() {
 	// Bootstrap slider
@@ -428,13 +427,23 @@ function imagePopUpGallery() {
 	  })
 	})
 };
-  
+
 function videoPopup() {
-  	$('.launch-modal').on('click', function(e) {
-      e.preventDefault();
-      $( '#' + $(this).data('modal-id') ).modal();
-  	});
+		$(".video").on("click", function () {
+			var theModal = $(this).data("target"),
+			videoSRC = $(this).attr("data-video"),
+			videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";;
+			$(theModal + ' iframe').attr('src', videoSRCauto);
+			$(theModal).on('click', function(){
+			$(theModal + ' iframe').attr('src', videoSRC);
+			var memory = $(this).html();
+		 $(this).html(memory);
+			});
+			});
 };
+	$('#videoModal').on('hidden.bs.modal', function (e) {
+	$('#videoModal').find('iframe').attr('src', '');
+});
 
 function popImage() {
 	$("#pop").on("click", function() {
@@ -449,7 +458,7 @@ function hashUrlCpu() {
 	if (url.match('#')) {
 		$('#hollywood-tab ul.nav.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
 	}
-	
+
 	$('#hollywood-tab ul.nav.nav-tabs a').click(function(e) {
 		//e.preventDefault();
 		//  e.stopPropagation();
@@ -460,10 +469,10 @@ function hashUrlCpu() {
 
 /**
  * This function adds a css class 'image-link' to it's parent tag (<a>) which includes image tag (<img>).
- * 
+ *
  * For instance, we have html code as: 	<a href="#"><img src="#" /></a>
  * The o/p will be: 					<a href="#" class="image-link"><img src="#" /></a>
- * 
+ *
  */
 function removeHoverEffectOnImageLink() {
 	$('img').parent('a').addClass('image-link');
