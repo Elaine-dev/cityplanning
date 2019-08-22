@@ -4,7 +4,7 @@ Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
 Update Date: 2019.8.22
-Version: 4.4.61
+Version: 4.4.62
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3480,8 +3480,17 @@ span.icon {
     padding: 15px;
 }
 
-.webform-confirmation{
+.webform-confirmation {
 	padding:15px;
+}
+
+#webform-submission-website-survey-add-form textarea {
+	width: 100%;
+	padding: 5px;
+}
+
+.form-item input.error, .form-item textarea.error, .form-item select.error {
+    border: 2px solid red;
 }
 
 
