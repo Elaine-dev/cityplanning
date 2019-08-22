@@ -1,0 +1,37 @@
+    {# page template #}
+    
+    <!-- Fixed navbar -->
+    {% include directory ~ '/partials/header.html.twig' %}
+
+	{# page-banner #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+				{{ page.top_banner }}
+            </div>
+        </div>
+    </div>{# End page-banner #}
+
+        <!-- contain -->
+    <div class="container" id="main-container">
+        {# Main content #}
+        <div class="row">
+        	<div class="col-md-12">{{ page.title_bar }}</div>
+        </div>
+        <div class="row content-wrapper">
+        
+        	<div class="col-md-12">
+                <div class="row padding-left0">
+                    <div class="col-md-12 padding-left0 padding-right0">
+						{# content goes here #}
+						{{ page.content }}
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>{# End container #}
+    
+    <!-- footer section -->
+    {% include directory ~ '/partials/footer.html.twig' %}
