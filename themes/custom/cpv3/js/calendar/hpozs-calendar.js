@@ -20,9 +20,11 @@ $(document).ready(function() {
     		$('#loading').toggle(bool);
     	},
     	eventRender: function(eventObj, $el) {
+    		var eventContent = (eventObj.caseNumber !='') ? eventObj.description + ' | ' + eventObj.caseNumber : eventObj.description;
+    		
     		$el.popover({
 		        title: eventObj.title,
-		        content: eventObj.description + ' | ' + eventObj.caseNumber,
+		        content: eventContent,
 		        trigger: 'hover',
 		        placement: 'top',
 		        container: 'body'

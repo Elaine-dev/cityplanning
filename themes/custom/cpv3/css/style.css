@@ -2437,6 +2437,12 @@ ul > li > a, ol > li > a {
 /* hide past and future dates */
 #cal-index {
   font-size: 10px;
+  padding-bottom: 30px;
+  padding-top: 15px;
+}
+
+.cal-indexes {
+	padding: 10px 0;
 }
 
 /* date inside circle*/
@@ -2505,6 +2511,18 @@ td .fc-state-highlight>a.fc-day-number {
 .fc-state-default.fc-corner-left {
   border-top-left-radius: 0 !important;
   border-bottom-left-radius: 0 !important;
+}
+
+/* calendar: model view: text wrap event content */
+.fc-more-popover .fc-day-grid-event .fc-content{
+    white-space: normal !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.fc-unthemed .fc-content{
+	padding-left: 2px;
+	padding-right: 2px;
 }
 
 /* Inner page slider */
@@ -3753,10 +3771,19 @@ span.icon {
   }
 
   	/** TNP **/
-	.tnp-button {
+  	.tnp-button {
 		width: 100%;
 		margin: 0;
 	}
+	
+	/*************************************  
+ 	 * Event calendar: navigation button
+	 * 
+  	*************************************/
+	.fc button{
+	  	padding: 0.2em !important;
+	  	margin-bottom: 10px !important;
+  	}
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {

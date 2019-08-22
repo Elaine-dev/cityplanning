@@ -57,7 +57,7 @@ front-page:
     https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js:                                                    {}
 
 calendar-page:
-  version:                                                                                                          VERSION
+  version:                                                                                                          1.0
   css:
     theme:
       https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css:                               {}
@@ -68,7 +68,7 @@ calendar-page:
     js/calendar/dcp-calendar.js:                                                                                    {}
 
 calendar-detail:
-  version:                                                                                                          VERSION
+  version:                                                                                                          1.1
   css:
     theme:
       https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css:                               {}
@@ -205,7 +205,7 @@ prefix-suffix-report:
     js/api/prefixSuffix.js: {}
     
 hpozs-calendar:
-  version:                                                                                                          1.0
+  version:                                                                                                          1.1
   css:
     theme:
       https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.0/fullcalendar.min.css:                               {}
