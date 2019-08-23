@@ -44,8 +44,8 @@ jQuery(document).ready(function(){
  	/** Open external link in new window  **/
 	openExtLinkInNewWindow();
 
-	/** Side menu : Preservation & Design > Urban Design **/
-	// urbanDesignSideMenu();
+	/** Side menu : Development Services > Urban Design **/
+	urbanDesignSideMenu();
 
 	/** Image pop-up  **/
 	imagePopUpGallery();
@@ -383,14 +383,14 @@ function urbanDesignSideMenu() {
 	  var pathname = $(location).attr('pathname');
 	  var splitPathName = pathname.split('/');
 
-	  if (splitPathName[1] === 'preservation-design') {
-	  	var subLevel1 = splitPathName[1];					// preservation-design
+	  if (splitPathName[1] === 'development-services') {
+	  	var subLevel1 = splitPathName[1];					// development-services
 	  	var subLevel2 = splitPathName[2];					// urban-design
 	  	var subLevel3 = splitPathName[3];					// program-overview
 
 	  	var urbanDesignMenus = ['program-overview', 'project-review', 'guidelines-standards'];
 
-		  if (subLevel1 == 'preservation-design' && subLevel2 == 'urban-design') {
+		  if (subLevel1 == 'development-services' && subLevel2 == 'urban-design') {
 
 			  if (jQuery.inArray(subLevel3, urbanDesignMenus) != -1) {
 				  $('.hide-urd').hide();

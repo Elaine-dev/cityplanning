@@ -79,8 +79,8 @@ class SideMenuBlock extends BlockBase {
         $html = '<ul>';
         
         // hide/unhide Urban Design sub-menus
-        /* $urban_design_menu = ['Urban Design Program Overview','Urban Design Project Review','Urban Design Guidelines & Standards'];
-        $class_for_preservation_design = ''; */
+        $urban_design_menu = ['Urban Design Program Overview','Urban Design Project Review','Urban Design Guidelines & Standards'];
+        $class_for_dev_services = '';
         
         if (!empty($list[0]['child'])) {
           foreach(@$list[0]['child'] as $row) {
@@ -107,28 +107,28 @@ class SideMenuBlock extends BlockBase {
                * Hide Urban Design sub-menu when navigating to Historic Resources and Historic Districs submenus.
                *
                * add css classes 'unhide-urd' & 'hide-urd' to unhide/hide Urban Design sub-menus
-               * when clicked on menus under Preservation & Design.
+               * when clicked on menus under Development Services.
                *
                * Also add jQuery condition to implement it.
                *    $('.hide-urd').hide();
                *    $('.unhide-urd').show();
                *
                *  $uri_array = explode('/', $uri); :
-               *    http://ladcp.westus.cloudapp.azure.com/preservation-design/urban-design/policy-objectives
+               *    http://ladcp.westus.cloudapp.azure.com/development-services/urban-design/policy-objectives
                *    Array
                *    (
                *         [0] =>
-               *         [1] => preservation-design
+               *         [1] => development-services
                *         [2] => urban-design
                *         [3] => policy-objectives
                *     )
                */
-              /* if ($menu_level== 'preservation-design') {
-                  $class_for_preservation_design =  (in_array($link_text, $urban_design_menu)) ? 'unhide-urd' : 'hide-urd';
-              } */
+              if ($menu_level== 'development-services') {
+                  $class_for_dev_services =  (in_array($link_text, $urban_design_menu)) ? 'unhide-urd' : 'hide-urd';
+              }
                        
-              $html .= '<li><a class="'. $class . '" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
-              $html .= '<li class="line"></li>';
+              $html .= '<li class ="' . $class_for_dev_services . '"><a class="'. $class . '" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
+              $html .= '<li class="line '.$class_for_dev_services.'"></li>';
           }
         }
         
