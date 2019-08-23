@@ -2446,8 +2446,14 @@ ul > li > a, ol > li > a {
 }
 
 /* date inside circle*/
-.fc-unthemed td.fc-today {
+/* .fc-unthemed td.fc-today {
   background: #fff !important;
+} */
+
+.fc-today .fc-day-number {
+	border-radius: 50%;
+	background: #2d93d6;
+	color: #fff;
 }
 
 td .fc-state-highlight>a.fc-day-number {
