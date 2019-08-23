@@ -45,13 +45,13 @@ jQuery(document).ready(function(){
 	openExtLinkInNewWindow();
 
 	/** Side menu : Preservation & Design > Urban Design **/
-	urbanDesignSideMenu();
+	// urbanDesignSideMenu();
 
 	/** Image pop-up  **/
 	imagePopUpGallery();
 
 	/**Video pop-up **/
-  videoPopup();
+	videoPopup();
 
    /**Bootstrap popup **/
    popImage();

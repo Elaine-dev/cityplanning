@@ -79,8 +79,8 @@ class SideMenuBlock extends BlockBase {
         $html = '<ul>';
         
         // hide/unhide Urban Design sub-menus
-        $urban_design_menu = ['Urban Design Program Overview','Urban Design Project Review','Urban Design Guidelines & Standards'];
-        $class_for_preservation_design = '';
+        /* $urban_design_menu = ['Urban Design Program Overview','Urban Design Project Review','Urban Design Guidelines & Standards'];
+        $class_for_preservation_design = ''; */
         
         if (!empty($list[0]['child'])) {
           foreach(@$list[0]['child'] as $row) {
@@ -123,12 +123,12 @@ class SideMenuBlock extends BlockBase {
                *         [3] => policy-objectives
                *     )
                */
-              if ($menu_level== 'preservation-design') {
+              /* if ($menu_level== 'preservation-design') {
                   $class_for_preservation_design =  (in_array($link_text, $urban_design_menu)) ? 'unhide-urd' : 'hide-urd';
-              }
+              } */
                        
-              $html .= '<li class ="' . $class_for_preservation_design . '"><a class="'. $class . '" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
-              $html .= '<li class="line '.$class_for_preservation_design.'"></li>';
+              $html .= '<li><a class="'. $class . '" href="'.$full_url.'" target="'.$target.'">'.$link_text.'</a> </li>';
+              $html .= '<li class="line"></li>';
           }
         }
         
