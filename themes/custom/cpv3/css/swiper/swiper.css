@@ -722,7 +722,7 @@ p.slider-title-cpu {
   line-height:1;
 }
 p.slider-title-cpu + p {
-  line-height:1;
+  line-height:1.2;
   margin-top:-13px;
 }
 
@@ -747,7 +747,7 @@ p.slider-title-cpu + p {
   }
 
   #planning-update .swiper-slide .slider-content {
-    top: -490px !important;
+    top: -450px !important;
   }
 }
 
