@@ -61,6 +61,9 @@ jQuery(document).ready(function(){
 
    /** remove hover effect in all image link **/
    // removeHoverEffectOnImageLink();
+   
+   /** Initial Screening checklist: checks if any checkbox is selected or not **/
+   isCheckboxSelected();
 });
 
 function homepageSlider() {
@@ -476,4 +479,15 @@ function hashUrlCpu() {
  */
 function removeHoverEffectOnImageLink() {
 	$('img').parent('a').addClass('image-link');
+}
+
+
+function isCheckboxSelected(){
+	$('#ischecklist').submit(function() {		    
+		if ($('input[name="type_of_project"]:checked').length < 1) {
+			var msg = "<div class='messages-error-status' style='padding: 10px;'>Please select any type of project</div>";
+			$('#error-message').html(msg);
+			return false;
+	    }
+	});
 }
