@@ -485,7 +485,7 @@ function removeHoverEffectOnImageLink() {
 function isCheckboxSelected(){
 	$('#ischecklist').submit(function() {		    
 		if ($('input[name="type_of_project"]:checked').length < 1) {
-			var msg = "<div class='messages-error-status' style='padding: 10px;'>Please select any type of project</div>";
+			var msg = "<div class='messages-error-status' style='padding: 10px;'>Please select the Type of Project.</div>";
 			$('#error-message').html(msg);
 			return false;
 	    }
