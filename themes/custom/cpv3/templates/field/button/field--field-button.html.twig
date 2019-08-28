@@ -9,8 +9,10 @@
             {% endif %}
 
             {% for item in items %}
+                {% set link = item.content['#url']|render %}
+                
                 <div class="col-md-12 {{ class }}">
-                    <a href="{{ item.content['#url'].getUri() }}" class="button">{{ item.content['#title'] }}</a>
+                    <a href="{{ link }}" class="button">{{ item.content['#title'] }}</a>
                 </div>
                 {% if loop.index is divisible by(2) %}
        		</div>
