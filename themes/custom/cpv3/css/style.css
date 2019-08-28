@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.8.23
-Version: 4.4.63
+Update Date: 2019.8.28
+Version: 4.4.64
 *********************/
 body {
   line-height: 1.5 !important;
@@ -844,7 +844,7 @@ figcaption {
 }
 
 .navbar-nav>li>.dropdown-menu {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .mega-dropdown {
@@ -853,7 +853,7 @@ figcaption {
 
 .mega-dropdown-menu {
   padding-bottom: 20px;
-  width: 109%;
+  width: 120%;
   box-shadow: none;
   -webkit-box-shadow: none;
   font-size: 16px !important;
@@ -984,12 +984,12 @@ _:-moz-tree-row(hover), .planning-tag {
 
 /** feature section :  **/
 #case-search-box {
-  left: 12;
+  /*left: 12;*/
   padding-left: 0;
 }
 
 #zoning-search-box {
-  left: 6;
+  /* left: 6; */
 }
 
 #get-involved-box {
@@ -1027,7 +1027,7 @@ _:-moz-tree-row(hover), .planning-tag {
 
 /** feature section : 1 **/
 .feature-section1 {
-  padding-left: 7px;
+  /* padding-left: 7px; */
 }
 
 .feature-section1 h2 {
@@ -3531,15 +3531,28 @@ span.icon {
 
   /** navigation **/
   .navbar {
-    padding-top: 30px !important;
+    /* padding-top: 30px !important; */
+    padding-bottom: 20px;
   }
 
+  .navbar-nav { margin: 0;}
+  
+    .visible-sm .visible-xs .navbar-nav {
+  	margin-right: 134px;
+  }
+  
+  .navbar-brand img {
+  	height: 78px;
+  }
+  
   .padding-top2em {
     padding-top: 0 !important;
   }
 
   .navbar-toggle {
     display: block;
+    top: 20px;
+    bottom: 20px;
   }
 
   .menu-region {
@@ -3564,7 +3577,7 @@ span.icon {
     top: 40px !important;
   } */
   .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    margin-top: 15px;
+    margin-top: 40px;
   }
 
   .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {
@@ -3680,14 +3693,11 @@ span.icon {
 
   /* Stay Connected */
   #stay-connected-text {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 0;
+    padding: 15px;
   }
 
   .stay-connected-social-icons {
-    padding-left: 15px;
-    padding-top: 20px !important;
+    padding: 20px 15px;
   }
 
   .stay-connected-newsletter {
@@ -3712,6 +3722,22 @@ span.icon {
   #footer-section .footer-sub-link {
     padding-left: 0;
   }
+  #footer-contactus {
+  	padding-left: 15px;
+  	padding-top: 15px;
+  }
+  
+  #footer-toolkit{
+  	padding: 15px;
+  }
+  
+  #footer-toolkit h6{
+  	padding-bottom: 15px; 
+  }
+  
+  #footer-toolkit h6, #footer-toolkit p {
+    float: left !important;
+  } 					
 
   /* copy-right */
   .copy-right {
@@ -4014,12 +4040,13 @@ span.icon {
 
   .navbar-header {
     float: none;
-    padding-bottom: 15px;
+    padding-bottom: 50px;
   }
 
   .navbar-toggle {
     display: block;
-    top: 5px;
+    top: 40px;
+    padding: 15px;
   }
 
   .navbar-collapse.collapse {
@@ -4054,6 +4081,7 @@ span.icon {
 
   .navbar-collapse.in {
     overflow-y: auto;
+    margin-top: 8px;
   }
 
   .navbar-collapse {
@@ -4064,6 +4092,7 @@ span.icon {
     border-top: 1px solid transparent;
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+    top: 8px;
   }
 
   .navbar-nav .open .dropdown-menu {
@@ -4097,15 +4126,18 @@ span.icon {
   .nav.navbar-nav {
     padding-right: 30px !important;
   }
-
+/*
   .nav.navbar-nav.navbar-right {
     margin-bottom: 50px;
   }
+  */
 
   /** slider **/
+  /*
   #slider {
     margin-top: -35 !important;
   }
+  */
 
   .slide-text {
     top: 0 !important;
@@ -4151,22 +4183,40 @@ span.icon {
   /* Stay Connected */
   .stay-connected-social-icons {
     padding-left: 15px;
-    padding-top: 20px !important;
+    /* padding-top: 20px !important; */
   }
 
   .stay-connected-newsletter {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   #say-connected #stay-connected-text {
     padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  #signup-newsletter {
+  	text-align: left;
+  }
+  
+  #footer-toolkit h6, #footer-toolkit p {
+    float: left !important;
+    clear: both;
+  } 
+  
+  #footer-toolkit h6 {
+  	padding-bottom: 15px; 
   }
 
   #footer-section .footer-sub-link {
     padding-left: 15px;
   }
+
+  #footer-contactus {
+  	padding: 15px;
+  }			   
 
   #footer-section .copy-right {
     float: left;
@@ -4444,7 +4494,7 @@ span.icon {
 @media screen and (min-width: 1824px) {
 
   #main-container {
-  top: 205px;
+  	top: 205px;
   }
 }
 

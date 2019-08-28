@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-search-box animate" role="navigation">
 	<div class="container menu-region">
-    	<div class="col-md-1 tog-nav">
+    	<div class="col-md-2">
     		<div class="navbar-header">
 	        	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
 	            <span class="sr-only">Toggle navigation</span>
@@ -12,9 +12,9 @@
 	        </div>
     	</div>
 
-    	<div class="col-md-11">
+    	<div class="col-md-10">
     		<!-- google translate -->
-    		<div class="row">
+    		<div class="row hidden-sm hidden-xs">
     			<ul class="nav navbar-nav navbar-right padding-top13 search-google-lan">
 	                <li id="search" style="padding-right: 10px !important; ">
                         <form  action="/search/node" method="get" id="search-block-form" accept-charset="utf-8" class="searchbox">
@@ -30,285 +30,299 @@
     		<!-- navbar-collapse -->
     		<div class="row">
     			<div class="collapse navbar-collapse">
-            <ul id="main-nav" class="nav navbar-nav navbar-right" >
-              <li class="dropdown mega-dropdown">
-                <a  href="#" class="dropdown-toggle {% if currentlink == 'about' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">About</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}about/department">Department</a></li>
-                      <li><a href="{{ base_path }}about/executive-office">Executive Office</a></li>
-                      <li><a href="{{ base_path }}about/decision-makers">Decision Makers</a></li>
-                      <li><a href="{{ base_path }}about/commissioners">Commissioners</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">Meetings</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}about/calendar">Events Calendar</a></li>
-                      <li><a href="{{ base_path }}about/commissions-boards-hearings">Commissions, Boards & Hearings</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">Stay Connected</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}contact/organizational-chart">Organizational Chart</a></li>
-                      <li><a href="{{ base_path }}about/email-sign-up">Email Sign-up</a></li>
-                      <li><a href="{{ base_path }}about/staff-directory">Staff Directory</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="dropdown mega-dropdown">
-                <a href="#" class="dropdown-toggle {% if currentlink == 'zoning' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zoning </a>
-                <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">Introduction</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}zoning/overview">Overview</a></li>
-                      <li><a href="{{ base_path }}zoning/guide-current-zoning-string">Guide to the Current Zoning String</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">Regulations</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}zoning/zoning-code">Zoning Code</a></li>
-                      <li><a href="{{ base_path }}zoning/zoning-code-updates">Zoning Code Updates</a></li>
-                      <li><a href="{{ base_path }}zoning/summary">Summary</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">Quick Links</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}zoning/zoning-map">Zoning Map (ZIMAS)</a></li>
-                      <li><a href="{{ base_path }}zoning/enforcement">Enforcement</a></li>
-                      <li><a href="https://planning.lacity.org/odocument/647665b9-6246-4eaf-a70c-f06285ff28c4/UseListMemo.pdf">Zoning Use List</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="dropdown mega-dropdown">
-                <a href="#" class="dropdown-toggle {% if currentlink =='development-services' %} active {% endif %}" data-toggle="dropdown"
-                    role="button" aria-haspopup="true" aria-expanded="false">Development<br>Services</a>
-                <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                  <li class="col-md-3">
-                    <h3 class="dropdown-header">Land Use Process</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}development-services/land-use-process/planning-applications-entitlements">Planning Applications & Entitlements</a></li>
-                      <li><a href="{{ base_path }}development-services/application-process">Application Process</a></li>
-                      <li><a href="{{ base_path }}development-services/development-services">Development Services</a></li>
-                      <li><a href="{{ base_path }}development-services/expedited-processing">Expedited Processing</a></li>
-                    </ul>
-                  </li>
-
-                  <li class="col-md-3">
-                    <h3 class="dropdown-header">Environmental Review</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}development-services/environmental-review">Environmental Review</a></li>
-                      <li><a href="{{ base_path }}development-services/environmental-review/published-documents">Published Documents</a></li>
-                  </ul>
-                </li>
-                
-                <li class="col-md-3">
-                    <h3 class="dropdown-header">Urban Design</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}development-services/urban-design/program-overview">Program Overview</a></li>
-                      <li><a href="{{ base_path }}development-services/urban-design/project-review">Project Review</a></li>
-                      <li><a href="{{ base_path }}development-services/urban-design/guidelines-standards">Guidelines & Standards</a></li>
-                    </ul>
-                </li>
-                
-                <li class="col-md-3">
-                  <h3 class="dropdown-header">Quick Links</h3>
-                  <ul>
-                    <li class="divider"></li>
-                    <li><a href="{{ base_path }}development-services/appointment/form">Appointments</a></li>
-                    <li><a href="{{ base_path }}development-services/forms">Forms</a></li>
-                    <li><a href="{{ base_path }}development-services/fee-estimator">Fee Estimator</a></li>
-                    <li><a href="{{ base_path }}plans-policies/initiatives-policies/home-sharing">Home-Sharing</a></li>
-                  </ul>
-                </li>
-                </ul>
-              </li>
-
-              <li class="dropdown mega-dropdown">
-                <a href="#" class="dropdown-toggle {% if currentlink == 'plans-policies' %} active {% endif %}" data-toggle="dropdown"
-                    role="button" aria-haspopup="true" aria-expanded="false">Plans &<br>Policies</a>
-                <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                    <li class="col-md-3">
-                      <h3 class="dropdown-header">General Plan Program</h3>
-                      <ul>
-                        <li class="divider"></li>
-                        <li><a href="{{ base_path }}plans-policies/general-plan-overview">General Plan Overview</a></li>
-                        <li><a href="{{ base_path }}plans-policies/general-plan-updates">General Plan Updates</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="col-md-3">
-                      <h3 class="dropdown-header">Community Plan Program</h3>
-                      <ul>
-                        <li class="divider"></li>
-                        <li><a href="{{ base_path }}plans-policies/community-plans">Community Plans</a></li>
-                        <li><a href="{{ base_path }}plans-policies/community-plan-updates">Community Plan Updates</a></li>
-                        <li><a href="{{ base_path }}plans-policies/overlays">Plan Overlays</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="col-md-3">
-                      <h3 class="dropdown-header">Ordinances</h3>
-                      <ul>
-                        <li class="divider"></li>
-                        <li><a href="{{ base_path }}plans-policies/proposed-ordinances">Proposed Ordinances</a></li>
-                        <li><a href="{{ base_path }}plans-policies/adopted-ordinances">Recently Adopted Ordinances</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="col-md-3">
-                      <h3 class="dropdown-header">Policies</h3>
-                      <ul>
-                        <li class="divider"></li>
-                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/home-sharing">Home-Sharing</a></li>
-                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/housing">Housing</a></li>
-                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/sustainability">Sustainability</a></li>
-                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/mobility">Mobility</a></li>
-                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/transit-neighborhood-plans">Transit Neighborhood Plans</a></li>
-                        <li><a href="{{ base_path }}plans-policies/initiatives-policies/additional-initiatives">Other Programs</a></li>
-                      </ul>
-                    </li>
-                </ul>
-              </li>
-
-              <li class="dropdown mega-dropdown">
-                <a href="#" class="dropdown-toggle {% if currentlink == 'preservation-design' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                       Preservation</a>
-                <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                  <li class="col-md-4" >
-                    <h3 class="dropdown-header">Historic Resources</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}preservation-design/program-overview">Program Overview</a></li>
-                      <li><a href="{{ base_path }}preservation-design/historic-resources-survey">Historic Resources Surveys</a></li>
-                      <li><a href="{{ base_path }}preservation-design/historic-resources/historic-themes"> Historic Themes</a></li>
-                      <li><a href="{{ base_path }}preservation-design/historic-resources/incentives-resources">Incentives & Resources</a></li>
-                    </ul>
-                  </li>
-
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">Historic Landmarks</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}preservation-design/historic-landmark-programs">Historic Landmark Programs</a></li>
-                      <li><a href="{{ base_path }}preservation-design/local-designation-process">Local Designation Process</a></li>                     
-                    </ul>
-                  </li>
-
-                  <li class="col-md-4">
-                    <h3 class="dropdown-header">Historic Districts</h3>
-                    <ul>
-                      <li class="divider"></li>
-               		  <li><a href="{{ base_path }}preservation-design/local-historic-districts">Local Historic Districts (HPOZs)</a></li>
-                      <li><a href="{{ base_path }}preservation-design/historic-district-project-review">Historic District Project Review</a></li>
-                    </ul>
-                  </li>
-
-                </ul>
-              </li>
-
-              <li class="dropdown mega-dropdown">
-                <a href="#" class="dropdown-toggle {% if currentlink == 'resources' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
-                <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                  <li class="col-md-3">
-                    <h3 class="dropdown-header">Reports and Publications</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}resources/publications">Publications</a></li>
-                      <li><a href="{{ base_path }}resources/housing-reports">Housing Progress Reports</a></li>
-                      <li><a href="{{ base_path }}resources/case-reports">Case Reports</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-md-3">
-                    <h3 class="dropdown-header">Data Analysis</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}resources/performance-metrics">Performance Metrics</a></li>
-                      <li><a href="{{ base_path }}resources/data-requests">Data Requests</a></li>
-                      <li><a href="{{ base_path }}resources/open-data">Open Data</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-md-3">
-                    <h3 class="dropdown-header">Online Resources</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}resources/demographics">Demographics</a></li>
-                      <li><a href="{{ base_path }}resources/maps">Maps</a></li>
-                      <li><a href="{{ base_path }}resources/videos">Videos</a></li>
-											<li><a href="{{ base_path }}resources/glossary">Glossary</a></li>
-                      <li><a href="{{ base_path }}blog">Blog</a></li>
-                    </ul>
-                  </li>
-                  <li class="col-md-3">
-                    <h3 class="dropdown-header">Quick Links</h3>
-                    <ul>
-                      <li class="divider"></li>
-                      <li><a href="{{ base_path }}resources/sunshine-canyon-landfill">Sunshine Canyon Landfill</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="dropdown mega-dropdown">
-                <a href="#" class="dropdown-toggle {% if currentlink == 'contact' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
-                  <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
-                    <li class="col-md-3" >
-                      <h3 class="dropdown-header">Contact</h3>
-                        <ul>
-                          <li class="divider"></li>
-                          <li><a href="{{ base_path }}contact/staff-directory">Staff Directory</a></li>
-                          <li><a href="{{ base_path }}contact/organizational-chart">Organizational Chart</a></li>
+                    <ul id="main-nav" class="nav navbar-nav navbar-right" >
+                      <li class="dropdown mega-dropdown">
+                        <a  href="#" class="dropdown-toggle {% if currentlink == 'about' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                        <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">About</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}about/department">Department</a></li>
+                              <li><a href="{{ base_path }}about/executive-office">Executive Office</a></li>
+                              <li><a href="{{ base_path }}about/decision-makers">Decision Makers</a></li>
+                              <li><a href="{{ base_path }}about/commissioners">Commissioners</a></li>
+                            </ul>
+                          </li>
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">Meetings</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}about/calendar">Events Calendar</a></li>
+                              <li><a href="{{ base_path }}about/commissions-boards-hearings">Commissions, Boards & Hearings</a></li>
+                            </ul>
+                          </li>
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">Stay Connected</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}contact/organizational-chart">Organizational Chart</a></li>
+                              <li><a href="{{ base_path }}about/email-sign-up">Email Sign-up</a></li>
+                              <li><a href="{{ base_path }}about/staff-directory">Staff Directory</a></li>
+                            </ul>
+                          </li>
                         </ul>
-                    </li>
-                    <li class="col-md-3" >
-                      <h3 class="dropdown-header">Appointments</h3>
-                        <ul>
-                          <li class="divider"></li>
-                          <li><a href="{{ base_path }}contact/public-counters">Public Counters</a></li>
-                          <li><a href="{{ base_path }}contact/locations-hours">Locations & Hours</a></li>
+                      </li>
+        
+                      <li class="dropdown mega-dropdown">
+                        <a href="#" class="dropdown-toggle {% if currentlink == 'zoning' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zoning </a>
+                        <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">Introduction</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}zoning/overview">Overview</a></li>
+                              <li><a href="{{ base_path }}zoning/guide-current-zoning-string">Guide to the Current Zoning String</a></li>
+                            </ul>
+                          </li>
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">Regulations</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}zoning/zoning-code">Zoning Code</a></li>
+                              <li><a href="{{ base_path }}zoning/zoning-code-updates">Zoning Code Updates</a></li>
+                              <li><a href="{{ base_path }}zoning/summary">Summary</a></li>
+                            </ul>
+                          </li>
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">Quick Links</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}zoning/zoning-map">Zoning Map (ZIMAS)</a></li>
+                              <li><a href="{{ base_path }}zoning/enforcement">Enforcement</a></li>
+                              <li><a href="https://planning.lacity.org/odocument/647665b9-6246-4eaf-a70c-f06285ff28c4/UseListMemo.pdf">Zoning Use List</a></li>
+                            </ul>
+                          </li>
                         </ul>
-                    </li>
-                    <li class="col-md-3" >
-                      <h3 class="dropdown-header">Media Inquiries</h3>
-                      <ul>
-                        <li class="divider"></li>
-                        <li><a href="{{ base_path }}contact/communications">Communications</a></li>
-                        <li><a href="{{ base_path }}contact/statements-and-releases">Press Releases & Statements</a></li>
-                        <li><a href="{{ base_path }}contact/california-public-records-act">California Public Records Act</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-md-3" >
-                      <h3 class="dropdown-header">Employment</h3>
-                      <ul>
-                        <li class="divider"></li>
-                        <li><a href="{{ base_path }}contact/employment/job-opportunities">Job Opportunities</a></li>
-                        <li><a href="{{ base_path }}contact/employment/internships">Internships</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-              </li>
-            </ul>
-
-          </div>
+                      </li>
+        
+                      <li class="dropdown mega-dropdown">
+                        <a href="#" class="dropdown-toggle {% if currentlink =='development-services' %} active {% endif %}" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">Development<br>Services</a>
+                        <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+                          <li class="col-md-3">
+                            <h3 class="dropdown-header">Land Use Process</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}development-services/land-use-process/planning-applications-entitlements">Planning Applications & Entitlements</a></li>
+                              <li><a href="{{ base_path }}development-services/application-process">Application Process</a></li>
+                              <li><a href="{{ base_path }}development-services/development-services">Development Services</a></li>
+                              <li><a href="{{ base_path }}development-services/expedited-processing">Expedited Processing</a></li>
+                            </ul>
+                          </li>
+        
+                          <li class="col-md-3">
+                            <h3 class="dropdown-header">Environmental Review</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}development-services/environmental-review">Environmental Review</a></li>
+                              <li><a href="{{ base_path }}development-services/environmental-review/published-documents">Published Documents</a></li>
+                          </ul>
+                        </li>
+                        
+                        <li class="col-md-3">
+                            <h3 class="dropdown-header">Urban Design</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}development-services/urban-design/program-overview">Program Overview</a></li>
+                              <li><a href="{{ base_path }}development-services/urban-design/project-review">Project Review</a></li>
+                              <li><a href="{{ base_path }}development-services/urban-design/guidelines-standards">Guidelines & Standards</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="col-md-3">
+                          <h3 class="dropdown-header">Quick Links</h3>
+                          <ul>
+                            <li class="divider"></li>
+                            <li><a href="{{ base_path }}development-services/appointment/form">Appointments</a></li>
+                            <li><a href="{{ base_path }}development-services/forms">Forms</a></li>
+                            <li><a href="{{ base_path }}development-services/fee-estimator">Fee Estimator</a></li>
+                            <li><a href="{{ base_path }}plans-policies/initiatives-policies/home-sharing">Home-Sharing</a></li>
+                          </ul>
+                        </li>
+                        </ul>
+                      </li>
+        
+                      <li class="dropdown mega-dropdown">
+                        <a href="#" class="dropdown-toggle {% if currentlink == 'plans-policies' %} active {% endif %}" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">Plans &<br>Policies</a>
+                        <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+                            <li class="col-md-3">
+                              <h3 class="dropdown-header">General Plan Program</h3>
+                              <ul>
+                                <li class="divider"></li>
+                                <li><a href="{{ base_path }}plans-policies/general-plan-overview">General Plan Overview</a></li>
+                                <li><a href="{{ base_path }}plans-policies/general-plan-updates">General Plan Updates</a></li>
+                              </ul>
+                            </li>
+        
+                            <li class="col-md-3">
+                              <h3 class="dropdown-header">Community Plan Program</h3>
+                              <ul>
+                                <li class="divider"></li>
+                                <li><a href="{{ base_path }}plans-policies/community-plans">Community Plans</a></li>
+                                <li><a href="{{ base_path }}plans-policies/community-plan-updates">Community Plan Updates</a></li>
+                                <li><a href="{{ base_path }}plans-policies/overlays">Plan Overlays</a></li>
+                              </ul>
+                            </li>
+        
+                            <li class="col-md-3">
+                              <h3 class="dropdown-header">Ordinances</h3>
+                              <ul>
+                                <li class="divider"></li>
+                                <li><a href="{{ base_path }}plans-policies/proposed-ordinances">Proposed Ordinances</a></li>
+                                <li><a href="{{ base_path }}plans-policies/adopted-ordinances">Recently Adopted Ordinances</a></li>
+                              </ul>
+                            </li>
+        
+                            <li class="col-md-3">
+                              <h3 class="dropdown-header">Policies</h3>
+                              <ul>
+                                <li class="divider"></li>
+                                <li><a href="{{ base_path }}plans-policies/initiatives-policies/home-sharing">Home-Sharing</a></li>
+                                <li><a href="{{ base_path }}plans-policies/initiatives-policies/housing">Housing</a></li>
+                                <li><a href="{{ base_path }}plans-policies/initiatives-policies/sustainability">Sustainability</a></li>
+                                <li><a href="{{ base_path }}plans-policies/initiatives-policies/mobility">Mobility</a></li>
+                                <li><a href="{{ base_path }}plans-policies/initiatives-policies/transit-neighborhood-plans">Transit Neighborhood Plans</a></li>
+                                <li><a href="{{ base_path }}plans-policies/initiatives-policies/additional-initiatives">Other Programs</a></li>
+                              </ul>
+                            </li>
+                        </ul>
+                      </li>
+        
+                      <li class="dropdown mega-dropdown">
+                        <a href="#" class="dropdown-toggle {% if currentlink == 'preservation-design' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                               Preservation</a>
+                        <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+                          <li class="col-md-4" >
+                            <h3 class="dropdown-header">Historic Resources</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}preservation-design/program-overview">Program Overview</a></li>
+                              <li><a href="{{ base_path }}preservation-design/historic-resources-survey">Historic Resources Surveys</a></li>
+                              <li><a href="{{ base_path }}preservation-design/historic-resources/historic-themes"> Historic Themes</a></li>
+                              <li><a href="{{ base_path }}preservation-design/historic-resources/incentives-resources">Incentives & Resources</a></li>
+                            </ul>
+                          </li>
+        
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">Historic Landmarks</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}preservation-design/historic-landmark-programs">Historic Landmark Programs</a></li>
+                              <li><a href="{{ base_path }}preservation-design/local-designation-process">Local Designation Process</a></li>                     
+                            </ul>
+                          </li>
+        
+                          <li class="col-md-4">
+                            <h3 class="dropdown-header">Historic Districts</h3>
+                            <ul>
+                              <li class="divider"></li>
+                       		  <li><a href="{{ base_path }}preservation-design/local-historic-districts">Local Historic Districts (HPOZs)</a></li>
+                              <li><a href="{{ base_path }}preservation-design/historic-district-project-review">Historic District Project Review</a></li>
+                            </ul>
+                          </li>
+        
+                        </ul>
+                      </li>
+        
+                      <li class="dropdown mega-dropdown">
+                        <a href="#" class="dropdown-toggle {% if currentlink == 'resources' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+                        <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+                          <li class="col-md-3">
+                            <h3 class="dropdown-header">Reports and Publications</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}resources/publications">Publications</a></li>
+                              <li><a href="{{ base_path }}resources/housing-reports">Housing Progress Reports</a></li>
+                              <li><a href="{{ base_path }}resources/case-reports">Case Reports</a></li>
+                            </ul>
+                          </li>
+                          <li class="col-md-3">
+                            <h3 class="dropdown-header">Data Analysis</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}resources/performance-metrics">Performance Metrics</a></li>
+                              <li><a href="{{ base_path }}resources/data-requests">Data Requests</a></li>
+                              <li><a href="{{ base_path }}resources/open-data">Open Data</a></li>
+                            </ul>
+                          </li>
+                          <li class="col-md-3">
+                            <h3 class="dropdown-header">Online Resources</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}resources/demographics">Demographics</a></li>
+                              <li><a href="{{ base_path }}resources/maps">Maps</a></li>
+                              <li><a href="{{ base_path }}resources/videos">Videos</a></li>
+        											<li><a href="{{ base_path }}resources/glossary">Glossary</a></li>
+                              <li><a href="{{ base_path }}blog">Blog</a></li>
+                            </ul>
+                          </li>
+                          <li class="col-md-3">
+                            <h3 class="dropdown-header">Quick Links</h3>
+                            <ul>
+                              <li class="divider"></li>
+                              <li><a href="{{ base_path }}resources/sunshine-canyon-landfill">Sunshine Canyon Landfill</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+        
+                      <li class="dropdown mega-dropdown">
+                        <a href="#" class="dropdown-toggle {% if currentlink == 'contact' %} active {% endif %}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact</a>
+                          <ul class="dropdown-menu mega-dropdown-menu mega-menu-padding-10pc">
+                            <li class="col-md-3" >
+                              <h3 class="dropdown-header">Contact</h3>
+                                <ul>
+                                  <li class="divider"></li>
+                                  <li><a href="{{ base_path }}contact/staff-directory">Staff Directory</a></li>
+                                  <li><a href="{{ base_path }}contact/organizational-chart">Organizational Chart</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-md-3" >
+                              <h3 class="dropdown-header">Appointments</h3>
+                                <ul>
+                                  <li class="divider"></li>
+                                  <li><a href="{{ base_path }}contact/public-counters">Public Counters</a></li>
+                                  <li><a href="{{ base_path }}contact/locations-hours">Locations & Hours</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-md-3" >
+                              <h3 class="dropdown-header">Media Inquiries</h3>
+                              <ul>
+                                <li class="divider"></li>
+                                <li><a href="{{ base_path }}contact/communications">Communications</a></li>
+                                <li><a href="{{ base_path }}contact/statements-and-releases">Press Releases & Statements</a></li>
+                                <li><a href="{{ base_path }}contact/california-public-records-act">California Public Records Act</a></li>
+                              </ul>
+                            </li>
+                            <li class="col-md-3" >
+                              <h3 class="dropdown-header">Employment</h3>
+                              <ul>
+                                <li class="divider"></li>
+                                <li><a href="{{ base_path }}contact/employment/job-opportunities">Job Opportunities</a></li>
+                                <li><a href="{{ base_path }}contact/employment/internships">Internships</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                      </li>
+                      
+                      <li class="visible-sm visible-xs">
+              			<ul class="nav navbar-nav navbar-right padding-top13 search-google-lan">
+	                		<li id="search" style="border-top: 1px solid #ddd;">
+                            	<form action="/search/node" method="get" id="search-block-form" accept-charset="utf-8" class="searchbox">
+                      				<input type="search" maxlength="128" placeholder="Search for ..." class="searchbox-input" data-drupal-selector="edit-keys" id="edit-keys--2" name="keys" onkeyup="buttonUp();" required="required"/>
+        			                <input type="submit" class="searchbox-submit js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--3" />
+        			                <span class="searchbox-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+        			            </form>
+                       		</li>
+                			<li class="google-lan"><div id="google-lan"><div id="google_translate_element"></div></div></li>
+        	            </ul>        	                  	            
+                      
+                      </li>
+                	</ul>
+        
+          		</div>
     		</div>  <!-- /.navbar-collapse -->
     	</div>
     </div><!-- /.container-->
