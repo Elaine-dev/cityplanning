@@ -3573,9 +3573,10 @@ span.icon {
     float: right;
   }
 
-  /* #main-container {
-    top: 40px !important;
-  } */
+  #main-container {
+    margin: 0 10px;
+  }
+  
   .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     margin-top: 40px;
   }
