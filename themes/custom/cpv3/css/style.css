@@ -4460,7 +4460,7 @@ span.icon {
 
   /* slider */
   .slide-text {
-    left: 5px;
+    right: 650px !important;
   }
 }
 
