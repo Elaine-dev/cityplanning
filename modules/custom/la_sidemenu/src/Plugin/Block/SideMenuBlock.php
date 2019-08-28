@@ -58,6 +58,8 @@ class SideMenuBlock extends BlockBase {
             $url = $item->link->getUrlObject();
             $title = readableURLString($title);
             
+            $title =  ($title == 'preservation') ? 'preservation-design' : $title;          // override title for Preservation & Design; as menu name for the Preservation & Design has been changed to Preservation.
+            
             //Todo need to update index based on uri
             if($title == $menu_level) {
                 if(!empty($item->subtree)) {
