@@ -3573,7 +3573,7 @@ span.icon {
     float: right;
   }
 
-  #main-container {
+  #main-container, #main-container-calendar {
     margin: 20px 10px;
   }
   
