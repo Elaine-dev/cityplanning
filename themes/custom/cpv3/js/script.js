@@ -64,6 +64,9 @@ jQuery(document).ready(function(){
    
    /** Initial Screening checklist: checks if any checkbox is selected or not **/
    isCheckboxSelected();
+   
+   /**Commissions, Boards and Hearings hash URL **/
+   hashUrlCommissionBoards(); 
 });
 
 function homepageSlider() {
@@ -491,3 +494,33 @@ function isCheckboxSelected(){
 	    }
 	});
 }
+
+function hashUrlCommissionBoards() {
+	var url = document.location.toString();
+	var replaceSt = url.replace("%3F", "?");						// replace URL-encoding value to it's ASCII character. ie. '%3F' represents '?' 
+	var splitUrl = (replaceSt.split('/')[4]).split('#');			// "commissions-boards-hearings#boards?q=southlosangeles" => o/p 'commissions-boards-hearings', 'boards?q=southlosangeles'
+	
+	var setTargetParam, setTargetMenu, tabContent, alink  = '';
+	
+	if (splitUrl[1] !== undefined) {
+		setTargetMenu = splitUrl[0];
+		setTargetParam = (splitUrl[1].includes("?")) ? splitUrl[1].split('?') : splitUrl[1];
+
+		if (setTargetMenu) {
+			switch(setTargetMenu) {
+				case 'commissions-boards-hearings' :
+					tabContent = '#commissions-meeting-tab ul.nav.nav-tabs a';
+					alink = tabContent + '[href="#' + setTargetParam + '"]';
+					break;
+			}
+			
+			$(alink).tab('show');
+		}
+
+		$(tabContent).click(function(e) {
+			$(this).tab('show');
+			window.location.hash = e.target.hash;
+		});
+		
+	}
+};

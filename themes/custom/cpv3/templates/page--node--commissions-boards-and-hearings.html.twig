@@ -118,7 +118,7 @@
                                           <th>Minutes</th>
                                         </tr>
                                         </thead>
-                                        <tr ng-repeat="agenda in agendas">
+                                        <tr ng-repeat="agenda in agendas" ng-if="agendas.length > 0">
                                           <td ng-bind="agenda.Date"></td>
                                           <td>
                                             <span ng-if="agenda.Type" ng-bind="agenda.Type"></span>
@@ -155,6 +155,10 @@
                                             </span>
                                           </td>
                                         </tr>
+                                        
+                                        <tr  ng-if="agendas.length < 1">
+                                        	<td colspan="7">No record found!</td>
+                                        </tr>						   
                                       </table>
                                     </div>
                                   </div>
@@ -219,7 +223,7 @@
                                         </tr>
                                         </thead>
                     
-                                        <tr ng-repeat="board in boards">
+                                        <tr ng-repeat="board in boards" ng-if="boards.length > 0">
                                           <td ng-bind="board.Date"></td>
                                           <td ng-bind="board.Type"></td>
                                           <td ng-bind="board.BoardName"></td>
@@ -230,6 +234,10 @@
                                             </span>
                                           </td>                                          
                                         </tr>
+                                        
+                                        <tr ng-if="boards.length < 1">
+                                        	<td colspan="5">No record found!</td>                                        
+                                        </tr>	
                                       </table>
                                     </div>
                                   </div>
@@ -301,7 +309,7 @@
                                         </tr>
                                         </thead>
                     
-                                        <tr ng-repeat="hearing in hearings | filter:CaseNumber">
+                                        <tr ng-repeat="hearing in hearings | filter:CaseNumber" ng-if="hearings.length > 0">
                                           <td ng-bind="hearing.Date"></td>
                                           <td ng-bind="hearing.CaseNumber"></td>
                                           <td ng-bind="hearing.Address"></td>
@@ -317,6 +325,10 @@
                                             </span>
                                           </td>
                                           <td ng-bind="hearing.CD"></td>
+                                        </tr>
+										
+										<tr ng-if="hearings.length < 1">
+                                        	<td colspan="7">No record found!</td>
                                         </tr>
                                       </table>
                                     </div>
