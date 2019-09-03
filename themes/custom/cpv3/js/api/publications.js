@@ -6,11 +6,18 @@ var app = angular.module('appPublication', ['ngSanitize', 'ngRoute', 'ngAnimate'
 			return $http.get("/api/v1/publication/"+q);
 		}
 	});
-app.config(function($interpolateProvider){
+app.config(function($interpolateProvider, $locationProvider){
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+	
+	// Enabled html5Mode
+	$locationProvider.html5Mode({
+		enabled: true,
+		requireBase: false
+	});
+	$locationProvider.hashPrefix('!');
 });
 
-app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter', '$timeout', function($scope, publicationService, filterFilter, $timeout) {
+app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter', '$timeout', '$location', function($scope, publicationService, filterFilter, $timeout, $location) {
 	$scope.docType = 'all';
 	
 	$scope.documentType = {

@@ -2,7 +2,7 @@
  * File: staffDirectories.js
  * Author: Humbal
  * Created date: 05/21/2018 
- * Created date: 05/21/2018
+ * Updated date: 05/21/2018
  */
  
 'use strict';
@@ -12,8 +12,15 @@ var app = angular.module('appStaffDirectory', ['ngRoute', 'ngSanitize', 'ngAnima
 			return $http.get('https://planning.lacity.org/dcpapi/general/phonelist/');
 		}
 	})
-	.config(function($interpolateProvider) {
+	.config(function($interpolateProvider, $locationProvider) {
 		$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+		
+		// Enabled html5Mode
+		$locationProvider.html5Mode({
+			enabled: true,
+			requireBase: false
+		});
+		$locationProvider.hashPrefix('!');
 	});
 
 app.controller('staffDirectoryCtrl', ['$scope', 'staffDirService', function($scope, staffDirService){
