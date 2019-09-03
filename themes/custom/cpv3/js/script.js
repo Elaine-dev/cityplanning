@@ -499,21 +499,31 @@ function hashUrlCommissionBoards() {
 	var url = document.location.toString();
 	var replaceSt = url.replace("%3F", "?");						// replace URL-encoding value to it's ASCII character. ie. '%3F' represents '?'
 	var arrUrl = replaceSt.split('/');
-	if (arrUrl[4]) {
+	
+	if (arrUrl[4] !== undefined) { 
 		var splitUrl = (arrUrl[4]).split('#');						// "commissions-boards-hearings#boards?q=southlosangeles" => o/p 'commissions-boards-hearings', 'boards?q=southlosangeles'
-		
 		var setTargetParam, setTargetMenu, tabContent, alink  = '';
 		
 		if (splitUrl[1] !== undefined) {
 			setTargetMenu = splitUrl[0];
-			setTargetParam = (splitUrl[1].includes("?")) ? splitUrl[1].split('?') : splitUrl[1];
-
+						
+			if (splitUrl[1].includes("?")) {
+				setTargetParam = (splitUrl[1].split('?'))[0];
+			}else {
+				setTargetParam = splitUrl[1];
+			}
+			
 			if (setTargetMenu) {
 				switch(setTargetMenu) {
 					case 'commissions-boards-hearings' :
 						tabContent = '#commissions-meeting-tab ul.nav.nav-tabs a';
 						alink = tabContent + '[href="#' + setTargetParam + '"]';
 						break;
+						
+					case 'publications' :
+						tabContent = '#publication-tab ul.nav.nav-tabs a';
+						alink = tabContent + '[href="#' + setTargetParam + '"]';
+						break;		
 				}
 				
 				$(alink).tab('show');

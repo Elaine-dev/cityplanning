@@ -39,7 +39,6 @@ jQuery(document).ready(function($){
     }
 
     function getPlanningData(id, obj) {
-        console.log(obj);
         var url = siteurl+'/filter-planning-area/'+id;
         $.ajax({
             'url': url,
@@ -146,15 +145,23 @@ jQuery(document).ready(function($){
       });
     }
     
-    // Activate tab using URL
+    // Activate tab using URL    
     function hasURLtoTab() {
-    	var hashURL = window.location.hash;
-        var urlParam = hashURL.substr(hashURL.indexOf('#') + 1);
-        var uriSegment = urlParam = urlParam.replace('!#','');
-
-        if (hashURL.length) {
-          jQuery('#' + uriSegment).trigger('click');
-          getData(uriSegment);
+        var hashURL = window.location.hash;
+        var formatURL = hashURL.replace('%3F', '?');
+        
+        if (formatURL.indexOf('?') > -1) {
+        	var splitVar = formatURL.split('?');
+        	var urlParam = splitVar[0].substr(hashURL.indexOf('#') + 1);
+        } else {
+        	var urlParam = formatURL.substr(hashURL.indexOf('#') + 1);
+        }
+        
+        // var uriSegment = urlParam = urlParam.replace('!#','');
+        
+        if (formatURL.length) {
+        	jQuery('#' + urlParam).trigger('click');
+        	getData(urlParam);
         }
     }
     
