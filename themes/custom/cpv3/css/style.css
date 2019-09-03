@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.8.29
-Version: 4.4.65
+Update Date: 2019.9.03
+Version: 4.4.66
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3816,6 +3816,38 @@ span.icon {
 	.fc button{
 	  	padding: 0.2em !important;
 	  	margin-bottom: 10px !important;
+  	}
+  	
+  	/*********************************  
+	 * Set navigation for tab: Commissions tab
+	 * 
+	 *********************************/
+
+	#commissions-meeting-tab ul.nav.nav-tabs {
+	    flex-direction: column;
+	    border-bottom: none;
+	    display: flex;
+	}
+	
+	#commissions-meeting-tab ul.nav.nav-tabs {
+	    flex-direction: column;
+	    border-bottom: none;
+  	}
+	  
+  	#commissions-meeting-tab .nav-tabs li a {
+	    width: 100%;
+	    border-bottom: 1px solid #e8e8e8;
+	    padding-bottom: 10px;
+	    background-color: #F9F7F5;
+	    padding-top: 10px !important;
+  	}
+	
+  	#commissions-meeting-tab .nav-tabs li a:hover {
+	    background-color: #f9f8ed !important;
+  	}
+	  
+  	#commissions-meeting-tab select {
+	  	margin: 15px 0;
   	}
 }
 
