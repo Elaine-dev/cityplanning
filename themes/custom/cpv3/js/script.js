@@ -518,11 +518,6 @@ function hashUrlCommissionBoards() {
 					case 'commissions-boards-hearings' :
 						tabContent = '#commissions-meeting-tab ul.nav.nav-tabs a';
 						alink = tabContent + '[href="#' + setTargetParam + '"]';
-						break;
-						
-					case 'publications' :
-						tabContent = '#publication-tab ul.nav.nav-tabs a';
-						alink = tabContent + '[href="#' + setTargetParam + '"]';
 						break;		
 				}
 				
