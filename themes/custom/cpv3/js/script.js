@@ -506,13 +506,8 @@ function hashUrlCommissionBoards() {
 		
 		if (splitUrl[1] !== undefined) {
 			setTargetMenu = splitUrl[0];
-						
-			if (splitUrl[1].includes("?")) {
-				setTargetParam = (splitUrl[1].split('?'))[0];
-			}else {
-				setTargetParam = splitUrl[1];
-			}
-			
+			setTargetParam = splitUrl[1].includes("?") ?  (splitUrl[1].split('?'))[0] : splitUrl[1];
+							
 			if (setTargetMenu) {
 				switch(setTargetMenu) {
 					case 'commissions-boards-hearings' :
