@@ -12,7 +12,7 @@ class DefaultController extends ControllerBase
     /**
      * Callback for rest/api/negativedeclaration/year/page/post_per_page
      */
-    public function getNegativeDeclaration ( $year, $page, $post_per_page ) {
+    public function getNegativeDeclaration ( $year = 2019, $page = 1, $post_per_page = 10 ) {
         $view_1 = \Drupal\views\Views::getView('negative_declaration');
         $view_1->setDisplay('default');
         $view_1->setItemsPerPage(0);
