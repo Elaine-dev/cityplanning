@@ -93,7 +93,7 @@
   {% if not node.field_event_date.value is empty and node.field_event_date.value is not null %}
     <h4>Event Date(s)</h4>
     {% for key, item in node.field_event_date if key|first != '#'%}
-    <strong>{{ node.field_event_date[key].value|date('F d, Y') }}</strong><br>
+    <strong>{{ node.field_event_date[key].value|date_modify("-6 hours")|date('F d, Y', 'America/Los_Angeles') }}</strong><br>
      {% endfor %}
      <br>
 {% endif %}
