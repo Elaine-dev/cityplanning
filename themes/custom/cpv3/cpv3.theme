@@ -57,7 +57,7 @@ function cpv3_preprocess_page(&$variables)
    // TNP Plan/Orange Line Tab Menu
    $orangeTnpCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('orange_line_tnp_menu');
    $variables['orange_line_menu'] = formatTabMenuTitle($orangeTnpCpuTerms);
-   
+
    // TNP Plan/ Slauson Corridor Tab Menu
    $slausonTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('slauson_corridor_tnp_menu');
    $variables['slauson_corridor_menu'] = formatTabMenuTitle($slausonTNPCpuTerms);
@@ -81,6 +81,12 @@ function cpv3_preprocess_page(&$variables)
    // Community Plan Update/Southeast Valley Plans Update Tab Menu
    $sevplansCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('southeast_valley_menu');
    $variables['sevplans_menu'] = formatTabMenuTitle($sevplansCpuTerms);
+
+  // SPANISH MENUS CPU //
+  // Community Plan Update/Southeast Valley Plans Update Tab Menu
+  $bhspanCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('boyle_heights_cpu_menu_es');
+  $variables['bhspan_menu'] = formatTabMenuTitle($bhspanCpuTerms);
+
 
     // get current uri
     $current_uri = \Drupal::request()->getRequestUri();
@@ -116,9 +122,9 @@ function cpv3_preprocess_page(&$variables)
             }
         }
     }
-    
+
     // Map Gallery
-    mapGallery($variables);    
+    mapGallery($variables);
 }
 
 /**
@@ -191,7 +197,7 @@ function cpv3_preprocess_node(&$variables)
     if ($node->bundle() == 'eir_detail') {
         $eir_id = $node->get('field_select_eir')->getString();
         // Load parent nid and get respective field value.
-        $eir_node = Node::load($eir_id); 
+        $eir_node = Node::load($eir_id);
         // Get field values.
         $data['case_number'] = $eir_node->get('field_case_number')->getString();
         $data['house_number'] = $eir_node->get('field_state_clearinghouse_number')->getString();
@@ -201,18 +207,18 @@ function cpv3_preprocess_node(&$variables)
 
         $variables['node_data'] = $data;
     }
-    
+
     // SCEA Detail
     if ($node->bundle() == 'scea_detail') {
         $scea_id = $node->get('field_select_scea_title')->getString();
         $scea_node = Node::load($scea_id);
-        
+
         $data['case_number'] = $scea_node->get('field_case_number')->getString();
         $data['related_case_numbers'] = $scea_node->get('field_related_case_numbers')->getString();
         $data['community_plan_areas'] = $scea_node->get('field_community_plan_areas')->getString();
         $data['council_district'] = $scea_node->get('field_council_district')->getString();
         $data['project_location'] = $scea_node->get('field_project_location')->getString();
-        
+
         $variables['scea_data'] = $data;
     }
 }
@@ -346,15 +352,15 @@ function formatTabCommissionTitle($terms)
 function mapGallery(&$variables) {
     $vid = 'location';
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, 0, 1);
-    
+
     if (!empty($terms)) {
         foreach ($terms as $term) {
             $image = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid)->get('field_image')->entity->uri->value;
             $imagePath = ($image) ? file_create_url($image) : '';   // Image path
             $children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $term->tid, 2);
-            
+
             $interactive_link = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid)->get('field_interactive_link')->value;
-            
+
             if (empty($children)) {
                 // no child
                 if ($term->parents[0] == 0)
@@ -371,7 +377,7 @@ function mapGallery(&$variables) {
                     'image' => $imagePath,
                     'interactive_map_link' => $interactive_link,
                 ];
-                
+
                 foreach ($children as $child) {
                     $grand_children = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, $child->tid, 3);
                     if (!empty($grand_children)) {
@@ -397,7 +403,7 @@ function mapGallery(&$variables) {
             }
         }
     }
-    
+
     $variables['taxonomy_tree'] = $tax_tree;
 }
 
@@ -418,9 +424,9 @@ function formatTabMenuTitleForCP($terms)
         'counter' => $i,
         'link' => readableURLString($term->name)
     ];
-    
+
     $i++;
     endforeach;
-    
+
     return $term_data;
 }
