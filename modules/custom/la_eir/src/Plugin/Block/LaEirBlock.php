@@ -24,8 +24,8 @@ class LaEirBlock extends BlockBase
      * @see \Drupal\Core\Block\BlockPluginInterface::build()
      */
     public function build () {
-        $view = \Drupal\views\Views::getView('duplicate_of_environmental_impact_reports');
-        //$view->setDisplay('default');
+        $view = \Drupal\views\Views::getView('environmental_impact_reports');
+        $view->setDisplay('default');
         $view->execute();
 
         $notices = [];
