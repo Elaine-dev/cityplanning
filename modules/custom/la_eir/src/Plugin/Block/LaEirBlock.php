@@ -24,93 +24,100 @@ class LaEirBlock extends BlockBase
      * @see \Drupal\Core\Block\BlockPluginInterface::build()
      */
     public function build () {
-        $view = \Drupal\views\Views::getView('environmental_impact_reports');
-        // $view->setDisplay('Display');
+        $view = \Drupal\views\Views::getView('duplicate_of_environmental_impact_reports');
+        $view->setDisplay('default');
         $view->execute();
-        // $view->serialize();
-        $notice = [];
+        //$view->serialize();
 
-        foreach($view->result as $value){
-            $parent_eir_id = $value->_entity->get('field_select_eir')->getString();
-            $eir_type = $eir_type = $value->_entity->get('field_eir_type')->getString();
-            // Get node id
-            $nid = $value->_entity->get('nid')->value;
-            // Get node path
-            $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nid);
-            $alias = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $nid], ['absolute' => TRUE])->toString();
-            // Load parent nid and get respective field value.
-            $node = Node::load($parent_eir_id);
-            $case_no = $node->get('field_case_number')->getValue()[0]['value'];
-            $project_title = $node->get('title')->getValue()[0]['value'];
-
-            $notice[$parent_eir_id][] = array(
+        $notices = [];
+                                
+        if ($view->result) {
+            foreach($view->result as $value){
+                $parent_eir_id = $value->_entity->get('field_select_eir')->getString();
+                $eir_type = $value->_entity->get('field_eir_type')->getString();
+               
+                // Get node id
+                $nid = $value->_entity->get('nid')->value;
+                
+                // Get node path
+                //$alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$nid);
+                $alias = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $nid], ['absolute' => TRUE])->toString();
+               
+                // Load parent nid and get respective field value.
+                $node = Node::load($parent_eir_id);
+                $case_no = ($node->get('field_case_number')->getValue()[0]['value']) ? $node->get('field_case_number')->getValue()[0]['value'] : '';
+                $project_title = ($node->get('title')->getValue()[0]['value']) ? $node->get('title')->getValue()[0]['value'] : '';
+                
+                $notices[$parent_eir_id][] = array(
                     'case_number' => $case_no,
                     'project_title' => $project_title,
                     'eir_type' => $eir_type,
                     'path' => $alias,
                     'parent' => $parent_eir_id
-            );
-
-            $data = [];
-            $data[] = $value->_entity->get('field_eir_type')->getString();
-        }
-
-        $new_notice = [];
-        foreach($notice as $key=>$item) {
-            $draft = '';
-            $final = '';
-            $notice_prepration = '';
-            $additional_docs = '';
-            
-            foreach($item as $row) {
-                /**
-                 * tid:133 - Notice of P
-                 * reparation
-                 * tid:143 - Draft EIR
-                 * tid:153 - Final EIR
-                 * tid:317 - Additional Docs
-                 */
-                if($row['eir_type'] == 143) {
-                    $draft = $row['path'];
-                } elseif($row['eir_type'] == 153) {
-                    $final = $row['path'];
-                } elseif($row['eir_type'] == 133) {
-                    $notice_prepration = $row['path'];
-                } elseif($row['eir_type'] == 317) {
-                    $additional_docs = $row['path'];
-                }
-
-                $new_notice[$key] = array(
-                    'projectTitle' => $row['project_title'],
-                    'eirNumber' => $row['case_number'],
-                    'draftEIR' => $draft,
-                    'finalEIR' => $final,
-                    'noticeOfPreparation' => $notice_prepration,
-                    'additionalDocs' => $additional_docs,
                 );
+                
+                //$data = [];
+                //$data[] = $value->_entity->get('field_eir_type')->getString();
             }
+            
+                    
+            $new_notices = [];
+            
+            foreach($notices as $key=>$item) {
+                $draft = '';
+                $final = '';
+                $notice_prepration = '';
+                $additional_docs = '';
+                
+                foreach($item as $row) {
+                    /**
+                     * tid:133 - Notice of Preparation
+                     * tid:143 - Draft EIR
+                     * tid:153 - Final EIR
+                     * tid:317 - Additional Docs
+                     */
+                    if($row['eir_type'] == 143) {
+                        $draft = $row['path'];
+                    } elseif($row['eir_type'] == 153) {
+                        $final = $row['path'];
+                    } elseif($row['eir_type'] == 133) {
+                        $notice_prepration = $row['path'];
+                    } elseif($row['eir_type'] == 317) {
+                        $additional_docs = $row['path'];
+                    }
+                    
+                    $new_notices[$key] = array(
+                        'projectTitle' => $row['project_title'],
+                        'eirNumber' => $row['case_number'],
+                        'draftEIR' => $draft,
+                        'finalEIR' => $final,
+                        'noticeOfPreparation' => $notice_prepration,
+                        'additionalDocs' => $additional_docs,
+                    );
+                }
+            }
+                        
+            $new_eir = [];
+            foreach($new_notices as $item) {
+                $new_eir[] = $item;
+            }            
+            
+            // Create json file
+            $root_path = DRUPAL_ROOT;
+            $file_path = $root_path.'/file/eir.json';
+            
+            if(file_exists($file_path)){
+                unlink($file_path);
+            }            
+            
+            $fp = fopen( $file_path, 'w');
+            fwrite($fp, json_encode($new_eir));
+            fclose($fp); 
+            
+            return [
+                '#markup' => ' ',
+            ];
         }
-
-        $new_eir = [];
-        foreach($new_notice as $item) {
-            $new_eir[] = $item;
-        }
-
-        // Create json file
-        $root_path = DRUPAL_ROOT;
-        $file_path = $root_path.'/file/eir.json';
-        
-        if(file_exists($file_path)){
-            unlink($file_path);
-        }
-        
-        $fp = fopen( $file_path, 'w');
-        fwrite($fp, json_encode($new_eir));
-        fclose($fp);
-
-        return [
-            '#markup' => ' ',
-        ];
     }
 
     /**

@@ -12,21 +12,17 @@
                             </div>
                 		</div>
     				</div>
-{#
-    				<div class="row">
-    					<!-- <div class="col-md-12">
-                			<div class="pull-right"><input ng-model="projectTitle" placeholder="Search EIR" class="ng-pristine ng-untouched ng-valid ng-empty"></div>
-                		</div> -->
-                		
+
+    				<div class="row">                		
                 		<div class="col-md-12 col-xs-12 padding-left0 padding-right0">
        						<div class="row padding-bottom25 padding-top5">
        							<div class="col-md-offset-8 col-md-4 col-xs-12" id="content-search">
-       								<input ng-model="projectTitle" placeholder="Filter EIR" />
+       								<input ng-model="eir" placeholder="Search EIR" />
        							</div>
        						</div>
        					</div>
     				</div>
-#}
+
     				<div class="row">
                 		<div class="col-md-12 padding-left0 padding-right0">
                 			<div class="table-responsive">
@@ -52,7 +48,7 @@
                                     </thead>
 
                                     <tbody>
-                                    <tr ng-repeat="x in data | filter:projectTitle | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize" class="ng-scope">
+                                    <tr ng-repeat="x in data | filter:eir | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
                                         <td ng-bind="x.eirNumber"></td>
                                         <td ng-bind="x.projectTitle"></td>
                                         <td ngIf: x.noticeOfPreparation>
@@ -74,15 +70,14 @@
 
                             <div class="bottom "></div>
 
-                            {# pagination
-
+                            {# pagination #}
+                            
                             <ul uib-pagination
-                                ng-model="currentPage"
-                                total-items="total"
-                                items-per-page="pageSize"
-                                max-size="noOfPages">
-                            </ul uib-pagination>
-                            #}
+       							ng-model="currentPage"
+       							total-items="total"
+       							items-per-page="pageSize"
+       	                    	max-size="noOfPages">
+                               </ul uib-pagination>
                     	</div>
                     </div>
     			</div>
