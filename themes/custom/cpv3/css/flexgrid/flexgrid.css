@@ -31,7 +31,7 @@
 
 .container-custom-grid .blue-green:hover {
   color: #fff;
-  background-color: #68c8c6;
+  background-color: #68c8c6 !important;
   font-size: 18px !important;
 }
 .container-custom-grid .blue-green, .container-custom-grid .coral-green, .container-custom-grid .burnt-orange {
@@ -66,13 +66,13 @@
 }
 .container-custom-grid .coral-green:hover {
   color: #fff;
-  background-color: #42ba85;
+  background-color: #42ba85 !important;
   font-size: 18px !important;
 }
 
 .container-custom-grid .burnt-orange:hover {
   color: #fff;
-  background-color: #f15f27;
+  background-color: #f15f27 !important;
   font-size: 18px !important;
 }
 .bottom-align-text {
