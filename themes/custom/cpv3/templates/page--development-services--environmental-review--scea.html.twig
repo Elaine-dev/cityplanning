@@ -1,0 +1,111 @@
+
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+{# page-banner #}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			{{ page.top_banner }}
+		</div>
+	</div>
+</div>{# End page-banner #}
+
+<!-- contain -->
+<div class="container" id="main-container">
+	{# Main content #}
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Sustainable Communities Environmental Assessment (SCEA)</h1>
+		</div>
+	</div>
+
+	<div class="row content-wrapper">
+		{# Left-side bar #}
+		<div class="col-md-9">
+			<div class="row padding-left0">
+				<div class="col-md-12">
+					<div ng-app="appSCEA" ng-controller="sceaCtrl" class="ng-scope" id="eirs">
+						<div class="row">
+							<div class="col-md-12">
+								<div ng-disabled="enable=='false'">
+									<center ng-show="loadingText == 'Loading ...'">
+										<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span
+											class="sr-only">Loading...</span>
+									</center>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 col-xs-12 padding-left0 padding-right0">
+								<div class="row padding-bottom25 padding-top5">
+									<div class="col-md-offset-8 col-md-4 col-xs-12"
+										id="content-search">
+										<input ng-model="scea" placeholder="Search SCEA" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 padding-left0 padding-right0">
+								<div class="table-responsive">
+									<table class="table table-hover">
+										<colgroup>
+                                            <col class="col-md-3">
+                                            <col class="col-md-6">
+                                            <col class="col-md-1">
+                                        </colgroup>
+        
+                                        <thead>
+                                            <tr>
+                                                <th>Case No.</th>
+                                                <th>Project Title</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+
+										<tbody>
+											<tr
+												ng-repeat="x in data | filter:scea | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize" class="ng-scope">
+												<td ng-bind="x.case_number"></td>
+                                                <td ng-bind="x.projectTitle"></td>
+                                                <td ngIf: x.default>
+                                                    <a href="{[{ x.default }]}" ng-if="x.default" class="ng-scope">
+                                                    	<i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i>
+                                                	</a>
+                                                </td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="bottom"></div>
+
+								{# pagination #}
+								<ul uib-pagination ng-model="currentPage" total-items="total"
+									items-per-page="pageSize" max-size="noOfPages">
+								</ul uib-pagination>
+							</div>
+						</div>
+					</div> {# End #eirs #}
+				</div> 
+			</div> 
+		</div> {# End Left-side bar #}
+		
+		{# Right-side bar #}
+        <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+            <div class="top-bar"></div>
+              {{ page.side_menu }}
+        </div>{# End Right-side bar #}		
+		
+	</div>
+</div>
+{# End container #}
+
+
+<!-- footer section -->
+{{ attach_library ('cpv3/scea-js') }}
+{{ attach_library ('cpv3/angular-js') }}
+{% include directory ~ '/partials/footer.html.twig' %}

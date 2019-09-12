@@ -1,0 +1,137 @@
+
+<!-- Fixed navbar -->
+{% include directory ~ '/partials/header.html.twig' %}
+
+{# page-banner #}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			{{ page.top_banner }}
+		</div>
+	</div>
+</div>{# End page-banner #}
+
+<!-- contain -->
+<div class="container" id="main-container">
+	{# Main content #}
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Environmental Impact Reports</h1>
+		</div>
+	</div>
+
+	<div class="row content-wrapper">
+		{# Left-side bar #}
+		<div class="col-md-9">
+			<div class="row padding-left0">
+				<div class="col-md-12">
+					<div ng-app="appEIR" ng-controller="eirCtrl" class="ng-scope" id="eirs">
+						<div class="row">
+							<div class="col-md-12">
+								<div ng-disabled="enable=='false'">
+									<center ng-show="loadingText == 'Loading ...'">
+										<i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span
+											class="sr-only">Loading...</span>
+									</center>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 col-xs-12 padding-left0 padding-right0">
+								<div class="row padding-bottom25 padding-top5">
+									<div class="col-md-offset-8 col-md-4 col-xs-12"
+										id="content-search">
+										<input ng-model="eir" placeholder="Search EIR" />
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 padding-left0 padding-right0">
+								<div class="table-responsive">
+									<table class="table table-hover">
+										<colgroup>
+											<col class="col-md-3">
+											<col class="col-md-6">
+											<col class="col-md-1">
+											<col class="col-md-1">
+											<col class="col-md-1">
+											<col class="col-md-1">
+										</colgroup>
+
+										<thead>
+											<tr>
+												<th>Case No.</th>
+												<th>Project Title</th>
+												<th>Notice of Preparation</th>
+												<th>Draft EIR</th>
+												<th>Final EIR</th>
+												<th>Add'l Docs</th>
+											</tr>
+										</thead>
+
+										<tbody>
+											<tr
+												ng-repeat="x in data | filter:eir | startFrom:(currentPage - 1) * pageSize | limitTo: pageSize">
+												<td ng-bind="x.eirNumber"></td>
+												<td ng-bind="x.projectTitle"></td>
+												<td ngIf: x.noticeOfPreparation><a
+													href="{[{ x.noticeOfPreparation }]}"
+													ng-if="x.noticeOfPreparation" class="ng-scope"><i
+														class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a></td>
+												<td ngIf: x.draftEIR><a href="{[{ x.draftEIR }]}"
+													ng-if="x.draftEIR" class="ng-scope"><i
+														class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a></td>
+												<td ngIf: x.finalEIR><a href="{[{ x.finalEIR }]}"
+													ng-if="x.finalEIR" class="ng-scope"><i
+														class="fa fa-file-code-o fa-lg" aria-hidden="true"></i></a></td>
+												<td ngIf: x.additionalDocs><a
+													href="{[{ x.additionalDocs }]}" ng-if="x.additionalDocs"
+													class="ng-scope"><i class="fa fa-file-code-o fa-lg"
+														aria-hidden="true"></i></a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<div class="bottom"></div>
+
+								{# pagination #}
+								<ul uib-pagination ng-model="currentPage" total-items="total"
+									items-per-page="pageSize" max-size="noOfPages">
+								</ul uib-pagination>
+							</div>
+						</div>
+					</div> {# End #eirs #}
+				</div> 
+			</div> 
+		</div> {# End Left-side bar #}
+		
+		{# Right-side bar #}
+        <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
+            <div class="top-bar"></div>
+              {{ page.side_menu }}
+        </div>{# End Right-side bar #}		
+		
+	</div>
+</div>
+{# End container #}
+
+
+<div class="container white--bg visible-xs-block visible-sm-block">
+	<div class="row">
+		{# Right-side bar #}
+		<div class="col-md-12 sidebar-menu">
+			<div class="top-bar"></div>
+			{{ page.side_menu }}
+		</div>
+		{# End Right-side bar #}
+	</div>
+</div>
+
+<!-- footer section -->
+{{ attach_library ('cpv3/eir-js') }}
+{{ attach_library ('cpv3/angular-js') }}
+{% include directory ~ '/partials/footer.html.twig' %}

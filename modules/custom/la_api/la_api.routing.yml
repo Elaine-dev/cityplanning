@@ -9,4 +9,24 @@ la_api.negativedeclaration:
     page: '^[0-9]+'
     post_per_page: '^[0-9]+'
     
+la_api.eir:
+  path: 'rest/api/eir/{page}/{post_per_page}'
+  defaults:
+    _controller: '\Drupal\la_api\Controller\DefaultController::getEIR'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+    page: '^[0-9]+'
+    post_per_page: '^[0-9]+'
+    
+la_api.scea:
+  path: 'rest/api/scea/{page}/{post_per_page}'
+  defaults:
+    _controller: '\Drupal\la_api\Controller\DefaultController::getSCEA'
+  methods: [GET]
+  requirements:
+    _access: 'TRUE'
+    page: '^[0-9]+'
+    post_per_page: '^[0-9]+'
+    
     
