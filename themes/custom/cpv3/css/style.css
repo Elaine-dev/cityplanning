@@ -3206,6 +3206,9 @@ ul.pub-counters.ng-scope {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  padding: 0px 20px 20px;
+  list-style: none;
+  display: inline-block;
 }
 
 .col-md-4.col-sm-6.ng-scope {
@@ -3215,7 +3218,13 @@ ul.pub-counters.ng-scope {
 i.fa.fa-user-circle-o.fa-2x {
   font-size: 1.7em !important;
 }
-
+ul.pub-counters:nth-of-type(1) {
+    width: 41%;
+    margin-right: 50px;
+  }
+ul.pub-counters:nth-of-type(2) {
+    width: 41%;
+}
 /* special custom case for social media icons on Communications page */
 .comm-blog {
   margin-top: -27px;
@@ -3372,7 +3381,7 @@ span.icon {
 /** Community Plan Area: fields **/
 .cpa-fields{padding: 10px 0;}
 
-/********************************* 
+/*********************************
  * Read more +
  ********************************/
 
@@ -3389,21 +3398,21 @@ span.icon {
     cursor: pointer;
 }
 
-/********************************* 
+/*********************************
  * Survey Form
  ********************************/
  .webform-submission-form {
  	padding-left: 14px;
  	padding-right: 5px;
  }
- 
+
  #webform-submission-website-survey-add-form .form-item {
  	margin-top: 0.2em;
  	margin-bottom: 1em;
  }
- 
+
  .webform-likert-table-wrapper {padding: 15px 0;}
- 
+
  .webform-likert-table-wrapper tr.odd .form-item, tr.even .form-item {
     margin-top: 0;
     margin-bottom: 0;
@@ -3532,6 +3541,9 @@ span.icon {
 
 /* Small devices (mobile phone < 576px) */
 @media screen and (max-width: 575px) {
+  ul.pub-counters {
+    width:100% !important;
+  }
 
   /** navigation **/
   .navbar {
@@ -3540,15 +3552,15 @@ span.icon {
   }
 
   .navbar-nav { margin: 0;}
-  
+
     .visible-sm .visible-xs .navbar-nav {
   	margin-right: 134px;
   }
-  
+
   .navbar-brand img {
   	height: 78px;
   }
-  
+
   .padding-top2em {
     padding-top: 0 !important;
   }
@@ -3580,7 +3592,7 @@ span.icon {
   #main-container, #main-container-calendar {
     margin: 20px 10px;
   }
-  
+
   .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     margin-top: 40px;
   }
@@ -3731,19 +3743,19 @@ span.icon {
   	padding-left: 15px;
   	padding-top: 15px;
   }
-  
+
   #footer-toolkit{
   	padding: 15px;
   }
-  
+
   #footer-toolkit h6{
-  	padding-bottom: 15px; 
+  	padding-bottom: 15px;
   }
-  
+
   #footer-toolkit h6, #footer-toolkit p {
     float: left !important;
     clear:both;
-  } 					
+  }
 
   /* copy-right */
   .copy-right {
@@ -3812,19 +3824,19 @@ span.icon {
 		width: 100%;
 		margin: 0;
 	}
-	
-	/*************************************  
+
+	/*************************************
  	 * Event calendar: navigation button
-	 * 
+	 *
   	*************************************/
 	.fc button{
 	  	padding: 0.2em !important;
 	  	margin-bottom: 10px !important;
   	}
-  	
-  	/*********************************  
+
+  	/*********************************
 	 * Set navigation for tab: Commissions tab
-	 * 
+	 *
 	 *********************************/
 
 	#commissions-meeting-tab ul.nav.nav-tabs {
@@ -3832,12 +3844,12 @@ span.icon {
 	    border-bottom: none;
 	    display: flex;
 	}
-	
+
 	#commissions-meeting-tab ul.nav.nav-tabs {
 	    flex-direction: column;
 	    border-bottom: none;
   	}
-	  
+
   	#commissions-meeting-tab .nav-tabs li a {
 	    width: 100%;
 	    border-bottom: 1px solid #e8e8e8;
@@ -3845,17 +3857,29 @@ span.icon {
 	    background-color: #F9F7F5;
 	    padding-top: 10px !important;
   	}
-	
+
   	#commissions-meeting-tab .nav-tabs li a:hover {
 	    background-color: #f9f8ed !important;
   	}
-	  
+
   	#commissions-meeting-tab select {
 	  	margin: 15px 0;
   	}
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
+  .sub-head {
+    width:50%
+  }
+  ul.pub-counters:nth-of-type(1) {
+    width: 43%;
+    margin-right: 22px;
+	}
+
+	ul.pub-counters:nth-of-type(2) {
+    width: 43%;
+	}
+
   .navbar-header {
     float: none;
     padding-bottom: 15px;
@@ -4060,6 +4084,12 @@ span.icon {
 		margin: 0;
 	}
 }
+/*** Special case for Locations and Hours ***/
+@media screen and (min-width: 776px) {
+p.hours {
+  margin-right:62px;
+  }
+}
 
 /* Small devices (tablet) */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
@@ -4234,18 +4264,18 @@ span.icon {
     padding-top: 15px;
     padding-bottom: 15px;
   }
-  
+
   #signup-newsletter {
   	text-align: left;
   }
-  
+
   #footer-toolkit h6, #footer-toolkit p {
     float: left !important;
     clear: both;
-  } 
-  
+  }
+
   #footer-toolkit h6 {
-  	padding-bottom: 15px; 
+  	padding-bottom: 15px;
   }
 
   #footer-section .footer-sub-link {
@@ -4254,7 +4284,7 @@ span.icon {
 
   #footer-contactus {
   	padding: 15px;
-  }			   
+  }
 
   #footer-section .copy-right {
     float: left;
