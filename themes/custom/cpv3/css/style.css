@@ -3748,6 +3748,7 @@ span.icon {
   /* Stay Connected */
   #stay-connected-text {
     padding: 15px;
+    margin-top: 10px;
   }
 
   .stay-connected-social-icons {
