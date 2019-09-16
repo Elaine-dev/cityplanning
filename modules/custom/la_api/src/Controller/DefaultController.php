@@ -98,7 +98,7 @@ class DefaultController extends ControllerBase
         
         // Display content from EIR Detail Content Type
         $view = \Drupal\views\Views::getView('environmental_impact_reports');
-        $view->setDisplay('default');
+        $view->setDisplay('eir');
         $view->setItemsPerPage($post_per_page);
         $view->setOffset(0);
         $view->initPager();

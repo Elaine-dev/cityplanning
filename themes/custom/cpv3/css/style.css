@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.9.11
-Version: 4.4.67
+Update Date: 2019.9.16
+Version: 4.4.68
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3600,6 +3600,38 @@ span.icon {
   .navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {
     padding-left: 15px;
   }
+  
+  .mega-dropdown {
+  	border-bottom: 1px solid #e5e5e5;
+  }
+  
+  /*************************************************
+   * Search
+   *************************************************/
+  .searchbar-mobile {
+  	background-color: #f3f2f2;
+  }
+  
+  #search .searchbox-submit {
+  	background: #f3f2f2;
+  }
+  
+  #search input[type=search] {
+    background-color: #f3f2f2;
+  }
+  
+  /** search box when open **/
+  #search .searchbox-open input[type=search] {
+  	background-color: #f3f2f2;
+  }
+  
+  #search .searchbox-icon {
+  	background: #f3f2f2;
+  }
+  
+  .search-google-lan {
+  	padding: 5px 5px 10px 5px;
+  }
 
   /** slider **/
   #slider {
@@ -3621,10 +3653,15 @@ span.icon {
   #slider .item {
     height: 365px !important;
   }
+  
+  #slider .read-more a {
+  	font-weight: bolder;
+  	font-style: italic;
+  }
 
   /** color box **/
   #map-promote-preserve-wrapper {
-    height: 100px;
+    height: 50px;
     right: 0px;
     top: 2px;
   }
@@ -3734,6 +3771,10 @@ span.icon {
 
   #say-connected .fa-3x {
     font-size: 2.5em;
+  }
+  
+  #signup-newsletter {
+  	text-align: left;
   }
 
   #footer-section .footer-sub-link {
