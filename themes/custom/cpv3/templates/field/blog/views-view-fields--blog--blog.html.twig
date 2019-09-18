@@ -2,7 +2,7 @@
   set class =  fields.field_category.content
 %}
 
-<div class="row" style="padding-bottom: 1px;">
+<div class="row blog-item">
 	<div class="col-md-4">
 		<div{{ attributes.addClass(class) }}>{{ fields.field_image.content  }}</div>
 	    
@@ -11,14 +11,14 @@
     </div>
 	<div class="col-md-8">
 		<div class="padding-bottom15">
-			<h5 style="margin-top: 0px;">{{ fields.title.content }}</h5>
-			<div class="date" style="font-size: 12px;">
+			<h5>{{ fields.title.content }}</h5>
+			<div class="date">
 				<span class="glyphicon glyphicon-time" aria-hidden="true"></span> {{ fields.created.content }} 
 			</div>
 		</div>
 		<div>{{ fields.body.content }}</div>
 		
-		<div class="date" style="font-size: 12px;">
+		<div class="date">
 			<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 
 			{{ fields.field_tags.content }} 
 		</div>
