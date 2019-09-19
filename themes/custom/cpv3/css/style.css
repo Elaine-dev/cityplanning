@@ -3605,8 +3605,389 @@ table tr th a:focus {
 	display: none;
 }
 
+/* Small devices (mobile phone < 375 px) */
+@media screen and (max-width: 375px) {
+	ul.pub-counters {
+		width: 100% !important;
+	}
+
+	/** navigation **/
+	.navbar {
+		padding-bottom: 20px;
+	}
+	.navbar-nav {
+		margin: 0;
+	}	
+	.visible-sm .visible-xs .navbar-nav {
+		margin-right: 134px;
+	}
+	.navbar-brand img {
+		height: 78px;
+	}
+	.padding-top2em {
+		padding-top: 0 !important;
+	}
+	.navbar-toggle {
+		display: block;
+		top: 20px;
+		bottom: 20px;
+	}
+	.menu-region {
+		padding-bottom: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.padding-left-0 {
+		padding-left: 0px;
+	}
+	.padding-right-0 {
+		padding-right: 0px;
+	}
+	.goog-te-gadget-simple {
+		float: right;
+	}
+	
+	#main-container, 
+	#main-container-calendar {
+		margin: 20px 10px;
+	}
+	
+	.navbar-default .navbar-collapse, 
+	.navbar-default .navbar-form {
+		margin-top: 40px;
+	}
+	
+	.navbar-nav .open .dropdown-menu .dropdown-header, 
+	.navbar-nav .open .dropdown-menu>li>a {
+		padding-left: 15px;
+	}
+	
+	.mega-dropdown {
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	/*************************************************
+     * Search
+     *************************************************/
+	.navbar-search-box .search-bar-search.open {
+		z-index: 9;
+		width: 100%;
+	}
+	.searchbar-mobile {
+		background-color: #f3f2f2;
+	}
+	#search .searchbox-submit {
+		background: #f3f2f2;
+	}
+	#search input[type=search] {
+		background-color: #f3f2f2;
+	}
+
+	/** search box when open **/
+	#search .searchbox-open input[type=search] {
+		background-color: #f3f2f2;
+	}
+	
+	#search .searchbox-icon {
+		background: #f3f2f2;
+	}
+	
+	.search-google-lan {
+		padding: 5px 5px 10px 5px;
+	}
+
+	/** slider **/
+	#slider {
+		margin-top: 0 !important;
+	}
+	
+	.slide-text {
+		top: 0 !important;
+		left: -86px !important;
+		padding: 5px 18px !important;
+		max-height: 220px !important;
+		max-width: 290px !important;
+	}
+	
+	#slider h2 {
+		font-size: 1.3em !important;
+	}
+	
+	#slider .item {
+		height: 365px !important;
+	}
+	
+	#slider .read-more a {
+		font-weight: bolder;
+		font-style: italic;
+	}
+
+	/** color box **/
+	#map-promote-preserve-wrapper {
+		height: 50px;
+		right: 0px;
+		top: 2px;
+	}
+	
+	#blank-wrapper {
+		left: 0;
+	}
+	
+	.planning-tag {
+		margin-left: 0;
+	}
+	
+	.color-box-txt {
+		padding-top: 10px;
+	}
+	.control-round .carousel-control.right {
+		padding-top: 10px !important;
+	}
+	.control-round .carousel-control.left {
+		padding-top: 10px !important;
+	}
+
+	/** feature-block-1 **/
+	.feature-section1 {
+		padding-left: 0px;
+	}
+	
+	#case-search-box {
+		padding-left: 15px !important;
+		padding-bottom: 15px;
+		left: 0;
+	}
+	
+	#zoning-search-box {
+		left: 0;
+		padding-bottom: 15px;
+	}
+	
+	#get-involved-box {
+		padding-right: 15px !important;
+		padding-bottom: 15px;
+	}
+	
+	#feature-block-2 {
+		margin-bottom: 20px;
+	}
+	
+	#feature-block-1 {
+		padding-top: 5px;
+	}
+	
+	#slider h2 {
+		padding-top: 0;
+		padding-bottom: 0;
+		font-size: 16px;
+	}
+	
+	.message-director-social-icons {
+		padding-top: 25px;
+		padding-left: 0;
+	}
+	
+	.filter-by, .date, .search {
+		padding-bottom: 15px !important;
+		padding-left: 0;
+	}
+	
+	.tog-nav {
+		padding-top: 0;
+		margin-top: -20;
+	}
+
+	/** Masonary Social media  **/
+	.social-description {
+		font-size: 16px;
+	}
+	
+	.box {
+		margin: 15px !important;
+	}
+
+	/* Stay Connected */
+	#stay-connected-text {
+		padding: 15px;
+		margin-top: 10px;
+	}
+	
+	.stay-connected-social-icons {
+		padding: 20px 15px;
+	}
+	
+	.stay-connected-newsletter {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 10px;
+	}
+	
+	#say-connected .btn-circle {
+		width: 53px;
+		height: 53px;
+	}
+	#say-connected .btn {
+		padding: 5px;
+	}
+	
+	#say-connected .fa-3x {
+		font-size: 2.5em;
+	}
+	
+	#signup-newsletter {
+		text-align: left;
+	}
+	
+	#footer-section .footer-sub-link {
+		padding-left: 0;
+	}
+	
+	#footer-contactus {
+		padding-left: 15px;
+		padding-top: 15px;
+	}
+	
+	#footer-toolkit {
+		padding: 15px;
+	}
+	
+	#footer-toolkit h6 {
+		padding-bottom: 15px;
+	}
+	
+	#footer-toolkit h6, 
+	#footer-toolkit p {
+		float: left !important;
+		clear: both;
+	}
+
+	/* copy-right */
+	.copy-right {
+		text-align: left !important;
+		padding-right: 15px !important;
+	}
+	
+	#helpful-links {
+		padding: 0;
+	}
+	
+	.border-line-top {
+		padding: 0;
+	}
+
+	/* quotes */
+	.block-qoute-wrapper {
+		margin-bottom: 15px;
+	}
+	.block-quote {
+		padding-left: 37px;
+		padding-right: 37px;
+	}
+
+	/*Set a fixed width for the navigation tabs*/
+	#hollywood-tab ul.nav.nav-tabs {
+		flex-direction: column;
+		border-bottom: none;
+	}
+
+	/*Cause each link to fill the entire row*/
+	#hollywood-tab .nav-tabs li a {
+		width: 100%;
+		border-bottom: 1px solid #e8e8e8;
+		padding-bottom: 10px;
+		background-color: #F9F7F5;
+		padding-top: 10px !important;
+	}
+	
+	#hollywood-tab .nav-tabs li a:hover {
+		background-color: #f9f8ed !important;
+	}
+	
+	.tab-line {
+		border-right: none;
+	}
+
+	/*********************************
+     * Venice LCP : Image gallery
+ 	 *
+     *********************************/
+	.flex-container>div {
+		width: 100%;
+		height: auto;
+	}
+
+	/** TNP **/
+	.tnp-button {
+		width: 100%;
+		margin: 0;
+	}
+
+	/*************************************
+ 	 * Event calendar: navigation button
+	 *
+  	*************************************/
+	.fc button {
+		padding: 0.2em !important;
+		margin-bottom: 10px !important;
+	}
+
+	/*********************************
+	 * Set navigation for tab: Commissions tab
+	 *
+	 *********************************/
+	#commissions-meeting-tab ul.nav.nav-tabs {
+		flex-direction: column;
+		border-bottom: none;
+		display: flex;
+	}
+	
+	#commissions-meeting-tab ul.nav.nav-tabs {
+		flex-direction: column;
+		border-bottom: none;
+	}
+	
+	#commissions-meeting-tab .nav-tabs li a {
+		width: 100%;
+		border-bottom: 1px solid #e8e8e8;
+		padding-bottom: 10px;
+		background-color: #F9F7F5;
+		padding-top: 10px !important;
+	}
+	
+	#commissions-meeting-tab .nav-tabs li a:hover {
+		background-color: #f9f8ed !important;
+	}
+	
+	#commissions-meeting-tab select {
+		margin: 15px 0;
+	}
+	
+	/*************************************
+	 * paragraph--image-over-image-with-button
+	 *
+	 *************************************/	
+	.full-width-content .bg-wrapper {
+		height: 35% !important;
+	}
+	
+	.full-width-content .front-image{
+		margin-left: 2%;
+	}
+	
+	.full-width-content .front-image img {
+		width: 97% !important;
+	}
+	
+	/*************************************
+	 *	Blog 
+	 *************************************/
+	.blog-item h5 {
+		margin-top: 25px;
+	}	
+}
+
 /* Small devices (mobile phone < 576px) */
-@media screen and (max-width: 575px) {
+@media screen and (min-width: 376px) and (max-width: 575px) {
   ul.pub-counters {
     width:100% !important;
   }
@@ -4502,6 +4883,21 @@ table tr th a:focus {
   
   .front-image a img {
 	width: 90% !important;
+  }
+  
+ /*************************************
+  *	Blog 
+  *************************************/
+  .blog-item h5 {
+	margin-top: 25px;
+  }
+	
+  .sharethis-inline-share-buttons {
+  	padding-right: 390px !important;
+  }
+  
+  .sharethis-inline-share-buttons {
+	padding-right: 390px !important;
   }
 }
 
