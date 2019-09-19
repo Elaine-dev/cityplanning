@@ -36,7 +36,8 @@ class SideMenuCPUBlock extends BlockBase {
          */
         
         $uri_array = explode('/', $uri);
-        $menu_level = $uri_array[3];        // tax term in the form of url   
+        $menu_level = $uri_array[3];                                    // tax term in the form of url   
+        $menu_level_es = ($uri_array[4]) ? $uri_array[4] : '';          // for Spanish language, es is added in url pattern
         $html = '';
         
         if (isset($menu_level) && $uri_array[2] == 'community-plan-update') { 
@@ -75,8 +76,14 @@ class SideMenuCPUBlock extends BlockBase {
                     break;
                     
                 case 'boyle-heights-events':
-                    $menu_name = 'boyle_heights_cpu';
-                    $parent_link = $menu_base_path.'boyle-heights-community-plan-update';
+                    if ($menu_level_es == 'es'){
+                        $menu_name = 'boyle_heights_cpu_menu_es';
+                        $parent_link = $menu_base_path.'boyle-heights-community-plan-update-es';
+                    }else{
+                        $menu_name = 'boyle_heights_cpu';
+                        $parent_link = $menu_base_path.'boyle-heights-community-plan-update';
+                    }                    
+                    
                     break;
                     
                 case 'southeast-valley-news':
