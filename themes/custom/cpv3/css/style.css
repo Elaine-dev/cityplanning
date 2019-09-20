@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.9.16
-Version: 4.4.68
+Update Date: 2019.9.20
+Version: 4.4.69
 *********************/
 body {
   line-height: 1.5 !important;
@@ -4014,7 +4014,20 @@ table tr th a:focus {
 	 .video-item {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
-	 }	
+	 }
+	 
+  	/*************************************
+	 * Content search in tabular data
+	 *************************************/
+ 	#content-search {
+	 	padding-top: 15px;
+	 	padding-left: 0;
+ 	}
+	 
+ 	#content-search input {
+    	float: left;
+	    width: 100%;
+	}	
 }
 
 /* Small devices (mobile phone < 576px) */
@@ -4431,6 +4444,19 @@ table tr th a:focus {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
 	 }
+	 
+  	/*************************************
+	 * Content search in tabular data
+	 *************************************/
+ 	#content-search {
+	 	padding-top: 15px;
+	 	padding-left: 0;
+ 	}
+	 
+ 	#content-search input {
+    	float: left;
+	    width: 100%;
+	}
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
