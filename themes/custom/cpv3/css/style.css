@@ -4352,32 +4352,31 @@ table tr th a:focus {
 	 *
 	 *********************************/
 
-	#commissions-meeting-tab ul.nav.nav-tabs {
-	    flex-direction: column;
-	    border-bottom: none;
-	    display: flex;
+	#commissions-meeting-tab ul.nav.nav-tabs,
+	#d-tab ul.nav.nav-tabs {
+		flex-direction: column;
+		border-bottom: none;
+		display: flex;
+	}	
+
+	#commissions-meeting-tab .nav-tabs li a,
+	#d-tab .nav-tabs li a {
+		width: 100%;
+		border-bottom: 1px solid #e8e8e8;
+		padding-bottom: 10px;
+		background-color: #F9F7F5;
+		padding-top: 10px !important;
 	}
-
-	#commissions-meeting-tab ul.nav.nav-tabs {
-	    flex-direction: column;
-	    border-bottom: none;
-  	}
-
-  	#commissions-meeting-tab .nav-tabs li a {
-	    width: 100%;
-	    border-bottom: 1px solid #e8e8e8;
-	    padding-bottom: 10px;
-	    background-color: #F9F7F5;
-	    padding-top: 10px !important;
-  	}
-
-  	#commissions-meeting-tab .nav-tabs li a:hover {
-	    background-color: #f9f8ed !important;
-  	}
-
-  	#commissions-meeting-tab select {
-	  	margin: 15px 0;
-  	}
+	
+	#commissions-meeting-tab .nav-tabs li a:hover,
+	#d-tab .nav-tabs li a:hover {
+		background-color: #f9f8ed !important;
+	}
+	
+	#commissions-meeting-tab select,
+	#d-tab select {
+		margin: 15px 0;
+	}
   	
   	/*************************************
 	 * paragraph--image-over-image-with-button
