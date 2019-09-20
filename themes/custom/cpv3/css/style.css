@@ -4401,9 +4401,17 @@ table tr th a:focus {
 		margin-top: 25px;
 	}
 	
-	/* 	.blog-item .st-btn {
-		margin-right: 15px !important;
-	} */
+	/*************************************
+	 * Video 
+	 *************************************/	
+	 .video-tab .video-title {
+	 	padding-left: 15px !important;
+	 }
+	 
+	 .video-item {
+	 	padding-top: 15px;
+	 	padding-bottom: 15px;
+	 }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
