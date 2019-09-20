@@ -701,6 +701,10 @@ figcaption {
 }
 
 /** Dynamic Tab <video> **/
+.video-item {
+	padding: 15px 15px 15px 0;
+}
+
 #d-tab .nav-tabs {
   padding-bottom: 10px;
 }
@@ -3807,6 +3811,10 @@ table tr th a:focus {
 	}
 
 	/* Stay Connected */
+	.newsletter-signup {
+		width: 100%;
+	}
+	
 	#stay-connected-text {
 		padding: 15px;
 		margin-top: 10px;
@@ -3935,18 +3943,27 @@ table tr th a:focus {
 	 * Set navigation for tab: Commissions tab
 	 *
 	 *********************************/
-	#commissions-meeting-tab ul.nav.nav-tabs {
+	 
+ 	/*  #d-tab .nav-tabs {
+         min-width: 100%;
+         display: inline-grid;
+     } */
+
+     
+	#commissions-meeting-tab ul.nav.nav-tabs,
+	#d-tab ul.nav.nav-tabs {
 		flex-direction: column;
 		border-bottom: none;
 		display: flex;
 	}
 	
-	#commissions-meeting-tab ul.nav.nav-tabs {
+/* 	#commissions-meeting-tab ul.nav.nav-tabs {
 		flex-direction: column;
 		border-bottom: none;
-	}
+	} */
 	
-	#commissions-meeting-tab .nav-tabs li a {
+	#commissions-meeting-tab .nav-tabs li a,
+	#d-tab .nav-tabs li a {
 		width: 100%;
 		border-bottom: 1px solid #e8e8e8;
 		padding-bottom: 10px;
@@ -3954,11 +3971,13 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
-	#commissions-meeting-tab .nav-tabs li a:hover {
+	#commissions-meeting-tab .nav-tabs li a:hover,
+	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
-	#commissions-meeting-tab select {
+	#commissions-meeting-tab select,
+	#d-tab select {
 		margin: 15px 0;
 	}
 	
@@ -4225,6 +4244,10 @@ table tr th a:focus {
 
   #say-connected .fa-3x {
     font-size: 2.5em;
+  }
+  
+  .newsletter-signup {
+	width: 100%;
   }
   
   #signup-newsletter {
