@@ -54,7 +54,13 @@
       <div class="panel panel-default collapse-list">
         <div class="panel-heading">
           <h6 class="panel-title">
-            <a class="title no-uppercase" data-toggle="collapse" href="#collapse-past-events">Past Events</a>
+            {% set url = url('<current>') %}
+            {% if 'boyle-heights-community-plan-update-es' in url|render|render %}
+            <a class="title no-uppercase" data-toggle="collapse" href="#collapse-past-events">Eventos Pasados</a>
+
+              {% else %}
+              <a class="title no-uppercase" data-toggle="collapse" href="#collapse-past-events">Past Events</a>
+            {% endif %}
           </h6>
         </div>
 
