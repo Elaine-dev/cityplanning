@@ -116,7 +116,7 @@ class SideMenuBlock extends BlockBase {
                *    $('.unhide-urd').show();
                *
                *  $uri_array = explode('/', $uri); :
-               *    http://ladcp.westus.cloudapp.azure.com/development-services/urban-design/policy-objectives
+               *    https://planning.lacity.org/development-services/urban-design/policy-objectives
                *    Array
                *    (
                *         [0] =>

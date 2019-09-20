@@ -5312,7 +5312,8 @@ table tr th a:focus {
     -moz-transform: rotateX(0deg);
     -o-transform: rotateX(0deg);
     -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg);
+    transform: rotateX(0deg);  
+      
     visibility: visible;
   }
 
