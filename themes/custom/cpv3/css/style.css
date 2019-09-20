@@ -3942,25 +3942,13 @@ table tr th a:focus {
 	/*********************************
 	 * Set navigation for tab: Commissions tab
 	 *
-	 *********************************/
-	 
- 	/*  #d-tab .nav-tabs {
-         min-width: 100%;
-         display: inline-grid;
-     } */
-
-     
+	 *********************************/     
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
 		flex-direction: column;
 		border-bottom: none;
 		display: flex;
 	}
-	
-/* 	#commissions-meeting-tab ul.nav.nav-tabs {
-		flex-direction: column;
-		border-bottom: none;
-	} */
 	
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
@@ -4002,7 +3990,19 @@ table tr th a:focus {
 	 *************************************/
 	.blog-item h5 {
 		margin-top: 25px;
-	}	
+	}
+	
+	/*************************************
+	 * Video 
+	 *************************************/	
+	 .video-tab .video-title {
+	 	padding-left: 15px !important;
+	 }
+	 
+	 .video-item {
+	 	padding-top: 15px;
+	 	padding-bottom: 15px;
+	 }	
 }
 
 /* Small devices (mobile phone < 576px) */
