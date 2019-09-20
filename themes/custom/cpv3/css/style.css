@@ -1593,6 +1593,10 @@ article img {
 } */
 
 /* commissioners */
+.tab-first-item-padding {
+	padding-left: 0 !important;	
+}
+
 .tab-line {
   border-right: #ccc 1px solid;
 }
@@ -3942,7 +3946,12 @@ table tr th a:focus {
 	/*********************************
 	 * Set navigation for tab: Commissions tab
 	 *
-	 *********************************/     
+	 *********************************/ 
+  	.tab-first-item-padding {
+		padding-left: 15px !important;	
+	}
+	 
+ 	#commissions-tab ul.nav.nav-tabs,   
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
 		flex-direction: column;
@@ -3950,6 +3959,7 @@ table tr th a:focus {
 		display: flex;
 	}
 	
+	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
 		width: 100%;
@@ -3959,11 +3969,13 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
@@ -4351,7 +4363,11 @@ table tr th a:focus {
 	 * Set navigation for tab: Commissions tab
 	 *
 	 *********************************/
-
+  	.tab-first-item-padding {
+		padding-left: 15px !important;	
+	}
+	
+	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
 		flex-direction: column;
@@ -4359,6 +4375,7 @@ table tr th a:focus {
 		display: flex;
 	}	
 
+	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
 		width: 100%;
@@ -4368,11 +4385,13 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
@@ -4653,7 +4672,11 @@ table tr th a:focus {
 	 * Set navigation for tab: Commissions tab
 	 *
 	 *********************************/
+  	.tab-first-item-padding {
+		padding-left: 15px !important;	
+	}
 
+	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
 		flex-direction: column;
@@ -4661,6 +4684,7 @@ table tr th a:focus {
 		display: flex;
 	}	
 
+	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
 		width: 100%;
@@ -4670,11 +4694,13 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
@@ -4690,6 +4716,10 @@ table tr th a:focus {
 	 .video-item {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
+	 }
+	 
+ 	 .tab-line {
+	 	border: 0;
 	 }
 }
 
@@ -4972,6 +5002,56 @@ table tr th a:focus {
   .sharethis-inline-share-buttons {
 	padding-right: 390px !important;
   }
+  
+  	/*********************************
+	 * Set navigation for tab: Commissions tab
+	 *
+	 *********************************/
+ 	.tab-first-item-padding {
+		padding-left: 15px !important;	
+	}
+
+	#commissions-tab ul.nav.nav-tabs,
+	#commissions-meeting-tab ul.nav.nav-tabs,
+	#d-tab ul.nav.nav-tabs {
+		flex-direction: column;
+		border-bottom: none;
+		display: flex;
+	}	
+
+	#commissions-tab .nav-tabs li a,
+	#commissions-meeting-tab .nav-tabs li a,
+	#d-tab .nav-tabs li a {
+		width: 100%;
+		border-bottom: 1px solid #e8e8e8;
+		padding-bottom: 10px;
+		background-color: #F9F7F5;
+		padding-top: 10px !important;
+	}
+	
+	#commissions-tab .nav-tabs li a:hover,
+	#commissions-meeting-tab .nav-tabs li a:hover,
+	#d-tab .nav-tabs li a:hover {
+		background-color: #f9f8ed !important;
+	}
+	
+	#commissions-tab select,
+	#commissions-meeting-tab select,
+	#d-tab select {
+		margin: 15px 0;
+	}
+	
+	/*************************************
+	 * Video 
+	 *************************************/	
+	 .video-tab .video-title {
+	 	padding-left: 15px !important;
+	 }
+	 
+	 .video-item {
+	 	padding-top: 15px;
+	 	padding-bottom: 15px;
+	 }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -5124,11 +5204,62 @@ table tr th a:focus {
     padding-left: 18px;
   }
 
-	/** TNP **/
-	.tnp-button {
-		width: 100%;
-		margin: 0;
+  /** TNP **/
+  .tnp-button {
+	width: 100%;
+	margin: 0;
+  }
+  
+	/*********************************
+	 * Set navigation for tab: Commissions tab
+	 *
+	 *********************************/
+	 
+	.tab-first-item-padding {
+		padding-left: 15px !important;	
 	}
+
+	#commissions-tab ul.nav.nav-tabs,
+	#commissions-meeting-tab ul.nav.nav-tabs,
+	#d-tab ul.nav.nav-tabs {
+		flex-direction: column;
+		border-bottom: none;
+		display: flex;
+	}	
+
+	#commissions-tab .nav-tabs li a,
+	#commissions-meeting-tab .nav-tabs li a,
+	#d-tab .nav-tabs li a {
+		width: 100%;
+		border-bottom: 1px solid #e8e8e8;
+		padding-bottom: 10px;
+		background-color: #F9F7F5;
+		padding-top: 10px !important;
+	}
+	
+	#commissions-tab .nav-tabs li a:hover,
+	#commissions-meeting-tab .nav-tabs li a:hover,
+	#d-tab .nav-tabs li a:hover {
+		background-color: #f9f8ed !important;
+	}
+	
+	#commissions-tab select,
+	#commissions-meeting-tab select,
+	#d-tab select {
+		margin: 15px 0;
+	}
+	
+	/*************************************
+	 * Video 
+	 *************************************/	
+	 .video-tab .video-title {
+	 	padding-left: 15px !important;
+	 }
+	 
+	 .video-item {
+	 	padding-top: 15px;
+	 	padding-bottom: 15px;
+	 }
 }
 
 /* sm devices */
