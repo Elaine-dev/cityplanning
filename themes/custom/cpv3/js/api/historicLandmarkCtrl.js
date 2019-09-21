@@ -10,7 +10,7 @@
 var appHistoricLandmark = angular.module('appHistoricLandmark', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
 	.service('historicLandmarkService', function($http) {
 		this.getHistoricLandmark = function (cpa, year) {
-			return $http.get("http://planning.lacity.org/dcpapi/general/api2/hcm/"+cpa);
+			return $http.get("https://planning.lacity.org/dcpapi/general/api2/hcm/"+cpa);
 		}
 	});
 
