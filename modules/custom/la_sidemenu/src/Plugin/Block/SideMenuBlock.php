@@ -36,7 +36,8 @@ class SideMenuBlock extends BlockBase {
             )
          */        
         $menu_level = $uri_array[1];
-        $actual_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        //$actual_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        $actual_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
         // load main menu
         $menu_name = 'main';
