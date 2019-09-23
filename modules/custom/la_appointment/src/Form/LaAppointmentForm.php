@@ -304,7 +304,7 @@ class LaAppointmentForm extends FormBase {
      */
     private function callAPI ( $jsonData ) {
         $ch = curl_init();
-        $url = "http://161.149.221.142/AppointmentSystem/Default.aspx?e=json";
+        $url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
