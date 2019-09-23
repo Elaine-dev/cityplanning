@@ -68,7 +68,7 @@ class ConstantContactBlockForm extends FormBase {
             '#required' => TRUE
         ];
         
-        $form['street_address'] = [
+        /* $form['street_address'] = [
             '#type' => 'textfield',
             '#title' => $this->t('Street address'),
             '#title_display' => 'invisible', 
@@ -170,7 +170,7 @@ class ConstantContactBlockForm extends FormBase {
             '#maxlength_js' => TRUE,
             '#required' => TRUE,
             
-        ];
+        ]; */
         
         $form['actions']['#type'] = 'actions';
         
