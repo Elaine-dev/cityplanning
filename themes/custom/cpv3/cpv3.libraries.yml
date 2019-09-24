@@ -24,11 +24,6 @@ global-styling:
     js/google-analytics.js:                                                                                               {}
     js/smoothscroll.min.js: {}
 
-  dependencies:
-    #- core/jquery
-    #- core/jquery.once
-    - core/drupal
-
 lacity-global-nav:
   js:
     # los angeles top bar
@@ -163,9 +158,10 @@ organizational-chart:
     js/org/oscripts.js:                                                                                                   {}
 
 cpu-general:
+  version: 1.0
   js:
-    js/pagerlink.js: {}
-    
+    js/pagerajax.js: {}
+
 cpu:
   version:                                                                                                                1.0
   css:
