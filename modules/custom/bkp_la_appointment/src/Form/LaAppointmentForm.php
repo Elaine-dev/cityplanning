@@ -39,7 +39,7 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_email'] = array (
             '#type' => 'email',
             '#title' => t('Email'),
-            '#maxlength' => 30,
+            '#maxlength' => 100,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox')],
         );
@@ -47,7 +47,7 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_phone'] = array (
             '#type' => 'tel',
             '#title' => $this->t('Phone number'),
-        	'#maxlength' => 10,
+        	'#maxlength' => 20,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-phone')],
         );
@@ -82,7 +82,6 @@ class LaAppointmentForm extends FormBase {
             '#type' => 'select',
             '#title' => $this->t('Direction'),
             '#options' => [
-                '' => $this->t(''),
                 'East' => $this->t('East'),
                 'North' => $this->t('North'),
                 'South' => $this->t('South'),
@@ -106,7 +105,7 @@ class LaAppointmentForm extends FormBase {
             '#options' => [
               'Filing' => 'Case Filing',
               'Clearing' => 'Case Condition Clearing',
-              'WirelessFacilities' => 'Wireless Facilities (Metro office only)',
+              'AllWirelessFacilities' => 'All Wireless Facilities (Metro office only)',
               'MapProcessingServices' => 'Map Processing Services (Metro office only) (Lot Line Adj., Private Streets, C of C)',
               'BEStService' => 'BESt, Alcohol Sales and Service/Dancing (Metro office only) (case filing and condition clearance)',
               'AffordableHousing' => 'Affordable Housing Projects (Metro office only) (Density Bonus, UDU, TOC)'
@@ -207,7 +206,7 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_date_time']['time_preference'] = array (
             '#type' => 'radios',
             '#title' => $this->t('AND, Please select your time of day preference :  '),
-            //'#required' => TRUE,
+            '#required' => TRUE,
             '#options' => [
                 'Anytime' => $this->t('Anytime'),
                 'Mornings (between 7:30 AM and Noon)' => $this->t('Mornings (between 7:30 AM and Noon)'),
@@ -215,8 +214,6 @@ class LaAppointmentForm extends FormBase {
             ],
             '#attributes' => ['class' => ['time_preference']],
         );
-        
-        $form['#attached']['library'][] = 'la_appointment/caseFilingAppointmentSys';
 
         $form['actions']['#type'] = 'actions';
 
@@ -225,8 +222,8 @@ class LaAppointmentForm extends FormBase {
             '#value' => $this->t('Submit'),
             /* '#button_type' => 'primary', */
         );
-        
-       return $form;
+
+        return $form;
     }
 
   /**
@@ -248,25 +245,14 @@ class LaAppointmentForm extends FormBase {
 
         $weekDays = $form_state->getValue('week_day_preference');
         $weekDayPreference = '';
-        if ($weekDays) {
-            foreach ($weekDays as $v) {
-                if ( gettype($v) === 'string' ) {
-                    $weekDayPreference .=  $v . ", ";
-                }
-            }
+        foreach ($weekDays as $v) {
+           if ( gettype($v) === 'string' ) {
+               $weekDayPreference .=  $v . ", ";
+           }
         }
-        
+
         $weekDayPreference = rtrim($weekDayPreference, ', ');
         $weekDayPreference = ( !empty($anyDate) ) ? $anyDate : $weekDayPreference;
-        
-        $cases = [
-            'case1'=> ($form_state->getValue('case1')) ? $form_state->getValue('case1') : '',
-            'case2'=> ($form_state->getValue('case2')) ? $form_state->getValue('case2') : '',
-            'case3'=> ($form_state->getValue('case3')) ? $form_state->getValue('case3') : '',
-            'case4'=> ($form_state->getValue('case4')) ? $form_state->getValue('case4') : '',
-            'case5'=> ($form_state->getValue('case5')) ? $form_state->getValue('case5') : '',
-            'case6'=> ($form_state->getValue('case6')) ? $form_state->getValue('case6') : ''
-        ];
 
         $fields = [
             'guest_name' => $form_state->getValue('guest_name'),
@@ -277,14 +263,14 @@ class LaAppointmentForm extends FormBase {
             'case_add_direction' => $form_state->getValue('case_add_direction'),
             'appointment_for' => $form_state->getValue('appointment_for'),
             'case_add_street_name' => $form_state->getValue('case_add_street_name'),
-            'subject'=> ($form_state->getValue('subject')) ? $form_state->getValue('subject') : '',
-            'cases'=> json_encode($cases),
+            'subject'=>  $form_state->getValue('subject'),
+            'cases'=> json_encode(['case1'=> $form_state->getValue('case1'),'case2'=>$form_state->getValue('case2'),'case3'=>$form_state->getValue('case3'),'case4'=>$form_state->getValue('case4'),'case5'=>$form_state->getValue('case5'),'case6'=>$form_state->getValue('case6')]),
             'week_day_preference'=> ($firstAvailableAppointment) ? $firstAvailableAppointment : $weekDayPreference,
-            'time_preference' => ($form_state->getValue('time_preference')) ? $form_state->getValue('time_preference') : '',
+            'time_preference' => $form_state->getValue('time_preference'),
             'created'=> $created_date_timestamp,
             'status' => $status
         ];
-        
+
         // create json data for API to send email
         $appointment_data = 'appointment_data='.stripslashes(json_encode([
             'device' => 'Website',
@@ -301,29 +287,15 @@ class LaAppointmentForm extends FormBase {
             'datepref'=> $fields['week_day_preference'],
             'timepref' => $fields['time_preference'],
         ]));
-        
-        $connection = \Drupal::database();
-        
-        // The transaction opens here.
-        $txn = $connection->startTransaction();
-            
-        try{            
-            $result = $connection->insert('la_appointments')
-                ->fields($fields)            
-                ->execute();
-            
-            //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
-            $this->callAPI($appointment_data);
-            
-            drupal_set_message($this->t('Successfully saved appointment.'), 'status', TRUE);          
-            
-        } catch (Exception $e) {
-            // Something went wrong somewhere, so roll back now.
-            $txn->rollBack();
-            
-            // Log the exception to watchdog.
-            \Drupal::logger('type')->error($e->getMessage());
-        }        
+
+        //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
+        db_insert('la_appointments')
+            ->fields($fields)
+            ->execute();
+
+        $this->callAPI($appointment_data);
+
+        drupal_set_message($this->t('Successfully saved appointment.'), 'status', TRUE);
     }
 
     /**
@@ -332,8 +304,7 @@ class LaAppointmentForm extends FormBase {
      */
     private function callAPI ( $jsonData ) {
         $ch = curl_init();
-        //$url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";
-        $url = "http://10.68.8.144/appointmentsystem/Default.aspx?e=json";
+        $url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);

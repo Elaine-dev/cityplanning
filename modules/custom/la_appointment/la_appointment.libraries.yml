@@ -1,0 +1,4 @@
+caseFilingAppointmentSys:
+  version: 1.0
+  js:
+    js/caseFilingAppointmentSys.js:  {}

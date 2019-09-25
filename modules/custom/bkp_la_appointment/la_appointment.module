@@ -1,4 +1,5 @@
 <?php 
+
 use Drupal\Core\Url;
 
 function la_appointment_theme ( $existing, $type, $theme, $path ) {
@@ -22,7 +23,7 @@ function la_appointment_theme ( $existing, $type, $theme, $path ) {
 function template_preprocess_la_appointment ( &$variables ) {
     $result = db_select('{la_appointments}', 'e')
         ->fields('e', array('id', 'guest_name', 'guest_email', 'guest_phone' , 'appointment_location', 'case_add_house_number', 'case_add_direction',
-            'case_add_street_name', 'appointment_for', 'subject', 'cases', 'week_day_preference', 'time_preference', 'created', 'status'))
+            'case_add_street_name', 'appointment_for', 'week_day_preference', 'time_preference', 'created', 'status'))
         ->orderBy('e.created', 'DESC')
         ->range(0, 20)
         ->execute();
@@ -39,13 +40,12 @@ function template_preprocess_la_appointment ( &$variables ) {
         $data[$i]['case_add_direction'] = $record->case_add_direction;
         $data[$i]['case_add_street_name'] = $record->case_add_street_name;
         $data[$i]['appointment_for'] = $record->appointment_for;
-        $data[$i]['subject'] = $record->subject;
-        $data[$i]['cases'] = $record->cases;
         $data[$i]['week_day_preference'] = $record->week_day_preference;
         $data[$i]['time_preference'] = $record->time_preference;
         $data[$i]['status'] = $record->status;
     }
     
     $variables['data'] = $data;
+    //kint($variables);
 }
 
