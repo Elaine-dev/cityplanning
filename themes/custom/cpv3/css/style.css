@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.9.20
-Version: 4.4.69
+Update Date: 2019.9.25
+Version: 4.4.70
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3561,28 +3561,33 @@ table tr th a:focus {
 }
 
 .messages {
-   /*  padding: 15px 20px 15px 35px; */
-   	padding-top: 15px;
-   	padding-left: 0;
-    word-wrap: break-word;
-    border: 1px solid;
-    border-width: 1px 1px 1px 0;
-    border-radius: 2px;
-    background: no-repeat 10px 17px;
-    overflow-wrap: break-word;
-    margin-bottom: 15px;
-    right: 5px;
-    left: 15px;
-    width: 99%;
+	background: no-repeat 10px 17px;
+  	border: 1px solid;
+  	border-width: 1px 1px 1px 0;
+  	border-radius: 2px;
+  	padding: 15px 20px 15px 35px;
+  	word-wrap: break-word;
+  	overflow-wrap: break-word;
+  	margin: 9px 0 15px 8px;
+  	right: 5px;
+  	left: 0;
+  	width: 99%;
+}
+
+.messages--status {
+  	color: #325e1c;
+  	background-color: #f3faef !important;
+  	border-color: #c9e1bd #c9e1bd #c9e1bd transparent !important;
+  	box-shadow: -8px 0 0 #77b259;
 }
 
 .messages-error-status {
-    color: #a51b00;
-    border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
-    background-color: #fcf4f2;
-    /* background-image: url(/core/misc/icons/e32700/error.svg); */
-    box-shadow: -8px 0 0 #e62600;
-    padding-bottom: 15px;
+	color: #b06300;
+	border-color: rgba(255, 245, 245, 0.9) !important;
+	background-color: #ffcc99 #ffcc99 #ffcc99 transparent !important;
+	box-shadow: -8px 0 0 #b06300;
+	padding-bottom: 15px;
+	left: 15px;
 }
 
 .webform-confirmation__message {
