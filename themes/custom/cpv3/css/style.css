@@ -3565,7 +3565,7 @@ table tr th a:focus {
   	border: 1px solid;
   	border-width: 1px 1px 1px 0;
   	border-radius: 2px;
-  	padding: 15px 20px 15px 35px;
+  	padding: 15px;
   	word-wrap: break-word;
   	overflow-wrap: break-word;
   	margin: 9px 0 15px 8px;
