@@ -9,7 +9,11 @@
             {% endif %}
 
             {% for item in items %}
-                {% set link = item.content['#url']|render %}
+                {% if item.content['#url'].isExternal() %}
+                	{% set link = item.content['#url'].getUri() %}
+                {% else %}
+            	    {% set link = path(item.content['#url'].routeName, item.content['#url'].routeParameters)  %}       
+                {% endif %}
                 
                 <div class="col-md-12 {{ class }}">
                     <a href="{{ link }}" class="button">{{ item.content['#title'] }}</a>
