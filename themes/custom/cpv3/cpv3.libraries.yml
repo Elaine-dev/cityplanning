@@ -22,9 +22,6 @@ global-styling:
     js/jquery.magnific-popup.js:                                                                                          {}
     js/google-analytics.js:                                                                                               {}
 
-  dependencies:
-     - core/drupal
-
 lacity-global-nav:
   js:
     # los angeles top bar
@@ -219,7 +216,7 @@ scea-js:
   version:                                                                                                           1.0
   js:
     js/api/sceaCtrl.js:                                                                                             {}
-    
+
 lastest-cases:
   version:                                                                                                          1.0
   js:

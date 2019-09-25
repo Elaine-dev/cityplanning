@@ -2,7 +2,6 @@
 use Drupal\node\Entity\Node;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\taxonomy\Entity\Term;
-use \Drupal\views\ViewExecutable;
 
 function cpv3_theme_rebuild()
 {
@@ -125,16 +124,6 @@ function cpv3_preprocess_page(&$variables)
 
     // Map Gallery
     mapGallery($variables);
-}
-
-/**
-* Implements hook_views_pre_render().
-*/
-
-function cpv3_views_pre_render(ViewExecutable $view) {
-  if (isset($view) && ($view->storage->id() == 'community_plan_update_news_feed')) {
-    $view->element['#attached']['library'][] = 'pager-view';
-  }
 }
 
 /**
