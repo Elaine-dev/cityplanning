@@ -22,6 +22,9 @@ global-styling:
     js/jquery.magnific-popup.js:                                                                                          {}
     js/google-analytics.js:                                                                                               {}
 
+  dependencies:
+     - core/drupal
+
 lacity-global-nav:
   js:
     # los angeles top bar
