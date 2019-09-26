@@ -7,9 +7,15 @@ function la_appointment_theme ( $existing, $type, $theme, $path ) {
                 'title' => 'Appointment List',
                 'description' => 'Display list of appointment according to latest date order.',
                 'source_text' => NULL,
-                'contents'=>NULL
+                'contents' => NULL
             ],            
             'template' => 'page--appointmentlist'
+        ],
+        'la_appointment_status' => [
+          'variables' => [
+            'data' => NULL
+          ],
+          'template' => 'page--appointmentstatus'
         ],
     ];
 }

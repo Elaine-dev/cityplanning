@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.9.25
-Version: 4.4.70
+Update Date: 2019.9.26
+Version: 4.4.71
 *********************/
 body {
   line-height: 1.5 !important;
@@ -74,6 +74,10 @@ ol, ul {
 /* .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 	border-top: 0;
 } */
+
+.bold-title {
+	color:#0069b0;
+}
 
 #cms-content ol>li, #cms-content ul>li {
   padding-top: 5px;

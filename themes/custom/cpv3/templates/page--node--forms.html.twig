@@ -90,8 +90,8 @@
                    					<tbody ng-repeat="form in data | filter: startsWith | orderBy: 'title'">
                    						<tr>
                    							<td>
+                   								<strong ng-if="!form.url" class="bold-title"><span ng-bind="form.title"></span></strong>
                    								<a ng-if="form.url" href="{[{ form.url }]}" target="_blank" rel="nofollow"><span ng-bind="form.title"></span></a>
-                   								<a ng-if="!form.url"  href="{[{ form.url }]}" target="_blank" rel="nofollow"><strong><span ng-bind="form.title"></span></strong></a>
                								</td>
                    							<td>{[{ form.number }]}</td>
                    						</tr>

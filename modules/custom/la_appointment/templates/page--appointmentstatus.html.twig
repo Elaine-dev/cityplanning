@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-md-12">
+		<p>{# Thank you for submitting your request to schedule an appointment, the details of that request are as follows: #}</p>
+		<table class="table">
+			<tr>
+				<td><strong>Submitted From</strong></td>
+				<td>Website</td>
+			</tr>
+			<tr>
+				<td><strong>Appointment Type</strong></td>
+				<td>{{ data.appointment_for }}</td>
+			</tr>
+			<tr>
+				<td><strong>Case Address</strong></td>
+				<td>{{ data.case_add_house_number }} {{ data.case_add_direction }} {{ data.case_add_street_name }}</td>
+			</tr>
+			<tr>
+				<td><strong>Name</strong></td>
+				<td>{{ data.guest_name }}</td>
+			</tr>
+			<tr>
+				<td><strong>Email Address</strong></td>
+				<td>{{ data.guest_email }}</td>
+			</tr>
+			<tr>
+				<td><strong>Phone Number</strong></td>
+				<td>{{ data.guest_phone }}</td>
+			</tr>
+			<tr>
+				<td><strong>Preferred Date</strong></td>
+				<td>{{ data.week_day_preference }}</td>
+			</tr>
+			<tr>
+				<td><strong>Preferred Time</strong></td>
+				<td>{{ data.time_preference }}</td>
+			</tr>
+			<tr>
+				<td><strong>Selected Location</strong></td>
+				<td>{{ data.appointment_location }}</td>
+			</tr>
+			
+			{% if data.subject %}
+			<tr>
+				<td><strong>Appointment Subject</strong></td>
+				<td>{{ data.subject }}</td>
+			</tr>
+			{% endif %}
+			
+			{% if data.cases_format %}
+			<tr>
+				<td><strong>Case Numbers</strong></td>
+				<td>{{ data.cases_format|raw }}</td>
+			</tr>
+			{% endif %}
+		
+		</table>
+	
+	</div>
+</div>

@@ -9,6 +9,10 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Database\Database;
 
+use Drupal\Core\Routing\TrustedRedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Drupal\encrypt\Entity\EncryptionProfile;
+
 class LaAppointmentForm extends FormBase {
     /**
      * {@inheritdoc}
@@ -31,6 +35,7 @@ class LaAppointmentForm extends FormBase {
       	$form['personal_info']['guest_name'] = array (
             '#type' => 'textfield',
             '#title' =>$this-> t('Name'),
+      	    '#placeholder' => $this->t('your full name'),
   	        '#maxlength' => 100,
   	        '#required' => TRUE,
       	    '#attributes' => ['class' => array('app-textbox', 'form-group')],
@@ -39,6 +44,7 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_email'] = array (
             '#type' => 'email',
             '#title' => t('Email'),
+            '#placeholder' => $this->t('youremail@domain.com'),
             '#maxlength' => 30,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox')],
@@ -47,7 +53,8 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_phone'] = array (
             '#type' => 'tel',
             '#title' => $this->t('Phone number'),
-        	'#maxlength' => 10,
+            '#placeholder' => $this->t('(xxx) xxx xxxx'),
+        	'#maxlength' => 14,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-phone')],
         );
@@ -73,6 +80,7 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['case_add_house_number'] = array (
             '#type' => 'textfield',
             '#title' => $this->t('House number'),
+            '#placeholder' => $this->t('200'),
             '#maxlength' => 20,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment')],
@@ -94,6 +102,7 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['case_add_street_name'] = array (
             '#type' => 'textfield',
             '#title' => $this->t('Street name'),
+            '#placeholder' => $this->t('Spring St.'),
             '#maxlength' => 100,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment-street')],
@@ -259,6 +268,12 @@ class LaAppointmentForm extends FormBase {
         $weekDayPreference = rtrim($weekDayPreference, ', ');
         $weekDayPreference = ( !empty($anyDate) ) ? $anyDate : $weekDayPreference;
         
+        // Appointment for
+        $appointment_for = $this->getAppointmentDetail($form_state->getValue('appointment_for'));        
+        
+        // for locations
+        $full_address = $this->getLocation($form_state->getValue('appointment_location'));
+                
         $cases = [
             'case1'=> ($form_state->getValue('case1')) ? $form_state->getValue('case1') : '',
             'case2'=> ($form_state->getValue('case2')) ? $form_state->getValue('case2') : '',
@@ -272,10 +287,10 @@ class LaAppointmentForm extends FormBase {
             'guest_name' => $form_state->getValue('guest_name'),
             'guest_email' => $form_state->getValue('guest_email'),
             'guest_phone' => $form_state->getValue('guest_phone'),
-            'appointment_location' => $form_state->getValue('appointment_location'),
+            'appointment_location' => $full_address,
             'case_add_house_number'=>  $form_state->getValue('case_add_house_number'),
             'case_add_direction' => $form_state->getValue('case_add_direction'),
-            'appointment_for' => $form_state->getValue('appointment_for'),
+            'appointment_for' => $appointment_for,
             'case_add_street_name' => $form_state->getValue('case_add_street_name'),
             'subject'=> ($form_state->getValue('subject')) ? $form_state->getValue('subject') : '',
             'cases'=> json_encode($cases),
@@ -301,21 +316,29 @@ class LaAppointmentForm extends FormBase {
             'datepref'=> $fields['week_day_preference'],
             'timepref' => $fields['time_preference'],
         ]));
-        
+               
         $connection = \Drupal::database();
         
         // The transaction opens here.
         $txn = $connection->startTransaction();
             
-        try{            
+        try{
+            // add to database
             $result = $connection->insert('la_appointments')
                 ->fields($fields)            
                 ->execute();
-            
-            //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
-            $this->callAPI($appointment_data);
-            
-            drupal_set_message($this->t('Successfully saved appointment.'), 'status', TRUE);          
+
+            if (isset($result)) {
+                // Call API
+                //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
+                $this->callAPI($appointment_data);
+                               
+                drupal_set_message($this->t('Thank you for submitting your request to schedule an appointment, the details of that request are as follows.'), 'status', TRUE);
+                $url = '/development-services/appointment/form/status/'.base64_encode($result);
+                
+                $response = new TrustedRedirectResponse($url, Response::HTTP_FOUND);
+                $form_state->setResponse($response);
+            }            
             
         } catch (Exception $e) {
             // Something went wrong somewhere, so roll back now.
@@ -332,7 +355,8 @@ class LaAppointmentForm extends FormBase {
      */
     private function callAPI ( $jsonData ) {
         $ch = curl_init();
-        $url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";      // for testing: "http://10.68.8.144/appointmentsystem/Default.aspx?e=json";
+        $url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";      
+        //$url = "http://10.68.8.144/appointmentsystem/Default.aspx?e=json";             // for testing
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
@@ -340,5 +364,64 @@ class LaAppointmentForm extends FormBase {
         $output = curl_exec ($ch);
 
         curl_close ($ch);
+    }
+    
+    private function getLocation($location = null) {
+        switch ($location) {
+            case 'Metro Office: Figueroa Plaza':
+                $full_address = "DSC Metro (Figueroa Plaza): (213) 482-7077" ."<br>";
+                $full_address .= "201 N. Figueroa St., 4th Floor, Los Angeles CA​ ​90012";
+                break;
+                
+            case 'Valley Office: Marvin Braude Building':
+                $full_address = "DSC Valley (Marvin Braude Building): (818) 374-5050" ."<br>";
+                $full_address .= "6262 Van Nuys Blvd., 2nd Floor, Van Nuys CA 91401";
+                break;
+                
+            case 'West LA Office: Sawtelle Blvd':
+                $full_address = "DSC West LA (Sawtelle Blvd): (310) 231-2598" ."<br>";
+                $full_address .= "1828 Sawtelle Blvd, Los Angeles CA​ ​90025";
+                break;
+                
+            default:
+                $full_address = '';
+                break;
+        }
+        
+        return $full_address;
+    }
+    
+    private function getAppointmentDetail ($appointment_for = null) {
+        switch ($appointment_for) {
+            case 'Filing' :
+                $appointmentFor = 'Case Filing';
+                break;
+                
+            case 'Clearing' :
+                $appointmentFor = 'Case Condition Clearing';
+                break;
+                
+            case 'WirelessFacilities' :
+                $appointmentFor = 'Wireless Facilities (Metro office only)';
+                break;
+                
+            case 'MapProcessingServices' :
+                $appointmentFor = 'Map Processing Services (Metro office only) (Lot Line Adj., Private Streets, C of C)';
+                break;
+                
+            case 'BEStService' :
+                $appointmentFor = 'BESt, Alcohol Sales and Service/Dancing (Metro office only) (case filing and condition clearance)';
+                break;
+                
+            case 'AffordableHousing' :
+                $appointmentFor = 'Affordable Housing Projects (Metro office only) (Density Bonus, UDU, TOC)';
+                break;
+                
+            default:
+                $appointmentFor = '';
+                break;
+        }
+        
+        return $appointmentFor;
     }
 }

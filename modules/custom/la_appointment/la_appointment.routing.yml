@@ -6,6 +6,14 @@ la_appointment.form:
   requirements:
     _permission: 'access content'
 
+la_appointment.status_message:
+  path: '/development-services/appointment/form/status/{id}'
+  defaults:
+    _title: "Case Filing & Clearing Appointment System"
+    _controller: '\Drupal\la_appointment\Controller\LaAppointmentController::formStatus'
+  requirements:
+    _permission: 'access content'
+
 la_appointment.admin_lis:
   path: '/admin/appointments'
   defaults:
