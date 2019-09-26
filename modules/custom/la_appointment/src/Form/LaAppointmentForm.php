@@ -128,7 +128,15 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['subject'] = array (
             '#type' => 'textarea',
             '#title' => t('Appointment Subject (Specify Case Filing Type)'),
-            '#states' => array('visible' => array(':input[name="appointment_for"]' => array('value' => 'Filing')))
+            '#states' => [
+                'visible' => [
+                    [':input[name="appointment_for"]' => ['value' => 'Filing']],
+                    [':input[name="appointment_for"]' => ['value' => 'WirelessFacilities']],
+                    [':input[name="appointment_for"]' => ['value' => 'MapProcessingServices']],
+                    [':input[name="appointment_for"]' => ['value' => 'BEStService']],
+                    [':input[name="appointment_for"]' => ['value' => 'AffordableHousing']],
+                ]
+            ]
         );
 
         // Case Condition Clearing
