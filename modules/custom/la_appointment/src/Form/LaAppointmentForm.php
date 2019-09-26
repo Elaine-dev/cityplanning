@@ -334,7 +334,7 @@ class LaAppointmentForm extends FormBase {
                 $this->callAPI($appointment_data);
                                
                 drupal_set_message($this->t('Thank you for submitting your request to schedule an appointment, the details of that request are as follows.'), 'status', TRUE);
-                $url = '/development-services/appointment/form/status/'.base64_encode($result);
+                $url = '/development-services/appointment/form/status/'.$result;
                 
                 $response = new TrustedRedirectResponse($url, Response::HTTP_FOUND);
                 $form_state->setResponse($response);

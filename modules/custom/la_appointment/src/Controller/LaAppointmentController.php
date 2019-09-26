@@ -49,12 +49,12 @@ class LaAppointmentController extends ControllerBase
     }
 
     public function formStatus($id = Null) {
-        $deencrypted_id = base64_decode($id);
+        //$deencrypted_id = base64_decode($id);
         
         $result = db_select('{la_appointments}','n')
             ->fields('n', array('guest_name', 'guest_email', 'guest_phone' , 'appointment_location', 'case_add_house_number', 'case_add_direction',
               'case_add_street_name', 'appointment_for', 'subject', 'cases', 'week_day_preference', 'time_preference', 'created', 'status'))
-            ->condition('id', $deencrypted_id,'=')
+            ->condition('id', $id,'=')
             ->execute()
             ->fetchAssoc();
 
