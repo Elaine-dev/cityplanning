@@ -450,16 +450,21 @@ function hashUrlCommissionBoards() {
 	
 	if (arrUrl[4] !== undefined) { 
 		var splitUrl = (arrUrl[4]).split('#');						// "commissions-boards-hearings#boards?q=southlosangeles" => o/p 'commissions-boards-hearings', 'boards?q=southlosangeles'
-		var setTargetParam, setTargetMenu, tabContent, alink  = '';
+		var setTargetParam, setTargetMenu, tabContent, alink = '';
 		
 		if (splitUrl[1] !== undefined) {
-			setTargetMenu = splitUrl[0];
-			setTargetParam = splitUrl[1].includes("?") ?  (splitUrl[1].split('?'))[0] : splitUrl[1];
-							
+			setTargetMenu = splitUrl[0];			
+			setTargetParam = (splitUrl[1].indexOf("?") != -1) ?  (splitUrl[1].split('?'))[0] : splitUrl[1];
+			
 			if (setTargetMenu) {
 				switch(setTargetMenu) {
 					case 'commissions-boards-hearings' :
 						tabContent = '#commissions-meeting-tab ul.nav.nav-tabs a';
+						alink = tabContent + '[href="#' + setTargetParam + '"]';
+						break;
+						
+					case 'publications' :
+						tabContent = '#publication-tab ul.nav.nav-tabs a';
 						alink = tabContent + '[href="#' + setTargetParam + '"]';
 						break;		
 				}
