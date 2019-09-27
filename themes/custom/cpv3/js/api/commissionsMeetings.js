@@ -201,7 +201,7 @@ var appCommMeetings = angular.module('appCommMeetings', ['ngSanitize', 'ngRoute'
  * If the url does not have query string, it will return 'undefined'
  * 
  */
-function getQueryString (qString = '') {
+function getQueryString (qString) {
 	var setAPC, res;
 	setAPC = qString.split('=')[1];							// 0 => commissions?q, 1 => cpc . Returns 'undefined' when no data found.
 	return res = (setAPC !== undefined) ? setAPC : 'all';	
