@@ -11,7 +11,6 @@ use Drupal\Core\Database\Database;
 use Drupal\Core\Routing\TrustedRedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonDecode;
-use function GuzzleHttp\json_decode;
 
 class LaAppointmentForm extends FormBase {
     /**
@@ -332,9 +331,9 @@ class LaAppointmentForm extends FormBase {
             $callResultOP = json_decode($callResult, true);
 
             if (empty($callResultOP['error'])) {
-		      // add record to the database
-               $connection = \Drupal::database();
-               $result = $connection->insert('la_appointments')
+                // add record to the database
+                $connection = \Drupal::database();
+                $result = $connection->insert('la_appointments')
                    ->fields($fields)
                    ->execute();							 
                                
