@@ -34,7 +34,6 @@ class LaAppointmentForm extends FormBase {
       	$form['personal_info']['guest_name'] = array (
             '#type' => 'textfield',
             '#title' =>$this-> t('Name'),
-      	    '#placeholder' => $this->t('your full name'),
   	        '#maxlength' => 100,
   	        '#required' => TRUE,
       	    '#attributes' => ['class' => array('app-textbox', 'form-group')],
@@ -43,7 +42,6 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_email'] = array (
             '#type' => 'email',
             '#title' => t('Email'),
-            '#placeholder' => $this->t('youremail@domain.com'),
             '#maxlength' => 30,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox')],
@@ -52,7 +50,6 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_phone'] = array (
             '#type' => 'tel',
             '#title' => $this->t('Phone number'),
-            '#placeholder' => $this->t('(xxx) xxx xxxx'),
         	'#maxlength' => 14,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-phone')],
@@ -79,7 +76,6 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['case_add_house_number'] = array (
             '#type' => 'textfield',
             '#title' => $this->t('House number'),
-            '#placeholder' => $this->t('100'),
             '#maxlength' => 20,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment')],
@@ -100,8 +96,7 @@ class LaAppointmentForm extends FormBase {
 
         $form['appointment_info']['case_add_street_name'] = array (
             '#type' => 'textfield',
-            '#title' => $this->t('Street name'),
-            '#placeholder' => $this->t('Main'),
+            '#title' => $this->t('Street name <br>& Unit number'),
             '#maxlength' => 100,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment-street')],
@@ -128,11 +123,11 @@ class LaAppointmentForm extends FormBase {
             '#type' => 'textarea',
             '#title' => t('Appointment Subject (Specify Case Filing Type)'),
             '#states' => [
-                'visible' => [
+                'visible' => [  
                     [':input[name="appointment_for"]' => ['value' => 'Filing']],
-                    [':input[name="appointment_for"]' => ['value' => 'WirelessFacilities']],
-                    [':input[name="appointment_for"]' => ['value' => 'MapProcessingServices']],
-                    [':input[name="appointment_for"]' => ['value' => 'BEStService']],
+                    [':input[name="appointment_for"]' => ['value' => 'WirelessFacilities']],                  
+                    [':input[name="appointment_for"]' => ['value' => 'MapProcessingServices']],                  
+                    [':input[name="appointment_for"]' => ['value' => 'BEStService']],                  
                     [':input[name="appointment_for"]' => ['value' => 'AffordableHousing']],
                 ]
             ]
@@ -322,20 +317,20 @@ class LaAppointmentForm extends FormBase {
             'cases'=> $fields['cases'],
             'datepref'=> $fields['week_day_preference'],
             'timepref' => $fields['time_preference'],
-        ]));               
-            
+        ]));              
+       
         try{
             // Call API
             //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
             $callResult = $this->callAPI($appointment_data);
             $callResultOP = json_decode($callResult, true);
 
-            if (empty($callResultOP['error'])) {
-                // add record to the database
-                $connection = \Drupal::database();
-                $result = $connection->insert('la_appointments')
+           if (empty($callResultOP['error'])) {
+               // add record to the database
+               $connection = \Drupal::database();
+               $result = $connection->insert('la_appointments')
                    ->fields($fields)
-                   ->execute();							 
+                   ->execute();
                                
                 drupal_set_message($this->t('Thank you for submitting your request to schedule an appointment, the details of that request are as follows.'), 'status', TRUE);
                 $url = '/development-services/appointment/form/status/'.base64_encode($result);
@@ -344,7 +339,7 @@ class LaAppointmentForm extends FormBase {
                 $form_state->setResponse($response);
             }            
             
-        } catch (Exception $e) {           
+        } catch (Exception $e) {            
             // Log the exception to watchdog.
             \Drupal::logger('type')->error($e->getMessage());
         }        
@@ -362,11 +357,11 @@ class LaAppointmentForm extends FormBase {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $output = curl_exec($ch);
-
+        $output = curl_exec($ch);  
+       
         curl_close ($ch);
         
-        return $output;						
+        return $output;
     }
     
     private function getLocation($location = null) {
