@@ -8,10 +8,10 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Database\Database;
-
 use Drupal\Core\Routing\TrustedRedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Drupal\encrypt\Entity\EncryptionProfile;
+use Symfony\Component\Serializer\Encoder\JsonDecode;
+use function GuzzleHttp\json_decode;
 
 class LaAppointmentForm extends FormBase {
     /**
@@ -80,7 +80,7 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['case_add_house_number'] = array (
             '#type' => 'textfield',
             '#title' => $this->t('House number'),
-            '#placeholder' => $this->t('200'),
+            '#placeholder' => $this->t('100'),
             '#maxlength' => 20,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment')],
@@ -102,7 +102,7 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['case_add_street_name'] = array (
             '#type' => 'textfield',
             '#title' => $this->t('Street name'),
-            '#placeholder' => $this->t('Spring St.'),
+            '#placeholder' => $this->t('Main'),
             '#maxlength' => 100,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment-street')],
@@ -314,7 +314,7 @@ class LaAppointmentForm extends FormBase {
             'name' => $fields['guest_name'],
             'email' => $fields['guest_email'],
             'phone' => $fields['guest_phone'],
-            'location' => $fields['appointment_location'],
+            'location' => $form_state->getValue('appointment_location'),
             'house'=>  $fields['case_add_house_number'],
             'direction' => $fields['case_add_direction'],
             'street' => $fields['case_add_street_name'],
@@ -325,21 +325,19 @@ class LaAppointmentForm extends FormBase {
             'timepref' => $fields['time_preference'],
         ]));
                
-        $connection = \Drupal::database();
-        
-        // The transaction opens here.
-        $txn = $connection->startTransaction();
             
         try{
-            // add to database
-            $result = $connection->insert('la_appointments')
-                ->fields($fields)            
-                ->execute();
+            // Call API
+            //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
+            $callResult = $this->callAPI($appointment_data);
+            $callResultOP = json_decode($callResult, true);
 
-            if (isset($result)) {
-                // Call API
-                //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
-                $this->callAPI($appointment_data);
+            if (empty($callResultOP['error'])) {
+			// add record to the database
+               $connection = \Drupal::database();
+               $result = $connection->insert('la_appointments')
+                   ->fields($fields)
+                   ->execute();							 
                                
                 drupal_set_message($this->t('Thank you for submitting your request to schedule an appointment, the details of that request are as follows.'), 'status', TRUE);
                 $url = '/development-services/appointment/form/status/'.base64_encode($result);
@@ -348,10 +346,7 @@ class LaAppointmentForm extends FormBase {
                 $form_state->setResponse($response);
             }            
             
-        } catch (Exception $e) {
-            // Something went wrong somewhere, so roll back now.
-            $txn->rollBack();
-            
+        } catch (Exception $e) {           
             // Log the exception to watchdog.
             \Drupal::logger('type')->error($e->getMessage());
         }        
@@ -361,7 +356,7 @@ class LaAppointmentForm extends FormBase {
      * Call API
      * @param string $jsonData
      */
-    private function callAPI ( $jsonData ) {
+    private function callAPI($jsonData) {
         $ch = curl_init();
         //$url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";      
         $url = "http://10.68.8.144/appointmentsystem/Default.aspx?e=json";             // for testing
@@ -369,9 +364,11 @@ class LaAppointmentForm extends FormBase {
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $output = curl_exec ($ch);
+        $output = curl_exec($ch);
 
         curl_close ($ch);
+        
+        return $output;						
     }
     
     private function getLocation($location = null) {
