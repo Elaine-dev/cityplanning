@@ -323,8 +323,7 @@ class LaAppointmentForm extends FormBase {
             'cases'=> $fields['cases'],
             'datepref'=> $fields['week_day_preference'],
             'timepref' => $fields['time_preference'],
-        ]));
-               
+        ]));               
             
         try{
             // Call API
@@ -333,7 +332,7 @@ class LaAppointmentForm extends FormBase {
             $callResultOP = json_decode($callResult, true);
 
             if (empty($callResultOP['error'])) {
-			// add record to the database
+		      // add record to the database
                $connection = \Drupal::database();
                $result = $connection->insert('la_appointments')
                    ->fields($fields)
@@ -358,8 +357,8 @@ class LaAppointmentForm extends FormBase {
      */
     private function callAPI($jsonData) {
         $ch = curl_init();
-        //$url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";      
-        $url = "http://10.68.8.144/appointmentsystem/Default.aspx?e=json";             // for testing
+        $url = "https://planning.lacity.org/appointmentsystem/Default.aspx?e=json";      
+        //$url = "http://10.68.8.144/appointmentsystem/Default.aspx?e=json";             // for testing
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
