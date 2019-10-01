@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.9.26
-Version: 4.4.71
+Update Date: 2019.9.30
+Version: 4.4.72
 *********************/
 body {
   line-height: 1.5 !important;
@@ -2081,92 +2081,7 @@ input::-webkit-input-placeholder {
   width: 300px;
 }
 
-/** Case Filing Appointment system **/
-#laappintment-form fieldset {
-  padding: 0.35em 0.9em 1em !important;
-}
-
-#laappintment-form .form-item {
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-  font-size: 15px !important;
-}
-
-#laappintment-form fieldset legend {
-  background: #ccc !important;
-  padding-left: 10px !important;
-}
-
-#edit-guest-name, #edit-guest-email {
-  margin-left: 73px;
-}
-
-#edit-case-add-house-number {
-  margin-left: 49px;
-}
-
-#edit-case-add-direction {
-  margin-left: 90px;
-}
-
-#edit-case-add-street-name {
-  margin-left: 67px;
-}
-
-#edit-guest-phone {
-  margin-left: 5px;
-}
-
-#laappintment-form>input[type=radio], 
-input[type=checkbox] {
-  height: 13px !important;
-}
-
-#laappintment-form>input[type=checkbox], 
-input[type=radio] {
-  height: 13px !important;
-}
-
-#block-cityplanning-content .app-textbox {
-  margin-left: 200px;
-}
-
-#block-cityplanning-content .app-textbox-phone {
-  margin-left: 128px;
-}
-
-#block-cityplanning-content .app-textbox-appointment {
-  margin-left: 130px;
-}
-
-#block-cityplanning-content .app-textbox-appointment-street {
-  margin-left: 150px;
-}
-
-#block-cityplanning-content .app-textbox-direction {
-  margin-left: 175px;
-}
-
-#block-cityplanning-content .app-textbox-cases {
-  margin-left: 175px;
-}
-
-#block-cityplanning-content fieldset {
-  border: 0px !important;
-}
-
-#block-cityplanning-content legend {
-  color: #30c2a5;
-}
-
-.form-item-week-day-preference-anyday {
-  padding-left: 20px;
-}
-
-#edit-week-day-preference {
-  padding-left: 20px;
-}
-
+/*******************************/
 .visually-hidden {
   color: #c9e1bd !important;
   text-align: center !important;
@@ -2177,14 +2092,6 @@ input[type=radio] {
 #eirs .pagination>.active>a {
   background-color: #eee !important;
   border-color: #eee !important;
-}
-
-#laappintment-form input[type=submit] {
-  background-color: #009fe3 !important;
-  width: 100% !important;
-  margin-top: 20px;
-  border-radius: 0;
-  border: 0;
 }
 
 /*******************************

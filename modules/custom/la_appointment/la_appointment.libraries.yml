@@ -1,4 +1,7 @@
 caseFilingAppointmentSys:
-  version: 1.0
+  version: 1.1
+  css:
+    theme:
+        css/la_appointment.css:      {}
   js:
     js/caseFilingAppointmentSys.js:  {}
