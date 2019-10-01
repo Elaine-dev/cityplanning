@@ -312,7 +312,7 @@ class LaAppointmentForm extends FormBase {
             'house'=>  $fields['case_add_house_number'],
             'direction' => $fields['case_add_direction'],
             'street' => $fields['case_add_street_name'],
-            'appttype' => $fields['appointment_for'],
+            'appttype' => $form_state->getValue('appointment_for'), 
             'subject'=> $fields['subject'],
             'cases'=> $fields['cases'],
             'datepref'=> $fields['week_day_preference'],
@@ -324,6 +324,8 @@ class LaAppointmentForm extends FormBase {
             //$appointment_data = 'appointment_data='.'{"device":"Website","name":"Humbal Shahi","email":"humbal.shahi@lacity.org","phone":"123 456 7896","location":"Valley Office: Marvin Braude Building","house":"200","direction":"North","street":"Temple","appttype":"Clearing","subject":"","cases":{"case1":"c-1","case2":"c-2","case3":"c-3","case4":"c-4","case5":"","case6":""},"datepref":"Monday","timepref":"Mornings (between 7:30 AM and Noon)"}';
             $callResult = $this->callAPI($appointment_data);
             $callResultOP = json_decode($callResult, true);
+
+           
 
            if (empty($callResultOP['error'])) {
                // add record to the database
