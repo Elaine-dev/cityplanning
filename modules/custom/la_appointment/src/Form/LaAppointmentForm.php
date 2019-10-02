@@ -260,9 +260,11 @@ class LaAppointmentForm extends FormBase {
     public function validateForm(array &$form, FormStateInterface $form_state) {
         // Assert the Appointment date & time is valid
         $firstAvailable = $form_state->getValue('first_available_appointment')['First Available Appointment'];
-        $anyday = $form_state->getValue('week_day_preference_anyday');  // 0 or 1
+        $anyday = $form_state->getValue('week_day_preference_anyday');  // 0 or 1        
+        $weekday = array_filter($form_state->getValue('week_day_preference'));
+        $timePreference = $form_state->getValue('time_preference');
         
-        if (empty($firstAvailable) && ($anyday !== 1)) {
+        if (empty($firstAvailable) && ($anyday !== 1) && count($weekday) == 0 && empty($timePreference)) {
             $form_state->setErrorByName('appointmentDateTime', $this->t('Appointment Date and Time Preference :  field is required.'));
         }
     }
