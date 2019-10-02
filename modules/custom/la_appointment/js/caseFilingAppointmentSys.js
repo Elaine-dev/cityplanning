@@ -28,6 +28,7 @@ jQuery(document).ready(function(){
 	       $(".weekdays").prop('checked', false);
 	       $(".time_preference").prop('checked', false);
 	       
+	       $('input:radio[name=time_preference]').prop('required', false);
 	       $('.time_preference > legend > span').removeClass('js-form-required form-required');
 	     }
 	 });

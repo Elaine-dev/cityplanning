@@ -349,7 +349,7 @@ class LaAppointmentForm extends FormBase {
 
            
 
-           if (empty($callResultOP['error'])) {
+           if (empty($callResultOP['error'])) { 
                // add record to the database
                $connection = \Drupal::database();
                $result = $connection->insert('la_appointments')
