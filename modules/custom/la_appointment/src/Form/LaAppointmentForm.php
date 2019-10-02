@@ -115,6 +115,7 @@ class LaAppointmentForm extends FormBase {
               'AffordableHousing' => 'Affordable Housing Projects (Metro office only) (Density Bonus, UDU, TOC)'
             ],
             '#attributes' => ['class' => array('disable')],
+            '#required' => TRUE,
         );
 
 
@@ -129,7 +130,14 @@ class LaAppointmentForm extends FormBase {
                     [':input[name="appointment_for"]' => ['value' => 'MapProcessingServices']],                  
                     [':input[name="appointment_for"]' => ['value' => 'BEStService']],                  
                     [':input[name="appointment_for"]' => ['value' => 'AffordableHousing']],
-                ]
+                ],
+                'required' => [
+                    [':input[name="appointment_for"]' => ['value' => 'Filing']],
+                    [':input[name="appointment_for"]' => ['value' => 'WirelessFacilities']],
+                    [':input[name="appointment_for"]' => ['value' => 'MapProcessingServices']],
+                    [':input[name="appointment_for"]' => ['value' => 'BEStService']],
+                    [':input[name="appointment_for"]' => ['value' => 'AffordableHousing']],
+                ],
             ]
         );
 
@@ -146,6 +154,11 @@ class LaAppointmentForm extends FormBase {
             '#type' => 'textfield',
             '#title' => t('Case 1:'),
             '#attributes' => ['class' => array('app-textbox-cases')],
+            '#states' => [
+                'required' => [
+                    [':input[name="appointment_for"]' => ['value' => 'Clearing']],
+                ]
+            ],
         );
 
         $form['appointment_info']['cases']['case2'] = array (
@@ -184,6 +197,7 @@ class LaAppointmentForm extends FormBase {
             '#title' => t('Appointment Date and Time Preference:'),
             '#collapsible' => TRUE,
             '#group' => 'vertical_tabs',
+            '#required' => TRUE,
         );
 
         $form['appointment_date_time']['first_available_appointment'] = array (
@@ -200,7 +214,7 @@ class LaAppointmentForm extends FormBase {
             '#title' => $this->t('Any Date'),
             '#default_value' => 'Any Date',
             '#attributes' => ['id' => ['any_day']],
-            '#description' => 'or select one or more preferred days below:'
+            '#description' => 'OR select one or more preferred days below:'
         );
 
         $form['appointment_date_time']['week_day_preference'] = array (
@@ -243,7 +257,15 @@ class LaAppointmentForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-    public function validateForm(array &$form, FormStateInterface $form_state) {}
+    public function validateForm(array &$form, FormStateInterface $form_state) {
+        // Assert the Appointment date & time is valid
+        $firstAvailable = $form_state->getValue('first_available_appointment')['First Available Appointment'];
+        $anyday = $form_state->getValue('week_day_preference_anyday');  // 0 or 1
+        
+        if (empty($firstAvailable) && ($anyday !== 1)) {
+            $form_state->setErrorByName('appointmentDateTime', $this->t('Appointment Date and Time Preference :  field is required.'));
+        }
+    }
 
   /**
    * {@inheritdoc}
