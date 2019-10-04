@@ -7264,31 +7264,31 @@ Swiper$1.use([
 return Swiper$1;
 
 })));
-// Added by EB 2
+
+//Added by EB 2
 $(document).ready(function() {
  //$('#imgId').addClass('img-responsive');
  //$("img").addClass("img-responsive"); 
     var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-
-      autoplay: {
-   delay: 5000,
- },
-      direction: 'horizontal',
-	  loop:true,
-    slidesPerView: 'auto',
-	  spaceBetween: 0,
-      //visibilityFullFit: true,
-      pagination: {
-    el: '.swiper-pagination',
-    type: 'bullets',
-    clickable: true,
-  },
-      effect: 'fade',
-       navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
+    	// Optional parameters
+    	autoplay: {
+    		delay: 5000,
+    	},
+    	direction: 'horizontal',
+    	loop:true,
+    	slidesPerView: 'auto',
+    	spaceBetween: 0,
+    	//visibilityFullFit: true,
+    	pagination: {
+    		el: '.swiper-pagination',
+		    type: 'bullets',
+		    clickable: true,
+    	},
+    	effect: 'fade',
+    	navigation: {
+    		nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
     })
 
 });

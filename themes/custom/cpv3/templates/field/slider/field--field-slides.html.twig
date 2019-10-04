@@ -2,15 +2,15 @@
 {% set link = item.content['#field_collection_item'].field_link.0.url %}
 {% set url = file_url(item.content['#field_collection_item'].get('field_slide_image').entity.uri.value | image_style('slider_image')) %}
 
-  <div class="swiper-slide" >
+<div class="swiper-slide" >
   {% if link is not empty %}
-<a href="{{ link }}">
-  <img src="{{ url }}"/></a>
-  <div class="slider-content">{{ item.content['#field_collection_item'].get('field_content_captions').value|raw }}    </div>
+    <a href="{{ link }}">
+      <img src="{{ url }}" class="img-responsive" /></a>
+	<div class="slider-content">{{ item.content['#field_collection_item'].get('field_content_captions').value|raw }}</div>
 </div>
-      {% else %}
-  <img src="{{ url }}"/>
-    <div class="slider-content">{{ item.content['#field_collection_item'].get('field_content_captions').value|raw }}    </div>
+  {% else %}
+  	<img src="{{ url }}" class="img-responsive" />
+	<div class="slider-content">{{ item.content['#field_collection_item'].get('field_content_captions').value|raw }}</div>
   </div>
 
   {% endif %}
