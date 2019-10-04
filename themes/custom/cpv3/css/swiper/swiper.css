@@ -706,13 +706,13 @@ button.swiper-pagination-bullet {
 
 /** COMMUNITY PLAN UPDATE CUSTOM CSS **/
 /** Added to CKeditor **/
-p.slider-caption {
+p.slider-caption-cpu {
   color: #708090;
   font-size: 20px;
   font-weight: 400;
 }
 
-p.slider-title {
+p.slider-title-cpu {
   color: #708090;
   font-weight: 600;
   text-transform: uppercase;
@@ -723,7 +723,7 @@ p.slider-title {
   line-height:1;
 }
 
-p.slider-title + p {
+p.slider-title-cpu + p {
   line-height:1.2;
   margin-top:-13px;
 }
@@ -747,12 +747,12 @@ p.slider-title + p {
 		padding: 5px;
 	}
 	
-	p.slider-caption{
+	p.slider-caption-cpu{
 		font-size: 17px;
 		padding: 0 5px;
 	}
 	
-	p.slider-title {
+	p.slider-title-cpu {
 		font-size: 20px;
 		padding: 0 5px;
 	}
@@ -771,12 +771,12 @@ p.slider-title + p {
 		padding: 5px;
 	}
 	
-	p.slider-caption{
+	p.slider-caption-cpu{
 		font-size: 17px;
 		padding: 0 5px;
 	}
 	
-	p.slider-title {
+	p.slider-title-cpu {
 		font-size: 20px;
 		padding: 0 5px;
 	}
