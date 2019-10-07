@@ -23,7 +23,7 @@
 
     <div class="row paddingtop15 padding-bottom60">
       {# Left-side bar #}
-      <div class="col-md-12" ng-app="appCommMeetings">
+      <div class="col-md-12">
         <div class="row padding-left0">
           <div class="col-md-12">
             {# content goes here  #}
@@ -35,7 +35,7 @@
             <div class="row padding-left0">
             	<div class="col-md-12">
             	
-	        		<div id="commissions-meeting-tab">
+	        		<div id="commissions-meeting-tab" ng-app="appCommMeetings">
                 		<ul class="nav nav-tabs" role="tablist">
                 			<li role="presentation" class="padding-top0 tab-line active">
         				 		<a href="#commissions" aria-controls="1" role="tab" data-toggle="tab" data-value="Commissions">Commissions</a>
@@ -157,7 +157,7 @@
                                           </td>
                                         </tr>
                                         
-                                        <tr  ng-if="agendas.length < 1">
+                                        <tr ng-if="agendas.length < 1">
                                         	<td colspan="7">No record found!</td>
                                         </tr>						   
                                       </table>
