@@ -19,6 +19,9 @@ jQuery(document).ready(function(){
 
 	/** Case Search **/
 	caseSearch();
+	
+	/** Advance Search **/
+	advanceSearch();
 
 	/** ZIMAS search **/
 	innerPageZIMASSearch();
@@ -34,9 +37,6 @@ jQuery(document).ready(function(){
 
 	/** Global search **/
  	globalSearch();
-
-	/** Advance Search **/
-	advanceSearch();
 
  	/** Open external link in new window  **/
 	openExtLinkInNewWindow();
@@ -162,6 +162,34 @@ function caseSearch() {
 		var caseNumber = $('#case-number').val();
 		var callAPI = "https://planning.lacity.org/PdisCaseInfo/caseNumber/"+caseNumber;
 		window.open(callAPI, '_blank');
+	});
+}
+
+function advanceSearch() {
+	var apiPath = 'https://planning.lacity.org/pdiscaseinfo2/search';
+	$("#adv-case-search").on('click', function(){
+		var advCaseNumber = $('#adv-case-number').val();
+		window.open(apiPath+'/case/'+advCaseNumber, '_blank');
+	});
+
+	$("#ordinances-search").on('click', function(){
+		var ordNumber = $('#ordinances').val();
+		window.open(apiPath+'/ord/'+ordNumber, '_blank');
+	});
+
+	$("#zoning-case-search").on('click', function(){
+		var zoningNumber = $('#zoning-case').val();
+		window.open(apiPath+'/zi/'+zoningNumber, '_blank');
+	});
+
+	$("#cpc-card-search").on('click', function(){
+		var cpcNumber = $('#cpc-card').val();
+		window.open(apiPath+'/cpc/'+cpcNumber, '_blank');
+	});
+
+	$("#za-card-search").on('click', function(){
+		var zaNumber = $('#za-card').val();
+		window.open(apiPath+'/za/'+zaNumber, '_blank');
 	});
 }
 
@@ -296,34 +324,6 @@ function globalSearch() {
 	 }
 }
 
-function advanceSearch() {
-	var apiPath = 'https://planning.lacity.org/pdiscaseinfo2/search';
-	$("#adv-case-search").on('click', function(){
-		var advCaseNumber = $('#adv-case-number').val();
-		window.open(apiPath+'/case/'+advCaseNumber, '_blank');
-	});
-
-	$("#ordinances-search").on('click', function(){
-		var ordNumber = $('#ordinances').val();
-		window.open(apiPath+'/ord/'+ordNumber, '_blank');
-	});
-
-	$("#zoning-case-search").on('click', function(){
-		var zoningNumber = $('#zoning-case').val();
-		window.open(apiPath+'/zi/'+zoningNumber, '_blank');
-	});
-
-	$("#cpc-card-search").on('click', function(){
-		var cpcNumber = $('#cpc-card').val();
-		window.open(apiPath+'/cpc/'+cpcNumber, '_blank');
-	});
-
-	$("#za-card-search").on('click', function(){
-		var zaNumber = $('#za-card').val();
-		window.open(apiPath+'/za/'+zaNumber, '_blank');
-	});
-}
-
 function openExtLinkInNewWindow() {
 	$('a').each(function() {
 		var a = new RegExp('/' + window.location.host + '/');
@@ -383,19 +383,20 @@ function imagePopUpGallery() {
 };
 
 function videoPopup() {
-		$(".video").on("click", function () {
-			var theModal = $(this).data("target"),
-			videoSRC = $(this).attr("data-video"),
-			videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";;
-			$(theModal + ' iframe').attr('src', videoSRCauto);
-			$(theModal).on('click', function(){
+	$(".video").on("click", function () {
+		var theModal = $(this).data("target"),
+		videoSRC = $(this).attr("data-video"),
+		videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";;
+		$(theModal + ' iframe').attr('src', videoSRCauto);
+		$(theModal).on('click', function(){
 			$(theModal + ' iframe').attr('src', videoSRC);
 			var memory = $(this).html();
-		 $(this).html(memory);
-			});
-			});
+			$(this).html(memory);
+		});
+	});
 };
-	$('#videoModal').on('hidden.bs.modal', function (e) {
+
+$('#videoModal').on('hidden.bs.modal', function (e) {
 	$('#videoModal').find('iframe').attr('src', '');
 });
 
@@ -463,10 +464,10 @@ function hashUrlCommissionBoards() {
 						alink = tabContent + '[href="#' + setTargetParam + '"]';
 						break;
 						
-					case 'publications' :
+					/*case 'publications' :
 						tabContent = '#publication-tab ul.nav.nav-tabs a';
 						alink = tabContent + '[href="#' + setTargetParam + '"]';
-						break;		
+						break;*/		
 				}
 				
 				$(alink).tab('show');

@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+	// Commissioners
     $('.js-tab').click(function() {
         if($(this).hasClass('active')) {
             // do nothing
@@ -10,12 +11,7 @@ jQuery(document).ready(function($){
             getData(id);
         }
     });
-
-    $(document).on('click','.accordion-title', function () {
-        var id_1 = $(this).attr('data-id');
-        getPlanningData(id_1, $(this));
-    });
-
+    
     function getData(id) {
         if(id == 23) {	// id of area planning
             var url = siteurl+'/area-planning/';
@@ -38,6 +34,12 @@ jQuery(document).ready(function($){
         });
     }
 
+    // Commissioners : Area Planning Commissions
+    $(document).on('click','.accordion-title', function () {
+        var id_1 = $(this).attr('data-id');
+        getPlanningData(id_1, $(this));
+    });
+
     function getPlanningData(id, obj) {
         var url = siteurl+'/filter-planning-area/'+id;
         $.ajax({
@@ -59,32 +61,64 @@ jQuery(document).ready(function($){
     
     // Publications
     $('.js-publication-tab').click(function(){
-    	if ($(this).hasClass('active')){
+    	/* if ($(this).hasClass('active')){
     		// do nothing
     	}else{
     		var id = $(this).find('a').attr('id');
     		getPublicationData(id);
-    	}
+    	}*/
+    	
+    	var id = $(this).find('a').attr('id');
+        var taxId = getPublicationTaxId(id);
+        getPublicationData(taxId);
     });
     
     function getPublicationData(id) {
-    	if (id !=4){
-    		$('.js-tab4').addClass('hidden');
-    		var url = siteurl+'/filter-publications/'+id;
-    		$.ajax({
-    			'url': url,
-    			'beforeSend':function(){
-    				$('#js-content').html('');
-    			},
-    			'success' : function (response) {
-    				$(response).hide().appendTo('#js-content').fadeIn(100);
-    			},
-    			'error': function(){}
-    		});
-    	} else {
-    		$('#js-content').html('');
-    		$('.js-tab4').removeClass('hidden');
+        if (id != 'pub5') {
+            $('.js-tab4').addClass('hidden');
+            var url = siteurl + '/filter-publications/' + id;
+            $.ajax({
+                'url': url,
+                'beforeSend': function () {
+                    $('#js-content').html('');
+                },
+                'success': function (response) {
+                    $(response).hide().appendTo('#js-content').fadeIn(100);
+                },
+                'error': function () {}
+            });
+        } else {
+            $('#js-content').html('');
+            $('.js-tab4').removeClass('hidden');
+        }
+    }
+    
+    // has relation with taxonomy's vocabulary 'Publication Type'
+    // returns term id according to it's provided name. 
+    function getPublicationTaxId(id) {
+    	let tid = '';
+    	switch (id) {
+    		case 'annual' :
+    			tid = 203;
+    			break;
+    			
+    		case 'quarterly' :
+    			tid = 202;
+    			break;
+    			
+    		case 'housing' :
+    			tid = 218;
+    			break;
+    			
+    		case 'community' :
+    			tid = 219;
+    			break;
+    			
+			default:
+				tid = 'pub5';
+				break;
     	}
+    	return tid;
     }
     
     // Map Gallery
@@ -147,24 +181,30 @@ jQuery(document).ready(function($){
     
     // Activate tab using URL    
     function hasURLtoTab() {
+    	var splitPathname = window.location.pathname.split("/");
         var hashURL = window.location.hash;
-        var formatURL = hashURL.replace('%3F', '?');
-        
+        var formatURL = hashURL.replace('%3F', '?');        
+        var pathnameIndex2 = splitPathname[2];	// publications
+
         if (formatURL.indexOf('?') > -1) {
-        	var splitVar = formatURL.split('?');
-        	var urlParam = splitVar[0].substr(hashURL.indexOf('#') + 1);
+            var splitVar = formatURL.split('?');
+            var urlParam = splitVar[0].substr(hashURL.indexOf('#') + 1);
         } else {
-        	var urlParam = formatURL.substr(hashURL.indexOf('#') + 1);
+            var urlParam = formatURL.substr(hashURL.indexOf('#') + 1);
         }
         
-        // var uriSegment = urlParam = urlParam.replace('!#','');
-        
         if (formatURL.length) {
-        	jQuery('#' + urlParam).trigger('click');
-        	getData(urlParam);
+            if (pathnameIndex2 == 'publications') {            	
+            	var taxId = getPublicationTaxId(urlParam);
+            	
+            	jQuery('#' + urlParam).trigger('click');
+            	getPublicationData(taxId);
+            }else if(pathnameIndex2 == 'commissioners'){
+            	jQuery('#' + urlParam).trigger('click');
+                getData(urlParam);
+            }
         }
     }
     
     hasURLtoTab();
 });
-
