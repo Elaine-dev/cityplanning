@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.10.04
-Version: 4.4.73
+Update Date: 2019.10.08
+Version: 4.4.74
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3870,8 +3870,9 @@ table tr th a:focus {
   	.tab-first-item-padding {
 		padding-left: 15px !important;	
 	}
-	 
- 	#commissions-tab ul.nav.nav-tabs,   
+	
+	#publication-tab ul.nav.nav-tabs,
+ 	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
 		flex-direction: column;
@@ -3879,6 +3880,7 @@ table tr th a:focus {
 		display: flex;
 	}
 	
+	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
@@ -3889,16 +3891,27 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
+		width: 100%;
+	}
+	
+	/*********************************
+	 * Publications
+	 *
+	 *********************************/
+	#publication-tab ul.nav-tabs li #annual {
+		padding-left: 15px !important;
 	}
 	
 	/*************************************
@@ -3947,10 +3960,16 @@ table tr th a:focus {
  	#content-search input {
     	float: left;
 	    width: 100%;
-	}	
+	}
+	
+	#publication-tab #content-search {
+		padding: 15px;
+		float: left;
+		width: 100%;
+	}
 }
 
-/* Small devices (mobile phone < 576px) */
+/* Small devices (mobile phone < 575px) */
 @media screen and (min-width: 376px) and (max-width: 575px) {
   ul.pub-counters {
     width:100% !important;
@@ -4300,6 +4319,7 @@ table tr th a:focus {
 		padding-left: 15px !important;	
 	}
 	
+	#publication-tab ul.nav.nav-tabs,
 	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
@@ -4308,6 +4328,7 @@ table tr th a:focus {
 		display: flex;
 	}	
 
+	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
@@ -4318,16 +4339,25 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
+	}
+	
+	/*********************************
+	 * Publications
+	 *********************************/
+	#publication-tab ul.nav-tabs li #annual {
+		padding-left: 15px !important;
 	}
   	
   	/*************************************
@@ -4376,6 +4406,12 @@ table tr th a:focus {
  	#content-search input {
     	float: left;
 	    width: 100%;
+	}
+	
+	#publication-tab #content-search {
+		padding: 15px;
+		float: left;
+		width: 100%;
 	}
 }
 
@@ -4622,6 +4658,7 @@ table tr th a:focus {
 		padding-left: 15px !important;	
 	}
 
+	#publication-tab ul.nav.nav-tabs,
 	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
@@ -4630,6 +4667,7 @@ table tr th a:focus {
 		display: flex;
 	}	
 
+	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
@@ -4640,16 +4678,25 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
+	}
+	
+	/*********************************
+	 * Publications
+	 *********************************/
+	#publication-tab ul.nav-tabs li #annual {
+		padding-left: 15px !important;
 	}
 	
 	/*************************************
@@ -4957,6 +5004,7 @@ table tr th a:focus {
 		padding-left: 15px !important;	
 	}
 
+	#publication-tab ul.nav.nav-tabs,
 	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
@@ -4965,6 +5013,7 @@ table tr th a:focus {
 		display: flex;
 	}	
 
+	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
@@ -4975,16 +5024,25 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
+	}
+	
+	/*********************************
+	 * Publications
+	 *********************************/
+	#publication-tab ul.nav-tabs li #annual {
+		padding-left: 15px !important;
 	}
 	
 	/*************************************
@@ -5165,6 +5223,7 @@ table tr th a:focus {
 		padding-left: 15px !important;	
 	}
 
+	#publication-tab ul.nav.nav-tabs,
 	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
 	#d-tab ul.nav.nav-tabs {
@@ -5173,6 +5232,7 @@ table tr th a:focus {
 		display: flex;
 	}	
 
+	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
 	#d-tab .nav-tabs li a {
@@ -5183,16 +5243,25 @@ table tr th a:focus {
 		padding-top: 10px !important;
 	}
 	
+	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
 	
+	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
+	}
+	
+	/*********************************
+	 * Publications
+	 *********************************/
+	#publication-tab ul.nav-tabs li #annual {
+		padding-left: 15px !important;
 	}
 	
 	/*************************************
