@@ -2791,6 +2791,10 @@ ul#list-horizontal li {
   padding-top: 127px;
 }
 
+.overlays-field {
+	padding-top: 15px;
+}
+
 /** sub heading and title box **/
 .sub-heading {
   font-weight: bold;
