@@ -25,7 +25,6 @@ app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter
 			{id: 203, name: 'Annual Report'},
 			{id: 202, name: 'Quarterly Newsletter'},
 			{id: 218, name: 'Housing Progress Report'},
-			{id: 219, name: 'Community Corner'},
 			{id: 'all', name: 'All'},
 		],
 	};

@@ -35,7 +35,9 @@ function cpv3_preprocess_page(&$variables)
 
     // Publication/Newsletter
     $publicationTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('publication_type');
-    $variables['publication_categories'] = formatTabTitle($publicationTerms);
+    $pubCategories = formatTabTitle($publicationTerms);
+    array_pop($pubCategories);          // removed Community Corner from the list
+    $variables['publication_categories'] = $pubCategories;
 
     // Community Plan Update/Hollywood Tab Menu
     $hollywoodCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('hollywood_community_plan');
