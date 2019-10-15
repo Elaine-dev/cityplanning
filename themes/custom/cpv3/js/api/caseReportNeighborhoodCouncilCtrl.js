@@ -25,7 +25,7 @@ appHearing.controller('hearingsCtrl', ['$scope', '$sce', 'hearingsService', '$fi
 	$scope.apc = 'northvalley';
 	$scope.apcAreas = {
 		availableOptions: [
-		        {id: 'cpc', name: 'City Planning Commisson'},
+		        {id: 'cpc', name: 'City Planning Commission'},
 				{id: 'culturalheritagecommission', name: 'Cultural Heritage Commission'},
 				{id: 'northvalley', name: 'North Valley' },
 				{id: 'southvalley', name: 'South Valley'},

@@ -34,7 +34,7 @@ var appCommMeetings = angular.module('appCommMeetings', ['ngSanitize', 'ngRoute'
 	.controller('commissionCtrl', ['$scope', '$sce', 'commissionService', '$filter', '$timeout', '$location', function($scope, $sce, commissionService, $filter, $timeout, $location) {
 		$scope.apcAreas = {
 		   availableOptions: [ 
-		        {id: 'cpc', name: 'City Planning Commisson'},
+		        {id: 'cpc', name: 'City Planning Commission'},
 				{id: 'culturalheritagecommission', name: 'Cultural Heritage Commission'},
 				{id: 'northvalley', name: 'North Valley' },
 				{id: 'southvalley', name: 'South Valley'},
