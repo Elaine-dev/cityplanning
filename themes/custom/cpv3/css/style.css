@@ -3074,6 +3074,10 @@ ul#list-horizontal li {
   font-weight: bold;
 }
 
+#videos .slider-content{
+	margin-top: -59.5%;	
+}
+
 .front-image {
   margin-left: 25%;
 }
