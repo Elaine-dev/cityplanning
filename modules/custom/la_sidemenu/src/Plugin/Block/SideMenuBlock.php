@@ -95,7 +95,11 @@ class SideMenuBlock extends BlockBase {
                   $class = '';
               } else {
                   $system_path = '/'.$row->getUrl()->getInternalPath();
-                  $url = \Drupal::service('path.alias_manager')->getAliasByPath($system_path);
+                  
+                  // check if url has fragment (#) or not
+                  $fragment = !empty($row->getUrl()->getOption('fragment')) ? '#'.$row->getUrl()->getOption('fragment') : '';
+                  
+                  $url = \Drupal::service('path.alias_manager')->getAliasByPath($system_path).$fragment;
                   $target = '';
                   $full_url = $base_url.$url;
 
