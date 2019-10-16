@@ -1,4 +1,0 @@
-bulkdelete nodes:
-  title: 'Access bulk delete nodes'
-  description: 'Access bulkdelete.'
-  restrict access: true
