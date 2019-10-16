@@ -1,0 +1,10 @@
+name: Bulk Delete
+type: module
+description: 'Adds an administrative option to bulk delete nodes by content type using the batch API.'
+core: 8.x
+configure: bulkdelete.admin
+
+# Information added by Drupal.org packaging script on 2019-09-27
+version: '8.x-1.x-dev'
+project: 'bulkdelete'
+datestamp: 1569586390
