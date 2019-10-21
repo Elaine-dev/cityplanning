@@ -63,7 +63,10 @@ jQuery(document).ready(function(){
    isCheckboxSelected();
    
    /**Commissions, Boards and Hearings hash URL **/
-   hashUrlCommissionBoards(); 
+   hashUrlCommissionBoards();
+   
+   /** Add attribute 'onmouseover' = 'tooltip.pop(this, '#tip2');' in <img> tag on General Plan Element **/
+   addAttribToImgInGeneralPlanEle();
 });
 
 function homepageSlider() {
@@ -480,4 +483,8 @@ function hashUrlCommissionBoards() {
 			
 		}		
 	}
-};
+}
+
+function addAttribToImgInGeneralPlanEle() {
+	$('#img-popup').append('<img>').attr("onmouseover", "tooltip.pop(this, '#tip2');");
+}

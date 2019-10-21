@@ -222,3 +222,12 @@ lastest-cases:
   version:                                                                                                          1.0
   js:
     js/api/latestCaseReportCtrl.js:                                                                                 {}
+
+tool-tips:
+  version:                                                                                                          1.0
+  css:
+    base:
+      css/tooltips/tooltip.css:                                                                                     {}
+
+  js:
+    js/tooltips/tooltip.js:                                                                                         {}
