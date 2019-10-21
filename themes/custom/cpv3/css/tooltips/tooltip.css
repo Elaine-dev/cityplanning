@@ -69,7 +69,7 @@
 #mcTooltip img {border:0; vertical-align:middle;}
 
 /*The settings below should remain unchanged*/
-#mcTooltipWrapper {position:absolute; visibility:hidden; overflow:visible; z-index:9999999999; top:-2000px; left: 1260px !important;}
+#mcTooltipWrapper {position:absolute; visibility:hidden; overflow:visible; z-index:9999999999; top:-2000px;}
 #mcTooltip {float:left; border-style:solid; position:relative; overflow:hidden;}
 .mcTooltipInner {float:left; position:relative; width:auto; height:auto;}
 #mcttCo,  #mcttCo b{position:absolute; overflow:hidden;}
