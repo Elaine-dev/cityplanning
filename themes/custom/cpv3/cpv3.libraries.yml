@@ -72,6 +72,7 @@ calendar-detail:
     js/calendar/moment.min.js:                                                                                            {}
     js/calendar/fullcalendar.js:                                                                                          {}
     js/calendar/dcp-calendar-detail.js:                                                                                   {}
+    js/calendar/dcp-event-calendar-detail.js:                                                                             {}
 
 community-plan-areas:
   version:                                                                                                                VERSION

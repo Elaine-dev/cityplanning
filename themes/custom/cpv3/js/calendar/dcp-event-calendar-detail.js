@@ -1,9 +1,9 @@
 'use strict';
 
-var app = angular.module('appHPOZ', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
-	.service('hpozService', function($http){
+var app = angular.module('appEventDetail', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
+	.service('eventDetailService', function($http){
 		this.getRecord = function(q) {
-			return $http.get("https://planning.lacity.org/dcpapi/meetings/upcoming/calendar/"+q);
+			return $http.get("http://10.68.8.144/dcpapi/meetings/upcoming/calendar/"+q);
 		}
 });
 
@@ -17,8 +17,7 @@ app.config(function($interpolateProvider, $locationProvider) {
 	});
 });
 
-app.controller('HPOZCtrl', ['$scope', 'hpozService', '$timeout', '$location', function($scope, hpozService, $timeout, $location) {
-	// https://planning.lacity.org/dcpapi/meetings/upcoming/calendar/628ef369a44bd01945eb433ae373510f
+app.controller('EventDetailCtrl', ['$scope', 'eventDetailService', '$timeout', '$location', function($scope, hpozService, $timeout, $location) {
 	var query_string = $location.search();
 	var q = (query_string.q !== undefined) ? query_string.q : 'null';
 		
