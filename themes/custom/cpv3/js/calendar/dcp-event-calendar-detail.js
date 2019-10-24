@@ -3,7 +3,7 @@
 var app = angular.module('appEventDetail', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ui.bootstrap'])
 	.service('eventDetailService', function($http){
 		this.getRecord = function(q) {
-			return $http.get("http://10.68.8.144/dcpapi/meetings/upcoming/calendar/"+q);
+			return $http.get("https://planning.lacity.org/dcpapi/meetings/upcoming/calendar/"+q);
 		}
 });
 
