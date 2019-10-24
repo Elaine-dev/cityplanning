@@ -42,7 +42,7 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_email'] = array (
             '#type' => 'email',
             '#title' => t('Email'),
-            '#maxlength' => 30,
+            '#maxlength' => 200,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox')],
         );
