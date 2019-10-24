@@ -109,10 +109,4 @@
 {% endfor %}
 
 <!-- footer section -->
-{# attach library for General Plan Overview page #}
-{% set current_path = path("<current>")|split('/') %}
-{%  if 'general-plan-overview' in current_path.2 %}
-    {{ attach_library ('cpv3/tool-tips')  }}
-{% endif %}
-
 {% include directory ~ '/partials/footer.html.twig' %}
