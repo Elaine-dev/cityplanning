@@ -65,8 +65,10 @@ jQuery(document).ready(function(){
    /**Commissions, Boards and Hearings hash URL **/
    hashUrlCommissionBoards();
    
-   /** Add attribute 'onmouseover' = 'tooltip.pop(this, '#tip2');' in <img> tag on General Plan Element **/
-   addAttribToImgInGeneralPlanEle();
+   /** Add attribute 'onmouseover' = 'tooltip.pop(this, '#tip2');' in <img> tag on General Plan Element content.
+    *  	add following code in entry form (backend): <span class="dp-tooltip">&nbsp;</span> 
+    **/
+   appHtmlInGeneralPlanEle();
 });
 
 function homepageSlider() {
@@ -485,6 +487,15 @@ function hashUrlCommissionBoards() {
 	}
 }
 
-function addAttribToImgInGeneralPlanEle() {
-	$('#img-popup').append('<img>').attr("onmouseover", "tooltip.pop(this, '#tip2');");
+function appHtmlInGeneralPlanEle() {
+	var customHtml;
+	customHtml = '<img alt="Health" data-entity-type="file" src="/sites/default/files/icons/general_plan/Health.jpg" class="general-plan-elements-icons" style="cursor:pointer;" />';
+	customHtml += '<span class="dp-top">';
+	customHtml += '<h3>Health Element</h3>';
+	customHtml += '<p><a href="https://planning.lacity.org/odocument/7f065983-ff10-4e76-81e5-e166c9b78a9e/Plan_for_a_Healthy_Los_Angeles.pdf" target="_blank">Health ELement (General Plan)</a></p>';
+	customHtml += '<p><a href="https://planning.lacity.org/odocument/04a6a47b-9269-4773-a3ae-55f110b7d1e8/Health_Atlas.pdf" target="_blank">Health Atlas</a></p>';
+	customHtml += '<span id="pointer"></span>';
+	customHtml += '</span>';	
+	
+	$('.dp-tooltip').append(customHtml);
 }
