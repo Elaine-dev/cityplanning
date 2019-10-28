@@ -1,13 +1,13 @@
 {% for item in items %}
 
-	{% set title = item.content['#field_collection_item'].get('field_title').value   %}
-	{% set body = item.content['#field_collection_item'].get('field_body').value   %}
-	{% set item_id = item.content['#field_collection_item'].get('item_id').value   %}
-	{% set bg = item.content['#field_collection_item'].get('field_panel_heading_bgcolor').value %}	
+	{% set panel_title = (item.content['#field_collection_item'].get('field_title').value) ? item.content['#field_collection_item'].get('field_title').value : ''   %}
+	{% set body_section = (item.content['#field_collection_item'].get('field_body').value) ? item.content['#field_collection_item'].get('field_body').value : ''   %}
+	{% set item_id = (item.content['#field_collection_item'].get('item_id').value) ? item.content['#field_collection_item'].get('item_id').value : ''  %}
+	{% set bg = (item.content['#field_collection_item'].get('field_panel_heading_bgcolor').value) ? item.content['#field_collection_item'].get('field_panel_heading_bgcolor').value|join : '' %}	
 	
     {# set Panel Head: Background Color #}
     {% set panel_head_bgcolor = 'panelHeadingTitle-'~bg %}
-    {% set title_color = bg == "Default" ? "panel-title-default" : "panel-title-white" %}
+    {% set title_color = (bg == "Default") ? "panel-title-default" : "panel-title-white" %}
 	
 	<div class="panel-group" id="accordion">
 		<div class="panel panel-default collapse-list">
