@@ -1,5 +1,4 @@
 {% for item in items %}
-
 	{% set panel_title = (item.content['#field_collection_item'].get('field_title').value) ? item.content['#field_collection_item'].get('field_title').value : ''   %}
 	{% set body_section = (item.content['#field_collection_item'].get('field_body').value) ? item.content['#field_collection_item'].get('field_body').value : ''   %}
 	{% set item_id = (item.content['#field_collection_item'].get('item_id').value) ? item.content['#field_collection_item'].get('item_id').value : ''  %}
@@ -13,13 +12,13 @@
 		<div class="panel panel-default collapse-list">
 			<div class="panel-heading {{ panel_head_bgcolor }}">
 				<h6 class="panel-title">
-				    <a class="title no-uppercase {{ title_color }}" data-toggle="collapse" href="#collapse{{item_id}}">{{ title }}</a>
+				    <a class="title no-uppercase {{ title_color }}" data-toggle="collapse" href="#collapse{{item_id}}">{{ panel_title }}</a>
 				</h6>
 			</div>
 		        
 			<div id="collapse{{item_id}}" class="panel-collapse collapse">
 				<div class="list-group">
-				    {{ body|raw }}
+				    {{ body_section|raw }}
 				</div>
 			</div>
 		</div>
