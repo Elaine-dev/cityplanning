@@ -16,6 +16,17 @@ function cpv3_preprocess_html(&$variables)
 {
     global $base_url;
     $variables['base_url'] = $base_url;
+    
+    // add meta data
+    $meta_tag = [
+        '#tag' => 'meta',
+        '#attributes' => [
+            'name' => 'google-site-verification',
+            'content' => 'WWpNu-fliBUrDZdd8E71n-Mu7lfOgKXMoLzgt_O-nPE'
+        ],
+    ];
+    
+    $variables['page']['#attached']['html_head'][] =  [$meta_tag, 'google-site-verification'];
 }
 
 /**
