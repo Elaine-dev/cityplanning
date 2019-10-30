@@ -82,7 +82,7 @@ class SideMenuBlock extends BlockBase {
         $html = '<ul>';
         
         // hide/unhide Urban Design sub-menus
-        $urban_design_menu = ['Urban Design Program Overview','Urban Design Project Review','Urban Design Guidelines & Standards'];
+        $urban_design_menu = ['Urban Design Program Overview','Urban Design Project Review','Urban Design Guidelines & Resources'];
         $class_for_dev_services = '';
         
         if (!empty($list[0]['child'])) {
