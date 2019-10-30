@@ -34,7 +34,7 @@ class LaAppointmentForm extends FormBase {
       	$form['personal_info']['guest_name'] = array (
             '#type' => 'textfield',
             '#title' =>$this-> t('Name'),
-  	        '#maxlength' => 100,
+  	        //'#maxlength' => 100,
   	        '#required' => TRUE,
       	    '#attributes' => ['class' => array('app-textbox', 'form-group')],
         );
@@ -42,7 +42,7 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_email'] = array (
             '#type' => 'email',
             '#title' => t('Email'),
-            '#maxlength' => 200,
+            //'#maxlength' => 200,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox')],
         );
@@ -50,7 +50,7 @@ class LaAppointmentForm extends FormBase {
         $form['personal_info']['guest_phone'] = array (
             '#type' => 'tel',
             '#title' => $this->t('Phone number'),
-        	'#maxlength' => 14,
+        	//'#maxlength' => 14,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-phone')],
         );
@@ -76,7 +76,7 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['case_add_house_number'] = array (
             '#type' => 'textfield',
             '#title' => $this->t('House number'),
-            '#maxlength' => 20,
+            //'#maxlength' => 20,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment')],
         );
@@ -97,7 +97,7 @@ class LaAppointmentForm extends FormBase {
         $form['appointment_info']['case_add_street_name'] = array (
             '#type' => 'textfield',
             '#title' => $this->t('Street name <br>& Unit number'),
-            '#maxlength' => 100,
+            //'#maxlength' => 100,
             '#required' => TRUE,
             '#attributes' => ['class' => array('app-textbox-appointment-street')],
         );
