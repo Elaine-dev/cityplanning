@@ -129,6 +129,11 @@
 
                   <div id="collapse{[{ $index }]}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{[{ $index }]}">
                     <div class="panel-body">
+                      {# display info in 'Office of Zoning Administration' section #}
+                      <div class="row" ng-if="val.sectionName == 'Office of Zoning Administration'">
+                      	<div class="col-md-12"><p><strong>If you have zoning related questions, please visit one of our <a href="/contact/locations-hours">Development Services Centers</a>.</strong></p></div>
+                      </div>
+                      
                       <div class="row sd-search-result hr" ng-repeat="p in val.people">
                         <div class="col-md-5">
                           {[{ p.name }]}<br>
