@@ -7,12 +7,13 @@ var app = angular.module('appPubCounter', ['ngRoute', 'ngSanitize', 'ngAnimate',
         then(function(data){
 				 $scope.pubCounterMetroServices= response.data
 
-				 	 console.log(response.data)
-				 }).catch(function(response) {
+				 //	 console.log(response.data)
+       })//.catch(function(response) {
  // handle errors
-				 console.log("nope")
+				 //console.log("nope")
 
-     })}
+     //})
+   }
 
 
    }).service('pubCounterValleyService', function($http) {
@@ -22,12 +23,13 @@ var app = angular.module('appPubCounter', ['ngRoute', 'ngSanitize', 'ngAnimate',
 				then(function(data){
          $scope.pubCounterValleyServices = response.data
 
-				 	 console.log(response.data)
-				 }).catch(function(response) {
+				 	 //console.log(response.data)
+				 })//.catch(function(response) {
 // handle errors
-				 console.log("nope");
+			//	 console.log("nope");
 
-     })}
+     //})
+   }
    }).service('pubCounterWestlaService', function($http) {
 
   this.getRecord = function () {
@@ -35,12 +37,13 @@ var app = angular.module('appPubCounter', ['ngRoute', 'ngSanitize', 'ngAnimate',
         return $http.jsonp('https://www.ladbsservices2.lacity.org/LADBS_Services/LADBS/WaitTimes?id=3&json=true?callback', {jsonpCallbackParam: 'callback', 'Cache-Control':'no-cache'})
 				then(function(data){
 				 $scope.pubCounterWestlaServices = response.data
-				 	 console.log(response.data)
-				 }).catch(function(response) {
+				 	 //console.log(response.data)
+        })//.catch(function(response) {
  // handle errors
-				 console.log("nope");
+		//		 console.log("nope");
 
-     })}
+  //   })
+   }
    }).config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('{[{').endSymbol('}]}')
 
@@ -137,22 +140,18 @@ pubCounterMetroService.getRecord()
   .then(function(response) {
 
        $scope.pubCounterMetroServices = response.data
-     console.log('interval started')
-     console.log(response.data)
+     //console.log('interval started')
+     //console.log(response.data)
      //console.log(response.data)
 })
 } , 30000)
 
-}).catch(function(response) {
-  console.log('interval broke')
+})//.catch(function(response) {
+  //console.log('interval broke')
     //.then(function(response) {
     //   $scope.$watch(function () {
     //  $scope.pubCounterMetroServices = response.data
-
-
-
-
- })
+//})
 }])
 app.controller('pubCounterValleyCtrl', ['$http', '$scope', 'pubCounterValleyService', '$interval', function($http, $scope, pubCounterValleyService, $interval) {
 	pubCounterValleyService.getRecord()
@@ -164,8 +163,8 @@ app.controller('pubCounterValleyCtrl', ['$http', '$scope', 'pubCounterValleyServ
   .then(function(response) {
 
      $scope.pubCounterValleyServices = response.data
-   console.log('interval started')
-   console.log(response.data)
+  // console.log('interval started')
+  // console.log(response.data)
 
   })
 } , 30000)
@@ -183,8 +182,8 @@ app.controller('pubCounterWestlaCtrl', ['$http', '$scope', 'pubCounterWestlaServ
   .then(function(response) {
 
      $scope.pubCounterWestlaServices = response.data
-   console.log('interval started')
-   console.log(response.data)
+  // console.log('interval started')
+  // console.log(response.data)
 
   })
 } , 30000)
