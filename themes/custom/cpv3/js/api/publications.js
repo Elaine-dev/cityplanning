@@ -24,6 +24,7 @@ app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter
 		availableOptions: [
 			{id: 203, name: 'Annual Report'},
 			{id: 202, name: 'Quarterly Newsletter'},
+			{id: 410, name: 'Monthly Report'},
 			{id: 218, name: 'Housing Progress Report'},
 			{id: 'all', name: 'All'},
 		],
