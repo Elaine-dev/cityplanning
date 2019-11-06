@@ -114,6 +114,10 @@ jQuery(document).ready(function($){
     			tid = 219;
     			break;
     			
+    		case 'monthly' :
+    			tid = 410;
+    			break;
+    			
 			default:
 				tid = 'pub5';
 				break;
