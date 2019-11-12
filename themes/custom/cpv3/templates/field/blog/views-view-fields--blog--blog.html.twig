@@ -18,10 +18,13 @@
 		</div>
 		<div>{{ fields.body.content }}</div>
 		
+		{# hide div section if tag is empty #}
+		{% if (fields.field_tags.content|length) != 245 %}
 		<div class="date">
 			<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> 
 			{{ fields.field_tags.content }} 
 		</div>
+		{% endif %}
 	</div>
 	
 </div>
