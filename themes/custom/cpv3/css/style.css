@@ -2031,6 +2031,11 @@ ul > li > a, ol > li > a {
   transform: rotate(180deg);
 }
 
+.helpful-number{
+	float: right;
+	padding-left: 30px;
+}
+
 .hr {
   border-top: 1px dotted #d6d5d0;
   padding-top: 5px;
@@ -4045,6 +4050,12 @@ table tr th a:focus {
 		float: left;
 		width: 100%;
 	}
+	
+  	/*************************************
+	 * Staff Directory
+	 *************************************/
+ 	#helpful-numbers li{padding: 10px 0;}
+ 	.helpful-number {float: left; padding-left: 15px;}
 }
 
 /* Small devices (mobile phone < 575px) */
@@ -4491,6 +4502,12 @@ table tr th a:focus {
 		float: left;
 		width: 100%;
 	}
+	
+  	/*************************************
+	 * Staff Directory
+	 *************************************/
+ 	#helpful-numbers li{padding: 10px 0;}
+ 	.helpful-number {float: left; padding-left: 15px;}
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -4792,6 +4809,12 @@ table tr th a:focus {
  	 .tab-line {
 	 	border: 0;
 	 }
+	 
+   	/*************************************
+	 * Staff Directory
+	 *************************************/
+ 	#helpful-numbers li{padding: 10px 0;}
+ 	.helpful-number {float: left; padding-left: 15px;}
 }
 
 /* Small devices (tablet) */
