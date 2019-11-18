@@ -1,0 +1,10 @@
+{% set link = (content.field_icon_link[0]['#url'].isExternal()) ? content.field_icon_link[0]['#url'].getUri() :  path(content.field_icon_link[0]['#url'].routeName, content.field_icon_link[0]['#url'].routeParameters)  %}
+
+
+<div class="col-md-3 col-sm-4 col-xs-6">
+<div class="icon-container">
+          <a class="{{content.field_list_icons[0] }}" href="{{ link }}"role="img" aria-label="clickable icon"></a>
+          {{ content.field_icon_link.uri }}
+<div class="overlays-title">{{ content.field_title_of_icon }}</div>
+</div>
+</div>

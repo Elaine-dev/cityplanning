@@ -88,9 +88,9 @@ blockquote, q {
   quotes: none;
 }
 
-blockquote:before, 
+blockquote:before,
 blockquote:after,
-q:before, 
+q:before,
 q:after {
   content: '';
   content: none;
@@ -857,8 +857,8 @@ figcaption {
 }
 
 /** active link **/
-.navbar-default .navbar-nav>.open>a, 
-.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
 .navbar-default .navbar-nav>.open>a:hover {
   color: #3a5a99 !important;
   background-color: transparent;
@@ -1073,31 +1073,31 @@ _:-moz-tree-row(hover), .planning-tag {
   color: #333 !important;
 }
 
-.feature-section1 .form-control::-webkit-input-placeholder, 
+.feature-section1 .form-control::-webkit-input-placeholder,
 .stay-connected-newsletter .form-control::-webkit-input-placeholder {
   text-align: center;
 }
 
 /* WebKit, Blink, Edge */
-.feature-section1 .form-control:-moz-placeholder, 
+.feature-section1 .form-control:-moz-placeholder,
 .stay-connected-newsletter .form-control:-moz-placeholder {
   text-align: center;
 }
 
 /* Mozilla Firefox 4 to 18 */
-.feature-section1 .form-control::-moz-placeholder, 
+.feature-section1 .form-control::-moz-placeholder,
 .stay-connected-newsletter .form-control::-moz-placeholder {
   text-align: center;
 }
 
 /* Mozilla Firefox 19+ */
-.feature-section1 .form-control:-ms-input-placeholder, 
+.feature-section1 .form-control:-ms-input-placeholder,
 .stay-connected-newsletter .form-control:-ms-input-placeholder {
   text-align: center;
 }
 
 /* Internet Explorer 10-11 */
-.feature-section1 .form-control::-ms-input-placeholder, 
+.feature-section1 .form-control::-ms-input-placeholder,
 .stay-connected-newsletter .form-control::-ms-input-placeholder {
   text-align: center;
 }
@@ -1127,7 +1127,7 @@ _:-moz-tree-row(hover), .planning-tag {
   padding-top: 5px;
 }
 
-.ft-section .f-block:hover h5 a, 
+.ft-section .f-block:hover h5 a,
 .ft-section .f-block:hover p {
   color: #345fa6 !important;
 }
@@ -1341,7 +1341,7 @@ _:-moz-tree-row(hover), .planning-tag {
 	padding: 10px 0;
 	font-size: 18px;
 }
-.stay-connected-newsletter .newsletter-signup a, 
+.stay-connected-newsletter .newsletter-signup a,
 .stay-connected-newsletter .newsletter-signup a:hover{
 	text-decoration: none;
 }
@@ -1602,7 +1602,7 @@ article img {
 
 /* commissioners */
 .tab-first-item-padding {
-	padding-left: 0 !important;	
+	padding-left: 0 !important;
 }
 
 .tab-line {
@@ -1611,22 +1611,22 @@ article img {
 
 #commissions-tab .nav-tabs>li,
 #hollywood-tab .nav-tabs>li,
-#demographics-tab .nav-tabs>li, 
+#demographics-tab .nav-tabs>li,
 #publication-tab .nav-tabs>li,
 #commissions-meeting-tab .nav-tabs>li {
   margin-bottom: 0px;
 }
 
-#commissions-tab .nav-tabs>li>a, 
+#commissions-tab .nav-tabs>li>a,
 #hollywood-tab .nav-tabs>li>a,
-#demographics-tab .nav-tabs>li>a, 
+#demographics-tab .nav-tabs>li>a,
 #publication-tab .nav-tabs>li>a,
 #commissions-meeting-tab .nav-tabs>li>a {
   border: 0px;
   border-radius: 0px;
 }
 
-#commissions-tab .nav-tabs>li>, 
+#commissions-tab .nav-tabs>li>,
 #hollywood-tab .nav-tabs>li>,
 #demographics-tab .nav-tabs>li>,
 #publication-tab .nav-tabs>li>,
@@ -1634,26 +1634,26 @@ article img {
   border-right: #000 !important;
 }
 
-#commissions-tab .nav-tabs, 
-#hollywood-tab .nav-tabs, 
+#commissions-tab .nav-tabs,
+#hollywood-tab .nav-tabs,
 #demographics-tab .nav-tabs,
-#publication-tab .nav-tabs, 
+#publication-tab .nav-tabs,
 #commissions-meeting-tab .nav-tabs {
   padding-bottom: 10px;
 }
 
-#commissions-tab .nav>li>a, 
-#hollywood-tab .nav>li>a, 
+#commissions-tab .nav>li>a,
+#hollywood-tab .nav>li>a,
 #demographics-tab .nav>li>a,
-#publication-tab .nav>li>a, 
+#publication-tab .nav>li>a,
 #commissions-meeting-tab .nav>li>a {
   padding-top: 0 !important;
   padding-bottom: 0;
   z-index: 100;
 }
 
-.nav-tabs>li.active>a, 
-.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
   color: #f7962f !important;
   font-weight: bold;
@@ -1682,7 +1682,7 @@ ul > li > a, ol > li > a {
 */
 
 /* Remove top border from panel-body in Area Planning Commission */
-#apc .panel-group .panel-heading+.panel-collapse>.list-group, 
+#apc .panel-group .panel-heading+.panel-collapse>.list-group,
 .panel-group .panel-heading+.panel-collapse>.panel-body {
   border-top: 0;
 }
@@ -1840,8 +1840,8 @@ ul > li > a, ol > li > a {
   padding-bottom: 0px;
 }
 
-.navbar-default .navbar-nav>.active>a, 
-.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
   background-color: transparent;
 }
@@ -1931,9 +1931,9 @@ ul > li > a, ol > li > a {
   margin-top: 20px;
 }
 
-#search-directories .checkbox input[type=checkbox], 
-.checkbox-inline input[type=checkbox], 
-.radio input[type=radio], 
+#search-directories .checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
 .radio-inline input[type=radio] {
   position: inherit !important;
 }
@@ -2008,7 +2008,7 @@ ul > li > a, ol > li > a {
   -webkit-appearance: none !important;
 }
 
-#staff-directory .panel-title>a, 
+#staff-directory .panel-title>a,
 #staff-directory .panel-title>a:active {
   display: block;
   padding: 15px;
@@ -2055,14 +2055,14 @@ ul > li > a, ol > li > a {
   padding-left: 0;
 }
 
-.content-search input, 
+.content-search input,
 input::-webkit-input-placeholder {
   font-size: 14px !important;
   padding-left: 5px !important;
   height: 40px !important;
 }
 
-.content-search select::-webkit-input-placeholder, 
+.content-search select::-webkit-input-placeholder,
 .content-search select::input-placeholder {
   font-size: 14px !important;
   padding-left: 5px !important;
@@ -2285,12 +2285,12 @@ input::-webkit-input-placeholder {
   background-color: #eee;
 }
 
-#ci-apc, 
-#ci-hearing, 
-#ci-community-event, 
+#ci-apc,
+#ci-hearing,
+#ci-community-event,
 #ci-info-session,
-#ci-open-house, 
-#ci-planning-workshop, 
+#ci-open-house,
+#ci-planning-workshop,
 #ci-drop-in-hours,
 #ci-hpoz-event {
   cursor: pointer;
@@ -2586,7 +2586,7 @@ ul#list-horizontal li {
 
 /** Blog **/
 .blog-item {
-	/* padding-bottom: 1px; */	
+	/* padding-bottom: 1px; */
 	min-height: 180px;
 }
 
@@ -2650,11 +2650,11 @@ ul#list-horizontal li {
 }
 
 #blog-social-media button a {
-	color: #0077bd !important; 
+	color: #0077bd !important;
 }
 
 #blog-social-media button a:hover {
-	color: #00588c !important; 
+	color: #00588c !important;
 }
 
 /* left border in the image */
@@ -2804,9 +2804,52 @@ ul#list-horizontal li {
   background: #f5f5f5;
   border-color: #ddd;
 }
-
 #sidebar-menu-overlay {
   padding-top: 127px;
+}
+/***********************
+* Additional overlay styles for new content type
+************************
+/* All in one selector */
+.plan_text_img, .guidelines_img, .ordinance_img, .prc_img, .lamc_img, .maps_img, .survey_img, .hpoz a.plan_text_img {
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 94px; /* Height of new image */
+  /*padding-left: 80px; /* Equal to width of new image */
+  margin:0 auto;
+  width:80px;
+  margin-top: 15px;
+
+}
+a.plan_text_img, a.guidelines_img, a.ordinance_img {
+  top:0;
+  left:0;
+}
+
+.guidelines_img {
+  background: url(/sites/default/files/icons/overlays/i-design-standards.png) no-repeat;
+  }
+.plan_text_img {
+  background: url(/sites/default/files/icons/overlays/i-text.png) no-repeat;
+  }
+.ordinance_img {
+  background: url(/sites/default/files/icons/overlays/i-ordinances.png) no-repeat;
+    }
+.prc_img {
+  background: url(/sites/default/files/icons/overlays/i-PRC-DIV.png) no-repeat;
+    }
+.lamc_img {
+  background: url(/sites/default/files/icons/overlays/i-LAMC.png) no-repeat;
+        }
+.maps_img {
+  background: url(/sites/default/files/icons/overlays/i-Maps.png) no-repeat;
+     }
+.survey_img {
+    background: url(/sites/default/files/icons/overlays/i-surveys.png) no-repeat;
+}
+.hpoz a.plan_text_img {
+background: url(/sites/default/files/icons/overlays/i-text-hpoz.png) no-repeat;
 }
 
 .overlays-field {
@@ -3093,11 +3136,11 @@ ul#list-horizontal li {
 }
 
 #videos .slider-content{
-	margin-top: -59.5%;	
+	margin-top: -59.5%;
 }
 
 .gcpu-slider .slider-content {
-	margin-top: -58%;	
+	margin-top: -58%;
 }
 
 .front-image {
@@ -3133,7 +3176,7 @@ ul#list-horizontal li {
   margin-bottom: 2%;
 }
 
-#hollywood-tab ul.nav.nav-tabs>li.padding-top0.tab-line, 
+#hollywood-tab ul.nav.nav-tabs>li.padding-top0.tab-line,
 #hollywood-tab ul.nav.nav-tabs>li.padding-top0 {
   flex: 1;
   text-align: center;
@@ -3426,7 +3469,7 @@ span.icon {
 
  .webform-likert-table-wrapper {padding: 15px 0;}
 
- .webform-likert-table-wrapper tr.odd .form-item, 
+ .webform-likert-table-wrapper tr.odd .form-item,
  tr.even .form-item {
     margin-top: 0;
     margin-bottom: 0;
@@ -3447,7 +3490,7 @@ span.icon {
     width: 40%;
 }
 
-.webform-likert-table-wrapper table tr th, table tr th a, table tr th a:hover, 
+.webform-likert-table-wrapper table tr th, table tr th a, table tr th a:hover,
 table tr th a:focus {
     color: #fff;
     font-weight: bold;
@@ -3545,8 +3588,8 @@ table tr th a:focus {
 	padding: 5px;
 }
 
-.form-item input.error, 
-.form-item textarea.error, 
+.form-item input.error,
+.form-item textarea.error,
 .form-item select.error {
     border: 2px solid red;
 }
@@ -3628,7 +3671,7 @@ table tr th a:focus {
 	}
 	.navbar-nav {
 		margin: 0;
-	}	
+	}
 	.visible-sm .visible-xs .navbar-nav {
 		margin-right: 134px;
 	}
@@ -3657,22 +3700,22 @@ table tr th a:focus {
 	.goog-te-gadget-simple {
 		float: right;
 	}
-	
-	#main-container, 
+
+	#main-container,
 	#main-container-calendar {
 		margin: 20px 10px;
 	}
-	
-	.navbar-default .navbar-collapse, 
+
+	.navbar-default .navbar-collapse,
 	.navbar-default .navbar-form {
 		margin-top: 40px;
 	}
-	
-	.navbar-nav .open .dropdown-menu .dropdown-header, 
+
+	.navbar-nav .open .dropdown-menu .dropdown-header,
 	.navbar-nav .open .dropdown-menu>li>a {
 		padding-left: 15px;
 	}
-	
+
 	.mega-dropdown {
 		border-bottom: 1px solid #e5e5e5;
 	}
@@ -3698,11 +3741,11 @@ table tr th a:focus {
 	#search .searchbox-open input[type=search] {
 		background-color: #f3f2f2;
 	}
-	
+
 	#search .searchbox-icon {
 		background: #f3f2f2;
 	}
-	
+
 	.search-google-lan {
 		padding: 5px 5px 10px 5px;
 	}
@@ -3711,7 +3754,7 @@ table tr th a:focus {
 	#slider {
 		margin-top: 0 !important;
 	}
-	
+
 	.slide-text {
 		top: 0 !important;
 		left: -86px !important;
@@ -3719,15 +3762,15 @@ table tr th a:focus {
 		max-height: 220px !important;
 		max-width: 290px !important;
 	}
-	
+
 	#slider h2 {
 		font-size: 1.3em !important;
 	}
-	
+
 	#slider .item {
 		height: 365px !important;
 	}
-	
+
 	#slider .read-more a {
 		font-weight: bolder;
 		font-style: italic;
@@ -3739,15 +3782,15 @@ table tr th a:focus {
 		right: 0px;
 		top: 2px;
 	}
-	
+
 	#blank-wrapper {
 		left: 0;
 	}
-	
+
 	.planning-tag {
 		margin-left: 0;
 	}
-	
+
 	.color-box-txt {
 		padding-top: 10px;
 	}
@@ -3762,47 +3805,47 @@ table tr th a:focus {
 	.feature-section1 {
 		padding-left: 0px;
 	}
-	
+
 	#case-search-box {
 		padding-left: 15px !important;
 		padding-bottom: 15px;
 		left: 0;
 	}
-	
+
 	#zoning-search-box {
 		left: 0;
 		padding-bottom: 15px;
 	}
-	
+
 	#get-involved-box {
 		padding-right: 15px !important;
 		padding-bottom: 15px;
 	}
-	
+
 	#feature-block-2 {
 		margin-bottom: 20px;
 	}
-	
+
 	#feature-block-1 {
 		padding-top: 5px;
 	}
-	
+
 	#slider h2 {
 		padding-top: 0;
 		padding-bottom: 0;
 		font-size: 16px;
 	}
-	
+
 	.message-director-social-icons {
 		padding-top: 25px;
 		padding-left: 0;
 	}
-	
+
 	.filter-by, .date, .search {
 		padding-bottom: 15px !important;
 		padding-left: 0;
 	}
-	
+
 	.tog-nav {
 		padding-top: 0;
 		margin-top: -20;
@@ -3812,7 +3855,7 @@ table tr th a:focus {
 	.social-description {
 		font-size: 16px;
 	}
-	
+
 	.box {
 		margin: 15px !important;
 	}
@@ -3821,22 +3864,22 @@ table tr th a:focus {
 	.newsletter-signup {
 		width: 100%;
 	}
-	
+
 	#stay-connected-text {
 		padding: 15px;
 		margin-top: 10px;
 	}
-	
+
 	.stay-connected-social-icons {
 		padding: 20px 15px;
 	}
-	
+
 	.stay-connected-newsletter {
 		padding-left: 15px;
 		padding-right: 15px;
 		padding-top: 10px;
 	}
-	
+
 	#say-connected .btn-circle {
 		width: 53px;
 		height: 53px;
@@ -3844,33 +3887,33 @@ table tr th a:focus {
 	#say-connected .btn {
 		padding: 5px;
 	}
-	
+
 	#say-connected .fa-3x {
 		font-size: 2.5em;
 	}
-	
+
 	#signup-newsletter {
 		text-align: left;
 	}
-	
+
 	#footer-section .footer-sub-link {
 		padding-left: 0;
 	}
-	
+
 	#footer-contactus {
 		padding-left: 15px;
 		padding-top: 15px;
 	}
-	
+
 	#footer-toolkit {
 		padding: 15px;
 	}
-	
+
 	#footer-toolkit h6 {
 		padding-bottom: 15px;
 	}
-	
-	#footer-toolkit h6, 
+
+	#footer-toolkit h6,
 	#footer-toolkit p {
 		float: left !important;
 		clear: both;
@@ -3881,11 +3924,11 @@ table tr th a:focus {
 		text-align: left !important;
 		padding-right: 15px !important;
 	}
-	
+
 	#helpful-links {
 		padding: 0;
 	}
-	
+
 	.border-line-top {
 		padding: 0;
 	}
@@ -3913,11 +3956,11 @@ table tr th a:focus {
 		background-color: #F9F7F5;
 		padding-top: 10px !important;
 	}
-	
+
 	#hollywood-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
-	
+
 	.tab-line {
 		border-right: none;
 	}
@@ -3949,11 +3992,11 @@ table tr th a:focus {
 	/*********************************
 	 * Set navigation for tab: Commissions tab
 	 *
-	 *********************************/ 
+	 *********************************/
   	.tab-first-item-padding {
-		padding-left: 15px !important;	
+		padding-left: 15px !important;
 	}
-	
+
 	#publication-tab ul.nav.nav-tabs,
  	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
@@ -3962,7 +4005,7 @@ table tr th a:focus {
 		border-bottom: none;
 		display: flex;
 	}
-	
+
 	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
 	#commissions-meeting-tab .nav-tabs li a,
@@ -3973,14 +4016,14 @@ table tr th a:focus {
 		background-color: #F9F7F5;
 		padding-top: 10px !important;
 	}
-	
+
 	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
-	
+
 	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
@@ -3988,7 +4031,7 @@ table tr th a:focus {
 		margin: 15px 0;
 		width: 100%;
 	}
-	
+
 	/*********************************
 	 * Publications
 	 *
@@ -3996,42 +4039,42 @@ table tr th a:focus {
 	#publication-tab ul.nav-tabs li #annual {
 		padding-left: 15px !important;
 	}
-	
+
 	/*************************************
 	 * paragraph--image-over-image-with-button
 	 *
-	 *************************************/	
+	 *************************************/
 	.full-width-content .bg-wrapper {
 		height: 35% !important;
 	}
-	
+
 	.full-width-content .front-image{
 		margin-left: 2%;
 	}
-	
+
 	.full-width-content .front-image img {
 		width: 97% !important;
 	}
-	
+
 	/*************************************
-	 *	Blog 
+	 *	Blog
 	 *************************************/
 	.blog-item h5 {
 		margin-top: 25px;
 	}
-	
+
 	/*************************************
-	 * Video 
-	 *************************************/	
+	 * Video
+	 *************************************/
 	 .video-tab .video-title {
 	 	padding-left: 15px !important;
 	 }
-	 
+
 	 .video-item {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
 	 }
-	 
+
   	/*************************************
 	 * Content search in tabular data
 	 *************************************/
@@ -4039,18 +4082,18 @@ table tr th a:focus {
 	 	padding-top: 15px;
 	 	padding-left: 0;
  	}
-	 
+
  	#content-search input {
     	float: left;
 	    width: 100%;
 	}
-	
+
 	#publication-tab #content-search {
 		padding: 15px;
 		float: left;
 		width: 100%;
 	}
-	
+
   	/*************************************
 	 * Staff Directory
 	 *************************************/
@@ -4107,25 +4150,25 @@ table tr th a:focus {
     float: right;
   }
 
-  #main-container, 
+  #main-container,
   #main-container-calendar {
     margin: 20px 10px;
   }
 
-  .navbar-default .navbar-collapse, 
+  .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
   	margin-top: 40px;
   }
 
-  .navbar-nav .open .dropdown-menu .dropdown-header, 
+  .navbar-nav .open .dropdown-menu .dropdown-header,
   .navbar-nav .open .dropdown-menu>li>a {
     padding-left: 15px;
   }
-  
+
   .mega-dropdown {
   	border-bottom: 1px solid #e5e5e5;
   }
-  
+
   /*************************************************
    * Search
    *************************************************/
@@ -4136,24 +4179,24 @@ table tr th a:focus {
   .searchbar-mobile {
   	background-color: #f3f2f2;
   }
-  
+
   #search .searchbox-submit {
   	background: #f3f2f2;
   }
-  
+
   #search input[type=search] {
     background-color: #f3f2f2;
   }
-  
+
   /** search box when open **/
   #search .searchbox-open input[type=search] {
   	background-color: #f3f2f2;
   }
-  
+
   #search .searchbox-icon {
   	background: #f3f2f2;
   }
-  
+
   .search-google-lan {
   	padding: 5px 5px 10px 5px;
   }
@@ -4178,7 +4221,7 @@ table tr th a:focus {
   #slider .item {
     height: 365px !important;
   }
-  
+
   #slider .read-more a {
   	font-weight: bolder;
   	font-style: italic;
@@ -4298,11 +4341,11 @@ table tr th a:focus {
   #say-connected .fa-3x {
     font-size: 2.5em;
   }
-  
+
   .newsletter-signup {
 	width: 100%;
   }
-  
+
   #signup-newsletter {
   	text-align: left;
   }
@@ -4323,7 +4366,7 @@ table tr th a:focus {
   	padding-bottom: 15px;
   }
 
-  #footer-toolkit h6, 
+  #footer-toolkit h6,
   #footer-toolkit p {
     float: left !important;
     clear:both;
@@ -4405,9 +4448,9 @@ table tr th a:focus {
 	 *
 	 *********************************/
   	.tab-first-item-padding {
-		padding-left: 15px !important;	
+		padding-left: 15px !important;
 	}
-	
+
 	#publication-tab ul.nav.nav-tabs,
 	#commissions-tab ul.nav.nav-tabs,
 	#commissions-meeting-tab ul.nav.nav-tabs,
@@ -4415,7 +4458,7 @@ table tr th a:focus {
 		flex-direction: column;
 		border-bottom: none;
 		display: flex;
-	}	
+	}
 
 	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
@@ -4427,63 +4470,63 @@ table tr th a:focus {
 		background-color: #F9F7F5;
 		padding-top: 10px !important;
 	}
-	
+
 	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
-	
+
 	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
 	}
-	
+
 	/*********************************
 	 * Publications
 	 *********************************/
 	#publication-tab ul.nav-tabs li #annual {
 		padding-left: 15px !important;
 	}
-  	
+
   	/*************************************
 	 * paragraph--image-over-image-with-button
 	 *
-	 *************************************/	
+	 *************************************/
 	.full-width-content .bg-wrapper {
 		height: 35% !important;
 	}
-	
+
 	.full-width-content .front-image{
 		margin-left: 2%;
 	}
-	
+
 	.full-width-content .front-image img {
 		width: 97% !important;
 	}
-	
+
 	/*************************************
-	 *	Blog 
+	 *	Blog
 	 *************************************/
 	.blog-item h5 {
 		margin-top: 25px;
 	}
-	
+
 	/*************************************
-	 * Video 
-	 *************************************/	
+	 * Video
+	 *************************************/
 	 .video-tab .video-title {
 	 	padding-left: 15px !important;
 	 }
-	 
+
 	 .video-item {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
 	 }
-	 
+
   	/*************************************
 	 * Content search in tabular data
 	 *************************************/
@@ -4491,18 +4534,18 @@ table tr th a:focus {
 	 	padding-top: 15px;
 	 	padding-left: 0;
  	}
-	 
+
  	#content-search input {
     	float: left;
 	    width: 100%;
 	}
-	
+
 	#publication-tab #content-search {
 		padding: 15px;
 		float: left;
 		width: 100%;
 	}
-	
+
   	/*************************************
 	 * Staff Directory
 	 *************************************/
@@ -4514,17 +4557,17 @@ table tr th a:focus {
 	.sub-head {
 		width: 50%
 	}
-	
+
 	ul.pub-counters:nth-of-type(1) {
 		width: 43%;
 		margin-right: 22px;
 	}
-	
+
 	ul.pub-counters:nth-of-type(2) {
 		width: 43%;
 	}
-	
-	#main-container, 
+
+	#main-container,
 	#main-container-calendar {
 		margin-left: 15px;
 		margin-right: 15px;
@@ -4535,35 +4578,35 @@ table tr th a:focus {
 	.navbar {
 		padding-bottom: 20px;
 	}
-	
+
 	.navbar-nav {
 		margin: 0;
 	}
-	
+
 	.visible-sm .visible-xs .navbar-nav {
 		margin-right: 134px;
 	}
-	
+
 	.navbar-brand img {
 		height: 78px;
 	}
-	
+
 	.padding-top2em {
 		padding-top: 0 !important;
 	}
-	
+
 	.navbar-toggle {
 		display: block;
 		top: 20px;
 		bottom: 20px;
 	}
-	
+
 	.menu-region {
 		padding-bottom: 15px;
 		padding-left: 10px;
 		padding-right: 10px;
 	}
-	
+
 	.navbar-default .navbar-collapse,
 	.navbar-default .navbar-form {
 		margin-top: 40px;
@@ -4573,7 +4616,7 @@ table tr th a:focus {
 		{
 		padding-left: 15px;
 	}
-	
+
 	.mega-dropdown {
 		border-bottom: 1px solid #e5e5e5;
 	}
@@ -4585,15 +4628,15 @@ table tr th a:focus {
 		z-index: 9;
 		width: 100%;
 	}
-	
+
 	.searchbar-mobile {
 		background-color: #f3f2f2;
 	}
-	
+
 	#search .searchbox-submit {
 		background: #f3f2f2;
 	}
-	
+
 	#search input[type=search] {
 		background-color: #f3f2f2;
 	}
@@ -4602,11 +4645,11 @@ table tr th a:focus {
 	#search .searchbox-open input[type=search] {
 		background-color: #f3f2f2;
 	}
-	
+
 	#search .searchbox-icon {
 		background: #f3f2f2;
 	}
-	
+
 	.search-google-lan {
 		padding: 5px 5px 10px 5px;
 	}
@@ -4619,12 +4662,12 @@ table tr th a:focus {
 		padding-left: 15px !important;
 		padding-right: 15px !important;
 	}
-	
+
 	#slider h2 {
 		font-size: 1.3em;
 		padding-top: 5 !important;
 	}
-	
+
 	#slider .read-more a {
 		font-weight: bolder;
 		font-style: italic;
@@ -4635,7 +4678,7 @@ table tr th a:focus {
 		right: 0px;
 		top: 1px;
 	}
-	
+
 	#blank-wrapper {
 		left: 0;
 	}
@@ -4646,17 +4689,17 @@ table tr th a:focus {
 		padding-left: 15 !important;
 		padding-bottom: 15px;
 	}
-	
+
 	#zoning-search-box {
 		left: 0;
 		padding-bottom: 15px;
 	}
-	
+
 	#get-involved-box {
 		padding-right: 15px !important;
 		padding-bottom: 15px;
 	}
-	
+
 	.feature-section1 {
 		padding-left: 15px;
 		padding-right: 15px;
@@ -4666,7 +4709,7 @@ table tr th a:focus {
 	#stay-connected-text {
 		padding: 27px;
 	}
-	
+
 	.stay-connected-social-icons {
 		padding-top: 15px;
 		padding-bottom: 15px;
@@ -4674,11 +4717,11 @@ table tr th a:focus {
 	.stay-connected-newsletter {
 		padding: 30px 27px;
 	}
-	
+
 	.border-line-top {
 		padding: 15px;
 	}
-	
+
 	#footer-section .copy-right {
 		text-align: left;
 	}
@@ -4687,33 +4730,33 @@ table tr th a:focus {
 	.block-qoute-wrapper {
 		margin-bottom: 15px;
 	}
-	
+
 	.block-quote {
 		padding-left: 37px;
 		padding-right: 37px;
 	}
-	
+
 	#signup-newsletter {
 		text-align: left;
 	}
-	
+
 	#footer-section .footer-sub-link {
 		padding-left: 0;
 	}
-	
+
 	#footer-contactus {
 		padding-left: 15px;
 		padding-top: 15px;
 	}
-	
+
 	#footer-toolkit {
 		padding: 15px;
 	}
-	
+
 	#footer-toolkit h6 {
 		padding-bottom: 15px;
 	}
-	
+
 	#footer-toolkit h6,
 	#footer-toolkit p {
 		float: left !important;
@@ -4725,32 +4768,32 @@ table tr th a:focus {
 		text-align: left !important;
 		padding-right: 15px !important;
 	}
-	
+
 	#helpful-links {
 		padding: 0;
 	}
-	
+
 	.cal-indexes {
 		font-size: 14px;
 	}
-	
+
 	/*************************************
-	 *	Blog 
+	 *	Blog
 	 *************************************/
 	.blog-item h5 {
 		margin-top: 25px;
 	}
-	
+
 	.sharethis-inline-share-buttons {
 	    padding-right: 340px !important;
 	}
-	
+
   	/*********************************
 	 * Set navigation for tab: Commissions tab
 	 *
 	 *********************************/
   	.tab-first-item-padding {
-		padding-left: 15px !important;	
+		padding-left: 15px !important;
 	}
 
 	#publication-tab ul.nav.nav-tabs,
@@ -4760,7 +4803,7 @@ table tr th a:focus {
 		flex-direction: column;
 		border-bottom: none;
 		display: flex;
-	}	
+	}
 
 	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
@@ -4772,44 +4815,44 @@ table tr th a:focus {
 		background-color: #F9F7F5;
 		padding-top: 10px !important;
 	}
-	
+
 	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
-	
+
 	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
 	}
-	
+
 	/*********************************
 	 * Publications
 	 *********************************/
 	#publication-tab ul.nav-tabs li #annual {
 		padding-left: 15px !important;
 	}
-	
+
 	/*************************************
-	 * Video 
-	 *************************************/	
+	 * Video
+	 *************************************/
 	 .video-tab .video-title {
 	 	padding-left: 15px !important;
 	 }
-	 
+
 	 .video-item {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
 	 }
-	 
+
  	 .tab-line {
 	 	border: 0;
 	 }
-	 
+
    	/*************************************
 	 * Staff Directory
 	 *************************************/
@@ -4917,67 +4960,67 @@ table tr th a:focus {
   .nav.navbar-nav {
     padding-right: 30px !important;
   }
-  
+
   .mega-dropdown {
   	border-bottom: 1px solid #e5e5e5;
   }
-  
+
   .nav.navbar-nav {
 	padding-right: 30px !important;
   }
-	
+
   .mega-dropdown {
 	border-bottom: 1px solid #e5e5e5;
   }
-  
+
   /*************************************************
    * Search
    *************************************************/
   .searchbar-mobile {
   	background-color: #f3f2f2;
   }
-  
+
   #search .searchbox-submit {
   	background: #f3f2f2;
   }
-  
+
   #search input[type=search] {
     background-color: #f3f2f2;
   }
-  
-  /** search box when open **/  
+
+  /** search box when open **/
   #search {
   	padding-top: 0;
   }
-  
+
   #search .searchbox-open {
   	width: 96%;
   }
-  
+
   #search .searchbox-open input[type=search] {
-  	background-color: #f3f2f2;  	
+  	background-color: #f3f2f2;
   }
-  
+
   #search .searchbox-icon {
   	background: #f3f2f2;
   }
-  
+
   .search-google-lan {
   	padding: 5px 5px 10px 5px;
-  } 
-  
-  
+  }
+
+
   /** slider **/
   .slide-text {
     top: 0 !important;
     margin-left: 0 !important;
     padding-left: 25px !important;
   }
-  
+
   #slider .read-more a {
   	font-weight: bolder;
    	font-style: italic;
-  } 
+  }
 
   /** color box **/
   #map-promote-preserve-wrapper {
@@ -5029,12 +5072,12 @@ table tr th a:focus {
     padding-right: 15px;
     padding-top: 20px;
   }
-  
+
   #signup-newsletter {
   	text-align: left;
-  }  
+  }
 
-  #footer-toolkit h6, 
+  #footer-toolkit h6,
   #footer-toolkit p {
     float: left !important;
     clear: both;
@@ -5069,7 +5112,7 @@ table tr th a:focus {
   #helpful-links {
     padding-left: 18px;
   }
-  
+
   .cal-indexes {
 	font-size: 14px;
   }
@@ -5077,32 +5120,32 @@ table tr th a:focus {
   .front-image {
 	margin-left: 10% !important;
   }
-  
+
   .front-image a img {
 	width: 90% !important;
   }
-  
+
  /*************************************
-  *	Blog 
+  *	Blog
   *************************************/
   .blog-item h5 {
 	margin-top: 25px;
   }
-	
+
   .sharethis-inline-share-buttons {
   	padding-right: 390px !important;
   }
-  
+
   .sharethis-inline-share-buttons {
 	padding-right: 390px !important;
   }
-  
+
   	/*********************************
 	 * Set navigation for tab: Commissions tab
 	 *
 	 *********************************/
  	.tab-first-item-padding {
-		padding-left: 15px !important;	
+		padding-left: 15px !important;
 	}
 
 	#publication-tab ul.nav.nav-tabs,
@@ -5112,7 +5155,7 @@ table tr th a:focus {
 		flex-direction: column;
 		border-bottom: none;
 		display: flex;
-	}	
+	}
 
 	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
@@ -5124,40 +5167,40 @@ table tr th a:focus {
 		background-color: #F9F7F5;
 		padding-top: 10px !important;
 	}
-	
+
 	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
-	
+
 	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
 	}
-	
+
 	/*********************************
 	 * Publications
 	 *********************************/
 	#publication-tab ul.nav-tabs li #annual {
 		padding-left: 15px !important;
 	}
-	
+
 	/*************************************
-	 * Video 
-	 *************************************/	
+	 * Video
+	 *************************************/
 	 .video-tab .video-title {
 	 	padding-left: 15px !important;
 	 }
-	 
+
 	 .video-item {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
 	 }
-	 
+
 	/********************************************
 	 * Tool tips  : General Plan Elements
 	 ********************************************/
@@ -5320,14 +5363,14 @@ table tr th a:focus {
 	width: 100%;
 	margin: 0;
   }
-  
+
 	/*********************************
 	 * Set navigation for tab: Commissions tab
 	 *
 	 *********************************/
-	 
+
 	.tab-first-item-padding {
-		padding-left: 15px !important;	
+		padding-left: 15px !important;
 	}
 
 	#publication-tab ul.nav.nav-tabs,
@@ -5337,7 +5380,7 @@ table tr th a:focus {
 		flex-direction: column;
 		border-bottom: none;
 		display: flex;
-	}	
+	}
 
 	#publication-tab .nav-tabs li a,
 	#commissions-tab .nav-tabs li a,
@@ -5349,40 +5392,40 @@ table tr th a:focus {
 		background-color: #F9F7F5;
 		padding-top: 10px !important;
 	}
-	
+
 	#publication-tab .nav-tabs li a:hover,
 	#commissions-tab .nav-tabs li a:hover,
 	#commissions-meeting-tab .nav-tabs li a:hover,
 	#d-tab .nav-tabs li a:hover {
 		background-color: #f9f8ed !important;
 	}
-	
+
 	#publication-tab select,
 	#commissions-tab select,
 	#commissions-meeting-tab select,
 	#d-tab select {
 		margin: 15px 0;
 	}
-	
+
 	/*********************************
 	 * Publications
 	 *********************************/
 	#publication-tab ul.nav-tabs li #annual {
 		padding-left: 15px !important;
 	}
-	
+
 	/*************************************
-	 * Video 
-	 *************************************/	
+	 * Video
+	 *************************************/
 	 .video-tab .video-title {
 	 	padding-left: 15px !important;
 	 }
-	 
+
 	 .video-item {
 	 	padding-top: 15px;
 	 	padding-bottom: 15px;
 	 }
-	 
+
 	/********************************************
 	 * Tool tips  : General Plan Elements
 	 ********************************************/
@@ -5440,8 +5483,8 @@ table tr th a:focus {
     -moz-transform: rotateX(0deg);
     -o-transform: rotateX(0deg);
     -ms-transform: rotateX(0deg);
-    transform: rotateX(0deg);  
-      
+    transform: rotateX(0deg);
+
     visibility: visible;
   }
 
@@ -5651,7 +5694,7 @@ p.hours {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
 	#mcTooltipWrapper {left: 440px !important;}
-	#mcttCo { display: block !important; }	
+	#mcttCo { display: block !important; }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {

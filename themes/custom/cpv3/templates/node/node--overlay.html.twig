@@ -1,0 +1,128 @@
+{% set cat_name = content.field_sub_title.0['#context'].value %}
+<div class="row">
+	<div class="col-md-12"><h1>{{ label }} {{ content.field_sub_title.0['#context'].value }}</h1></div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		{% if content.field_project_planner_contact %}
+			<strong class="overlays-field-title">Staff Contact: </strong><br>
+			{{ content.field_project_planner_contact }}
+		{% endif %}
+	</div>
+	<div class="col-md-6">
+		{% if content.field_community_plan_area_s_ %}
+			<strong class="overlays-field-title">Community Plan Area(s):</strong><br>
+			{{ content.field_community_plan_area_s_ }}
+		{% endif %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		{% if content.field_council_district_s_ %}
+			<strong class="overlays-field-title">Council District(s):</strong><br>
+			{{ content.field_council_district_s_ }}
+		{% endif %}
+	</div>
+	<div class="col-md-6">
+		{% if content.field_area_planning_commission_s %}
+			<strong class="overlays-field-title">Area Planning Commission(s):</strong><br>
+			{{ content.field_area_planning_commission_s }}
+		{% endif %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		{% set strlen = content.field_design_review_board_drb_ | length  %}
+		{% if strlen > 3  %}
+			{# Display field name (board title) according to the different criteria #}
+
+			{% set board_title = '' %}
+
+			{% if cat_name == 'Historic Preservation Overlay Zone' %}
+				{% set board_title = 'Historic Preservation Overlay Zone Board' %}
+			{% elseif node.label | lower == 'ventura/cahuenga boulevard corridor' %}
+				{% set board_title = 'Plan Review Board (PRB)' %}
+			{% else %}
+				{% set board_title = 'Design Review Board (DRB)' %}
+			{% endif %}
+
+			<strong class="overlays-field-title">{{ board_title }}: </strong><br>
+			{{ content.field_design_review_board_drb_ }}
+		{% endif %}
+	</div>
+</div>
+
+<div class="col-md-12">
+	{{ content.body|raw  }}
+</div>
+
+
+			<div class="row">
+			<div class="col-md-12">
+          {# icons for regulations section #}
+			{% if content.field_regulations.0 is not empty %}
+	        <h3>{{content.field_document_heading_regs}}</h3>
+          {% if node.field_type.target_id == '211' %}
+            {# if content.field_type[0]['#title'] == 'Historic Preservation Overlay Zones (HPOZs)' #}
+             {% for key, item in content.field_regulations if key|first != '#' %}
+              <div{{ attributes.addClass('hpoz') }}>{{ item }}</div>
+             {% endfor %}
+             {% else %}
+             {{ content.field_regulations }}
+            {% endif %}
+		  {% endif %}
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-12">
+          {# icons for Maps section #}
+      {% if content.field_maps.0 is not empty %}
+      		<h3>{{content.field_document_heading_maps}}</h3>
+          {% if node.field_type.target_id == '211' %}
+             {% for key, item in content.field_maps if key|first != '#' %}
+              <div{{ attributes.addClass('hpoz') }}>{{ item }}</div>
+             {% endfor %}
+             {% else %}
+          		{{ content.field_maps }}
+            {% endif %}
+      {% endif %}
+      </div>
+    </div>
+		<div class="row">
+		<div class="col-md-12">
+				{# icons for regulations section #}
+		{% if content.field_other.0 is not empty %}
+				<h3>{{content.field_document_heading_other}}</h3>
+				{% if node.field_type.target_id == '211' %}
+					{# if content.field_type[0]['#title'] == 'Historic Preservation Overlay Zones (HPOZs)' #}
+					 {% for key, item in content.field_other if key|first != '#' %}
+						<div{{ attributes.addClass('hpoz') }}>{{ item }}</div>
+					 {% endfor %}
+					 {% else %}
+					 {{ content.field_other }}
+					{% endif %}
+		{% endif %}
+		</div>
+	</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+
+<h3>Application Information</h3>
+<br />
+<span class="overlay_content_appinfo_a"> {{ content.field_app_link }}</span>
+
+<a class="overlay_content_appinfo_a" href="/development-services/forms" target="_blank">For all Filing Forms, click here</a></div>
+</div>
+<div class="row">
+	<div class="col-md-12 paddingtop35">
+		<p><a href="https://cityclerk.lacity.org/lacityclerkconnect/" rel="nofollow" target="_blank">
+			<img src="{{ theme_base_path }}/images/overlays/icons/council-file-search.png" class="img-responsive" alt="council file search" />
+		</a>
+	</p>
+		</div>
+		</div>
