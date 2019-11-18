@@ -2851,9 +2851,21 @@ a.plan_text_img, a.guidelines_img, a.ordinance_img {
 .hpoz a.plan_text_img {
 background: url(/sites/default/files/icons/overlays/i-text-hpoz.png) no-repeat;
 }
-
-.overlays-field {
+.overlays-title {
+    font-weight: 600;
+    text-align: center;
+    margin: 10px auto;
+    vertical-align: middle;
+    width:100%;
+    height: 30px;
+    line-height:1.2;
+}
+  .overlays-field {
 	padding-top: 15px;
+}
+.icon-contents {
+    width: 113%;
+    margin-left: -20px;
 }
 
 /** sub heading and title box **/
