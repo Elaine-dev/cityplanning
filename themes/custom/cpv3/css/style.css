@@ -2790,7 +2790,7 @@ ul#list-horizontal li {
   padding-top: 25px;
 }
 
-.overlay_content_appinfo_a {
+.overlay_content_appinfo_a a, .overlay_content_appinfo_a {
   color: #337ab7 !important;
   font-size: 18px;
   font-weight: bold;
