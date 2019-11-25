@@ -43,8 +43,11 @@
                 			<li role="presentation" class="padding-top0 tab-line">
         				 		<a href="#boards" aria-controls="2" role="tab" data-toggle="tab" data-value="Boards">Boards</a>
                             </li>
-                			<li role="presentation" class="padding-top0">
+                			<li role="presentation" class="padding-top0 tab-line">
         				 		<a href="#hearings" aria-controls="3" role="tab" data-toggle="tab" data-value="Hearings">Hearings</a>
+                            </li>
+                            <li role="presentation" class="padding-top0">
+        				 		<a href="#sunshine" aria-controls="4" role="tab" data-toggle="tab" data-value="Sunshine">Sunshine Canyon</a>
                             </li>
                 		</ul>
                 		
@@ -341,7 +344,22 @@
                                   </div>
                                 </div>  
                                                 		
-                    		</div> {# //end hearings tab #}                		
+                    		</div> {# //end hearings tab #}
+                    		
+                    		<!-- Sunshine -->            		
+                    		<div class="tab-pane fade in" id="sunshine">                    			
+                    			<div class="row">
+                                  <div class="col-md-12 padding-left0 padding-right0">
+                                  
+                         			{% if sunshine.0.body|length > 0 %}
+                                      	{% for parag_id in sunshine.0.body %}                                  		
+                                      	    {{ bamboo_render_entity('paragraph', parag_id.get('target_id').value) }}                                  	
+                                      	{% endfor %}
+                                  	{% endif %}
+                                    
+                                  </div>
+                                </div>          		
+                    		</div> {# //end Sunshine tab #} 
                 		
                 		</div> <!-- //end .tab-content -->
                 		

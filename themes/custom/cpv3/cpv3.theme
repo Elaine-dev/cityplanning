@@ -137,6 +137,10 @@ function cpv3_preprocess_page(&$variables)
 
     // Map Gallery
     mapGallery($variables);
+    
+    // Sunshine Canyon Landfill.
+    // Display content on Commissions, Boards, and Hearings page.
+    getSunshineCanyonLandfillDetail($variables);
 }
 
 /**
@@ -441,4 +445,20 @@ function formatTabMenuTitleForCP($terms)
     endforeach;
 
     return $term_data;
+}
+
+/**
+ * Get Sunshine Canyon Landfill
+ * @param array $variables
+ */
+function getSunshineCanyonLandfillDetail(&$variables) {
+    $nid = 132227;          // nid of Sunshine Canyon Landfill. Note: don't delete the node
+    $getNodeDetail = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+    
+    $nodeDetail = [
+        'title' => $getNodeDetail->get('title')->value,
+        'body' => $getNodeDetail->get('field_content_section')
+    ];
+    
+    $variables['sunshine'][] = $nodeDetail;
 }
