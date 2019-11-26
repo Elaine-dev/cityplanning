@@ -23,9 +23,9 @@ app.controller('PublicationCtrl', ['$scope', 'publicationService', 'filterFilter
 	$scope.documentType = {
 		availableOptions: [
 			{id: 203, name: 'Annual Report'},
-			{id: 202, name: 'Quarterly Newsletter'},
-			{id: 410, name: 'Monthly Report'},
-			{id: 218, name: 'Housing Progress Report'},
+			{id: 202, name: 'Quarterly Report'},
+			{id: 410, name: 'Monthly Newsletter'},
+			/*{id: 218, name: 'Housing Progress Report'},*/
 			{id: 'all', name: 'All'},
 		],
 	};
