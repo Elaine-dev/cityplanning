@@ -446,7 +446,19 @@ q:after {
   border-color: #51acc1;
   font-size: 18px !important;
 }
-
+/* Photo Gallery magnific popup */
+.mfp-field.mfp-all-items .field__item {
+    float: left;
+    padding: 7px;
+}
+#accordion.panel-group .field__items {
+    overflow: auto;
+	    width: 100%;
+}
+img.mfp-thumbnail {
+    height: 100px;
+    width: auto;
+  }
 .CPU-Venice {
   color: #fff;
   background-color: #b5d7c9;

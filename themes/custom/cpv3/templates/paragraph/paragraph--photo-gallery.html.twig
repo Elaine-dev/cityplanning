@@ -1,0 +1,22 @@
+
+{% set bg = (content.field_photo_gallery_bg_color.0['#markup'])|join('') %}
+
+{# set Panel Head: Background Color #}
+{% set panel_head_bgcolor = 'panelHeadingTitle-'~bg %}
+{% set title_color = (bg == "Default") ? "panel-title-default" : "panel-title-white" %}
+
+<div class="panel-group" id="accordion" {{attributes}}>
+<div class="panel panel-default collapse-list">
+<div class="panel-heading {{ panel_head_bgcolor }}">
+<h6 class="panel-title">
+<a class="title no-uppercase {{ title_color }}" data-toggle="collapse" href="#collapse-{{ content.field_title['#object'].id.value }}">{{content.field_title}}</a></h6>
+</div>
+<div id="collapse-{{ content.field_title['#object'].id.value }}" class="panel-collapse collapse">
+<div class="list-group">
+  <div class="field__items">
+{{ content|without ('field_title', 'field_photo_gallery_bg_color') }}
+</div>
+</div>
+</div>
+</div>
+</div>

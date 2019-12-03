@@ -30,6 +30,9 @@
     {% if 'venice-news-item' in url|render|render %}
 
     {{ node.body.value|raw }}
+    {% for parag_id in node.field_photo_gallery_para.value %}
+        {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+    {% endfor %}
       {% set full_width_data = [] %}
       {% set small_width_data = [] %}
       {% set break = true %}
@@ -153,7 +156,12 @@ data['#paragraph'].hasField('field_fullwidth_body')
 {% if node.field_caption_subhead.value %}
 <span class="news-text">{{ node.field_caption_subhead.value|raw}}</span><br /><br />
 {% endif %}
+
 {{ node.body.value|raw }}
+{% for parag_id in node.field_photo_gallery_para.value %}
+    {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+{% endfor %}
+
 </div>
 </div>
 </div>
