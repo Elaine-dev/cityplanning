@@ -109,9 +109,18 @@
 	</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-md-12">
 
+	{% if node.field_type.target_id == '349' %}
+			<div class="row">
+				<div class="col-md-12 paddingtop35">
+					<p><a href="https://cityclerk.lacity.org/lacityclerkconnect/" rel="nofollow" target="_blank">
+						<img src="{{ theme_base_path }}/images/overlays/icons/council-file-search.png" class="img-responsive" alt="council file search" />
+					</a>
+		</div>
+	</div>
+	{% else %}
+	<div class="row">
+		<div class="col-md-12">
 <h3>Application Information</h3>
 <br />
 <span class="overlay_content_appinfo_a"> {{ content.field_app_link }}</span>
@@ -124,5 +133,6 @@
 			<img src="{{ theme_base_path }}/images/overlays/icons/council-file-search.png" class="img-responsive" alt="council file search" />
 		</a>
 	</p>
+		{% endif %}
 		</div>
 		</div>
