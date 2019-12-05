@@ -115,7 +115,7 @@ function cpv3_preprocess_page(&$variables)
 
         // load nodes according to the field type
         $query = \Drupal::entityQuery('node')
-                 ->condition('type', 'overlays')
+                 ->condition('type', 'overlay')
                  ->condition('field_type', $tid)
                  ->condition('status', 1)
                  ->sort('title', 'asc');
