@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.11.12
-Version: 4.4.79
+Update Date: 2019.12.06
+Version: 4.4.80
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3677,6 +3677,11 @@ table tr th a:focus {
 	.dp-tooltip .dp-top {left: 0;}
 	.dp-tooltip .dp-top #pointer {left: 70%;}
 }
+
+/*** Dynamic form : inline screening form ***/
+.ladcp-contact-form .radio-inline input[type="checkbox"] {height: 13px !important;}
+.ladcp-contact-form .radio-inline input[type=radio] {height: 13px !important;}
+
 
 /***************** Media Query *****************/
 .show-on-landscape {
