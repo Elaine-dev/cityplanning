@@ -2839,7 +2839,7 @@ a.plan_text_img, a.guidelines_img, a.ordinance_img {
   left:0;
 }
 .icon-container {
-    padding-bottom: 10px;
+    height: 25%;
 }
 .guidelines_img {
   background: url(/sites/default/files/icons/overlays/i-design-standards.png) no-repeat;
