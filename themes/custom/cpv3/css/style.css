@@ -3,7 +3,7 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.12.06
+Update Date: 2019.12.10
 Version: 4.4.80
 *********************/
 body {
@@ -2838,7 +2838,9 @@ a.plan_text_img, a.guidelines_img, a.ordinance_img {
   top:0;
   left:0;
 }
-
+.icon-container {
+    height: 25%;
+}
 .guidelines_img {
   background: url(/sites/default/files/icons/overlays/i-design-standards.png) no-repeat;
   }
