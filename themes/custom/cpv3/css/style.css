@@ -2832,14 +2832,39 @@ ul#list-horizontal li {
   margin:0 auto;
   width:80px;
   margin-top: 15px;
+}
+/****************************************
+Bootstrap hack clearing uneven height columns, see:
+http://www.bluthemes.com/blog/3/clearing-bootstrap-3-columns
 
+****************************************/
+.col-md-3.clear-hack:nth-of-type(4n+1) {
+    clear: left;
+}
+h3 > .col-md-3.col-sm-4.col-xs-6.clear-hack {
+    padding-left: 0;
+}
+/* Portrait and Landscape */
+@media (min-width: 768px)
+  and (max-width: 1024px) {
+  .col-sm-4.clear-hack:nth-of-type(3n+1) {
+      clear:left;
+    }
+  .col-md-3.clear-hack:nth-of-type(4n+1), .col-xs-6.clear-hack:nth-of-type(2n+1) {
+      clear: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .col-sm-4.clear-hack:nth-of-type(3n+1) {
+    clear: none;
+}
+  .col-xs-6.clear-hack:nth-of-type(2n+1) {
+    clear: left;
+  }
 }
 a.plan_text_img, a.guidelines_img, a.ordinance_img {
   top:0;
   left:0;
-}
-.icon-container {
-    height: 25%;
 }
 .guidelines_img {
   background: url(/sites/default/files/icons/overlays/i-design-standards.png) no-repeat;
@@ -2862,7 +2887,7 @@ a.plan_text_img, a.guidelines_img, a.ordinance_img {
 .survey_img {
     background: url(/sites/default/files/icons/overlays/i-surveys.png) no-repeat;
 }
-.hpoz a.plan_text_img {
+.hpoz .plan_text_img {
 background: url(/sites/default/files/icons/overlays/i-text-hpoz.png) no-repeat;
 }
 .overlays-title {
@@ -2873,6 +2898,8 @@ background: url(/sites/default/files/icons/overlays/i-text-hpoz.png) no-repeat;
     width:100%;
     padding-bottom: 12px;
     line-height:1.2;
+    margin-top: 10px;
+    margin-left: -1px;
 }
   .overlays-field {
 	padding-top: 15px;

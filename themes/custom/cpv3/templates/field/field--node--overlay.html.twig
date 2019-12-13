@@ -1,3 +1,8 @@
-    {% for item in items %}
-      <div>{{ item.content }}</div>
-    {% endfor %}
+{% for item in items %}
+{% if field_name == 'field_app_link' %}
+<div class="col-md-12 padding-left0">{{ item.content}} </div>
+{% else %}
+<div class="col-md-3 col-sm-4 col-xs-6 clear-hack">
+{{ item.content }}</div>
+{% endif %}
+{% endfor %}
