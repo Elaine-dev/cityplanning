@@ -2838,10 +2838,11 @@ Bootstrap hack clearing uneven height columns, see:
 http://www.bluthemes.com/blog/3/clearing-bootstrap-3-columns
 
 ****************************************/
-.page-node-type-overlay .col-md-12, .page-node-type-overlay .col-sm-12 {
+.page-node-type-overlay .col-md-12 h3 {
     float: left;
     clear: left;
 }
+
 .col-md-3.clear-hack:nth-of-type(4n+1) {
     clear: left;
 }
@@ -2857,12 +2858,20 @@ h3 > .col-md-3.col-sm-4.col-xs-6.clear-hack {
   .col-md-3.clear-hack:nth-of-type(4n+1), .col-xs-6.clear-hack:nth-of-type(2n+1) {
       clear: none;
   }
+  .page-node-type-overlay .col-md-6 {
+    float: left;
+    clear: left;
+  }
 }
 @media only screen and (max-width: 767px) {
   .col-sm-4.clear-hack:nth-of-type(3n+1) {
     clear: none;
 }
   .col-xs-6.clear-hack:nth-of-type(2n+1) {
+    clear: left;
+  }
+  .page-node-type-overlay .col-md-6 {
+    float: left;
     clear: left;
   }
 }
