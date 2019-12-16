@@ -54,61 +54,52 @@
 		{% endif %}
 	</div>
 </div>
-
+<div class="row">
 <div class="col-md-12">
 	{{ content.body|raw  }}
 </div>
-
-
-			<div class="row">
-			<div class="col-md-12">
+</div>
           {# icons for regulations section #}
 			{% if content.field_regulations.0 is not empty %}
-	        <h3>{{content.field_document_heading_regs}}</h3>
+			<div class="row">
+				<div class="col-md-12">
+	        <h3>{{node.field_document_heading_regs.value}}</h3>
+				</div></div>
           {% if node.field_type.target_id == '211' %}
-            {# if content.field_type[0]['#title'] == 'Historic Preservation Overlay Zones (HPOZs)' #}
-             {% for key, item in content.field_regulations if key|first != '#' %}
-              <div{{ attributes.addClass('hpoz') }}>{{ item }}</div>
-             {% endfor %}
-             {% else %}
-             {{ content.field_regulations }}
+        	<div class="hpoz"{{attributes.setAttribute('class','hpoz') }}>{{ content.field_regulations }}
+						      {% else %}
+									<div{{attributes.setAttribute('class','row') }}> {{ content.field_regulations }}
+									</div>
             {% endif %}
 		  {% endif %}
-      </div>
-    </div>
-      <div class="row">
-      <div class="col-md-12">
           {# icons for Maps section #}
       {% if content.field_maps.0 is not empty %}
-      		<h3>{{content.field_document_heading_maps}}</h3>
+			<div class="row">
+				<div class="col-md-12">
+      		<h3>{{node.field_document_heading_maps.value}}</h3>
+				</div></div>
           {% if node.field_type.target_id == '211' %}
-             {% for key, item in content.field_maps if key|first != '#' %}
-              <div{{ attributes.addClass('hpoz') }}>{{ item }}</div>
-             {% endfor %}
+          	<div class="hpoz"{{attributes.setAttribute('class','hpoz') }}>{{ content.field_maps}}
+</div>
              {% else %}
-          		{{ content.field_maps }}
+						 <div{{attributes.setAttribute('class','row') }}> {{ content.field_maps }}
+			 			</div>
             {% endif %}
       {% endif %}
-      </div>
-    </div>
-		<div class="row">
-		<div class="col-md-12">
-				{# icons for regulations section #}
+				{# icons for Other section #}
 		{% if content.field_other.0 is not empty %}
-				<h3>{{content.field_document_heading_other}}</h3>
-				{% if node.field_type.target_id == '211' %}
-					{# if content.field_type[0]['#title'] == 'Historic Preservation Overlay Zones (HPOZs)' #}
-					 {% for key, item in content.field_other if key|first != '#' %}
-						<div{{ attributes.addClass('hpoz') }}>{{ item }}</div>
-					 {% endfor %}
+		<div class="row">
+			<div class="col-md-12">
+				<h3>{{node.field_document_heading_other.value}}</h3>
+			</div></div>
+				{% if node.field_type.target_id == '211'%}
+							<div class="hpoz"{{attributes.setAttribute('class','hpoz') }}>{{  content.field_other }}
+</div>
 					 {% else %}
-					 {{ content.field_other }}
+<div{{attributes.setAttribute('class','row') }}> {{ content.field_other }}
+</div>
 					{% endif %}
 		{% endif %}
-		</div>
-	</div>
-	</div>
-</div>
 
 	{% if node.field_type.target_id == '349' %}
 			<div class="row">
@@ -122,9 +113,11 @@
 	<div class="row">
 		<div class="col-md-12">
 <h3>Application Information</h3>
-<br />
 <span class="overlay_content_appinfo_a"> {{ content.field_app_link }}</span>
-
+</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
 <a class="overlay_content_appinfo_a" href="/development-services/forms" target="_blank">For all Filing Forms, click here</a></div>
 </div>
 <div class="row">
@@ -133,6 +126,33 @@
 			<img src="{{ theme_base_path }}/images/overlays/icons/council-file-search.png" class="img-responsive" alt="council file search" />
 		</a>
 	</p>
+</div>
 		{% endif %}
-		</div>
-		</div>
+			{% if node.field_type.target_id == '211' %}
+			<!-- Sidebar section -->
+		</div></div></div></div></div></div></div>
+							{# Right-side bar #}
+							<div class="col-md-3 sidebar-menu hidden-sm hidden-xs" id="sidebar-menu-overlay">
+									<div class="top-bar"></div>
+										{{ page.side_menu }}
+		{# End Right-side bar #}
+		{# End Right-side bar #}
+	{% else %}
+		{% if node.field_type.target_id == '349' %}
+		<!-- Sidebar section -->
+	</div></div></div></div></div>
+						{# Right-side bar #}
+						<div class="col-md-3 sidebar-menu hidden-sm hidden-xs" id="sidebar-menu-overlay">
+								<div class="top-bar"></div>
+									{{ page.side_menu }}
+	{# End Right-side bar #}
+{% else %}
+<!-- Sidebar section -->
+</div></div></div></div></div></div>
+				{# Right-side bar #}
+				<div class="col-md-3 sidebar-menu hidden-sm hidden-xs" id="sidebar-menu-overlay">
+						<div class="top-bar"></div>
+							{{ page.side_menu }}
+{# End Right-side bar #}
+		{% endif %}
+				{% endif %}
