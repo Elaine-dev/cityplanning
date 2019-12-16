@@ -2839,7 +2839,6 @@ http://www.bluthemes.com/blog/3/clearing-bootstrap-3-columns
 
 ****************************************/
 .page-node-type-overlay .col-md-12 h3 {
-    float: left;
     clear: left;
 }
 
