@@ -44,12 +44,6 @@ function cpv3_preprocess_page(&$variables)
     $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();
     $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
 
-    // Publication/Newsletter
-    $publicationTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('publication_type');
-    $pubCategories = formatTabTitle($publicationTerms);
-    array_pop($pubCategories);          // removed Community Corner from the list
-    $variables['publication_categories'] = $pubCategories;
-
     // Community Plan Update/Hollywood Tab Menu
     $hollywoodCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('hollywood_community_plan');
     $variables['hollywood_menu'] = formatTabMenuTitle($hollywoodCpuTerms);
@@ -65,14 +59,6 @@ function cpv3_preprocess_page(&$variables)
    // Community Plan Update/Venice Local Coastal Program Tab Menu
    $generalCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('gerneral_plan_update');
    $variables['general_menu'] = formatTabMenuTitle($generalCpuTerms);
-
-   // TNP Plan/Orange Line Tab Menu
-   $orangeTnpCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('orange_line_tnp_menu');
-   $variables['orange_line_menu'] = formatTabMenuTitle($orangeTnpCpuTerms);
-
-   // TNP Plan/ Slauson Corridor Tab Menu
-   $slausonTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('slauson_corridor_tnp_menu');
-   $variables['slauson_corridor_menu'] = formatTabMenuTitle($slausonTNPCpuTerms);
 
    // Community Plan Update/Downtown Plan Update Tab Menu
    $downtownCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('downtown_community_plan_update');
@@ -98,49 +84,25 @@ function cpv3_preprocess_page(&$variables)
   // Community Plan Update/Southeast Valley Plans Update Tab Menu
   $bhspanCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('boyle_heights_cpu_menu_es');
   $variables['bhspan_menu'] = formatTabMenuTitle($bhspanCpuTerms);
-
-
-    // get current uri
-    $current_uri = \Drupal::request()->getRequestUri();
-    $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
-    $current = $current_uri_split[1];
-    $variables['currentlink'] = $current;
-
-    // overlay
-    $nodes_storage = \Drupal::entityTypeManager()->getStorage('node');
-    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('overlays');
-    foreach ($terms as $term) {
-        $tid = $term->tid;
-        $tname = $term->name;
-
-        // load nodes according to the field type
-        $query = \Drupal::entityQuery('node')
-                 ->condition('type', 'overlay')
-                 ->condition('field_type', $tid)
-                 ->condition('status', 1)
-                 ->sort('title', 'asc');
-        $nids = $query->execute();
-
-        // check if $nid is empty
-        if (!empty($nids)) {
-            $nodes = $nodes_storage->loadMultiple($nids);
-
-            foreach ($nodes as $n) {
-                $variables['overlays'][$tname][] = [
-                    'nid' => $n->id(),
-                    'title' => $n->title->value,
-                    'url' => $n->url(),
-                ];
-            }
-        }
-    }
-
-    // Map Gallery
-    mapGallery($variables);
-    
-    // Sunshine Canyon Landfill.
-    // Display content on Commissions, Boards, and Hearings page.
-    getSunshineCanyonLandfillDetail($variables);
+  
+  // Publications
+  getPublicationCategories($variables);
+  
+  // get current uri
+  getCurrentURI($variables);
+  
+  // Overlay
+  getOverlay($variables);
+  
+  // Map Gallery
+  mapGallery($variables);
+  
+  // Sunshine Canyon Landfill.
+  // Display content on Commissions, Boards, and Hearings page.
+  getSunshineCanyonLandfillDetail($variables);
+  
+  // TNP pages
+  getTNPDetail($variables);
 }
 
 /**
@@ -183,9 +145,9 @@ function cpv3_theme_suggestions_page_alter(array &$suggestions, array $variables
         $suggestions [] = 'page__node__' . $node->getType();
         $suggestions [] = 'page__node__' . $node->getType() .'__'. $title;
         $suggestions [] = 'page__node__' . $title;
-        $suggestions[] = 'page__node__' . 'orange__' . $node->bundle();
-	      $suggestions[] = 'page__node__' . 'purple__' . $node->bundle();
-	      $suggestions[] = 'page__node__' . 'slauson__' . $node->bundle();
+        /* $suggestions[] = 'page__node__' . 'orange__' . $node->bundle();
+        $suggestions[] = 'page__node__' . 'purple__' . $node->bundle();
+        $suggestions[] = 'page__node__' . 'slauson__' . $node->bundle(); */
     }
 }
 
@@ -365,6 +327,72 @@ function formatTabCommissionTitle($terms)
     return $term_data;
 }
 
+/**
+ * Display Publication category, as defined in the Taxonomy term
+ * used for the tab title.
+ *
+ * @param array $variables
+ */
+function getPublicationCategories(&$variables) {
+    $publicationTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('publication_type');
+    $pubCategories = formatTabTitle($publicationTerms);
+    array_pop($pubCategories);          // removed Community Corner from the list
+    $variables['publication_categories'] = $pubCategories;
+}
+
+/**
+ *
+ * @param array $variables
+ */
+function getCurrentURI(&$variables) {
+    $current_uri = \Drupal::request()->getRequestUri();
+    $current_uri_split = explode('/', $current_uri);       //Array ( [0] => [1] => about [2] => department-city-planning )
+    $current = $current_uri_split[1];
+    $variables['currentlink'] = $current;
+}
+
+/**
+ * Get Overlay data according to it's type.
+ *
+ * @param array $variables
+ */
+function getOverlay(&$variables){
+    // overlay
+    $nodes_storage = \Drupal::entityTypeManager()->getStorage('node');
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('overlays');
+    foreach ($terms as $term) {
+        $tid = $term->tid;
+        $tname = $term->name;
+        
+        // load nodes according to the field type
+        $query = \Drupal::entityQuery('node')
+        ->condition('type', 'overlay')
+        ->condition('field_type', $tid)
+        ->condition('status', 1)
+        ->sort('title', 'asc');
+        $nids = $query->execute();
+        
+        // check if $nid is empty
+        if (!empty($nids)) {
+            $nodes = $nodes_storage->loadMultiple($nids);
+            
+            foreach ($nodes as $n) {
+                $variables['overlays'][$tname][] = [
+                    'nid' => $n->id(),
+                    'title' => $n->title->value,
+                    'url' => $n->url(),
+                ];
+            }
+        }
+    }
+}
+
+/**
+ * Map gallery: generate Map list.
+ *
+ * @var $variables
+ * @return array
+ */
 function mapGallery(&$variables) {
     $vid = 'location';
     $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid, 0, 1);
@@ -461,4 +489,23 @@ function getSunshineCanyonLandfillDetail(&$variables) {
     ];
     
     $variables['sunshine'][] = $nodeDetail;
+}
+
+/**
+ * TNP page
+ *
+ * @param array $variables
+ */
+function getTNPDetail(&$variables) {
+    // TNP Plan/Orange Line Tab Menu
+    $orangeTnpCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('orange_line_tnp_menu');
+    $variables['orange_line_menu'] = formatTabMenuTitle($orangeTnpCpuTerms);
+    
+    // TNP Plan/ Purple Line Tab Menu
+    $purpleLineTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('purple_line_tnp_menu');
+    $variables['purple_line_menu'] = formatTabMenuTitle($purpleLineTNPCpuTerms);
+    
+    // TNP Plan/ Slauson Corridor Tab Menu
+    $slausonTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('slauson_corridor_tnp_menu');
+    $variables['slauson_corridor_menu'] = formatTabMenuTitle($slausonTNPCpuTerms);
 }
