@@ -1,4 +1,7 @@
 {% for item in items %}
+{% if field_name == 'field_project_planner_contact' %}
+<div class="col-md-12 padding-left0">{{ item.content}}</div>
+{% else %}
 {% if field_name == 'body' %}
 <div class="col-md-12 padding-left0">{{ item.content}} </div>
 {% else %}
@@ -7,6 +10,7 @@
 {% else %}
 <div class="col-md-3 col-sm-4 col-xs-6 clear-hack">
 {{ item.content }}</div>
+{% endif %}
 {% endif %}
 {% endif %}
 {% endfor %}

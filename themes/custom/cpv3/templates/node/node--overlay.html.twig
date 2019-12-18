@@ -5,9 +5,10 @@
 
 <div class="row">
 	<div class="col-md-6">
+		{# plain text field is used for this field, diverges from other fields #}
 		{% if content.field_project_planner_contact %}
 			<strong class="overlays-field-title">Staff Contact: </strong><br>
-			{{ node.field_project_planner_contact.value|raw }}
+			{{ content.field_project_planner_contact }}
 		{% endif %}
 	</div>
 	<div class="col-md-6">
