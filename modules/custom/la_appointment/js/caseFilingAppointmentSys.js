@@ -13,11 +13,15 @@ jQuery(document).ready(function(){
 			
 			$("#edit-appointment-for-affordablehousing").attr('disabled', true);
 			$("#edit-appointment-for-affordablehousing").prop('checked', false);
+
+			$("#edit-appointment-for-parp").attr('disabled', true);
+			$("#edit-appointment-for-parp").prop('checked', false);
 		} else {
 		  	$("#edit-appointment-for-wirelessfacilities").prop('disabled', false);
 		  	$("#edit-appointment-for-mapprocessingservices").prop('disabled', false);
 		  	$("#edit-appointment-for-bestservice").prop('disabled', false);
-		  	$("#edit-appointment-for-affordablehousing").prop('disabled', false);
+			$("#edit-appointment-for-affordablehousing").prop('disabled', false);
+			$("#edit-appointment-for-parp").prop('disabled', false);
 	  	}
 	});
 	

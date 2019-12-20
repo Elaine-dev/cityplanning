@@ -112,7 +112,8 @@ class LaAppointmentForm extends FormBase {
               'WirelessFacilities' => 'Wireless Facilities (Metro office only)',
               'MapProcessingServices' => 'Map Processing Services (Metro office only) (Lot Line Adj., Private Streets, C of C)',
               'BEStService' => 'BESt, Alcohol Sales and Service/Dancing (Metro office only) (case filing and condition clearance)',
-              'AffordableHousing' => 'Affordable Housing Projects (Metro office only) (Density Bonus, UDU, TOC)'
+              'AffordableHousing' => 'Affordable Housing Projects (Metro office only) (Density Bonus, UDU, TOC)',
+              'PARP' => 'Preliminary Application Review Program (Metro office only) (SB330 preliminary application)'
             ],
             '#attributes' => ['class' => array('disable')],
             '#required' => TRUE,
@@ -130,6 +131,7 @@ class LaAppointmentForm extends FormBase {
                     [':input[name="appointment_for"]' => ['value' => 'MapProcessingServices']],                  
                     [':input[name="appointment_for"]' => ['value' => 'BEStService']],                  
                     [':input[name="appointment_for"]' => ['value' => 'AffordableHousing']],
+                    [':input[name="appointment_for"]' => ['value' => 'PARP']],
                 ],
                 'required' => [
                     [':input[name="appointment_for"]' => ['value' => 'Filing']],
@@ -137,6 +139,7 @@ class LaAppointmentForm extends FormBase {
                     [':input[name="appointment_for"]' => ['value' => 'MapProcessingServices']],
                     [':input[name="appointment_for"]' => ['value' => 'BEStService']],
                     [':input[name="appointment_for"]' => ['value' => 'AffordableHousing']],
+                    [':input[name="appointment_for"]' => ['value' => 'PARP']],
                 ],
             ]
         );
@@ -440,6 +443,10 @@ class LaAppointmentForm extends FormBase {
             case 'AffordableHousing' :
                 $appointmentFor = 'Affordable Housing Projects (Metro office only) (Density Bonus, UDU, TOC)';
                 break;
+
+                case 'PARP' :
+                    $appointmentFor = 'Preliminary Application Review Program (Metro office only) (SB330 preliminary application)';
+                    break;
                 
             default:
                 $appointmentFor = '';
