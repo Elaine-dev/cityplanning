@@ -65,7 +65,7 @@ function cpv3_preprocess_page(&$variables)
        // Venice
        cpuMenuVenice($variables);
        // housing_menu
-       cpuMenuHousing($variables);
+       //cpuMenuHousing($variables);
 
       // CPU SPANISH TABBED MENUS //
       // Boyle Heights
@@ -414,9 +414,9 @@ $variables['hollywood_menu'] = \Drupal::service('term_subs')->createSubtermsHoll
 function cpuMenuVenice(&$variables) {
   $variables['venice_menu'] = \Drupal::service('term_subs')->createSubtermsVenice();
 }
-function cpuMenuHousing(&$variables) {
-  $variables['housing_menu'] = \Drupal::service('term_subs')->createSubtermsHousing();
-}
+//function cpuMenuHousing(&$variables) {
+//  $variables['housing_menu'] = \Drupal::service('term_subs')->createSubtermsHousing();
+//}
 /**
  * Map gallery: generate Map list.
  *
