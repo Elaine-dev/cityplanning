@@ -3251,7 +3251,7 @@ background: url(/sites/default/files/icons/overlays/i-text-hpoz.png) no-repeat;
   display: block;
 }
 
-#hollywood-tab .tab-content {
+#hollywood .tab-content {
   margin-left: 16px;
 }
 
@@ -3717,7 +3717,6 @@ table tr th a:focus {
 /*** Dynamic form : inline screening form ***/
 .ladcp-contact-form .radio-inline input[type="checkbox"] {height: 13px !important;}
 .ladcp-contact-form .radio-inline input[type=radio] {height: 13px !important;}
-
 
 /** EIR Dropdown list **/
 #jumpMenuEIRSections, #jumpMenuAppendices {
@@ -4629,7 +4628,7 @@ table tr th a:focus {
 	 *************************************/
  	#helpful-numbers li{padding: 10px 0;}
  	.helpful-number {float: left; padding-left: 15px;}
- 	
+
  	/** Constant Contact iFrame embed **/
 	#cc-iframe iframe {
 		height: 100%;
@@ -4942,7 +4941,7 @@ table tr th a:focus {
 	 *************************************/
  	#helpful-numbers li{padding: 10px 0;}
  	.helpful-number {float: left; padding-left: 15px;}
- 	
+
  	/** Constant Contact iFrame embed **/
 	#cc-iframe iframe {
 		height: 100%;

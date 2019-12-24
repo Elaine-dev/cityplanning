@@ -2,6 +2,7 @@
 use Drupal\node\Entity\Node;
 use Drupal\image\Entity\ImageStyle;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\taxterm_subs\SubTerms;
 
 function cpv3_theme_rebuild()
 {
@@ -16,7 +17,7 @@ function cpv3_preprocess_html(&$variables)
 {
     global $base_url;
     $variables['base_url'] = $base_url;
-    
+
     // add meta data
     $meta_tag = [
         '#tag' => 'meta',
@@ -25,7 +26,7 @@ function cpv3_preprocess_html(&$variables)
             'content' => 'WWpNu-fliBUrDZdd8E71n-Mu7lfOgKXMoLzgt_O-nPE'
         ],
     ];
-    
+
     $variables['page']['#attached']['html_head'][] =  [$meta_tag, 'google-site-verification'];
 }
 
@@ -44,63 +45,48 @@ function cpv3_preprocess_page(&$variables)
     $variables['theme_base_path'] = $base_url .'/'. \Drupal::theme()->getActiveTheme()->getPath();
     $variables['route_name'] = \Drupal::routeMatch()->getRouteName();
 
-    // Community Plan Update/Hollywood Tab Menu
-    $hollywoodCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('hollywood_community_plan');
-    $variables['hollywood_menu'] = formatTabMenuTitle($hollywoodCpuTerms);
+      // CPU ENGLISH TABBED MENUS //
+      // Boyle Heights
+       cpuMenuBH($variables);
+      // Harbor
+       cpuMenuHarbor($variables);
+      // Westside
+       cpuMenuWestside($variables);
+      // SouthEast
+       cpuMenuSouthEast($variables);
+      // SouthWest Menu
+       cpuMenuSouthWest($variables);
+      // Downtown
+       cpuMenuDowntown($variables);
+       // General Plan
+       cpuMenuGeneral($variables);
+       // hollywood_menu
+       cpuMenuHollywood($variables);
+       // Venice
+       cpuMenuVenice($variables);
+       // housing_menu
+       cpuMenuHousing($variables);
 
-   // Community Plan Update/Southwest Valley Tab Menu
-   $swvalleyCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('southwest_valley_community_plan_');
-   $variables['swvalley_menu'] = formatTabMenuTitle($swvalleyCpuTerms);
+      // CPU SPANISH TABBED MENUS //
+      // Boyle Heights
+       cpuMenuBHES($variables);
 
-   // Community Plan Update/OurLA General Plan Update Tab Menu
-   $veniceCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('venice_local_coastal_program');
-   $variables['venice_menu'] = formatTabMenuTitle($veniceCpuTerms);
-
-   // Community Plan Update/Venice Local Coastal Program Tab Menu
-   $generalCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('gerneral_plan_update');
-   $variables['general_menu'] = formatTabMenuTitle($generalCpuTerms);
-
-   // Community Plan Update/Downtown Plan Update Tab Menu
-   $downtownCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('downtown_community_plan_update');
-   $variables['downtown_menu'] = formatTabMenuTitle($downtownCpuTerms);
-
-   // Community Plan Update/Westside Plan Update Tab Menu
-   $westsideCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('westside_community_plan_update');
-   $variables['westside_menu'] = formatTabMenuTitle($westsideCpuTerms);
-
-   // Community Plan Update/Boyle Heights Plan Update Tab Menu
-   $boyleheightsCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('boyle_heights_cpu');
-   $variables['boyleheights_menu'] = formatTabMenuTitle($boyleheightsCpuTerms);
-
-   // Community Plan Update/Harbor Plan Update Tab Menu
-   $harborCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('harbor_menu');
-   $variables['harborplans_menu'] = formatTabMenuTitle($harborCpuTerms);
-
-   // Community Plan Update/Southeast Valley Plans Update Tab Menu
-   $sevplansCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('southeast_valley_menu');
-   $variables['sevplans_menu'] = formatTabMenuTitle($sevplansCpuTerms);
-
-  // SPANISH MENUS CPU //
-  // Community Plan Update/Southeast Valley Plans Update Tab Menu
-  $bhspanCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('boyle_heights_cpu_menu_es');
-  $variables['bhspan_menu'] = formatTabMenuTitle($bhspanCpuTerms);
-  
   // Publications
   getPublicationCategories($variables);
-  
+
   // get current uri
   getCurrentURI($variables);
-  
+
   // Overlay
   getOverlay($variables);
-  
+
   // Map Gallery
   mapGallery($variables);
-  
+
   // Sunshine Canyon Landfill.
   // Display content on Commissions, Boards, and Hearings page.
   getSunshineCanyonLandfillDetail($variables);
-  
+
   // TNP pages
   getTNPDetail($variables);
 }
@@ -363,7 +349,7 @@ function getOverlay(&$variables){
     foreach ($terms as $term) {
         $tid = $term->tid;
         $tname = $term->name;
-        
+
         // load nodes according to the field type
         $query = \Drupal::entityQuery('node')
         ->condition('type', 'overlay')
@@ -371,11 +357,11 @@ function getOverlay(&$variables){
         ->condition('status', 1)
         ->sort('title', 'asc');
         $nids = $query->execute();
-        
+
         // check if $nid is empty
         if (!empty($nids)) {
             $nodes = $nodes_storage->loadMultiple($nids);
-            
+
             foreach ($nodes as $n) {
                 $variables['overlays'][$tname][] = [
                     'nid' => $n->id(),
@@ -386,7 +372,51 @@ function getOverlay(&$variables){
         }
     }
 }
+/** CPU SubMenus Drupal Service**/
 
+/** Boyle Heights Spanish  **/
+function cpuMenuBHES(&$variables) {
+  $variables['bhspan_menu'] = \Drupal::service('term_subs')->createSubtermsBhes();
+}
+/** Boyle Heights English  **/
+function cpuMenuBH(&$variables) {
+  $variables['boyleheights_menu'] = \Drupal::service('term_subs')->createSubtermsBoyleHeights();
+}
+/** Harbor  **/
+function cpuMenuHarbor(&$variables) {
+  $variables['harborplans_menu'] = \Drupal::service('term_subs')->createSubtermsHarbor();
+}
+/** Westside  **/
+function cpuMenuWestside(&$variables) {
+  $variables['westside_menu'] = \Drupal::service('term_subs')->createSubtermsWestside();
+}
+/** SouthEAST  **/
+function cpuMenuSouthEast(&$variables) {
+  $variables['sevplans_menu'] = \Drupal::service('term_subs')->createSubtermsSouthEast();
+}
+/** SouthWEST  **/
+function cpuMenuSouthWest(&$variables) {
+  $variables['swvalley_menu'] = \Drupal::service('term_subs')->createSubtermsSouthWest();
+}
+/** Downtown **/
+function cpuMenuDowntown(&$variables) {
+$variables['downtown_menu'] = \Drupal::service('term_subs')->createSubtermsDowntown();
+}
+/** General **/
+function cpuMenuGeneral(&$variables) {
+  $variables['general_menu'] = \Drupal::service('term_subs')->createSubtermsGeneral();
+}
+/** Hollywood **/
+function cpuMenuHollywood(&$variables) {
+$variables['hollywood_menu'] = \Drupal::service('term_subs')->createSubtermsHollywood();
+}
+/** Venice **/
+function cpuMenuVenice(&$variables) {
+  $variables['venice_menu'] = \Drupal::service('term_subs')->createSubtermsVenice();
+}
+function cpuMenuHousing(&$variables) {
+  $variables['housing_menu'] = \Drupal::service('term_subs')->createSubtermsHousing();
+}
 /**
  * Map gallery: generate Map list.
  *
@@ -482,12 +512,12 @@ function formatTabMenuTitleForCP($terms)
 function getSunshineCanyonLandfillDetail(&$variables) {
     $nid = 132227;          // nid of Sunshine Canyon Landfill. Note: don't delete the node
     $getNodeDetail = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
-    
+
     $nodeDetail = [
         'title' => $getNodeDetail->get('title')->value,
         'body' => $getNodeDetail->get('field_content_section')
     ];
-    
+
     $variables['sunshine'][] = $nodeDetail;
 }
 
@@ -500,11 +530,11 @@ function getTNPDetail(&$variables) {
     // TNP Plan/Orange Line Tab Menu
     $orangeTnpCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('orange_line_tnp_menu');
     $variables['orange_line_menu'] = formatTabMenuTitle($orangeTnpCpuTerms);
-    
+
     // TNP Plan/ Purple Line Tab Menu
     $purpleLineTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('purple_line_tnp_menu');
     $variables['purple_line_menu'] = formatTabMenuTitle($purpleLineTNPCpuTerms);
-    
+
     // TNP Plan/ Slauson Corridor Tab Menu
     $slausonTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('slauson_corridor_tnp_menu');
     $variables['slauson_corridor_menu'] = formatTabMenuTitle($slausonTNPCpuTerms);

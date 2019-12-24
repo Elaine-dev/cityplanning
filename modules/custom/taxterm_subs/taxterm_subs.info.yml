@@ -1,0 +1,5 @@
+name: 'taxterm_subs'
+type: module
+description: 'code for generating child terms as dropdown menu'
+core: 8.x
+package: 'Custom'

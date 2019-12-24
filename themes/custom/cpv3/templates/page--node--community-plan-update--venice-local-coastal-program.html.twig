@@ -1,7 +1,25 @@
+<style>
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+  grid-auto-rows: 40px;
+}
+</style>
+<script>
+  var site_url = '{{ base_url }}';
+</script>
 <!-- Fixed navbar -->
 {% include directory ~ '/partials/header.html.twig' %}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    'paragraph-id--' ~ paragraph.id(),
+    ]
+%}
 
-  {# page-banner #}
+    {# page-banner #}
  <div class="container-fluid">
    <div class="row">
      <div class="col-md-12">
@@ -18,122 +36,331 @@
     {{ drupal_entity('block', 'cpv3_local_tasks') }}
     <div class="col-md-12" style="padding-left: 30px;">
       <h1>{{ node.label }}</h1>
-
     </div>
   </div>
-
  <!-- Left-side bar -->
-<div class="row content-wrapper" id="planning-update">
+<div class="row content-wrapper" id="community-plan-update">
     <div class="col-md-9">
       <div class="section-content clear">
         <div class="row ">
             {% if node.field_slider %}
               {% for parag_id in node.field_slider.value %}
                 {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-
               {% endfor %}
             {% endif %}
-
           </div>
         </div>
         {# menu #}
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 dropdown">
             <div id="hollywood-tab">
-              <ul class="nav nav-tabs" role="tablist">
-                {% for item in venice_menu %}
-                  {% if loop.index == 1 %}
+    <ul class="nav nav-tabs" role="tablist">
+          {% for item in venice_menu %}
+                  {% if loop.index == 0 %}
                     {% set active_class = 'active' %}
                     {% set class = 'padding-left0'  %}
                   {% else %}
                     {% set active_class = '' %}
                     {% set class = '' %}
                   {% endif %}
-                  <li role="presentation" class="padding-top0 {{ (loop.last) ? '' : 'tab-line' }} {{ active_class }}">
-                    <a href="#{{ item.name|clean_id }}" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" data-value="{{ item.name }}" class="{{ class }}">
-                      {{ item.name }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-              <!-- //End hollywood-tab -->
 
-              <div class="tab-content">
-                {% for item in venice_menu %}
-                  {% if loop.index == 1 %}
-                    <div class="tab-pane active fade in row padding-left0" id="{{ item.name|clean_class }}">
-                    {% endif %}
-                  {% endfor %}
-                  {% if node.field_tab_about_content_items %}
-                    {% for parag_id in node.field_tab_about_content_items.value %}
-                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-                    {% endfor %}
-                  {% endif %}
-                </div>
+                    <li role="presentation" class="padding-top0 {{ (loop.last) ? '' : 'tab-line' }}{{ active_class }}">
 
-                {% for item in venice_menu %}
-                  {% if loop.index == 2 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
-                    {% endif %}
-                  {% endfor %}
-                  {% if node.field_tab_plan_content_items %}
-                    {% for parag_id in node.field_tab_plan_content_items.value %}
-                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-                    {% endfor %}
-                  {% endif %}
-                </div>
+                    <a href="#{{ item['name']|clean_id }}" tabindex="0" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" data-value="{{ item['name'] }}" class="{{ class }}">
+                    {{item['name']}} </a>
+                      {% for sub in item['sub'] %}
+                       {% if sub is not empty and loop.first %}
+                       <i class="fa fa-caret-down"></i>
+                     {% endif %}
+                       {% endfor %}
 
-                {% for item in venice_menu %}
-                  {% if loop.index == 3 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
-                    {% endif %}
-                  {% endfor %}
-                  {% if node.field_tab_map_content_items %}
-                    {% for parag_id in node.field_tab_map_content_items.value %}
-                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-                    {% endfor %}
-                  {% endif %}
-                </div>
+  <ul class="dropdown-submenu" role="tablist">
+    {% for sub in item['sub'] %}
+      {% if sub is not empty %}
+                      <li role="presentation" class="childLevel-1 padding-top0 {{ active_class }}">
 
-                {% for item in venice_menu %}
-                  {% if loop.index == 4 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
-                    {% endif %}
-                  {% endfor %}
-                  {% if node.field_tab_resources_content_item %}
-                    {% for parag_id in node.field_tab_resources_content_item.value %}
-                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-                    {% endfor %}
-                  {% endif %}
-                </div>
+                        <a href="#{{ sub['name']|clean_id }}" tabindex="0" aria-controls="{{ item.counter }}" role="tab" data-toggle="tab" data-value="{{ sub['name'] }}" style="cursor: pointer;" class="{{ class }}">
+                      {{sub['name']}}</a></li>
+{% endif %}
+{% endfor %}
+</ul>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+<!-- End hollywood-tab dropdown menu, taxonomy terms-->
 
-                {% for item in venice_menu %}
-                  {% if loop.index == 5 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
-                    {% endif %}
-                  {% endfor %}
-                  {% if node.field_tab_event_content_items %}
-                    {% for parag_id in node.field_tab_event_content_items.value %}
-                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-                    {% endfor %}
-                  {% endif %}
-                </div>
+                <!-- Begin editor UI -->
+    <div class="row" id="hollywood">
+      <div class="tab-content">
+        {% for item in venice_menu %}
+          {% if loop.index == 1 %}
+            <div class="tab-pane active fade in row padding-left0" id="{{ item['name']|clean_class }}">
+              {% endif %}
+            {% endfor %}
+          {% if node.field_tab_about_content_items %}
+            {% for parag_id in node.field_tab_about_content_items.value %}
+              {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+            {% endfor %}
+          {% endif %}
+    </div>
+    {% for item in venice_menu %}
+             {% if loop.index == 1 %}
+    {% for sub in item['sub'] %}
+      {% if sub is not empty %}
+      <div class="tab-pane fade in row" id="{{ sub['name']|clean_class }}">
+{% set submenu_content = drupal_field('field_submenu_content_order_1', 'node') %}
+         {% if loop.index == 1 %}
+              <h3>{{ sub['name'] }}</h3>
+         {{ submenu_content.0 }}
+         {% endif %}
+         {% if loop.index == 2 %}
+              <h3>{{ sub['name'] }}</h3>
+         {{ submenu_content.1 }}
+         {% endif %}
+         {% if loop.index == 3 %}
+              <h3>{{ sub['name'] }}</h3>
+         {{ submenu_content.2 }}
+         {% endif %}
+         {% if loop.index == 4 %}
+              <h3>{{ sub['name'] }}</h3>
+         {{ submenu_content.3 }}
+         {% endif %}
+         {% if loop.index == 5 %}
+              <h3>{{ sub['name'] }}</h3>
+         {{ submenu_content.4 }}
+         {% endif %}
+  </div>
 
-                {% for item in venice_menu %}
-                  {% if loop.index == 6 %}
-                    <div class="tab-pane fade in row padding-left0" id="{{ item.name|clean_class }}">
-                    {% endif %}
-                  {% endfor %}
-                  {% if node.field_tab_contact_content_items %}
-                    {% for parag_id in node.field_tab_contact_content_items.value %}
-                      {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
-                    {% endfor %}
-                  {% endif %}
-                </div>
-              </div>
-            </div>
+       {% endif %}
+       {% endfor %}
+       {% endif %}
+       {% endfor %}
+
+        {% for item in venice_menu %}
+          {% if loop.index == 2 %}
+            <div class="tab-pane fade in row padding-left0" id="{{ item['name']|clean_class }}">
+            {% endif %}
+          {% endfor %}
+          {% if node.field_tab_plan_content_items %}
+            {% for parag_id in node.field_tab_plan_content_items.value %}
+              {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+            {% endfor %}
+          {% endif %}
+        </div>
+        {% for item in venice_menu %}
+                 {% if loop.index == 2 %}
+        {% for sub in item['sub'] %}
+        {% if sub is not empty %}
+        <div class="tab-pane fade in row" id="{{ sub['name']|clean_class }}">
+  {% set submenu_content = drupal_field('field_submenu_content_order_2', 'node') %}
+           {% if loop.index == 1 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.0 }}
+           {% endif %}
+           {% if loop.index == 2 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.1 }}
+           {% endif %}
+           {% if loop.index == 3 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.2 }}
+           {% endif %}
+           {% if loop.index == 4 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.3 }}
+           {% endif %}
+           {% if loop.index == 5 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.4 }}
+           {% endif %}
+    </div>
+
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+         {% endfor %}
+
+        {% for item in venice_menu %}
+                 {% if loop.index == 3 %}
+                     <div class="tab-pane fade in row padding-left0" id="{{ item['name']|clean_class }}">
+                 {% endif %}
+                   {% endfor %}
+                     {% if node.field_tab_map_content_items %}
+                       {% for parag_id in node.field_tab_map_content_items.value %}
+                         {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+                         {% endfor %}
+                         {% endif %}
+</div>
+{% for item in venice_menu %}
+         {% if loop.index == 3 %}
+{% for sub in item['sub'] %}
+{% if sub is not empty %}
+<div class="tab-pane fade in row" id="{{ sub['name']|clean_class }}">
+{% set submenu_content = drupal_field('field_submenu_content_order_3', 'node') %}
+   {% if loop.index == 1 %}
+        <h3>{{ sub['name'] }}</h3>
+   {{ submenu_content.0 }}
+   {% endif %}
+   {% if loop.index == 2 %}
+        <h3>{{ sub['name'] }}</h3>
+   {{ submenu_content.1 }}
+   {% endif %}
+   {% if loop.index == 3 %}
+        <h3>{{ sub['name'] }}</h3>
+   {{ submenu_content.2 }}
+   {% endif %}
+   {% if loop.index == 4 %}
+        <h3>{{ sub['name'] }}</h3>
+   {{ submenu_content.3 }}
+   {% endif %}
+   {% if loop.index == 5 %}
+        <h3>{{ sub['name'] }}</h3>
+   {{ submenu_content.4 }}
+   {% endif %}
+</div>
+
+ {% endif %}
+ {% endfor %}
+ {% endif %}
+ {% endfor %}
+
+        {% for item in venice_menu %}
+          {% if loop.index == 4 %}
+            <div class="tab-pane fade in row padding-left0" id="{{ item['name']|clean_class }}">
+            {% endif %}
+          {% endfor %}
+          {% if node.field_tab_resources_content_item %}
+            {% for parag_id in node.field_tab_resources_content_item.value %}
+              {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+            {% endfor %}
+          {% endif %}
+        </div>
+        {% for item in venice_menu %}
+                 {% if loop.index == 4 %}
+        {% for sub in item['sub'] %}
+        {% if sub is not empty %}
+        <div class="tab-pane fade in row" id="{{ sub['name']|clean_class }}">
+        {% set submenu_content = drupal_field('field_submenu_content_order_4', 'node') %}
+           {% if loop.index == 1 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.0 }}
+           {% endif %}
+           {% if loop.index == 2 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.1 }}
+           {% endif %}
+           {% if loop.index == 3 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.2 }}
+           {% endif %}
+           {% if loop.index == 4 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.3 }}
+           {% endif %}
+           {% if loop.index == 5 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.4 }}
+           {% endif %}
+        </div>
+
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+         {% endfor %}
+
+        {% for item in venice_menu %}
+          {% if loop.index == 5 %}
+            <div class="tab-pane fade in row padding-left0" id="{{ item['name']|clean_class }}">
+            {% endif %}
+          {% endfor %}
+          {% if node.field_tab_event_content_items %}
+            {% for parag_id in node.field_tab_event_content_items.value %}
+              {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+            {% endfor %}
+          {% endif %}
+        </div>
+        {% for item in venice_menu %}
+                 {% if loop.index == 5 %}
+        {% for sub in item['sub'] %}
+        {% if sub is not empty %}
+        <div class="tab-pane fade in row" id="{{ sub['name']|clean_class }}">
+        {% set submenu_content = drupal_field('field_submenu_content_order_5', 'node') %}
+           {% if loop.index == 1 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.0 }}
+           {% endif %}
+           {% if loop.index == 2 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.1 }}
+           {% endif %}
+           {% if loop.index == 3 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.2 }}
+           {% endif %}
+           {% if loop.index == 4 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.3 }}
+           {% endif %}
+           {% if loop.index == 5 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.4 }}
+           {% endif %}
+        </div>
+
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+         {% endfor %}
+
+
+        {% for item in venice_menu %}
+          {% if loop.index == 6 %}
+            <div class="tab-pane fade in row padding-left0" id="{{ item['name']|clean_class }}">
+            {% endif %}
+          {% endfor %}
+          {% if node.field_tab_contact_content_items %}
+            {% for parag_id in node.field_tab_contact_content_items.value %}
+              {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
+            {% endfor %}
+          {% endif %}
+        </div>
+        {% for item in venice_menu %}
+                 {% if loop.index == 6 %}
+        {% for sub in item['sub'] %}
+        {% if sub is not empty %}
+        <div class="tab-pane fade in row" id="{{ sub['name']|clean_class }}">
+        {% set submenu_content = drupal_field('field_submenu_content_order_6', 'node') %}
+           {% if loop.index == 1 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.0 }}
+           {% endif %}
+           {% if loop.index == 2 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.1 }}
+           {% endif %}
+           {% if loop.index == 3 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.2 }}
+           {% endif %}
+           {% if loop.index == 4 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.3 }}
+           {% endif %}
+           {% if loop.index == 5 %}
+                <h3>{{ sub['name'] }}</h3>
+           {{ submenu_content.4 }}
+           {% endif %}
+        </div>
+
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+         {% endfor %}
           </div>
-        <!-- </div> -->
+      
 
     <!-- //End Left-side bar -->
 
@@ -142,8 +369,9 @@
     <div class="col-md-3 sidebar-menu hidden-sm hidden-xs">
       <div class="top-bar"></div>
       {{ page.side_menu }}
+    </div>
 
-    </div>    <!-- //End Right-side bar -->
+    <!-- //End Right-side bar -->
 
     <!-- //End container -->
 {# breakpoint() #}
@@ -158,7 +386,6 @@
         <div class="container">
           <div class="row cms-fullwidth">
             <div class="section-content clear">
-
               {{ bamboo_render_entity('paragraph', item.para_id) }}
             </div>
           </div>

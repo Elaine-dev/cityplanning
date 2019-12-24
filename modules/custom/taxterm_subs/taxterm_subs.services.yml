@@ -1,0 +1,3 @@
+services:
+  term_subs:
+    class: '\Drupal\taxterm_subs\Service\SubTerms'

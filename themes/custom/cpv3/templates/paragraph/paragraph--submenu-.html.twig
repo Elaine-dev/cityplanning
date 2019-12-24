@@ -1,0 +1,12 @@
+{%
+set classes = [
+'paragraph',
+'paragraph--type--' ~ paragraph.bundle|clean_class,
+view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+]
+%}
+
+{% set submenu = content.field_submenu_page %}
+    {% for item in submenu['#items'] %}
+        {{ drupal_entity('paragraph', item.target_id) }}
+        {% endfor %}

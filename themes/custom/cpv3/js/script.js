@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
 
 	/** Case Search **/
 	caseSearch();
-	
+
 	/** Advance Search **/
 	advanceSearch();
 
@@ -56,17 +56,21 @@ jQuery(document).ready(function(){
    /**CPU hash url **/
    hashUrlCpu();
 
+/** CPU dropdown menus + child menu**/
+	 removeClassActiveTop();
+	 removeClassActiveSub();
+
    /** remove hover effect in all image link **/
    // removeHoverEffectOnImageLink();
-   
+
    /** Initial Screening checklist: checks if any checkbox is selected or not **/
    isCheckboxSelected();
-   
+
    /**Commissions, Boards and Hearings hash URL **/
    hashUrlCommissionBoards();
-   
+
    /** Add attribute 'onmouseover' = 'tooltip.pop(this, '#tip2');' in <img> tag on General Plan Element content.
-    *  	add following code in entry form (backend): <span class="dp-tooltip">&nbsp;</span> 
+    *  	add following code in entry form (backend): <span class="dp-tooltip">&nbsp;</span>
     **/
    appHtmlInGeneralPlanEle();
 });
@@ -427,6 +431,20 @@ function hashUrlCpu() {
 	});
 };
 
+// removes active class from non-parent in CPU dropdown menus
+function removeClassActiveTop() {
+	//  e.preventDefault();
+	$('.childLevel-1').on('click', function() {
+			$('li').closest('li').removeClass('active');
+});
+};
+function removeClassActiveSub() {
+	//  e.preventDefault();
+	$('.padding-top0').on('click', function() {
+			$('li.childLevel-1').removeClass('active');
+});
+};
+
 /**
  * This function adds a css class 'image-link' to it's parent tag (<a>) which includes image tag (<img>).
  *
@@ -440,7 +458,7 @@ function removeHoverEffectOnImageLink() {
 
 
 function isCheckboxSelected(){
-	$('#ischecklist').submit(function() {		    
+	$('#ischecklist').submit(function() {
 		if ($('input[name="type_of_project"]:checked').length < 1) {
 			var msg = "<div class='messages-error-status' style='padding: 10px;'>Please select the Type of Project.</div>";
 			$('#error-message').html(msg);
@@ -453,28 +471,28 @@ function hashUrlCommissionBoards() {
 	var url = document.location.toString();
 	var replaceSt = url.replace("%3F", "?");						// replace URL-encoding value to it's ASCII character. ie. '%3F' represents '?'
 	var arrUrl = replaceSt.split('/');
-	
-	if (arrUrl[4] !== undefined) { 
+
+	if (arrUrl[4] !== undefined) {
 		var splitUrl = (arrUrl[4]).split('#');						// "commissions-boards-hearings#boards?q=southlosangeles" => o/p 'commissions-boards-hearings', 'boards?q=southlosangeles'
 		var setTargetParam, setTargetMenu, tabContent, alink = '';
-		
+
 		if (splitUrl[1] !== undefined) {
-			setTargetMenu = splitUrl[0];			
+			setTargetMenu = splitUrl[0];
 			setTargetParam = (splitUrl[1].indexOf("?") != -1) ?  (splitUrl[1].split('?'))[0] : splitUrl[1];
-			
+
 			if (setTargetMenu) {
 				switch(setTargetMenu) {
 					case 'commissions-boards-hearings' :
 						tabContent = '#commissions-meeting-tab ul.nav.nav-tabs a';
 						alink = tabContent + '[href="#' + setTargetParam + '"]';
 						break;
-						
+
 					/*case 'publications' :
 						tabContent = '#publication-tab ul.nav.nav-tabs a';
 						alink = tabContent + '[href="#' + setTargetParam + '"]';
-						break;*/		
+						break;*/
 				}
-				
+
 				$(alink).tab('show');
 			}
 
@@ -482,8 +500,8 @@ function hashUrlCommissionBoards() {
 				$(this).tab('show');
 				window.location.hash = e.target.hash;
 			});
-			
-		}		
+
+		}
 	}
 }
 
@@ -495,7 +513,7 @@ function appHtmlInGeneralPlanEle() {
 	customHtml += '<p><a href="https://planning.lacity.org/odocument/7f065983-ff10-4e76-81e5-e166c9b78a9e/Plan_for_a_Healthy_Los_Angeles.pdf" target="_blank">Health Element (General Plan)</a></p>';
 	customHtml += '<p><a href="https://planning.lacity.org/odocument/04a6a47b-9269-4773-a3ae-55f110b7d1e8/Health_Atlas.pdf" target="_blank">Health Atlas</a></p>';
 	customHtml += '<span id="pointer"></span>';
-	customHtml += '</span>';	
-	
+	customHtml += '</span>';
+
 	$('.dp-tooltip').append(customHtml);
 }
