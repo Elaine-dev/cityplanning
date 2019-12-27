@@ -1,0 +1,25 @@
+<style>
+.date {
+    line-height: 1.2 !important;
+}
+</style>
+{% for key, item in items %}
+{% if loop.length == 0 %}
+        {% set separator = loop.last ? '' : '' %}
+        {% elseif loop.length == 1 %}
+        {% set separator = loop.last ? '' : '' %}
+        {% elseif loop.length == 2 %}
+              {% set separator = loop.last ? '' : ' and ' %}
+        {% elseif loop.length == 3 %}
+              {% set separator = loop.last ? '' : ' bot '  and loop.index == 2 ? ', and ' : ', ' %}
+        {% elseif loop.length == 4 %}
+              {% set separator = loop.last ? '' : ' toy ' and loop.index == 3 ?   ', and ' : ', ' %}
+        {% endif %}
+{% if loop.last == false %}
+            {% set eventDate = item.content['#text']|date('F j') %}
+            {{ eventDate }}{{separator}}
+        {% elseif loop.last == true %}
+            {% set eventDateYear = item.content['#text']|date('F j, Y') %}
+            {{ eventDateYear }}{{separator}}
+{% endif %}
+{% endfor %}

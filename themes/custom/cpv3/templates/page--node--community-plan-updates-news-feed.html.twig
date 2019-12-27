@@ -28,7 +28,8 @@
     <!-- adds conditional based on Venice in URL for VENICE TEMPLATE only -->
     {% set url = url('<current>') %}
     {% if 'venice-news-item' in url|render|render %}
-
+      <h3 class="event-time" style="margin-top:-20px">
+{{node.field_event_time.value}}</h3>
     {{ node.body.value|raw }}
     {% for parag_id in node.field_photo_gallery_para.value %}
         {{ bamboo_render_entity('paragraph', parag_id['target_id']) }}
@@ -54,6 +55,7 @@
 
         {% set break = false %}
       {% elseif break %}
+
         {% if data['#paragraph'].hasField('field_full_width_image') %}
           {% set class = 'button' %}
         {% else %}
