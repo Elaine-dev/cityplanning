@@ -11,9 +11,9 @@
         {% elseif loop.length == 2 %}
               {% set separator = loop.last ? '' : ' and ' %}
         {% elseif loop.length == 3 %}
-              {% set separator = loop.last ? '' : ''  and loop.index == 2 ? ', and ' : ', ' %}
+              {% set separator = loop.last ? '' : ' bot '  and loop.index == 2 ? ', and ' : ', ' %}
         {% elseif loop.length == 4 %}
-              {% set separator = loop.last ? '' : '' and loop.index == 3 ?   ', and ' : ', ' %}
+              {% set separator = loop.last ? '' : ' toy ' and loop.index == 3 ?   ', and ' : ', ' %}
         {% endif %}
 {% if loop.last == false %}
             {% set eventDate = item.content['#text']|date('F j') %}
