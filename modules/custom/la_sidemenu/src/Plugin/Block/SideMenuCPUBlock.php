@@ -95,6 +95,21 @@ class SideMenuCPUBlock extends BlockBase {
                     $menu_name = 'harbor_menu';
                     $parent_link = $menu_base_path.'harbor-la-community-plans-update';
                     break;
+                    
+                case 'harbor-events-share-phase':
+                    $menu_name = 'harbor_menu';
+                    $parent_link = $menu_base_path.'harbor-la-community-plans-update';
+                    break;
+                    
+                case 'harbor-events-listen-phase':
+                    $menu_name = 'harbor_menu';
+                    $parent_link = $menu_base_path.'harbor-la-community-plans-update';
+                    break;
+                    
+                case 'general-news-item':
+                    $menu_name = 'gerneral_plan_update';
+                    $parent_link = $menu_base_path.'general-plan-updates';
+                    break;
             }
             
             if (!empty($menu_name)) {
