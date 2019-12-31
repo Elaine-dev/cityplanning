@@ -43,6 +43,7 @@ class SideMenuCPUBlock extends BlockBase {
         if (isset($menu_level) && $uri_array[2] == 'community-plan-update') { 
             
             $menu_base_path = '/plans-policies/community-plan-update/';
+            $menu_base_path_gpu = '/plans-policies/';
             $menu_name = '';
             
             /**
@@ -123,7 +124,7 @@ class SideMenuCPUBlock extends BlockBase {
                     
                 case 'general-news-item':
                     $menu_name = 'gerneral_plan_update';
-                    $parent_link = $menu_base_path.'general-plan-updates';
+                    $parent_link = $menu_base_path_gpu.'general-plan-updates';
                     break;
             }
             
