@@ -119,11 +119,11 @@ public function createSubtermsGeneral(&$terms=array(), &$tax_tree=array(), &$vid
     **/
     return $this->subterms($vid);
   }
-//  public function createSubtermsHousing(&$terms=array(), &$tax_tree=array(), &$vid=('housing_element_update')) {
-  //  $this->subterms();
+  public function createSubtermsHousing(&$terms=array(), &$tax_tree=array(), &$vid=('housing_element_update')) {
+    $this->subterms();
     /** place in theme file:
         * $variables['housing_menu'] = \Drupal::service('term_subs')->createSubtermsHousing();
     **/
-  //  return $this->subterms($vid);
-//  }
+    return $this->subterms($vid);
+  }
 }

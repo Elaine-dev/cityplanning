@@ -65,7 +65,7 @@ function cpv3_preprocess_page(&$variables)
        // Venice
        cpuMenuVenice($variables);
        // housing_menu
-       //cpuMenuHousing($variables);
+       cpuMenuHousing($variables);
 
       // CPU SPANISH TABBED MENUS //
       // Boyle Heights
@@ -372,51 +372,52 @@ function getOverlay(&$variables){
         }
     }
 }
-/** CPU SubMenus Drupal Service**/
+// CPU SubMenus Drupal Service theme is now dependent on modules\custom\taxterm_subs
 
-/** Boyle Heights Spanish  **/
+// Boyle Heights Spanish
 function cpuMenuBHES(&$variables) {
   $variables['bhspan_menu'] = \Drupal::service('term_subs')->createSubtermsBhes();
 }
-/** Boyle Heights English  **/
+// Boyle Heights English
 function cpuMenuBH(&$variables) {
   $variables['boyleheights_menu'] = \Drupal::service('term_subs')->createSubtermsBoyleHeights();
 }
-/** Harbor  **/
+// Harbor
 function cpuMenuHarbor(&$variables) {
   $variables['harborplans_menu'] = \Drupal::service('term_subs')->createSubtermsHarbor();
 }
-/** Westside  **/
+// Westside
 function cpuMenuWestside(&$variables) {
   $variables['westside_menu'] = \Drupal::service('term_subs')->createSubtermsWestside();
 }
-/** SouthEAST  **/
+// SouthEAST
 function cpuMenuSouthEast(&$variables) {
   $variables['sevplans_menu'] = \Drupal::service('term_subs')->createSubtermsSouthEast();
 }
-/** SouthWEST  **/
+// SouthWEST
 function cpuMenuSouthWest(&$variables) {
   $variables['swvalley_menu'] = \Drupal::service('term_subs')->createSubtermsSouthWest();
 }
-/** Downtown **/
+// Downtown
 function cpuMenuDowntown(&$variables) {
 $variables['downtown_menu'] = \Drupal::service('term_subs')->createSubtermsDowntown();
 }
-/** General **/
+// General
 function cpuMenuGeneral(&$variables) {
   $variables['general_menu'] = \Drupal::service('term_subs')->createSubtermsGeneral();
 }
-/** Hollywood **/
+// Hollywood
 function cpuMenuHollywood(&$variables) {
 $variables['hollywood_menu'] = \Drupal::service('term_subs')->createSubtermsHollywood();
 }
-/** Venice **/
+// Venice
 function cpuMenuVenice(&$variables) {
   $variables['venice_menu'] = \Drupal::service('term_subs')->createSubtermsVenice();
 }
-//function cpuMenuHousing(&$variables) {
-//  $variables['housing_menu'] = \Drupal::service('term_subs')->createSubtermsHousing();
-//}
+
+function cpuMenuHousing(&$variables) {
+  $variables['housing_menu'] = \Drupal::service('term_subs')->createSubtermsHousing();
+}
 /**
  * Map gallery: generate Map list.
  *
@@ -538,4 +539,8 @@ function getTNPDetail(&$variables) {
     // TNP Plan/ Slauson Corridor Tab Menu
     $slausonTNPCpuTerms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('slauson_corridor_tnp_menu');
     $variables['slauson_corridor_menu'] = formatTabMenuTitle($slausonTNPCpuTerms);
+
+    // TNP Plan/ Slauson Corridor Tab Menu SPANISH
+    $slausonTNPCpuTermsEs = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('slauson_corridor_tnp_menu_es');
+    $variables['slauson_corridor_menu_es'] = formatTabMenuTitle($slausonTNPCpuTermsEs);
 }
