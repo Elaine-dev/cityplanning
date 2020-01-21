@@ -1,4 +1,5 @@
 <!-- Fixed navbar -->
+
 {% include directory ~ '/partials/header.html.twig' %}
 
 <div class="container-fluid">
@@ -156,9 +157,13 @@ data['#paragraph'].hasField('field_fullwidth_body')
 
 <!-- BEGIN MIDDLE COL -->
 <div class="col-md-8 vertical-line">
-<span class="hero_image">{% if node.field_hero_image.value %}
-<img src="{{ file_url(node.field_hero_image.entity.fileuri | image_style('cpu_news_feed')) }}"/></span>
+<span class="hero_image">
+
+{% if node.field_hero_image.value %}
+{{ page.content| without ('cpv3_local_tasks') }}
+
 {% endif %}
+
 
 {% if node.field_caption_subhead.value %}
 <span class="news-text">{{ node.field_caption_subhead.value|raw}}</span><br /><br />

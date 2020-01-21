@@ -1,16 +1,48 @@
+<style>
+.news-feed span.img-border a img.img-responsive, .news-feed span.img-border img.img-responsive {
+  object-fit: cover;
+  object-position: 100% 0;
+  width: 366px;
+  height: 266px;
+}
+.news-feed {
+    padding-top: 30px;
+    margin-left:-20px;
+}
+li.flex-item {
+    width: 333px;
+  }
+  @media screen and (max-width: 799px) and (min-width: 518px) {
+    .news-feed span.img-border a img.img-responsive, .news-feed span.img-border img.img-responsive {
+      object-fit: cover;
+      object-position: 100% 0;
+      min-width: auto;
+      min-height: 1px;
+    }
+  }
+</style>
+
 {%
   set class =  ''
 %}
 
 <div class="row padding-left0 padding-right0" style="padding-bottom: 1px;">
 <div class="news-feed">{{ fields.field_image_cpu_news_feed.content }}
- <div class="sharethis-inline-share-buttons" style="width:280px"></div><br>
+ <div class="sharethis-inline-share-buttons" style="width:auto; padding-right:10px;""></div><br>
   <h5 style="width:350px">{{ fields.title.content }}</h5>
   <div class="date" style="font-size: 12px;line-height: 0; color:#3a5a99; font-weight:600">
-     {{ fields.field_event_date.content }}
+{# to work on local with views #}
+{{ fields.field_event_date_1.content }}
+
+{#dump(fields.field_event_date_1.content)#}
+
+{# to work on dev, staging, prod with views #}
+{{ fields.field_event_date.content }}
+     </div>
    </div>
-   </div>
+
  <div class="row paddingtop15 padding-left0 padding-right0">
  </div>
   </div>
+
    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5abd51321243c10013440c58&product=inline-share-buttons' async='async'></script>

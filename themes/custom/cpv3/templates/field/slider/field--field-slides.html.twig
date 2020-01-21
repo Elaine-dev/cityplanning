@@ -2,6 +2,9 @@
 .slider-content.transparent {
     background-color: transparent;
   }
+.img-responsive {
+    display:inline-block;
+  }
 </style>
 
 {% for item in items %}
@@ -12,11 +15,11 @@
 <div class="swiper-slide" >
   {% if link is not empty %}
     <a href="{{ link }}">
-      <img src="{{ url }}" class="img-responsive" /></a>
+      <img src="{{ url }}" class="img-responsive"/></a>
     {% if text is not empty %}
 	<div class="slider-content">{{ text|raw }}</div>
     {% else %}
-  <div class="slider-content transparent">{{ text|raw }}</div>
+  <div class="slider-content transparent center">{{ text|raw }}</div>
     {% endif %}
   </div>
   {% else %}
