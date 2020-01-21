@@ -1,4 +1,6 @@
 {# set image style #}
+{% if content.field_hero_image.0 is not empty %}
 {% set img = content.field_hero_image.0|merge({ '#image_style' : 'cpu_news_feed'}) %}
  {# render image #}
  {{ img }}
+ {% endif %}
