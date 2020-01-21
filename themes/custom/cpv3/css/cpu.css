@@ -267,9 +267,9 @@ p.slider-caption-cpu a {
 		margin-top: -15px;
 	}
 	#hollywood-tab {
-		margin-top: -3%;
-		width: 107%;
-		margin-left: -17px;
+    margin-top: -6%;
+    width: 108%;
+    margin-left: -15px;
 	}
 }
 @media screen and (max-width: 517px) and (min-width: 376px) {
@@ -295,10 +295,10 @@ p.slider-caption-cpu a {
 }
 @media screen and (max-width: 699px) and (min-width: 650px) {
 	.swiper-slide .slider-content {
-		top: -75%;
+		top: -81%;
 	}
 	.swiper-container.swiper-container-horizontal {
-		height: 356px;
+		height: 329px;
 	}
 }
 @media screen and (max-width: 649px) and (min-width: 600px) {
@@ -316,6 +316,11 @@ p.slider-caption-cpu a {
 	.swiper-container.swiper-container-horizontal {
 		height: 285px;
 	}
+}
+@media screen and (max-width: 599px) and (min-width: 575px) {
+  .tab-line {
+  border-right: #ccc 1px solid !important;
+  }
 }
 @media screen and (max-width: 549px) and (min-width: 519px) {
 	.swiper-slide .slider-content {
