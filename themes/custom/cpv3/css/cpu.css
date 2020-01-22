@@ -194,6 +194,12 @@ p.slider-caption-cpu a {
   padding-left: 15px;
   position: absolute !important;
 }
+.slider-content.transparent {
+    background-color: transparent;
+}
+.img-responsive {
+    display:inline-block;
+}
 /* Media queries */
 
 @media screen and (max-width: 799px) and (min-width: 599px) {
@@ -316,6 +322,9 @@ p.slider-caption-cpu a {
 	.swiper-container.swiper-container-horizontal {
 		height: 285px;
 	}
+  #videos .swiper-container.swiper-container-horizontal {
+    height: 212px !important;
+  }
 }
 @media screen and (max-width: 599px) and (min-width: 575px) {
   .tab-line {

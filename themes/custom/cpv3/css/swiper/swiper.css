@@ -733,7 +733,16 @@ p.slider-title-cpu + p {
   padding: 10px 60px 10px 40px;
   position: relative;
 }
-/* BEGIN MEDIA QUERIES */
+
+/**fixes caption in slider spacing*/
+#planning-update .swiper-slide .slider-content {
+ /*  top: -410px !important; */
+}
+@media screen and (max-width: 1200px) and (min-width: 800px) {}
+#videos .swiper-container.swiper-container-horizontal {
+    height: 387px;
+}
+}
 @media screen and (max-width: 375px) {
 	.swiper-container.swiper-container-horizontal {
 		height: 172px;
@@ -758,6 +767,10 @@ p.slider-title-cpu + p {
 }
 
 @media screen and (min-width: 376px) and (max-width: 667px) {
+	.swiper-container.swiper-container-horizontal {
+		height: 198px;
+	}
+
 	.swiper-slide .slider-content {
 		padding: 5px;
 	}
@@ -774,5 +787,17 @@ p.slider-title-cpu + p {
 
 	.swiper-button-next, .swiper-button-prev {
 		margin-top: 10px;
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+	.swiper-container.swiper-container-horizontal{
+		height: 415px;
+	}
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+	.swiper-container.swiper-container-horizontal{
+		height: 405px;
 	}
 }
