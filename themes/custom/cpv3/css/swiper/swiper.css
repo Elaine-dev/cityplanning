@@ -740,7 +740,7 @@ p.slider-title-cpu + p {
 }
 @media screen and (max-width: 1200px) and (min-width: 800px) {}
 #videos .swiper-container.swiper-container-horizontal {
-    height: 387px;
+   height: 271px;
 }
 }
 @media screen and (max-width: 375px) {
@@ -767,7 +767,7 @@ p.slider-title-cpu + p {
 }
 
 @media screen and (min-width: 376px) and (max-width: 667px) {
-	.swiper-container.swiper-container-horizontal {
+  #videos .swiper-container.swiper-container-horizontal, .swiper-container.swiper-container-horizontal {
 		height: 198px;
 	}
 
