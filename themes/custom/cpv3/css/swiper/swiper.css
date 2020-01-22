@@ -243,8 +243,7 @@
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E")
 }
 
-.swiper-container.swiper-container-horizontal {
-  /* height: 540px; */
+#videos .swiper-container.swiper-container-horizontal, .swiper-container.swiper-container-horizontal {
   height: 500px;
 }
 
@@ -733,12 +732,12 @@ p.slider-title-cpu + p {
   padding: 10px 60px 10px 40px;
   position: relative;
 }
-
 /**fixes caption in slider spacing*/
 #planning-update .swiper-slide .slider-content {
  /*  top: -410px !important; */
 }
-@media screen and (max-width: 1200px) and (min-width: 800px) {}
+/***** MEIDA QUERIES **************/
+@media screen and (max-width: 1200px) and (min-width: 800px) {
 #videos .swiper-container.swiper-container-horizontal {
    height: 271px;
 }
@@ -800,4 +799,7 @@ p.slider-title-cpu + p {
 	.swiper-container.swiper-container-horizontal{
 		height: 405px;
 	}
+  #videos .swiper-container.swiper-container-horizontal {
+      height: 265px;
+  }
 }
