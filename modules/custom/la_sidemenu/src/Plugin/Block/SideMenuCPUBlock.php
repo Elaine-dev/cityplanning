@@ -135,8 +135,7 @@ class SideMenuCPUBlock extends BlockBase {
             // load menu from taxonomy
             $menu_list = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($tax_machine_name);
             $menu_format = formatTabMenuTitleForCP($menu_list);
-            
-            
+                        
             $html = '<ul>';
             foreach ($menu_format as $val) {
                 $html .= '<li><a href="'.$parent_link.'#'.$val['link'].'">'.$val['name'].'</a> </li>';
