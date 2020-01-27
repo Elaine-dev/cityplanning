@@ -43,12 +43,12 @@ class SideMenuCPUBlock extends BlockBase {
         $html = '';
         
         $menu_base_path = '/plans-policies/community-plan-update/';
-        $menu_base_path_gpu = '/plans-policies/';
+        $menu_base_path_other = '/plans-policies/';
         $tax_machine_name = '';
 
         //kint($menu_level);
 
-        if (isset($menu_level) && $uri_array[2] == 'community-plan-update') {
+        if ($uri_array[2] == 'community-plan-update' && isset($menu_level)) {
             /**
              * $tax_machine_name: Vocabulary name in the Taxonomy. Each Community Plan Update has different menu.
              * $parent_link : URL of parent node.
@@ -130,7 +130,7 @@ class SideMenuCPUBlock extends BlockBase {
                     $parent_link = $menu_base_path_other.'general-plan-updates';
                     break;
             }
-        } elseif (isset($menu_level) && $uri_array[2] == 'housing-element-update') {
+        } elseif ($uri_array[2] == 'housing-element-update' && isset($menu_level)) {
             $tax_machine_name = 'housing_element_update';
             $parent_link = $menu_base_path_other.'housing-element-update';
         }
