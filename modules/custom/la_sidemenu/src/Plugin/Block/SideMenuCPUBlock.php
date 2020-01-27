@@ -36,8 +36,6 @@ class SideMenuCPUBlock extends BlockBase {
          */
 
         $uri_array = explode('/', $uri);
-        kint($uri_array);
-        
         $menu_level = $uri_array[3];                                    // tax term in the form of url
         $menu_level_es = ($uri_array[4]) ? $uri_array[4] : '';          // for Spanish language, es is added in url pattern
         $html = '';
@@ -45,8 +43,6 @@ class SideMenuCPUBlock extends BlockBase {
         $menu_base_path = '/plans-policies/community-plan-update/';
         $menu_base_path_other = '/plans-policies/';
         $tax_machine_name = '';
-
-        //kint($menu_level);
 
         if ($uri_array[2] == 'community-plan-update' && isset($menu_level)) {
             /**
