@@ -1,0 +1,19 @@
+uuid: f7fbb1b2-3f0a-4331-ad13-9c51ba5d0f5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_planner_contact
+    - node.type.community_plan_areas
+id: node.community_plan_areas.field_project_planner_contact
+field_name: field_project_planner_contact
+entity_type: node
+bundle: community_plan_areas
+label: 'Project Planner Contact'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

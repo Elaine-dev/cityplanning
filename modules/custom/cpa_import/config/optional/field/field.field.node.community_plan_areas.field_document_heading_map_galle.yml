@@ -1,0 +1,19 @@
+uuid: 4efb7a9e-258a-4538-a6dc-93dd3557151d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_heading_map_galle
+    - node.type.community_plan_areas
+id: node.community_plan_areas.field_document_heading_map_galle
+field_name: field_document_heading_map_galle
+entity_type: node
+bundle: community_plan_areas
+label: 'Document Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

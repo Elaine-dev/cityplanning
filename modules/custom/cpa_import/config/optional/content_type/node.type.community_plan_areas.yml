@@ -1,0 +1,17 @@
+uuid: 03e0a46c-5450-442f-af49-c4d9143e46a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Community Plan Areas'
+type: community_plan_areas
+description: 'Manage content for the Community Plan Areas. It''s rebuild.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

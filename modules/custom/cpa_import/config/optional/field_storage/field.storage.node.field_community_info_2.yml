@@ -1,0 +1,19 @@
+uuid: 1f2b5c7d-8156-452b-8ac7-3adc86f992ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_community_info_2
+field_name: field_community_info_2
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

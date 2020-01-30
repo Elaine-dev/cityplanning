@@ -1,0 +1,23 @@
+uuid: 22c25ba6-8874-4784-bf3a-e5a621f93200
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_community_info_2
+    - node.type.community_plan_areas
+  module:
+    - link
+id: node.community_plan_areas.field_community_info_2
+field_name: field_community_info_2
+entity_type: node
+bundle: community_plan_areas
+label: 'Community Info-2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

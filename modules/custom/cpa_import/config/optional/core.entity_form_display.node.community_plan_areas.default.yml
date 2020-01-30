@@ -1,0 +1,250 @@
+uuid: 349d4935-ce83-43bf-ad0f-bb1d89ac89b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.community_plan_areas.body
+    - field.field.node.community_plan_areas.field_community_info
+    - field.field.node.community_plan_areas.field_community_info_2
+    - field.field.node.community_plan_areas.field_community_plan_area_docume
+    - field.field.node.community_plan_areas.field_document_heading_community
+    - field.field.node.community_plan_areas.field_document_heading_map_galle
+    - field.field.node.community_plan_areas.field_document_heading_overlays
+    - field.field.node.community_plan_areas.field_general_information
+    - field.field.node.community_plan_areas.field_map_gallery
+    - field.field.node.community_plan_areas.field_overlays
+    - field.field.node.community_plan_areas.field_policy_planner_contact
+    - field.field.node.community_plan_areas.field_project_planner_contact
+    - node.type.community_plan_areas
+  module:
+    - field_group
+    - link
+    - paragraphs
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_community_plan_document:
+      children:
+        - field_document_heading_community
+        - field_community_plan_area_docume
+      parent_name: ''
+      weight: 15
+      format_type: fieldset
+      region: content
+      format_settings:
+        effect: bounceslide
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Community Plan Document'
+    group_map_gallery:
+      children:
+        - field_document_heading_map_galle
+        - field_map_gallery
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
+      region: content
+      format_settings:
+        effect: bounceslide
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: 'Map Gallery'
+    group_overlays:
+      children:
+        - field_document_heading_overlays
+        - field_overlays
+      parent_name: ''
+      weight: 17
+      format_type: fieldset
+      region: content
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+        effect: none
+      label: Overlays
+id: node.community_plan_areas.default
+targetEntityType: node
+bundle: community_plan_areas
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 14
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_community_info:
+    weight: 12
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_community_info_2:
+    weight: 13
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_community_plan_area_docume:
+    type: entity_reference_paragraphs
+    weight: 17
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_document_heading_community:
+    weight: 16
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_document_heading_map_galle:
+    weight: 15
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_document_heading_overlays:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_general_information:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_map_gallery:
+    type: entity_reference_paragraphs
+    weight: 16
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_overlays:
+    type: entity_reference_paragraphs
+    weight: 18
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_policy_planner_contact:
+    weight: 10
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_project_planner_contact:
+    weight: 9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 8
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

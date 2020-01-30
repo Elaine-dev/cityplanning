@@ -1,0 +1,9 @@
+uuid: e6c9b6cf-5c7b-4a13-b641-c02a6b0a847e
+langcode: en
+status: true
+dependencies: {  }
+id: document_cpa
+label: 'Document - CPA'
+icon_uuid: null
+description: 'Manage document for Community Plan Area'
+behavior_plugins: {  }

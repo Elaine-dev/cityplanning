@@ -1,0 +1,133 @@
+uuid: b4d36c37-f8d0-41ff-9994-f9d34dd55faf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overlays
+    - node.type.community_plan_areas
+    - paragraphs.paragraphs_type.community_plan_area_document
+  module:
+    - entity_reference_revisions
+id: node.community_plan_areas.field_overlays
+field_name: field_overlays
+entity_type: node
+bundle: community_plan_areas
+label: Overlays
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      community_plan_area_document: community_plan_area_document
+    target_bundles_drag_drop:
+      accordion:
+        weight: 36
+        enabled: false
+      background_image_title_buttons:
+        weight: 37
+        enabled: false
+      block_quote:
+        weight: 38
+        enabled: false
+      button:
+        weight: 39
+        enabled: false
+      call_to_action:
+        weight: 40
+        enabled: false
+      community_plan_area_document:
+        enabled: true
+        weight: 41
+      community_plan_update_news_feed:
+        weight: 42
+        enabled: false
+      contact_form_hcpu:
+        weight: 43
+        enabled: false
+      content_only:
+        weight: 44
+        enabled: false
+      document_cpa:
+        weight: 45
+        enabled: false
+      email_sign_up_form:
+        weight: 46
+        enabled: false
+      embed_code:
+        weight: 47
+        enabled: false
+      fexible_grid:
+        weight: 48
+        enabled: false
+      flex_grid_image:
+        weight: 49
+        enabled: false
+      flex_grid_text:
+        weight: 50
+        enabled: false
+      four_column_layout:
+        weight: 51
+        enabled: false
+      fullwidth_buttons:
+        weight: 52
+        enabled: false
+      fullwidth_content:
+        weight: 53
+        enabled: false
+      full_width_image:
+        weight: 54
+        enabled: false
+      image:
+        weight: 55
+        enabled: false
+      image_button_two_columns:
+        weight: 56
+        enabled: false
+      image_over_image_with_button:
+        weight: 57
+        enabled: false
+      overlay_icons:
+        weight: 58
+        enabled: false
+      photo_gallery:
+        weight: 59
+        enabled: false
+      profile_with_social_icons:
+        weight: 60
+        enabled: false
+      slider:
+        weight: 61
+        enabled: false
+      tab_contact_content:
+        weight: 62
+        enabled: false
+      tab_content:
+        weight: 63
+        enabled: false
+      tab_events_content:
+        weight: 64
+        enabled: false
+      tab_map_content:
+        weight: 65
+        enabled: false
+      tab_menu:
+        weight: 66
+        enabled: false
+      tab_news_content:
+        weight: 67
+        enabled: false
+      tab_plan_content:
+        weight: 68
+        enabled: false
+      tab_resources_content:
+        weight: 69
+        enabled: false
+      two_column_layout:
+        weight: 70
+        enabled: false
+field_type: entity_reference_revisions

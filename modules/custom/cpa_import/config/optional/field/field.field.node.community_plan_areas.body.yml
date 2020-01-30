@@ -1,0 +1,23 @@
+uuid: f4a5c80e-8cff-4bdf-aefd-c42c9e821a16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.community_plan_areas
+  module:
+    - text
+id: node.community_plan_areas.body
+field_name: body
+entity_type: node
+bundle: community_plan_areas
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

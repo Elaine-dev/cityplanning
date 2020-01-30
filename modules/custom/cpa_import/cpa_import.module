@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains cpa_update.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function cpa_import_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the cpa_import module.
+    case 'help.page.cpa_import':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Community Plan Area content type import.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

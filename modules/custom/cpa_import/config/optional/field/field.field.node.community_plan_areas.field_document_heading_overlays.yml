@@ -1,0 +1,19 @@
+uuid: fbb2d23c-de5d-4c32-9191-ed5868356ba6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document_heading_overlays
+    - node.type.community_plan_areas
+id: node.community_plan_areas.field_document_heading_overlays
+field_name: field_document_heading_overlays
+entity_type: node
+bundle: community_plan_areas
+label: 'Document Heading'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 66d82532-e2b9-43bc-b865-5b0555a43ddd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_general_information
+    - node.type.community_plan_areas
+  module:
+    - text
+id: node.community_plan_areas.field_general_information
+field_name: field_general_information
+entity_type: node
+bundle: community_plan_areas
+label: 'General Information'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

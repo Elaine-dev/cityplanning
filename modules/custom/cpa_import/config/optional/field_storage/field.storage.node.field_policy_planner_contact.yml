@@ -1,0 +1,19 @@
+uuid: 4b685f7c-0f40-4784-8e77-ea1d43cd7a5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_policy_planner_contact
+field_name: field_policy_planner_contact
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

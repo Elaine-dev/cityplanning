@@ -1,0 +1,9 @@
+uuid: 0fbbfc99-c54c-461e-a7d7-c26a3c8df35f
+langcode: en
+status: true
+dependencies: {  }
+id: community_plan_area_document
+label: 'Community Plan Area Section'
+icon_uuid: null
+description: 'Manage paragraph for Community Plan Document section. It contains title, content section and Document upload section.'
+behavior_plugins: {  }

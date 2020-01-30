@@ -1,0 +1,21 @@
+uuid: 36615335-54bd-4197-9ea8-7fdf7490f0eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_policy_planner_contact
+    - node.type.community_plan_areas
+  module:
+    - text
+id: node.community_plan_areas.field_policy_planner_contact
+field_name: field_policy_planner_contact
+entity_type: node
+bundle: community_plan_areas
+label: 'Policy Planner Contact'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

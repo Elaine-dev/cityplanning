@@ -1,0 +1,9 @@
+name: 'Community Plan Area Import'
+type: module
+description: 'Import yml for Community Plan Area content type'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - paragraphs
+  - field_group
+  - entity_reference_revisions

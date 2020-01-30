@@ -1,0 +1,138 @@
+uuid: 3679adcc-573e-4d81-bb98-c73e6164dcbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.community_plan_areas.body
+    - field.field.node.community_plan_areas.field_community_info
+    - field.field.node.community_plan_areas.field_community_info_2
+    - field.field.node.community_plan_areas.field_community_plan_area_docume
+    - field.field.node.community_plan_areas.field_document_heading_community
+    - field.field.node.community_plan_areas.field_document_heading_map_galle
+    - field.field.node.community_plan_areas.field_document_heading_overlays
+    - field.field.node.community_plan_areas.field_general_information
+    - field.field.node.community_plan_areas.field_map_gallery
+    - field.field.node.community_plan_areas.field_overlays
+    - field.field.node.community_plan_areas.field_policy_planner_contact
+    - field.field.node.community_plan_areas.field_project_planner_contact
+    - node.type.community_plan_areas
+  module:
+    - entity_reference_revisions
+    - link
+    - text
+    - user
+id: node.community_plan_areas.default
+targetEntityType: node
+bundle: community_plan_areas
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_community_info:
+    weight: 102
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_community_info_2:
+    weight: 103
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_community_plan_area_docume:
+    type: entity_reference_revisions_entity_view
+    weight: 108
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_document_heading_community:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_document_heading_map_galle:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_document_heading_overlays:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_general_information:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_map_gallery:
+    type: entity_reference_revisions_entity_view
+    weight: 110
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_overlays:
+    type: entity_reference_revisions_entity_view
+    weight: 112
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_policy_planner_contact:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_project_planner_contact:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
