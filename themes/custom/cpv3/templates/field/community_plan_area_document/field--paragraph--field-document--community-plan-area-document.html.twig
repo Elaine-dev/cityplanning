@@ -6,7 +6,6 @@
 	{% set doc_link =  item.content['#paragraph'].get('field_document_link').0.url %}
 	{% set doc_title =  item.content['#paragraph'].get('field_document_link').0.title %}
 	
-	{{ kint(item) }}
 	
 	{# set icon path #}
 	{% if icon_class == 'cpd_icon' %}
