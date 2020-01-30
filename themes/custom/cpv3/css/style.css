@@ -3227,6 +3227,12 @@ background: url(/sites/default/files/icons/overlays/i-text-hpoz.png) no-repeat;
   text-align: center;
 }
 
+/** Community Plan Area : icon title **/
+.cpa-doc-title {
+	font-weight: bold;
+	padding-top: 10px;	
+}
+
 /** COMMUNITY PLAN UPDATE MENU CHANGES **/
 #hollywood-tab ul.nav.nav-tabs {
   display: flex;
