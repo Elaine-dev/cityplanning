@@ -1,0 +1,23 @@
+{% for item in items %}
+	{% set icon_class = item.content['#paragraph'].get('field_document_type').value %}
+	{% set doc_link =  item.content['#paragraph'].get('field_document_link').0.url %}
+	{% set doc_title =  item.content['#paragraph'].get('field_document_link').0.title %}
+	
+	{# set icon path #}
+	{% if icon_class == 'cpd_icon' %}
+	    {% set img_path = '/sites/default/files/icons/community_plan/i-CP-doc.png' %}
+    {% elseif icon_class == 'adopted_maps_icon' %}
+    	{% set img_path = '/sites/default/files/icons/community_plan/i-CP-adopted.png' %}
+    {% elseif icon_class == 'interactive_maps_icon' %}
+    	{% set img_path = '/sites/default/files/icons/community_plan/i-CP-interactive.png' %}
+    {% elseif icon_class == 'informational_maps_icon' %}
+    	{% set img_path = '/sites/default/files/icons/community_plan/i-CP-informational.png' %}
+	{% else %}
+		{% set img_path = '/sites/default/files/icons/community_plan/i-overlay.png' %}
+	{% endif %}    
+	
+	<div class="col-md-3">
+    	<a href="{{ doc_link }}"><img src="{{ img_path }}" class="img-responsive" /></a>
+    	<div class="cpa-doc-title">{{ doc_title }}</div>
+	</div> 	
+{% endfor %}

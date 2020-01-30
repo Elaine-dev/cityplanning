@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-12">
+        {# Title for the each inner section. It's optional field #}
+        {% if content.field_title %} <h3>{{ content.field_title }}</h3> {% endif %}
+        
+        {# Text description for the each inner section. It's optional field #}
+        {% if content.field_content %} {{ content.field_content|raw }} {% endif %}
+        
+        
+        {# List documents with icon and link. It can be multiple. #}
+        <div>{{ content.field_document }}</div>
+        
+        {# display documents with link #}
+        {% if content.field_document['#items'][0] %}
+            <div class="clearfix padding-bottom15">
+            {% for item in content.field_document['#items'][0] %}
+                {{ drupal_entity('paragraph', item.target_id) }}
+            {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
