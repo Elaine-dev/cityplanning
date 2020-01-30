@@ -10,6 +10,9 @@
         {# List documents with icon and link. It can be multiple. #}
         <div>{{ content.field_document }}</div>
         
+        <small>inside content</small>
+        {{ kint(content.field_document) }}
+        
         {# display documents with link #}
         {% if content.field_document['#items'][0] %}
             <div class="clearfix padding-bottom15">
