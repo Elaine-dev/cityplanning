@@ -1,5 +1,5 @@
 <em>items</em>
-{{ kint(items) }}
+
 {% for item in items %}
 	<em>item - {{ loop.index }}</em>
 	{% set icon_class = item.content['#paragraph'].get('field_document_type').value %}
