@@ -1,4 +1,4 @@
-name: 'Community Plan Area Import'
+name: 'Community Plan Area - Import configuration'
 type: module
 description: 'Import yml for Community Plan Area content type'
 core: 8.x
