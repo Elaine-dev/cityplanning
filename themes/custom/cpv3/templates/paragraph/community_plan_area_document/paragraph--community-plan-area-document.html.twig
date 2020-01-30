@@ -11,7 +11,7 @@
         <div>{{ content.field_document }}</div>
         
         <small>inside content</small>
-        {{ kint(content.field_document) }}
+        {{ kint(content.field_document['#items'][0]) }}
         
         {# display documents with link #}
         {% if content.field_document['#items'][0] %}
