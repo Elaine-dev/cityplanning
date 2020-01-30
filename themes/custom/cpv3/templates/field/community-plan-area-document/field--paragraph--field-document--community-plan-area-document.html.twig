@@ -3,6 +3,9 @@
 	{% set doc_link =  item.content['#paragraph'].get('field_document_link').0.url %}
 	{% set doc_title =  item.content['#paragraph'].get('field_document_link').0.title %}
 	
+	{{ kint(icon_class) }}
+	{{ kint(doc_link) }}
+	
 	{# set icon path #}
 	{% if icon_class == 'cpd_icon' %}
 	    {% set img_path = '/sites/default/files/icons/community_plan/i-CP-doc.png' %}
