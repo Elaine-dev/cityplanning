@@ -18,23 +18,31 @@
       <div class="col-md-12">
         <h1>{{ node.label }}</h1>
       </div>
-      
+
     </div>
 
     <div class="row paddingtop15 padding-bottom60">
+      <div class="col-md-3 sidebar-menu hidden-sm hidden-xs pull-right">
+        <div class="top-bar"></div>
+        {{ page.side_menu }}
+      </div>
+
       {# Left-side bar #}
-      <div class="col-md-12">
+      <div class="col-md-9">
         <div class="row padding-left0">
-          <div class="col-md-12">
+
             {# content goes here  #}
             {{ page.content }}
-            
+            <!-- Right-side bar -->
+
+
+            <!-- //End Right-side bar -->
             <br>
-			
+</div></div>
 			{# Tabs #}
             <div class="row padding-left0">
             	<div class="col-md-12">
-            	
+
 	        		<div id="commissions-meeting-tab" ng-app="appCommMeetings">
                 		<ul class="nav nav-tabs" role="tablist">
                 			<li role="presentation" class="padding-top0 tab-line active">
@@ -50,11 +58,11 @@
         				 		<a href="#sunshine" aria-controls="4" role="tab" data-toggle="tab" data-value="Sunshine">Sunshine Canyon</a>
                             </li>
                 		</ul>
-                		
+
                 		<div class="tab-content" style="padding: 15px 0;">
                 			<!-- commissions -->
                 			<div class="tab-pane fade in active" id="commissions" ng-controller="commissionCtrl">
-                				
+
                                 {# filter & search #}
                                 <div class="row">
                                   <div class="col-md-12 padding-left0 padding-right0">
@@ -68,26 +76,26 @@
                                               <select name="apc" ng-model="apc">
                                                 <option ng-repeat="option in apcAreas.availableOptions" value="{[{option.id}]}" ng-selected="apc == option.id">{[{option.name}]}</option>
                                               </select>
-                    
+
                                               <!-- year -->
                                               <select name="date" ng-model="date">
                                                 <option>- Year -</option>
                                                 <option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d"></option>
                                               </select>
                                             </div>
-                                            
+
                                             {# filter option #}
                                             <div class="col-md-4 col-xs-12 search" id="content-search">
                                               <input ng-model="search" placeholder="Search">
                                             </div>
-                                            
+
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div> {# end filter & search #}
-                            
+
                                 <div class="row">
                                   <div class="col-md-12">
                                     <div ng-disabled="enable=='false'">
@@ -97,7 +105,7 @@
                                     </div>
                                   </div>
                                 </div>
-                            
+
                                 <div class="row">
                                   <div class="col-md-12 padding-left0 padding-right0">
                                     <div class="table-responsive">
@@ -159,17 +167,17 @@
                                             </span>
                                           </td>
                                         </tr>
-                                        
+
                                         <tr ng-if="agendas.length < 1">
                                         	<td colspan="7">No record found!</td>
-                                        </tr>						   
+                                        </tr>
                                       </table>
                                     </div>
                                   </div>
-                                </div>                               
-                                            		
+                                </div>
+
                     		</div>
-                    		
+
                     		<!-- boards -->
                     		<div class="tab-pane fade in" id="boards" ng-controller="boardCtrl">
                     			<div class="row">
@@ -183,33 +191,33 @@
                                               <select name="apc" ng-model="apc" >
                                                 <option ng-repeat="option in apcAreas.availableOptions" value="{[{option.id}]}"  ng-selected="apc == option.id">{[{option.name}]}</option>
                                               </select>
-                    
+
                                               <!-- year -->
                                               <select name="date" ng-model="date">
                                                 <option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d"></option>
                                               </select>
                                             </div>
-                                            
+
                                             {# filter option #}
                                             <div class="col-md-4 col-xs-12 search" id="content-search">
                                               <input ng-model="search" placeholder="Search">
                                             </div>
-                                                                
+
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div> 
-                                
+                                </div>
+
                                 <div class="row">
                                   <div class="col-md-12">
                                     <div ng-disabled="enable=='false'">
                                       <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
                                     </div>
                                   </div>
-                                </div> 
-                                
+                                </div>
+
                                 <div class="row">
                                   <div class="col-md-12 padding-left0 padding-right0">
                                     <div class="table-responsive">
@@ -219,19 +227,19 @@
                                           <col class="col-md-2">
                                           <col class="col-md-3">
                                           <col class="col-md-5">
-                                          <col class="col-md-2">                                          
+                                          <col class="col-md-2">
                                         </colgroup>
-                    
+
                                         <thead>
                                         <tr>
                                           <th>Date</th>
                                           <th>Type</th>
                                           <th>Board Name</th>
                                           <th>Address</th>
-                                          <th>Agenda</th>                                          
+                                          <th>Agenda</th>
                                         </tr>
                                         </thead>
-                    
+
                                         <tr ng-if="boards.length > 0" ng-repeat="board in boards | filter:search">
                                           <td ng-bind="board.Date"></td>
                                           <td ng-bind="board.Type"></td>
@@ -241,21 +249,21 @@
                                             <span ng-if="board.AgendaLink"><a href="{[{board.AgendaLink}]}" target="_blank">
                                                 <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
                                             </span>
-                                          </td>                                          
+                                          </td>
                                         </tr>
-                                        
+
                                         <tr ng-if="boards.length < 1">
-                                        	<td colspan="5">No record found!</td>                                        
-                                        </tr>	
+                                        	<td colspan="5">No record found!</td>
+                                        </tr>
                                       </table>
                                     </div>
                                   </div>
-                                </div>                   		
+                                </div>
                     		</div>
-                    		
+
                     		<!-- hearings -->
                     		<div class="tab-pane fade in" id="hearings" ng-controller="hearingsCtrl">
-                    			
+
                     			<div class="row">
                                   <div class="col-md-12 padding-left0 padding-right0">
                                     <div class="padding-bottom20">
@@ -267,13 +275,13 @@
                                               <select name="apc" ng-model="apc" >
                                                 <option ng-repeat="option in apcAreas.availableOptions" value="{[{option.id}]}"  ng-selected="apc == option.id">{[{option.name}]}</option>
                                               </select>
-                    
+
                                               <!-- year -->
                                               <select name="date" ng-model="date">
                                                 <option ng-repeat="d in dates" ng-selected="d==date" ng-value="d" ng-bind="d"></option>
                                               </select>
                                             </div>
-                    
+
                                             <div class="col-md-4 col-xs-12" id="content-search">
                                               <input ng-model="CaseNumber" placeholder="Search your hearing">
                                             </div>
@@ -282,16 +290,16 @@
                                       </div>
                                     </div>
                                   </div>
-                                </div> 
-                                
+                                </div>
+
                                 <div class="row">
                                   <div class="col-md-12">
                                     <div ng-disabled="enable=='false'">
                                       <center ng-show="loadingText == 'Loading ...'"><i class="fa fa-spinner fa-spin fa-2x fa-fw"></i><span class="sr-only">Loading...</span></center>
                                     </div>
                                   </div>
-                                </div> 
-                                
+                                </div>
+
                                 <div class="row">
                                   <div class="col-md-12 padding-left0 padding-right0">
                                     <div class="table-responsive">
@@ -305,7 +313,7 @@
                                           <col class="col-md-2">
                                           <col class="col-md-2">
                                         </colgroup>
-                    
+
                                         <thead>
                                         <tr>
                                           <th>Date</th>
@@ -317,7 +325,7 @@
                                           <th>Council District</th>
                                         </tr>
                                         </thead>
-                    
+
                                         <tr ng-repeat="hearing in hearings | filter:CaseNumber" ng-if="hearings.length > 0">
                                           <td ng-bind="hearing.Date"></td>
                                           <td ng-bind="hearing.CaseNumber"></td>
@@ -325,8 +333,8 @@
                                           <td ng-bind="hearing.Note"></td>
                                           <td>
                                           	<span ng-if="hearing.AgendaLink"><a href="{[{hearing.AgendaLink}]}" target="_blank">
-                                                <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>                                          	
-                                          	</span>                                          
+                                                <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
+                                          	</span>
                                           </td>
                                           <td>
                                             <span ng-if="hearing.HearingLink"><a href="{[{hearing.HearingLink}]}" target="_blank">
@@ -335,44 +343,44 @@
                                           </td>
                                           <td ng-bind="hearing.CD"></td>
                                         </tr>
-										
+
 										<tr ng-if="hearings.length < 1">
                                         	<td colspan="7">No record found!</td>
                                         </tr>
                                       </table>
                                     </div>
                                   </div>
-                                </div>  
-                                                		
+                                </div>
+
                     		</div> {# //end hearings tab #}
-                    		
-                    		<!-- Sunshine -->            		
-                    		<div class="tab-pane fade in" id="sunshine">                    			
+
+                    		<!-- Sunshine -->
+                    		<div class="tab-pane fade in" id="sunshine">
                     			<div class="row">
                                   <div class="col-md-12 padding-left0 padding-right0">
-                                  
+
                          			{% if sunshine.0.body|length > 0 %}
-                                      	{% for parag_id in sunshine.0.body %}                                  		
-                                      	    {{ bamboo_render_entity('paragraph', parag_id.get('target_id').value) }}                                  	
+                                      	{% for parag_id in sunshine.0.body %}
+                                      	    {{ bamboo_render_entity('paragraph', parag_id.get('target_id').value) }}
                                       	{% endfor %}
                                   	{% endif %}
-                                    
+
                                   </div>
-                                </div>          		
-                    		</div> {# //end Sunshine tab #} 
-                		
+                                </div>
+                    		</div> {# //end Sunshine tab #}
+
                 		</div> <!-- //end .tab-content -->
-                		
+
             		</div>{# //end #publication-tab #}
-            		
+
         		</div>
-            
-            </div>{# //end Tabs #}     
+
+            </div>{# //end Tabs #}
 
           </div>
         </div>
       </div> {# End Left-side bar #}
-      
+
     </div>
   </div> {# End container #}
 
@@ -380,4 +388,5 @@
 <!-- footer section -->
 {{ attach_library ('cpv3/agenda-hearing') }}
 {{ attach_library ('cpv3/angular-js') }}
+
 {% include directory ~ '/partials/footer.html.twig' %}
