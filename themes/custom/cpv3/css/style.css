@@ -3,8 +3,8 @@ Theme Name: LADCP
 Theme URL:
 Author: Humbal Shahi
 Created Date: 2018.02.20
-Update Date: 2019.12.10
-Version: 4.4.80
+Update Date: 2020.02.18
+Version: 4.4.81
 *********************/
 body {
   line-height: 1.5 !important;
@@ -3233,6 +3233,12 @@ background: url(/sites/default/files/icons/overlays/i-text-hpoz.png) no-repeat;
 	padding-top: 10px;	
 }
 
+.cpa-doc-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
 /** COMMUNITY PLAN UPDATE MENU CHANGES **/
 #hollywood-tab ul.nav.nav-tabs {
   display: flex;
@@ -4182,6 +4188,13 @@ table tr th a:focus {
 	 *************************************/
  	#helpful-numbers li{padding: 10px 0;}
  	.helpful-number {float: left; padding-left: 15px;}
+ 	
+    /*************************************
+     * Community Plan Area - New
+     *************************************/
+    .cpa-doc-wrapper {
+       display: block;
+    }
 }
 
 /* Small devices (mobile phone < 575px) */

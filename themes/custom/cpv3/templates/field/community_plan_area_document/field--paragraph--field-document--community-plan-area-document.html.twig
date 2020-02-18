@@ -16,8 +16,8 @@
 		{% set img_path = '/sites/default/files/icons/community_plan/i-overlay.png' %}
 	{% endif %}    
 	
-	<div class="col-md-3">
-    	<a href="{{ doc_link }}"><img src="{{ img_path }}" class="img-responsive" /></a>
+	<div class="col-md-3 cpa-doc-wrapper">
+    	<a href="{{ doc_link }}"><img src="{{ img_path }}" alt="{{ doc_title|lower }} - icon" /></a>
     	<div class="cpa-doc-title">{{ doc_title }}</div>
 	</div> 	
 {% endfor %}
