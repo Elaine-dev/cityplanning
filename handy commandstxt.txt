@@ -1,0 +1,301 @@
+driremove old ssh key in git
+ssh-keygen -R 10.68.8.153
+
+
+ssh -L 3305:localhost:3306 dcpadmin@10.68.8.153
+
+stage
+
+IP address:          10.68.8.153
+username:            dcpadmin
+password:            dcpadmin
+
+git url:             ssh://dcpadmin@10.68.8.153:/home/dcpadmin/repos/website.git
+
+dev
+
+ssh://dcpadmin@10.68.8.152:/home/dcpadmin/repos/website.git
+
+git password:        dcpadmin
+
+Drupal database:     db_dplanningla_v4_1
+database user:       dcpadmin
+database password:   dcpadmin
+
+mysql root password: dcpadmin  (from su only)
+
+prod
+ssh dcprootadmin@13.91.107.66
+
+cd /opt/bitnami/apps/drupal/htdocs/sites/default
+
+sftp dcprootadmin@13.91.107.66
+
+get FILENAME
+
+getcomposer.org/download
+
+composer global require drush/drush:8.*
+
+drush upwd 1 --password="admin"
+
+drush upwd 1 --password="newpassword"
+
+drupal console in git bash use drupal.bat
+
+Now, you can execute the command "drupal" from your Windows CMD or "drupal.bat" command from MINGW64 (Git bash) https://www.drupal.org/forum/support/post-installation/2017-10-26/10-steps-to-install-drupal-console-on-windows-10
+
+twig cheatsheet
+https://gist.github.com/raphaellarrinaga/c1d71f69873c967ff74f8ec09cbdf9e1
+get one-time log-in url for lost user 1 password
+drupal.bat user:login:url 1
+
+Code Sniffer
+
+cd modules 
+phpcs --standard=DrupalPractice custom
+phpcs –standard=DrupalPractice </path/to/example.module>
+see: http://www.tothenew.com/blog/how-to-install-and-setup-drupal-code-sniffer/
+
+list all modules but no core:
+drush pm-list --type=Module --no-core   --status=enabled
+
+list all fields:
+admin/reports/fields
+
+export CT to code:
+Create a content type abc
+Module must exist first!
+drupal.bat generate:module
+drupal.bat config:export:content:type --module=abc
+drupal.bat config:export:content:type --module=new_module --remove-uuid --remove-config-hash content_type_to_export
+It will ask for the content type name and whether that configuration be optional or not.
+console shows the message the configuration has been exported
+
+bootstrap paragraphs video:
+https://bp.jimbir.ch/
+https://bp.jimbir.ch/installation
+
+https://drupal.stackexchange.com/questions/65368/how-to-collapse-and-uncollapse-toggle-the-body-field-in-teaser-display
+
+Slack channel: Drupal Twig Slack
+
+http://drupal8.test/devel/php
+ http://drupal8.test/user/reset/1/1545695575/u4F95JJX90qYJbBJlxd76LYsJXTwkVPBpwZ1Dac9Q54/login
+console:
+jQuery.fn.jquery
+"3.2.1"
+
+https://drupal.stackexchange.com/questions/207377/programatically-print-blocks-in-twig
+c:\wamp64\bin\php\php7.2.10\php
+
+to reinstall drush 9:
+apply stash 'put back composer' then run:
+composer require drupal/console:~1.0 drush/drush
+DRUSH
+Download drush.phar using command prompt (helps if you have Git Bash or equivalent for Windows)
+Create the drush.bat file (as per the directions from this Git)
+Place the bat file and drush.phar file in the Composer directory, which should be at:
+C:\Users\<username>\AppData\Roaming\Composer\vendor\bin
+Restart command prompt
+Navigate to your directory and you should be able to run drush commands, like drush cr
+
+drush 9 backup db:
+drush sql-dump --gzip --result-file=/tmp/1.sql
+
+Production:
+git clone ssh://dcpadmin@104.42.6.118:/home/dcpadmin/repos/website.git
+
+DEV:
+git clone ssh://dcpadmin@10.68.8.152:/home/dcpadmin/repos/website.git
+
+git push origin master
+
+http://drupal8.test/devel/phpSmt
+
+
+OurLA2040 notes
+
+
+reset admin password D7:
+https://www.a2hosting.com/kb/installable-applications/optimization-and-configuration/drupal2/resetting-the-drupal-administrator-password
+php ./scripts/password-hash.sh "admin"
+
+$S$DnKFTD836TPLHxxdlmdxOdNzdWgU4IFCuOAhAQ/
+MMcwgAgdE5T0
+
+UPDATE users SET pass = '$S$DnKFTD836TPLHxxdlmdxOdNzdWgU4IFCuOAhAQ/
+MMcwgAgdE5T0' WHERE uid = 1;
+
+change status to 1 from 0
+
+RE ^^ below drush command ended up working after installing drush:
+
+drush user-password dave --password="admin"
+
+To get drush to work with Launcher, make a composer.json file:
+
+{
+    "require": {
+        "drush/drush": "8.*"
+    },
+    "extra": {
+        "installer-paths": {
+            "": ["type:drupal-core"]
+        }
+    }
+}
+
+
+and run composer install, then try to install drush 8
+
+.bash_profile
+export DRUSH_LAUNCHER_FALLBACK=~/.composer/vendor/bin/drush
+
+IMPORRTANT:
+to run drush 8 with drush launcher installed:
+
+follow instructions and copy this code and renamSmte to drush:
+
+https://github.com/drush-ops/drush/blob/8.x/examples/drush.wrapper
+rename file to drush to use 'drush' on cli and append '--local'
+then when in D7 sites run: drush cc alll= --local or drush status --local
+
+MAKE SURE DRUSH SAYS:
+
+ Database                        :  Connected
+ Drupal bootstrap                :  Successful
+
+path variable:
+which mysql
+/c/wamp64/bin/mysql/mysql5.7.23/bin/mysq
+
+windows command prompt (right-click and run as admin)
+where ourla is directory
+
+C:\wamp64\www>
+takeown /f .git /r /d y
+SUCCESS: The file (or folder): "C:\wamp64\www\ourla" now owned by user "DCP\planningcid035".
+also:https://www.laptopmag.com/articles/take-ownership-folder-windows-10-using-file-explorer
+
+
+bitbucket
+git clone git@bitbucket.org-elaineblakeman:elaineblakeman/ourla.git
+
+Export views to code:break
+https://www.bonify.io/blog/2014/09/how-export-your-views-code-and-why
+http://websmiths.co/blog/drupal-views-tutorials-exporting-views-code
+https://gist.github.com/mankyKitty/5872994
+https://stackoverflow.com/questions/16799468/adding-views-programmatically-to-custom-module-in-drupal-7
+Note: flush Views' cache at /admin/structure/views/settings/advanced and finally to revert your View in the UI admin/structure/views > edit dropdown > revert
+
+import view:
+
+http://ourla2040.test/admin/structure/views/import
+
+even margins in flexbox grid:
+https://jsfiddle.net/ys7w1786/
+https://codepen.io/emb03/pen/OdYwrG
+https://stackoverflow.com/questions/23433436/spacing-between-flexbox-items
+
+https://www.xenomedia.com/blog/add-css-classes-using-select-list-field-easily-drupal-8-twig-templates
+
+entity reference pages and view modes for complex layouts:
+https://www.mediacurrent.com/blog/drupal-8-theming-without-panels/
+
+xdebug not working session terminated
+https://stackoverflow.com/a/40719497
+
+ $export = kprint_r($variables, TRUE); // $vars - is a variable which you want to print.
+    
+print $export;
+
+git reset --hard 145d69772e3649c9dd51675f7336a17db3eb3a92
+git push --force origin master
+rebuild.php in drupal
+
+Get back your local changes or use git stash && git reset --keep instead of git reset --hard, if you do use git reset --hard you will need to do to get back your local files:
+git reflog
+git reset --hard df77ff6e6 (whatever the commit is you are trying to get back, git only keeps this info for a few days!!!)
+then do to make git recognize your files as changed and to get back your ability to commit files:
+git reset HEAD~
+
+Igit stash && git reset --keep INSTEAD OF git reset --hard
+If you want to move your HEAD and the tip of the current branch in history, then git reset --keep is your friend. It will do the same thing as git reset --hard, but will not discard your local changes.
+
+https://www.google.com/search?client=firefox-b-1-d&q=change+default+editor+for+windows+10
+
+Twig Cheatsheets
+https://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-1
+https://www.annertech.com/blog/things-learned-drupal-twig-slack-volume-2
+
+good one!
+https://gist.github.com/raphaellarrinaga/c1d71f69873c967ff74f8ec09cbdf9e1
+https://www.arshad.io/value/
+
+Open Drupal
+https://opendrupal.org/materials
+
+weird http kernel error composer update:
+ composer update --optimize-autoloader
+
+beyond compare 4 
+(merge tool) see: http://www.scootersoftware.com/support.php?zz=kb_vcs#gitwindows
+(default in Sourcetree) merge only works with Pro got free license here:
+https://gist.github.com/rise-worlds/5a5917780663aada8028f96b15057a67 -- just copy license in and it works!
+
+Launching Diffs and Merges
+File Diff:
+  git difftool filename.ext
+
+Folder Diff:
+  git difftool --dir-diff
+
+3-way Merge:
+  git mergetool filename.txt
+
+vimdiff (default in gitbash)
+https://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/
+
+git commands
+git gui
+
+Beyond 4 Compare if licnese reovked go to
+C:\Program Files\Beyond Compare 4
+
+Windows, current user: C:\Users\username\AppData\Roaming\Scooter Software\Beyond Compare 4\BC4Key.txt
+
+and remove BC4Key.txt and open BC4 and paste in new license (under Help)
+
+see: https://gist.github.com/vnsam/187be13c408b291f9b9c0a28c72fb7ff
+
+--- BEGIN LICENSE KEY ---
+H1bJTd2SauPv5Garuaq0Ig43uqq5NJOEw94wxdZTpU-pFB9GmyPk677gJ
+vC1Ro6sbAvKR4pVwtxdCfuoZDb6hJ5bVQKqlfihJfSYZt-xVrVU27+0Ja
+hFbqTmYskatMTgPyjvv99CF2Te8ec+Ys2SPxyZAF0YwOCNOWmsyqN5y9t
+q2Kw2pjoiDs5gIH-uw5U49JzOB6otS7kThBJE-H9A76u4uUvR8DKb+VcB
+rWu5qSJGEnbsXNfJdq5L2D8QgRdV-sXHp2A-7j1X2n4WIISvU1V9koIyS
+NisHFBTcWJS0sC5BTFwrtfLEE9lEwz2bxHQpWJiu12ZeKpi+7oUSqebX+
+--- END LICENSE KEY -----
+
+see all things that need updating
+composer outdated 'drupal/*'
+
+or 
+
+composer outdated
+see: https://chromatichq.com/blog/using-composer-outdated-manage-drupal-dependencies
+
+diverging branches (removes)
+
+git checkout origin/master
+git checkout -B master
+
+views-view fields template:
+{% for key, field in fields %}
+ 
+ <p><i>{{ key }}:</i> {{ field.content }}</p>
+
+      {{ dump(field.content) }}
+
+{% endfor %}
