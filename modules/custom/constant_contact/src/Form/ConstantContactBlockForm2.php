@@ -217,7 +217,7 @@ class ConstantContactBlockForm2 extends FormBase {
         $op = $this->callAPI(json_encode($format_data));
        
         if ($op) {
-          drupal_set_message(t('Successfully subscribed.'), 'status', TRUE);
+          drupal_set_message(t('Successfully subscribed.' . op ), 'status', TRUE);
        } 
     }
     
